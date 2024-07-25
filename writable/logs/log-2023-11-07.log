@@ -1,0 +1,16 @@
+CRITICAL - 2023-11-07 11:48:13 --> rename(C:/wl/temp/27528/teste - Copia (10).dxf,c:/wl/wl_desenhos/CYRELA/SINDUSCON/MOBILIARIO/Mobiliario/teste - Copia (10)_223_.dxf): O sistema não pode encontrar o arquivo especificado (code: 2)
+in APPPATH\Controllers\DesenhistaPost.php on line 344.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'rename(C:/wl/temp/27528/teste - Copia (10).dxf,c:/wl/wl_desenhos/CYRELA/SINDUSCON/MOBILIARIO/Mobiliario/teste - Copia (10)_223_.dxf): O sistema não pode encontrar o arquivo especificado (code: 2)', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 344)
+ 2 APPPATH\Controllers\DesenhistaPost.php(344): rename('C:/wl/temp/27528/teste - Copia (10).dxf', 'c:/wl/wl_desenhos/CYRELA/SINDUSCON/MOBILIARIO/Mobiliario/teste - Copia (10)_223_.dxf')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->desenhos_add()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-07 11:48:14 --> rename(C:/wl/temp/27528/test.dxf,c:/wl/wl_desenhos/CYRELA/SINDUSCON/MOBILIARIO/Mobiliario/test_476_.dxf): O sistema não pode encontrar o arquivo especificado (code: 2)
+in APPPATH\Controllers\DesenhistaPost.php on line 344.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'rename(C:/wl/temp/27528/test.dxf,c:/wl/wl_desenhos/CYRELA/SINDUSCON/MOBILIARIO/Mobiliario/test_476_.dxf): O sistema não pode encontrar o arquivo especificado (code: 2)', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 344)
+ 2 APPPATH\Controllers\DesenhistaPost.php(344): rename('C:/wl/temp/27528/test.dxf', 'c:/wl/wl_desenhos/CYRELA/SINDUSCON/MOBILIARIO/Mobiliario/test_476_.dxf')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->desenhos_add()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

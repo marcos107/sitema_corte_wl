@@ -1,0 +1,114 @@
+CRITICAL - 2023-12-12 09:18:39 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-12 09:18:39 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-12 09:18:40 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-12 09:18:41 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-12 16:02:14 --> Undefined array key "usuario"
+in APPPATH\Controllers\CortadorPost.php on line 354.
+ 1 APPPATH\Controllers\CortadorPost.php(354): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\CortadorPost.php', 354)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\CortadorPost->caminho_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CortadorPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-12 16:02:16 --> Undefined array key "usuario"
+in APPPATH\Controllers\CortadorPost.php on line 354.
+ 1 APPPATH\Controllers\CortadorPost.php(354): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\CortadorPost.php', 354)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\CortadorPost->caminho_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CortadorPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-12 16:02:18 --> Undefined array key "usuario"
+in APPPATH\Controllers\CortadorPost.php on line 354.
+ 1 APPPATH\Controllers\CortadorPost.php(354): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\CortadorPost.php', 354)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\CortadorPost->caminho_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CortadorPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-12 16:10:05 --> Undefined array key 12
+in APPPATH\Controllers\CortadorPost.php on line 395.
+ 1 APPPATH\Controllers\CortadorPost.php(395): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 12', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\CortadorPost.php', 395)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\CortadorPost->confirmar_corte()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CortadorPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-12 16:19:43 --> Undefined array key "usuario"
+in APPPATH\Controllers\CortadorPost.php on line 354.
+ 1 APPPATH\Controllers\CortadorPost.php(354): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\CortadorPost.php', 354)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\CortadorPost->caminho_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CortadorPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-12 16:19:45 --> Undefined array key "usuario"
+in APPPATH\Controllers\CortadorPost.php on line 354.
+ 1 APPPATH\Controllers\CortadorPost.php(354): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\CortadorPost.php', 354)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\CortadorPost->caminho_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CortadorPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-12-12 17:59:49 --> Error connecting to the database: mysqli_sql_exception: Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente in C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php:173
+Stack trace:
+#0 C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php(173): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'wl', 3306, '', 0)
+#1 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\codi\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\codi\system\Model.php(203): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\codi\system\BaseModel.php(557): CodeIgniter\Model->doFind(false, NULL)
+#6 C:\xampp\htdocs\codi\app\Controllers\CortadorPost.php(30): CodeIgniter\BaseModel->find()
+#7 C:\xampp\htdocs\codi\app\Controllers\CortadorPost.php(143): App\Controllers\CortadorPost->atualiza_prio()
+#8 C:\xampp\htdocs\codi\system\CodeIgniter.php(934): App\Controllers\CortadorPost->lista_corte()
+#9 C:\xampp\htdocs\codi\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CortadorPost))
+#10 C:\xampp\htdocs\codi\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\codi\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente in C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\codi\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\codi\system\Model.php(203): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\codi\system\BaseModel.php(557): CodeIgniter\Model->doFind(false, NULL)
+#5 C:\xampp\htdocs\codi\app\Controllers\CortadorPost.php(30): CodeIgniter\BaseModel->find()
+#6 C:\xampp\htdocs\codi\app\Controllers\CortadorPost.php(143): App\Controllers\CortadorPost->atualiza_prio()
+#7 C:\xampp\htdocs\codi\system\CodeIgniter.php(934): App\Controllers\CortadorPost->lista_corte()
+#8 C:\xampp\htdocs\codi\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CortadorPost))
+#9 C:\xampp\htdocs\codi\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\codi\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-12-12 17:59:49 --> Unable to connect to the database.
+Main connection [MySQLi]: Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `Historico_desenhos`', [], false)
+ 3 SYSTEMPATH\Model.php(203): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(557): CodeIgniter\Model->doFind(false, null)
+ 5 APPPATH\Controllers\CortadorPost.php(30): CodeIgniter\BaseModel->find()
+ 6 APPPATH\Controllers\CortadorPost.php(143): App\Controllers\CortadorPost->atualiza_prio()
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\CortadorPost->lista_corte()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CortadorPost))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

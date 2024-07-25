@@ -1,0 +1,11 @@
+CRITICAL - 2024-06-24 21:20:45 --> Undefined array key 1
+in APPPATH\Views\cadastro.php on line 255.
+ 1 APPPATH\Views\cadastro.php(255): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 1', 'C:\\xampp\\htdocs\\codi\\app\\Views\\cadastro.php', 255)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\codi\\app\\Views\\cadastro.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('cadastro', [], true)
+ 5 APPPATH\Controllers\Adm.php(682): view('cadastro', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Adm->relatorios_analitico()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Adm))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

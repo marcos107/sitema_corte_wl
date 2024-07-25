@@ -1,0 +1,77 @@
+CRITICAL - 2024-03-13 11:10:37 --> Undefined array key "usuario"
+in APPPATH\Controllers\CortadorPost.php on line 455.
+ 1 APPPATH\Controllers\CortadorPost.php(455): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\CortadorPost.php', 455)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\CortadorPost->confirmar_corte()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CortadorPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-03-13 13:23:16 --> Undefined array key "usuario"
+in APPPATH\Controllers\CortadorPost.php on line 455.
+ 1 APPPATH\Controllers\CortadorPost.php(455): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\CortadorPost.php', 455)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\CortadorPost->confirmar_corte()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CortadorPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-03-13 13:23:33 --> Undefined array key "usuario"
+in APPPATH\Controllers\CortadorPost.php on line 455.
+ 1 APPPATH\Controllers\CortadorPost.php(455): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\CortadorPost.php', 455)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\CortadorPost->confirmar_corte()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CortadorPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-03-13 13:24:06 --> Undefined array key "usuario"
+in APPPATH\Controllers\CortadorPost.php on line 455.
+ 1 APPPATH\Controllers\CortadorPost.php(455): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\CortadorPost.php', 455)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\CortadorPost->confirmar_corte()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CortadorPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-03-13 14:26:08 --> Undefined array key "usuario"
+in APPPATH\Controllers\CortadorPost.php on line 455.
+ 1 APPPATH\Controllers\CortadorPost.php(455): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\CortadorPost.php', 455)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\CortadorPost->confirmar_corte()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CortadorPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-03-13 14:28:40 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 223.
+ 1 APPPATH\Controllers\AdmPost.php(223): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 223)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-03-13 14:28:40 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 223.
+ 1 APPPATH\Controllers\AdmPost.php(223): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 223)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-03-13 14:28:41 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 223.
+ 1 APPPATH\Controllers\AdmPost.php(223): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 223)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-03-13 15:29:14 --> Undefined array key "usuario"
+in APPPATH\Controllers\CortadorPost.php on line 455.
+ 1 APPPATH\Controllers\CortadorPost.php(455): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\CortadorPost.php', 455)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\CortadorPost->confirmar_corte()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CortadorPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-03-13 16:58:21 --> Undefined array key "usuario"
+in APPPATH\Controllers\CortadorPost.php on line 455.
+ 1 APPPATH\Controllers\CortadorPost.php(455): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\CortadorPost.php', 455)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\CortadorPost->confirmar_corte()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CortadorPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-03-13 17:27:25 --> Undefined array key "usuario"
+in APPPATH\Controllers\CortadorPost.php on line 455.
+ 1 APPPATH\Controllers\CortadorPost.php(455): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\CortadorPost.php', 455)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\CortadorPost->confirmar_corte()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CortadorPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

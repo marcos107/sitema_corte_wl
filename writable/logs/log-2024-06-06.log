@@ -1,0 +1,127 @@
+CRITICAL - 2024-06-06 11:36:54 --> Undefined array key "novo_nome_arquivo"
+in APPPATH\Controllers\DesenhistaPost.php on line 575.
+ 1 APPPATH\Controllers\DesenhistaPost.php(575): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "novo_nome_arquivo"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 575)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-06 11:36:54 --> unlink(c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/): Is a directory
+in APPPATH\Controllers\DesenhistaPost.php on line 614.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/): Is a directory', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 614)
+ 2 APPPATH\Controllers\DesenhistaPost.php(614): unlink('c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-06 11:36:59 --> unlink(c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/): Is a directory
+in APPPATH\Controllers\DesenhistaPost.php on line 614.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/): Is a directory', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 614)
+ 2 APPPATH\Controllers\DesenhistaPost.php(614): unlink('c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-06 11:36:59 --> unlink(c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/): Is a directory
+in APPPATH\Controllers\DesenhistaPost.php on line 614.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/): Is a directory', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 614)
+ 2 APPPATH\Controllers\DesenhistaPost.php(614): unlink('c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-06 11:36:59 --> unlink(c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/): Is a directory
+in APPPATH\Controllers\DesenhistaPost.php on line 614.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/): Is a directory', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 614)
+ 2 APPPATH\Controllers\DesenhistaPost.php(614): unlink('c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-06 11:36:59 --> unlink(c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/): Is a directory
+in APPPATH\Controllers\DesenhistaPost.php on line 614.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/): Is a directory', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 614)
+ 2 APPPATH\Controllers\DesenhistaPost.php(614): unlink('c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-06 11:37:00 --> unlink(c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/): Is a directory
+in APPPATH\Controllers\DesenhistaPost.php on line 614.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/): Is a directory', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 614)
+ 2 APPPATH\Controllers\DesenhistaPost.php(614): unlink('c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-06 11:37:00 --> unlink(c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/): Is a directory
+in APPPATH\Controllers\DesenhistaPost.php on line 614.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/): Is a directory', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 614)
+ 2 APPPATH\Controllers\DesenhistaPost.php(614): unlink('c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-06 11:37:13 --> unlink(c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/): Is a directory
+in APPPATH\Controllers\DesenhistaPost.php on line 614.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/): Is a directory', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 614)
+ 2 APPPATH\Controllers\DesenhistaPost.php(614): unlink('c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-06 11:37:13 --> unlink(c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/): Is a directory
+in APPPATH\Controllers\DesenhistaPost.php on line 614.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/): Is a directory', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 614)
+ 2 APPPATH\Controllers\DesenhistaPost.php(614): unlink('c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-06 11:37:15 --> unlink(c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/): Is a directory
+in APPPATH\Controllers\DesenhistaPost.php on line 614.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/): Is a directory', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 614)
+ 2 APPPATH\Controllers\DesenhistaPost.php(614): unlink('c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-06 11:37:15 --> unlink(c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/): Is a directory
+in APPPATH\Controllers\DesenhistaPost.php on line 614.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/): Is a directory', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 614)
+ 2 APPPATH\Controllers\DesenhistaPost.php(614): unlink('c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-06 11:37:15 --> unlink(c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/): Is a directory
+in APPPATH\Controllers\DesenhistaPost.php on line 614.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/): Is a directory', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 614)
+ 2 APPPATH\Controllers\DesenhistaPost.php(614): unlink('c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-06 11:37:15 --> unlink(c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/): Is a directory
+in APPPATH\Controllers\DesenhistaPost.php on line 614.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/): Is a directory', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 614)
+ 2 APPPATH\Controllers\DesenhistaPost.php(614): unlink('c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-06 11:37:15 --> unlink(c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/): Is a directory
+in APPPATH\Controllers\DesenhistaPost.php on line 614.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/): Is a directory', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 614)
+ 2 APPPATH\Controllers\DesenhistaPost.php(614): unlink('c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-06 11:37:16 --> unlink(c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/): Is a directory
+in APPPATH\Controllers\DesenhistaPost.php on line 614.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/): Is a directory', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 614)
+ 2 APPPATH\Controllers\DesenhistaPost.php(614): unlink('c:/wl/wl_desenhos/PRC/CIDADEARUNA/MOBILIARIO/Internos/CORPORATIVO/')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

@@ -1,0 +1,21 @@
+CRITICAL - 2023-11-13 16:34:50 --> foreach() argument must be of type array|object, null given
+in APPPATH\Controllers\DesenhistaPost.php on line 192.
+ 1 APPPATH\Controllers\DesenhistaPost.php(192): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 192)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->desenhos_add()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-13 16:35:00 --> foreach() argument must be of type array|object, null given
+in APPPATH\Controllers\DesenhistaPost.php on line 192.
+ 1 APPPATH\Controllers\DesenhistaPost.php(192): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 192)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->desenhos_add()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-13 16:35:08 --> foreach() argument must be of type array|object, null given
+in APPPATH\Controllers\DesenhistaPost.php on line 192.
+ 1 APPPATH\Controllers\DesenhistaPost.php(192): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 192)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->desenhos_add()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

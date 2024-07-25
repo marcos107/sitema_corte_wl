@@ -1,0 +1,28 @@
+CRITICAL - 2024-06-04 15:53:37 --> Undefined array key "usuario"
+in APPPATH\Controllers\DesenhistaPost.php on line 42.
+ 1 APPPATH\Controllers\DesenhistaPost.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 42)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->criar_temp()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-04 15:53:39 --> Undefined array key "usuario"
+in APPPATH\Controllers\DesenhistaPost.php on line 42.
+ 1 APPPATH\Controllers\DesenhistaPost.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 42)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->criar_temp()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-04 16:08:17 --> Undefined array key 55
+in APPPATH\Controllers\DesenhistaPost.php on line 1383.
+ 1 APPPATH\Controllers\DesenhistaPost.php(1383): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 55', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 1383)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->nome_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-04 16:09:32 --> Undefined array key 30
+in APPPATH\Controllers\DesenhistaPost.php on line 440.
+ 1 APPPATH\Controllers\DesenhistaPost.php(440): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 30', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 440)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->apagar_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

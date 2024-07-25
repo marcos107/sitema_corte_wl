@@ -1,0 +1,11 @@
+CRITICAL - 2023-07-05 20:19:27 --> Undefined variable $titulo
+in APPPATH\Views\lista.php on line 170.
+ 1 APPPATH\Views\lista.php(170): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $titulo', 'C:\\xampp\\htdocs\\codi\\app\\Views\\lista.php', 170)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\codi\\app\\Views\\lista.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('lista', [], true)
+ 5 APPPATH\Controllers\Adm.php(173): view('lista', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Adm->redirecionarPagina()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Adm))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

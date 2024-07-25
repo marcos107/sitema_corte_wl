@@ -1,0 +1,23 @@
+CRITICAL - 2024-07-06 17:11:33 --> Undefined array key "id"
+in APPPATH\Controllers\AdmPost.php on line 3540.
+ 1 APPPATH\Controllers\AdmPost.php(3540): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 3540)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->relatorio_analitico()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-06 17:11:38 --> Undefined array key "id"
+in APPPATH\Controllers\AdmPost.php on line 3540.
+ 1 APPPATH\Controllers\AdmPost.php(3540): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 3540)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->relatorio_analitico()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-06 17:12:27 --> fopen(/var/www/html/cartoes/www): Failed to open stream: No such file or directory
+in VENDORPATH\mpdf\mpdf\src\Mpdf.php on line 9641.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fopen(/var/www/html/cartoes/www): Failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\codi\\vendor\\mpdf\\mpdf\\src\\Mpdf.php', 9641)
+ 2 VENDORPATH\mpdf\mpdf\src\Mpdf.php(9641): fopen('/var/www/html/cartoes/www', 'wb')
+ 3 APPPATH\Controllers\AdmPost.php(3582): Mpdf\Mpdf->Output('/var/www/html/cartoes/www', 'F')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->relatorio_analitico()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

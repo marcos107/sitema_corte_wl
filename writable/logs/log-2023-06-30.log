@@ -1,0 +1,68 @@
+CRITICAL - 2023-06-30 23:00:38 --> view(): Argument #2 ($data) must be of type array, string given, called in C:\xampp\htdocs\codi\app\Controllers\Adm.php on line 55
+in SYSTEMPATH\Common.php on line 1172.
+ 1 APPPATH\Controllers\Adm.php(55): view('lista', '<!-- DEBUG-VIEW START 1 APPPATH\\Views\\adm\\menu.php -->
+<li id="desenhos_top" class="nav-item"><a href="#" class="nav-link"><i class="fa-solid fa-pen-nib"></i>
+    <p>Desenhos<i class="fas fa-angle-left right"></i></p>
+  </a>
+  <ul class="nav nav-treeview" id="desenhos_bory">
+    <li class="nav-item"><a href="../forms/general.html" id="adicionar" class="nav-link">&nbsp<i class="fa-solid fa-plus"></i>&nbsp<p>
+          Adicionar</p></a></li>
+    <li class="nav-item"><a href="#" id="desenhos" class="nav-link">&nbsp<i class="fa-solid fa-address-book"></i>&nbsp<p>Meus
+          Desenhos</p></a></li>
+  </ul>
+</li>
+<li id="config_dos_ajustes_top" class="nav-item"><a href="#" class="nav-link"><i class="fa-solid fa-wrench"></i>
+    <p>Config dos Ajustes<i class="fas fa-angle-left right"></i></p>
+  </a>
+  <ul class="nav nav-treeview" id="config_dos_ajustes_bory">
+    <li class="nav-item"><a href="../forms/general.html" id="tipo_de_arquivo" class="nav-link">&nbsp<i
+          class="fa-solid fa-box-archive"></i>&nbsp<p>Tipo De Arquivo</p></a></li>
+    <li class="nav-item"><a href="#" id="prioridade" class="nav-link">&nbsp<i class="fa-solid fa-arrow-up-wide-short"></i>&nbsp<p>
+          Prioridade</p></a></li>
+    <li class="nav-item"><a href="#" id="empresa_cliente" class="nav-link">&nbsp<i class="fa-solid fa-people-group"></i>&nbsp<p>
+          Empresa/Cliente</p></a></li>
+    <li class="nav-item"><a href="#" id="empreendimento" class="nav-link">&nbsp<i class="fa-solid fa-compass-drafting"></i>&nbsp<p>
+          Empreendimento</p></a></li>
+  </ul>
+</li>
+<li id="usuarios_top" class="nav-item"><a href="#" class="nav-link"><i class="fa-solid fa-users-gear"></i>
+    <p>Usuarios<i class="fas fa-angle-left right"></i></p>
+  </a>
+  <ul class="nav nav-treeview" id="usuarios_bory">
+    <li class="nav-item"><a href="../forms/general.html" id="cadastrar" class="nav-link">&nbsp<i
+          class="fa-solid fa-user-plus"></i>&nbsp<p>Cadastrar</p></a></li>
+    <li class="nav-item"><a href="#" id="modificar" class="nav-link">&nbsp<i class="fa-solid fa-user-pen"></i>&nbsp<p>Modificar</p>
+      </a></li>
+  </ul>
+</li>
+<li class="nav-item"><a href="../config/login/logout.php" class="nav-link"><i class="fa-solid fa-door-open"></i>
+    <p>Sair</p>
+  </a></li>
+<!-- DEBUG-VIEW ENDED 1 APPPATH\\Views\\adm\\menu.php -->
+')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Adm->redirecionarPagina()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Adm))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-30 23:01:44 --> Undefined variable $menu
+in APPPATH\Views\lista.php on line 115.
+ 1 APPPATH\Views\lista.php(115): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $menu', 'C:\\xampp\\htdocs\\codi\\app\\Views\\lista.php', 115)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\codi\\app\\Views\\lista.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('lista', [], true)
+ 5 APPPATH\Controllers\Adm.php(56): view('lista', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Adm->redirecionarPagina()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Adm))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-30 23:31:26 --> Undefined variable $variable
+in APPPATH\Views\cadastro.php on line 185.
+ 1 APPPATH\Views\cadastro.php(185): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $variable', 'C:\\xampp\\htdocs\\codi\\app\\Views\\cadastro.php', 185)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\codi\\app\\Views\\cadastro.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('cadastro', [], true)
+ 5 APPPATH\Controllers\Adm.php(55): view('cadastro', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Adm->redirecionarPagina('cadastrar')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Adm))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

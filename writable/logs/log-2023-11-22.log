@@ -1,0 +1,609 @@
+CRITICAL - 2023-11-22 18:54:11 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:12 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:13 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:14 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:15 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:16 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:17 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:18 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:19 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:20 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:21 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:22 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:23 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:24 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:25 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:26 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:27 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:28 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:29 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:30 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:31 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:32 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:33 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:34 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:35 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:36 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:37 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:38 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:39 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:40 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:41 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:42 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:43 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:44 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:45 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:46 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:47 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:48 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:49 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:50 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:51 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:52 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:53 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:54 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:55 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:56 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:57 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:58 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:54:59 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:55:00 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:55:01 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:55:02 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:55:03 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:55:04 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:55:05 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:55:06 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:55:07 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:55:08 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:55:09 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:55:10 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:55:11 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:55:12 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:55:13 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:55:14 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:55:39 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:56:39 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:57:39 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:58:39 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 18:59:39 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 19:00:39 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 19:01:39 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 19:02:39 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 19:03:39 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 19:04:39 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 19:05:39 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 19:06:39 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 19:07:39 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 19:08:39 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 19:09:39 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 19:10:39 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 19:11:39 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 19:12:39 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 19:13:39 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 19:14:39 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 19:15:39 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 19:16:39 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-22 19:17:39 --> Undefined array key "usuario"
+in APPPATH\Controllers\AdmPost.php on line 206.
+ 1 APPPATH\Controllers\AdmPost.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

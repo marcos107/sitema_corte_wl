@@ -1,0 +1,50 @@
+CRITICAL - 2024-05-09 08:53:56 --> Undefined array key "usuario"
+in APPPATH\Controllers\CortadorPost.php on line 455.
+ 1 APPPATH\Controllers\CortadorPost.php(455): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\CortadorPost.php', 455)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\CortadorPost->confirmar_corte()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CortadorPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-09 08:54:26 --> Undefined array key "usuario"
+in APPPATH\Controllers\CortadorPost.php on line 455.
+ 1 APPPATH\Controllers\CortadorPost.php(455): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\CortadorPost.php', 455)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\CortadorPost->confirmar_corte()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CortadorPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-09 08:54:33 --> Undefined array key "usuario"
+in APPPATH\Controllers\CortadorPost.php on line 455.
+ 1 APPPATH\Controllers\CortadorPost.php(455): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\CortadorPost.php', 455)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\CortadorPost->confirmar_corte()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CortadorPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-09 10:51:54 --> Undefined array key "usuario"
+in APPPATH\Controllers\CortadorPost.php on line 455.
+ 1 APPPATH\Controllers\CortadorPost.php(455): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\CortadorPost.php', 455)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\CortadorPost->confirmar_corte()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CortadorPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-09 11:07:57 --> Undefined array key "usuario"
+in APPPATH\Controllers\CortadorPost.php on line 455.
+ 1 APPPATH\Controllers\CortadorPost.php(455): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\CortadorPost.php', 455)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\CortadorPost->confirmar_corte()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CortadorPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-09 11:56:32 --> Maximum execution time of 120 seconds exceeded
+in APPPATH\Controllers\Ferramentas.php on line 499.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-05-09 11:56:32 --> Maximum execution time of 120 seconds exceeded
+in APPPATH\Controllers\Ferramentas.php on line 499.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-05-09 11:56:32 --> Maximum execution time of 120 seconds exceeded
+in APPPATH\Controllers\AdmPost.php on line 758.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-05-09 11:56:33 --> Maximum execution time of 120 seconds exceeded
+in APPPATH\Controllers\Ferramentas.php on line 499.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-05-09 11:56:33 --> Maximum execution time of 120 seconds exceeded
+in APPPATH\Controllers\Ferramentas.php on line 499.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()

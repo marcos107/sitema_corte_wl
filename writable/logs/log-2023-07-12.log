@@ -1,0 +1,143 @@
+CRITICAL - 2023-07-12 17:37:16 --> Undefined variable $button_execut_nome
+in APPPATH\Views\lista.php on line 227.
+ 1 APPPATH\Views\lista.php(227): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $button_execut_nome', 'C:\\xampp\\htdocs\\codi\\app\\Views\\lista.php', 227)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\codi\\app\\Views\\lista.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('lista', [], true)
+ 5 APPPATH\Controllers\Adm.php(28): view('lista', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Adm->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Adm))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-12 17:53:56 --> The route for "adm.cadastrar" cannot be found.
+in SYSTEMPATH\Helpers\url_helper.php on line 599.
+ 1 SYSTEMPATH\Helpers\url_helper.php(599): CodeIgniter\Router\Exceptions\RouterException::forInvalidRoute('adm.cadastrar')
+ 2 APPPATH\Views\cadastro.php(180): url_to('adm.cadastrar')
+ 3 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\codi\\app\\Views\\cadastro.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('cadastro', [], true)
+ 6 APPPATH\Controllers\Adm.php(228): view('cadastro', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Adm->redirecionarPagina('user_cadastrar')
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Adm))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-12 17:53:59 --> The route for "adm.cadastrar" cannot be found.
+in SYSTEMPATH\Helpers\url_helper.php on line 599.
+ 1 SYSTEMPATH\Helpers\url_helper.php(599): CodeIgniter\Router\Exceptions\RouterException::forInvalidRoute('adm.cadastrar')
+ 2 APPPATH\Views\cadastro.php(180): url_to('adm.cadastrar')
+ 3 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\codi\\app\\Views\\cadastro.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('cadastro', [], true)
+ 6 APPPATH\Controllers\Adm.php(228): view('cadastro', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Adm->redirecionarPagina('user_cadastrar')
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Adm))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-12 17:58:47 --> Undefined variable $message
+in APPPATH\Views\errors\html\error_404.php on line 77.
+ 1 APPPATH\Views\errors\html\error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $message', 'C:\\xampp\\htdocs\\codi\\app\\Views\\errors\\html\\error_404.php', 77)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\codi\\app\\Views\\errors\\html\\error_404.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('errors/html/error_404', [], true)
+ 5 APPPATH\Controllers\Adm.php(210): view('errors/html/error_404')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Adm->redirecionarPagina('42')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Adm))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-12 17:59:00 --> Undefined variable $message
+in APPPATH\Views\errors\html\error_404.php on line 77.
+ 1 APPPATH\Views\errors\html\error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $message', 'C:\\xampp\\htdocs\\codi\\app\\Views\\errors\\html\\error_404.php', 77)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\codi\\app\\Views\\errors\\html\\error_404.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('errors/html/error_404', [], true)
+ 5 APPPATH\Controllers\Adm.php(210): view('errors/html/error_404', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Adm->redirecionarPagina('42')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Adm))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-12 17:59:16 --> Undefined variable $message
+in APPPATH\Views\errors\html\error_404.php on line 77.
+ 1 APPPATH\Views\errors\html\error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $message', 'C:\\xampp\\htdocs\\codi\\app\\Views\\errors\\html\\error_404.php', 77)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\codi\\app\\Views\\errors\\html\\error_404.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('errors/html/error_404', [], true)
+ 5 APPPATH\Controllers\Adm.php(210): view('errors/html/error_404', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Adm->redirecionarPagina('42')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Adm))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-12 18:01:10 --> Too few arguments to function App\Controllers\Adm::teste(), 0 passed in C:\xampp\htdocs\codi\system\CodeIgniter.php on line 934 and exactly 1 expected
+in APPPATH\Controllers\Adm.php on line 228.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Adm->teste()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Adm))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-12 18:01:49 --> Call to undefined function App\Controllers\redirecionarPagina()
+in APPPATH\Controllers\Adm.php on line 230.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Adm->teste('user_cadastrar')
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Adm))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-12 18:50:35 --> Undefined property: App\Controllers\Adm::$input
+in APPPATH\Controllers\Adm.php on line 219.
+ 1 APPPATH\Controllers\Adm.php(219): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Adm::$input', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\Adm.php', 219)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Adm->redirecionarPagina('user_cadastrar')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Adm))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-12 18:50:41 --> Call to undefined method CodeIgniter\HTTP\IncomingRequest::post()
+in APPPATH\Controllers\Adm.php on line 219.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Adm->redirecionarPagina('user_cadastrar')
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Adm))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-12 19:12:15 --> syntax error, unexpected token ";"
+in APPPATH\Controllers\Adm.php on line 229.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\Adm.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Adm')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Adm')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\Adm', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-12 19:12:19 --> syntax error, unexpected token ";"
+in APPPATH\Controllers\Adm.php on line 229.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\Adm.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Adm')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Adm')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\Adm', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-12 19:12:37 --> Undefined variable $menu
+in APPPATH\Views\cadastro.php on line 118.
+ 1 APPPATH\Views\cadastro.php(118): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $menu', 'C:\\xampp\\htdocs\\codi\\app\\Views\\cadastro.php', 118)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\codi\\app\\Views\\cadastro.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('cadastro', [], true)
+ 5 APPPATH\Controllers\Adm.php(244): view('cadastro', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Adm->redirecionarPagina('user_cadastrar')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Adm))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-12 19:12:48 --> Undefined variable $menu
+in APPPATH\Views\cadastro.php on line 118.
+ 1 APPPATH\Views\cadastro.php(118): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $menu', 'C:\\xampp\\htdocs\\codi\\app\\Views\\cadastro.php', 118)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\codi\\app\\Views\\cadastro.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('cadastro', [], true)
+ 5 APPPATH\Controllers\Adm.php(244): view('cadastro', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Adm->redirecionarPagina('user_cadastrar')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Adm))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-12 19:24:55 --> Undefined constant "URLBASE"
+in APPPATH\Views\lista_cadastro.php on line 529.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('lista_cadastro', [], true)
+ 4 APPPATH\Controllers\Adm.php(245): view('lista_cadastro', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Adm->redirecionarPagina('config_prioridade')
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Adm))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

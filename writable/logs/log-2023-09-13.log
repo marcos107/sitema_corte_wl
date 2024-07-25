@@ -1,0 +1,248 @@
+CRITICAL - 2023-09-13 19:58:19 --> Undefined array key "novo_nome_arquivo"
+in APPPATH\Controllers\DesenhistaPost.php on line 412.
+ 1 APPPATH\Controllers\DesenhistaPost.php(412): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "novo_nome_arquivo"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 412)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-13 20:14:16 --> rename(c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/,c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm33_40091_.dxf): Parâmetro incorreto (code: 87)
+in APPPATH\Controllers\DesenhistaPost.php on line 487.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'rename(c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/,c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm33_40091_.dxf): Parâmetro incorreto (code: 87)', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 487)
+ 2 APPPATH\Controllers\DesenhistaPost.php(487): rename('c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/', 'c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm33_40091_.dxf')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-13 20:14:37 --> rename(c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/,c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm33_85383_.dxf): Parâmetro incorreto (code: 87)
+in APPPATH\Controllers\DesenhistaPost.php on line 487.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'rename(c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/,c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm33_85383_.dxf): Parâmetro incorreto (code: 87)', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 487)
+ 2 APPPATH\Controllers\DesenhistaPost.php(487): rename('c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/', 'c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm33_85383_.dxf')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-13 20:14:52 --> rename(c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/,c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm3_53652_.dxf): Parâmetro incorreto (code: 87)
+in APPPATH\Controllers\DesenhistaPost.php on line 487.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'rename(c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/,c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm3_53652_.dxf): Parâmetro incorreto (code: 87)', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 487)
+ 2 APPPATH\Controllers\DesenhistaPost.php(487): rename('c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/', 'c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm3_53652_.dxf')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-13 20:15:03 --> rename(c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/,c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm1_88744_.dxf): Parâmetro incorreto (code: 87)
+in APPPATH\Controllers\DesenhistaPost.php on line 487.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'rename(c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/,c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm1_88744_.dxf): Parâmetro incorreto (code: 87)', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 487)
+ 2 APPPATH\Controllers\DesenhistaPost.php(487): rename('c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/', 'c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm1_88744_.dxf')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-13 20:17:13 --> rename(c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/,c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm1_67837_.dxf): Parâmetro incorreto (code: 87)
+in APPPATH\Controllers\DesenhistaPost.php on line 487.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'rename(c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/,c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm1_67837_.dxf): Parâmetro incorreto (code: 87)', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 487)
+ 2 APPPATH\Controllers\DesenhistaPost.php(487): rename('c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/', 'c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm1_67837_.dxf')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-13 20:17:15 --> rename(c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/,c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm1_71378_.dxf): Parâmetro incorreto (code: 87)
+in APPPATH\Controllers\DesenhistaPost.php on line 487.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'rename(c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/,c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm1_71378_.dxf): Parâmetro incorreto (code: 87)', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 487)
+ 2 APPPATH\Controllers\DesenhistaPost.php(487): rename('c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/', 'c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm1_71378_.dxf')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-13 20:17:15 --> rename(c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/,c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm1_55899_.dxf): Parâmetro incorreto (code: 87)
+in APPPATH\Controllers\DesenhistaPost.php on line 487.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'rename(c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/,c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm1_55899_.dxf): Parâmetro incorreto (code: 87)', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 487)
+ 2 APPPATH\Controllers\DesenhistaPost.php(487): rename('c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/', 'c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm1_55899_.dxf')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-13 20:20:45 --> rename(c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/,c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm1_70491_.dxf): Parâmetro incorreto (code: 87)
+in APPPATH\Controllers\DesenhistaPost.php on line 487.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'rename(c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/,c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm1_70491_.dxf): Parâmetro incorreto (code: 87)', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 487)
+ 2 APPPATH\Controllers\DesenhistaPost.php(487): rename('c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/', 'c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm1_70491_.dxf')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-13 20:20:49 --> rename(c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/,c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm1_29383_.dxf): Parâmetro incorreto (code: 87)
+in APPPATH\Controllers\DesenhistaPost.php on line 487.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'rename(c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/,c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm1_29383_.dxf): Parâmetro incorreto (code: 87)', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 487)
+ 2 APPPATH\Controllers\DesenhistaPost.php(487): rename('c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/', 'c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm1_29383_.dxf')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-13 20:26:22 --> rename(c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/,c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm1_59985_.dxf): Parâmetro incorreto (code: 87)
+in APPPATH\Controllers\DesenhistaPost.php on line 487.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'rename(c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/,c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm1_59985_.dxf): Parâmetro incorreto (code: 87)', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 487)
+ 2 APPPATH\Controllers\DesenhistaPost.php(487): rename('c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/', 'c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm1_59985_.dxf')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-13 20:31:52 --> Undefined variable $novo_nome
+in APPPATH\Controllers\DesenhistaPost.php on line 442.
+ 1 APPPATH\Controllers\DesenhistaPost.php(442): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $novo_nome', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 442)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-13 21:42:10 --> Undefined variable $novo_nome
+in APPPATH\Controllers\DesenhistaPost.php on line 442.
+ 1 APPPATH\Controllers\DesenhistaPost.php(442): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $novo_nome', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 442)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-13 21:43:23 --> Undefined variable $novo_nome
+in APPPATH\Controllers\DesenhistaPost.php on line 447.
+ 1 APPPATH\Controllers\DesenhistaPost.php(447): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $novo_nome', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 447)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-13 21:43:31 --> Undefined variable $novo_nome
+in APPPATH\Controllers\DesenhistaPost.php on line 446.
+ 1 APPPATH\Controllers\DesenhistaPost.php(446): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $novo_nome', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 446)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-13 21:43:42 --> Undefined variable $novo_nome
+in APPPATH\Controllers\DesenhistaPost.php on line 446.
+ 1 APPPATH\Controllers\DesenhistaPost.php(446): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $novo_nome', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 446)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-13 21:48:45 --> unlink(c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/): Is a directory
+in APPPATH\Controllers\DesenhistaPost.php on line 447.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/): Is a directory', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 447)
+ 2 APPPATH\Controllers\DesenhistaPost.php(447): unlink('c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-13 21:52:50 --> unlink(c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/): Is a directory
+in APPPATH\Controllers\DesenhistaPost.php on line 447.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/): Is a directory', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 447)
+ 2 APPPATH\Controllers\DesenhistaPost.php(447): unlink('c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-13 21:54:23 --> unlink(c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/): Is a directory
+in APPPATH\Controllers\DesenhistaPost.php on line 447.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/): Is a directory', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 447)
+ 2 APPPATH\Controllers\DesenhistaPost.php(447): unlink('c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-13 21:58:01 --> Undefined variable $menssage
+in APPPATH\Controllers\DesenhistaPost.php on line 446.
+ 1 APPPATH\Controllers\DesenhistaPost.php(446): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $menssage', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 446)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-13 22:01:35 --> Could not move file "php9188.tmp" to "c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/". Reason: 
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 149.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(149): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('php9188.tmp', 'c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/', '')
+ 2 APPPATH\Controllers\DesenhistaPost.php(448): CodeIgniter\HTTP\Files\UploadedFile->move('c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/', 'c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm33_42486_.dxf')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-13 22:07:07 --> rename(c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/,c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm33_70760_.dxf): Parâmetro incorreto (code: 87)
+in APPPATH\Controllers\DesenhistaPost.php on line 484.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'rename(c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/,c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm33_70760_.dxf): Parâmetro incorreto (code: 87)', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 484)
+ 2 APPPATH\Controllers\DesenhistaPost.php(484): rename('c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/', 'c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm33_70760_.dxf')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-13 22:10:42 --> Could not move file "phpE8A1.tmp" to "c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm_63402_.dxf/". Reason: 
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 149.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(149): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('phpE8A1.tmp', 'c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm_63402_.dxf/', '')
+ 2 APPPATH\Controllers\DesenhistaPost.php(448): CodeIgniter\HTTP\Files\UploadedFile->move('c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm_63402_.dxf/', 'c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm3_12606_.dxf')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-13 22:12:00 --> Could not move file "php1B07.tmp" to "c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm_63402_.dxf/". Reason: 
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 149.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(149): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('php1B07.tmp', 'c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm_63402_.dxf/', '')
+ 2 APPPATH\Controllers\DesenhistaPost.php(448): CodeIgniter\HTTP\Files\UploadedFile->move('c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm_63402_.dxf/', 'c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm3_65628_.dxf')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-13 22:19:28 --> Could not move file "phpF2A0.tmp" to "c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm_63402_.dxf/". Reason: 
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 149.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(149): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('phpF2A0.tmp', 'c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm_63402_.dxf/', '')
+ 2 APPPATH\Controllers\DesenhistaPost.php(449): CodeIgniter\HTTP\Files\UploadedFile->move('c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm_63402_.dxf/', 'c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm3_80207_.dxf')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-13 22:29:52 --> mkdir(): No such file or directory
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 176.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mkdir(): No such file or directory', 'C:\\xampp\\htdocs\\codi\\system\\HTTP\\Files\\UploadedFile.php', 176)
+ 2 SYSTEMPATH\HTTP\Files\UploadedFile.php(176): mkdir('c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm_63402_.dxf/', 511, true)
+ 3 SYSTEMPATH\HTTP\Files\UploadedFile.php(130): CodeIgniter\HTTP\Files\UploadedFile->setPath('c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm_63402_.dxf/')
+ 4 APPPATH\Controllers\DesenhistaPost.php(449): CodeIgniter\HTTP\Files\UploadedFile->move('c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm_63402_.dxf/', 'BALÇÃO - acrilico bege claro 1 mm3_21631_.dxf')
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-13 22:36:39 --> unlink(c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/): Is a directory
+in APPPATH\Controllers\DesenhistaPost.php on line 447.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/): Is a directory', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 447)
+ 2 APPPATH\Controllers\DesenhistaPost.php(447): unlink('c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-13 22:36:49 --> unlink(c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/): Is a directory
+in APPPATH\Controllers\DesenhistaPost.php on line 447.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/): Is a directory', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 447)
+ 2 APPPATH\Controllers\DesenhistaPost.php(447): unlink('c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-13 22:37:41 --> unlink(c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/): Is a directory
+in APPPATH\Controllers\DesenhistaPost.php on line 447.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/): Is a directory', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 447)
+ 2 APPPATH\Controllers\DesenhistaPost.php(447): unlink('c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-13 23:22:09 --> Undefined array key "novo_nome_arquivo"
+in APPPATH\Controllers\DesenhistaPost.php on line 412.
+ 1 APPPATH\Controllers\DesenhistaPost.php(412): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "novo_nome_arquivo"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 412)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-13 23:30:51 --> Undefined array key "novo_nome_arquivo"
+in APPPATH\Controllers\DesenhistaPost.php on line 412.
+ 1 APPPATH\Controllers\DesenhistaPost.php(412): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "novo_nome_arquivo"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 412)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-13 23:34:34 --> Undefined array key "novo_nome_arquivo"
+in APPPATH\Controllers\DesenhistaPost.php on line 412.
+ 1 APPPATH\Controllers\DesenhistaPost.php(412): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "novo_nome_arquivo"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 412)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

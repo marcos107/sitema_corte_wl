@@ -1,0 +1,146 @@
+CRITICAL - 2023-09-12 21:04:34 --> Undefined array key ""
+in APPPATH\Controllers\DesenhistaPost.php on line 398.
+ 1 APPPATH\Controllers\DesenhistaPost.php(398): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key ""', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 398)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-12 21:06:56 --> Undefined array key ""
+in APPPATH\Controllers\DesenhistaPost.php on line 398.
+ 1 APPPATH\Controllers\DesenhistaPost.php(398): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key ""', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 398)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-12 21:07:04 --> Undefined array key ""
+in APPPATH\Controllers\DesenhistaPost.php on line 398.
+ 1 APPPATH\Controllers\DesenhistaPost.php(398): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key ""', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 398)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-12 21:07:16 --> Undefined variable $lista
+in APPPATH\Controllers\DesenhistaPost.php on line 399.
+ 1 APPPATH\Controllers\DesenhistaPost.php(399): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $lista', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 399)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-12 21:21:42 --> Only variables should be passed by reference
+in APPPATH\Controllers\AdmPost.php on line 126.
+ 1 APPPATH\Controllers\AdmPost.php(126): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Only variables should be passed by reference', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 126)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-12 21:21:43 --> Only variables should be passed by reference
+in APPPATH\Controllers\AdmPost.php on line 126.
+ 1 APPPATH\Controllers\AdmPost.php(126): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Only variables should be passed by reference', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 126)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-12 21:21:43 --> Only variables should be passed by reference
+in APPPATH\Controllers\AdmPost.php on line 126.
+ 1 APPPATH\Controllers\AdmPost.php(126): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Only variables should be passed by reference', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 126)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-12 21:21:44 --> Only variables should be passed by reference
+in APPPATH\Controllers\AdmPost.php on line 126.
+ 1 APPPATH\Controllers\AdmPost.php(126): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Only variables should be passed by reference', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 126)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-12 21:21:45 --> Only variables should be passed by reference
+in APPPATH\Controllers\AdmPost.php on line 126.
+ 1 APPPATH\Controllers\AdmPost.php(126): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Only variables should be passed by reference', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 126)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-12 21:21:47 --> Only variables should be passed by reference
+in APPPATH\Controllers\AdmPost.php on line 126.
+ 1 APPPATH\Controllers\AdmPost.php(126): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Only variables should be passed by reference', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 126)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-12 21:21:48 --> Only variables should be passed by reference
+in APPPATH\Controllers\AdmPost.php on line 126.
+ 1 APPPATH\Controllers\AdmPost.php(126): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Only variables should be passed by reference', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 126)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->desenho_meus()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-12 21:56:06 --> Maximum execution time of 120 seconds exceeded
+in APPPATH\Controllers\Ferramentas.php on line 437.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-09-12 21:56:08 --> Maximum execution time of 120 seconds exceeded
+in APPPATH\Controllers\DesenhistaPost.php on line 429.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-09-12 22:02:55 --> Call to a member function isValid() on null
+in APPPATH\Controllers\DesenhistaPost.php on line 431.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-12 22:02:57 --> Call to a member function isValid() on null
+in APPPATH\Controllers\DesenhistaPost.php on line 431.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-12 22:13:21 --> Call to a member function isValid() on null
+in APPPATH\Controllers\DesenhistaPost.php on line 432.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-12 22:16:47 --> Call to a member function isValid() on null
+in APPPATH\Controllers\DesenhistaPost.php on line 432.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-12 22:24:57 --> Call to a member function isValid() on null
+in APPPATH\Controllers\DesenhistaPost.php on line 432.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-12 22:38:51 --> Undefined variable $caminho
+in APPPATH\Controllers\DesenhistaPost.php on line 449.
+ 1 APPPATH\Controllers\DesenhistaPost.php(449): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $caminho', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 449)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-12 22:51:28 --> rename(BALÇÃO - acrilico bege claro 1 mm,BALÇÃO - acrilico bege claro 1 mm1): O sistema não pode encontrar o arquivo especificado (code: 2)
+in APPPATH\Controllers\DesenhistaPost.php on line 451.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'rename(BALÇÃO - acrilico bege claro 1 mm,BALÇÃO - acrilico bege claro 1 mm1): O sistema não pode encontrar o arquivo especificado (code: 2)', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 451)
+ 2 APPPATH\Controllers\DesenhistaPost.php(451): rename('BALÇÃO - acrilico bege claro 1 mm', 'BALÇÃO - acrilico bege claro 1 mm1')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-12 22:55:05 --> rename(BALÇÃO - acrilico bege claro 1 mm,BALÇÃO - acrilico bege claro 1 mm1): O sistema não pode encontrar o arquivo especificado (code: 2)
+in APPPATH\Controllers\DesenhistaPost.php on line 451.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'rename(BALÇÃO - acrilico bege claro 1 mm,BALÇÃO - acrilico bege claro 1 mm1): O sistema não pode encontrar o arquivo especificado (code: 2)', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 451)
+ 2 APPPATH\Controllers\DesenhistaPost.php(451): rename('BALÇÃO - acrilico bege claro 1 mm', 'BALÇÃO - acrilico bege claro 1 mm1')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-12 23:55:48 --> mkdir(): No such file or directory
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 176.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mkdir(): No such file or directory', 'C:\\xampp\\htdocs\\codi\\system\\HTTP\\Files\\UploadedFile.php', 176)
+ 2 SYSTEMPATH\HTTP\Files\UploadedFile.php(176): mkdir('c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm_855_.dxf/', 511, true)
+ 3 SYSTEMPATH\HTTP\Files\UploadedFile.php(130): CodeIgniter\HTTP\Files\UploadedFile->setPath('c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm_855_.dxf/')
+ 4 APPPATH\Controllers\DesenhistaPost.php(441): CodeIgniter\HTTP\Files\UploadedFile->move('c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 1 mm_855_.dxf/', 'c:/wl/wl_desenhos/EMBRAED/ola/ESTRUTURA/1/BALÇÃO - acrilico bege claro 6 cm_16571_.dxf')
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

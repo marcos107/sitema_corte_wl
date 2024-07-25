@@ -1,0 +1,530 @@
+CRITICAL - 2023-09-19 00:39:24 --> Undefined array key "novo_nome_arquivo"
+in APPPATH\Controllers\DesenhistaPost.php on line 416.
+ 1 APPPATH\Controllers\DesenhistaPost.php(416): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "novo_nome_arquivo"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 416)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 00:39:44 --> Undefined array key "novo_nome_arquivo"
+in APPPATH\Controllers\DesenhistaPost.php on line 416.
+ 1 APPPATH\Controllers\DesenhistaPost.php(416): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "novo_nome_arquivo"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 416)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 00:40:21 --> Undefined array key "novo_nome_arquivo"
+in APPPATH\Controllers\DesenhistaPost.php on line 416.
+ 1 APPPATH\Controllers\DesenhistaPost.php(416): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "novo_nome_arquivo"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 416)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 00:44:53 --> Undefined array key "novo_nome_arquivo"
+in APPPATH\Controllers\DesenhistaPost.php on line 416.
+ 1 APPPATH\Controllers\DesenhistaPost.php(416): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "novo_nome_arquivo"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 416)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 00:48:01 --> Undefined array key "id_subistituir"
+in APPPATH\Controllers\DesenhistaPost.php on line 418.
+ 1 APPPATH\Controllers\DesenhistaPost.php(418): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_subistituir"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 418)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 00:48:15 --> Undefined array key "id_subistituir"
+in APPPATH\Controllers\DesenhistaPost.php on line 418.
+ 1 APPPATH\Controllers\DesenhistaPost.php(418): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_subistituir"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 418)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 00:56:34 --> Undefined global variable $_SESSION
+in APPPATH\Controllers\DesenhistaPost.php on line 399.
+ 1 APPPATH\Controllers\DesenhistaPost.php(399): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 399)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->desenho_novo_nome()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 00:56:43 --> Undefined global variable $_SESSION
+in APPPATH\Controllers\DesenhistaPost.php on line 399.
+ 1 APPPATH\Controllers\DesenhistaPost.php(399): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 399)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->desenho_novo_nome()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 00:57:02 --> Undefined global variable $_SESSION
+in APPPATH\Controllers\DesenhistaPost.php on line 399.
+ 1 APPPATH\Controllers\DesenhistaPost.php(399): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 399)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->desenho_novo_nome()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 00:57:22 --> Undefined global variable $_SESSION
+in APPPATH\Controllers\DesenhistaPost.php on line 399.
+ 1 APPPATH\Controllers\DesenhistaPost.php(399): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 399)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->desenho_novo_nome()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 00:58:07 --> Undefined global variable $_SESSION
+in APPPATH\Controllers\DesenhistaPost.php on line 399.
+ 1 APPPATH\Controllers\DesenhistaPost.php(399): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 399)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->desenho_novo_nome()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 00:58:15 --> Undefined global variable $_SESSION
+in APPPATH\Controllers\DesenhistaPost.php on line 399.
+ 1 APPPATH\Controllers\DesenhistaPost.php(399): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 399)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->desenho_novo_nome()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:03:45 --> Undefined global variable $_SESSION
+in APPPATH\Controllers\DesenhistaPost.php on line 399.
+ 1 APPPATH\Controllers\DesenhistaPost.php(399): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 399)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->desenho_novo_nome()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:13:49 --> Undefined global variable $_SESSION
+in APPPATH\Controllers\DesenhistaPost.php on line 399.
+ 1 APPPATH\Controllers\DesenhistaPost.php(399): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 399)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->desenho_novo_nome()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:14:52 --> Undefined global variable $_SESSION
+in APPPATH\Controllers\DesenhistaPost.php on line 399.
+ 1 APPPATH\Controllers\DesenhistaPost.php(399): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 399)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->desenho_novo_nome()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:15:05 --> Undefined global variable $_SESSION
+in APPPATH\Controllers\DesenhistaPost.php on line 399.
+ 1 APPPATH\Controllers\DesenhistaPost.php(399): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 399)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->desenho_novo_nome()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:15:08 --> Undefined global variable $_SESSION
+in APPPATH\Controllers\DesenhistaPost.php on line 399.
+ 1 APPPATH\Controllers\DesenhistaPost.php(399): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 399)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->desenho_novo_nome()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:15:21 --> Undefined global variable $_SESSION
+in APPPATH\Controllers\DesenhistaPost.php on line 399.
+ 1 APPPATH\Controllers\DesenhistaPost.php(399): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 399)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->desenho_novo_nome()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:15:26 --> Undefined global variable $_SESSION
+in APPPATH\Controllers\DesenhistaPost.php on line 399.
+ 1 APPPATH\Controllers\DesenhistaPost.php(399): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 399)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->desenho_novo_nome()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:15:41 --> Undefined global variable $_SESSION
+in APPPATH\Controllers\DesenhistaPost.php on line 399.
+ 1 APPPATH\Controllers\DesenhistaPost.php(399): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 399)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->desenho_novo_nome()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:15:41 --> Undefined global variable $_SESSION
+in APPPATH\Controllers\DesenhistaPost.php on line 399.
+ 1 APPPATH\Controllers\DesenhistaPost.php(399): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 399)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->desenho_novo_nome()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:15:46 --> Undefined global variable $_SESSION
+in APPPATH\Controllers\DesenhistaPost.php on line 399.
+ 1 APPPATH\Controllers\DesenhistaPost.php(399): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 399)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->desenho_novo_nome()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:15:46 --> Undefined global variable $_SESSION
+in APPPATH\Controllers\DesenhistaPost.php on line 399.
+ 1 APPPATH\Controllers\DesenhistaPost.php(399): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 399)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->desenho_novo_nome()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:16:24 --> Undefined global variable $_SESSION
+in APPPATH\Controllers\DesenhistaPost.php on line 399.
+ 1 APPPATH\Controllers\DesenhistaPost.php(399): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 399)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->desenho_novo_nome()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:16:24 --> Undefined global variable $_SESSION
+in APPPATH\Controllers\DesenhistaPost.php on line 399.
+ 1 APPPATH\Controllers\DesenhistaPost.php(399): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 399)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->desenho_novo_nome()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:16:51 --> Undefined array key "id_subistituir"
+in APPPATH\Controllers\DesenhistaPost.php on line 420.
+ 1 APPPATH\Controllers\DesenhistaPost.php(420): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_subistituir"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 420)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:17:34 --> Undefined array key "id_subistituir"
+in APPPATH\Controllers\DesenhistaPost.php on line 418.
+ 1 APPPATH\Controllers\DesenhistaPost.php(418): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_subistituir"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 418)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:17:58 --> Undefined array key "id_subistituir"
+in APPPATH\Controllers\DesenhistaPost.php on line 418.
+ 1 APPPATH\Controllers\DesenhistaPost.php(418): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_subistituir"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 418)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:18:00 --> Undefined array key "id_subistituir"
+in APPPATH\Controllers\DesenhistaPost.php on line 418.
+ 1 APPPATH\Controllers\DesenhistaPost.php(418): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_subistituir"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 418)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:18:01 --> Undefined array key "id_subistituir"
+in APPPATH\Controllers\DesenhistaPost.php on line 418.
+ 1 APPPATH\Controllers\DesenhistaPost.php(418): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_subistituir"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 418)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:18:01 --> Undefined array key "id_subistituir"
+in APPPATH\Controllers\DesenhistaPost.php on line 418.
+ 1 APPPATH\Controllers\DesenhistaPost.php(418): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_subistituir"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 418)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:18:02 --> Undefined array key "id_subistituir"
+in APPPATH\Controllers\DesenhistaPost.php on line 418.
+ 1 APPPATH\Controllers\DesenhistaPost.php(418): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_subistituir"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 418)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:18:02 --> Undefined array key "id_subistituir"
+in APPPATH\Controllers\DesenhistaPost.php on line 418.
+ 1 APPPATH\Controllers\DesenhistaPost.php(418): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_subistituir"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 418)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:18:03 --> Undefined array key "id_subistituir"
+in APPPATH\Controllers\DesenhistaPost.php on line 418.
+ 1 APPPATH\Controllers\DesenhistaPost.php(418): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_subistituir"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 418)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:18:19 --> Undefined array key "id_subistituir"
+in APPPATH\Controllers\DesenhistaPost.php on line 418.
+ 1 APPPATH\Controllers\DesenhistaPost.php(418): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_subistituir"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 418)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:18:48 --> Undefined array key "id_subistituir"
+in APPPATH\Controllers\DesenhistaPost.php on line 418.
+ 1 APPPATH\Controllers\DesenhistaPost.php(418): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_subistituir"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 418)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:20:13 --> Undefined array key "id_subistituir"
+in APPPATH\Controllers\DesenhistaPost.php on line 418.
+ 1 APPPATH\Controllers\DesenhistaPost.php(418): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_subistituir"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 418)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:20:19 --> Undefined array key "id_subistituir"
+in APPPATH\Controllers\DesenhistaPost.php on line 418.
+ 1 APPPATH\Controllers\DesenhistaPost.php(418): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_subistituir"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 418)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:20:21 --> Undefined array key "id_subistituir"
+in APPPATH\Controllers\DesenhistaPost.php on line 418.
+ 1 APPPATH\Controllers\DesenhistaPost.php(418): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_subistituir"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 418)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:20:21 --> Undefined array key "id_subistituir"
+in APPPATH\Controllers\DesenhistaPost.php on line 418.
+ 1 APPPATH\Controllers\DesenhistaPost.php(418): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_subistituir"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 418)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:20:22 --> Undefined array key "id_subistituir"
+in APPPATH\Controllers\DesenhistaPost.php on line 418.
+ 1 APPPATH\Controllers\DesenhistaPost.php(418): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_subistituir"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 418)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:20:22 --> Undefined array key "id_subistituir"
+in APPPATH\Controllers\DesenhistaPost.php on line 418.
+ 1 APPPATH\Controllers\DesenhistaPost.php(418): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_subistituir"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 418)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:20:22 --> Undefined array key "id_subistituir"
+in APPPATH\Controllers\DesenhistaPost.php on line 418.
+ 1 APPPATH\Controllers\DesenhistaPost.php(418): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_subistituir"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 418)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:20:34 --> Undefined array key "id_subistituir"
+in APPPATH\Controllers\DesenhistaPost.php on line 418.
+ 1 APPPATH\Controllers\DesenhistaPost.php(418): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_subistituir"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 418)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:20:36 --> Undefined array key "id_subistituir"
+in APPPATH\Controllers\DesenhistaPost.php on line 418.
+ 1 APPPATH\Controllers\DesenhistaPost.php(418): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_subistituir"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 418)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:21:15 --> Undefined array key "id_subistituir"
+in APPPATH\Controllers\DesenhistaPost.php on line 418.
+ 1 APPPATH\Controllers\DesenhistaPost.php(418): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_subistituir"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 418)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:21:16 --> Undefined array key "id_subistituir"
+in APPPATH\Controllers\DesenhistaPost.php on line 418.
+ 1 APPPATH\Controllers\DesenhistaPost.php(418): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_subistituir"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 418)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:21:23 --> Undefined array key "id_subistituir"
+in APPPATH\Controllers\DesenhistaPost.php on line 418.
+ 1 APPPATH\Controllers\DesenhistaPost.php(418): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_subistituir"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 418)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:21:33 --> Undefined variable $ok
+in APPPATH\Controllers\DesenhistaPost.php on line 414.
+ 1 APPPATH\Controllers\DesenhistaPost.php(414): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $ok', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 414)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:22:18 --> Undefined array key "id_subistituir"
+in APPPATH\Controllers\DesenhistaPost.php on line 418.
+ 1 APPPATH\Controllers\DesenhistaPost.php(418): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_subistituir"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 418)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:22:19 --> Undefined array key "id_subistituir"
+in APPPATH\Controllers\DesenhistaPost.php on line 418.
+ 1 APPPATH\Controllers\DesenhistaPost.php(418): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_subistituir"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 418)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:22:23 --> Undefined array key "id_subistituir"
+in APPPATH\Controllers\DesenhistaPost.php on line 418.
+ 1 APPPATH\Controllers\DesenhistaPost.php(418): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_subistituir"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 418)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:22:23 --> Undefined array key "id_subistituir"
+in APPPATH\Controllers\DesenhistaPost.php on line 418.
+ 1 APPPATH\Controllers\DesenhistaPost.php(418): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_subistituir"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 418)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:22:29 --> Undefined array key "id_subistituir"
+in APPPATH\Controllers\DesenhistaPost.php on line 418.
+ 1 APPPATH\Controllers\DesenhistaPost.php(418): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_subistituir"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 418)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:22:34 --> Undefined array key "id_subistituir"
+in APPPATH\Controllers\DesenhistaPost.php on line 418.
+ 1 APPPATH\Controllers\DesenhistaPost.php(418): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_subistituir"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 418)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:22:57 --> Undefined array key "lista_completa"
+in APPPATH\Controllers\DesenhistaPost.php on line 389.
+ 1 APPPATH\Controllers\DesenhistaPost.php(389): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "lista_completa"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 389)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho_modal()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:22:58 --> Undefined array key "lista_completa"
+in APPPATH\Controllers\DesenhistaPost.php on line 389.
+ 1 APPPATH\Controllers\DesenhistaPost.php(389): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "lista_completa"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 389)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho_modal()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:22:59 --> Undefined array key "lista_completa"
+in APPPATH\Controllers\DesenhistaPost.php on line 389.
+ 1 APPPATH\Controllers\DesenhistaPost.php(389): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "lista_completa"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 389)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho_modal()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:24:12 --> Undefined array key "novo_nome_arquivo"
+in APPPATH\Controllers\DesenhistaPost.php on line 417.
+ 1 APPPATH\Controllers\DesenhistaPost.php(417): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "novo_nome_arquivo"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 417)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:24:38 --> Undefined array key "novo_nome_arquivo"
+in APPPATH\Controllers\DesenhistaPost.php on line 417.
+ 1 APPPATH\Controllers\DesenhistaPost.php(417): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "novo_nome_arquivo"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 417)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:24:45 --> Undefined array key "novo_nome_arquivo"
+in APPPATH\Controllers\DesenhistaPost.php on line 417.
+ 1 APPPATH\Controllers\DesenhistaPost.php(417): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "novo_nome_arquivo"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 417)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:32:37 --> Undefined array key "novo_nome_arquivo"
+in APPPATH\Controllers\DesenhistaPost.php on line 417.
+ 1 APPPATH\Controllers\DesenhistaPost.php(417): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "novo_nome_arquivo"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 417)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:32:48 --> Undefined array key "novo_nome_arquivo"
+in APPPATH\Controllers\DesenhistaPost.php on line 417.
+ 1 APPPATH\Controllers\DesenhistaPost.php(417): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "novo_nome_arquivo"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 417)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:35:17 --> Undefined array key "novo_nome_arquivo"
+in APPPATH\Controllers\DesenhistaPost.php on line 428.
+ 1 APPPATH\Controllers\DesenhistaPost.php(428): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "novo_nome_arquivo"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 428)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 01:35:56 --> Undefined array key "novo_nome_arquivo"
+in APPPATH\Controllers\DesenhistaPost.php on line 428.
+ 1 APPPATH\Controllers\DesenhistaPost.php(428): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "novo_nome_arquivo"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 428)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 02:58:50 --> Undefined array key "novo_nome_arquivo"
+in APPPATH\Controllers\DesenhistaPost.php on line 428.
+ 1 APPPATH\Controllers\DesenhistaPost.php(428): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "novo_nome_arquivo"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 428)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 18:05:13 --> Undefined array key "novo_nome_arquivo"
+in APPPATH\Controllers\DesenhistaPost.php on line 428.
+ 1 APPPATH\Controllers\DesenhistaPost.php(428): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "novo_nome_arquivo"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 428)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 18:05:26 --> Undefined array key "novo_nome_arquivo"
+in APPPATH\Controllers\DesenhistaPost.php on line 428.
+ 1 APPPATH\Controllers\DesenhistaPost.php(428): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "novo_nome_arquivo"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 428)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 18:05:56 --> Undefined array key "novo_nome_arquivo"
+in APPPATH\Controllers\DesenhistaPost.php on line 428.
+ 1 APPPATH\Controllers\DesenhistaPost.php(428): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "novo_nome_arquivo"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 428)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->subistituir_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 19:26:12 --> rename(c:/wl/wl_desenhos/PASQUALOTTO/LUMEN/ACABAMENTO//2/,C:/wl/lixo/wl/wl_desenhos/PASQUALOTTO/LUMEN/ACABAMENTO2teste2 v2_19_09_2023_19_26_11_70.dxf): O sistema não pode encontrar o arquivo especificado (code: 2)
+in APPPATH\Controllers\DesenhistaPost.php on line 360.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'rename(c:/wl/wl_desenhos/PASQUALOTTO/LUMEN/ACABAMENTO//2/,C:/wl/lixo/wl/wl_desenhos/PASQUALOTTO/LUMEN/ACABAMENTO2teste2 v2_19_09_2023_19_26_11_70.dxf): O sistema não pode encontrar o arquivo especificado (code: 2)', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 360)
+ 2 APPPATH\Controllers\DesenhistaPost.php(360): rename('c:/wl/wl_desenhos/PASQUALOTTO/LUMEN/ACABAMENTO//2/', 'C:/wl/lixo/wl/wl_desenhos/PASQUALOTTO/LUMEN/ACABAMENTO2teste2 v2_19_09_2023_19_26_11_70.dxf')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->apagar_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 19:26:14 --> rename(c:/wl/wl_desenhos/PASQUALOTTO/LUMEN/ACABAMENTO//2/,C:/wl/lixo/wl/wl_desenhos/PASQUALOTTO/LUMEN/ACABAMENTO2teste2 v2_19_09_2023_19_26_14_58.dxf): O sistema não pode encontrar o arquivo especificado (code: 2)
+in APPPATH\Controllers\DesenhistaPost.php on line 360.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'rename(c:/wl/wl_desenhos/PASQUALOTTO/LUMEN/ACABAMENTO//2/,C:/wl/lixo/wl/wl_desenhos/PASQUALOTTO/LUMEN/ACABAMENTO2teste2 v2_19_09_2023_19_26_14_58.dxf): O sistema não pode encontrar o arquivo especificado (code: 2)', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 360)
+ 2 APPPATH\Controllers\DesenhistaPost.php(360): rename('c:/wl/wl_desenhos/PASQUALOTTO/LUMEN/ACABAMENTO//2/', 'C:/wl/lixo/wl/wl_desenhos/PASQUALOTTO/LUMEN/ACABAMENTO2teste2 v2_19_09_2023_19_26_14_58.dxf')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->apagar_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 19:26:14 --> rename(c:/wl/wl_desenhos/PASQUALOTTO/LUMEN/ACABAMENTO//2/,C:/wl/lixo/wl/wl_desenhos/PASQUALOTTO/LUMEN/ACABAMENTO2teste2 v2_19_09_2023_19_26_14_39.dxf): O sistema não pode encontrar o arquivo especificado (code: 2)
+in APPPATH\Controllers\DesenhistaPost.php on line 360.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'rename(c:/wl/wl_desenhos/PASQUALOTTO/LUMEN/ACABAMENTO//2/,C:/wl/lixo/wl/wl_desenhos/PASQUALOTTO/LUMEN/ACABAMENTO2teste2 v2_19_09_2023_19_26_14_39.dxf): O sistema não pode encontrar o arquivo especificado (code: 2)', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 360)
+ 2 APPPATH\Controllers\DesenhistaPost.php(360): rename('c:/wl/wl_desenhos/PASQUALOTTO/LUMEN/ACABAMENTO//2/', 'C:/wl/lixo/wl/wl_desenhos/PASQUALOTTO/LUMEN/ACABAMENTO2teste2 v2_19_09_2023_19_26_14_39.dxf')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->apagar_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 19:26:14 --> rename(c:/wl/wl_desenhos/PASQUALOTTO/LUMEN/ACABAMENTO//2/,C:/wl/lixo/wl/wl_desenhos/PASQUALOTTO/LUMEN/ACABAMENTO2teste2 v2_19_09_2023_19_26_14_49.dxf): O sistema não pode encontrar o arquivo especificado (code: 2)
+in APPPATH\Controllers\DesenhistaPost.php on line 360.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'rename(c:/wl/wl_desenhos/PASQUALOTTO/LUMEN/ACABAMENTO//2/,C:/wl/lixo/wl/wl_desenhos/PASQUALOTTO/LUMEN/ACABAMENTO2teste2 v2_19_09_2023_19_26_14_49.dxf): O sistema não pode encontrar o arquivo especificado (code: 2)', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 360)
+ 2 APPPATH\Controllers\DesenhistaPost.php(360): rename('c:/wl/wl_desenhos/PASQUALOTTO/LUMEN/ACABAMENTO//2/', 'C:/wl/lixo/wl/wl_desenhos/PASQUALOTTO/LUMEN/ACABAMENTO2teste2 v2_19_09_2023_19_26_14_49.dxf')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->apagar_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 19:26:30 --> rename(c:/wl/wl_desenhos/PASQUALOTTO/LUMEN/ACABAMENTO//2/,C:/wl/lixo/wl/wl_desenhos/PASQUALOTTO/LUMEN/ACABAMENTO2teste1 v2_19_09_2023_19_26_30_53.dxf): O sistema não pode encontrar o arquivo especificado (code: 2)
+in APPPATH\Controllers\DesenhistaPost.php on line 360.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'rename(c:/wl/wl_desenhos/PASQUALOTTO/LUMEN/ACABAMENTO//2/,C:/wl/lixo/wl/wl_desenhos/PASQUALOTTO/LUMEN/ACABAMENTO2teste1 v2_19_09_2023_19_26_30_53.dxf): O sistema não pode encontrar o arquivo especificado (code: 2)', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 360)
+ 2 APPPATH\Controllers\DesenhistaPost.php(360): rename('c:/wl/wl_desenhos/PASQUALOTTO/LUMEN/ACABAMENTO//2/', 'C:/wl/lixo/wl/wl_desenhos/PASQUALOTTO/LUMEN/ACABAMENTO2teste1 v2_19_09_2023_19_26_30_53.dxf')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->apagar_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 19:53:30 --> Undefined array key "id"
+in APPPATH\Controllers\DesenhistaPost.php on line 341.
+ 1 APPPATH\Controllers\DesenhistaPost.php(341): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 341)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->apagar_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

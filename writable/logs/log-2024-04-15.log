@@ -1,0 +1,44 @@
+CRITICAL - 2024-04-15 13:04:20 --> Undefined array key "usuario"
+in APPPATH\Controllers\CortadorPost.php on line 455.
+ 1 APPPATH\Controllers\CortadorPost.php(455): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\CortadorPost.php', 455)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\CortadorPost->confirmar_corte()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CortadorPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-15 13:52:52 --> Undefined array key "usuario"
+in APPPATH\Controllers\DesenhistaPost.php on line 42.
+ 1 APPPATH\Controllers\DesenhistaPost.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 42)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->criar_temp()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-15 13:52:54 --> Undefined array key "usuario"
+in APPPATH\Controllers\DesenhistaPost.php on line 42.
+ 1 APPPATH\Controllers\DesenhistaPost.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 42)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->criar_temp()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-15 16:11:39 --> rename(C:/wl/temp/53032/01 TESTE FAIXA DE PEDESTRE_mdf 3mm com fundo gravação mais grossa na cor azul.dxf,c:/wl/wl_desenhos/PETRASALIS/LOTi062nURBi062nTIJUCAS/ACABAMENTO/Teste/01 TESTE FAIXA DE PEDESTRE_mdf 3mm com fundo gravação mais grossa na cor azul_700_.dxf): O sistema não pode encontrar o arquivo especificado (code: 2)
+in APPPATH\Controllers\DesenhistaPost.php on line 344.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'rename(C:/wl/temp/53032/01 TESTE FAIXA DE PEDESTRE_mdf 3mm com fundo gravação mais grossa na cor azul.dxf,c:/wl/wl_desenhos/PETRASALIS/LOTi062nURBi062nTIJUCAS/ACABAMENTO/Teste/01 TESTE FAIXA DE PEDESTRE_mdf 3mm com fundo gravação mais grossa na cor azul_700_.dxf): O sistema não pode encontrar o arquivo especificado (code: 2)', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhistaPost.php', 344)
+ 2 APPPATH\Controllers\DesenhistaPost.php(344): rename('C:/wl/temp/53032/01 TESTE FAIXA DE PEDESTRE_mdf 3mm com fundo gravação mais grossa na cor azul.dxf', 'c:/wl/wl_desenhos/PETRASALIS/LOTi062nURBi062nTIJUCAS/ACABAMENTO/Teste/01 TESTE FAIXA DE PEDESTRE_mdf 3mm com fundo gravação mais grossa na cor azul_700_.dxf')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhistaPost->desenhos_add()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhistaPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-15 16:12:59 --> Maximum execution time of 120 seconds exceeded
+in APPPATH\Controllers\Ferramentas.php on line 505.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-04-15 16:13:02 --> Maximum execution time of 120 seconds exceeded
+in APPPATH\Controllers\Ferramentas.php on line 505.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-04-15 16:13:13 --> Maximum execution time of 120 seconds exceeded
+in APPPATH\Controllers\Ferramentas.php on line 500.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-04-15 16:13:24 --> Maximum execution time of 120 seconds exceeded
+in APPPATH\Controllers\Ferramentas.php on line 499.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-04-15 16:13:24 --> Maximum execution time of 120 seconds exceeded
+in SYSTEMPATH\Autoloader\Autoloader.php on line 289.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()

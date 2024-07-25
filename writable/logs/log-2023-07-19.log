@@ -1,0 +1,1713 @@
+CRITICAL - 2023-07-19 13:23:35 --> Namespace declaration statement has to be the very first statement or after any declare call in the script
+in APPPATH\Controllers\AdmPost.php on line 4.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-07-19 13:23:36 --> Namespace declaration statement has to be the very first statement or after any declare call in the script
+in APPPATH\Controllers\AdmPost.php on line 4.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-07-19 13:23:37 --> Namespace declaration statement has to be the very first statement or after any declare call in the script
+in APPPATH\Controllers\AdmPost.php on line 4.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-07-19 13:23:38 --> Namespace declaration statement has to be the very first statement or after any declare call in the script
+in APPPATH\Controllers\AdmPost.php on line 4.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-07-19 13:23:39 --> Namespace declaration statement has to be the very first statement or after any declare call in the script
+in APPPATH\Controllers\AdmPost.php on line 4.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-07-19 13:23:40 --> Namespace declaration statement has to be the very first statement or after any declare call in the script
+in APPPATH\Controllers\AdmPost.php on line 4.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-07-19 13:23:41 --> Namespace declaration statement has to be the very first statement or after any declare call in the script
+in APPPATH\Controllers\AdmPost.php on line 4.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-07-19 13:23:42 --> Namespace declaration statement has to be the very first statement or after any declare call in the script
+in APPPATH\Controllers\AdmPost.php on line 4.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-07-19 13:23:43 --> Namespace declaration statement has to be the very first statement or after any declare call in the script
+in APPPATH\Controllers\AdmPost.php on line 4.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-07-19 13:23:44 --> Namespace declaration statement has to be the very first statement or after any declare call in the script
+in APPPATH\Controllers\AdmPost.php on line 4.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-07-19 13:23:45 --> Namespace declaration statement has to be the very first statement or after any declare call in the script
+in APPPATH\Controllers\AdmPost.php on line 4.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-07-19 13:23:46 --> Namespace declaration statement has to be the very first statement or after any declare call in the script
+in APPPATH\Controllers\AdmPost.php on line 4.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-07-19 13:23:47 --> Namespace declaration statement has to be the very first statement or after any declare call in the script
+in APPPATH\Controllers\AdmPost.php on line 4.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-07-19 13:23:48 --> Namespace declaration statement has to be the very first statement or after any declare call in the script
+in APPPATH\Controllers\AdmPost.php on line 4.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-07-19 13:23:49 --> Namespace declaration statement has to be the very first statement or after any declare call in the script
+in APPPATH\Controllers\AdmPost.php on line 4.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-07-19 13:23:50 --> Namespace declaration statement has to be the very first statement or after any declare call in the script
+in APPPATH\Controllers\AdmPost.php on line 4.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-07-19 13:23:51 --> Namespace declaration statement has to be the very first statement or after any declare call in the script
+in APPPATH\Controllers\AdmPost.php on line 4.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-07-19 13:23:52 --> Namespace declaration statement has to be the very first statement or after any declare call in the script
+in APPPATH\Controllers\AdmPost.php on line 4.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-07-19 13:44:30 --> Undefined variable $lista_ids
+in APPPATH\Controllers\AdmPost.php on line 415.
+ 1 APPPATH\Controllers\AdmPost.php(415): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $lista_ids', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 415)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 13:45:30 --> syntax error, unexpected token "}"
+in APPPATH\Controllers\AdmPost.php on line 414.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 13:47:30 --> syntax error, unexpected token ";"
+in APPPATH\Controllers\AdmPost.php on line 413.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:25:51 --> syntax error, unexpected identifier "request"
+in APPPATH\Controllers\AdmPost.php on line 386.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:27:16 --> App\Controllers\Ferramentas::array_index(): Argument #2 ($index) must be of type array, string given, called in C:\xampp\htdocs\codi\app\Controllers\AdmPost.php on line 450
+in APPPATH\Controllers\Ferramentas.php on line 43.
+ 1 APPPATH\Controllers\AdmPost.php(450): App\Controllers\Ferramentas::array_index([...], '1')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar_ativar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:28:30 --> App\Controllers\Ferramentas::array_index(): Argument #2 ($index) must be of type array, string given, called in C:\xampp\htdocs\codi\app\Controllers\AdmPost.php on line 450
+in APPPATH\Controllers\Ferramentas.php on line 43.
+ 1 APPPATH\Controllers\AdmPost.php(450): App\Controllers\Ferramentas::array_index([...], '1')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar_ativar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:29:35 --> App\Controllers\Ferramentas::array_index(): Argument #2 ($index) must be of type array, string given, called in C:\xampp\htdocs\codi\app\Controllers\AdmPost.php on line 437
+in APPPATH\Controllers\Ferramentas.php on line 43.
+ 1 APPPATH\Controllers\AdmPost.php(437): App\Controllers\Ferramentas::array_index([...], '1')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar_desativar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:30:13 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 1680.
+ 1 SYSTEMPATH\BaseModel.php(1680): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\BaseModel.php(910): CodeIgniter\BaseModel->transformDataToArray(null, 'update')
+ 3 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], null)
+ 4 APPPATH\Controllers\AdmPost.php(452): CodeIgniter\Model->update([...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar_ativar()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:30:17 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 1680.
+ 1 SYSTEMPATH\BaseModel.php(1680): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\BaseModel.php(910): CodeIgniter\BaseModel->transformDataToArray(null, 'update')
+ 3 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], null)
+ 4 APPPATH\Controllers\AdmPost.php(452): CodeIgniter\Model->update([...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar_ativar()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:30:33 --> syntax error, unexpected token ";"
+in APPPATH\Controllers\AdmPost.php on line 435.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:30:34 --> syntax error, unexpected token ";"
+in APPPATH\Controllers\AdmPost.php on line 435.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:30:43 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 1680.
+ 1 SYSTEMPATH\BaseModel.php(1680): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\BaseModel.php(910): CodeIgniter\BaseModel->transformDataToArray(null, 'update')
+ 3 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], null)
+ 4 APPPATH\Controllers\AdmPost.php(452): CodeIgniter\Model->update([...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar_ativar()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:30:51 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 1680.
+ 1 SYSTEMPATH\BaseModel.php(1680): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\BaseModel.php(910): CodeIgniter\BaseModel->transformDataToArray(null, 'update')
+ 3 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], null)
+ 4 APPPATH\Controllers\AdmPost.php(439): CodeIgniter\Model->update([...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar_desativar()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:36:40 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 1680.
+ 1 SYSTEMPATH\BaseModel.php(1680): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\BaseModel.php(910): CodeIgniter\BaseModel->transformDataToArray(null, 'update')
+ 3 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], null)
+ 4 APPPATH\Controllers\AdmPost.php(439): CodeIgniter\Model->update([...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar_desativar()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:37:09 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 1680.
+ 1 SYSTEMPATH\BaseModel.php(1680): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\BaseModel.php(910): CodeIgniter\BaseModel->transformDataToArray(null, 'update')
+ 3 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], null)
+ 4 APPPATH\Controllers\AdmPost.php(435): CodeIgniter\Model->update([...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar_desativar()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:37:42 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 1680.
+ 1 SYSTEMPATH\BaseModel.php(1680): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\BaseModel.php(910): CodeIgniter\BaseModel->transformDataToArray(null, 'update')
+ 3 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], null)
+ 4 APPPATH\Controllers\AdmPost.php(435): CodeIgniter\Model->update([...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar_desativar()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:44:59 --> Unmatched '}'
+in APPPATH\Controllers\AdmPost.php on line 462.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:49:04 --> syntax error, unexpected token "=", expecting "]"
+in APPPATH\Controllers\AdmPost.php on line 463.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:49:06 --> syntax error, unexpected token "=", expecting "]"
+in APPPATH\Controllers\AdmPost.php on line 463.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:49:08 --> syntax error, unexpected token "=", expecting "]"
+in APPPATH\Controllers\AdmPost.php on line 463.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:49:10 --> syntax error, unexpected token "=", expecting "]"
+in APPPATH\Controllers\AdmPost.php on line 463.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:49:12 --> syntax error, unexpected token "=", expecting "]"
+in APPPATH\Controllers\AdmPost.php on line 463.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:49:14 --> syntax error, unexpected token "=", expecting "]"
+in APPPATH\Controllers\AdmPost.php on line 463.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:49:16 --> Unclosed '(' on line 463 does not match ']'
+in APPPATH\Controllers\AdmPost.php on line 464.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:50:29 --> syntax error, unexpected identifier "Ferramentas", expecting ")"
+in APPPATH\Controllers\AdmPost.php on line 460.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:51:29 --> syntax error, unexpected identifier "Ferramentas", expecting ")"
+in APPPATH\Controllers\AdmPost.php on line 460.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:51:31 --> syntax error, unexpected token ";", expecting ")"
+in APPPATH\Controllers\AdmPost.php on line 460.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:51:33 --> syntax error, unexpected token ";", expecting ")"
+in APPPATH\Controllers\AdmPost.php on line 460.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:51:35 --> syntax error, unexpected token ";", expecting ")"
+in APPPATH\Controllers\AdmPost.php on line 460.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:51:37 --> syntax error, unexpected token ";", expecting ")"
+in APPPATH\Controllers\AdmPost.php on line 460.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:53:20 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:53:21 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:53:22 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:53:23 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:53:24 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:53:25 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:53:26 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:53:27 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:53:28 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:53:29 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:53:30 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:53:31 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:53:32 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:53:33 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:53:34 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:53:36 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:53:36 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:53:37 --> syntax error, unexpected identifier "Ferramentas", expecting ")"
+in APPPATH\Controllers\AdmPost.php on line 460.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:53:38 --> syntax error, unexpected identifier "Ferramentas", expecting ")"
+in APPPATH\Controllers\AdmPost.php on line 460.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:53:39 --> syntax error, unexpected identifier "Ferramentas", expecting ")"
+in APPPATH\Controllers\AdmPost.php on line 460.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:53:40 --> syntax error, unexpected identifier "Ferramentas", expecting ")"
+in APPPATH\Controllers\AdmPost.php on line 460.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:53:41 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:53:42 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:53:43 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:53:44 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:53:45 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:53:46 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:53:47 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:53:48 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:53:49 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:53:50 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:53:51 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:53:54 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:53:55 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:53:56 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:53:57 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:53:58 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:53:59 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:00 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:01 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:02 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:03 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:04 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:06 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:06 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:07 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:08 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:09 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:10 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:11 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:12 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:13 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:14 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:15 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:16 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:17 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:18 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:19 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:20 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:21 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:22 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:23 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:24 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:25 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:26 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:27 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:28 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:29 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:30 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:31 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:32 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:33 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:34 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:35 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:36 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:37 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:38 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:39 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:40 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:41 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:42 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:43 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:44 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:45 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:46 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:47 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:48 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:50 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:50 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:51 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:52 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:53 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:54 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:55 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:56 --> Unclosed '{' on line 8
+in APPPATH\Controllers\AdmPost.php on line 478.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:57 --> Unclosed '{' on line 8
+in APPPATH\Controllers\AdmPost.php on line 478.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:54:58 --> Unclosed '{' on line 8
+in APPPATH\Controllers\AdmPost.php on line 478.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:55:00 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:55:00 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:55:01 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:55:02 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:55:03 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:55:05 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:55:05 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:55:06 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:55:07 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:55:08 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:55:09 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:55:10 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:55:11 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:55:12 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:55:13 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:55:13 --> Undefined array key "empresa_id"
+in APPPATH\Controllers\AdmPost.php on line 407.
+ 1 APPPATH\Controllers\AdmPost.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "empresa_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 14:59:29 --> Cannot redeclare App\Controllers\AdmPost::user_modificar_desativar()
+in APPPATH\Controllers\AdmPost.php on line 475.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-07-19 15:07:29 --> Cannot redeclare App\Controllers\AdmPost::config_empreendimento_desativar()
+in APPPATH\Controllers\AdmPost.php on line 411.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-07-19 16:51:50 --> Unclosed '{' on line 8
+in APPPATH\Controllers\AdmPost.php on line 567.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 16:51:50 --> Unclosed '{' on line 8
+in APPPATH\Controllers\AdmPost.php on line 567.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 16:51:51 --> Unclosed '{' on line 8
+in APPPATH\Controllers\AdmPost.php on line 567.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 16:51:52 --> Unclosed '{' on line 8
+in APPPATH\Controllers\AdmPost.php on line 567.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 16:51:53 --> Unclosed '{' on line 8
+in APPPATH\Controllers\AdmPost.php on line 567.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 16:51:54 --> Unclosed '{' on line 8
+in APPPATH\Controllers\AdmPost.php on line 567.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 16:51:55 --> Unclosed '{' on line 8
+in APPPATH\Controllers\AdmPost.php on line 567.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 16:51:56 --> Unclosed '{' on line 8
+in APPPATH\Controllers\AdmPost.php on line 567.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 16:51:57 --> Unclosed '{' on line 8
+in APPPATH\Controllers\AdmPost.php on line 567.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 16:52:05 --> syntax error, unexpected token ")"
+in APPPATH\Controllers\AdmPost.php on line 413.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 16:52:06 --> syntax error, unexpected token ")"
+in APPPATH\Controllers\AdmPost.php on line 413.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 16:52:07 --> syntax error, unexpected token ")"
+in APPPATH\Controllers\AdmPost.php on line 413.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 16:52:08 --> syntax error, unexpected token ")"
+in APPPATH\Controllers\AdmPost.php on line 413.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 16:52:09 --> syntax error, unexpected token ")"
+in APPPATH\Controllers\AdmPost.php on line 413.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 16:52:10 --> syntax error, unexpected token ")"
+in APPPATH\Controllers\AdmPost.php on line 413.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 16:52:14 --> syntax error, unexpected token ")"
+in APPPATH\Controllers\AdmPost.php on line 413.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 16:52:15 --> syntax error, unexpected token ")"
+in APPPATH\Controllers\AdmPost.php on line 413.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 16:52:16 --> syntax error, unexpected token ")"
+in APPPATH\Controllers\AdmPost.php on line 413.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 16:52:17 --> syntax error, unexpected token ")"
+in APPPATH\Controllers\AdmPost.php on line 413.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 16:52:18 --> syntax error, unexpected token ")"
+in APPPATH\Controllers\AdmPost.php on line 413.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 16:55:53 --> Cannot redeclare App\Controllers\AdmPost::config_empreendimento_status()
+in APPPATH\Controllers\AdmPost.php on line 498.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-07-19 16:55:54 --> Cannot redeclare App\Controllers\AdmPost::config_empreendimento_status()
+in APPPATH\Controllers\AdmPost.php on line 498.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-07-19 16:55:55 --> Cannot redeclare App\Controllers\AdmPost::config_empreendimento_status()
+in APPPATH\Controllers\AdmPost.php on line 498.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-07-19 16:55:56 --> Cannot redeclare App\Controllers\AdmPost::config_empreendimento_status()
+in APPPATH\Controllers\AdmPost.php on line 498.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-07-19 16:55:57 --> Cannot redeclare App\Controllers\AdmPost::config_empreendimento_status()
+in APPPATH\Controllers\AdmPost.php on line 498.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-07-19 16:55:58 --> Cannot redeclare App\Controllers\AdmPost::config_empreendimento_status()
+in APPPATH\Controllers\AdmPost.php on line 498.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-07-19 17:26:18 --> Undefined variable $lista_ids
+in APPPATH\Controllers\AdmPost.php on line 296.
+ 1 APPPATH\Controllers\AdmPost.php(296): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $lista_ids', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 296)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->config_empresa_cliente()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:26:18 --> Undefined variable $lista_ids
+in APPPATH\Controllers\AdmPost.php on line 296.
+ 1 APPPATH\Controllers\AdmPost.php(296): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $lista_ids', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 296)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->config_empresa_cliente()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:26:19 --> Undefined variable $lista_ids
+in APPPATH\Controllers\AdmPost.php on line 296.
+ 1 APPPATH\Controllers\AdmPost.php(296): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $lista_ids', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 296)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->config_empresa_cliente()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:26:20 --> Undefined variable $lista_ids
+in APPPATH\Controllers\AdmPost.php on line 296.
+ 1 APPPATH\Controllers\AdmPost.php(296): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $lista_ids', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 296)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->config_empresa_cliente()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:26:21 --> Undefined variable $lista_ids
+in APPPATH\Controllers\AdmPost.php on line 296.
+ 1 APPPATH\Controllers\AdmPost.php(296): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $lista_ids', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 296)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->config_empresa_cliente()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:26:22 --> Undefined variable $lista_ids
+in APPPATH\Controllers\AdmPost.php on line 296.
+ 1 APPPATH\Controllers\AdmPost.php(296): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $lista_ids', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 296)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->config_empresa_cliente()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:26:23 --> Undefined variable $lista_ids
+in APPPATH\Controllers\AdmPost.php on line 299.
+ 1 APPPATH\Controllers\AdmPost.php(299): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $lista_ids', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 299)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->config_empresa_cliente()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:26:24 --> Undefined variable $lista_ids
+in APPPATH\Controllers\AdmPost.php on line 299.
+ 1 APPPATH\Controllers\AdmPost.php(299): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $lista_ids', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 299)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->config_empresa_cliente()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:26:25 --> Undefined variable $lista_ids
+in APPPATH\Controllers\AdmPost.php on line 299.
+ 1 APPPATH\Controllers\AdmPost.php(299): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $lista_ids', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 299)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->config_empresa_cliente()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:26:26 --> Undefined variable $lista_ids
+in APPPATH\Controllers\AdmPost.php on line 299.
+ 1 APPPATH\Controllers\AdmPost.php(299): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $lista_ids', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 299)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->config_empresa_cliente()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:26:27 --> Undefined variable $lista_ids
+in APPPATH\Controllers\AdmPost.php on line 299.
+ 1 APPPATH\Controllers\AdmPost.php(299): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $lista_ids', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 299)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->config_empresa_cliente()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:26:28 --> Undefined variable $lista_ids
+in APPPATH\Controllers\AdmPost.php on line 299.
+ 1 APPPATH\Controllers\AdmPost.php(299): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $lista_ids', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 299)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->config_empresa_cliente()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:26:29 --> Undefined variable $lista_ids
+in APPPATH\Controllers\AdmPost.php on line 299.
+ 1 APPPATH\Controllers\AdmPost.php(299): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $lista_ids', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 299)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->config_empresa_cliente()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:26:31 --> Undefined variable $id_temp
+in APPPATH\Controllers\AdmPost.php on line 297.
+ 1 APPPATH\Controllers\AdmPost.php(297): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id_temp', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 297)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->config_empresa_cliente()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:26:31 --> Undefined variable $id_temp
+in APPPATH\Controllers\AdmPost.php on line 297.
+ 1 APPPATH\Controllers\AdmPost.php(297): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id_temp', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 297)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->config_empresa_cliente()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:26:32 --> Undefined variable $id_temp
+in APPPATH\Controllers\AdmPost.php on line 297.
+ 1 APPPATH\Controllers\AdmPost.php(297): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id_temp', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 297)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->config_empresa_cliente()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:26:33 --> Undefined variable $id_temp
+in APPPATH\Controllers\AdmPost.php on line 297.
+ 1 APPPATH\Controllers\AdmPost.php(297): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id_temp', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 297)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->config_empresa_cliente()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:26:34 --> Undefined variable $id_temp
+in APPPATH\Controllers\AdmPost.php on line 297.
+ 1 APPPATH\Controllers\AdmPost.php(297): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id_temp', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 297)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->config_empresa_cliente()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:26:35 --> Undefined variable $id_temp
+in APPPATH\Controllers\AdmPost.php on line 297.
+ 1 APPPATH\Controllers\AdmPost.php(297): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id_temp', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 297)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->config_empresa_cliente()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:26:36 --> Undefined variable $id_temp
+in APPPATH\Controllers\AdmPost.php on line 297.
+ 1 APPPATH\Controllers\AdmPost.php(297): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id_temp', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 297)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->config_empresa_cliente()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:26:37 --> Undefined variable $id_temp
+in APPPATH\Controllers\AdmPost.php on line 297.
+ 1 APPPATH\Controllers\AdmPost.php(297): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id_temp', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php', 297)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdmPost->config_empresa_cliente()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:51:21 --> syntax error, unexpected token "}"
+in APPPATH\Controllers\AdmPost.php on line 13.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:51:21 --> syntax error, unexpected token "}"
+in APPPATH\Controllers\AdmPost.php on line 13.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:51:22 --> syntax error, unexpected token "}", expecting identifier or variable or "{" or "$"
+in APPPATH\Controllers\AdmPost.php on line 13.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:51:23 --> syntax error, unexpected token "}", expecting identifier or variable or "{" or "$"
+in APPPATH\Controllers\AdmPost.php on line 13.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:51:24 --> syntax error, unexpected token "}", expecting identifier or variable or "{" or "$"
+in APPPATH\Controllers\AdmPost.php on line 13.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:51:25 --> syntax error, unexpected token "}", expecting identifier or variable or "{" or "$"
+in APPPATH\Controllers\AdmPost.php on line 13.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:51:26 --> syntax error, unexpected token "}"
+in APPPATH\Controllers\AdmPost.php on line 13.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:51:27 --> syntax error, unexpected token "}"
+in APPPATH\Controllers\AdmPost.php on line 13.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:51:28 --> syntax error, unexpected token "}"
+in APPPATH\Controllers\AdmPost.php on line 13.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:51:29 --> syntax error, unexpected token "}"
+in APPPATH\Controllers\AdmPost.php on line 13.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:51:30 --> syntax error, unexpected token "}"
+in APPPATH\Controllers\AdmPost.php on line 13.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:51:31 --> syntax error, unexpected token "}"
+in APPPATH\Controllers\AdmPost.php on line 13.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:51:32 --> syntax error, unexpected token "}"
+in APPPATH\Controllers\AdmPost.php on line 13.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:51:33 --> syntax error, unexpected token "}"
+in APPPATH\Controllers\AdmPost.php on line 13.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:51:34 --> syntax error, unexpected token "}"
+in APPPATH\Controllers\AdmPost.php on line 13.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:51:35 --> syntax error, unexpected token "}"
+in APPPATH\Controllers\AdmPost.php on line 13.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:51:36 --> syntax error, unexpected token "}"
+in APPPATH\Controllers\AdmPost.php on line 13.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:51:37 --> syntax error, unexpected token "}"
+in APPPATH\Controllers\AdmPost.php on line 13.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:51:38 --> syntax error, unexpected token "}"
+in APPPATH\Controllers\AdmPost.php on line 13.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:51:39 --> syntax error, unexpected token "}"
+in APPPATH\Controllers\AdmPost.php on line 13.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:51:40 --> syntax error, unexpected token "}"
+in APPPATH\Controllers\AdmPost.php on line 13.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:51:41 --> syntax error, unexpected token "}"
+in APPPATH\Controllers\AdmPost.php on line 13.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:51:42 --> syntax error, unexpected token "}"
+in APPPATH\Controllers\AdmPost.php on line 13.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:51:43 --> syntax error, unexpected token "}"
+in APPPATH\Controllers\AdmPost.php on line 13.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:51:44 --> syntax error, unexpected token "}"
+in APPPATH\Controllers\AdmPost.php on line 13.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-19 17:51:45 --> syntax error, unexpected token "}"
+in APPPATH\Controllers\AdmPost.php on line 13.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\AdmPost.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AdmPost')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AdmPost')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\AdmPost', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
