@@ -89,454 +89,454 @@
 
 
 
-  // lista_temp1 = "";
-  // function value_prioridade(efeturar = false) {
-  //   $.ajax({
-  //     url: '<?= base_url('public/adm/config_prioridade_lista') ?>',
-  //     type: "POST",
-  //     dataType: "json", // Indicar que o retorno é em formato JSON
-  //     success: function (response) {
-  //       if (document.getElementById("prioridade_novo") != null && (response != lista_temp1 || efeturar)) {
-  //         // Obter referência ao elemento select
-  //         var funcao = document.getElementById("prioridade_novo");
-  //         // Armazenar o valor da opção selecionada antes de limpar o select
-  //         var valorSelecionadoAntes = funcao.value;
-
-  //         // Limpar o select
-  //         funcao.innerHTML = '';
-
-  //         // Criar um novo elemento option
-  //         var novoOption = document.createElement("option");
-
-  //         // Definir o valor e texto do novo elemento option
-  //         novoOption.value = '';
-  //         novoOption.textContent = 'Prioridade';
-
-  //         // Adicionar o novo elemento option ao select
-  //         funcao.appendChild(novoOption);
-
-  //         response.lista.forEach(element => {
-
-
-
-  //           // Criar um novo elemento option
-  //           var novoOption = document.createElement("option");
-
-  //           // Definir o valor e texto do novo elemento option
-  //           novoOption.value = element.prioridade;
-  //           novoOption.textContent = element.prioridade;
-  //           novoOption.style.backgroundColor = element.cor;
-  //           novoOption.style.color = inverterCor(element.cor);
-  //           funcao.appendChild(novoOption);
-  //         });
-  //         var opcoes = funcao.options;
-  //         for (var i = 0; i < opcoes.length; i++) {
-  //           if (opcoes[i].value === valorSelecionadoAntes) {
-  //             opcoes[i].selected = true;
-  //             break;
-  //           }
-  //         }
-
-
-  //         lista_temp1 = response;
-  //       }
-  //     }
-  //   });
-  // }
-  // // Executar função ao abrir o site
-  // document.addEventListener('DOMContentLoaded', value_prioridade);
-
-  // // Repetir função a cada segundo 
-  // setInterval(value_prioridade, 1000);
-
-  // function inverterCor(hex) {
-  //   // Verificar se a cor é válida (começa com # seguido por 6 caracteres hexadecimais)
-  //   var regex = /^#[0-9A-F]{6}$/i;
-  //   if (!regex.test(hex)) {
-  //     throw new Error("Cor inválida. Use notação hexadecimal de 6 dígitos, começando com '#'.");
-  //   }
-
-  //   // Extrair os componentes de cor
-  //   var red = parseInt(hex.substr(1, 2), 16);
-  //   var green = parseInt(hex.substr(3, 2), 16);
-  //   var blue = parseInt(hex.substr(5, 2), 16);
-
-  //   // Inverter os componentes de cor
-  //   red = 255 - red;
-  //   green = 255 - green;
-  //   blue = 255 - blue;
-
-  //   // Converter os valores invertidos de volta para notação hexadecimal
-  //   var invertedHex = "#" + ((1 << 24) | (red << 16) | (green << 8) | blue).toString(16).slice(1);
-
-  //   return invertedHex;
-  // }
-
-  // var lista;
-  // function prio_modal_todos() {
-
-
-  //   $.ajax({
-  //     url: '<?= base_url('public/adm/desenho_modal') ?>',
-  //     type: "POST",
-  //     dataType: "json", // Indicar que o retorno é em formato JSON
-  //     data: { id: "" },
-  //     success: function (response) {
-
-  //       var botao_confirmar_modal = document.getElementById('botao_confirmar_modal');
-
-  //       document.getElementById('modal_sizer').classList.add('modal-xl');
-  //       botao_confirmar_modal.innerHTML = "Confirmar";
-  //       var modal_titulo = document.getElementById('modal_titulo');
-  //       var modal_bory = document.getElementById('modal_bory');
-  //       modal_titulo.textContent = "Modificar prioridade desenho";
-  //       const selectElement = document.createElement("select");
-  //       var inputElement = document.createElement("input");
-
-  //       var divElemnt = document.createElement("div");
-  //       divElemnt.classList.add("form-group");
-
-  //       modal_bory.innerHTML = '';
-  //       // Limpar o select
-  //       selectElement.innerHTML = '';
-  //       // Criar um novo elemento option
-
-  //       var novoOption = document.createElement("option");
-
-
-
-  //       divElemnt = document.createElement("div");
-  //       divElemnt.classList.add("form-group");
-  //       // Definir o valor e texto do novo elemento option
-  //       novoOption.value = response.empresa_id;
-  //       novoOption.textContent = response.empresa_id;
-  //       selectElement.id = 'prioridade_novo';
-  //       selectElement.classList.add("custom-select");
-  //       selectElement.appendChild(novoOption);
-  //       labelElement = document.createElement("label");
-  //       labelElement.textContent = "Prioridade";
-  //       divElemnt.appendChild(labelElement);
-  //       divElemnt.appendChild(selectElement);
-  //       modal_bory.appendChild(divElemnt);//coloca o input name no modal
-
-
-
-  //       divElemnt = document.createElement("div");
-  //       divElemnt.classList.add("form-group");
-  //       lista = response.lista;
-  //       tabel_bory = document.createElement("table");
-  //       tr = document.createElement('tr');
-  //       th = document.createElement('th');
-  //       th.textContent = 'Nome';
-
-  //       tr.appendChild(th);
-  //       th = document.createElement('th');
-  //       th.textContent = 'Prioridade';
-
-  //       tr.appendChild(th);
-  //       th = document.createElement('th');
-  //       th.textContent = 'Finalidade';
+  lista_temp1 = "";
+  function value_prioridade(efeturar = false) {
+    $.ajax({
+      url: '<?= base_url('public/adm/config_prioridade_lista') ?>',
+      type: "POST",
+      dataType: "json", // Indicar que o retorno é em formato JSON
+      success: function (response) {
+        if (document.getElementById("prioridade_novo") != null && (response != lista_temp1 || efeturar)) {
+          // Obter referência ao elemento select
+          var funcao = document.getElementById("prioridade_novo");
+          // Armazenar o valor da opção selecionada antes de limpar o select
+          var valorSelecionadoAntes = funcao.value;
+
+          // Limpar o select
+          funcao.innerHTML = '';
+
+          // Criar um novo elemento option
+          var novoOption = document.createElement("option");
+
+          // Definir o valor e texto do novo elemento option
+          novoOption.value = '';
+          novoOption.textContent = 'Prioridade';
+
+          // Adicionar o novo elemento option ao select
+          funcao.appendChild(novoOption);
+
+          response.lista.forEach(element => {
+
+
+
+            // Criar um novo elemento option
+            var novoOption = document.createElement("option");
+
+            // Definir o valor e texto do novo elemento option
+            novoOption.value = element.prioridade;
+            novoOption.textContent = element.prioridade;
+            novoOption.style.backgroundColor = element.cor;
+            novoOption.style.color = inverterCor(element.cor);
+            funcao.appendChild(novoOption);
+          });
+          var opcoes = funcao.options;
+          for (var i = 0; i < opcoes.length; i++) {
+            if (opcoes[i].value === valorSelecionadoAntes) {
+              opcoes[i].selected = true;
+              break;
+            }
+          }
+
+
+          lista_temp1 = response;
+        }
+      }
+    });
+  }
+  // Executar função ao abrir o site
+  document.addEventListener('DOMContentLoaded', value_prioridade);
+
+  // Repetir função a cada segundo 
+  setInterval(value_prioridade, 1000);
+
+  function inverterCor(hex) {
+    // Verificar se a cor é válida (começa com # seguido por 6 caracteres hexadecimais)
+    var regex = /^#[0-9A-F]{6}$/i;
+    if (!regex.test(hex)) {
+      throw new Error("Cor inválida. Use notação hexadecimal de 6 dígitos, começando com '#'.");
+    }
+
+    // Extrair os componentes de cor
+    var red = parseInt(hex.substr(1, 2), 16);
+    var green = parseInt(hex.substr(3, 2), 16);
+    var blue = parseInt(hex.substr(5, 2), 16);
+
+    // Inverter os componentes de cor
+    red = 255 - red;
+    green = 255 - green;
+    blue = 255 - blue;
+
+    // Converter os valores invertidos de volta para notação hexadecimal
+    var invertedHex = "#" + ((1 << 24) | (red << 16) | (green << 8) | blue).toString(16).slice(1);
+
+    return invertedHex;
+  }
+
+  var lista;
+  function prio_modal_todos() {
+
+
+    $.ajax({
+      url: '<?= base_url('public/adm/desenho_modal') ?>',
+      type: "POST",
+      dataType: "json", // Indicar que o retorno é em formato JSON
+      data: { id: "" },
+      success: function (response) {
+
+        var botao_confirmar_modal = document.getElementById('botao_confirmar_modal');
+
+        document.getElementById('modal_sizer').classList.add('modal-xl');
+        botao_confirmar_modal.innerHTML = "Confirmar";
+        var modal_titulo = document.getElementById('modal_titulo');
+        var modal_bory = document.getElementById('modal_bory');
+        modal_titulo.textContent = "Modificar prioridade desenho";
+        const selectElement = document.createElement("select");
+        var inputElement = document.createElement("input");
+
+        var divElemnt = document.createElement("div");
+        divElemnt.classList.add("form-group");
+
+        modal_bory.innerHTML = '';
+        // Limpar o select
+        selectElement.innerHTML = '';
+        // Criar um novo elemento option
+
+        var novoOption = document.createElement("option");
+
+
+
+        divElemnt = document.createElement("div");
+        divElemnt.classList.add("form-group");
+        // Definir o valor e texto do novo elemento option
+        novoOption.value = response.empresa_id;
+        novoOption.textContent = response.empresa_id;
+        selectElement.id = 'prioridade_novo';
+        selectElement.classList.add("custom-select");
+        selectElement.appendChild(novoOption);
+        labelElement = document.createElement("label");
+        labelElement.textContent = "Prioridade";
+        divElemnt.appendChild(labelElement);
+        divElemnt.appendChild(selectElement);
+        modal_bory.appendChild(divElemnt);//coloca o input name no modal
+
+
+
+        divElemnt = document.createElement("div");
+        divElemnt.classList.add("form-group");
+        lista = response.lista;
+        tabel_bory = document.createElement("table");
+        tr = document.createElement('tr');
+        th = document.createElement('th');
+        th.textContent = 'Nome';
+
+        tr.appendChild(th);
+        th = document.createElement('th');
+        th.textContent = 'Prioridade';
+
+        tr.appendChild(th);
+        th = document.createElement('th');
+        th.textContent = 'Finalidade';
 
-  //       tr.appendChild(th);
-  //       th = document.createElement('th');
-  //       th.textContent = 'Empresa/Cliente';
+        tr.appendChild(th);
+        th = document.createElement('th');
+        th.textContent = 'Empresa/Cliente';
 
-  //       tr.appendChild(th);
-  //       th = document.createElement('th');
-  //       th.textContent = 'Empreendimento';
+        tr.appendChild(th);
+        th = document.createElement('th');
+        th.textContent = 'Empreendimento';
 
-  //       tr.appendChild(th);
-  //       th = document.createElement('th');
-  //       th.textContent = 'Data de Envio';
+        tr.appendChild(th);
+        th = document.createElement('th');
+        th.textContent = 'Data de Envio';
 
-  //       tr.appendChild(th);
-  //       tabel_bory.appendChild(tr);
-  //       th = document.createElement('th');
-  //       th.textContent = '';
+        tr.appendChild(th);
+        tabel_bory.appendChild(tr);
+        th = document.createElement('th');
+        th.textContent = '';
 
-  //       tr.appendChild(th);
-  //       tabel_bory.appendChild(tr);
+        tr.appendChild(th);
+        tabel_bory.appendChild(tr);
 
 
-  //       for (let index = 0; index < response.lista.length; index++) {
-  //         if (lista[index]['status'] == 'corte') {
-  //           tr = document.createElement('tr');
-  //           if (index % 2 == 0) {
-  //             tr.classList.add('odd');
-  //           } else {
-  //             tr.classList.add('even');
-  //           }
+        for (let index = 0; index < response.lista.length; index++) {
+          if (lista[index]['status'] == 'corte') {
+            tr = document.createElement('tr');
+            if (index % 2 == 0) {
+              tr.classList.add('odd');
+            } else {
+              tr.classList.add('even');
+            }
 
-  //           inputElement = document.createElement("input");
-  //           inputElement.type = 'checkbox';
-  //           inputElement.id = 'prio_' + lista[index]['id'];
-  //           inputElement.classList.add("form-control");
-  //           inputElement.value = '';
-  //           labelElement = document.createElement("label");
-  //           labelElement.textContent = lista[index]['nome'];
-  //           th = document.createElement('th');
-  //           th.appendChild(labelElement);
-  //           tr.appendChild(th);
+            inputElement = document.createElement("input");
+            inputElement.type = 'checkbox';
+            inputElement.id = 'prio_' + lista[index]['id'];
+            inputElement.classList.add("form-control");
+            inputElement.value = '';
+            labelElement = document.createElement("label");
+            labelElement.textContent = lista[index]['nome'];
+            th = document.createElement('th');
+            th.appendChild(labelElement);
+            tr.appendChild(th);
 
-  //           labelElement = document.createElement("label");
+            labelElement = document.createElement("label");
 
 
-  //           th = document.createElement('th');
-  //           th.appendChild(labelElement);
-  //           p = document.createElement("p");
-  //           p.textContent = lista[index]['prioridade'];
-  //           p.classList.add('marca_texto');
-  //           th.style.backgroundColor = lista[index]['cor'];
+            th = document.createElement('th');
+            th.appendChild(labelElement);
+            p = document.createElement("p");
+            p.textContent = lista[index]['prioridade'];
+            p.classList.add('marca_texto');
+            th.style.backgroundColor = lista[index]['cor'];
 
-  //           th.appendChild(p);
-  //           tr.appendChild(th);
+            th.appendChild(p);
+            tr.appendChild(th);
 
-  //           labelElement = document.createElement("label");
-  //           labelElement.textContent = lista[index]['finalidade'];
-  //           th = document.createElement('th');
-  //           th.appendChild(labelElement);
-  //           tr.appendChild(th);
+            labelElement = document.createElement("label");
+            labelElement.textContent = lista[index]['finalidade'];
+            th = document.createElement('th');
+            th.appendChild(labelElement);
+            tr.appendChild(th);
 
-  //           labelElement = document.createElement("label");
-  //           labelElement.textContent = lista[index]['empresa'];
-  //           th = document.createElement('th');
-  //           th.appendChild(labelElement);
-  //           tr.appendChild(th);
+            labelElement = document.createElement("label");
+            labelElement.textContent = lista[index]['empresa'];
+            th = document.createElement('th');
+            th.appendChild(labelElement);
+            tr.appendChild(th);
 
-  //           labelElement = document.createElement("label");
-  //           labelElement.textContent = lista[index]['empreendimento'];
-  //           th = document.createElement('th');
-  //           th.appendChild(labelElement);
-  //           tr.appendChild(th);
+            labelElement = document.createElement("label");
+            labelElement.textContent = lista[index]['empreendimento'];
+            th = document.createElement('th');
+            th.appendChild(labelElement);
+            tr.appendChild(th);
 
-  //           labelElement = document.createElement("label");
-  //           labelElement.textContent = lista[index]['data_hora_add'];
-  //           th = document.createElement('th');
-  //           th.appendChild(labelElement);
-  //           tr.appendChild(th);
+            labelElement = document.createElement("label");
+            labelElement.textContent = lista[index]['data_hora_add'];
+            th = document.createElement('th');
+            th.appendChild(labelElement);
+            tr.appendChild(th);
 
 
 
 
-  //           th = document.createElement('th');
-  //           th.appendChild(inputElement);
-  //           tr.appendChild(th);
-  //           tabel_bory.appendChild(tr);
+            th = document.createElement('th');
+            th.appendChild(inputElement);
+            tr.appendChild(th);
+            tabel_bory.appendChild(tr);
 
 
-  //         }
-  //       }
-  //       modal_bory.appendChild(divElemnt);//coloca o input name no modal
+          }
+        }
+        modal_bory.appendChild(divElemnt);//coloca o input name no modal
 
 
-  //       tabel_bory.classList.add('table', 'table-bordered', 'table-striped');
-  //       modal_bory.appendChild(tabel_bory);
-  //       value_prioridade();
-  //       mostrarModal();
+        tabel_bory.classList.add('table', 'table-bordered', 'table-striped');
+        modal_bory.appendChild(tabel_bory);
+        value_prioridade();
+        mostrarModal();
 
-  //     }
+      }
 
-  //   });
-  // }
+    });
+  }
 
-  // function prio_modal(id) {
+  function prio_modal(id) {
 
-  //   $.ajax({
-  //     url: '<?= base_url('public/adm/desenho_modal') ?>',
-  //     type: "POST",
-  //     dataType: "json", // Indicar que o retorno é em formato JSON
-  //     data: { id: id },
-  //     success: function (response) {
+    $.ajax({
+      url: '<?= base_url('public/adm/desenho_modal') ?>',
+      type: "POST",
+      dataType: "json", // Indicar que o retorno é em formato JSON
+      data: { id: id },
+      success: function (response) {
 
 
 
-  //       lista = response.lista;
-  //       var botao_confirmar_modal = document.getElementById('botao_confirmar_modal');
+        lista = response.lista;
+        var botao_confirmar_modal = document.getElementById('botao_confirmar_modal');
 
-  //       document.getElementById('modal_sizer').classList.add('modal-xl');
-  //       botao_confirmar_modal.innerHTML = "Confirmar";
+        document.getElementById('modal_sizer').classList.add('modal-xl');
+        botao_confirmar_modal.innerHTML = "Confirmar";
 
-  //       var modal_titulo = document.getElementById('modal_titulo');
-  //       var modal_bory = document.getElementById('modal_bory');
-  //       modal_titulo.textContent = "Modificar prioridade desenho: " + removeIdFromFile(response.lista[0].nome);
-  //       const selectElement = document.createElement("select");
-  //       var inputElement = document.createElement("input");
+        var modal_titulo = document.getElementById('modal_titulo');
+        var modal_bory = document.getElementById('modal_bory');
+        modal_titulo.textContent = "Modificar prioridade desenho: " + removeIdFromFile(response.lista[0].nome);
+        const selectElement = document.createElement("select");
+        var inputElement = document.createElement("input");
 
-  //       var divElemnt = document.createElement("div");
-  //       divElemnt.classList.add("form-group");
+        var divElemnt = document.createElement("div");
+        divElemnt.classList.add("form-group");
 
-  //       modal_bory.innerHTML = '';
-  //       // Limpar o select
-  //       selectElement.innerHTML = '';
-  //       // Criar um novo elemento option
+        modal_bory.innerHTML = '';
+        // Limpar o select
+        selectElement.innerHTML = '';
+        // Criar um novo elemento option
 
-  //       var novoOption = document.createElement("option");
+        var novoOption = document.createElement("option");
 
 
 
-  //       divElemnt = document.createElement("div");
-  //       divElemnt.classList.add("form-group");
-  //       // Definir o valor e texto do novo elemento option
-  //       novoOption.value = response.empresa_id;
-  //       novoOption.textContent = response.empresa_id;
-  //       selectElement.id = 'prioridade_novo';
-  //       selectElement.classList.add("custom-select");
-  //       selectElement.appendChild(novoOption);
-  //       labelElement = document.createElement("label");
-  //       labelElement.textContent = "Prioridade";
-  //       divElemnt.appendChild(labelElement);
-  //       divElemnt.appendChild(selectElement);
-  //       modal_bory.appendChild(divElemnt);//coloca o input name no modal
+        divElemnt = document.createElement("div");
+        divElemnt.classList.add("form-group");
+        // Definir o valor e texto do novo elemento option
+        novoOption.value = response.empresa_id;
+        novoOption.textContent = response.empresa_id;
+        selectElement.id = 'prioridade_novo';
+        selectElement.classList.add("custom-select");
+        selectElement.appendChild(novoOption);
+        labelElement = document.createElement("label");
+        labelElement.textContent = "Prioridade";
+        divElemnt.appendChild(labelElement);
+        divElemnt.appendChild(selectElement);
+        modal_bory.appendChild(divElemnt);//coloca o input name no modal
 
 
 
-  //       divElemnt = document.createElement("div");
-  //       divElemnt.classList.add("form-group");
-  //       lista = response.lista;
-  //       tabel_bory = document.createElement("table");
+        divElemnt = document.createElement("div");
+        divElemnt.classList.add("form-group");
+        lista = response.lista;
+        tabel_bory = document.createElement("table");
 
 
 
 
-  //       modal_bory.appendChild(divElemnt);//coloca o input name no modal
+        modal_bory.appendChild(divElemnt);//coloca o input name no modal
 
 
-  //       tabel_bory.classList.add('table', 'table-bordered', 'table-striped');
-  //       modal_bory.appendChild(tabel_bory);
-  //       value_prioridade();
-  //       mostrarModal();
+        tabel_bory.classList.add('table', 'table-bordered', 'table-striped');
+        modal_bory.appendChild(tabel_bory);
+        value_prioridade();
+        mostrarModal();
 
-  //     }
+      }
 
-  //   });
+    });
 
-  // }
+  }
 
 
-  // function confirmarModal() {
-  //   array = [];
-  //   ok = false;
-  //   for (let index = 0; index < lista.length; index++) {
-  //     if (document.getElementById("prio_" + lista[index]['id']) != null) {
-  //       if (document.getElementById("prio_" + lista[index]['id']).checked) {
-  //         array.push(lista[index]['id']);
-  //         ok = true;
-  //       }
-  //     } else {
-  //       if (lista.length == 1) {
-  //         array.push(lista[index]['id']);
-  //         ok = true;
-  //       }
+  function confirmarModal() {
+    array = [];
+    ok = false;
+    for (let index = 0; index < lista.length; index++) {
+      if (document.getElementById("prio_" + lista[index]['id']) != null) {
+        if (document.getElementById("prio_" + lista[index]['id']).checked) {
+          array.push(lista[index]['id']);
+          ok = true;
+        }
+      } else {
+        if (lista.length == 1) {
+          array.push(lista[index]['id']);
+          ok = true;
+        }
 
-  //     }
+      }
 
-  //   }
-  //   if (ok) {
-  //     prioridade = document.getElementById("prioridade_novo").value;
-  //     $.ajax({
-  //       url: '<?= base_url('public/adm/desenho_update') ?>',
-  //       type: "POST",
-  //       dataType: "json", // Indicar que o retorno é em formato JSON
-  //       data: { array: array, prioridade: prioridade },
-  //       success: function (response) {
+    }
+    if (ok) {
+      prioridade = document.getElementById("prioridade_novo").value;
+      $.ajax({
+        url: '<?= base_url('public/adm/desenho_update') ?>',
+        type: "POST",
+        dataType: "json", // Indicar que o retorno é em formato JSON
+        data: { array: array, prioridade: prioridade },
+        success: function (response) {
 
 
 
-  //         if (response.ok) {
-  //           fecharModal();
-  //           lista();
-  //         } else {
-  //           console.log('erro');
-  //         }
+          if (response.ok) {
+            fecharModal();
+            lista();
+          } else {
+            console.log('erro');
+          }
 
 
 
-  //       }
+        }
 
-  //     });
-  //   }
-  // }
+      });
+    }
+  }
 
 
-  // function confirmar_botao_apagar() {
-  //   var check_box = document.getElementById('modal_apagar');
-  //   var botao_confirmar_modal = document.getElementById('botao_confirmar_modal_apagar');
-  //   if (check_box.checked) {
-  //     botao_confirmar_modal.disabled = false;
-  //   } else {
-  //     botao_confirmar_modal.disabled = true;
-  //   }
-  // }
+  function confirmar_botao_apagar() {
+    var check_box = document.getElementById('modal_apagar');
+    var botao_confirmar_modal = document.getElementById('botao_confirmar_modal_apagar');
+    if (check_box.checked) {
+      botao_confirmar_modal.disabled = false;
+    } else {
+      botao_confirmar_modal.disabled = true;
+    }
+  }
 
-  // function apagar_todos() {
+  function apagar_todos() {
 
-  //   var modal_rodape = document.getElementById('modal_rodape');
-  //   modal_rodape.innerHTML = "  <input id=\"modal_apagar\" style=\"height: 25px; width: 25px;\" class=\"form-control\" onClick=\"confirmar_botao_apagar()\" type=\"checkbox\"><label id=\"modal_apagar\">Apagar</label>" + modal_rodape.innerHTML;
+    var modal_rodape = document.getElementById('modal_rodape');
+    modal_rodape.innerHTML = "  <input id=\"modal_apagar\" style=\"height: 25px; width: 25px;\" class=\"form-control\" onClick=\"confirmar_botao_apagar()\" type=\"checkbox\"><label id=\"modal_apagar\">Apagar</label>" + modal_rodape.innerHTML;
 
 
-  //   var botao_confirmar_modal = document.getElementById('botao_confirmar_modal');
-  //   document.getElementById('modal_sizer').classList.add('modal-xl');
-  //   botao_confirmar_modal.innerHTML = "Apagar";
-  //   botao_confirmar_modal.onclick = '';
-  //   botao_confirmar_modal.id = 'botao_confirmar_modal_apagar';
-  //   botao_confirmar_modal.disabled = true;
-  //   var modal_titulo = document.getElementById('modal_titulo');
-  //   var modal_bory = document.getElementById('modal_bory');
-  //   modal_titulo.textContent = "Apagar desenhos";
-  //   const selectElement = document.createElement("select");
-  //   var inputElement = document.createElement("input");
+    var botao_confirmar_modal = document.getElementById('botao_confirmar_modal');
+    document.getElementById('modal_sizer').classList.add('modal-xl');
+    botao_confirmar_modal.innerHTML = "Apagar";
+    botao_confirmar_modal.onclick = '';
+    botao_confirmar_modal.id = 'botao_confirmar_modal_apagar';
+    botao_confirmar_modal.disabled = true;
+    var modal_titulo = document.getElementById('modal_titulo');
+    var modal_bory = document.getElementById('modal_bory');
+    modal_titulo.textContent = "Apagar desenhos";
+    const selectElement = document.createElement("select");
+    var inputElement = document.createElement("input");
 
-  //   var divElemnt = document.createElement("div");
-  //   divElemnt.classList.add("form-group");
+    var divElemnt = document.createElement("div");
+    divElemnt.classList.add("form-group");
 
-  //   modal_bory.innerHTML = '';
+    modal_bory.innerHTML = '';
 
 
 
 
-  //   divElemnt = document.createElement("div");
-  //   divElemnt.classList.add("form-group");
+    divElemnt = document.createElement("div");
+    divElemnt.classList.add("form-group");
 
-  //   tabel_bory = document.createElement("table");
-  //   tr = document.createElement('tr');
-  //   th = document.createElement('th');
-  //   th.textContent = 'Nome';
+    tabel_bory = document.createElement("table");
+    tr = document.createElement('tr');
+    th = document.createElement('th');
+    th.textContent = 'Nome';
 
-  //   tr.appendChild(th);
-  //   th = document.createElement('th');
-  //   th.textContent = 'Prioridade';
+    tr.appendChild(th);
+    th = document.createElement('th');
+    th.textContent = 'Prioridade';
 
-  //   tr.appendChild(th);
-  //   th = document.createElement('th');
-  //   th.textContent = 'Finalidade';
+    tr.appendChild(th);
+    th = document.createElement('th');
+    th.textContent = 'Finalidade';
 
-  //   tr.appendChild(th);
-  //   th = document.createElement('th');
-  //   th.textContent = 'Empresa/Cliente';
+    tr.appendChild(th);
+    th = document.createElement('th');
+    th.textContent = 'Empresa/Cliente';
 
-  //   tr.appendChild(th);
-  //   th = document.createElement('th');
-  //   th.textContent = 'Empreendimento';
+    tr.appendChild(th);
+    th = document.createElement('th');
+    th.textContent = 'Empreendimento';
 
-  //   tr.appendChild(th);
-  //   th = document.createElement('th');
-  //   th.textContent = 'Data de Envio';
+    tr.appendChild(th);
+    th = document.createElement('th');
+    th.textContent = 'Data de Envio';
 
-  //   tr.appendChild(th);
-  //   tabel_bory.appendChild(tr);
-  //   th = document.createElement('th');
-  //   th.textContent = '';
+    tr.appendChild(th);
+    tabel_bory.appendChild(tr);
+    th = document.createElement('th');
+    th.textContent = '';
 
-  //   tr.appendChild(th);
-  //   tabel_bory.appendChild(tr);
+    tr.appendChild(th);
+    tabel_bory.appendChild(tr);
 
-  //   $.ajax({
-  //     url: '<?= base_url('public/adm/desenho_modal') ?>',
-  //     type: "POST",
-  //     dataType: "json", // Indicar que o retorno é em formato JSON
-  //     data: { id: "" },
-  //     success: function (response) {
-  //       var lista = response.lista;
+    $.ajax({
+      url: '<?= base_url('public/adm/desenho_modal') ?>',
+      type: "POST",
+      dataType: "json", // Indicar que o retorno é em formato JSON
+      data: { id: "" },
+      success: function (response) {
+        var lista = response.lista;
 
 
 
@@ -545,160 +545,160 @@
 
 
 
-  //       var element;
-  //       console.log(response);
-  //       for (let index = 0; index < lista.length; index++) {
+        var element;
+        console.log(response);
+        for (let index = 0; index < lista.length; index++) {
 
-  //         if (lista[index]['status'] == 'corte') {
+          if (lista[index]['status'] == 'corte') {
 
-  //           tr = document.createElement('tr');
-  //           if (index % 2 == 0) {
-  //             tr.classList.add('odd');
-  //           } else {
-  //             tr.classList.add('even');
-  //           }
-  //           nome_de = lista[index]['nome'];
-  //           var ponto_nome = 0;
-  //           for (let i = 0; i < nome_de.length; i++) {
-  //             if (nome_de[i] + nome_de[i + 1] == "_.") {
-  //               ponto_nome = i + 1;
-  //             }
-  //           }
+            tr = document.createElement('tr');
+            if (index % 2 == 0) {
+              tr.classList.add('odd');
+            } else {
+              tr.classList.add('even');
+            }
+            nome_de = lista[index]['nome'];
+            var ponto_nome = 0;
+            for (let i = 0; i < nome_de.length; i++) {
+              if (nome_de[i] + nome_de[i + 1] == "_.") {
+                ponto_nome = i + 1;
+              }
+            }
 
 
-  //           inputElement = document.createElement("input");
-  //           inputElement.type = 'checkbox';
-  //           inputElement.id = 'apagar_' + lista[index]['id'];
-  //           inputElement.classList.add("form-control");
-  //           inputElement.value = '';
-  //           inputElement.style.height = '25px';
-  //           inputElement.style.width = '25px';
-  //           labelElement = document.createElement("label");
-  //           labelElement.textContent = nome_de.slice(0, ponto_nome - 5) + nome_de.slice(ponto_nome, nome_de.length);
-  //           th = document.createElement('th');
-  //           th.appendChild(labelElement);
-  //           tr.appendChild(th);
+            inputElement = document.createElement("input");
+            inputElement.type = 'checkbox';
+            inputElement.id = 'apagar_' + lista[index]['id'];
+            inputElement.classList.add("form-control");
+            inputElement.value = '';
+            inputElement.style.height = '25px';
+            inputElement.style.width = '25px';
+            labelElement = document.createElement("label");
+            labelElement.textContent = nome_de.slice(0, ponto_nome - 5) + nome_de.slice(ponto_nome, nome_de.length);
+            th = document.createElement('th');
+            th.appendChild(labelElement);
+            tr.appendChild(th);
 
-  //           labelElement = document.createElement("label");
+            labelElement = document.createElement("label");
 
 
-  //           th = document.createElement('th');
-  //           th.appendChild(labelElement);
-  //           p = document.createElement("p");
-  //           p.textContent = lista[index]['prioridade'];
-  //           p.classList.add('marca_texto');
-  //           th.style.backgroundColor = lista[index]['cor'];
+            th = document.createElement('th');
+            th.appendChild(labelElement);
+            p = document.createElement("p");
+            p.textContent = lista[index]['prioridade'];
+            p.classList.add('marca_texto');
+            th.style.backgroundColor = lista[index]['cor'];
 
-  //           th.appendChild(p);
-  //           tr.appendChild(th);
+            th.appendChild(p);
+            tr.appendChild(th);
 
-  //           labelElement = document.createElement("label");
-  //           labelElement.textContent = lista[index]['finalidade'];
-  //           th = document.createElement('th');
-  //           th.appendChild(labelElement);
-  //           tr.appendChild(th);
+            labelElement = document.createElement("label");
+            labelElement.textContent = lista[index]['finalidade'];
+            th = document.createElement('th');
+            th.appendChild(labelElement);
+            tr.appendChild(th);
 
-  //           labelElement = document.createElement("label");
-  //           labelElement.textContent = lista[index]['empresa'];
-  //           th = document.createElement('th');
-  //           th.appendChild(labelElement);
-  //           tr.appendChild(th);
+            labelElement = document.createElement("label");
+            labelElement.textContent = lista[index]['empresa'];
+            th = document.createElement('th');
+            th.appendChild(labelElement);
+            tr.appendChild(th);
 
-  //           labelElement = document.createElement("label");
-  //           labelElement.textContent = lista[index]['empreendimento'];
-  //           th = document.createElement('th');
-  //           th.appendChild(labelElement);
-  //           tr.appendChild(th);
+            labelElement = document.createElement("label");
+            labelElement.textContent = lista[index]['empreendimento'];
+            th = document.createElement('th');
+            th.appendChild(labelElement);
+            tr.appendChild(th);
 
-  //           labelElement = document.createElement("label");
-  //           labelElement.textContent = lista[index]['data_hora_add'];
-  //           th = document.createElement('th');
-  //           th.appendChild(labelElement);
-  //           tr.appendChild(th);
+            labelElement = document.createElement("label");
+            labelElement.textContent = lista[index]['data_hora_add'];
+            th = document.createElement('th');
+            th.appendChild(labelElement);
+            tr.appendChild(th);
 
 
 
 
-  //           th = document.createElement('th');
-  //           th.appendChild(inputElement);
-  //           tr.appendChild(th);
-  //           tabel_bory.appendChild(tr);
-  //         }
-  //       }
-  //       var botao = document.getElementById('botao_confirmar_modal_apagar');
+            th = document.createElement('th');
+            th.appendChild(inputElement);
+            tr.appendChild(th);
+            tabel_bory.appendChild(tr);
+          }
+        }
+        var botao = document.getElementById('botao_confirmar_modal_apagar');
 
-  //       botao.onclick = function () {
+        botao.onclick = function () {
 
 
-  //         for (let index = 0; index < lista.length; index++) {
-  //           if (document.getElementById("apagar_" + lista[index]['id']) != null) {
-  //             if (document.getElementById("apagar_" + lista[index]['id']).checked) {
-  //               apagar_mesmo(lista[index]['id']);
+          for (let index = 0; index < lista.length; index++) {
+            if (document.getElementById("apagar_" + lista[index]['id']) != null) {
+              if (document.getElementById("apagar_" + lista[index]['id']).checked) {
+                apagar_mesmo(lista[index]['id']);
 
 
-  //             }
-  //           }
+              }
+            }
 
-  //         }
-  //         fecharModal();
-  //         lista();
+          }
+          fecharModal();
+          lista();
 
-  //       };
+        };
 
-  //       modal_bory.appendChild(divElemnt);//coloca o input name no modal
+        modal_bory.appendChild(divElemnt);//coloca o input name no modal
 
 
-  //       tabel_bory.classList.add('table', 'table-bordered', 'table-striped');
-  //       modal_bory.appendChild(tabel_bory);
-  //       mostrarModal();
-  //     }
-  //   });
+        tabel_bory.classList.add('table', 'table-bordered', 'table-striped');
+        modal_bory.appendChild(tabel_bory);
+        mostrarModal();
+      }
+    });
 
 
 
 
 
 
-  // }
+  }
 
-  // function apagar(id = "") {
-  //   if (event.shiftKey) {
-  //     id = "";
-  //   }
-  //   var modal_rodape = document.getElementById('modal_rodape');
-  //   modal_rodape.innerHTML = "  <input id=\"modal_apagar\" style=\"height: 25px; width: 25px;\" class=\"form-control\" onClick=\"confirmar_botao_apagar()\" type=\"checkbox\"><label id=\"modal_apagar\">Apagar</label>" + modal_rodape.innerHTML;
+  function apagar(id = "") {
+    if (event.shiftKey) {
+      id = "";
+    }
+    var modal_rodape = document.getElementById('modal_rodape');
+    modal_rodape.innerHTML = "  <input id=\"modal_apagar\" style=\"height: 25px; width: 25px;\" class=\"form-control\" onClick=\"confirmar_botao_apagar()\" type=\"checkbox\"><label id=\"modal_apagar\">Apagar</label>" + modal_rodape.innerHTML;
 
 
-  //   var botao_confirmar_modal = document.getElementById('botao_confirmar_modal');
-  //   botao_confirmar_modal.innerHTML = "Apagar";
-  //   botao_confirmar_modal.onclick = '';
-  //   botao_confirmar_modal.id = 'botao_confirmar_modal_apagar';
-  //   botao_confirmar_modal.disabled = true;
-  //   var modal_titulo = document.getElementById('modal_titulo');
-  //   var modal_bory = document.getElementById('modal_bory');
-  //   modal_titulo.textContent = "Apagar desenhos";
-  //   const selectElement = document.createElement("select");
-  //   var inputElement = document.createElement("input");
+    var botao_confirmar_modal = document.getElementById('botao_confirmar_modal');
+    botao_confirmar_modal.innerHTML = "Apagar";
+    botao_confirmar_modal.onclick = '';
+    botao_confirmar_modal.id = 'botao_confirmar_modal_apagar';
+    botao_confirmar_modal.disabled = true;
+    var modal_titulo = document.getElementById('modal_titulo');
+    var modal_bory = document.getElementById('modal_bory');
+    modal_titulo.textContent = "Apagar desenhos";
+    const selectElement = document.createElement("select");
+    var inputElement = document.createElement("input");
 
-  //   var divElemnt = document.createElement("div");
-  //   divElemnt.classList.add("form-group");
+    var divElemnt = document.createElement("div");
+    divElemnt.classList.add("form-group");
 
-  //   modal_bory.innerHTML = '';
+    modal_bory.innerHTML = '';
 
 
 
 
-  //   divElemnt = document.createElement("div");
-  //   divElemnt.classList.add("form-group");
+    divElemnt = document.createElement("div");
+    divElemnt.classList.add("form-group");
 
-  //   $.ajax({
-  //     url: '<?= base_url('public/adm/desenho_modal') ?>',
-  //     type: "POST",
-  //     dataType: "json", // Indicar que o retorno é em formato JSON
-  //     data: { id: id },
-  //     success: function (response) {
-  //       var lista = response.lista;
-  //       modal_titulo.textContent = "Apagar desenho: " + removeIdFromFile(response.lista[0].nome);
+    $.ajax({
+      url: '<?= base_url('public/adm/desenho_modal') ?>',
+      type: "POST",
+      dataType: "json", // Indicar que o retorno é em formato JSON
+      data: { id: id },
+      success: function (response) {
+        var lista = response.lista;
+        modal_titulo.textContent = "Apagar desenho: " + removeIdFromFile(response.lista[0].nome);
 
 
 
@@ -706,124 +706,124 @@
 
 
 
-  //       console.log(response);
+        console.log(response);
 
-  //       var botao = document.getElementById('botao_confirmar_modal_apagar');
+        var botao = document.getElementById('botao_confirmar_modal_apagar');
 
-  //       botao.onclick = function () {
+        botao.onclick = function () {
 
 
-  //         apagar_mesmo(lista[0]['id']);
+          apagar_mesmo(lista[0]['id']);
 
 
-  //         fecharModal();
-  //         lista();
+          fecharModal();
+          lista();
 
-  //       };
+        };
 
-  //       modal_bory.appendChild(divElemnt);//coloca o input name no modal
+        modal_bory.appendChild(divElemnt);//coloca o input name no modal
 
 
 
-  //       mostrarModal();
-  //     }
-  //   });
+        mostrarModal();
+      }
+    });
 
 
 
 
 
 
-  // }
+  }
 
 
 
-  // function apagar_mesmo(id) {
-  //   $.ajax({
-  //     url: '<?= base_url('public/adm/nome_desenho') ?>',
-  //     type: "POST",
-  //     dataType: "json", // Indicar que o retorno é em formato JSON
-  //     data: { id: id },
-  //     success: function (response) {
+  function apagar_mesmo(id) {
+    $.ajax({
+      url: '<?= base_url('public/adm/nome_desenho') ?>',
+      type: "POST",
+      dataType: "json", // Indicar que o retorno é em formato JSON
+      data: { id: id },
+      success: function (response) {
 
-  //       $.ajax({
-  //         url: '<?= base_url('public/adm/apagar_desenho') ?>',
-  //         type: "POST",
-  //         dataType: "json", // Indicar que o retorno é em formato JSON
-  //         data: { id: id },
-  //         success: function (response) {
-  //           if (response.ok == 'true') {
+        $.ajax({
+          url: '<?= base_url('public/adm/apagar_desenho') ?>',
+          type: "POST",
+          dataType: "json", // Indicar que o retorno é em formato JSON
+          data: { id: id },
+          success: function (response) {
+            if (response.ok == 'true') {
 
-  //             alert_certo('Desenho', response.mensagem);
-  //           } else if (response.ok == 'false') {
+              alert_certo('Desenho', response.mensagem);
+            } else if (response.ok == 'false') {
 
-  //             alert_personalizado('Desenho', response.mensagem_false);
-  //             alert_certo('Desenho', response.mensagem);
-  //           } else {
-  //             apagar_mesmo(id)
-  //           }
-  //           console.log(response);
+              alert_personalizado('Desenho', response.mensagem_false);
+              alert_certo('Desenho', response.mensagem);
+            } else {
+              apagar_mesmo(id)
+            }
+            console.log(response);
 
-  //         }
-  //       });
+          }
+        });
 
-  //     }
-  //   });
-  // }
-  // function cancelar_corte(id) {
-  //   if (mostrarConfirmacao('Cancelar corte?')) {
-  //     $.ajax({
-  //       url: '<?= base_url('public/corte/cancelar_corte') ?>',
-  //       type: "POST",
-  //       dataType: "json", // Indicar que o retorno é em formato JSON
-  //       data: { id: id },
-  //       success: function (response) {
+      }
+    });
+  }
+  function cancelar_corte(id) {
+    if (mostrarConfirmacao('Cancelar corte?')) {
+      $.ajax({
+        url: '<?= base_url('public/corte/cancelar_corte') ?>',
+        type: "POST",
+        dataType: "json", // Indicar que o retorno é em formato JSON
+        data: { id: id },
+        success: function (response) {
 
-  //         console.log(response);
+          console.log(response);
 
-  //       }
-  //     });
-  //   }
-  // }
-  // function mostrarConfirmacao(texto = '') {
-  //   // Exibe a caixa de diálogo de confirmação e armazena a resposta em uma variável
-  //   var resposta = window.confirm(texto);
-  //   // Verifica a resposta e faz algo com ela
-  //   return resposta;
+        }
+      });
+    }
+  }
+  function mostrarConfirmacao(texto = '') {
+    // Exibe a caixa de diálogo de confirmação e armazena a resposta em uma variável
+    var resposta = window.confirm(texto);
+    // Verifica a resposta e faz algo com ela
+    return resposta;
 
-  // }
-  // function alert_certo(titulo, bory) {
-  //   $(document).Toasts('create', {
-  //     class: 'bg-success',
-  //     title: titulo,
-  //     subtitle: 'Subtitle',
-  //     autohide: true,
-  //     delay: 5000,
-  //     body: bory
-  //   });
-  // }
-  // function alert_personalizado(titulo, bory) {
-  //   $(document).Toasts('create', {
-  //     class: 'bg-danger',
-  //     title: titulo,
-  //     subtitle: 'Subtitle',
-  //     autohide: true,
-  //     delay: 13000,
-  //     body: bory
-  //   });
-  // }
+  }
+  function alert_certo(titulo, bory) {
+    $(document).Toasts('create', {
+      class: 'bg-success',
+      title: titulo,
+      subtitle: 'Subtitle',
+      autohide: true,
+      delay: 5000,
+      body: bory
+    });
+  }
+  function alert_personalizado(titulo, bory) {
+    $(document).Toasts('create', {
+      class: 'bg-danger',
+      title: titulo,
+      subtitle: 'Subtitle',
+      autohide: true,
+      delay: 13000,
+      body: bory
+    });
+  }
 
-  // function removeIdFromFile(str) {
-  //   // Usa uma expressão regular para procurar um ID no formato '_<números>_' na string.
-  //   const matches = str.match(/_([0-9]+)_/);
+  function removeIdFromFile(str) {
+    // Usa uma expressão regular para procurar um ID no formato '_<números>_' na string.
+    const matches = str.match(/_([0-9]+)_/);
 
-  //   if (matches && matches[0]) {
-  //     const id = matches[0];
-  //     // Remove o ID encontrado da string e retorna o resultado.
-  //     return str.replace(id, '');
-  //   } else {
-  //     // Se nenhum ID for encontrado na string, retorna a string original.
-  //     return str;
-  //   }
-  // }
+    if (matches && matches[0]) {
+      const id = matches[0];
+      // Remove o ID encontrado da string e retorna o resultado.
+      return str.replace(id, '');
+    } else {
+      // Se nenhum ID for encontrado na string, retorna a string original.
+      return str;
+    }
+  }
 </script>

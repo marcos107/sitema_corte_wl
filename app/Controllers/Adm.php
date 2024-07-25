@@ -669,10 +669,10 @@ class Adm extends BaseController
     $template = "cadastro";
 
     // Configuração do formulário de cadastro.
-    $array_view['array_input_id'] = array("data_inicial\" required \"","data_final\" required disabled  \"","projetistas\" multiple \"","cortadores\" multiple \"");
-    $array_view['array_input_placeholder'] = array("Data inicial para aconsulta","Data final para aconsulta","","");
-    $array_view['array_input_typ'] = array("date","date","select","select");
-    $array_view['array_input_titulo'] = array("Data de inicio","Data de final","Projetistas","Cortadores");
+    $array_view['array_input_id'] = array("data_inicial\" required \"","data_final\" required disabled  \"","rad_1","checkbox_ativo","projetistas\" multiple \"","cortadores\" multiple \"");
+    $array_view['array_input_placeholder'] = array("Data inicial para aconsulta","Data final para aconsulta","","","","");
+    $array_view['array_input_typ'] = array("date","date","radio","checkbox","select","select");
+    $array_view['array_input_titulo'] = array("Data de inicio","Data de final","Tipo de Relatório","Visualizar usuários","Projetistas","Cortadores");
     $array_view['titulo'] = "Gerar Relatório";
     $array_view['button_execut_nome'] = "Gerar PDF";
     $array_view['menu'] = $this->menu($menu_box, $menu_select);

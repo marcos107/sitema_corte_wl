@@ -3107,12 +3107,10 @@ class AdmPost extends Ferramentas
 
       foreach ($usuarios_data as $key => $value) {
         // Cria a lista com base nos usuários ativos ou desativados, dependendo da solicitação
-        if (
-          Ferramentas::decodificador($value['status']) == 'ativo' and
-          (Ferramentas::decodificador($value['tipo']) == '3' or Ferramentas::decodificador($value['tipo']) == '1')
-        ) { //verifica se é para mostrar os com estus ativo//verifica se é para mostrar os com estus ativo
-          $lista['nome'][$id_temp] = Ferramentas::decodificador($value['nome']);
+        if ((Ferramentas::decodificador($value['tipo']) == '3' or Ferramentas::decodificador($value['tipo']) == '1')) { //verifica se é para mostrar os com estus ativo//verifica se é para mostrar os com estus ativo
+          $lista['nome'][$value['status']][$id_temp] = Ferramentas::decodificador($value['nome']);
           $lista[strval($id_temp)] = $value;
+
         }
         $id_temp++;
 
@@ -3141,11 +3139,9 @@ class AdmPost extends Ferramentas
 
       foreach ($usuarios_data as $key => $value) {
         // Cria a lista com base nos usuários ativos ou desativados, dependendo da solicitação
-        if (
-          Ferramentas::decodificador($value['status']) == 'ativo' and
-          (Ferramentas::decodificador($value['tipo']) == '2')
+        if ((Ferramentas::decodificador($value['tipo']) == '2')
         ) { //verifica se é para mostrar os com estus ativo//verifica se é para mostrar os com estus ativo
-          $lista['nome'][$id_temp] = Ferramentas::decodificador($value['nome']);
+          $lista['nome'][Ferramentas::decodificador($value['status'])][$id_temp] = Ferramentas::decodificador($value['nome']);
           $lista[strval($id_temp)] = $value;
         }
         $id_temp++;
@@ -3186,6 +3182,7 @@ class AdmPost extends Ferramentas
       $dataInicial_str = service('request')->getPost('dataInicial');
       $desenhista_permissao = service('request')->getPost('desenhistas');
       $cortador_permissao = service('request')->getPost('cortador');
+      $relatorio = service('request')->getPost('relatorio');
       $msg = array();
 
       if ($dataFinal_str == "") {
@@ -3200,6 +3197,17 @@ class AdmPost extends Ferramentas
       if (!preg_match("/^\d{4}-\d{2}-\d{2}$/", $dataInicial_str)) {
         $msg["Data Inicial"] = "É precisso selecionar uma data inicial valida.";
       }
+
+
+      $dataFinal = strtotime($dataFinal_str);
+      $dataInicial = strtotime($dataInicial_str);
+
+      // Compare as datas
+      if (!($dataFinal >= $dataInicial)) {
+        $msg["Data Inicial"] = "A data final não pode ser anterior à data inicial.";
+      }
+
+
       if ($msg != []) {
         $data = [
           'ok' => false,
@@ -3215,8 +3223,7 @@ class AdmPost extends Ferramentas
 
 
 
-      $dataFinal = strtotime($dataFinal_str);
-      $dataInicial = strtotime($dataInicial_str);
+
 
       // Inicialização de objetos para acessar tabelas do banco de dados
       $desenhos = new \App\Models\Desenhos();
@@ -3372,14 +3379,10 @@ class AdmPost extends Ferramentas
 
       foreach ($desenhista as $key => $value1) {
 
-
+        $apagados = 0;
         $N1++;
         $total_desenhos_tr += count($value1);
-        $desenhistas_tr .= '<tr style="background-color: white;">
-            <th> ' . str_pad($N1, strlen(strval(count($desenhista))), '0', STR_PAD_LEFT) . '</th>
-            <th> ' . $key . ' </th>
-            <th> ' . count($value1) . ' </th>
-          </tr>';
+
 
         $temp_desenhista_tr = '<h3>' . $key . '</h3>
                <table class="table tabela">
@@ -3397,8 +3400,10 @@ class AdmPost extends Ferramentas
           if (!$value["ok"])
             continue;
 
-          if ($value["status"] == "apagado")
+          if ($value["status"] == "apagado"){
             $total_desenhos_apagados_tr++;
+            $apagados++;
+          }
 
           $temp_nome_arquivo = $value["nome_arquivo"];
           if (strpos($temp_nome_arquivo, "cortado") === 0) {
@@ -3417,12 +3422,21 @@ class AdmPost extends Ferramentas
             <th> ' . str_replace(["cortado_notfile", "corte"], ["cortado", "pendente"], $value["status"]) . ' </th>
           </tr>
           ';
+
         }
         $temp_desenhista_tr .= '</table>';
         if ($N != 0) {
           $desenhista_tr .= $temp_desenhista_tr;
           $desenhistas .= '<p>' . $key . '</p>';
         }
+
+        $desenhistas_tr .= '<tr style="background-color: white;">
+        <th> ' . str_pad($N1, strlen(strval(count($desenhista))), '0', STR_PAD_LEFT) . '</th>
+        <th> ' . $key . ' </th>
+        <th> ' . count($value1) . ' </th>
+        <th> ' . $apagados . ' </th>
+        <th> ' . abs(count($value1)-$apagados) . ' </th>
+      </tr>';
 
       }
       $qtd_desenho = $N;
@@ -3532,34 +3546,29 @@ class AdmPost extends Ferramentas
                     <td>' . $desenhistas . '</td>
                     <td>' . $cortadores . '</td>
                 </tr>
-                </table>';
-      if ($desenhista_tr != "")
-        $pdf .= '<h2 class="page-break">Desenhos enviados</h2></br></br>' . $desenhista_tr;
-      if ($corte_tr != "")
-        $pdf .= ' <h2 class="page-break">Desenhos cortados</h2></br></br>' . $corte_tr;
-
-
-
-      $pdf .= '<h2 class="page-break">Desenhista</h2></br>
+                </table>
+<br/><br/>
+                <h2 >Desenhista</h2></br>
               <table class="table tabela">
                 <tr style="background-color: white;">
-                <th> Nº</th>
-                <th> Desenhista </th>
-                <th> Quantidade de desenhos </th>
+                <th style="width: 7px;"> Nº</th>
+                <th style="width: 150px;"> Desenhista </th>
+                <th> Quant. de desenhos </th>
+                <th> Quant. de desenhos apagados </th>
+                <th> Total de desenhos</th>
                 </tr>
                 ' . $desenhistas_tr . '
                                 <tr>
-                <th>Total de desenhos : ' . $total_desenhos_tr . ' </th>
+                <th colspan="2">Total de desenhos : ' . $total_desenhos_tr . ' </th>
 
                 <th>Total de desenhos apagados: ' . $total_desenhos_apagados_tr . ' </th>
 
-                <th><b>Total de desenhos adicionados: ' . abs($total_desenhos_tr - $total_desenhos_apagados_tr) . ' </b></td>
+                <th colspan="2"><b>Total de desenhos adicionados: ' . abs($total_desenhos_tr - $total_desenhos_apagados_tr) . ' </b></td>
                 </tr>
                 
-              </table>';
-
-
-      $pdf .= '<h2 style="padding-top: 20px;">Cortador</h2></br>
+              </table>
+              
+              <h2 style="padding-top: 20px;">Cortador</h2></br>
               <table class="table tabela">
                 <tr style="background-color: white;">
                 <th> Nº</th>
@@ -3572,7 +3581,21 @@ class AdmPost extends Ferramentas
                 <tr>
                 <th colspan="5">Total de desenhos cortados: ' . $total_corte_tr . ' 
                 </tr>
-              </table>';
+              </table>
+                ';
+
+
+      if ($desenhista_tr != "" and $relatorio == "true")
+        $pdf .= '<h2 class="page-break">Desenhos enviados</h2></br></br>' . $desenhista_tr;
+      if ($corte_tr != "" and $relatorio == "true")
+        $pdf .= ' <h2 class="page-break">Desenhos cortados</h2></br></br>' . $corte_tr;
+
+
+
+     
+
+
+
       if (($qtd_corte + $qtd_desenho) != 0) {
         $corte_porcento = intval(((100 * $qtd_corte) / ($qtd_corte + $qtd_desenho)));
         $desenhos_porcento = intval(((100 * $qtd_desenho) / ($qtd_corte + $qtd_desenho)));
@@ -3846,6 +3869,7 @@ h1 {
 
       // Retorna a resposta JSON com o conteúdo PDF e o nome do arquivo
       $data = [
+        'oi' => $relatorio,
         'ok' => true,
         'pdf' => base64_encode($pdfContent),
         'nome_pdf' => 'Relatorio Wl maquetaria ' . date("d_m_Y", strtotime($dataInicial_str)) . ' a ' . date("d_m_Y", strtotime($dataFinal_str)) . '.pdf'

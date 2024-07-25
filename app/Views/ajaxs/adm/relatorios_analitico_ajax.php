@@ -1,20 +1,23 @@
 <style>
-.button-container {
+  .button-container {
     display: flex;
-    justify-content: center; /* Centraliza os botões horizontalmente */
-    align-items: center; /* Centraliza os botões verticalmente */
-    gap: 10px; /* Adiciona um espaço entre os botões */
-}
+    justify-content: center;
+    /* Centraliza os botões horizontalmente */
+    align-items: center;
+    /* Centraliza os botões verticalmente */
+    gap: 10px;
+    /* Adiciona um espaço entre os botões */
+  }
 
 
 
-.button-container button {
-  width: 50%; /* Faz com que o contêiner ocupe 100% da largura disponível na div */
+  .button-container button {
+    width: 50%;
+    /* Faz com que o contêiner ocupe 100% da largura disponível na div */
 
-    flex: none; /* Garante que os botões não ocupem a largura total */
-}
-
-
+    flex: none;
+    /* Garante que os botões não ocupem a largura total */
+  }
 </style>
 <script>
 
@@ -27,6 +30,96 @@
   if (element1) {
     element1.remove();
   }
+  const element2 = document.getElementById("rad_1");
+  if (element2) {
+    element2.remove();
+  }
+  const element3 = document.getElementById("checkbox_ativo");
+  if (element3) {
+    element3.remove();
+  }
+  const group0 = document.getElementById('group_0');
+  const group1 = document.getElementById('group_1');
+  const group2 = document.getElementById('group_2');
+  const group3 = document.getElementById('group_3');
+  const group4 = document.getElementById('group_4');
+  const group5 = document.getElementById('group_5');
+  const cadastrar_btn = document.getElementById('cadastrar_btn');
+
+  cadastrar_btn.style.width = '50%';
+
+  group0.style.display = 'inline-block';
+  group0.style.width = '250px';
+  group0.style.verticalAlign = 'top';
+  group0.style.padding = '5px';
+
+  group1.style.display = 'inline-block';
+  group1.style.width = '250px';
+  group1.style.verticalAlign = 'top';
+  group1.style.padding = '5px';
+
+  group2.style.display = 'inline-block';
+  group2.style.width = '200px';
+  group2.style.verticalAlign = 'top';
+  group2.style.padding = '5px';
+
+  group3.style.display = 'inline-block';
+  group3.style.width = '200px';
+  group3.style.verticalAlign = 'top';
+  group3.style.padding = '5px';
+
+  group4.style.display = 'inline-block';
+  group4.style.width = '600px';
+  group4.style.verticalAlign = 'top';
+  group4.style.padding = '5px';
+
+  group5.style.display = 'inline-block';
+  group5.style.width = '600px';
+  group5.style.verticalAlign = 'top';
+  group5.style.padding = '5px';
+
+  group4.parentNode.insertBefore(document.createElement('br'), group4);
+
+  // Função para criar e adicionar novos elementos dentro de uma nova div em um grupo existente
+  function addElementsToNewDiv(inputType, inputId, inputName, labelText, newDiv = document.createElement('div')) {
+
+    // Cria uma nova div com a classe especificada
+    newDiv.style = 'display: flex; justify-content: flex-start; padding: 5px; padding-right: 15px;';
+
+
+    const input = document.createElement('input');
+    input.type = inputType;
+    input.style = 'padding: 5px; ';
+    input.id = inputId;
+    if (inputName) {
+      input.name = inputName;
+    }
+
+    const label = document.createElement('span');
+    label.innerHTML = labelText;
+    label.style = 'padding: 5px; vertical-align: inherit; padding-right: 10px;';
+
+
+    newDiv.appendChild(input);
+    newDiv.appendChild(label);
+
+
+
+
+
+
+    return newDiv
+  }
+
+  // Adicionar novo radio button "Sintético" dentro de uma nova div no group_2
+  group2.appendChild(addElementsToNewDiv('radio', 'rad_2', 'tipo_relatorio', 'Sintético', addElementsToNewDiv('radio', 'rad_1', 'tipo_relatorio', 'Analítico')));
+
+  group3.appendChild(addElementsToNewDiv('checkbox', 'checkbox_desativado', '', 'Desativado', addElementsToNewDiv('checkbox', 'checkbox_ativo', '', 'Ativo')));
+
+  document.getElementById('rad_1').checked = true;
+  document.getElementById('checkbox_ativo').checked = true;
+  // Adicionar novo checkbox "Desativado" dentro de uma nova div no group_3
+
 
 
 
@@ -44,13 +137,13 @@
     const dataInicial = document.getElementById("data_inicial").value;
     const dataFinal = document.getElementById("data_final").value;
     desenhistas = getSelectedCheckboxValues_desenhista();
-    cortador    = getSelectedCheckboxValues_cortador();
+    cortador = getSelectedCheckboxValues_cortador();
 
     $.ajax({
       url: '<?= base_url('public/adm/relatorio_analitico') ?>',
       type: "POST",
       dataType: "json", // Espera uma resposta JSON
-      data: { dataInicial: dataInicial, dataFinal: dataFinal, desenhistas: desenhistas,cortador: cortador  },
+      data: { dataInicial: dataInicial, dataFinal: dataFinal, desenhistas: desenhistas, cortador: cortador, relatorio: document.getElementById('rad_1').checked },
       success: function (response) {
 
 
@@ -107,7 +200,7 @@
     // Obtendo a data de hoje e subtraindo um dia para obter o dia anterior
     const today = new Date();
     const yesterday = new Date(today);
-    yesterday.setDate(yesterday.getDate() - 1);
+    yesterday.setDate(yesterday.getDate());
     const maxDate = yesterday.toISOString().split('T')[0];
 
     // Definindo o valor máximo para data_inicial e data_final
@@ -127,38 +220,33 @@
       } else {
         dataFinal.setAttribute("disabled", "true");
         dataFinal.value = ""; // Zerar a data final quando a data inicial for desmarcada
+
       }
     });
 
-    dataFinal.addEventListener("change", function () {
-      if (dataFinal.value > maxDate) {
-        alert_personalizado("Período", "A data final não pode ser anterior à data inicial.");
 
-        dataFinal.value = "";
-      }
-
-      // Verificando se a data final é menor que a data inicial
-      if (dataInicial.value && dataFinal.value < dataInicial.value) {
-        alert_personalizado("Período", "A data final não pode ser anterior à data inicial.");
-
-        dataFinal.value = "";
-      }
-    });
   });
 
 
   function createControls_cortador() {
-    const container = document.getElementById('group_3');
+    const container = document.getElementById('group_5');
 
-    // Create button container
+    // Cria o contêiner do botão
     const buttonContainer = document.createElement('div');
     buttonContainer.className = 'button-container';
+
+    // Define os estilos do contêiner para alinhamento à esquerda
+    buttonContainer.style.display = 'flex';
+    buttonContainer.style.justifyContent = 'flex-start';
+    buttonContainer.style.padding = '5px';
+
 
     // Create select all button
     const selectAllButton = document.createElement('button');
     selectAllButton.id = 'selectAll';
     selectAllButton.textContent = 'Selecionar Todos';
     selectAllButton.className = 'btn btn-outline-primary btn-sm';
+    selectAllButton.style.width = '150px';  // Define a largura do botão
     selectAllButton.addEventListener('click', selectAllCheckboxes_cortador);
     buttonContainer.appendChild(selectAllButton);
 
@@ -167,39 +255,65 @@
     deselectAllButton.id = 'deselectAll';
     deselectAllButton.textContent = 'Desmarcar Todos';
     deselectAllButton.className = 'btn btn-outline-primary btn-sm';
+    deselectAllButton.style.width = '150px';  // Define a largura do botão
     deselectAllButton.addEventListener('click', deselectAllCheckboxes_cortador);
     buttonContainer.appendChild(deselectAllButton);
 
     // Add button container to the top of the group_3 container
     container.appendChild(buttonContainer);
-}
+  }
 
 
-function createCheckboxes_cortador(data) {
-    const container = document.getElementById('group_3');
+  function createCheckboxes_cortador(data) {
+    ativo = document.getElementById('checkbox_ativo').checked;
+    desativado = document.getElementById('checkbox_desativado').checked;
+    const container = document.getElementById('group_5');
+    const checkboxes = container.querySelectorAll('#checkbox_cortador');
+    checkboxes.forEach(checkbox => checkbox.remove());
 
-    for (const key in data) {
-      if (data.hasOwnProperty(key)) {
-        const label = document.createElement('label');
-        const checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-        checkbox.value = key;
 
-        label.appendChild(checkbox);
-        label.appendChild(document.createTextNode(data[key]));
+    if (ativo)
+      for (const key in data.ativo) {
+        if (data.ativo.hasOwnProperty(key)) {
+          const label = document.createElement('label');
+          const checkbox = document.createElement('input');
+          checkbox.type = 'checkbox';
+          checkbox.value = key;
+          label.id = 'checkbox_cortador';
+          label.appendChild(checkbox);
+          label.appendChild(document.createTextNode(data.ativo[key]));
 
-        // Adiciona estilo para espaçamento
-        label.style.margin = '5px';
+          // Adiciona estilo para espaçamento
+          label.style.margin = '5px';
 
-        container.appendChild(label);
+          container.appendChild(label);
+        }
       }
-    }
+
+    if (desativado)
+      for (const key in data.desativado) {
+        if (data.desativado.hasOwnProperty(key)) {
+          const label = document.createElement('label');
+          const checkbox = document.createElement('input');
+          checkbox.type = 'checkbox';
+          label.id = 'checkbox_cortador';
+          checkbox.value = key;
+
+          label.appendChild(checkbox);
+          label.appendChild(document.createTextNode(data.desativado[key]));
+
+          // Adiciona estilo para espaçamento
+          label.style.margin = '5px';
+
+          container.appendChild(label);
+        }
+      }
 
     updateColumns_cortador();
   }
 
   function updateColumns_cortador() {
-    const container = document.getElementById('group_3');
+    const container = document.getElementById('group_5');
     const containerWidth = container.offsetWidth;
     const checkboxWidth = 200; // Largura aproximada de cada checkbox com label
     const columns = Math.floor(containerWidth / checkboxWidth);
@@ -207,19 +321,19 @@ function createCheckboxes_cortador(data) {
   }
 
   function selectAllCheckboxes_cortador() {
-    const checkboxes = document.querySelectorAll('#group_3 input[type="checkbox"]');
+    const checkboxes = document.querySelectorAll('#group_5 input[type="checkbox"]');
     checkboxes.forEach(checkbox => checkbox.checked = true);
   }
 
   function deselectAllCheckboxes_cortador() {
-    const checkboxes = document.querySelectorAll('#group_3 input[type="checkbox"]');
+    const checkboxes = document.querySelectorAll('#group_5 input[type="checkbox"]');
     checkboxes.forEach(checkbox => checkbox.checked = false);
   }
 
 
 
   function getSelectedCheckboxValues_cortador() {
-    const checkboxes = document.querySelectorAll('#group_3 input[type="checkbox"]');
+    const checkboxes = document.querySelectorAll('#group_5 input[type="checkbox"]');
     const selectedValues = [];
     checkboxes.forEach(checkbox => {
       if (checkbox.checked) {
@@ -243,17 +357,23 @@ function createCheckboxes_cortador(data) {
 
 
   function createControls_desenhista() {
-    const container = document.getElementById('group_2');
+    const container = document.getElementById('group_4');
 
     // Create button container
     const buttonContainer = document.createElement('div');
     buttonContainer.className = 'button-container';
+
+    // Define os estilos do contêiner para alinhamento à esquerda
+    buttonContainer.style.display = 'flex';
+    buttonContainer.style.justifyContent = 'flex-start';
+    buttonContainer.style.padding = '5px';
 
     // Create select all button
     const selectAllButton = document.createElement('button');
     selectAllButton.id = 'selectAll';
     selectAllButton.textContent = 'Selecionar Todos';
     selectAllButton.className = 'btn btn-outline-primary btn-sm';
+    selectAllButton.style.width = '150px';  // Define a largura do botão
     selectAllButton.addEventListener('click', selectAllCheckboxes_desenhista);
     buttonContainer.appendChild(selectAllButton);
 
@@ -262,38 +382,64 @@ function createCheckboxes_cortador(data) {
     deselectAllButton.id = 'deselectAll';
     deselectAllButton.textContent = 'Desmarcar Todos';
     deselectAllButton.className = 'btn btn-outline-primary btn-sm';
+    deselectAllButton.style.width = '150px';  // Define a largura do botão
     deselectAllButton.addEventListener('click', deselectAllCheckboxes_desenhista);
     buttonContainer.appendChild(deselectAllButton);
 
     // Add button container to the top of the group_3 container
     container.appendChild(buttonContainer);
-}
+  }
 
   function createCheckboxes_desenhista(data) {
-    const container = document.getElementById('group_2');
 
-    for (const key in data) {
-      if (data.hasOwnProperty(key)) {
-        const label = document.createElement('label');
-        const checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-        checkbox.value = key;
+    ativo = document.getElementById('checkbox_ativo').checked;
+    desativado = document.getElementById('checkbox_desativado').checked;
+    const container = document.getElementById('group_4');
+    const checkboxes = container.querySelectorAll('#checkbox_desenhista');
+    checkboxes.forEach(checkbox => checkbox.remove());
 
-        label.appendChild(checkbox);
-        label.appendChild(document.createTextNode(data[key]));
+    if (ativo)
+      for (const key in data.ativo) {
+        if (data.ativo.hasOwnProperty(key)) {
+          const label = document.createElement('label');
+          const checkbox = document.createElement('input');
+          checkbox.type = 'checkbox';
+          checkbox.value = key;
+          label.id = "checkbox_desenhista";
 
-        // Adiciona estilo para espaçamento
-        label.style.margin = '5px';
+          label.appendChild(checkbox);
+          label.appendChild(document.createTextNode(data.ativo[key]));
 
-        container.appendChild(label);
+          // Adiciona estilo para espaçamento
+          label.style.margin = '5px';
+
+          container.appendChild(label);
+        }
       }
-    }
+
+    if (desativado)
+      for (const key in data.desativado) {
+        if (data.desativado.hasOwnProperty(key)) {
+          const label = document.createElement('label');
+          const checkbox = document.createElement('input');
+          checkbox.type = 'checkbox';
+          checkbox.value = key;
+          label.id = "checkbox_desenhista";
+          label.appendChild(checkbox);
+          label.appendChild(document.createTextNode(data.desativado[key]));
+
+          // Adiciona estilo para espaçamento
+          label.style.margin = '5px';
+
+          container.appendChild(label);
+        }
+      }
 
     updateColumns_desenhista();
   }
 
   function updateColumns_desenhista() {
-    const container = document.getElementById('group_2');
+    const container = document.getElementById('group_4');
     const containerWidth = container.offsetWidth;
     const checkboxWidth = 200; // Largura aproximada de cada checkbox com label
     const columns = Math.floor(containerWidth / checkboxWidth);
@@ -301,19 +447,19 @@ function createCheckboxes_cortador(data) {
   }
 
   function selectAllCheckboxes_desenhista() {
-    const checkboxes = document.querySelectorAll('#group_2 input[type="checkbox"]');
+    const checkboxes = document.querySelectorAll('#group_4 input[type="checkbox"]');
     checkboxes.forEach(checkbox => checkbox.checked = true);
   }
 
   function deselectAllCheckboxes_desenhista() {
-    const checkboxes = document.querySelectorAll('#group_2 input[type="checkbox"]');
+    const checkboxes = document.querySelectorAll('#group_4 input[type="checkbox"]');
     checkboxes.forEach(checkbox => checkbox.checked = false);
   }
 
 
 
   function getSelectedCheckboxValues_desenhista() {
-    const checkboxes = document.querySelectorAll('#group_2 input[type="checkbox"]');
+    const checkboxes = document.querySelectorAll('#group_4 input[type="checkbox"]');
     const selectedValues = [];
     checkboxes.forEach(checkbox => {
       if (checkbox.checked) {
@@ -324,17 +470,39 @@ function createCheckboxes_cortador(data) {
   }
 
 
+
+
+  document.getElementById('checkbox_desativado').addEventListener('click', function () {
+    createCheckboxes_desenhista(desenhistas_glob);
+    createCheckboxes_cortador(cortadores_glob);
+    selectAllCheckboxes_cortador();
+    selectAllCheckboxes_desenhista();
+  });
+  document.getElementById('checkbox_ativo').addEventListener('click', function () {
+    createCheckboxes_desenhista(desenhistas_glob);
+    createCheckboxes_cortador(cortadores_glob);
+    selectAllCheckboxes_cortador();
+    selectAllCheckboxes_desenhista();
+  });
+
+  console.log('response');
+
+  desenhistas_glob = '';
+  cortadores_glob = '';
+
+
   // Inicializa controles e checkboxes
   function init() {
     createControls_desenhista();
     createControls_cortador();
-
+    console.log('response');
     // Faz a requisição AJAX
     $.ajax({
       url: '<?= base_url('public/adm/lista_desenhistas') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       success: function (response) {
+        desenhistas_glob = response.lista;
         createCheckboxes_desenhista(response.lista);
         selectAllCheckboxes_desenhista();
       }
@@ -344,6 +512,7 @@ function createCheckboxes_cortador(data) {
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       success: function (response) {
+        cortadores_glob = response.lista;
         createCheckboxes_cortador(response.lista);
         selectAllCheckboxes_cortador();
       }
