@@ -5,8 +5,11 @@
   check_prima = true;
 
   lista_temp = "";
-  function lista() {
-    var checkbox = document.getElementById("cortadorCheckbox");
+
+
+
+  function lista_corte() {
+    checkbox = document.getElementById("cortadorCheckbox");
     var checkboxValue = checkbox ? (checkbox.checked ? "true" : "false") : "";
 
     $.ajax({
@@ -65,7 +68,7 @@
 
             // Adiciona a checkbox manualmente ao container do DataTable
             $('#example1_wrapper .col-md-6:eq(0)').append(
-              '<input type="checkbox" id="cortadorCheckbox">Som ao adicionar desenhos'
+              '<input type="checkbox" id="cortadorCheckbox" onclick="lista_corte()">Som ao adicionar desenhos'
             );
           });
 
@@ -73,18 +76,29 @@
 
           lista_temp = response.lista;
         }
-        if (response.check != "" && check_prima) {
-          check_prima = false;
-          checkbox.checked = (response.check == "true");
+        if (response.check != "") {
+          setTimeout(function () {
+            checkbox = document.getElementById("cortadorCheckbox");
+            check_prima = false;
+            checkbox.checked = (response.check == "true");
+          }, 100);
         }
+
+
+        // 
+
+        // if (checkbox) {
+        //   checkbox.checked = response.check == "true" ? true : false;
+        // }
       }
+
+
+
     });
   }
   // Executar função ao abrir o site
-  document.addEventListener('DOMContentLoaded', lista);
+  document.addEventListener('DOMContentLoaded', lista_corte);
 
-  // Repetir função a cada segundo
-  setInterval(lista, 1000);
 
 
 
@@ -146,8 +160,7 @@
   // Executar função ao abrir o site
   document.addEventListener('DOMContentLoaded', value_prioridade);
 
-  // Repetir função a cada segundo 
-  setInterval(value_prioridade, 1000);
+
 
   function inverterCor(hex) {
     // Verificar se a cor é válida (começa com # seguido por 6 caracteres hexadecimais)
@@ -172,7 +185,7 @@
     return invertedHex;
   }
 
-  var lista;
+
   function prio_modal_todos() {
 
 
@@ -444,11 +457,12 @@
 
           if (response.ok) {
             fecharModal();
-            lista();
+          
+
           } else {
             console.log('erro');
           }
-
+          lista_corte();
 
 
         }
@@ -641,7 +655,7 @@
 
           }
           fecharModal();
-          lista();
+          lista_corte();
 
         };
 
@@ -717,7 +731,7 @@
 
 
           fecharModal();
-          lista();
+          
 
         };
 
@@ -753,17 +767,14 @@
           data: { id: id },
           success: function (response) {
             if (response.ok == 'true') {
-
               alert_certo('Desenho', response.mensagem);
             } else if (response.ok == 'false') {
-
               alert_personalizado('Desenho', response.mensagem_false);
               alert_certo('Desenho', response.mensagem);
             } else {
               apagar_mesmo(id)
             }
-            console.log(response);
-
+            lista_corte();
           }
         });
 
@@ -826,4 +837,11 @@
       return str;
     }
   }
+
+  //   // Repetir função a cada segundo
+  //   setInterval(lista, 1000);
+  // // Repetir função a cada segundo
+  // setInterval(value_prioridade, 1000);
+
+
 </script>

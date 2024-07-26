@@ -105,8 +105,7 @@
   // Executar função ao abrir o site
   document.addEventListener('DOMContentLoaded', lista);
 
-  // Repetir função a cada segundo
-  setInterval(lista, 1000);
+
 
   lista_temp1 = "";
   function value_empresa(efeturar = false) {
@@ -165,8 +164,7 @@
   // Executar função ao abrir o site
   document.addEventListener('DOMContentLoaded', value_empresa);
 
-  // Repetir função a cada segundo 
-  setInterval(value_empresa, 1000);
+
 
 
 
@@ -199,6 +197,7 @@
             alert_personalizado(chave, valor);
           }
         } else {
+          lista();
           alert_certo('Cadastrado', 'Empreendimento cadastrado com sucesso.');
           document.getElementById("empreendimento_novo").value = '';
           document.getElementById("empresa_cliente_novo").value = '';
@@ -337,4 +336,9 @@
 
     fecharModal();
   }
+
+  //   // Repetir função a cada segundo
+  //   setInterval(lista, 1000);
+  //     // Repetir função a cada segundo 
+  // setInterval(value_empresa, 1000);
 </script>

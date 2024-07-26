@@ -82,8 +82,7 @@
     // Executar função ao abrir o site
     document.addEventListener('DOMContentLoaded', value_funcao);
 
-    // Repetir função a cada segundo 
-    setInterval(value_funcao, 1000);
+
 
 
     
@@ -156,5 +155,6 @@
     }
 
 
-
+    // // Repetir função a cada segundo 
+    // setInterval(value_funcao, 1000);
 </script>

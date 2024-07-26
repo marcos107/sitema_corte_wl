@@ -105,8 +105,7 @@
   // Executar função ao abrir o site
   document.addEventListener('DOMContentLoaded', lista);
 
-  // Repetir função a cada segundo
-  setInterval(lista, 1000);
+
 
   function cadastrar() {
 
@@ -127,6 +126,7 @@
             alert_personalizado(chave, valor);
           }
         } else {
+          lista();
           alert_certo('Cadastrado', 'Finalidade cadastrado com sucesso.');
           document.getElementById("nome_Finalidade_novo").value = '';
         }
@@ -250,4 +250,6 @@
     fecharModal();
   }
 
+  // // Repetir função a cada segundo
+  // setInterval(lista, 1000);
 </script>

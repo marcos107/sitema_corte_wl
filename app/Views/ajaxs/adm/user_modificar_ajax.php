@@ -128,8 +128,6 @@
   // Executar função ao abrir o site
   document.addEventListener('DOMContentLoaded', lista);
 
-  // Repetir função a cada segundo
-  setInterval(lista, 1000);
 
   id_g = '';
   function modal_modificar(id) {
@@ -372,8 +370,6 @@ inputElement.addEventListener("input", function () {
   // Executar função ao abrir o site
   document.addEventListener('DOMContentLoaded', value_funcao);
 
-  // Repetir função a cada segundo 
-  setInterval(value_funcao, 1000);
   function alert_certo(titulo, bory){
         $(document).Toasts('create', {
         class: 'bg-success',
@@ -398,4 +394,10 @@ inputElement.addEventListener("input", function () {
             body: bory
         });
     }
+
+    
+  // // Repetir função a cada segundo
+  // setInterval(lista, 1000);
+  // // Repetir função a cada segundo 
+  // setInterval(value_funcao, 1000);
 </script>

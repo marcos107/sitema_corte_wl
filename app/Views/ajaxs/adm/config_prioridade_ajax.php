@@ -98,8 +98,7 @@
   // Executar função ao abrir o site
   document.addEventListener('DOMContentLoaded', lista);
 
-  // Repetir função a cada segundo
-  setInterval(lista, 1000);
+
   var inputElement = document.getElementById("nova_ordem");
   inputElement.disabled = true;
 
@@ -124,8 +123,6 @@
   // Executar função ao abrir o site
   document.addEventListener('DOMContentLoaded', ordem_max);
 
-  // Repetir função a cada segundo
-  setInterval(ordem_max, 1000);
   function cadastrar() {
 
     var prioridade = document.getElementById("nome_prioridade_nova").value;
@@ -146,6 +143,7 @@
             alert_personalizado(chave, valor);
           }
         } else {
+          lista();
           alert_certo('Cadastrado', 'Prioridade cadastrado com sucesso.');
           document.getElementById("nome_prioridade_nova").value = '';
           document.getElementById("nova_cor").value = '';
@@ -366,6 +364,10 @@
   // Executar função ao abrir o site
   document.addEventListener('DOMContentLoaded', value_empresa);
 
-  // Repetir função a cada segundo 
-  setInterval(value_empresa, 1000);
+  //   // Repetir função a cada segundo
+  //   setInterval(lista, 1000);
+  // // Repetir função a cada segundo
+  // setInterval(ordem_max, 1000);
+  // // Repetir função a cada segundo 
+  // setInterval(value_empresa, 1000);
 </script>

@@ -79,6 +79,6 @@
   document.addEventListener('DOMContentLoaded', lista);
 
   // Repetir função a cada segundo
-  setInterval(lista, 1000);
+  setInterval(lista, 10000);
 
 </script>

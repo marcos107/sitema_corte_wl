@@ -74,8 +74,6 @@
   // Executar função ao abrir o site
   document.addEventListener('DOMContentLoaded', lista);
 
-  // Repetir função a cada segundo
-  setInterval(lista, 1000);
 
   const dataInicialInput = document.getElementById('dataInicial');
   const dataFinalInput = document.getElementById('dataFinal');
@@ -147,8 +145,7 @@
   // Executar função ao abrir o site
   document.addEventListener('DOMContentLoaded', value_prioridade);
 
-  // Repetir função a cada segundo 
-  setInterval(value_prioridade, 1000);
+  
 
   function inverterCor(hex) {
     // Verificar se a cor é válida (começa com # seguido por 6 caracteres hexadecimais)
@@ -1154,4 +1151,10 @@
       return str;
     }
   }
+
+  //   // Repetir função a cada segundo
+  //   setInterval(lista, 1000);
+  // // Repetir função a cada segundo 
+  // setInterval(value_prioridade, 1000);
+
 </script>

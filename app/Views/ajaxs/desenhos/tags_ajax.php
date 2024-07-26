@@ -126,7 +126,7 @@
   document.addEventListener('DOMContentLoaded', lista);
 
  //Repetir função a cada segundo
-  setInterval(lista, 1000);
+  //setInterval(lista, 1000);
 
   function cadastrar() {
    //Esta função é usada para cadastrar uma nova "tag".
@@ -152,6 +152,7 @@
             alert_personalizado(chave, valor);
           }
         } else {
+          lista();
          //Se a resposta indica sucesso, exibe um alerta informando que a "tag" foi cadastrada com sucesso.
           alert_certo('Cadastrado', 'Tag cadastrado com sucesso.');
          //Limpa o valor do campo de entrada para que o usuário possa inserir outra "tag".

@@ -72,8 +72,7 @@
   // Executar função ao abrir o site
   document.addEventListener('DOMContentLoaded', lista);
 
-  // Repetir função a cada segundo
-  setInterval(lista, 5000);
+
 
   const dataInicialInput = document.getElementById('dataInicial');
   const dataFinalInput = document.getElementById('dataFinal');
@@ -313,4 +312,7 @@
       body: bory
     });
   }
+
+    // // Repetir função a cada segundo
+    // setInterval(lista, 5000);
 </script>

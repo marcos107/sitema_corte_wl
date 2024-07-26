@@ -42,13 +42,14 @@ class AdmPost extends Ferramentas
       $id_temp = 0;
       $lista_ids = array();
       $lista_completa = array();
+      $alteracao = new \App\Models\Alteracoes();
+      $alteracao_data = $alteracao->where('item', 'som_corte')
+        ->orderBy('id', 'DESC')
+        ->first();
 
       if ($check != null) {
-        $alteracao = new \App\Models\Alteracoes();
-        $alteracao_data = $alteracao->where('item', 'som_corte')
-          ->orderBy('id', 'DESC')
-          ->first();
-
+   
+          
         if ($alteracao_data) {
           if ($check != $alteracao_data["depois"]) {
 
@@ -64,7 +65,7 @@ class AdmPost extends Ferramentas
             ];
             $alteracao->insert($data);
           }
-          $check = $alteracao_data["depois"];
+       
         } else {
           $data = [
             "individuo" => $_SESSION["usuario"],
@@ -78,12 +79,10 @@ class AdmPost extends Ferramentas
           ];
           $alteracao->insert($data);
         }
-
-
-
-
-
+      }else{
+        $check = $alteracao_data["depois"];
       }
+      
 
       // Itera sobre os dados de desenhos para criar a lista
       foreach ($desenhos_data as $key => $value) {
