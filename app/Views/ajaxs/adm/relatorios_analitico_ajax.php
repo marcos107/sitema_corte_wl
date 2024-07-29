@@ -20,6 +20,69 @@
   }
 </style>
 <script>
+  cadastrar_glob = false;
+  function cadastrar() {
+    cadastrar_glob = true;
+    document.getElementById('cadastrar_btn').disabled = true;
+    const dataInicial = document.getElementById("data_inicial").value;
+    const dataFinal = document.getElementById("data_final").value;
+    desenhistas = getSelectedCheckboxValues_desenhista();
+    cortador = getSelectedCheckboxValues_cortador();
+
+    $.ajax({
+      url: '<?= base_url('public/adm/relatorio_analitico') ?>',
+      type: "POST",
+      dataType: "json", // Espera uma resposta JSON
+      data: { dataInicial: dataInicial, dataFinal: dataFinal, desenhistas: desenhistas, cortador: cortador, relatorio: document.getElementById('rad_1').checked },
+      success: function (response) {
+
+
+        if (!response.ok) {
+          //response.msg
+          for (const chave in response.msg) {
+            const valor = response.msg[chave];
+            alert_personalizado(chave, valor);
+          }
+
+        } else {
+
+
+
+
+
+          // Decodifica o conteúdo PDF
+          var pdfContent = atob(response.pdf);
+          var pdfFileName = response.nome_pdf;
+
+          // Cria um blob a partir do conteúdo PDF
+          var blob = new Blob([new Uint8Array([...pdfContent].map(char => char.charCodeAt(0)))], { type: 'application/pdf' });
+
+          // Cria um link temporário para download do PDF
+          var a = document.createElement('a');
+          var url = window.URL.createObjectURL(blob);
+          a.href = url;
+          a.download = pdfFileName;
+          document.body.append(a);
+          a.click();
+          a.remove();
+          window.URL.revokeObjectURL(url);
+
+        }
+
+        setTimeout(function () {
+          document.getElementById('cadastrar_btn').disabled = false;
+        }, 500);
+        cadastrar_glob = false;
+
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+        cadastrar_glob = false;
+        document.getElementById('cadastrar_btn').disabled = false;
+
+        // console.log(textStatus, errorThrown);
+      }
+    });
+  }
 
 
   const element = document.getElementById("projetistas");
@@ -121,6 +184,49 @@
   // Adicionar novo checkbox "Desativado" dentro de uma nova div no group_3
 
 
+  function areAllCheckboxesDesenhistaUnchecked() {
+    var checkboxes = document.querySelectorAll('#checkbox_desenhistas');
+    for (var i = 0; i < checkboxes.length; i++) {
+      if (checkboxes[i].checked) {
+        return false; // Retorna false se pelo menos um checkbox estiver marcado
+      }
+    }
+    return true; // Retorna true se todos os checkboxes estiverem desmarcados
+  }
+
+  function areAllCheckboxesCortadorUnchecked() {
+    var checkboxes = document.querySelectorAll('#checkbox_cortadores');
+    for (var i = 0; i < checkboxes.length; i++) {
+      if (checkboxes[i].checked) {
+        return false; // Retorna false se pelo menos um checkbox estiver marcado
+      }
+    }
+    return true; // Retorna true se todos os checkboxes estiverem desmarcados
+  }
+
+  function checkIfAllDesenhistaUnchecked(event) {
+
+
+    if (!event) { // Apenas trata se o checkbox estiver sendo desmarcado
+      var allUncheckedDesenhista = areAllCheckboxesDesenhistaUnchecked();
+      var allUncheckedCortador = areAllCheckboxesCortadorUnchecked();
+
+      if (allUncheckedDesenhista && allUncheckedCortador) {
+        document.getElementById('cadastrar_btn').disabled = true;
+
+        alert_personalizado("Usuários", "Ao menso um Projetista ou Cortador precisa estar selecionado");
+      }
+    } else {
+      var isValid = document.getElementById('checkbox_desativado').checked || document.getElementById('checkbox_ativo').checked;
+      if (!cadastrar_glob && isValid) {
+        document.getElementById('cadastrar_btn').disabled = false;
+      }
+    }
+  }
+
+
+
+
 
 
 
@@ -132,65 +238,6 @@
   });
 
 
-  function cadastrar() {
-    document.getElementById('cadastrar_btn').disabled = true;
-    const dataInicial = document.getElementById("data_inicial").value;
-    const dataFinal = document.getElementById("data_final").value;
-    desenhistas = getSelectedCheckboxValues_desenhista();
-    cortador = getSelectedCheckboxValues_cortador();
-
-    $.ajax({
-      url: '<?= base_url('public/adm/relatorio_analitico') ?>',
-      type: "POST",
-      dataType: "json", // Espera uma resposta JSON
-      data: { dataInicial: dataInicial, dataFinal: dataFinal, desenhistas: desenhistas, cortador: cortador, relatorio: document.getElementById('rad_1').checked },
-      success: function (response) {
-
-
-        if (!response.ok) {
-          //response.msg
-          for (const chave in response.msg) {
-            const valor = response.msg[chave];
-            alert_personalizado(chave, valor);
-          }
-
-        } else {
-
-
-
-
-
-          // Decodifica o conteúdo PDF
-          var pdfContent = atob(response.pdf);
-          var pdfFileName = response.nome_pdf;
-
-          // Cria um blob a partir do conteúdo PDF
-          var blob = new Blob([new Uint8Array([...pdfContent].map(char => char.charCodeAt(0)))], { type: 'application/pdf' });
-
-          // Cria um link temporário para download do PDF
-          var a = document.createElement('a');
-          var url = window.URL.createObjectURL(blob);
-          a.href = url;
-          a.download = pdfFileName;
-          document.body.append(a);
-          a.click();
-          a.remove();
-          window.URL.revokeObjectURL(url);
-
-        }
-
-        setTimeout(function () {
-          document.getElementById('cadastrar_btn').disabled = false;
-        }, 500);
-
-      },
-      error: function (jqXHR, textStatus, errorThrown) {
-        document.getElementById('cadastrar_btn').disabled = false;
-
-        // console.log(textStatus, errorThrown);
-      }
-    });
-  }
 
 
   document.addEventListener("DOMContentLoaded", function () {
@@ -278,6 +325,7 @@
           const label = document.createElement('label');
           const checkbox = document.createElement('input');
           checkbox.type = 'checkbox';
+          checkbox.id = "checkbox_cortadores";
           checkbox.value = key;
           label.id = 'checkbox_cortador';
           label.appendChild(checkbox);
@@ -296,6 +344,7 @@
           const label = document.createElement('label');
           const checkbox = document.createElement('input');
           checkbox.type = 'checkbox';
+          checkbox.id = "checkbox_cortadores";
           label.id = 'checkbox_cortador';
           checkbox.value = key;
 
@@ -308,6 +357,12 @@
           container.appendChild(label);
         }
       }
+
+    document.querySelectorAll('#checkbox_cortadores').forEach(function (checkbox) {
+      checkbox.addEventListener('click', function (event) {
+        checkIfAllDesenhistaUnchecked(event.target.checked);
+      });
+    });
 
     updateColumns_cortador();
   }
@@ -328,6 +383,7 @@
   function deselectAllCheckboxes_cortador() {
     const checkboxes = document.querySelectorAll('#group_5 input[type="checkbox"]');
     checkboxes.forEach(checkbox => checkbox.checked = false);
+    checkIfAllDesenhistaUnchecked(false);
   }
 
 
@@ -405,6 +461,7 @@
           const checkbox = document.createElement('input');
           checkbox.type = 'checkbox';
           checkbox.value = key;
+          checkbox.id = "checkbox_desenhistas";
           label.id = "checkbox_desenhista";
 
           label.appendChild(checkbox);
@@ -424,6 +481,7 @@
           const checkbox = document.createElement('input');
           checkbox.type = 'checkbox';
           checkbox.value = key;
+          checkbox.id = "checkbox_desenhistas";
           label.id = "checkbox_desenhista";
           label.appendChild(checkbox);
           label.appendChild(document.createTextNode(data.desativado[key]));
@@ -434,7 +492,11 @@
           container.appendChild(label);
         }
       }
-
+    document.querySelectorAll('#checkbox_desenhistas').forEach(function (checkbox) {
+      checkbox.addEventListener('click', function (event) {
+        checkIfAllDesenhistaUnchecked(event.target.checked);
+      });
+    });
     updateColumns_desenhista();
   }
 
@@ -454,6 +516,7 @@
   function deselectAllCheckboxes_desenhista() {
     const checkboxes = document.querySelectorAll('#group_4 input[type="checkbox"]');
     checkboxes.forEach(checkbox => checkbox.checked = false);
+    checkIfAllDesenhistaUnchecked(false);
   }
 
 
@@ -472,20 +535,25 @@
 
 
 
-  document.getElementById('checkbox_desativado').addEventListener('click', function () {
-    createCheckboxes_desenhista(desenhistas_glob);
-    createCheckboxes_cortador(cortadores_glob);
-    selectAllCheckboxes_cortador();
-    selectAllCheckboxes_desenhista();
-  });
-  document.getElementById('checkbox_ativo').addEventListener('click', function () {
-    createCheckboxes_desenhista(desenhistas_glob);
-    createCheckboxes_cortador(cortadores_glob);
-    selectAllCheckboxes_cortador();
-    selectAllCheckboxes_desenhista();
-  });
+  function handleCheckboxChange(event) {
+    var isValid = document.getElementById('checkbox_desativado').checked || document.getElementById('checkbox_ativo').checked;
+    if (!isValid) {
+      document.getElementById('cadastrar_btn').disabled = true;
+      alert_personalizado("Visualizar usuários", "É preciso manter ao menos uma das duas opção selecionada.");
 
-  console.log('response');
+    } else {
+      var allUncheckedDesenhista = areAllCheckboxesDesenhistaUnchecked();
+      var allUncheckedCortador = areAllCheckboxesCortadorUnchecked();
+      if (!cadastrar_glob && (!areAllCheckboxesDesenhistaUnchecked() || !areAllCheckboxesCortadorUnchecked())) {
+        document.getElementById('cadastrar_btn').disabled = false;
+      }
+
+    }
+  }
+
+  document.getElementById('checkbox_desativado').addEventListener('click', handleCheckboxChange);
+  document.getElementById('checkbox_ativo').addEventListener('click', handleCheckboxChange);
+
 
   desenhistas_glob = '';
   cortadores_glob = '';
