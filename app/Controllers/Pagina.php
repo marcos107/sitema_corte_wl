@@ -18,6 +18,7 @@ class Pagina extends BaseController
     function lista_corte_adm()
     {
         // Verifica se o usuário está autenticado como administrador.
+        Login::verifica_permissao('Lista De Corte ADM');
         // Inicia a sessão, se ainda não estiver ativa.
         if (session_status() !== PHP_SESSION_ACTIVE) {
             session_start();
@@ -67,6 +68,8 @@ class Pagina extends BaseController
     function desenho_adicionar()
     {
         // Verifica se o usuário está autenticado como administrador.
+        Login::verifica_permissao('Adicionar');
+
         // Inicia a sessão, se ainda não estiver ativa.
         if (session_status() !== PHP_SESSION_ACTIVE) {
             session_start();
@@ -97,7 +100,7 @@ class Pagina extends BaseController
         // Informações do menu.
         $menu_box = "desenhos";
         $menu_select = "adicionar";
-        $template = "desenhista/add_desenho";
+        $template = "add_desenho";
 
         // Configuração da página de adição de desenho.
         $array_view['titulo'] = "Adicionar Desenho";
@@ -117,6 +120,7 @@ class Pagina extends BaseController
     function desenho_meus()
     {
         // Verifica se o usuário está autenticado como administrador.
+        Login::verifica_permissao('Meus Desenhos');
         // Inicia a sessão, se ainda não estiver ativa.
         if (session_status() !== PHP_SESSION_ACTIVE) {
             session_start();
@@ -167,6 +171,7 @@ class Pagina extends BaseController
     function desenhos_cortados()
     {
         // Verifica se o usuário está autenticado como administrador.
+        Login::verifica_permissao('Desenhos cortados');
         // Inicia a sessão, se ainda não estiver ativa.
         if (session_status() !== PHP_SESSION_ACTIVE) {
             session_start();
@@ -218,6 +223,7 @@ class Pagina extends BaseController
     {
 
         // Verifica se o usuário está autenticado como administrador.
+        Login::verifica_permissao('Empresa');
         // Inicia a sessão, se ainda não estiver ativa.
         if (session_status() !== PHP_SESSION_ACTIVE) {
             session_start();
@@ -276,6 +282,7 @@ class Pagina extends BaseController
     function empreendimento()
     {
         // Verifica se o usuário está autenticado como administrador.
+        Login::verifica_permissao('Empreendimento');
         // Inicia a sessão, se ainda não estiver ativa.
         if (session_status() !== PHP_SESSION_ACTIVE) {
             session_start();
@@ -335,6 +342,7 @@ class Pagina extends BaseController
     function finalidade()
     {
         // Verifica se o usuário está autenticado como administrador.
+        Login::verifica_permissao('Fialidade');
         // Inicia a sessão, se ainda não estiver ativa.
         if (session_status() !== PHP_SESSION_ACTIVE) {
             session_start();
@@ -392,6 +400,7 @@ class Pagina extends BaseController
     function prioridade()
     {
         // Verifica se o usuário está autenticado como administrador.
+        Login::verifica_permissao('Prioridade');
         // Inicia a sessão, se ainda não estiver ativa.
         if (session_status() !== PHP_SESSION_ACTIVE) {
             session_start();
@@ -450,6 +459,7 @@ class Pagina extends BaseController
     function extencao()
     {
         // Verifica se o usuário está autenticado como administrador.
+        Login::verifica_permissao('Tipo De Arquivo');
         // Inicia a sessão, se ainda não estiver ativa.
         if (session_status() !== PHP_SESSION_ACTIVE) {
             session_start();
@@ -508,6 +518,7 @@ class Pagina extends BaseController
     function user_modificar()
     {
         // Verifica se o usuário está autenticado como administrador.
+        Login::verifica_permissao('Usuario');
         // Inicia a sessão, se ainda não estiver ativa.
         if (session_status() !== PHP_SESSION_ACTIVE) {
             session_start();
@@ -537,7 +548,7 @@ class Pagina extends BaseController
         $array_view['titulo'] = "Modificar de Usuario";
 
         // Informações do menu.
-        $menu_box = "usuarios";
+        $menu_box = "config_dos_ajustes";
         $menu_select = "modificar";
         $template = "lista";
 
@@ -558,6 +569,7 @@ class Pagina extends BaseController
     function user_cadastrar()
     {
         // Verifica se o usuário está autenticado como administrador.
+        Login::verifica_permissao('Usuario');
         // Inicia a sessão, se ainda não estiver ativa.
         if (session_status() !== PHP_SESSION_ACTIVE) {
             session_start();
@@ -588,7 +600,7 @@ class Pagina extends BaseController
         $template = "cadastro";
 
         // Informações do menu.
-        $menu_select = "cadastrar";
+        $menu_select = "config_dos_ajustes";
         $menu_box = "usuarios";
         $text_rep = array(' do novo usuario');
         $select_option = "<option value='' disabled selected>Função do novo usuario</option>";
@@ -614,6 +626,7 @@ class Pagina extends BaseController
     function subpasta()
     {
         // Verifica se o usuário está autenticado como administrador.
+        Login::verifica_permissao('Subpasta');
         // Inicia a sessão, se ainda não estiver ativa.
         if (session_status() !== PHP_SESSION_ACTIVE) {
             session_start();
@@ -673,6 +686,7 @@ class Pagina extends BaseController
     function relatorios()
     {
         // Verifica se o usuário está autenticado como administrador.
+        Login::verifica_permissao('Relátorio');
         // Inicia a sessão, se ainda não estiver ativa.
         if (session_status() !== PHP_SESSION_ACTIVE) {
             session_start();
@@ -702,10 +716,10 @@ class Pagina extends BaseController
         );
 
         // Informações do menu.
-        $menu_box = "relatorio";
+        $menu_box = "config_dos_ajustes";
 
 
-        $menu_select = "relatorios_detalhado";
+        $menu_select = "relatorio";
         $template = "cadastro";
 
         // Configuração do formulário de cadastro.
@@ -734,6 +748,7 @@ class Pagina extends BaseController
     function lista_corte_cortador()
     {
         // Verifica se o usuário está logado como 'cortador'
+        Login::verifica_permissao('Lista De Corte Cortador');
         // Inicia a sessão, se ainda não estiver ativa.
         if (session_status() !== PHP_SESSION_ACTIVE) {
             session_start();
@@ -787,6 +802,7 @@ class Pagina extends BaseController
     function lista_corte()
     {
         // Verifica se o usuário é um "desenhista"
+        Login::verifica_permissao('Lista De Corte');
         // Inicia a sessão, se ainda não estiver ativa.
         if (session_status() !== PHP_SESSION_ACTIVE) {
             session_start();
@@ -826,6 +842,54 @@ class Pagina extends BaseController
     }
 
 
+    function nivel()
+    {
+        // Verifica se o usuário está autenticado como administrador.
+        Login::verifica_permissao('Nível');
+        // Inicia a sessão, se ainda não estiver ativa.
+        if (session_status() !== PHP_SESSION_ACTIVE) {
+            session_start();
+        }
+
+
+        // Dados da visualização da lista de desenhos do usuário.
+        $array_view = array(
+            'button_execut_nome' => '',
+            'array_input_id' => '',
+            'array_input_placeholder' => '',
+            'array_input_typ' => '',
+            'array_input_titulo' => '',
+            'titulo' => '',
+            'functionType' => '',
+            'nomeUsuario' => Ferramentas::decodificador($_SESSION['usuario_nome']),
+            'menu' => '',
+            'lista' => '',
+            'selecao_lista' => true,
+            'array_titulo_lista' => '',
+            'functiontype_cadastro' => '',
+            'titulo_cadastro' => '',
+            'titulo_lista' => '',
+            'functiontype_lista' => '',
+            'ajax' => 'ajaxs/nivel_ajax.php'
+
+        );
+
+        // Informações do menu.
+        $menu_box = "config_dos_ajustes";
+
+
+        $menu_select = "nivel";
+        $template = "lista";
+
+
+        // Configuração da página de lista de desenhos do usuário.
+        $array_view['titulo'] = "Relatorios Sintético";
+        $array_view['array_titulo_lista'] = array("Nome", "Permissões", "Status", "");
+        $array_view['menu'] = $this->menu($menu_box, $menu_select);
+
+        // Exibe a lista de desenhos do usuário.
+        echo view($template, $array_view);
+    }
 
 
     /**
@@ -837,20 +901,25 @@ class Pagina extends BaseController
      * @param string $menu_select O nome do item de menu selecionado.
      * A representação do menu gerada a partir da visão (template).
      */
-    private function menu($menu_box = "", $menu_select = "")
+    private function menu($menu_box = "", $menu_select = "", $menu_box2 = "")
     {
         // Carrega a visão do menu.
-        $menu = view('adm/menu');
+        // Inicia a sessão, se ainda não estiver ativa.
+        if (session_status() !== PHP_SESSION_ACTIVE) {
+            session_start();
+        }
+        $menu = view('menu/menu', array('permissao' => $_SESSION['permissao']));
 
         // Realiza substituições para destacar o item de menu selecionado.
         $menu = str_replace('id="' . $menu_box . '_top" class="nav-item"', 'id="' . $menu_box . '_top" class="nav-item menu-is-opening menu-open"', $menu);
         $menu = str_replace('id="' . $menu_box . '_bory"', 'id="' . $menu_box . '_bory" style="display: block;"', $menu);
+        $menu = str_replace('id="' . $menu_box2 . '_top" class="nav-item"', 'id="' . $menu_box2 . '_top" class="nav-item menu-is-opening menu-open"', $menu);
+        $menu = str_replace('id="' . $menu_box2 . '_bory"', 'id="' . $menu_box2 . '_bory" style="display: block;"', $menu);
         $menu = str_replace('id="' . $menu_select . '" class="nav-link"', 'id="' . $menu_select . '" class="nav-link active"', $menu);
 
         // Retorna a representação do menu gerada.
         return $menu;
     }
-
 
 
 

@@ -315,7 +315,7 @@ inputElement.addEventListener("input", function () {
   lista_temp1 = "";
   function value_funcao() {
     $.ajax({
-      url: '<?= base_url('public/lista_funcao') ?>',
+      url: '<?= base_url('public/lista_nivel') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       success: function (response) {

@@ -27,8 +27,19 @@ $routes->get('/logout', 'Login::logout'); // Rota para fazer logout
 
 
 //temp
-$routes->post('/lista_funcao', 'AdmPost::lista_funcao');
 $routes->post('/troca_status/(:any)/(:any)', 'AdmPost::troca_status/$1/$2');
+
+//nivel
+$routes->get('/nivel', 'Pagina::nivel');   
+$routes->post('/nivel_cadastrar_modal', 'NivelPost::nivel_cadastrar_modal');   
+$routes->post('/nivel_lista_desativar', 'NivelPost::nivel_lista_desativar');   
+$routes->post('/nivel_lista_ativar', 'NivelPost::nivel_lista_ativar');   
+$routes->post('/nivel_lista', 'NivelPost::nivel_lista');   
+$routes->post('/nivel_modifica_modal', 'NivelPost::nivel_modifica_modal');   
+$routes->post('/nivel_modificar', 'NivelPost::nivel_modificar');   
+$routes->post('/nivel_cadastrar', 'NivelPost::nivel_cadastrar');
+$routes->post('/nivel_option', 'NivelPost::nivel_option');
+$routes->post('/lista_nivel', 'NivelPost::lista_nivel');
 
 
 

@@ -10,27 +10,7 @@ class AdmPost extends Ferramentas
 {
 
 
-  /**
-   * Função lista_funcao()
-   *
-   * Esta função é responsável por buscar informações sobre funções no banco de dados e retorná-las em formato JSON.
-   *
-   * Retorna um JSON contendo uma lista de nomes de funções obtidos do banco de dados.
-   */
-  function lista_funcao()
-  {
-    $funcao = new \App\Models\Funcao(); // Inicializa o modelo de Função para acessar o banco de dados
 
-    $funcao_data = $funcao->find(); // Busca dados sobre funções no banco de dados
-    $lista = array();
-
-    // Cria uma lista de nomes de funções decodificadas
-    foreach ($funcao_data as $key => $value) { //cria a lista 
-      $lista[] = Ferramentas::decodificador($value['nome']);
-    }
-    $data = ['lista' => $lista]; // Prepara os dados para serem retornados em formato JSON
-    return $this->response->setJSON($data);
-  }
 
 
 

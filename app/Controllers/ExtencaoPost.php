@@ -301,7 +301,8 @@ class ExtencaoPost extends Ferramentas
           $lista .= '.' . Ferramentas::decodificador($value['nome']) . ',';
         }
       }
-      $data = ['lista' => $lista];
+      session_start();
+      $data = ['lista' => $lista,"oi" =>$_SESSION['permissao']];
       return $this->response->setJSON($data);
     }
   }

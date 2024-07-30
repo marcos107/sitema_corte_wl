@@ -59,35 +59,49 @@ class Login extends BaseController
 
                 // Verifica se o status do usuário é 'ativo'.
                 if ($user['status'] == 'ativo') {
+                    $array_niveis = array(
+                        'Adicionar' => 'desenho_adicionar',
+                        'Meus_Desenhos' => 'desenho_meus',
+                        'Lista_De_Corte' => 'lista_corte',
+                        'Lista_De_Corte_ADM' => 'lista_corte_adm',
+                        'Subpasta' => 'subpasta',
+                        'Desenhos_cortados' => 'desenhos_cortados',
+                        'Tipo_De_Arquivo' => 'tipo_de_arquivo',
+                        'Prioridade' => 'prioridade',
+                        'Fialidade' => 'finalidade',
+                        'Empresa' => 'empresa',
+                        'Empreendimento' => 'empreendimento',
+                        'Nível' => 'nivel',
+                        'Usuario' => 'user_cadastrar',
+                        'Relátorio' => 'relatorios',
+                        'Lista_De_Corte_Cortador' => 'lista_corte_cortador'
+                    );
+                    
                     // Inicia a sessão.
                     session_start();
 
                     // Cria uma instância do modelo de Função.
-                    $db = new \App\Models\Funcao();
+                    $db = new \App\Models\Nivel();
 
                     // Realiza uma consulta no banco de dados para encontrar dados de funções.
                     $db_data = $db->find();
 
                     // Define variáveis de sessão para o nome do usuário, ID do usuário e função do usuário.
                     $_SESSION['usuario_nome'] = $user['nome'];
+
+
                     $_SESSION['usuario'] = $user['id'];
 
                     // Obtém o nome da função do usuário e define na variável de sessão 'funcao'.
-                    $_SESSION['funcao'] = Ferramentas::array_index(Ferramentas::array_pesquisa($db_data, 'id', $user['tipo']), ['nome']);
-
+                    $_SESSION['funcao'] = Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($db_data, 'id', $user['nivel']), ['nome']));
+                    $_SESSION['permissao'] = explode('-',  Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($db_data, 'id', $user['nivel']), ['permissao'])));
                     // Com base na função do usuário, redireciona para páginas apropriadas.
-                    if ($_SESSION['funcao'] == 'adm') {
-                        echo json_encode(['location' => base_url() . 'public/adm/']);
-                        die();
-                    } else if ($_SESSION['funcao'] == 'cortador') {
-                        echo json_encode(['location' => base_url() . 'public/cortador/']);
-                        die();
-                    } else if ($_SESSION['funcao'] == 'desenhista') {
-                        echo json_encode(['location' => base_url() . 'public/desenhista/']);
-                        die();
-                    } else {
-                        return $this->response->setJSON(['ok' => 'false', 'mensagem' => 'Erro no Usuário']);
-                    }
+                    if (in_array('all', $_SESSION['permissao']))
+                        echo json_encode(['location' => base_url() . 'public/desenho_adicionar']);
+                    else
+                        echo json_encode(['location' => base_url() . 'public/' . Ferramentas::array_index($array_niveis, [Ferramentas::array_index(($_SESSION['permissao']), [0])])]);
+
+                    die();
                 } else {
                     return $this->response->setJSON(['ok' => 'false', 'mensagem' => 'Senha ou Nome errados']);
                 }
@@ -159,4 +173,27 @@ class Login extends BaseController
             self::logout();
         }
     }
+
+    public static function verifica_permissao($permitido)
+    {
+        // Inicia a sessão, se ainda não estiver ativa.
+        if (session_status() !== PHP_SESSION_ACTIVE) {
+            session_start();
+        }
+        $ok = true;
+
+        // Verifica se a função do usuário está entre as funções permitidas.
+        if (empty($_SESSION['permissao']) || !in_array($permitido, $_SESSION['permissao'])) {
+            $ok = false;
+        }
+        if (empty($_SESSION['permissao']) || !in_array("all", $_SESSION['permissao'])) {
+            $ok = false;
+        }
+
+        // Se alguma das verificações falhar, realiza uma ação de logout.
+        if (!$ok) {
+         //   self::logout();
+        }
+    }
+
 }
