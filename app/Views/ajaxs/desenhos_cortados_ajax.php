@@ -6,7 +6,7 @@
     data = document.getElementById('dataInicial').value;
     data1 = document.getElementById('dataFinal').value;
     $.ajax({
-      url: '<?= base_url('public/adm/desenhos_cortados') ?>',
+      url: '<?= base_url('public/desenhos_cortados') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       data: { data: data, data1: data1 },
@@ -91,7 +91,7 @@
   function subistituir_desenho_modal(id) {
 
     $.ajax({
-      url: '<?= base_url('public/adm/subistituir_desenho_modal') ?>',
+      url: '<?= base_url('public/subistituir_desenho_modal') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       data: { id: id },
@@ -156,7 +156,7 @@
             var file = fileInput.files[0];
 
             $.ajax({
-              url: '<?= base_url('public/adm/desenho_novo_nome') ?>',
+              url: '<?= base_url('public/desenho_novo_nome') ?>',
               type: "POST",
               dataType: "json",
               data: { nome: nome },
@@ -169,7 +169,7 @@
             formData.append('file', file);
 
             $.ajax({
-              url: '<?= base_url('public/adm/subistituir_desenho') ?>',
+              url: '<?= base_url('public/subistituir_desenho') ?>',
               type: "POST",
               dataType: "json",
               processData: false,
@@ -209,7 +209,7 @@
     var file = fileInput.files[0];
     console.log(fileInput.files);
     $.ajax({
-      url: '<?= base_url('public/adm/desenho_novo_nome') ?>',
+      url: '<?= base_url('public/desenho_novo_nome') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
 
@@ -224,7 +224,7 @@
     var formData = new FormData();
     formData.append('file', file);
     $.ajax({
-      url: '<?= base_url('public/adm/subistituir_desenho') ?>',
+      url: '<?= base_url('public/subistituir_desenho') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       processData: false,
@@ -258,7 +258,7 @@
   function recolocar_desenho(id) {
     if(mostrarConfirmacao("Recolocar desenho?")){
     $.ajax({
-      url: '<?= base_url('public/adm/recolocar_desenho') ?>',
+      url: '<?= base_url('public/recolocar_desenho') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
 

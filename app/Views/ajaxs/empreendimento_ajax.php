@@ -5,7 +5,7 @@
   <?php $processo = "empreendimentos"; ?>
   function desativar(id) {
     $.ajax({
-      url: '<?= base_url('public/adm/troca_status/' . $processo . '/desativado') ?>',
+      url: '<?= base_url('public/troca_status/' . $processo . '/desativado') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       data: { id: id },
@@ -19,7 +19,7 @@
   function ativar(id) {
 
     $.ajax({
-      url: '<?= base_url('public/adm/troca_status/' . $processo . '/ativo') ?>',
+      url: '<?= base_url('public/troca_status/' . $processo . '/ativo') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       data: { id: id },
@@ -39,7 +39,7 @@
     var ativos = document.getElementById('checkbox_ativos').checked;
     var desativados = document.getElementById('checkbox_desativado').checked;
     $.ajax({
-      url: '<?= base_url('public/adm/config_empreendimento') ?>',
+      url: '<?= base_url('public/empreendimento') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       data: { ativos: ativos, desativados: desativados },
@@ -110,7 +110,7 @@
   lista_temp1 = "";
   function value_empresa(efeturar = false) {
     $.ajax({
-      url: '<?= base_url('public/adm/lita_empresa') ?>',
+      url: '<?= base_url('public/lista_empresa') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       success: function (response) {
@@ -183,7 +183,7 @@
     var empresa = document.getElementById("empresa_cliente_novo").value;
 
     $.ajax({
-      url: '<?= base_url('public/adm/config_empreendimento_cadastrar') ?>',
+      url: '<?= base_url('public/empreendimento_cadastrar') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       data: { empreendimento: empreendimento, empresa: empresa },
@@ -235,7 +235,7 @@
     id = id.replace('modal_', '');
     id_g = id;
     $.ajax({
-      url: '<?= base_url('public/adm/config_empreendimento_modal') ?>',
+      url: '<?= base_url('public/empreendimento_modal') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       data: { id: id },
@@ -314,7 +314,7 @@
     var empresa = document.getElementById("empresa_cliente_novo").value;
 
     $.ajax({
-      url: '<?= base_url('public/adm/config_empreendimento_update') ?>',
+      url: '<?= base_url('public/empreendimento_update') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       data: { id: id_g, empreendimento: empreendimento, empresa: empresa },

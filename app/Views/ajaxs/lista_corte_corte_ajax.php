@@ -36,7 +36,7 @@
 
   function lista() {
     $.ajax({
-      url: '<?= base_url('public/corte/lista_corte') ?>',
+      url: '<?= base_url('public/lista_corte_cortador') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       success: function (response) {
@@ -97,14 +97,14 @@
     }
   }, 1000);
 
-  // Simulação de chamadas periódicas para a função lista
-  setInterval(() => {
-    lista();
-  }, 5000); // Intervalo de 5 segundos para chamar a função lista // Executar função ao abrir o site
+  // // Simulação de chamadas periódicas para a função lista
+  // setInterval(() => {
+  //   lista();
+  // }, 5000); // Intervalo de 5 segundos para chamar a função lista // Executar função ao abrir o site
   document.addEventListener('DOMContentLoaded', lista);
 
   // Repetir função a cada segundo
-  setInterval(lista, 1000);
+  lista_corte_cortador(lista, 60000);
 
   function cortando(nome) {
     copy(nome);
@@ -130,28 +130,30 @@
 
   function cortar(id) {
     $.ajax({
-      url: '<?= base_url('public/corte/caminho_desenho') ?>',
+      url: '<?= base_url('public/caminho_desenho') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       data: { id: id },
       success: function (response) {
         copy(response.caminho);
         alert(response.caminho);
+        lista();
 
       }
     });
   }
   function confirmar(id, nome) {
     if (mostrarConfirmacao("Confirmar corte do desenho: " + nome)) {
-      console.log('1');
+
       $.ajax({
-        url: '<?= base_url('public/corte/confirmar_corte') ?>',
+        url: '<?= base_url('public/confirmar_corte') ?>',
         type: "POST",
         dataType: "json", // Indicar que o retorno é em formato JSON
         data: { id: id },
         success: function (response) {
 
-          console.log(response);
+       
+          lista();
 
         }
       });

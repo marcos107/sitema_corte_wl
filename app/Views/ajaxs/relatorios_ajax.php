@@ -30,7 +30,7 @@
     cortador = getSelectedCheckboxValues_cortador();
 
     $.ajax({
-      url: '<?= base_url('public/adm/relatorio_analitico') ?>',
+      url: '<?= base_url('public/relatorio_analitico') ?>',
       type: "POST",
       dataType: "json", // Espera uma resposta JSON
       data: { dataInicial: dataInicial, dataFinal: dataFinal, desenhistas: desenhistas, cortador: cortador, relatorio: document.getElementById('rad_1').checked },
@@ -566,7 +566,7 @@
     console.log('response');
     // Faz a requisição AJAX
     $.ajax({
-      url: '<?= base_url('public/adm/lista_desenhistas') ?>',
+      url: '<?= base_url('public/lista_desenhistas') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       success: function (response) {
@@ -576,7 +576,7 @@
       }
     });
     $.ajax({
-      url: '<?= base_url('public/adm/lista_cortadores') ?>',
+      url: '<?= base_url('public/lista_cortadores') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       success: function (response) {

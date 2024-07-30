@@ -13,7 +13,7 @@
     var checkboxValue = checkbox ? (checkbox.checked ? "true" : "false") : "";
 
     $.ajax({
-      url: '<?= base_url('public/adm/lista_corte') ?>',
+      url: '<?= base_url('public/lista_corte_adm') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       data: { check: checkboxValue },
@@ -106,7 +106,7 @@
   lista_temp1 = "";
   function value_prioridade(efeturar = false) {
     $.ajax({
-      url: '<?= base_url('public/adm/config_prioridade_lista') ?>',
+      url: '<?= base_url('public/prioridade_lista') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       success: function (response) {
@@ -190,7 +190,7 @@
 
 
     $.ajax({
-      url: '<?= base_url('public/adm/desenho_modal') ?>',
+      url: '<?= base_url('public/desenho_modal') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       data: { id: "" },
@@ -355,7 +355,7 @@
   function prio_modal(id) {
 
     $.ajax({
-      url: '<?= base_url('public/adm/desenho_modal') ?>',
+      url: '<?= base_url('public/desenho_modal') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       data: { id: id },
@@ -447,7 +447,7 @@
     if (ok) {
       prioridade = document.getElementById("prioridade_novo").value;
       $.ajax({
-        url: '<?= base_url('public/adm/desenho_update') ?>',
+        url: '<?= base_url('public/desenho_update') ?>',
         type: "POST",
         dataType: "json", // Indicar que o retorno é em formato JSON
         data: { array: array, prioridade: prioridade },
@@ -545,7 +545,7 @@
     tabel_bory.appendChild(tr);
 
     $.ajax({
-      url: '<?= base_url('public/adm/desenho_modal') ?>',
+      url: '<?= base_url('public/desenho_modal') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       data: { id: "" },
@@ -706,7 +706,7 @@
     divElemnt.classList.add("form-group");
 
     $.ajax({
-      url: '<?= base_url('public/adm/desenho_modal') ?>',
+      url: '<?= base_url('public/desenho_modal') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       data: { id: id },
@@ -754,14 +754,14 @@
 
   function apagar_mesmo(id) {
     $.ajax({
-      url: '<?= base_url('public/adm/nome_desenho') ?>',
+      url: '<?= base_url('public/nome_desenho') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       data: { id: id },
       success: function (response) {
 
         $.ajax({
-          url: '<?= base_url('public/adm/apagar_desenho') ?>',
+          url: '<?= base_url('public/apagar_desenho') ?>',
           type: "POST",
           dataType: "json", // Indicar que o retorno é em formato JSON
           data: { id: id },
@@ -784,7 +784,7 @@
   function cancelar_corte(id) {
     if (mostrarConfirmacao('Cancelar corte?')) {
       $.ajax({
-        url: '<?= base_url('public/corte/cancelar_corte') ?>',
+        url: '<?= base_url('public/cancelar_corte') ?>',
         type: "POST",
         dataType: "json", // Indicar que o retorno é em formato JSON
         data: { id: id },

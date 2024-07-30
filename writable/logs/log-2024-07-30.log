@@ -1,0 +1,83 @@
+CRITICAL - 2024-07-30 14:50:33 --> Undefined global variable $_SESSION
+in APPPATH\Controllers\Pagina.php on line 650.
+ 1 APPPATH\Controllers\Pagina.php(650): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\Pagina.php', 650)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pagina->relatorios()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pagina))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 14:50:48 --> Undefined global variable $_SESSION
+in APPPATH\Controllers\Pagina.php on line 650.
+ 1 APPPATH\Controllers\Pagina.php(650): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\Pagina.php', 650)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pagina->relatorios()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pagina))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-07-30 14:56:49 --> [DEPRECATED] Implicit conversion from float 8.468354430379748 to int loses precision in APPPATH\Controllers\ReratorioPost.php on line 20.
+ 1 APPPATH\Controllers\ReratorioPost.php(322): App\Controllers\ReratorioPost->secondsToTime(8.468354430379748)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ReratorioPost->relatorio_analitico()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReratorioPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-07-30 14:56:49 --> [DEPRECATED] Implicit conversion from float 8.468354430379748 to int loses precision in APPPATH\Controllers\ReratorioPost.php on line 21.
+ 1 APPPATH\Controllers\ReratorioPost.php(322): App\Controllers\ReratorioPost->secondsToTime(8.468354430379748)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ReratorioPost->relatorio_analitico()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReratorioPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-07-30 14:56:49 --> [DEPRECATED] Implicit conversion from float 394.3818181818182 to int loses precision in APPPATH\Controllers\ReratorioPost.php on line 20.
+ 1 APPPATH\Controllers\ReratorioPost.php(322): App\Controllers\ReratorioPost->secondsToTime(394.3818181818182)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ReratorioPost->relatorio_analitico()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReratorioPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-07-30 14:56:49 --> [DEPRECATED] Implicit conversion from float 394.3818181818182 to int loses precision in APPPATH\Controllers\ReratorioPost.php on line 21.
+ 1 APPPATH\Controllers\ReratorioPost.php(322): App\Controllers\ReratorioPost->secondsToTime(394.3818181818182)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ReratorioPost->relatorio_analitico()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReratorioPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 15:44:13 --> Call to undefined method App\Controllers\UsuarioPost::lita_funcao()
+in APPPATH\Controllers\UsuarioPost.php on line 128.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\UsuarioPost->user_cadastrar()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 15:46:16 --> Call to undefined method App\Controllers\UsuarioPost::lista_funcao()
+in APPPATH\Controllers\UsuarioPost.php on line 128.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\UsuarioPost->user_cadastrar()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 15:47:41 --> Class "App\Controllers\FuncaoPost" not found
+in APPPATH\Controllers\UsuarioPost.php on line 128.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\UsuarioPost->user_cadastrar()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 15:54:28 --> Invalid file: "ajaxs/subpasta_ajax.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('ajaxs/subpasta_ajax.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ajaxs/subpasta_ajax', [], true)
+ 3 APPPATH\Views\lista_cadastro.php(590): view('ajaxs/subpasta_ajax')
+ 4 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\codi\\app\\Views\\lista_cadastro.php')
+ 5 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('lista_cadastro', [], true)
+ 7 APPPATH\Controllers\Pagina.php(668): view('lista_cadastro', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pagina->subpasta()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pagina))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 16:05:12 --> Call to undefined method App\Controllers\PrioridadePost::lita_empresa()
+in APPPATH\Controllers\PrioridadePost.php on line 144.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PrioridadePost->prioridade_cadastrar()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PrioridadePost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 16:21:56 --> copy(c:/wl/wl_desenhos/PETRASALIS/LOT.URB.TIJUCAS/ACABAMENTO/GRAMAS/LOT.URBANI TIJUCAS_1-1200_GRAMA EXTRA_espuma verde de 3mm (embalar junto) corte lento pois as peças são pequenascortado_01_05_2024_LOT.URBANI TIJUCAS_1-1200_GRAMA EXTRA_espuma verde de 3mm (embalar junto) corte lento pois as peças são pequenas_9628_.dxf): Failed to open stream: No such file or directory
+in APPPATH\Controllers\DesenhoPost.php on line 522.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'copy(c:/wl/wl_desenhos/PETRASALIS/LOT.URB.TIJUCAS/ACABAMENTO/GRAMAS/LOT.URBANI TIJUCAS_1-1200_GRAMA EXTRA_espuma verde de 3mm (embalar junto) corte lento pois as peças são pequenascortado_01_05_2024_LOT.URBANI TIJUCAS_1-1200_GRAMA EXTRA_espuma verde de 3mm (embalar junto) corte lento pois as peças são pequenas_9628_.dxf): Failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhoPost.php', 522)
+ 2 APPPATH\Controllers\DesenhoPost.php(522): copy('c:/wl/wl_desenhos/PETRASALIS/LOT.URB.TIJUCAS/ACABAMENTO/GRAMAS/LOT.URBANI TIJUCAS_1-1200_GRAMA EXTRA_espuma verde de 3mm (embalar junto) corte lento pois as peças são pequenascortado_01_05_2024_LOT.URBANI TIJUCAS_1-1200_GRAMA EXTRA_espuma verde de 3mm (embalar junto) corte lento pois as peças são pequenas_9628_.dxf', 'c:/wl/wl_desenhos/PETRASALIS/LOT.URB.TIJUCAS/ACABAMENTO/GRAMAS/LOT.URBANI TIJUCAS_1-1200_GRAMA EXTRA_espuma verde de 3mm (embalar junto) corte lento pois as peças são pequenasLOT.URBANI TIJUCAS_1-1200_GRAMA EXTRA_espuma verde de 3mm (embalar junto) corte lento pois as peças são pequenas_2855_.dxf')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhoPost->recolocar_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

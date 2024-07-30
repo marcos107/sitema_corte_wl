@@ -8,7 +8,7 @@
     data = document.getElementById('dataInicial').value;
     data1 = document.getElementById('dataFinal').value;
     $.ajax({
-      url: '<?= base_url('public/adm/desenho_meus') ?>',
+      url: '<?= base_url('public/desenho_meus') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       data: { data: data, data1: data1 },
@@ -91,7 +91,7 @@
   lista_temp1 = "";
   function value_prioridade(efeturar = false) {
     $.ajax({
-      url: '<?= base_url('public/adm/config_prioridade_lista') ?>',
+      url: '<?= base_url('public/prioridade_lista') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       success: function (response) {
@@ -178,7 +178,7 @@
     }
 
     $.ajax({
-      url: '<?= base_url('public/adm/desenho_meus_modal') ?>',
+      url: '<?= base_url('public/desenho_meus_modal') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       data: { id: id },
@@ -217,7 +217,7 @@
           if (ok && prioridade != '') {
 
             $.ajax({
-              url: '<?= base_url('public/adm/desenho_update') ?>',
+              url: '<?= base_url('public/desenho_update') ?>',
               type: "POST",
               dataType: "json", // Indicar que o retorno é em formato JSON
               data: { array: array, prioridade: prioridade },
@@ -469,7 +469,7 @@
     tabel_bory.appendChild(tr);
 
     $.ajax({
-      url: '<?= base_url('public/adm/desenho_modal') ?>',
+      url: '<?= base_url('public/desenho_modal') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       data: { id: "" },
@@ -630,7 +630,7 @@
     divElemnt.classList.add("form-group");
 
     $.ajax({
-      url: '<?= base_url('public/adm/desenho_modal') ?>',
+      url: '<?= base_url('public/desenho_modal') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       data: { id: id },
@@ -678,14 +678,14 @@
 
   function apagar_mesmo(id) {
     $.ajax({
-      url: '<?= base_url('public/adm/nome_desenho') ?>',
+      url: '<?= base_url('public/nome_desenho') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       data: { id: id },
       success: function (response) {
 
         $.ajax({
-          url: '<?= base_url('public/adm/apagar_desenho') ?>',
+          url: '<?= base_url('public/apagar_desenho') ?>',
           type: "POST",
           dataType: "json", // Indicar que o retorno é em formato JSON
           data: { id: id },
@@ -713,7 +713,7 @@
   function subistituir_desenho_modal(id) {
 
     $.ajax({
-      url: '<?= base_url('public/adm/subistituir_desenho_modal') ?>',
+      url: '<?= base_url('public/subistituir_desenho_modal') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       data: { id: id },
@@ -778,7 +778,7 @@
             var file = fileInput.files[0];
 
             $.ajax({
-              url: '<?= base_url('public/adm/desenho_novo_nome') ?>',
+              url: '<?= base_url('public/desenho_novo_nome') ?>',
               type: "POST",
               dataType: "json",
               data: { nome: nome },
@@ -791,7 +791,7 @@
             formData.append('file', file);
 
             $.ajax({
-              url: '<?= base_url('public/adm/subistituir_desenho') ?>',
+              url: '<?= base_url('public/subistituir_desenho') ?>',
               type: "POST",
               dataType: "json",
               processData: false,
@@ -829,7 +829,7 @@
 
 
     $.ajax({
-      url: '<?= base_url('public/adm/desenho_modal') ?>',
+      url: '<?= base_url('public/desenho_modal') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       data: { id: "" },
@@ -860,7 +860,7 @@
           if (ok) {
             prioridade = document.getElementById("prioridade_novo").value;
             $.ajax({
-              url: '<?= base_url('public/adm/desenho_update') ?>',
+              url: '<?= base_url('public/desenho_update') ?>',
               type: "POST",
               dataType: "json", // Indicar que o retorno é em formato JSON
               data: { array: array, prioridade: prioridade },
@@ -1044,7 +1044,7 @@
     var file = fileInput.files[0];
     console.log(fileInput.files);
     $.ajax({
-      url: '<?= base_url('public/adm/desenho_novo_nome') ?>',
+      url: '<?= base_url('public/desenho_novo_nome') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
 
@@ -1059,7 +1059,7 @@
     var formData = new FormData();
     formData.append('file', file);
     $.ajax({
-      url: '<?= base_url('public/adm/subistituir_desenho') ?>',
+      url: '<?= base_url('public/subistituir_desenho') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       processData: false,
@@ -1092,7 +1092,7 @@
 
   function recolocar_desenho(id) {
     $.ajax({
-      url: '<?= base_url('public/adm/recolocar_desenho') ?>',
+      url: '<?= base_url('public/recolocar_desenho') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
 

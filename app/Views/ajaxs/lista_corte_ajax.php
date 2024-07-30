@@ -4,7 +4,7 @@
   function lista() {
     // Realiza uma requisição AJAX para a URL especificada, que deve retornar dados em formato JSON.
     $.ajax({
-      url: '<?= base_url('public/desenhista/lista_corte') ?>',
+      url: '<?= base_url('public/lista_corte') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       success: function (response) {
@@ -79,6 +79,6 @@
   document.addEventListener('DOMContentLoaded', lista);
 
   // Repetir função a cada segundo
-  setInterval(lista, 10000);
+  //setInterval(lista, 10000);
 
 </script>

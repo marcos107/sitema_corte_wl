@@ -26,7 +26,7 @@
     lista_temp1 = "";
     function value_filtro(efeturar = false) {
         $.ajax({
-            url: '<?= base_url('public/desenhista/lita_filtro') ?>',
+            url: '<?= base_url('public/lista_filtro') ?>',
             type: "POST",
             dataType: "json", // Indicar que o retorno é em formato JSON
             success: function (response) {
@@ -54,7 +54,7 @@
 
         if (files.length > 0) {
             $.ajax({
-                url: '<?= base_url('public/desenhista/criar_temp') ?>',
+                url: '<?= base_url('public/criar_pasta_temp') ?>',
                 type: "POST",
                 dataType: "json", // Indicar que o retorno é em formato JSON
                 success: function (response) {
@@ -70,7 +70,7 @@
                                 formData.append('file', file);
 
                                 $.ajax({
-                                    url: '<?= site_url('public/desenhista/desenho_adicionar_temp') ?>',
+                                    url: '<?= site_url('public/desenho_adicionar_temp') ?>',
                                     type: 'POST',
                                     dataType: 'json',
                                     data: formData,
@@ -117,7 +117,7 @@
     lista_array = [];
     function desenho_modal() {
         $.ajax({
-            url: '<?= site_url('public/desenhista/desenho_adicionar_modal') ?>',
+            url: '<?= site_url('public/desenho_adicionar_modal') ?>',
             type: 'POST',
             dataType: 'json',
             processData: false,
@@ -559,7 +559,7 @@
     lista_temp2 = "";
     function value_prioridade(efeturar = false) {
         $.ajax({
-            url: '<?= base_url('public/desenhista/config_prioridade_lista') ?>',
+            url: '<?= base_url('public/prioridade_lista') ?>',
             type: "POST",
             dataType: "json", // Indicar que o retorno é em formato JSON
             success: function (response) {
@@ -625,7 +625,7 @@
     lista_temp3 = "";
     function value_tags(efeturar = false) {
         $.ajax({
-            url: '<?= base_url('public/desenhista/desenho_tag_lista') ?>',
+            url: '<?= base_url('public/desenho_tag_lista') ?>',
             type: "POST",
             dataType: "json", // Indicar que o retorno é em formato JSON
             success: function (response) {
@@ -699,7 +699,7 @@
     var lista_temp4 = '';
     function value_finalidade(efeturar = false) {
         $.ajax({
-            url: '<?= base_url('public/desenhista/config_finalidade_lista') ?>',
+            url: '<?= base_url('public/finalidade_lista') ?>',
             type: "POST",
             dataType: "json", // Indicar que o retorno é em formato JSON
             success: function (response) {
@@ -766,7 +766,7 @@
     lista_temp5 = "";
     function value_empresa(efeturar = false) {
         $.ajax({
-            url: '<?= base_url('public/desenhista/config_empresa_lista') ?>',
+            url: '<?= base_url('public/empresa_lista') ?>',
             type: "POST",
             dataType: "json", // Indicar que o retorno é em formato JSON
             success: function (response) {
@@ -835,7 +835,7 @@
     function value_empreendimento_lista(selectedValue, selectedIndex, id, response) {
 
         $.ajax({
-            url: '<?= base_url('public/desenhista/config_empreendimento_lista') ?>',
+            url: '<?= base_url('public/empreendimento_lista') ?>',
             type: "POST",
             dataType: "json", // Indicar que o retorno é em formato JSON
             data: { empresa: selectedValue },
@@ -902,7 +902,7 @@
     }
     function value_empreendimento(selectedValue, selectedIndex, id) {
         $.ajax({
-            url: '<?= base_url('public/desenhista/config_empreendimento_lista') ?>',
+            url: '<?= base_url('public/empreendimento_lista') ?>',
             type: "POST",
             dataType: "json", // Indicar que o retorno é em formato JSON
             data: { empresa: selectedValue },
@@ -989,7 +989,7 @@
             }
         }
         $.ajax({
-            url: '<?= base_url('public/desenhista/desenhos_add') ?>',
+            url: '<?= base_url('public/desenhos_add') ?>',
             type: "POST",
             dataType: "json", // Indicar que o retorno é em formato JSON
             data: { desenhos: desenhos_enviar },
@@ -1092,7 +1092,7 @@
     lista_temp_c5 = "";
     function value_empresa_c(efeturar = false) {
         $.ajax({
-            url: '<?= base_url('public/desenhista/config_empresa_lista') ?>',
+            url: '<?= base_url('public/empresa_lista') ?>',
             type: "POST",
             dataType: "json", // Indicar que o retorno é em formato JSON
             success: function (response) {
@@ -1161,7 +1161,7 @@
     function value_empreendimento_c(selectedValue, selectedIndex, index) {
 
         $.ajax({
-            url: '<?= base_url('public/desenhista/config_empreendimento_lista') ?>',
+            url: '<?= base_url('public/empreendimento_lista') ?>',
             type: "POST",
             dataType: "json", // Indicar que o retorno é em formato JSON
             data: { empresa: selectedValue },
@@ -1298,7 +1298,7 @@
     var lista_temp_c4 = '';
     function value_finalidade_c(efeturar = false) {
         $.ajax({
-            url: '<?= base_url('public/desenhista/config_finalidade_lista') ?>',
+            url: '<?= base_url('public/finalidade_lista') ?>',
             type: "POST",
             dataType: "json", // Indicar que o retorno é em formato JSON
             success: function (response) {
@@ -1376,7 +1376,7 @@
     lista_temp_c2 = "";
     function value_prioridade_c(efeturar = false) {
         $.ajax({
-            url: '<?= base_url('public/desenhista/config_prioridade_lista') ?>',
+            url: '<?= base_url('public/prioridade_lista') ?>',
             type: "POST",
             dataType: "json", // Indicar que o retorno é em formato JSON
             success: function (response) {
@@ -1466,7 +1466,7 @@
     lista_temp_c3 = "";
     function value_tags_c(efeturar = false) {
         $.ajax({
-            url: '<?= base_url('public/desenhista/desenho_tag_lista') ?>',
+            url: '<?= base_url('public/desenho_tag_lista') ?>',
             type: "POST",
             dataType: "json", // Indicar que o retorno é em formato JSON
             success: function (response) {
@@ -1549,7 +1549,7 @@
                 var tag = userInput;
 
                 $.ajax({
-                    url: '<?= base_url('public/desenhista/desenho_tag_cadastro') ?>',
+                    url: '<?= base_url('public/desenho_tag_cadastro') ?>',
                     type: "POST",
                     dataType: "json",//Indicar que o retorno é em formato JSON
                     async: false, // Torna a solicitação síncrona

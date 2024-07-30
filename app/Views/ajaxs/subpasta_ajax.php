@@ -10,7 +10,7 @@
    //Parâmetros:
    //- id: O ID do item a ser desativado.
     $.ajax({
-      url: '<?= base_url('public/desenhista/troca_status/' . $processo . '/desativado') ?>',
+      url: '<?= base_url('public/troca_status/' . $processo . '/desativado') ?>',
       type: "POST",
       dataType: "json",//Indicar que o retorno é em formato JSON
       data: { id: id },
@@ -28,7 +28,7 @@
    //- id: O ID do item a ser desativado.
 
     $.ajax({
-      url: '<?= base_url('public/desenhista/troca_status/' . $processo . '/ativo') ?>',
+      url: '<?= base_url('public/troca_status/' . $processo . '/ativo') ?>',
       type: "POST",
       dataType: "json",//Indicar que o retorno é em formato JSON
       data: { id: id },
@@ -51,7 +51,7 @@
     var ativos = document.getElementById('checkbox_ativos').checked;
     var desativados = document.getElementById('checkbox_desativado').checked;
     $.ajax({
-      url: '<?= base_url('public/desenhista/desenho_tag') ?>',
+      url: '<?= base_url('public/desenho_tag') ?>',
       type: "POST",
       dataType: "json",//Indicar que o retorno é em formato JSON
       data: { ativos: ativos, desativados: desativados },
@@ -135,7 +135,7 @@
     var tag = document.getElementById("nome_tag_novo").value;
 
     $.ajax({
-      url: '<?= base_url('public/desenhista/desenho_tag_cadastro') ?>',
+      url: '<?= base_url('public/desenho_tag_cadastro') ?>',
       type: "POST",
       dataType: "json",//Indicar que o retorno é em formato JSON
       data: { tag: tag },
@@ -216,7 +216,7 @@
     id = id.replace('modal_', '');
     id_g = id;
     $.ajax({
-      url: '<?= base_url('public/desenhista/config_tag_modal') ?>',
+      url: '<?= base_url('public/tag_modal') ?>',
       type: "POST",
       dataType: "json",//Indicar que o retorno é em formato JSON
       data: { id: id },
@@ -287,7 +287,7 @@
     var tag = document.getElementById("nome_tag_novo").value;
 
     $.ajax({
-      url: '<?= base_url('public/desenhista/config_tag_update') ?>',
+      url: '<?= base_url('public/tag_update') ?>',
       type: "POST",
       dataType: "json",//Indicar que o retorno é em formato JSON
       data: { id: id_g, tag: tag },

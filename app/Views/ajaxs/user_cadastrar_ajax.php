@@ -28,7 +28,7 @@
     lista_temp = "";
     function value_funcao() {
         $.ajax({
-            url: '<?= base_url('public/adm/lita_funcao') ?>',
+            url: '<?= base_url('public/lista_funcao') ?>',
             type: "POST",
             dataType: "json", // Indicar que o retorno é em formato JSON
             success: function (response) {
@@ -93,7 +93,7 @@
         var email = document.getElementById("email_usuario").value;
         var whazapp = document.getElementById("whazapp_usuario").value;
         $.ajax({
-            url: '<?= base_url('public/adm/user_cadastrar') ?>',
+            url: '<?= base_url('public/user_cadastrar') ?>',
             type: "POST",
             dataType: "json", // Indicar que o retorno é em formato JSON
             data: { nome: nome, senha: senha, funcao: funcao, email: email, whazapp: whazapp },

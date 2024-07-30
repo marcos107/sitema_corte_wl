@@ -6,7 +6,7 @@
   <?php $processo = "finalidade"; ?>
   function desativar(id) {
     $.ajax({
-      url: '<?= base_url('public/adm/troca_status/' . $processo . '/desativado') ?>',
+      url: '<?= base_url('public/troca_status/' . $processo . '/desativado') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       data: { id: id },
@@ -20,7 +20,7 @@
   function ativar(id) {
 
     $.ajax({
-      url: '<?= base_url('public/adm/troca_status/' . $processo . '/ativo') ?>',
+      url: '<?= base_url('public/troca_status/' . $processo . '/ativo') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       data: { id: id },
@@ -39,7 +39,7 @@
     var ativos = document.getElementById('checkbox_ativos').checked;
     var desativados = document.getElementById('checkbox_desativado').checked;
     $.ajax({
-      url: '<?= base_url('public/adm/config_finalidade') ?>',
+      url: '<?= base_url('public/finalidade') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       data: { ativos: ativos, desativados: desativados },
@@ -112,7 +112,7 @@
     var finalidade = document.getElementById("nome_Finalidade_novo").value;
 
     $.ajax({
-      url: '<?= base_url('public/adm/config_finalidade_cadastrar') ?>',
+      url: '<?= base_url('public/finalidade_cadastrar') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       data: { finalidade: finalidade },
@@ -168,7 +168,7 @@
     id = id.replace('modal_', '');
     id_g = id;
     $.ajax({
-      url: '<?= base_url('public/adm/config_finalidade_modal') ?>',
+      url: '<?= base_url('public/finalidade_modal') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       data: { id: id },
@@ -228,7 +228,7 @@
     var finalidade = document.getElementById("nome_Finalidade_novo").value;
 
     $.ajax({
-      url: '<?= base_url('public/adm/config_finalidade_update') ?>',
+      url: '<?= base_url('public/finalidade_update') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       data: { id: id_g, finalidade: finalidade },
