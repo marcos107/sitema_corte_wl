@@ -67,12 +67,8 @@
 
 
 
-       <?php } if(in_array("Usuario",$permissao) or in_array("all",$permissao)){?>
-    <li class="nav-item"><a href="<?=site_url("public/user_cadastrar")?>" id="cadastrar" class="nav-link">&nbsp<i
-          class="fa-solid fa-user-plus"></i>&nbsp<p>Cadastrar</p></a></li>
-
           <?php } if(in_array("Usuario",$permissao) or in_array("all",$permissao)){?>
-    <li class="nav-item"><a href="<?=site_url("public/user_modificar")?>" id="modificar" class="nav-link">&nbsp<i class="fa-solid fa-user-pen"></i>&nbsp<p>Modificar</p>
+    <li class="nav-item"><a href="<?=site_url("public/usuario")?>" id="usuario" class="nav-link">&nbsp<i class="fa-solid fa-user-pen"></i>&nbsp<p>Usuário</p>
       </a></li>
       <?php }?>
   </ul>

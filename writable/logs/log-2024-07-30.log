@@ -1118,3 +1118,46 @@ in APPPATH\Views\menu\menu.php on line 1.
  8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pagina))
  9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
 10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 20:43:27 --> Class "App\Models\Funcao" not found
+in APPPATH\Controllers\UsuarioPost.php on line 460.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\UsuarioPost->user_modificar()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 20:45:00 --> Class "App\Models\Funcao" not found
+in APPPATH\Controllers\UsuarioPost.php on line 460.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\UsuarioPost->user_modificar()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 20:46:00 --> Class "App\Models\Funcao" not found
+in APPPATH\Controllers\UsuarioPost.php on line 460.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\UsuarioPost->user_modificar()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 20:46:20 --> Undefined array key "tipo"
+in APPPATH\Controllers\UsuarioPost.php on line 478.
+ 1 APPPATH\Controllers\UsuarioPost.php(478): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "tipo"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\UsuarioPost.php', 478)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\UsuarioPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 20:52:04 --> Call to undefined method App\Controllers\AdmPost::lista_funcao()
+in APPPATH\Controllers\UsuarioPost.php on line 304.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\UsuarioPost->user_modificar_update()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 20:52:57 --> Call to undefined method App\Controllers\UsuarioPost::lista_funcao()
+in APPPATH\Controllers\UsuarioPost.php on line 304.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\UsuarioPost->user_modificar_update()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 20:53:41 --> Call to undefined method App\Controllers\NivelPost::lista_funcao()
+in APPPATH\Controllers\UsuarioPost.php on line 304.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\UsuarioPost->user_modificar_update()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

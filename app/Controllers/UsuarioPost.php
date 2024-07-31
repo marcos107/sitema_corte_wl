@@ -6,7 +6,7 @@ use App\Controllers\Ferramentas;
 use App\Controllers\AdmPost;
 
 
-class UsuarioPost extends AdmPost
+class UsuarioPost extends NivelPost
 {
 
   /**
@@ -31,7 +31,7 @@ class UsuarioPost extends AdmPost
       $data = [
         "nome" => Ferramentas::decodificador($lista['nome']),
         "senha" => Ferramentas::decodificador($lista['senha']),
-        "tipo" => Ferramentas::decodificador($lista['tipo']),
+        "nivel" => Ferramentas::decodificador($lista['nivel']),
         "email" => Ferramentas::decodificador($lista['email']),
         "whatsapp" => Ferramentas::decodificador($lista['whatsapp']),
         "status" => Ferramentas::decodificador($lista['status'])
@@ -62,7 +62,7 @@ class UsuarioPost extends AdmPost
       // Obtém os dados enviados via AJAX
       $nome = service('request')->getPost('nome');
       $senha = service('request')->getPost('senha');
-      $funcao = service('request')->getPost('funcao');
+      $nivel = service('request')->getPost('nivel');
       $email = service('request')->getPost('email');
       $whazapp = service('request')->getPost('whazapp');
 
@@ -125,15 +125,15 @@ class UsuarioPost extends AdmPost
         $msg['Whazapp'] = "Whazapp não possui o tamanho mínimo de 13 caracter";
       }
 
-      $lista_array = AdmPost::lista_funcao();
+      $lista_array = NivelPost::lista_nivel();
       $lista_array = json_decode($lista_array->getBody(), true);
 
       // Validações dos dados recebidos
-      if (!in_array($funcao, $lista_array['lista'])) {
+      if (!in_array($nivel, $lista_array['lista'])) {
         $msg['Função'] = "Nome da Função não cadastrado";
         $violacao[] = "user_cadastrar Função não cadastrado";
       } else {
-        if (Ferramentas::codificador($funcao) == '') {
+        if (Ferramentas::codificador($nivel) == '') {
           $msg['Função'] = "Função possui caracteres não permitidos";
           $violacao[] = "user_cadastrar Função possui caracteres não permitidos";
         }
@@ -168,7 +168,7 @@ class UsuarioPost extends AdmPost
         // Inicializa o banco de dados e busca dados relacionados
 
         $db = new \App\Models\Usuarios();
-        $db1 = new \App\Models\Funcao();
+        $db1 = new \App\Models\Nivel();
         $db1_data = $db1->find();
         $db_data = $db->find();
 
@@ -177,7 +177,7 @@ class UsuarioPost extends AdmPost
           $date = [
             'nome' => Ferramentas::codificador($nome),
             'senha' => (Ferramentas::codificador($senha)),
-            'tipo' => Ferramentas::array_pesquisa($db1_data, 'nome', Ferramentas::codificador($funcao))['id'],
+            'nivel' => Ferramentas::array_pesquisa($db1_data, 'nome', Ferramentas::codificador($nivel))['id'],
             'email' => Ferramentas::codificador($email),
             'whatsapp' => str_replace(['(', ')', '-', ' '], [''], $whazapp),
             'data_hora_add' => Ferramentas::codificador(date('d/m/Y H:i')),
@@ -238,7 +238,7 @@ class UsuarioPost extends AdmPost
       // Obtém os dados enviados via AJAX
       $nome = service('request')->getPost('nome');
       $senha = service('request')->getPost('senha');
-      $funcao = service('request')->getPost('funcao');
+      $nivel = service('request')->getPost('nivel');
       $email = service('request')->getPost('email');
       $whazapp = service('request')->getPost('whazapp');
 
@@ -301,15 +301,15 @@ class UsuarioPost extends AdmPost
         $msg['Whazapp'] = "Whazapp não possui o tamanho mínimo de 13 caracter";
       }
 
-      $lista_array = AdmPost::lista_funcao();
+      $lista_array = NivelPost::lista_nivel();
       $lista_array = json_decode($lista_array->getBody(), true);
 
       // Validações dos dados recebidos
-      if (!in_array($funcao, $lista_array['lista'])) {
+      if (!in_array($nivel, $lista_array['lista'])) {
         $msg['Função'] = "Nome da Função não cadastrado";
         $violacao[] = "user_modificar_update Nome da Função não cadastrado";
       } else {
-        if (Ferramentas::codificador($funcao) == '') {
+        if (Ferramentas::codificador($nivel) == '') {
           $msg['Função'] = "Função possui caracteres não permitidos";
           $violacao[] = "user_modificar_update Função possui caracteres não permitidos";
         }
@@ -348,10 +348,10 @@ class UsuarioPost extends AdmPost
         $id = $_SESSION['lista'][$id];
         $_SESSION['lista_completa'];
         $db = new \App\Models\Usuarios();
-        $db1 = new \App\Models\Funcao();
+        $db1 = new \App\Models\Nivel();
         $db1_data = $db1->find();
         $db_data = $db->find();
-        $tipo = Ferramentas::array_pesquisa($db1_data, 'nome', Ferramentas::codificador($funcao))['id'];
+        $nivel = Ferramentas::array_pesquisa($db1_data, 'nome', Ferramentas::codificador($nivel))['id'];
 
         if (
           (count(Ferramentas::array_pesquisa($db_data, 'nome', Ferramentas::codificador($nome))) == 0 ||
@@ -360,14 +360,14 @@ class UsuarioPost extends AdmPost
             'id',
             'nome',
             'senha',
-            'tipo',
+            'nivel',
             'email',
             'whatsapp'
           ], [
             $id,
             Ferramentas::codificador($nome),
             (Ferramentas::codificador($senha)),
-            $tipo,
+            $nivel,
             Ferramentas::codificador($email),
             str_replace(['(', ')', '-', ' '], [''], $whazapp)
           ])) == 0
@@ -379,16 +379,16 @@ class UsuarioPost extends AdmPost
             "id_item" => $id,
             "antes" => Ferramentas::array_index(Ferramentas::array_pesquisa($db_data, 'id', $id), ['nome']) . " - " .
               Ferramentas::array_index(Ferramentas::array_pesquisa($db_data, 'id', $id), ['senha']) . " - " .
-              Ferramentas::array_index(Ferramentas::array_pesquisa($db_data, 'id', $id), ['tipo']) . " - " .
+              Ferramentas::array_index(Ferramentas::array_pesquisa($db_data, 'id', $id), ['nivel']) . " - " .
               Ferramentas::array_index(Ferramentas::array_pesquisa($db_data, 'id', $id), ['email']) . " - " .
               Ferramentas::array_index(Ferramentas::array_pesquisa($db_data, 'id', $id), ['whazapp']),
             "depois" => Ferramentas::codificador($nome) . " - " .
               Ferramentas::codificador($senha) . " - " .
-              $tipo . " - " .
+              $nivel . " - " .
               Ferramentas::codificador($email) . " - " .
               str_replace(['(', ')', '-', ' '], [''], $whazapp),
             "item" => "user",
-            "info_mais" => "nome - senha - tipo - email - whazapp",
+            "info_mais" => "nome - senha - nivel - email - whazapp",
             "data_add" => Ferramentas::codificador(date('d/m/Y H:i'))
 
           ];
@@ -398,7 +398,7 @@ class UsuarioPost extends AdmPost
           $date = [
             'nome' => Ferramentas::codificador($nome),
             'senha' => (Ferramentas::codificador($senha)),
-            'tipo' => $tipo,
+            'nivel' => $nivel,
             'email' => Ferramentas::codificador($email),
             'whatsapp' => str_replace(['(', ')', '-', ' '], [''], $whazapp)
 
@@ -410,7 +410,7 @@ class UsuarioPost extends AdmPost
           $db->update($id, $date); // Atualiza os dados do usuário no banco de dados
           $ok = true;
           $msg['1'] = $date;
-        } else if (count(Ferramentas::array_pesquisa_mult($db_data, ['id', 'nome', 'senha', 'tipo', 'email', 'whatsapp'], [$id, Ferramentas::codificador($nome), (Ferramentas::codificador($senha)), $tipo, Ferramentas::codificador($email), str_replace(['(', ')', '-', ' '], [''], $whazapp)])) != 0) {
+        } else if (count(Ferramentas::array_pesquisa_mult($db_data, ['id', 'nome', 'senha', 'nivel', 'email', 'whatsapp'], [$id, Ferramentas::codificador($nome), (Ferramentas::codificador($senha)), $nivel, Ferramentas::codificador($email), str_replace(['(', ')', '-', ' '], [''], $whazapp)])) != 0) {
           $msg["Modificar"] = 'Não foi feita nenhuma alteração.';
         } else {
           $msg["Nome"] = 'Nome de usuário já existente';
@@ -457,9 +457,9 @@ class UsuarioPost extends AdmPost
       session_start();
 
       $usuarios = new \App\Models\Usuarios(); // Obtém a tabela de usuários do banco
-      $funcao = new \App\Models\Funcao(); // Obtém a tabela de funções do banco
+      $nivel = new \App\Models\Nivel(); // Obtém a tabela de funções do banco
       $usuarios_data = $usuarios->find();
-      $funcao_data = $funcao->find();
+      $nivel_data = $nivel->find();
 
       $ativos = service('request')->getPost('ativos'); // Obtém a informação POST fornecida via AJAX para listar usuários ativos
       $desativados = service('request')->getPost('desativados'); // Obtém a informação POST fornecida via AJAX para listar usuários desativados
@@ -475,7 +475,7 @@ class UsuarioPost extends AdmPost
       <tr id="" >
        <td><p onclick="modal_modificar(\'modal_' . $id_temp . '\')">' . Ferramentas::decodificador($value['nome']) . '</p></td>
        <td onclick="modal_modificar(\'modal_' . $id_temp . '\')">  ********  </td>
-       <td onclick="modal_modificar(\'modal_' . $id_temp . '\')">' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($funcao_data, 'id', $value['tipo']), ['nome'])) . '</td>
+       <td onclick="modal_modificar(\'modal_' . $id_temp . '\')">' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($nivel_data, 'id', $value['nivel']), ['nome'])) . '</td>
        <td onclick="modal_modificar(\'modal_' . $id_temp . '\')">' . Ferramentas::decodificador($value['email']) . '</td>
        <td onclick="modal_modificar(\'modal_' . $id_temp . '\')">' . Ferramentas::decodificador($value['whatsapp']) . '</td>
        
@@ -488,7 +488,7 @@ class UsuarioPost extends AdmPost
           $lista .= '
           <td><p onclick="modal_modificar(\'modal_' . $id_temp . '\')">' . Ferramentas::decodificador($value['nome']) . '</p></td>
           <td onclick="modal_modificar(\'modal_' . $id_temp . '\')">  ********  </td>
-          <td onclick="modal_modificar(\'modal_' . $id_temp . '\')">' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($funcao_data, 'id', $value['tipo']), ['nome'])) . '</td>
+          <td onclick="modal_modificar(\'modal_' . $id_temp . '\')">' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($nivel_data, 'id', $value['nivel']), ['nome'])) . '</td>
           <td onclick="modal_modificar(\'modal_' . $id_temp . '\')">' . Ferramentas::decodificador($value['email']) . '</td>
           <td onclick="modal_modificar(\'modal_' . $id_temp . '\')">' . Ferramentas::decodificador($value['whatsapp']) . '</td>
           
@@ -497,7 +497,7 @@ class UsuarioPost extends AdmPost
       </tr>
       ';
         }
-        $value['tipo'] = Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($funcao_data, 'id', $value['tipo']), ['nome']));
+        $value['nivel'] = Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($nivel_data, 'id', $value['nivel']), ['nome']));
         $lista_ids[$id_temp] = $value['id'];
         $lista_completa[$id_temp] = $value;
         $id_temp++;

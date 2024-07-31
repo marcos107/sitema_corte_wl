@@ -140,8 +140,7 @@ $routes->post('/empreendimento_lista', 'EmpreendimentoPost::empreendimento_lista
 
 
 //UsuarioPost
-$routes->get('/user_cadastrar', 'Pagina::user_cadastrar');
-$routes->get('/user_modificar', 'Pagina::user_modificar');
+$routes->get('/usuario', 'Pagina::usuario');
 $routes->post('/user_cadastrar', 'UsuarioPost::user_cadastrar');
 $routes->post('/user_modificar_update', 'UsuarioPost::user_modificar_update');
 $routes->post('/user_modificar_modal', 'UsuarioPost::user_modificar_modal');

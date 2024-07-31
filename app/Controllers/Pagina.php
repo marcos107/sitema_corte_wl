@@ -510,72 +510,18 @@ class Pagina extends BaseController
 
     }
 
-    /**
-     * Controla a exibição da lista de usuários e a modificação das informações dos usuários.
-     *
-     * Esta função é responsável por exibir a lista de usuários e fornecer a capacidade de modificar informações dos usuários. Ela verifica se o usuário está autenticado como administrador antes de exibir a lista e as opções de modificação de informações dos usuários.
-     */
-    function user_modificar()
+
+
+    function usuario()
     {
         // Verifica se o usuário está autenticado como administrador.
-        Login::verifica_permissao('Usuario');
+        //Login::verifica_permissao('Subpasta');
         // Inicia a sessão, se ainda não estiver ativa.
         if (session_status() !== PHP_SESSION_ACTIVE) {
             session_start();
         }
 
-        // Dados da visualização da lista de usuários e modificação de informações.
-        $array_view = array(
-            'button_execut_nome' => '',
-            'array_input_id' => '',
-            'array_input_placeholder' => '',
-            'array_input_typ' => '',
-            'array_input_titulo' => '',
-            'titulo' => '',
-            'functionType' => '',
-            'nomeUsuario' => Ferramentas::decodificador($_SESSION['usuario_nome']),
-            'menu' => '',
-            'lista' => '',
-            'selecao_lista' => true,
-            'array_titulo_lista' => '',
-            'functiontype_cadastro' => '',
-            'titulo_cadastro' => '',
-            'titulo_lista' => '',
-            'functiontype_lista' => '',
-            'ajax' => 'ajaxs/user_modificar_ajax'
-        );
-        // Título da página.
-        $array_view['titulo'] = "Modificar de Usuario";
-
-        // Informações do menu.
-        $menu_box = "config_dos_ajustes";
-        $menu_select = "modificar";
-        $template = "lista";
-
-        // Configuração da página de lista de usuários e modificação de informações.
-        $array_view['array_titulo_lista'] = array("Nome", "Senha", "Função", "Email", "whatsapp", "Status", "");
-        $array_view['menu'] = $this->menu($menu_box, $menu_select);
-
-        // Exibe a página de lista de usuários.
-        echo view($template, $array_view);
-    }
-
-
-    /**
-     * Controla a exibição do formulário de cadastro de usuário e o processo de cadastro.
-     *
-     * Esta função é responsável por exibir um formulário de cadastro de usuário e fornecer a capacidade de cadastrar novos usuários. Ela verifica se o usuário está autenticado como administrador antes de exibir o formulário de cadastro.
-     */
-    function user_cadastrar()
-    {
-        // Verifica se o usuário está autenticado como administrador.
-        Login::verifica_permissao('Usuario');
-        // Inicia a sessão, se ainda não estiver ativa.
-        if (session_status() !== PHP_SESSION_ACTIVE) {
-            session_start();
-        }
-
-        // Dados do formulário de cadastro de usuário.
+        // Dados do formulário de criação de tags e da lista de tags.
         $array_view = array(
             'button_execut_nome' => '',
             'array_input_id' => array(),
@@ -588,34 +534,43 @@ class Pagina extends BaseController
             'menu' => '',
             'lista' => '',
             'selecao_lista' => true,
-            'array_titulo_lista' => array(),
-            'functiontype_cadastro' => '',
+            'array_titulo_lista' => '',
+            'functionType_cadastro' => '',
             'titulo_cadastro' => '',
             'titulo_lista' => '',
-            'functiontype_lista' => '',
-            'ajax' => 'ajaxs/user_cadastrar_ajax'
+            'functionType_lista' => '',
+            'ajax' => 'ajaxs/usuario_ajax'
         );
 
-        // Nome do template a ser usado para exibir o formulário de cadastro.
-        $template = "cadastro";
-
-        // Informações do menu.
-        $menu_select = "config_dos_ajustes";
-        $menu_box = "usuarios";
+        // Informações do menu e template.
+        $menu_box = "config_dos_ajustes";
+        $menu_select = "usuario";
+        $template = "lista_cadastro";
         $text_rep = array(' do novo usuario');
         $select_option = "<option value='' disabled selected>Função do novo usuario</option>";
 
-        // Configuração do formulário de cadastro.
+
+        // Configuração do formulário de criação de tags.
+        $array_view['functionType_lista'] = "Lista Usuário";
+        $array_view['functionType_cadastro'] = "Cadastrar Usuário";
         $array_view['array_input_id'] = array("nome_usuario", "senha_usuario", "funcao_usuario", "email_usuario", "whazapp_usuario");
         $array_view['array_input_placeholder'] = array("Nome" . $text_rep[0], "Senha" . $text_rep[0], $select_option, "Email" . $text_rep[0], "Whazapp" . $text_rep[0]);
         $array_view['array_input_typ'] = array("text", "password", "select", "email", "tel");
         $array_view['array_input_titulo'] = array("Nome", "Senha", "Função", "Email", "whatsapp");
-        $array_view['titulo'] = "Cadastro de Usuario";
+        $array_view['titulo_cadastro'] = "Cadastro de Usuario";
         $array_view['button_execut_nome'] = "Cadastrar";
+
+
+
+        // Configuração da lista de tags existentes.
+        $array_view['titulo_lista'] = "Lista de Subpastas";
+        $array_view['array_titulo_lista'] = array("Nome", "Senha", "Nível", "Email", "whatsapp", "Status", "");
         $array_view['menu'] = $this->menu($menu_box, $menu_select);
 
-        // Exibe o formulário de cadastro de usuário.
+
+        // Exibe o formulário de criação de tags e a lista de tags.
         echo view($template, $array_view);
+
     }
 
     /**
