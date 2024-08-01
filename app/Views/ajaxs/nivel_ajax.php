@@ -100,7 +100,7 @@
         });
     }
 
-    function modal_nivel(id) {
+    function modal_nivel(id = null) {
         $.ajax({
             url: '<?= base_url('public/nivel_modifica_modal') ?>',
             type: "POST",
@@ -108,17 +108,21 @@
             data: { id: id },
             success: function (response) {
 
+                if(id != null){
+                    document.getElementById('modal').innerHTML = response.modal;
+                    mostrarModal();
+                    lista();
+                }else{
+                    document.getElementById('inputs_body').innerHTML = response.conteudo;
+                }
 
-                document.getElementById('modal').innerHTML = response.modal;
-
-                mostrarModal();
-                lista();
             }
         });
     }
 
     function confirmarModal() {
         var checkbox = document.getElementById('checkbox_todos');
+        var relatorio = document.getElementById('checkbox_relatorio').checked;
       var select = document.getElementById('permissao_novo');
       var permissao = "";
       if (checkbox.checked) {
@@ -138,7 +142,7 @@
             url: '<?= base_url('public/nivel_modificar') ?>',
             type: "POST",
             dataType: "json", // Indicar que o retorno é em formato JSON
-            data: { nivel: nivel ,permissao: permissao},
+            data: { nivel: nivel ,permissao: permissao,relatorio: relatorio},
             success: function (response) {
                 console.log(response);
                 if (!response.ok) {
@@ -186,6 +190,7 @@
     function cadastrar() {
       var checkbox = document.getElementById('checkbox_todos');
       var select = document.getElementById('permissao_novo');
+      var relatorio = document.getElementById('checkbox_relatorio').checked;
       var permissao = "";
       if (checkbox.checked) {
         permissao =  "all";
@@ -204,7 +209,7 @@
             url: '<?= base_url('public/nivel_cadastrar') ?>',
             type: "POST",
             dataType: "json", // Indicar que o retorno é em formato JSON
-            data: { nivel: nivel ,permissao: permissao},
+            data: { nivel: nivel ,permissao: permissao,relatorio: relatorio},
             success: function (response) {
                 console.log(response);
                 if (!response.ok) {
@@ -217,7 +222,7 @@
                 } else {
                     alert_certo('Cadastrado', 'nivel cadastrado com sucesso.');
                     document.getElementById("nivel_novo").value = '';
-                    fecharModal();
+                    modal_nivel();
                     lista();
                 }
 
@@ -253,4 +258,6 @@
         select.disabled = false;
       }
     }
+
+    modal_nivel();
 </script>

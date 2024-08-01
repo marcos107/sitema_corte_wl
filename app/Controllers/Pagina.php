@@ -678,10 +678,10 @@ class Pagina extends BaseController
         $template = "cadastro";
 
         // Configuração do formulário de cadastro.
-        $array_view['array_input_id'] = array("data_inicial\" required \"", "data_final\" required disabled  \"", "rad_1", "checkbox_ativo", "projetistas\" multiple \"", "cortadores\" multiple \"");
-        $array_view['array_input_placeholder'] = array("Data inicial para aconsulta", "Data final para aconsulta", "", "", "", "");
-        $array_view['array_input_typ'] = array("date", "date", "radio", "checkbox", "select", "select");
-        $array_view['array_input_titulo'] = array("Data de inicio", "Data de final", "Tipo de Relatório", "Visualizar usuários", "Projetistas", "Cortadores");
+        $array_view['array_input_id'] = array("data_inicial\" required \"", "data_final\" required disabled  \"", "rad_1", "checkbox_ativo");
+        $array_view['array_input_placeholder'] = array("Data inicial para aconsulta", "Data final para aconsulta", "", "");
+        $array_view['array_input_typ'] = array("date", "date", "radio", "checkbox");
+        $array_view['array_input_titulo'] = array("Data de inicio", "Data de final", "Tipo de Relatório", "Visualizar usuários");
         $array_view['titulo'] = "Gerar Relatório";
         $array_view['button_execut_nome'] = "Gerar PDF";
         $array_view['menu'] = $this->menu($menu_box, $menu_select);
@@ -834,12 +834,20 @@ class Pagina extends BaseController
 
 
         $menu_select = "nivel";
-        $template = "lista";
-
+        $template = "lista_cadastro";
+        // Configuração do formulário de criação de tags.
+        $array_view['functionType_lista'] = "Lista Nível";
+        $array_view['functionType_cadastro'] = "Cadastrar Nível";
+        $array_view['titulo_cadastro'] = "Cadastrar Nível";
+        $array_view['array_input_titulo'] = array("Nível");
+        $array_view['array_input_typ'] = array("text");
+        $array_view['array_input_placeholder'] = array("Novo Nível");
+        $array_view['array_input_id'] = array("nome_tag_novo");
+        $array_view['button_execut_nome'] = "Adicionar";
 
         // Configuração da página de lista de desenhos do usuário.
-        $array_view['titulo'] = "Relatorios Sintético";
-        $array_view['array_titulo_lista'] = array("Nome", "Permissões", "Status", "");
+      
+        $array_view['array_titulo_lista'] = array("Nome", "Permissões", "Processos","Status", "");
         $array_view['menu'] = $this->menu($menu_box, $menu_select);
 
         // Exibe a lista de desenhos do usuário.

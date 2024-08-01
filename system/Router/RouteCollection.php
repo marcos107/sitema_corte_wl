@@ -412,10 +412,12 @@ class RouteCollection implements RouteCollectionInterface
      * @param callable|null $callable
      */
     public function set404Override($callable = null): RouteCollectionInterface
-    {
+    {   
+        
+   
         $this->override404 = $callable;
 
-        return $this;
+       return $this;
     }
 
     /**

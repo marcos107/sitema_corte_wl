@@ -22,7 +22,7 @@ class ReratorioPost extends Ferramentas
       return sprintf('%02d:%02d:%02d', $hours, $minutes, $seconds);
     }
   
-    function relatorio_analitico()
+    function relatorio()
     {
       if ($this->request->isAJAX()) {
         session_start();
@@ -30,9 +30,8 @@ class ReratorioPost extends Ferramentas
   
         $dataFinal_str = service('request')->getPost('dataFinal');
         $dataInicial_str = service('request')->getPost('dataInicial');
-        $desenhista_permissao = service('request')->getPost('desenhistas');
-        $cortador_permissao = service('request')->getPost('cortador');
         $relatorio = service('request')->getPost('relatorio');
+        $selectedValues = service('request')->getPost('selectedValues');
         $msg = array();
   
         if ($dataFinal_str == "") {
@@ -47,7 +46,10 @@ class ReratorioPost extends Ferramentas
         if (!preg_match("/^\d{4}-\d{2}-\d{2}$/", $dataInicial_str)) {
           $msg["Data Inicial"] = "É precisso selecionar uma data inicial valida.";
         }
-  
+          
+        if ($selectedValues == []) {
+          $msg["Participantes"] = "É preciso selecionar pelomenos um participante para o relatório.";
+        }
   
         $dataFinal = strtotime($dataFinal_str);
         $dataInicial = strtotime($dataInicial_str);
@@ -99,19 +101,19 @@ class ReratorioPost extends Ferramentas
         foreach ($desenhos_data as $key => $value) {
           $ok_desenhista = false;
           $ok_cortador = false;
-          if ($desenhista_permissao)
-            foreach ($desenhista_permissao as $value1) {
-              if ($_SESSION["lista_desenhista"][$value1]['id'] == $value['desenhista']) {
+
+          foreach ($selectedValues as $value1) {
+            foreach ($value1 as $value2) {
+              if ($_SESSION["lista_usuarios"][$value2]['id'] == $value['desenhista']) {
                 $ok_desenhista = true;
               }
-            }
-          if ($cortador_permissao)
-            foreach ($cortador_permissao as $value1) {
-              if ($_SESSION["lista_cortador"][$value1]['id'] == $value['cortador']) {
+              if ($_SESSION["lista_usuarios"][$value2]['id'] == $value['cortador']) {
                 $ok_cortador = true;
               }
             }
-  
+
+          }
+
   
           if (!$ok_cortador and !$ok_desenhista)
             continue;
@@ -734,29 +736,33 @@ class ReratorioPost extends Ferramentas
     }
 
 
-    function lista_desenhistas()
+
+    function lista_usuarios_niveis()
     {// 3
       if ($this->request->isAJAX()) {
         // Inicializa a sessão para acessar os dados da lista armazenados nela
         session_start();
   
         $usuarios = new \App\Models\Usuarios(); // Obtém a tabela de usuários do banco
+        $nivel = new \App\Models\Nivel();
         $usuarios_data = $usuarios->find();
-  
+        $nivel_data = $nivel->find();
+
         $lista = array();
         $id_temp = 0;
   
         foreach ($usuarios_data as $key => $value) {
           // Cria a lista com base nos usuários ativos ou desativados, dependendo da solicitação
-          if ((Ferramentas::decodificador($value['tipo']) == '3' or Ferramentas::decodificador($value['tipo']) == '1')) { //verifica se é para mostrar os com estus ativo//verifica se é para mostrar os com estus ativo
-            $lista['nome'][$value['status']][$id_temp] = Ferramentas::decodificador($value['nome']);
+            $nivel_user = Ferramentas::array_pesquisa($nivel_data,"id",$value['nivel']);
+            if(!in_array("relatorio",explode('-',Ferramentas::decodificador(Ferramentas::array_index($nivel_user,['processos'])))))
+              continue;
+            $lista['nome'][Ferramentas::array_index($nivel_user,['nome'])][Ferramentas::decodificador($value['status'])][$id_temp] = Ferramentas::decodificador($value['nome']);
             $lista[strval($id_temp)] = $value;
-  
-          }
+          
           $id_temp++;
   
         }
-        $_SESSION["lista_desenhista"] = $lista;
+        $_SESSION["lista_usuarios"] = $lista;
   
         //retorna a lista para o ajax
         $data = [
@@ -767,37 +773,5 @@ class ReratorioPost extends Ferramentas
       }
     }
 
-    function lista_cortadores()
-    {// 3
-      if ($this->request->isAJAX()) {
-        // Inicializa a sessão para acessar os dados da lista armazenados nela
-        session_start();
-  
-        $usuarios = new \App\Models\Usuarios(); // Obtém a tabela de usuários do banco
-        $usuarios_data = $usuarios->find();
-  
-        $lista = array();
-        $id_temp = 0;
-  
-        foreach ($usuarios_data as $key => $value) {
-          // Cria a lista com base nos usuários ativos ou desativados, dependendo da solicitação
-          if ((Ferramentas::decodificador($value['tipo']) == '2')
-          ) { //verifica se é para mostrar os com estus ativo//verifica se é para mostrar os com estus ativo
-            $lista['nome'][Ferramentas::decodificador($value['status'])][$id_temp] = Ferramentas::decodificador($value['nome']);
-            $lista[strval($id_temp)] = $value;
-          }
-          $id_temp++;
-  
-        }
-        $_SESSION["lista_cortador"] = $lista;
-  
-        //retorna a lista para o ajax
-        $data = [
-          "lista" => $lista['nome']
-        ];
-  
-        return $this->response->setJSON($data);
-      }
-    }
 
 }

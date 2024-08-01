@@ -303,7 +303,7 @@
                                 <div class="calendar-container">
 
 
-                                <div class="card-body">
+                                <div class="card-body" id="inputs_body">
                                     
                                     <?php
                                     foreach ($array_input_typ as $kay => $value) {

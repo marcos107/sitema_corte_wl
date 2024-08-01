@@ -26,14 +26,13 @@
     document.getElementById('cadastrar_btn').disabled = true;
     const dataInicial = document.getElementById("data_inicial").value;
     const dataFinal = document.getElementById("data_final").value;
-    desenhistas = getSelectedCheckboxValues_desenhista();
-    cortador = getSelectedCheckboxValues_cortador();
+
 
     $.ajax({
-      url: '<?= base_url('public/relatorio_analitico') ?>',
+      url: '<?= base_url('public/relatorio') ?>',
       type: "POST",
       dataType: "json", // Espera uma resposta JSON
-      data: { dataInicial: dataInicial, dataFinal: dataFinal, desenhistas: desenhistas, cortador: cortador, relatorio: document.getElementById('rad_1').checked },
+      data: { dataInicial: dataInicial, dataFinal: dataFinal, relatorio: document.getElementById('rad_1').checked,selectedValues: getSelectedCheckboxValues() },
       success: function (response) {
 
 
@@ -105,8 +104,8 @@
   const group1 = document.getElementById('group_1');
   const group2 = document.getElementById('group_2');
   const group3 = document.getElementById('group_3');
-  const group4 = document.getElementById('group_4');
-  const group5 = document.getElementById('group_5');
+
+
   const cadastrar_btn = document.getElementById('cadastrar_btn');
 
   cadastrar_btn.style.width = '50%';
@@ -131,17 +130,9 @@
   group3.style.verticalAlign = 'top';
   group3.style.padding = '5px';
 
-  group4.style.display = 'inline-block';
-  group4.style.width = '600px';
-  group4.style.verticalAlign = 'top';
-  group4.style.padding = '5px';
 
-  group5.style.display = 'inline-block';
-  group5.style.width = '600px';
-  group5.style.verticalAlign = 'top';
-  group5.style.padding = '5px';
 
-  group4.parentNode.insertBefore(document.createElement('br'), group4);
+
 
   // Função para criar e adicionar novos elementos dentro de uma nova div em um grupo existente
   function addElementsToNewDiv(inputType, inputId, inputName, labelText, newDiv = document.createElement('div')) {
@@ -181,28 +172,24 @@
 
   document.getElementById('rad_1').checked = true;
   document.getElementById('checkbox_ativo').checked = true;
+
+  document.getElementById('checkbox_ativo').addEventListener('click', function () {
+    Object.entries(data_glob.lista).forEach(([key, value]) => {
+          addCheckboxes(value,data_glob.id_groups[key]);
+          
+        });
+  });
+
+  document.getElementById('checkbox_desativado').addEventListener('click', function () {
+    Object.entries(data_glob.lista).forEach(([key, value]) => {
+          addCheckboxes(value,data_glob.id_groups[key]);
+          
+        });
+  });
+
+
   // Adicionar novo checkbox "Desativado" dentro de uma nova div no group_3
 
-
-  function areAllCheckboxesDesenhistaUnchecked() {
-    var checkboxes = document.querySelectorAll('#checkbox_desenhistas');
-    for (var i = 0; i < checkboxes.length; i++) {
-      if (checkboxes[i].checked) {
-        return false; // Retorna false se pelo menos um checkbox estiver marcado
-      }
-    }
-    return true; // Retorna true se todos os checkboxes estiverem desmarcados
-  }
-
-  function areAllCheckboxesCortadorUnchecked() {
-    var checkboxes = document.querySelectorAll('#checkbox_cortadores');
-    for (var i = 0; i < checkboxes.length; i++) {
-      if (checkboxes[i].checked) {
-        return false; // Retorna false se pelo menos um checkbox estiver marcado
-      }
-    }
-    return true; // Retorna true se todos os checkboxes estiverem desmarcados
-  }
 
   function checkIfAllDesenhistaUnchecked(event) {
 
@@ -275,130 +262,6 @@
   });
 
 
-  function createControls_cortador() {
-    const container = document.getElementById('group_5');
-
-    // Cria o contêiner do botão
-    const buttonContainer = document.createElement('div');
-    buttonContainer.className = 'button-container';
-
-    // Define os estilos do contêiner para alinhamento à esquerda
-    buttonContainer.style.display = 'flex';
-    buttonContainer.style.justifyContent = 'flex-start';
-    buttonContainer.style.padding = '5px';
-
-
-    // Create select all button
-    const selectAllButton = document.createElement('button');
-    selectAllButton.id = 'selectAll';
-    selectAllButton.textContent = 'Selecionar Todos';
-    selectAllButton.className = 'btn btn-outline-primary btn-sm';
-    selectAllButton.style.width = '150px';  // Define a largura do botão
-    selectAllButton.addEventListener('click', selectAllCheckboxes_cortador);
-    buttonContainer.appendChild(selectAllButton);
-
-    // Create deselect all button
-    const deselectAllButton = document.createElement('button');
-    deselectAllButton.id = 'deselectAll';
-    deselectAllButton.textContent = 'Desmarcar Todos';
-    deselectAllButton.className = 'btn btn-outline-primary btn-sm';
-    deselectAllButton.style.width = '150px';  // Define a largura do botão
-    deselectAllButton.addEventListener('click', deselectAllCheckboxes_cortador);
-    buttonContainer.appendChild(deselectAllButton);
-
-    // Add button container to the top of the group_3 container
-    container.appendChild(buttonContainer);
-  }
-
-
-  function createCheckboxes_cortador(data) {
-    ativo = document.getElementById('checkbox_ativo').checked;
-    desativado = document.getElementById('checkbox_desativado').checked;
-    const container = document.getElementById('group_5');
-    const checkboxes = container.querySelectorAll('#checkbox_cortador');
-    checkboxes.forEach(checkbox => checkbox.remove());
-
-
-    if (ativo)
-      for (const key in data.ativo) {
-        if (data.ativo.hasOwnProperty(key)) {
-          const label = document.createElement('label');
-          const checkbox = document.createElement('input');
-          checkbox.type = 'checkbox';
-          checkbox.id = "checkbox_cortadores";
-          checkbox.value = key;
-          label.id = 'checkbox_cortador';
-          label.appendChild(checkbox);
-          label.appendChild(document.createTextNode(data.ativo[key]));
-
-          // Adiciona estilo para espaçamento
-          label.style.margin = '5px';
-
-          container.appendChild(label);
-        }
-      }
-
-    if (desativado)
-      for (const key in data.desativado) {
-        if (data.desativado.hasOwnProperty(key)) {
-          const label = document.createElement('label');
-          const checkbox = document.createElement('input');
-          checkbox.type = 'checkbox';
-          checkbox.id = "checkbox_cortadores";
-          label.id = 'checkbox_cortador';
-          checkbox.value = key;
-
-          label.appendChild(checkbox);
-          label.appendChild(document.createTextNode(data.desativado[key]));
-
-          // Adiciona estilo para espaçamento
-          label.style.margin = '5px';
-
-          container.appendChild(label);
-        }
-      }
-
-    document.querySelectorAll('#checkbox_cortadores').forEach(function (checkbox) {
-      checkbox.addEventListener('click', function (event) {
-        checkIfAllDesenhistaUnchecked(event.target.checked);
-      });
-    });
-
-    updateColumns_cortador();
-  }
-
-  function updateColumns_cortador() {
-    const container = document.getElementById('group_5');
-    const containerWidth = container.offsetWidth;
-    const checkboxWidth = 200; // Largura aproximada de cada checkbox com label
-    const columns = Math.floor(containerWidth / checkboxWidth);
-    container.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
-  }
-
-  function selectAllCheckboxes_cortador() {
-    const checkboxes = document.querySelectorAll('#group_5 input[type="checkbox"]');
-    checkboxes.forEach(checkbox => checkbox.checked = true);
-  }
-
-  function deselectAllCheckboxes_cortador() {
-    const checkboxes = document.querySelectorAll('#group_5 input[type="checkbox"]');
-    checkboxes.forEach(checkbox => checkbox.checked = false);
-    checkIfAllDesenhistaUnchecked(false);
-  }
-
-
-
-  function getSelectedCheckboxValues_cortador() {
-    const checkboxes = document.querySelectorAll('#group_5 input[type="checkbox"]');
-    const selectedValues = [];
-    checkboxes.forEach(checkbox => {
-      if (checkbox.checked) {
-        selectedValues.push(checkbox.value);
-      }
-    });
-    return selectedValues;
-  }
-
 
   function alert_personalizado(titulo, bory) {
     $(document).Toasts('create', {
@@ -411,9 +274,54 @@
     });
   }
 
+  // Chama a função init na carga da página
+  //window.onload = init;
 
-  function createControls_desenhista() {
-    const container = document.getElementById('group_4');
+  //çççç
+
+  function inicio() {
+    $.ajax({
+      url: '<?= base_url('public/lista_usuarios_niveis') ?>',
+      type: "POST",
+      dataType: "json", // Indicar que o retorno é em formato JSON
+      success: function (response) {
+        response.id_groups = [];
+        Object.entries(response.lista).forEach(([key, value]) => {
+          let id_goup = createControls(key);
+
+          // Adiciona o id_goup ao array response.id_groups
+          response.id_groups[key] = id_goup;
+
+          createCheckboxes(value, id_goup);
+        });
+       data_glob = response;
+       
+        // Agora response.id_groups contém todos os id_goup adicionados
+      
+      }
+    });
+  }
+
+  function getNextGroupId() {
+    const existingGroups = document.querySelectorAll('[id^="group_"]');
+    let maxId = 0;
+
+    existingGroups.forEach(group => {
+      const idNumber = parseInt(group.id.split('_')[1]);
+      if (idNumber > maxId) {
+        maxId = idNumber;
+      }
+    });
+
+    return `group_${maxId + 1}`;
+  }
+
+  function createControls(label) {
+    const nextGroupId = getNextGroupId();
+    const container = document.createElement('div');
+    container.id = nextGroupId;
+    container.className = 'form-group';
+    container.innerHTML = `<label>${label}</label>`;
 
     // Create button container
     const buttonContainer = document.createElement('div');
@@ -426,103 +334,139 @@
 
     // Create select all button
     const selectAllButton = document.createElement('button');
-    selectAllButton.id = 'selectAll';
+    selectAllButton.id = `selectAll_${nextGroupId}`;
     selectAllButton.textContent = 'Selecionar Todos';
     selectAllButton.className = 'btn btn-outline-primary btn-sm';
     selectAllButton.style.width = '150px';  // Define a largura do botão
-    selectAllButton.addEventListener('click', selectAllCheckboxes_desenhista);
+    selectAllButton.addEventListener('click', () => selectAllCheckboxes(nextGroupId));
     buttonContainer.appendChild(selectAllButton);
 
     // Create deselect all button
     const deselectAllButton = document.createElement('button');
-    deselectAllButton.id = 'deselectAll';
+    deselectAllButton.id = `deselectAll_${nextGroupId}`;
     deselectAllButton.textContent = 'Desmarcar Todos';
     deselectAllButton.className = 'btn btn-outline-primary btn-sm';
     deselectAllButton.style.width = '150px';  // Define a largura do botão
-    deselectAllButton.addEventListener('click', deselectAllCheckboxes_desenhista);
+    deselectAllButton.addEventListener('click', () => deselectAllCheckboxes(nextGroupId));
     buttonContainer.appendChild(deselectAllButton);
 
-    // Add button container to the top of the group_3 container
+    // Add button container to the top of the new group container
     container.appendChild(buttonContainer);
+
+    // Append the new group container to the parent container
+    document.getElementById('inputs_body').appendChild(container);
+
+    return nextGroupId;
   }
 
-  function createCheckboxes_desenhista(data) {
+  var data_glob = {
+    ativo: null,
+    desativado: null
+  };;
 
-    ativo = document.getElementById('checkbox_ativo').checked;
-    desativado = document.getElementById('checkbox_desativado').checked;
-    const container = document.getElementById('group_4');
-    const checkboxes = container.querySelectorAll('#checkbox_desenhista');
+
+  function addCheckboxes(items, groupId) {
+
+    const checkboxAtivo = document.getElementById('checkbox_ativo');
+    const checkboxDesativado = document.getElementById('checkbox_desativado');
+
+    // Seleciona todos os elementos que têm um ID que começa com 'group_' e termina com '_checkbox_label'
+    var elements = document.querySelectorAll('[id="'+groupId + '_checkbox_label"');
+
+    // Itera sobre os elementos selecionados e remove cada um deles
+    elements.forEach(function (element) {
+      element.parentNode.removeChild(element);
+    });
+    console.log(groupId + '_checkbox_label');
+
+
+
+    if (checkboxAtivo.checked) {
+      if (items.ativo) {
+        for (const key in items.ativo) {
+          if (items.ativo.hasOwnProperty(key)) {
+            const label = document.createElement('label');
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.value = key;
+            checkbox.checked = true;
+            checkbox.id = `${groupId}_checkbox`;
+            label.appendChild(checkbox);
+            label.appendChild(document.createTextNode(items.ativo[key]));
+            label.id = `${groupId}_checkbox_label`;
+
+            // Adiciona estilo para espaçamento
+            label.style.margin = '5px';
+
+            document.getElementById(groupId).appendChild(label);
+          }
+        }
+      }
+    }
+    if (checkboxDesativado.checked) {
+      if (items.desativado) {
+        for (const key in items.desativado) {
+          if (items.desativado.hasOwnProperty(key)) {
+            const label = document.createElement('label');
+            label.id = `${groupId}_checkbox_label`;
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.value = key;
+            checkbox.checked = true;
+            checkbox.id = `${groupId}_checkbox`;
+            label.appendChild(checkbox);
+            label.appendChild(document.createTextNode(items.desativado[key]));
+
+            // Adiciona estilo para espaçamento
+            label.style.margin = '5px';
+
+            document.getElementById(groupId).appendChild(label);
+          }
+        }
+      }
+    }
+
+  }
+
+  function createCheckboxes(data, groupId) {
+    const container = document.getElementById(groupId);
+    const checkboxes = container.querySelectorAll(`.${groupId}_checkbox`);
     checkboxes.forEach(checkbox => checkbox.remove());
 
-    if (ativo)
-      for (const key in data.ativo) {
-        if (data.ativo.hasOwnProperty(key)) {
-          const label = document.createElement('label');
-          const checkbox = document.createElement('input');
-          checkbox.type = 'checkbox';
-          checkbox.value = key;
-          checkbox.id = "checkbox_desenhistas";
-          label.id = "checkbox_desenhista";
 
-          label.appendChild(checkbox);
-          label.appendChild(document.createTextNode(data.ativo[key]));
 
-          // Adiciona estilo para espaçamento
-          label.style.margin = '5px';
+    addCheckboxes(data,groupId);
 
-          container.appendChild(label);
-        }
-      }
 
-    if (desativado)
-      for (const key in data.desativado) {
-        if (data.desativado.hasOwnProperty(key)) {
-          const label = document.createElement('label');
-          const checkbox = document.createElement('input');
-          checkbox.type = 'checkbox';
-          checkbox.value = key;
-          checkbox.id = "checkbox_desenhistas";
-          label.id = "checkbox_desenhista";
-          label.appendChild(checkbox);
-          label.appendChild(document.createTextNode(data.desativado[key]));
-
-          // Adiciona estilo para espaçamento
-          label.style.margin = '5px';
-
-          container.appendChild(label);
-        }
-      }
-    document.querySelectorAll('#checkbox_desenhistas').forEach(function (checkbox) {
+    document.querySelectorAll(`.${groupId}_checkbox`).forEach(function (checkbox) {
       checkbox.addEventListener('click', function (event) {
-        checkIfAllDesenhistaUnchecked(event.target.checked);
+        checkIfAllUnchecked(event.target.checked, groupId);
       });
     });
-    updateColumns_desenhista();
+    updateColumns(groupId);
   }
 
-  function updateColumns_desenhista() {
-    const container = document.getElementById('group_4');
+  function updateColumns(groupId) {
+    const container = document.getElementById(groupId);
     const containerWidth = container.offsetWidth;
     const checkboxWidth = 200; // Largura aproximada de cada checkbox com label
     const columns = Math.floor(containerWidth / checkboxWidth);
     container.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
   }
 
-  function selectAllCheckboxes_desenhista() {
-    const checkboxes = document.querySelectorAll('#group_4 input[type="checkbox"]');
+  function selectAllCheckboxes(groupId) {
+    const checkboxes = document.querySelectorAll(`#${groupId} input[type="checkbox"]`);
     checkboxes.forEach(checkbox => checkbox.checked = true);
   }
 
-  function deselectAllCheckboxes_desenhista() {
-    const checkboxes = document.querySelectorAll('#group_4 input[type="checkbox"]');
+  function deselectAllCheckboxes(groupId) {
+    const checkboxes = document.querySelectorAll(`#${groupId} input[type="checkbox"]`);
     checkboxes.forEach(checkbox => checkbox.checked = false);
-    checkIfAllDesenhistaUnchecked(false);
+    checkIfAllUnchecked(false, groupId);
   }
 
-
-
-  function getSelectedCheckboxValues_desenhista() {
-    const checkboxes = document.querySelectorAll('#group_4 input[type="checkbox"]');
+  function getSelectedCheckboxValues(groupId) {
+    const checkboxes = document.querySelectorAll(`#${groupId} input[type="checkbox"]`);
     const selectedValues = [];
     checkboxes.forEach(checkbox => {
       if (checkbox.checked) {
@@ -532,67 +476,37 @@
     return selectedValues;
   }
 
+  function checkIfAllUnchecked(checked, groupId) {
+    const checkboxes = document.querySelectorAll(`#${groupId} input[type="checkbox"]`);
+    const allUnchecked = Array.from(checkboxes).every(checkbox => !checkbox.checked);
 
-
-
-  function handleCheckboxChange(event) {
-    var isValid = document.getElementById('checkbox_desativado').checked || document.getElementById('checkbox_ativo').checked;
-    if (!isValid) {
-      document.getElementById('cadastrar_btn').disabled = true;
-      alert_personalizado("Visualizar usuários", "É preciso manter ao menos uma das duas opção selecionada.");
-
-    } else {
-      var allUncheckedDesenhista = areAllCheckboxesDesenhistaUnchecked();
-      var allUncheckedCortador = areAllCheckboxesCortadorUnchecked();
-      if (!cadastrar_glob && (!areAllCheckboxesDesenhistaUnchecked() || !areAllCheckboxesCortadorUnchecked())) {
-        document.getElementById('cadastrar_btn').disabled = false;
-      }
-
+    if (allUnchecked) {
+      // Do something if all checkboxes are unchecked
     }
   }
-
-  document.getElementById('checkbox_desativado').addEventListener('click', handleCheckboxChange);
-  document.getElementById('checkbox_ativo').addEventListener('click', handleCheckboxChange);
+  inicio();
 
 
-  desenhistas_glob = '';
-  cortadores_glob = '';
+  function getSelectedCheckboxValues() {
+    const selectedValues = {};
 
+    // Itera sobre cada chave em response.id_groups
+    Object.entries(data_glob.id_groups).forEach(([key, groupId]) => {
+        // Seleciona todos os checkboxes dentro do grupo específico
+        const checkboxes = document.querySelectorAll('[id="'+groupId + '_checkbox"]');
+       // console.log('[id="'+groupId + '_checkbox"');
+        selectedValues[key] = [];
 
-  // Inicializa controles e checkboxes
-  function init() {
-    createControls_desenhista();
-    createControls_cortador();
-    console.log('response');
-    // Faz a requisição AJAX
-    $.ajax({
-      url: '<?= base_url('public/lista_desenhistas') ?>',
-      type: "POST",
-      dataType: "json", // Indicar que o retorno é em formato JSON
-      success: function (response) {
-        desenhistas_glob = response.lista;
-        createCheckboxes_desenhista(response.lista);
-        selectAllCheckboxes_desenhista();
-      }
-    });
-    $.ajax({
-      url: '<?= base_url('public/lista_cortadores') ?>',
-      type: "POST",
-      dataType: "json", // Indicar que o retorno é em formato JSON
-      success: function (response) {
-        cortadores_glob = response.lista;
-        createCheckboxes_cortador(response.lista);
-        selectAllCheckboxes_cortador();
-      }
+        // Itera sobre os checkboxes e adiciona os valores selecionados ao array correspondente
+        checkboxes.forEach(checkbox => {
+            if (checkbox.checked) {
+                selectedValues[key].push(checkbox.value);
+            }
+        });
     });
 
-    // Ajusta o número de colunas baseado no tamanho da tela
-    window.addEventListener('resize', updateColumns_desenhista);
-    window.addEventListener('resize', updateColumns_cortador);
-  }
-
-  // Chama a função init na carga da página
-  window.onload = init;
+    return selectedValues;
+}
 
 
 </script>

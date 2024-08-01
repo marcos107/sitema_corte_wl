@@ -58,7 +58,7 @@
           Empreendimento</p></a></li>
 
           <?php } if(in_array("Nível",$permissao) or in_array("all",$permissao)){?>
-    <li class="nav-item"><a href="<?=site_url("public/nivel")?>" id="nivel" class="nav-link">&nbsp<i class="fa-solid fa-compass-drafting"></i>&nbsp<p>
+    <li class="nav-item"><a href="<?=site_url("public/nivel")?>" id="nivel" class="nav-link">&nbsp<i class="fa-solid fa-layer-group"></i>&nbsp<p>
           Nível</p></a></li>
 
           <?php } if(in_array("Relátorio",$permissao) or in_array("all",$permissao)){?>

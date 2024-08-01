@@ -50,6 +50,7 @@ class NivelPost extends Ferramentas
             $lista .= '<tr>
               <td ondblclick="modal_nivel(' . $id_temp . ')">' . Ferramentas::decodificador($value['nome']) . '</td>
               <td ondblclick="modal_nivel(' . $id_temp . ')">' . str_replace(['_', '-'], [' ', ' - '], Ferramentas::decodificador($value['permissao'])) . '</td>
+              <td ondblclick="modal_nivel(' . $id_temp . ')">' . str_replace(['_', '-'], [' ', ' - '], Ferramentas::decodificador($value['processos'])) . '</td>
               <td ondblclick="modal_nivel(' . $id_temp . ')">' . Ferramentas::decodificador($value['status']) . '</td>
   
               ';
@@ -61,6 +62,7 @@ class NivelPost extends Ferramentas
   
             $lista .= "</tr>";
             $lista_array[$id_temp] = [
+              'processos' => Ferramentas::decodificador($value['processos']),
               'permissao' => Ferramentas::decodificador($value['permissao']),
               'nome' => Ferramentas::decodificador($value['nome']),
               'status' => Ferramentas::decodificador($value['status']),
@@ -119,9 +121,14 @@ class NivelPost extends Ferramentas
         $id = service('request')->getPost('id');
         session_start();
   
+        if($id!=null){
         $lista = $_SESSION["lista"][$id];
         $_SESSION["modal_id"] = $lista['id'];
-  
+        }else{
+          $lista["permissao"] = "";
+          $lista["processos"] = "";
+          $lista['nome'] = "";
+        }
         $option = "";
   
         foreach (self::$array_niveis as $item) {
@@ -131,20 +138,29 @@ class NivelPost extends Ferramentas
             $option .= '<option value="' . str_replace(' ', '_', $item) . '">' . $item . '</option>';
           }
         }
+
         $enable = "";
         $check = "";
         if ($lista["permissao"] == "all") {
           $enable = "disabled";
           $check = "checked";
         }
-  
+
+        $check_relatorio = "";
+        if (in_array("relatorio",explode('-',$lista["processos"]))) {
+          $check_relatorio = "checked";
+        }
         $conteudo = [
           0 => '<div class="form-group">
         <label>Nome</label>
         <input type="text" class="form-control" id="nivel_novo" placeholder="Novo Nível" value="' . $lista["nome"] . '">
       </div>
       <div class="form-group">
-        <label>Permissões</label><br/> <input type="checkbox" class="" id="checkbox_todos" onclick="selecionar_todos()" ' . $check . '><label for="scales">&nbsp; Selecionar todos</label>
+        <input type="checkbox" class="" id="checkbox_relatorio" ' . $check_relatorio . '><label for="scales">&nbsp; Aparecer nos relatório.</label>
+      </div>
+
+      <div class="form-group">
+        <label>Permissões</label><br/> <input type="checkbox" class="" id="checkbox_todos" onclick="selecionar_todos()" ' . $check . '><label for="scales">&nbsp; Selecionar todos.</label>
         <select multiple="multiple" class="form-control" id="permissao_novo" ' . $enable . '>' . $option . ' </select>
             </div>'
         ];
@@ -171,7 +187,7 @@ class NivelPost extends Ferramentas
       </div>';
 
         
-        $data = ['modal' => $modal];
+        $data = ['modal' => $modal,'conteudo' => $conteudo[0]];
         return $this->response->setJSON($data);
       }
     }
@@ -191,6 +207,7 @@ class NivelPost extends Ferramentas
         $violacao = array();
         $nivel = service('request')->getPost('nivel');
         $permissao = service('request')->getPost('permissao');
+        $relatorio = service('request')->getPost('relatorio');
   
         if (strlen($nivel) > 30) {
           $msg['Nível'] = "Nome do nível excedeu o tamanho máximo de 30 caracter";
@@ -223,16 +240,20 @@ class NivelPost extends Ferramentas
         if (count($msg) == 0 and count($violacao) == 0) {
   
           $db = new \App\Models\Nivel();
-  
-  
+          $processos = array();
+          if($relatorio  == "true"){
+            $processos[] = "relatorio";
+          }
+          
           $nivel_data = $db->find();
           $id = $_SESSION["modal_id"];
           $nome = Ferramentas::array_pesquisa($nivel_data, 'id', $id);
-          if (count(Ferramentas::array_pesquisa_mult($nivel_data, ['nome', 'permissao'], [Ferramentas::codificador($nivel), Ferramentas::codificador($permissao)])) == 0) { // verifica se o id do mepreendimento com o mesmo nome é igual ao id 
+          if (count(Ferramentas::array_pesquisa_mult($nivel_data, ['nome', 'permissao','processos'], [Ferramentas::codificador($nivel), Ferramentas::codificador($permissao), Ferramentas::codificador(implode('-',$processos))])) == 0) { // verifica se o id do mepreendimento com o mesmo nome é igual ao id 
   
             $date = [
               'nome' => Ferramentas::codificador($nivel),
-              'permissao' => Ferramentas::codificador($permissao)
+              'permissao' => Ferramentas::codificador($permissao),
+              'processos' => Ferramentas::codificador(implode('-',$processos))
             ];
             $db->update($id, $date);
             $ok = true;
@@ -309,6 +330,8 @@ class NivelPost extends Ferramentas
         $violacao = array();
         $nivel = service('request')->getPost('nivel');
         $permissao = service('request')->getPost('permissao');
+        $relatorio = service('request')->getPost('relatorio');
+
   
         if (strlen($nivel) > 30) {
           $msg['Nível'] = "Nome do nível excedeu o tamanho máximo de 30 caracter";
@@ -341,8 +364,11 @@ class NivelPost extends Ferramentas
         if (count($msg) == 0 and count($violacao) == 0) {
   
           $db = new \App\Models\Nivel();
-  
-  
+          $processos = array();
+          if($relatorio  == "true"){
+            $processos[] = "relatorio";
+          }
+          
           $nivel_data = $db->find();
   
           if (count(Ferramentas::array_pesquisa($nivel_data, 'nome', Ferramentas::codificador($nivel))) == 0) { // verifica se o id do mepreendimento com o mesmo nome é igual ao id 
@@ -350,6 +376,7 @@ class NivelPost extends Ferramentas
             $date = [
               'nome' => Ferramentas::codificador($nivel),
               'permissao' => Ferramentas::codificador($permissao),
+              'processos' => Ferramentas::codificador(implode('-',$processos)),
               'status' => 'ativo'
             ];
             $db->insert($date);
