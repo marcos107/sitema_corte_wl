@@ -46,7 +46,7 @@
 
                     // Definir o valor e texto do novo elemento option
                     novoOption.value = '';
-                    novoOption.textContent = 'Função do novo usuario';
+                    novoOption.textContent = 'Nível do novo usuario';
 
                     // Adicionar o novo elemento option ao select
                     funcao.appendChild(novoOption);
@@ -452,7 +452,7 @@ function value_funcao() {
 
         // Definir o valor e texto do novo elemento option
         novoOption.value = '';
-        novoOption.textContent = 'Função do novo usuario';
+        novoOption.textContent = 'Nível do novo usuario';
 
         // Adicionar o novo elemento option ao select
         funcao.appendChild(novoOption);

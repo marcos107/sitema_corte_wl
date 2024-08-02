@@ -547,7 +547,7 @@ class Pagina extends BaseController
         $menu_select = "usuario";
         $template = "lista_cadastro";
         $text_rep = array(' do novo usuario');
-        $select_option = "<option value='' disabled selected>Função do novo usuario</option>";
+        $select_option = "<option value='' disabled selected>Nível do novo usuario</option>";
 
 
         // Configuração do formulário de criação de tags.
@@ -556,7 +556,7 @@ class Pagina extends BaseController
         $array_view['array_input_id'] = array("nome_usuario", "senha_usuario", "funcao_usuario", "email_usuario", "whazapp_usuario");
         $array_view['array_input_placeholder'] = array("Nome" . $text_rep[0], "Senha" . $text_rep[0], $select_option, "Email" . $text_rep[0], "Whazapp" . $text_rep[0]);
         $array_view['array_input_typ'] = array("text", "password", "select", "email", "tel");
-        $array_view['array_input_titulo'] = array("Nome", "Senha", "Função", "Email", "whatsapp");
+        $array_view['array_input_titulo'] = array("Nome", "Senha", "Nível", "Email", "whatsapp");
         $array_view['titulo_cadastro'] = "Cadastro de Usuario";
         $array_view['button_execut_nome'] = "Cadastrar";
 

@@ -423,6 +423,9 @@ class NivelPost extends Ferramentas
         $option = "<option value=''>Novo Nível</option>";
         session_start();
         foreach ($nivel_data as $key => $value) {
+          if($value["status"] != 'ativo')
+            continue;
+
           $array[Ferramentas::decodificador($value["nome"])] = $value["id"];
   
           $option .= "<option value='" . Ferramentas::decodificador($value["nome"]) . "'>" . Ferramentas::decodificador($value["nome"]) . "</option>";
@@ -451,6 +454,9 @@ class NivelPost extends Ferramentas
 
     // Cria uma lista de nomes de funções decodificadas
     foreach ($funcao_data as $key => $value) { //cria a lista 
+      if($value["status"] != 'ativo')
+      continue;
+    
       $lista[] = Ferramentas::decodificador($value['nome']);
     }
     $data = ['lista' => $lista]; // Prepara os dados para serem retornados em formato JSON
