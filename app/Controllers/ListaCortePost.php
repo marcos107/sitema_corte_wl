@@ -245,8 +245,20 @@ class ListaCortePost extends Ferramentas
             if (Ferramentas::decodificador($status) == "corte" || Ferramentas::decodificador($status) == "cortando") {
 
                 // Se o status for "corte" ou "cortando", continua o processamento
-                $caminho = Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($desenho_data, 'id', $id), ['caminho']));
+                $caminho = Ferramentas::array_index(Ferramentas::array_pesquisa($desenho_data, 'id', $id), ['caminho']);
                 $nome = Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($desenho_data, 'id', $id), ['nome']));
+           
+                $ultima_barra_invertida = strrpos($caminho, 'i061n');
+          
+                // Dividir a string em duas partes
+                $caminho_diretorio = substr($caminho, 0, $ultima_barra_invertida);
+                $nome_arquivo = substr($caminho, $ultima_barra_invertida);
+          
+                // Criar o array resultante
+                $array_resultante = [$caminho_diretorio, $nome_arquivo];
+          
+                $caminho = str_replace(["ci083ni061n", "wli074ndesenhos", "i061n"], ["c:/", "wl_desenhos", "/"], $array_resultante[0]) . '/' . Ferramentas::decodificador($array_resultante[1]);
+                $caminho = str_replace("//", "/", $caminho);
 
                 // Obtém a extensão do arquivo a partir do nome
                 $extencao = '.' . Ferramentas::get_type_file($nome);

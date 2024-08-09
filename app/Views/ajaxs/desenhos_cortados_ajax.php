@@ -261,6 +261,7 @@
       url: '<?= base_url('public/recolocar_desenho') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
+     // async: true,
 
       data: { id: id },
 
@@ -272,6 +273,7 @@
 
       }
     });
+   
   }
   }
 

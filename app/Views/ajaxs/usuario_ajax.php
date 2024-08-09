@@ -134,7 +134,7 @@
 <?php $processo = "user"; ?>
 function desativar(id) {
   $.ajax({
-    url: '<?= base_url('public/adm/troca_status/' . $processo . '/desativado') ?>',
+    url: '<?= base_url('public/troca_status/' . $processo . '/desativado') ?>',
     type: "POST",
     dataType: "json", // Indicar que o retorno é em formato JSON
     data: { id: id },
@@ -156,7 +156,7 @@ const closemodal_atualizar = () => {
 function ativar(id) {
 
   $.ajax({
-    url: '<?= base_url('public/adm/troca_status/' . $processo . '/ativo') ?>',
+    url: '<?= base_url('public/troca_status/' . $processo . '/ativo') ?>',
     type: "POST",
     dataType: "json", // Indicar que o retorno é em formato JSON
     data: { id: id },

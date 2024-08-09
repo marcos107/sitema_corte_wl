@@ -145,7 +145,7 @@
   // Executar função ao abrir o site
   document.addEventListener('DOMContentLoaded', value_prioridade);
 
-  
+
 
   function inverterCor(hex) {
     // Verificar se a cor é válida (começa com # seguido por 6 caracteres hexadecimais)
@@ -227,7 +227,71 @@
 
                 if (response.ok) {
                   fecharModal();
-                  lista();
+                  data = document.getElementById('dataInicial').value;
+                  data1 = document.getElementById('dataFinal').value;
+                  $.ajax({
+                    url: '<?= base_url('public/desenho_meus') ?>',
+                    type: "POST",
+                    dataType: "json", // Indicar que o retorno é em formato JSON
+                    data: { data: data, data1: data1 },
+                    success: function (response) {
+
+                      if (response.lista != lista_temp) {
+                        $('#example1').DataTable().destroy();
+
+
+
+
+
+                        // Recriar e configurar a tabela DataTable
+
+                        var div = $('#minhaDiv');
+
+                        div.load(location.href + ' #minhaDiv');
+                        // Selecione o elemento <tbody> pelo seu ID
+                        var lista = document.getElementById('lista');
+                        // Substitua o conteúdo do elemento <tbody> com o novo HTML
+                        lista.innerHTML = response.lista;
+                        $(function () {
+                          $("#example1").DataTable({
+
+                            "responsive": true, "lengthChange": false, "autoWidth": false,
+                            "buttons": ["colvis"],
+                            "language": {
+                              "decimal": "",
+                              "emptyTable": "Sem dados disponíveis",
+                              "infoEmpty": "Mostrando de 0 até 0 de 0 registos",
+                              "infoFiltered": "(filtrado de MAX registos no total)",
+                              "infoPostFix": "",
+                              "thousands": ",",
+                              "lengthMenu": " MENU",
+                              "loadingRecords": "A carregar dados...",
+                              "processing": "A processar...",
+                              "search": "Buscar:",
+                              "zeroRecords": "Não foram encontrados resultados",
+                              "paginate": {
+                                "first": "Primeiro",
+                                "last": "Último",
+                                "next": "Seguinte",
+                                "previous": "Anterior"
+
+                              },
+                              "aria": {
+                                "sortAscending": ": clique para ordenar ascendente (ASC)",
+                                "sortDescending": ": clique para ordenar descendente (DESC)"
+                              }
+                            }
+
+                          }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
+                        });
+
+
+
+                        lista_temp = response.lista;
+                      }
+                    }
+                  });
                 } else {
                   console.log('erro');
                 }
@@ -579,7 +643,71 @@
 
           }
           fecharModal();
-          lista();
+          data = document.getElementById('dataInicial').value;
+          data1 = document.getElementById('dataFinal').value;
+          $.ajax({
+            url: '<?= base_url('public/desenho_meus') ?>',
+            type: "POST",
+            dataType: "json", // Indicar que o retorno é em formato JSON
+            data: { data: data, data1: data1 },
+            success: function (response) {
+
+
+              $('#example1').DataTable().destroy();
+
+
+
+
+
+              // Recriar e configurar a tabela DataTable
+
+              var div = $('#minhaDiv');
+
+              div.load(location.href + ' #minhaDiv');
+              // Selecione o elemento <tbody> pelo seu ID
+              var lista = document.getElementById('lista');
+              // Substitua o conteúdo do elemento <tbody> com o novo HTML
+              lista.innerHTML = response.lista;
+              $(function () {
+                $("#example1").DataTable({
+
+                  "responsive": true, "lengthChange": false, "autoWidth": false,
+                  "buttons": ["colvis"],
+                  "language": {
+                    "decimal": "",
+                    "emptyTable": "Sem dados disponíveis",
+                    "infoEmpty": "Mostrando de 0 até 0 de 0 registos",
+                    "infoFiltered": "(filtrado de MAX registos no total)",
+                    "infoPostFix": "",
+                    "thousands": ",",
+                    "lengthMenu": " MENU",
+                    "loadingRecords": "A carregar dados...",
+                    "processing": "A processar...",
+                    "search": "Buscar:",
+                    "zeroRecords": "Não foram encontrados resultados",
+                    "paginate": {
+                      "first": "Primeiro",
+                      "last": "Último",
+                      "next": "Seguinte",
+                      "previous": "Anterior"
+
+                    },
+                    "aria": {
+                      "sortAscending": ": clique para ordenar ascendente (ASC)",
+                      "sortDescending": ": clique para ordenar descendente (DESC)"
+                    }
+                  }
+
+                }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
+              });
+
+
+
+              lista_temp = response.lista;
+
+            }
+          });
 
         };
 
@@ -655,7 +783,71 @@
 
 
           fecharModal();
-          lista();
+          data = document.getElementById('dataInicial').value;
+          data1 = document.getElementById('dataFinal').value;
+          $.ajax({
+            url: '<?= base_url('public/desenho_meus') ?>',
+            type: "POST",
+            dataType: "json", // Indicar que o retorno é em formato JSON
+            data: { data: data, data1: data1 },
+            success: function (response) {
+
+              if (response.lista != lista_temp) {
+                $('#example1').DataTable().destroy();
+
+
+
+
+
+                // Recriar e configurar a tabela DataTable
+
+                var div = $('#minhaDiv');
+
+                div.load(location.href + ' #minhaDiv');
+                // Selecione o elemento <tbody> pelo seu ID
+                var lista = document.getElementById('lista');
+                // Substitua o conteúdo do elemento <tbody> com o novo HTML
+                lista.innerHTML = response.lista;
+                $(function () {
+                  $("#example1").DataTable({
+
+                    "responsive": true, "lengthChange": false, "autoWidth": false,
+                    "buttons": ["colvis"],
+                    "language": {
+                      "decimal": "",
+                      "emptyTable": "Sem dados disponíveis",
+                      "infoEmpty": "Mostrando de 0 até 0 de 0 registos",
+                      "infoFiltered": "(filtrado de MAX registos no total)",
+                      "infoPostFix": "",
+                      "thousands": ",",
+                      "lengthMenu": " MENU",
+                      "loadingRecords": "A carregar dados...",
+                      "processing": "A processar...",
+                      "search": "Buscar:",
+                      "zeroRecords": "Não foram encontrados resultados",
+                      "paginate": {
+                        "first": "Primeiro",
+                        "last": "Último",
+                        "next": "Seguinte",
+                        "previous": "Anterior"
+
+                      },
+                      "aria": {
+                        "sortAscending": ": clique para ordenar ascendente (ASC)",
+                        "sortDescending": ": clique para ordenar descendente (DESC)"
+                      }
+                    }
+
+                  }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
+                });
+
+
+
+                lista_temp = response.lista;
+              }
+            }
+          });
 
         };
 
@@ -700,7 +892,78 @@
             } else {
               apagar_mesmo(id)
             }
-            console.log(response);
+
+            data = document.getElementById('dataInicial').value;
+            data1 = document.getElementById('dataFinal').value;
+            $.ajax({
+              url: '<?= base_url('public/desenho_meus') ?>',
+              type: "POST",
+              dataType: "json", // Indicar que o retorno é em formato JSON
+              data: { data: data, data1: data1 },
+              success: function (response) {
+
+
+                $('#example1').DataTable().destroy();
+
+
+
+
+
+                // Recriar e configurar a tabela DataTable
+
+                var div = $('#minhaDiv');
+
+                div.load(location.href + ' #minhaDiv');
+                // Selecione o elemento <tbody> pelo seu ID
+                var lista = document.getElementById('lista');
+                // Substitua o conteúdo do elemento <tbody> com o novo HTML
+                lista.innerHTML = response.lista;
+                $(function () {
+                  $("#example1").DataTable({
+
+                    "responsive": true, "lengthChange": false, "autoWidth": false,
+                    "buttons": ["colvis"],
+                    "language": {
+                      "decimal": "",
+                      "emptyTable": "Sem dados disponíveis",
+                      "infoEmpty": "Mostrando de 0 até 0 de 0 registos",
+                      "infoFiltered": "(filtrado de MAX registos no total)",
+                      "infoPostFix": "",
+                      "thousands": ",",
+                      "lengthMenu": " MENU",
+                      "loadingRecords": "A carregar dados...",
+                      "processing": "A processar...",
+                      "search": "Buscar:",
+                      "zeroRecords": "Não foram encontrados resultados",
+                      "paginate": {
+                        "first": "Primeiro",
+                        "last": "Último",
+                        "next": "Seguinte",
+                        "previous": "Anterior"
+
+                      },
+                      "aria": {
+                        "sortAscending": ": clique para ordenar ascendente (ASC)",
+                        "sortDescending": ": clique para ordenar descendente (DESC)"
+                      }
+                    }
+
+                  }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
+                });
+
+
+
+                lista_temp = response.lista;
+
+              }
+            });
+
+
+
+
+
+
 
           }
         });
@@ -807,6 +1070,71 @@
                   fecharModal();
                   alert_personalizado('Desenho', response.mensagem);
                 }
+                data = document.getElementById('dataInicial').value;
+                data1 = document.getElementById('dataFinal').value;
+                $.ajax({
+                  url: '<?= base_url('public/desenho_meus') ?>',
+                  type: "POST",
+                  dataType: "json", // Indicar que o retorno é em formato JSON
+                  data: { data: data, data1: data1 },
+                  success: function (response) {
+
+                    if (response.lista != lista_temp) {
+                      $('#example1').DataTable().destroy();
+
+
+
+
+
+                      // Recriar e configurar a tabela DataTable
+
+                      var div = $('#minhaDiv');
+
+                      div.load(location.href + ' #minhaDiv');
+                      // Selecione o elemento <tbody> pelo seu ID
+                      var lista = document.getElementById('lista');
+                      // Substitua o conteúdo do elemento <tbody> com o novo HTML
+                      lista.innerHTML = response.lista;
+                      $(function () {
+                        $("#example1").DataTable({
+
+                          "responsive": true, "lengthChange": false, "autoWidth": false,
+                          "buttons": ["colvis"],
+                          "language": {
+                            "decimal": "",
+                            "emptyTable": "Sem dados disponíveis",
+                            "infoEmpty": "Mostrando de 0 até 0 de 0 registos",
+                            "infoFiltered": "(filtrado de MAX registos no total)",
+                            "infoPostFix": "",
+                            "thousands": ",",
+                            "lengthMenu": " MENU",
+                            "loadingRecords": "A carregar dados...",
+                            "processing": "A processar...",
+                            "search": "Buscar:",
+                            "zeroRecords": "Não foram encontrados resultados",
+                            "paginate": {
+                              "first": "Primeiro",
+                              "last": "Último",
+                              "next": "Seguinte",
+                              "previous": "Anterior"
+
+                            },
+                            "aria": {
+                              "sortAscending": ": clique para ordenar ascendente (ASC)",
+                              "sortDescending": ": clique para ordenar descendente (DESC)"
+                            }
+                          }
+
+                        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
+                      });
+
+
+
+                      lista_temp = response.lista;
+                    }
+                  }
+                });
               },
               error: function (xhr, status, error) {
 
@@ -815,6 +1143,21 @@
             });
           };
 
+
+        $.ajax({
+          url: '<?= base_url('public/lista_filtro') ?>',
+          type: "POST",
+          async: false,
+          dataType: "json", // Indicar que o retorno é em formato JSON
+          success: function (response) {
+            if (response.lista != lista_temp1 || efeturar) {
+              // Obter referência ao elemento select
+              var desenho = document.getElementById("novo_arquvivo");
+              // Armazenar o valor da opção selecionada antes de limpar o select
+              desenho.accept = response.lista;
+            }
+          }
+        });
 
         mostrarModal();
 
@@ -870,7 +1213,71 @@
 
                 if (response.ok) {
                   fecharModal();
-                  lista();
+                  data = document.getElementById('dataInicial').value;
+                  data1 = document.getElementById('dataFinal').value;
+                  $.ajax({
+                    url: '<?= base_url('public/desenho_meus') ?>',
+                    type: "POST",
+                    dataType: "json", // Indicar que o retorno é em formato JSON
+                    data: { data: data, data1: data1 },
+                    success: function (response) {
+
+                      if (response.lista != lista_temp) {
+                        $('#example1').DataTable().destroy();
+
+
+
+
+
+                        // Recriar e configurar a tabela DataTable
+
+                        var div = $('#minhaDiv');
+
+                        div.load(location.href + ' #minhaDiv');
+                        // Selecione o elemento <tbody> pelo seu ID
+                        var lista = document.getElementById('lista');
+                        // Substitua o conteúdo do elemento <tbody> com o novo HTML
+                        lista.innerHTML = response.lista;
+                        $(function () {
+                          $("#example1").DataTable({
+
+                            "responsive": true, "lengthChange": false, "autoWidth": false,
+                            "buttons": ["colvis"],
+                            "language": {
+                              "decimal": "",
+                              "emptyTable": "Sem dados disponíveis",
+                              "infoEmpty": "Mostrando de 0 até 0 de 0 registos",
+                              "infoFiltered": "(filtrado de MAX registos no total)",
+                              "infoPostFix": "",
+                              "thousands": ",",
+                              "lengthMenu": " MENU",
+                              "loadingRecords": "A carregar dados...",
+                              "processing": "A processar...",
+                              "search": "Buscar:",
+                              "zeroRecords": "Não foram encontrados resultados",
+                              "paginate": {
+                                "first": "Primeiro",
+                                "last": "Último",
+                                "next": "Seguinte",
+                                "previous": "Anterior"
+
+                              },
+                              "aria": {
+                                "sortAscending": ": clique para ordenar ascendente (ASC)",
+                                "sortDescending": ": clique para ordenar descendente (DESC)"
+                              }
+                            }
+
+                          }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
+                        });
+
+
+
+                        lista_temp = response.lista;
+                      }
+                    }
+                  });
                 } else {
                   console.log('erro');
                 }
@@ -1047,7 +1454,7 @@
       url: '<?= base_url('public/desenho_novo_nome') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
-
+      async: false,
       data: { nome: nome },
 
       success: function (response) {
@@ -1070,10 +1477,75 @@
         console.log(response);
         fecharModal();
         if (response.ok == 'true') {
+          data = document.getElementById('dataInicial').value;
+          data1 = document.getElementById('dataFinal').value;
+          $.ajax({
+            url: '<?= base_url('public/desenho_meus') ?>',
+            type: "POST",
+            dataType: "json", // Indicar que o retorno é em formato JSON
+            data: { data: data, data1: data1 },
+            success: function (response) {
 
+              if (response.lista != lista_temp) {
+                $('#example1').DataTable().destroy();
+
+
+
+
+
+                // Recriar e configurar a tabela DataTable
+
+                var div = $('#minhaDiv');
+
+                div.load(location.href + ' #minhaDiv');
+                // Selecione o elemento <tbody> pelo seu ID
+                var lista = document.getElementById('lista');
+                // Substitua o conteúdo do elemento <tbody> com o novo HTML
+                lista.innerHTML = response.lista;
+                $(function () {
+                  $("#example1").DataTable({
+
+                    "responsive": true, "lengthChange": false, "autoWidth": false,
+                    "buttons": ["colvis"],
+                    "language": {
+                      "decimal": "",
+                      "emptyTable": "Sem dados disponíveis",
+                      "infoEmpty": "Mostrando de 0 até 0 de 0 registos",
+                      "infoFiltered": "(filtrado de MAX registos no total)",
+                      "infoPostFix": "",
+                      "thousands": ",",
+                      "lengthMenu": " MENU",
+                      "loadingRecords": "A carregar dados...",
+                      "processing": "A processar...",
+                      "search": "Buscar:",
+                      "zeroRecords": "Não foram encontrados resultados",
+                      "paginate": {
+                        "first": "Primeiro",
+                        "last": "Último",
+                        "next": "Seguinte",
+                        "previous": "Anterior"
+
+                      },
+                      "aria": {
+                        "sortAscending": ": clique para ordenar ascendente (ASC)",
+                        "sortDescending": ": clique para ordenar descendente (DESC)"
+                      }
+                    }
+
+                  }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
+                });
+
+
+
+                lista_temp = response.lista;
+              }
+            }
+          });
           fecharModal();
 
           alert_certo('Desenho', response.mensagem);
+
         } else {
 
 
@@ -1091,23 +1563,33 @@
 
 
   function recolocar_desenho(id) {
+    if(mostrarConfirmacao("Recolocar desenho?")){
     $.ajax({
       url: '<?= base_url('public/recolocar_desenho') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
-
+      //async: true,
       data: { id: id },
 
       success: function (response) {
         console.log(response);
-
+        lista();
 
 
       }
     });
   }
+   
+  }
 
 
+  function mostrarConfirmacao(texto = '') {
+    // Exibe a caixa de diálogo de confirmação e armazena a resposta em uma variável
+    var resposta = window.confirm(texto);
+    // Verifica a resposta e faz algo com ela
+    return resposta;
+ 
+}
 
 
 
@@ -1154,7 +1636,7 @@
 
   //   // Repetir função a cada segundo
   //   setInterval(lista, 1000);
-  // // Repetir função a cada segundo 
+  // // Repetir função a cada segundo
   // setInterval(value_prioridade, 1000);
 
 </script>

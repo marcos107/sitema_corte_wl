@@ -1,0 +1,23 @@
+CRITICAL - 2024-08-07 15:16:23 --> Undefined variable $ci083ni061nwli061nwli074ndesenhosi061n12311i061ntestei061n123222i061n01i073nCOLMEIASAi073nCi073nGi061nNovoi071nai072n Documento de Textoi074n286i074ni062ndxf
+in APPPATH\Controllers\DesenhoPost.php on line 175.
+ 1 APPPATH\Controllers\DesenhoPost.php(175): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $ci083ni061nwli061nwli074ndesenhosi061n12311i061ntestei061n123222i061n01i073nCOLMEIASAi073nCi073nGi061nNovoi071nai072n Documento de Textoi074n286i074ni062ndxf', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhoPost.php', 175)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhoPost->apagar_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhoPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-07 15:27:52 --> preg_replace(): Unknown modifier '/'
+in APPPATH\Controllers\DesenhoPost.php on line 184.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'preg_replace(): Unknown modifier \'/\'', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhoPost.php', 184)
+ 2 APPPATH\Controllers\DesenhoPost.php(184): preg_replace('///+/', '/', 'c:/wl/wl_desenhos/12311/teste/123222/01i073nCOLMEIASAi073nCi073nG//Novo(a) Documento de Texto_286_.dxf')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhoPost->apagar_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-07 15:39:42 --> rename(c:/wl/wl_desenhos/12311/teste/123222/03-COLMEIASF-E-I/Novo(a) Documento de Texto - Copia (4)_593_.dxf,C:/wl/lixo/wl/wl_desenhos/12311/teste/123222/03i073nCOLMEIASFi073nEi073nI/Novo(a) Documento de Texto - Copia (4)_593__07_08_2024_15_39_42_48.dxf): O sistema não pode encontrar o caminho especificado (code: 3)
+in APPPATH\Controllers\DesenhoPost.php on line 212.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'rename(c:/wl/wl_desenhos/12311/teste/123222/03-COLMEIASF-E-I/Novo(a) Documento de Texto - Copia (4)_593_.dxf,C:/wl/lixo/wl/wl_desenhos/12311/teste/123222/03i073nCOLMEIASFi073nEi073nI/Novo(a) Documento de Texto - Copia (4)_593__07_08_2024_15_39_42_48.dxf): O sistema não pode encontrar o caminho especificado (code: 3)', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhoPost.php', 212)
+ 2 APPPATH\Controllers\DesenhoPost.php(212): rename('c:/wl/wl_desenhos/12311/teste/123222/03-COLMEIASF-E-I/Novo(a) Documento de Texto - Copia (4)_593_.dxf', 'C:/wl/lixo/wl/wl_desenhos/12311/teste/123222/03i073nCOLMEIASFi073nEi073nI/Novo(a) Documento de Texto - Copia (4)_593__07_08_2024_15_39_42_48.dxf')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhoPost->apagar_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

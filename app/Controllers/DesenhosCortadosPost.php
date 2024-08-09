@@ -19,7 +19,7 @@ class DesenhosCortadosPost extends Ferramentas
     if ($this->request->isAJAX()) {
       // Inicializa a sessão para acessar os dados da lista armazenados nela
       session_start();
-
+      $caminho = "";
       // Instancia tabelas do banco de dados
       $desenhos = new \App\Models\Desenhos();
       $prioridade = new \App\Models\Prioridade();
@@ -82,7 +82,20 @@ class DesenhosCortadosPost extends Ferramentas
         if ($encontrou) { // pega apenas os desenhos do desenhista que esta vendo
           $prioridade_desenho = Ferramentas::array_pesquisa($prioridade_data, 'id', $value['prioridade']);
           if (Ferramentas::decodificador($value['status']) == 'cortado') {
-            if (!file_exists(Ferramentas::decodificador($value['caminho']))) {
+            $caminho = $value['caminho'];
+            $ultima_barra_invertida = strrpos($caminho, 'i061n');
+      
+            // Dividir a string em duas partes
+            $caminho_diretorio = substr($caminho, 0, $ultima_barra_invertida);
+            $nome_arquivo = substr($caminho, $ultima_barra_invertida);
+      
+            // Criar o array resultante
+            $array_resultante = [$caminho_diretorio, $nome_arquivo];
+      
+            $caminho = str_replace(["ci083ni061n", "wli074ndesenhos", "i061n"], ["c:/", "wl_desenhos", "/"], $array_resultante[0]) . '/' . Ferramentas::decodificador($array_resultante[1]);
+            $caminho = str_replace("//", "/", $caminho);
+
+            if (!file_exists($caminho)) {
               $value['status'] = "cortado_notfile";
 
               $desenhos->update($value['id'], $value);
@@ -104,7 +117,7 @@ class DesenhosCortadosPost extends Ferramentas
        <td>' . Ferramentas::decodificador($value['status']) . '</td>
        <td>' . Ferramentas::decodificador($value['data_hora_add']) . '</td>
        <td><button name="cadastarar" onclick="recolocar_desenho(\'' . $id_temp . '\')" type="submit" class="btn btn-outline-primary "> adicionar <br> novamente </button></td>
-       <td><button name="cadastarar" onclick="recolocar_desenho(\'' . $id_temp . '\')" type="submit" class="btn btn-outline-primary "> adicionar <br> novamente </button></td>
+       <td></td>
       </tr>
       ';
             // Prepara dados do usuário para armazenamento em arrays
@@ -130,7 +143,8 @@ class DesenhosCortadosPost extends Ferramentas
       // Resposta do AJAX que retorna a lista e as datas
       $data = [
         "lista" => $lista,
-        "data" => $dias
+        "data" => $dias,
+        "1"=> $caminho
 
       ];
 

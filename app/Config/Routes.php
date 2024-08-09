@@ -55,8 +55,6 @@ $routes->post('/desenho_update', 'DesenhoPost::desenho_update');
 $routes->post('/desenho_modal', 'DesenhoPost::desenho_modal');
 $routes->post('/nome_desenho', 'DesenhoPost::nome_desenho');
 $routes->post('/apagar_desenho', 'DesenhoPost::apagar_desenho');
-$routes->post('/subistituir_desenho', 'DesenhoPost::subistituir_desenho');
-$routes->post('/subistituir_desenho_modal', 'DesenhoPost::subistituir_desenho_modal');
 $routes->post('/desenho_novo_nome', 'DesenhoPost::desenho_novo_nome');
 $routes->post('/recolocar_desenho', 'DesenhoPost::recolocar_desenho');
 
@@ -65,6 +63,8 @@ $routes->post('/recolocar_desenho', 'DesenhoPost::recolocar_desenho');
 $routes->get('/desenho_meus', 'Pagina::desenho_meus');
 $routes->post('/desenho_meus', 'MeusDesenhosPost::desenho_meus');
 $routes->post('/desenho_meus_modal', 'MeusDesenhosPost::desenho_meus_modal');
+$routes->post('/subistituir_desenho', 'MeusDesenhosPost::subistituir_desenho');
+$routes->post('/subistituir_desenho_modal', 'MeusDesenhosPost::subistituir_desenho_modal');
 
 //ListaCortePost
 $routes->get('/lista_corte_adm', 'Pagina::lista_corte_adm');
