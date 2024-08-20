@@ -269,7 +269,13 @@ class MeusDesenhosPost extends Ferramentas
       $message = '';
       $id_temp = $_SESSION["id_subistituir"];
       $lista = $_SESSION["lista_completa"][$id_temp];
+
+      if(Ferramentas::get_type_file(Ferramentas::decodificador($lista['caminho'])) == ""){
       $caminho_antigo = Ferramentas::decodificador($lista['caminho'].$lista["nome"]);
+      }else{
+        $caminho_antigo = Ferramentas::decodificador($lista['caminho']);
+      }
+      
       $caminho_antigo = str_replace('//', '/', $caminho_antigo);
       
 

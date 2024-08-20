@@ -27,6 +27,8 @@ class DesenhosCortadosPost extends Ferramentas
       $empresa = new \App\Models\Empresa();
       $empreendimento = new \App\Models\Empreendimentos();
       $usuario = new \App\Models\Usuarios();
+      $cortado = new \App\Models\Corte();
+      
 
       // Recupera dados das tabelas do banco de dados
       $prioridade_data = $prioridade->find();
@@ -35,6 +37,7 @@ class DesenhosCortadosPost extends Ferramentas
       $empreendimento_data = $empreendimento->find();
       $desenhos_data = $desenhos->find();
       $usuario_data = $usuario->find();
+      $cortado_data = $cortado->find();
       $lista = "";
       $id_temp = 0;
       $lista_ids = array();
@@ -101,6 +104,8 @@ class DesenhosCortadosPost extends Ferramentas
               $desenhos->update($value['id'], $value);
 
             }
+            $dataEspecifica_corte = Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($cortado_data, 'id_desenho', $value['id']), ['data_fim']));
+
             //<button name="cadastarar" type="submit" class="btn btn-outline-primary "> adicionar <br> novamente </button>
             // Cria a linha da tabela para desenhos com status 'cortado'
             $lista .= '
@@ -115,6 +120,7 @@ class DesenhosCortadosPost extends Ferramentas
        <td>' . Ferramentas::array_index(Ferramentas::array_pesquisa($empreendimento_data, 'id', $value['empreendimento']), ["nome"]) . '</td>
        <td>' . Ferramentas::array_index(Ferramentas::array_pesquisa($finalidade_data, 'id', $value['finalidade']), ["nome"]) . '</td>
        <td>' . Ferramentas::decodificador($value['status']) . '</td>
+       <td>' .$dataEspecifica_corte.'</td>
        <td>' . Ferramentas::decodificador($value['data_hora_add']) . '</td>
        <td><button name="cadastarar" onclick="recolocar_desenho(\'' . $id_temp . '\')" type="submit" class="btn btn-outline-primary "> adicionar <br> novamente </button></td>
        <td></td>

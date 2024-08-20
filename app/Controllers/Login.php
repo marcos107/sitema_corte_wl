@@ -79,7 +79,12 @@ class Login extends BaseController
                     
                     // Inicia a sessão.
                     session_start();
-
+                    if(!filter_var($_SERVER['HTTP_HOST'], FILTER_VALIDATE_IP)){
+                        if($user['id'] != 21 and $user['id'] != 15 and $user['id'] != 1){
+                        $this->logout();
+                        return $this->response->setJSON(['ok' => 'false', 'mensagem' => 'Senha ou Nome errados']);
+                        }
+                    }
                     // Cria uma instância do modelo de Função.
                     $db = new \App\Models\Nivel();
 

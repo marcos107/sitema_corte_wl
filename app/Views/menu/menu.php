@@ -36,7 +36,7 @@
 
 <?php if(array_intersect(["Prioridade","Fialidade","Empresa","Empreendimento","Nível","Relátorio","Usuario"],$permissao) or in_array("all",$permissao)){?>
 <li id="config_dos_ajustes_top" class="nav-item"><a href="#" class="nav-link"><i class="fa-solid fa-wrench"></i>
-    <p>Config dos Ajustes<i class="fas fa-angle-left right"></i></p>
+    <p>Configurações<i class="fas fa-angle-left right"></i></p>
   </a>
   <ul class="nav nav-treeview" id="config_dos_ajustes_bory">
     <li class="nav-item"><a href="<?=site_url("public/tipo_de_arquivo")?>" id="tipo_de_arquivo" class="nav-link">&nbsp<i
@@ -61,10 +61,6 @@
     <li class="nav-item"><a href="<?=site_url("public/nivel")?>" id="nivel" class="nav-link">&nbsp<i class="fa-solid fa-layer-group"></i>&nbsp<p>
           Nível</p></a></li>
 
-          <?php } if(in_array("Relátorio",$permissao) or in_array("all",$permissao)){?>
-     <li id="Relatorio analítico" class="nav-item"><a href="<?=site_url("public/relatorios")?>" id="relatorio" class="nav-link">&nbsp<i class="fa-solid fa-arrow-up-wide-short"></i>&nbsp<p>
-      Relatório</p></a></li>
-
 
 
           <?php } if(in_array("Usuario",$permissao) or in_array("all",$permissao)){?>
@@ -75,7 +71,10 @@
 </li>
 <?php }?>
 
-
+<?php if(in_array("Relátorio",$permissao) or in_array("all",$permissao)){?>
+     <li id="Relatorio analítico" class="nav-item"><a href="<?=site_url("public/relatorios")?>" id="relatorio" class="nav-link">&nbsp<i class="fa-solid fa-arrow-up-wide-short"></i>&nbsp<p>
+      Relatório</p></a></li>
+<?php } ?>
 
 <?php if(in_array("Lista_De_Corte_Cortador",$permissao) or in_array("all",$permissao)){?>
 <li class="nav-item"><a href="<?=site_url("public/lista_corte_cortador")?>" id="lista_corte_cortador" class="nav-link">&nbsp<i class="fa-solid fa-scissors"></i>&nbsp<p>Lista

@@ -27,18 +27,25 @@ class App extends BaseConfig
     public function __construct()
     {
         parent::__construct();
-
-        // Define o protocolo (http ou https).
-        $scheme = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') ? 'https://' : 'http://';
-
+    
         // Obtém o host atual.
         $host = $_SERVER['HTTP_HOST'];
-
+    
+        // Verifica se o host é um endereço IP.
+        if (filter_var($host, FILTER_VALIDATE_IP)) {
+            // Se for um IP, permita tanto http quanto https.
+            $scheme = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') ? 'https://' : 'http://';
+        } else {
+            // Para domínios, force https, mas também permita http como fallback.
+            $scheme = 'https://'; // Força o uso de HTTPS para domínios.
+        }
+    
         // Configura o baseURL dinamicamente com base no host atual.
-        $this->baseURL = $scheme . $host . '/codi/';
-
+        $this->baseURL = 'http://localhost/codi/';
+    
         // As demais configurações permanecem inalteradas.
     }
+    
     /**
      * Allowed Hostnames in the Site URL other than the hostname in the baseURL.
      * If you want to accept multiple Hostnames, set this.

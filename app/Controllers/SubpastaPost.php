@@ -2,12 +2,14 @@
 
 namespace App\Controllers;
 
+use App\Controllers\EmpresaPost;
+use App\Controllers\FinalidadePost;
 use App\Controllers\Ferramentas;
 use Config\App;
 
-class SubpastaPost extends Ferramentas
+class SubpastaPost extends EmpresaPost
 {
-      /**
+  /**
    * Lista tags de acordo com seu status (ativo/desativado).
    *
    * Esta função retorna uma lista de tags com base no status (ativo ou desativado) fornecido via AJAX.
@@ -19,6 +21,11 @@ class SubpastaPost extends Ferramentas
     if ($this->request->isAJAX()) {
       session_start();
       $tag = new \App\Models\Tag(); // Instancia o modelo de dados para tags.
+
+      $empreendimento = new \App\Models\Empreendimentos(); // Instancia o modelo de dados para empreendimentos.
+      $finalidade = new \App\Models\Finalidade(); // Instancia o modelo de dados para finalidades.
+      $finalidade_data = $finalidade->find(); // Recupera dados de finalidades do banco de dados.
+      $empreendimento_data = $empreendimento->find(); // Recupera dados de empreendimentos do banco de dados.
 
       $tag_data = $tag->find(); // Recupera dados de tags do banco de dados.
       $ativos = service('request')->getPost('ativos'); // Verifica se é para listar tags ativas.
@@ -33,7 +40,8 @@ class SubpastaPost extends Ferramentas
           $lista .= '
         <tr>
          <td><p ondblclick="modal_modificar(\'modal_' . $id_temp . '\')">' . Ferramentas::decodificador($value['nome']) . '</p></td>
-         <td ondblclick="modal_modificar(\'modal_' . $id_temp . '\')">' . ucfirst(Ferramentas::decodificador($value['status'])) . '</td>
+         <td><p ondblclick="modal_modificar(\'modal_' . $id_temp . '\')">' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($empreendimento_data, 'id', $value['empreendimento_id']), ['nome'])) . '</p></td>
+         <td><p ondblclick="modal_modificar(\'modal_' . $id_temp . '\')">' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($finalidade_data, 'id', $value['finalidade_id']), ['nome'])) . '</p></td>     <td ondblclick="modal_modificar(\'modal_' . $id_temp . '\')">' . ucfirst(Ferramentas::decodificador($value['status'])) . '</td>
          <td><button name="cadastarar" type="submit" onclick="desativar(\'' . $id_temp . '\')" class="btn btn-outline-danger btn-lg btn-block"> Desativar </button></td>
         </tr>
         ';
@@ -42,13 +50,15 @@ class SubpastaPost extends Ferramentas
           $lista .= '
         <tr>
          <td><p ondblclick="modal_modificar(\'modal_' . $id_temp . '\')">' . Ferramentas::decodificador($value['nome']) . '</p></td>
+         <td><p ondblclick="modal_modificar(\'modal_' . $id_temp . '\')">' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($empreendimento_data, 'id', $value['empreendimento_id']), ['nome'])) . '</p></td>
+         <td><p ondblclick="modal_modificar(\'modal_' . $id_temp . '\')">' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($finalidade_data, 'id', $value['finalidade_id']), ['nome'])) . '</p></td>
          <td ondblclick="modal_modificar(\'modal_' . $id_temp . '\')">' . ucfirst(Ferramentas::decodificador($value['status'])) . '</td>
          <td><button name="cadastarar" type="submit" onclick="ativar(\'' . $id_temp . '\')" class="btn btn-outline-success btn-lg btn-block"> Ativar </button></td>
         </tr>
         ';
         }
-
-
+        $value["empreendimento"] = Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($empreendimento_data, 'id', $value['empreendimento_id']), ['nome']));
+        $value["finalidade"] = Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($finalidade_data, 'id', $value['finalidade_id']), ['nome']));
         $lista_ids[$id_temp] = $value['id'];
         $lista_completa[$id_temp] = $value;
         $id_temp++;
@@ -69,7 +79,7 @@ class SubpastaPost extends Ferramentas
     }
   }
 
-    /**
+  /**
    * Função para cadastrar uma nova tag.
    *
    * Esta função é usada para cadastrar uma nova tag com base em dados fornecidos via AJAX.
@@ -82,13 +92,46 @@ class SubpastaPost extends Ferramentas
       $msg = array(); // Inicializa um array para mensagens de erro.
       $ok = false; // Inicializa uma variável de status para falso.
       $violacao = array(); // Inicializa um array para violações.
-
+      session_start();
       $tag = service('request')->getPost('tag'); // Obtém o nome da tag enviado via POST.
+
+      $empreendimento = service('request')->getPost('empreendimento');
+      $finalidade = service('request')->getPost('finalidade');
+
+      $tag = Ferramentas::norma_lizar_str($tag);
 
       if (strlen($tag) > 30) {
         // Verifica se o nome da tag excedeu o tamanho máximo de 17 caracteres.
         $msg['Subpasta'] = "Nome da Subpasta excedeu o tamanho máximo de 30 caracter";
-        $violacao[] = "desenho_tag_cadastro Tag excedeu o tamanho máximo";
+        $violacao[] = "desenho_tag_cadastro Nome da Subpasta excedeu o tamanho máximo de 30 caracter";
+      }
+
+
+
+
+
+      if (!in_array($empreendimento, $_SESSION["lista_empreendimento"])) {
+        $msg['Empreendimento'] = "Nome da empreendimento não cadastrado";
+        $violacao[] = "desenho_tag_cadastro Nome da empreendimento não cadastrado";
+      } else {
+        if (Ferramentas::codificador($empreendimento) == '') {
+          $msg['Empreendimento'] = "Empreendimento possui caracteres não permitidos";
+          $violacao[] = "desenho_tag_cadastro empreendimento possui caracteres não permitidos";
+        }
+      }
+
+
+
+
+
+      if (!in_array($finalidade, $_SESSION["lista_finalidade"])) {
+        $msg['Finalidade'] = "Nome da finalidade não cadastrado";
+        $violacao[] = "desenho_tag_cadastro Nome da finalidade não cadastrado";
+      } else {
+        if (Ferramentas::codificador($empreendimento) == '') {
+          $msg['Finalidade'] = "Finalidade possui caracteres não permitidos";
+          $violacao[] = "desenho_tag_cadastro finalidade possui caracteres não permitidos";
+        }
       }
 
       if (strlen($tag) < 1) {
@@ -103,19 +146,20 @@ class SubpastaPost extends Ferramentas
       }
 
 
-      session_start();
       if (count($msg) == 0) {
         $db = new \App\Models\Tag();
 
 
         $tag_data = $db->find();
 
-        if (count(Ferramentas::array_pesquisa($tag_data, 'nome', Ferramentas::codificador($tag))) == 0) { // verifica se o id do mepreendimento com o mesmo nome é igual ao id 
+        if (count(Ferramentas::array_pesquisa_mult($tag_data, ['nome', 'finalidade_id', 'empreendimento_id'], [Ferramentas::codificador($tag), array_search($finalidade, $_SESSION["lista_finalidade"]), array_search($empreendimento, $_SESSION["lista_empreendimento"])])) == 0) { // verifica se o id do mepreendimento com o mesmo nome é igual ao id 
           // Verifica se a tag com o mesmo nome já existe no banco de dados.
           // Se não existir, insere uma nova tag.
           $date = [
             'nome' => Ferramentas::codificador($tag),
             'data_add' => date('d/m/Y H:i'),
+            "finalidade_id" => array_search($finalidade, $_SESSION["lista_finalidade"]),
+            "empreendimento_id" => array_search($empreendimento, $_SESSION["lista_empreendimento"]),
             'status' => 'ativo',
             'responsavel' => $_SESSION['usuario']
           ];
@@ -152,7 +196,7 @@ class SubpastaPost extends Ferramentas
     }
   }
 
-    /**
+  /**
    * Função para exibir as configurações de uma tag em um modal.
    *
    * Esta função é usada para exibir as configurações de uma tag em um modal com base em dados fornecidos via AJAX.
@@ -177,7 +221,9 @@ class SubpastaPost extends Ferramentas
         // Obtém o nome da tag e a decodifica.
         "desenho" => $ok,
         // Define se um desenho está associado (neste caso, sempre falso).
-        "status" => Ferramentas::decodificador($lista['status']) // Obtém o status da tag e a decodifica.
+        "status" => Ferramentas::decodificador($lista['status']), // Obtém o status da tag e a decodifica.
+        "finalidade" => $lista['finalidade'],
+        "empreendimento" => $lista['empreendimento']
 
 
       ];
@@ -185,7 +231,7 @@ class SubpastaPost extends Ferramentas
     }
   }
 
-   /**
+  /**
    * Função para atualizar configurações de uma tag.
    *
    * Esta função é usada para atualizar as configurações de uma tag com base em dados fornecidos via AJAX.
@@ -198,14 +244,56 @@ class SubpastaPost extends Ferramentas
       $msg = array(); // Inicializa um array para mensagens de erro.
       $ok = false; // Inicializa uma variável de status para falso.
       $violacao = array(); // Inicializa um array para violações.
-
+      session_start();
       $tag = service('request')->getPost('tag'); // Obtém o nome da tag enviado via POST.
+      $empreendimento = service('request')->getPost('empreendimento');
+      $finalidade = service('request')->getPost('finalidade');
+
+      // Converte caracteres especiais para suas versões simples usando iconv
+      $tag = iconv('UTF-8', 'ASCII//TRANSLIT', $tag);
+
+      // Remove tudo que não seja letra, número ou espaço
+      $tag = preg_replace('/[^A-Za-z0-9 ]/', '', $tag);
+
+      // Converte a string para maiúsculas
+      $tag = strtoupper($tag);
+
 
       if (strlen($tag) > 30) {
         // Verifica se o nome da tag excedeu o tamanho máximo de 17 caracteres.
         $msg['Subpasta'] = "Nome da Subpasta excedeu o tamanho máximo de 30 caracter";
-        $violacao[] = "desenho_tag_cadastro Tag já existente";
+        $violacao[] = "desenho_tag_cadastro Nome da Subpasta excedeu o tamanho máximo de 30 caracter";
       }
+
+
+
+
+
+      if (!array_search($empreendimento, $_SESSION["lista_empreendimento"])) {
+        $msg['Empreendimento'] = "Nome da empreendimento não cadastrado";
+        $violacao[] = "desenho_tag_cadastro Nome da empreendimento não cadastrado";
+      } else {
+        if (Ferramentas::codificador($empreendimento) == '') {
+          $msg['Empreendimento'] = "Empreendimento possui caracteres não permitidos";
+          $violacao[] = "desenho_tag_cadastro empreendimento possui caracteres não permitidos";
+        }
+      }
+
+
+
+
+
+      if (!array_search($finalidade, $_SESSION["lista_finalidade"])) {
+        $msg['Finalidade'] = "Nome da finalidade não cadastrado";
+        $violacao[] = "desenho_tag_cadastro Nome da finalidade não cadastrado";
+      } else {
+        if (Ferramentas::codificador($empreendimento) == '') {
+          $msg['Finalidade'] = "Finalidade possui caracteres não permitidos";
+          $violacao[] = "desenho_tag_cadastro finalidade possui caracteres não permitidos";
+        }
+      }
+
+
 
       if (strlen($tag) < 1) {
         // Verifica se o nome da tag possui o tamanho mínimo de 1 caractere.
@@ -219,7 +307,8 @@ class SubpastaPost extends Ferramentas
       }
 
 
-      session_start();
+
+
       if (count($msg) == 0) {
         $db = new \App\Models\tag();
 
@@ -228,16 +317,18 @@ class SubpastaPost extends Ferramentas
         $tag_data = $db->find();
 
         // Verifica se o nome da tag não é duplicado e se houve alterações.
-        if ((count(Ferramentas::array_pesquisa_mult($tag_data, ['status', 'nome'], ['ativo', Ferramentas::codificador($tag)])) == 0) || (count(Ferramentas::array_pesquisa_mult($tag_data, ['status', 'nome'], ['novo', Ferramentas::codificador($tag)])) == 0)) { // verifica se o id do mepreendimento com o mesmo nome é igual ao id 
+        if ((count(Ferramentas::array_pesquisa_mult($tag_data, ['nome', 'finalidade_id', 'empreendimento_id'], [Ferramentas::codificador($tag), array_search($finalidade, $_SESSION["lista_finalidade"]), array_search($empreendimento, $_SESSION["lista_empreendimento"])])) == 0)) { // verifica se o id do mepreendimento com o mesmo nome é igual ao id 
 
           $alteracao = new \App\Models\Alteracoes();
 
           $data = [
             "individuo" => $_SESSION["usuario"],
             "id_item" => $id,
-            "antes" => Ferramentas::array_index(Ferramentas::array_pesquisa($tag_data, 'id', $id), ['nome']),
+            "finalidade_id" => array_search($finalidade, $_SESSION["lista_finalidade"]),
+            "empreendimento_id" => array_search($empreendimento, $_SESSION["lista_empreendimento"]),
+            "antes" => Ferramentas::array_index(Ferramentas::array_pesquisa($tag_data, 'id', $id), ['nome']) . '-' . Ferramentas::array_index(Ferramentas::array_pesquisa($tag_data, 'id', $id), ['finalidade_id']) . '-' . Ferramentas::array_index(Ferramentas::array_pesquisa($tag_data, 'id', $id), ['empreendimento_id']),
             "depois" => Ferramentas::codificador($tag),
-            "item" => "tag",
+            "item" => "tag-finalidade_id-empreendimento_id",
             "info_mais" => "nome",
             "data_add" => Ferramentas::codificador(date('d/m/Y H:i'))
 
@@ -247,16 +338,17 @@ class SubpastaPost extends Ferramentas
 
           $date = [
             'nome' => Ferramentas::codificador($tag),
-
+            "finalidade_id" => array_search($finalidade, $_SESSION["lista_finalidade"]),
+            "empreendimento_id" => array_search($empreendimento, $_SESSION["lista_empreendimento"]),
           ];
 
           $db->update($id, $date);
 
           $ok = true;
-        } else if (count(Ferramentas::array_pesquisa_mult($tag_data, ['id', 'nome'], [$id, Ferramentas::codificador($tag)])) != 0) {
+        } else if (count(Ferramentas::array_pesquisa_mult($tag_data, ['id', 'nome', 'finalidade_id', 'empreendimento_id'], [$id, Ferramentas::codificador($tag), array_search($finalidade, $_SESSION["lista_finalidade"]), array_search($empreendimento, $_SESSION["lista_empreendimento"])])) != 0) {
           $msg["Modificar"] = 'Não foi feita nenhuma alteração.';
         } else {
-          $msg["Subpasta"] = 'Nome da Subpasta já existente';
+          $msg["Subpasta"] = 'O nome da subpasta já existe neste empreendimento para essa finalidade.';
           $violacao[] = "desenho_tag_cadastro Tag já existente";
         }
       }
@@ -286,7 +378,7 @@ class SubpastaPost extends Ferramentas
 
   }
 
-    /**
+  /**
    * Função para listar as tags ativas.
    *
    * Esta função é usada para listar todas as tags ativas armazenadas no banco de dados.
@@ -296,15 +388,20 @@ class SubpastaPost extends Ferramentas
   function desenho_tag_lista()
   {
     if ($this->request->isAJAX()) {
+      session_start();
       $tags = array(); // Inicializa um array para armazenar as tags.
-
+      $tags_empreendimento_finalidade = array();
       $tag = new \App\Models\Tag(); // Instancia o modelo de dados de tags.
 
       $tag_data = $tag->find(); // Obtém todas as tags do banco de dados.
 
+
+
+
       foreach ($tag_data as $key => $value) { // Itera sobre as tags no banco de dados. 
         if ($value['status'] == 'ativo') { // Verifica se a tag está ativa.
           $tags[] = Ferramentas::decodificador($value['nome']); // Adiciona o nome da tag decodificado ao array de tags.
+          $tags_empreendimento_finalidade[Ferramentas::array_index($_SESSION["lista_empreendimento"], [$value['empreendimento_id']])][Ferramentas::array_index($_SESSION["lista_finalidade"], [$value['finalidade_id']])][] = Ferramentas::decodificador($value['nome']);
         }
       }
       usort($tags, function ($a, $b) {
@@ -312,11 +409,12 @@ class SubpastaPost extends Ferramentas
       });
       // Prepara os dados de resposta em formato JSON, incluindo a lista de tags ativas.
       $data = [
-        'lista' => $tags
+        'lista' => $tags,
+        'tags' => $tags_empreendimento_finalidade
       ];
       return $this->response->setJSON($data);
     }
   }
 
-  
+
 }

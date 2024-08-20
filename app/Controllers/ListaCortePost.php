@@ -81,6 +81,8 @@ class ListaCortePost extends Ferramentas
             $empresa = new \App\Models\Empresa();
             $empreendimento = new \App\Models\Empreendimentos();
             $usuario = new \App\Models\Usuarios();
+            $cortado = new \App\Models\Corte();
+            
             // Recupera dados das tabelas do banco de dados
             $prioridade_data = $prioridade->find();
             $finalidade_data = $finalidade->find();
@@ -88,6 +90,7 @@ class ListaCortePost extends Ferramentas
             $empreendimento_data = $empreendimento->find();
             $desenhos_data = $desenhos->find();
             $usuario_data = $usuario->find();
+            $cortado_data = $cortado->find();
 
             $check = service('request')->getPost('check'); // Obtém a informação POST fornecida via AJAX para listar usuários ativos
 
@@ -141,6 +144,8 @@ class ListaCortePost extends Ferramentas
             // Itera sobre os dados de desenhos para criar a lista
             foreach ($desenhos_data as $key => $value) {
                 $tags = explode('/', Ferramentas::decodificador($value['caminho']));
+                $dataEspecifica_corte = Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($cortado_data, 'id_desenho', $value['id']), ['data_add']));
+
                 // Remover os índices de 0 a 5
                 $tags = array_slice($tags, 6);
 
@@ -168,6 +173,7 @@ class ListaCortePost extends Ferramentas
        <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($finalidade_data, 'id', $value['finalidade']), ['nome'])) . '</td>
        <td>' . $tags . '</td>
        <td>' . Ferramentas::decodificador(Ferramentas::decodificador($value['status'])) . '</td>
+       <td>'. $dataEspecifica_corte .'</td>
        <td>' . Ferramentas::decodificador(Ferramentas::decodificador($value['data_hora_add'])) . '</td>
       ';
                     if (Ferramentas::decodificador($value['status']) == 'corte') {
@@ -794,19 +800,23 @@ class ListaCortePost extends Ferramentas
 
       $prioridade = new \App\Models\Prioridade(); // Instancia o modelo de dados para prioridades.
 
-      $finalidade = new \App\Models\Finalidade(); // Instancia o modelo de dados para finalidades.
 
       $empresa = new \App\Models\Empresa(); // Instancia o modelo de dados para empresas.
 
       $empreendimento = new \App\Models\Empreendimentos(); // Instancia o modelo de dados para empreendimentos.
+      $finalidade = new \App\Models\Finalidade(); // Instancia o modelo de dados para finalidades.
+
       $usuario = new \App\Models\Usuarios();
+      $cortado = new \App\Models\Corte();
+     
 
       $prioridade_data = $prioridade->find(); // Recupera dados de prioridades do banco de dados.
       $finalidade_data = $finalidade->find(); // Recupera dados de finalidades do banco de dados.
-      $empresa_data = $empresa->find(); // Recupera dados de empresas do banco de dados.
       $empreendimento_data = $empreendimento->find(); // Recupera dados de empreendimentos do banco de dados.
+      $empresa_data = $empresa->find(); // Recupera dados de empresas do banco de dados.
       $desenhos_data = $desenhos->find(); // Recupera dados de desenhos do banco de dados.
       $usuario_data = $usuario->find();
+      $cortado_data = $cortado->find();
 
       $lista = "";
 
@@ -815,6 +825,7 @@ class ListaCortePost extends Ferramentas
         if (Ferramentas::decodificador($value['status']) == "corte" || Ferramentas::decodificador($value['status']) == 'cortando') {
           // Obtém a prioridade do desenho.
           $prioridade_desenho = Ferramentas::array_pesquisa($prioridade_data, 'id', $value['prioridade']);
+          $dataEspecifica_corte = Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($cortado_data, 'id_desenho', $value['id']), ['data_add']));
 
           // Constrói a linha da tabela com informações do desenho.
           $lista .= '
@@ -828,6 +839,7 @@ class ListaCortePost extends Ferramentas
        <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($empreendimento_data, 'id', $value['empreendimento']), ['nome'])) . '</td>
        <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($finalidade_data, 'id', $value['finalidade']), ['nome'])) . '</td>
        <td>' . Ferramentas::decodificador($value['status']) . '</td>
+       <td>'. $dataEspecifica_corte .'</td>
        <td>' . Ferramentas::decodificador($value['data_hora_add']) . '</td>
       </tr>
       ';

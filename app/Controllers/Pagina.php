@@ -52,7 +52,7 @@ class Pagina extends BaseController
 
         // Configuração da página da lista de corte.
         $array_view['titulo'] = "Lista de Corte";
-        $array_view['array_titulo_lista'] = array("Prioridade", "Desenhista", "Nome do arquivo", "Empresa/Cliente", "Empreendimento", "Finalidade", "Subpastas", "status", "Data de Envio", "");
+        $array_view['array_titulo_lista'] = array("Prioridade", "Desenhista", "Nome do arquivo", "Empresa/Cliente", "Empreendimento", "Finalidade", "Subpastas", "status","Inicio Corte", "Data de Envio", "");
         $array_view['menu'] = $this->menu($menu_box, $menu_select);
 
         // Exibe a página da lista de corte.
@@ -206,7 +206,7 @@ class Pagina extends BaseController
 
         // Configuração da página de lista de desenhos.
         $array_view['titulo'] = "Lista de Todos os desenhos";
-        $array_view['array_titulo_lista'] = array("Prioridade", "Desenhista", "Nome do arquivo", "Empresa/Cliente", "Empreendimento", "Finalidade", "Status", "Data de Envio", "", "");
+        $array_view['array_titulo_lista'] = array("Prioridade", "Desenhista", "Nome do arquivo", "Empresa/Cliente", "Empreendimento", "Finalidade", "Status","Data de Corte", "Data de Envio", "", "");
         $array_view['menu'] = $this->menu($menu_box, $menu_select);
 
         // Exibe a lista de desenho.
@@ -618,17 +618,17 @@ class Pagina extends BaseController
         $array_view['functionType_lista'] = "Lista Subpastas";
         $array_view['functionType_cadastro'] = "Cadastrar Subpastas";
         $array_view['titulo_cadastro'] = "Cadastrar Subpastas";
-        $array_view['array_input_titulo'] = array("Subpasta");
-        $array_view['array_input_typ'] = array("text");
-        $array_view['array_input_placeholder'] = array("Nova Subpasta");
-        $array_view['array_input_id'] = array("nome_tag_novo");
+        $array_view['array_input_titulo'] = array("Empresa","Empreendimento","Finalidade","Subpasta");
+        $array_view['array_input_typ'] = array("select","select","select","text");
+        $array_view['array_input_placeholder'] = array("","","","Nova Subpasta");
+        $array_view['array_input_id'] = array("empresa_tag_novo","empreendimento_tag_novo","finalidade_tag_novo","nome_tag_novo");
         $array_view['button_execut_nome'] = "Adicionar";
 
 
 
         // Configuração da lista de tags existentes.
         $array_view['titulo_lista'] = "Lista de Subpastas";
-        $array_view['array_titulo_lista'] = array("Nome", "Status", "");
+        $array_view['array_titulo_lista'] = array("Nome","Empreendimento","Finalidade", "Status", "");
         $array_view['menu'] = $this->menu($menu_box, $menu_select);
 
 
@@ -671,7 +671,7 @@ class Pagina extends BaseController
         );
 
         // Informações do menu.
-        $menu_box = "config_dos_ajustes";
+        $menu_box = "";
 
 
         $menu_select = "relatorio";
@@ -789,7 +789,7 @@ class Pagina extends BaseController
         $template = "lista";
 
         $array_view['titulo'] = "Lista de Corte";
-        $array_view['array_titulo_lista'] = array("Prioridade", "Desenhista", "Nome do arquivo", "Empresa/Cliente", "Empreendimento", "Finalidade", "status", "Data de Envio");
+        $array_view['array_titulo_lista'] = array("Prioridade", "Desenhista", "Nome do arquivo", "Empresa/Cliente", "Empreendimento", "Finalidade", "status","Inicio Corte", "Data de Envio");
         $array_view['menu'] = $this->menu($menu_box, $menu_select);
 
         // Renderiza a visualização "lista" com os dados do array $array_view

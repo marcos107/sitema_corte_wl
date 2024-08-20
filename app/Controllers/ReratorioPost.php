@@ -97,6 +97,7 @@ class ReratorioPost extends Ferramentas
         $corte = array();
         $desenhista = array();
         $teste = 0;
+        $data123 = "";
         // Itera sobre os dados de desenhos para criar a lista
         foreach ($desenhos_data as $key => $value) {
           $ok_desenhista = false;
@@ -120,10 +121,10 @@ class ReratorioPost extends Ferramentas
   
           // $teste++;
           // Converter a data específica para timestamp
-          $dataEspecifica_desenho_add = strtotime(str_replace('/', '-', Ferramentas::decodificador(Ferramentas::decodificador($value['data_hora_add']))));
-          $dataEspecifica_corte = strtotime(str_replace('/', '-', Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($cortado_data, 'id_desenho', $value['id']), ['data_fim']))));
+          $dataEspecifica_desenho_add = strtotime(str_replace('/', '-',explode(" ", Ferramentas::decodificador(Ferramentas::decodificador($value['data_hora_add'])))[0]));
+          $dataEspecifica_corte = strtotime(str_replace('/', '-',explode(" ", Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($cortado_data, 'id_desenho', $value['id']), ['data_fim'])))[0]));
   
-  
+          $data123 =  Ferramentas::decodificador(Ferramentas::decodificador($value['data_hora_add']));
   
           $tags = explode('/', Ferramentas::decodificador($value['caminho']));
           // Remover os índices de 0 a 5
@@ -721,7 +722,7 @@ class ReratorioPost extends Ferramentas
   
         // Retorna a resposta JSON com o conteúdo PDF e o nome do arquivo
         $data = [
-          'oi' => $relatorio,
+          'oi' => $data123,
           'ok' => true,
           'pdf' => base64_encode($pdfContent),
           'nome_pdf' => 'Relatorio Wl maquetaria ' . date("d_m_Y", strtotime($dataInicial_str)) . ' a ' . date("d_m_Y", strtotime($dataFinal_str)) . '.pdf'

@@ -789,8 +789,8 @@
         dataType: "json", // Indicar que o retorno é em formato JSON
         data: { id: id },
         success: function (response) {
-
-          console.log(response);
+          lista_corte();
+         
 
         }
       });

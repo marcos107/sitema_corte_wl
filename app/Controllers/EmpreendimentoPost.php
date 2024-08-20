@@ -352,15 +352,15 @@ class EmpreendimentoPost extends EmpresaPost
       $id = Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'nome', Ferramentas::codificador($empresa_usando)), ['id']);
       $empreendimento_data = $empreendimento->find();
       $lista = array();
-
+      $lista_session = array();
 
 
       foreach ($empreendimento_data as $key => $value) { //cria a lista
 
         // Verifica se o empreendimento está ativo e associado à empresa específica
-        if ($value['status'] == 'ativo' && $value['empresa_id'] == $id) {
+        if ($value['status'] == 'ativo' && ($value['empresa_id'] == $id or $id == "") ) {
           $temp['empreendimento'] = Ferramentas::decodificador($value['nome']);
-
+          $lista_session[$value['id']] = $temp['empreendimento'];
           $lista[] = $temp;
         }
 
@@ -368,7 +368,7 @@ class EmpreendimentoPost extends EmpresaPost
       usort($lista, function ($a, $b) {
         return strcasecmp($a['empreendimento'], $b['empreendimento']);
       });
-
+      $_SESSION["lista_empreendimento"] = $lista_session;
       //retorna a lista para o ajax
       $data = [
         "lista" => $lista,

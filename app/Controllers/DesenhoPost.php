@@ -255,7 +255,7 @@ class DesenhoPost extends Ferramentas
       session_start();
 
       // Obtém o novo nome do desenho a ser definido.
-      $nome_novo = service('request')->getPost('nome');
+      $nome_novo = Ferramentas::norma_lizar_str(service('request')->getPost('nome'));
 
       // Armazena o novo nome na sessão para uso posterior.
       $_SESSION["novo_nome_arquivo"] = $nome_novo;

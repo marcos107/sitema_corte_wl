@@ -1,0 +1,36 @@
+WARNING - 2024-08-18 23:07:38 --> [DEPRECATED] Implicit conversion from float 189.14634146341464 to int loses precision in APPPATH\Controllers\ReratorioPost.php on line 20.
+ 1 APPPATH\Controllers\ReratorioPost.php(324): App\Controllers\ReratorioPost->secondsToTime(189.14634146341464)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ReratorioPost->relatorio()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReratorioPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-18 23:07:38 --> [DEPRECATED] Implicit conversion from float 189.14634146341464 to int loses precision in APPPATH\Controllers\ReratorioPost.php on line 21.
+ 1 APPPATH\Controllers\ReratorioPost.php(324): App\Controllers\ReratorioPost->secondsToTime(189.14634146341464)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ReratorioPost->relatorio()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReratorioPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-18 23:07:38 --> [DEPRECATED] Implicit conversion from float 492.3162393162393 to int loses precision in APPPATH\Controllers\ReratorioPost.php on line 20.
+ 1 APPPATH\Controllers\ReratorioPost.php(324): App\Controllers\ReratorioPost->secondsToTime(492.3162393162393)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ReratorioPost->relatorio()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReratorioPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-18 23:07:38 --> [DEPRECATED] Implicit conversion from float 492.3162393162393 to int loses precision in APPPATH\Controllers\ReratorioPost.php on line 21.
+ 1 APPPATH\Controllers\ReratorioPost.php(324): App\Controllers\ReratorioPost->secondsToTime(492.3162393162393)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ReratorioPost->relatorio()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReratorioPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-18 23:08:04 --> [DEPRECATED] Implicit conversion from float 200.05 to int loses precision in APPPATH\Controllers\ReratorioPost.php on line 20.
+ 1 APPPATH\Controllers\ReratorioPost.php(324): App\Controllers\ReratorioPost->secondsToTime(200.05)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ReratorioPost->relatorio()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReratorioPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-18 23:08:04 --> [DEPRECATED] Implicit conversion from float 200.05 to int loses precision in APPPATH\Controllers\ReratorioPost.php on line 21.
+ 1 APPPATH\Controllers\ReratorioPost.php(324): App\Controllers\ReratorioPost->secondsToTime(200.05)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ReratorioPost->relatorio()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReratorioPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

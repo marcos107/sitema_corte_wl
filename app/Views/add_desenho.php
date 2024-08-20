@@ -60,6 +60,11 @@
 </style>
 
 <body class="hold-transition sidebar-mini">
+
+
+
+
+
 <div id="modal" class="modal-1">
         <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
@@ -81,6 +86,30 @@
             </div>
         </div>
     </div>
+
+    <div id="modal_cadastrar" class="modal-1">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal_cadastrar_titulo"></h5>
+          <button type="button" class="close" onclick="fecharModal('modal_cadastrar')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="modal_cadastrar_bory">
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="botao_fechar_modal_cadastrar"
+            onclick="fecharModal('modal_cadastrar')">Cancelar</button>
+          <button type="button" class="btn btn-primary" id="botao_confirmar_modal_cadastrar" onclick="cadastrar()"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
   <div class="wrapper">
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -322,19 +351,20 @@
 
       });
 
-      
-      function mostrarModal() {
-                    const modal = document.getElementById("modal");
+
+
+                function mostrarModal(class_var = "modal") {
+                    const modal = document.getElementById(class_var);
                     modal.style.display = "block";
 
                     // Adiciona a classe para desabilitar a rolagem
                     document.body.classList.add("no-scroll");
                 }
 
-                function fecharModal() {
-                    const modal = document.getElementById("modal");
+                function fecharModal(class_var = "modal") {
+                    const modal = document.getElementById(class_var);
                     modal.style.display = "none";
-                    document.getElementById('modal_bory').innerHTML = '';
+                    document.getElementById(class_var+'_bory').innerHTML = '';
                     // Remove a classe para habilitar a rolagem
                     document.body.classList.remove("no-scroll");
                 }

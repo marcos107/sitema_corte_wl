@@ -221,6 +221,11 @@
                 selectElement = document.createElement("select");
                 selectElement.id = 'empreendimento_novo_todos';
                 selectElement.classList.add("custom-select");
+                selectElement.addEventListener("change", function () {
+                    value_tags(true);
+                    value_tags_c(true);
+                });
+
 
                 var novoOption = document.createElement("option");
                 selectElement.disabled = true;
@@ -239,7 +244,10 @@
                 selectElement = document.createElement("select");
                 selectElement.id = 'finalidade_novo_todos';
                 selectElement.classList.add("custom-select");
-
+                selectElement.addEventListener("change", function () {
+                    value_tags(true);
+                    value_tags_c(true);
+                });
 
 
                 th = document.createElement('th');
@@ -252,7 +260,7 @@
                 //selecte tag
                 selectElement = document.createElement("select");
                 selectElement.id = 'tag1_novo_todos';
-
+                selectElement.disabled = true;
                 selectElement.classList.add("custom-select");
 
 
@@ -261,7 +269,7 @@
                 div = document.createElement('div');
                 div.classList.add("container-mesma-linha");
                 div.appendChild(selectElement);
-                div.innerHTML += '<button name="cadastarar" type="submit" class="btn btn-outline-primary" onclick="adicinar_subpasta()">+</button>';
+                div.innerHTML += '<button id="tag1_botao_todos" name="cadastarar" type="submit" class="btn btn-outline-primary" onclick="adicinar_subpasta(\'empreendimento_novo_todos\',\'finalidade_novo_todos\')">+</button>';
 
                 th.appendChild(div);
 
@@ -278,7 +286,7 @@
                 div = document.createElement('div');
                 div.classList.add("container-mesma-linha");
                 div.appendChild(selectElement);
-                div.innerHTML += '<button name="cadastarar" type="submit" class="btn btn-outline-primary" onclick="adicinar_subpasta()">+</button>';
+                div.innerHTML += '<button id="tag2_botao_todos" name="cadastarar" type="submit" class="btn btn-outline-primary" onclick="adicinar_subpasta(\'empreendimento_novo_todos\',\'finalidade_novo_todos\')">+</button>';
 
                 th.appendChild(div);
 
@@ -297,7 +305,7 @@
                 div = document.createElement('div');
                 div.classList.add("container-mesma-linha");
                 div.appendChild(selectElement);
-                div.innerHTML += '<button name="cadastarar" type="submit" class="btn btn-outline-primary" onclick="adicinar_subpasta()">+</button>';
+                div.innerHTML += '<button id="tag3_botao_todos" name="cadastarar" type="submit" class="btn btn-outline-primary" onclick="adicinar_subpasta(\'empreendimento_novo_todos\',\'finalidade_novo_todos\')">+</button>';
 
                 th.appendChild(div);
 
@@ -367,6 +375,10 @@
                     selectElement = document.createElement("select");
                     selectElement.id = 'empreendimento_novo_' + i;
                     selectElement.classList.add("custom-select");
+                    selectElement.addEventListener("change", function () {
+                        value_tags(true);
+                        value_tags_c(true);
+                    });
 
                     var novoOption = document.createElement("option");
                     selectElement.disabled = true;
@@ -385,7 +397,10 @@
                     selectElement = document.createElement("select");
                     selectElement.id = 'finalidade_novo_' + i;
                     selectElement.classList.add("custom-select");
-
+                    selectElement.addEventListener("change", function () {
+                        value_tags(true);
+                        value_tags_c(true);
+                    });
 
 
                     th = document.createElement('th');
@@ -396,20 +411,23 @@
 
 
 
-
+                    th = document.createElement('th');
                     //selecte tag
                     selectElement = document.createElement("select");
                     selectElement.id = 'tag1_novo_' + i;
 
                     selectElement.classList.add("custom-select");
 
+                    div = document.createElement('div');
+                    div.classList.add("container-mesma-linha");
+                    div.appendChild(selectElement);
+                    div.innerHTML += '<button id="tag1_botao_' + + i + '" name="cadastarar" type="submit" class="btn btn-outline-primary" onclick="adicinar_subpasta(\'empreendimento_novo_' + i + '\',\'finalidade_novo_' + i + '\')">+</button>';
+
+                    th.appendChild(div);
 
 
-                    th = document.createElement('th');
-
-                    th.appendChild(selectElement);
                     tr.appendChild(th);//coloca o input name no modal
-
+                    th = document.createElement('th');
                     //selecte tag
                     selectElement = document.createElement("select");
                     selectElement.id = 'tag2_novo_' + i;
@@ -417,11 +435,16 @@
 
 
 
-                    th = document.createElement('th');
+                    div = document.createElement('div');
+                    div.classList.add("container-mesma-linha");
+                    div.appendChild(selectElement);
+                    div.innerHTML += '<button id="tag2_botao_' + + i + '" name="cadastarar" type="submit" class="btn btn-outline-primary" onclick="adicinar_subpasta(\'empreendimento_novo_' + i + '\',\'finalidade_novo_' + i + '\')">+</button>';
 
-                    th.appendChild(selectElement);
+                    th.appendChild(div);
+
+
                     tr.appendChild(th);//coloca o input name no modal
-
+                    th = document.createElement('th');
                     //selecte tag
                     selectElement = document.createElement("select");
                     selectElement.id = 'tag3_novo_' + i;
@@ -429,9 +452,14 @@
 
 
 
-                    th = document.createElement('th');
+                    div = document.createElement('div');
+                    div.classList.add("container-mesma-linha");
+                    div.appendChild(selectElement);
+                    div.innerHTML += '<button id="tag3_botao_' + + i + '" name="cadastarar" type="submit" class="btn btn-outline-primary" onclick="adicinar_subpasta(\'empreendimento_novo_' + i + '\',\'finalidade_novo_' + i + '\')">+</button>';
 
-                    th.appendChild(selectElement);
+                    th.appendChild(div);
+
+
                     tr.appendChild(th);//coloca o input name no modal
 
                     tabel_bory.appendChild(tr);
@@ -461,38 +489,59 @@
 
     }
     function selects() {
+        empreendimento_select();
         value_prioridade(true);
         value_tags(true);
         value_finalidade(true);
         value_empresa(true);
 
+        value_tags_c(true);
         value_empresa_c(true);
         value_finalidade_c(true);
         value_prioridade_c(true);
-        value_tags_c(true);
+
     }
+
     function tag_ordem(selectedValue, selectedIndex, coluna, id) {
         if (coluna == '1' && selectedIndex == 0) {
+            select = document.getElementById("tag1_novo_" + id);
+            select.options[0].selected = true;
+            select.disabled = true;
+            document.getElementById("tag1_botao_" + id).disabled = true;
             select = document.getElementById("tag2_novo_" + id);
             select.options[0].selected = true;
             select.disabled = true;
+            document.getElementById("tag2_botao_" + id).disabled = true;
             select = document.getElementById("tag3_novo_" + id);
             select.options[0].selected = true;
             select.disabled = true;
+            document.getElementById("tag3_botao_" + id).disabled = true;
         } else if (coluna == '2' && selectedIndex == 0) {
             select = document.getElementById("tag3_novo_" + id);
             select.options[0].selected = true;
             select.disabled = true;
+            document.getElementById("tag3_botao_" + id).disabled = true;
         }
+
+        console.log("A");
+        if (document.getElementById("finalidade_novo_" + id).selectedIndex != 0 && document.getElementById("empreendimento_novo_" + id).selectedIndex != 0) {
+            select = document.getElementById("tag1_novo_" + id);
+            select.disabled = false;
+            select.options.disabled = false;
+            document.getElementById("tag1_botao_" + id).disabled = false;
+        }
+
         if (coluna == '1' && selectedIndex != 0) {
             select = document.getElementById("tag2_novo_" + id);
             select.disabled = false;
             select.options.disabled = false;
-
+            document.getElementById("tag2_botao_" + id).disabled = false;
         }
+
         if (coluna == '2' && selectedIndex != 0) {
             select = document.getElementById("tag3_novo_" + id);
             select.disabled = false;
+            document.getElementById("tag3_botao_" + id).disabled = false;
         }
         select3 = document.getElementById("tag3_novo_" + id);
 
@@ -634,16 +683,18 @@
                     for (let j = 0; j < desenhos.length; j++) {
                         valorSelecionadoAntes = '';
                         for (let h = 1; h < 4; h++) {
+                            console.log(h);
                             if (document.getElementById("tag" + h + "_novo_" + j)) {
                                 // Obter referência ao elemento select
                                 var funcao = document.getElementById("tag" + h + "_novo_" + j);
                                 // Armazenar o valor da opção selecionada antes de limpar o select
 
-                                if (h != 1 && valorSelecionadoAntes == '') {
+                                if (valorSelecionadoAntes == '') {
                                     funcao.disabled = true;
                                 }// Limpar o select
                                 valorSelecionadoAntes = funcao.value;
                                 funcao.innerHTML = '';
+
                                 funcao.addEventListener("change", function () {
                                     var selectedValue = this.value; // Valor da opção selecionada
                                     var selectedIndex = this.selectedIndex; // Índice da opção selecionada
@@ -662,7 +713,10 @@
                                 // Adicionar o novo elemento option ao select
                                 funcao.appendChild(novoOption);
 
-                                response.lista.forEach(element => {
+                                let empreendimento = document.getElementById("empreendimento_novo_" + j).value;
+                                let finalidade = document.getElementById("finalidade_novo_" + j).value;
+
+                                response.tags?.[empreendimento]?.[finalidade]?.forEach(element => {
 
 
                                     // Criar um novo elemento option
@@ -681,8 +735,11 @@
                                         break;
                                     }
                                 }
+
                             }
                         }
+                        tag_ordem(document.getElementById("tag1_novo_" + j).value, document.getElementById("tag1_novo_" + j).selectedIndex, 1, j);
+
 
                     }
                     lista_temp3 = response.toString();
@@ -1480,9 +1537,19 @@
                         var funcao = document.getElementById("tag" + h + "_novo_todos");
                         // Armazenar o valor da opção selecionada antes de limpar o select
 
-                        if (h != 1 && valorSelecionadoAntes == '') {
+
+                        if (valorSelecionadoAntes == '') {
                             funcao.disabled = true;
-                        }// Limpar o select
+                            document.getElementById("tag" + h + "_botao_todos").disabled = true;
+                        }
+                        if (document.getElementById("empreendimento_novo_todos").selectedIndex > 0 && document.getElementById("finalidade_novo_todos").selectedIndex > 0) {
+                            select = document.getElementById("tag1_novo_todos");
+                            select.disabled = false;
+                            select.options.disabled = false;
+                            document.getElementById("tag1_botao_todos").disabled = false;
+                        }
+
+                        // Limpar o select
                         valorSelecionadoAntes = funcao.value;
                         funcao.innerHTML = '';
                         funcao.addEventListener("change", function () {
@@ -1492,8 +1559,13 @@
                             // Chame a função que deseja executar quando uma opção é selecionada
                             for (let j = 0; j < desenhos.length; j++) {
                                 if (document.getElementById("tag" + h + "_novo_" + j)) {
-                                    document.getElementById("tag" + h + "_novo_" + j).selectedIndex = selectedIndex;
-                                    tag_ordem(selectedValue, selectedIndex, h, j);
+                                    var selectElement_todos = document.getElementById("tag" + h + "_botao_todos");
+                                    var selectElement = document.getElementById("tag" + h + "_novo_" + j);
+                                    if (selectElement && selectElement.querySelector('option[value="' + selectElement_todos.value + '"]')) {
+                                        selectElement.value = selectedValue;
+                                        tag_ordem(selectedValue, selectedIndex, h, j);
+                                    }
+
                                 }
                             }
                         });
@@ -1507,8 +1579,10 @@
 
                         // Adicionar o novo elemento option ao select
                         funcao.appendChild(novoOption);
+                        let empreendimento = document.getElementById("empreendimento_novo_todos").value;
+                        let finalidade = document.getElementById("finalidade_novo_todos").value;
 
-                        response.lista.forEach(element => {
+                        response.tags?.[empreendimento]?.[finalidade]?.forEach(element => {
 
 
                             // Criar um novo elemento option
@@ -1540,48 +1614,97 @@
 
     // Repetir função a cada segundo
     //setInterval(value_tags_c, 15000);
-    function adicinar_subpasta() {
-        // A função prompt exibe uma caixa de diálogo com uma caixa de texto
-        var erro = "";
 
-            var userInput = prompt(erro + "Digite o nome da nova subpasta:");
-            if (userInput !== null) {
-                var tag = userInput;
-
-                $.ajax({
-                    url: '<?= base_url('public/desenho_tag_cadastro') ?>',
-                    type: "POST",
-                    dataType: "json",//Indicar que o retorno é em formato JSON
-                    async: false, // Torna a solicitação síncrona
-                    data: { tag: tag },
-                    success: function (response) {
-                        //Função a ser executada em caso de sucesso da solicitação AJAX.
-
-                        if (!response.ok) {
-                            //Se a resposta não indica sucesso, isso significa que ocorreu um erro no cadastramento da tag.
-
-                            //A resposta contém mensagens de erro no formato de um objeto. O loop for percorre essas mensagens.
-                            for (const chave in response.msg) {
-                                const valor = response.msg[chave];
-                                //Para cada mensagem de erro, exibe um alerta personalizado com a chave (nome do campo) e o valor (mensagem de erro).
-                                alert_personalizado(chave, valor);
-                            }
-                        } else {
-                            //Se a resposta indica sucesso, exibe um alerta informando que a "tag" foi cadastrada com sucesso.
-                            alert_certo('Cadastrado', 'Tag cadastrado com sucesso.');
-                            //Limpa o valor do campo de entrada para que o usuário possa inserir outra "tag".
-                            document.getElementById("nome_tag_novo").value = '';
-                            
-                        }
-                        
-
-                    }
-                });
-                value_tags(true);
-                value_tags_c(true);
-            }
+    modal_bory_geral = '';
+    function adicinar_subpasta(empreendimento, finalidade) {
+        //Remove o prefixo 'modal_' do ID para obter o ID real
 
 
+
+
+
+        //Modificar o conteúdo do modal de acordo com a resposta do servidor
+
+        //Altera o texto do botão de confirmação no modal
+        var botao_confirmar_modal = document.getElementById('botao_confirmar_modal_cadastrar');
+        botao_confirmar_modal.innerHTML = "Confirmar";
+
+        //Obtém referências aos elementos do modal
+        var modal_titulo = document.getElementById('modal_cadastrar_titulo');
+        var modal_bory = document.getElementById('modal_cadastrar_bory');
+        modal_bory_geral = modal_bory.innerHTML;
+        //Define o título do modal como "Modificar a tag: Nome da Tag"
+        modal_titulo.textContent = "Adicionar Subpasta";
+
+        // Limpa o conteúdo do modal_body
+        modal_bory.innerHTML = '';
+
+
+
+        // Cria e configura o segundo grupo de form para "Empreendimento"
+        divElemnt = document.createElement("div");
+        divElemnt.classList.add("form-group");
+
+        labelElement = document.createElement("label");
+        labelElement.textContent = "Empreendimento";
+
+        inputElement = document.createElement("select");
+        inputElement.id = 'empreendimento_tag_novo';
+        inputElement.classList.add("form-control");
+        inputElement.disabled = true;
+
+        divElemnt.appendChild(labelElement);
+        divElemnt.appendChild(inputElement);
+        modal_bory.appendChild(divElemnt);
+
+        // Cria e configura o terceiro grupo de form para "Finalidade"
+        divElemnt = document.createElement("div");
+        divElemnt.classList.add("form-group");
+
+        labelElement = document.createElement("label");
+        labelElement.textContent = "Finalidade";
+
+        inputElement = document.createElement("select");
+        inputElement.id = 'finalidade_tag_novo';
+        inputElement.classList.add("form-control");
+        inputElement.disabled = true;
+
+        divElemnt.appendChild(labelElement);
+        divElemnt.appendChild(inputElement);
+        modal_bory.appendChild(divElemnt);
+
+        // Cria e configura o primeiro grupo de form para "Subpasta"
+        var divElemnt = document.createElement("div");
+        divElemnt.classList.add("form-group");
+
+        var labelElement = document.createElement("label");
+        labelElement.textContent = "Subpasta";
+
+        var inputElement = document.createElement("input");
+        inputElement.type = 'text';
+        inputElement.id = 'nome_tag_novo';
+        inputElement.classList.add("form-control");
+
+
+        // Adiciona um evento de input ao elemento para limitar o comprimento do valor
+        inputElement.addEventListener("input", function () {
+            var input = this;
+            var maxLength = 17;
+            input.value = input.value.slice(0, maxLength); // Trunca o valor para o tamanho máximo
+        });
+
+        // Adiciona os elementos ao divElemnt e depois ao modal_body
+        divElemnt.appendChild(labelElement);
+        divElemnt.appendChild(inputElement);
+        modal_bory.appendChild(divElemnt);
+
+        empreendimento_select(document.getElementById(empreendimento).value);
+        finalidade_select(document.getElementById(finalidade).value);
+
+
+
+        //Exibe o modal
+        mostrarModal("modal_cadastrar");
 
 
 
@@ -1590,8 +1713,97 @@
     }
 
 
+    function finalidade_select(id = null) {
+        $.ajax({
+            url: '<?= base_url('public/finalidade_lista') ?>',
+            type: "POST",
+            dataType: "json", // Indicar que o retorno é em formato JSON
+            success: function (response) {
+                // Limpa as opções atuais do select
+                $('#finalidade_tag_novo').empty();
 
+                // Adiciona uma opção padrão
+                $('#finalidade_tag_novo').append('<option value="">Finalidade</option>');
 
+                // Itera sobre o array de resposta e adiciona as opções ao select
+                $.each(response.lista, function (index, item) {
+                    $('#finalidade_tag_novo').append('<option value="' + item.finalidade + '">' + item.finalidade + '</option>');
+                });
+                if (id != null)
+                    document.getElementById("finalidade_tag_novo").value = id;
+            },
+            error: function (xhr, status, error) {
+                console.error("Ocorreu um erro ao carregar os dados: ", error);
+            }
+        });
+
+    }
+
+    function empreendimento_select(id = null) {
+        $.ajax({
+            url: '<?= base_url('public/empreendimento_lista') ?>',
+            type: "POST",
+            dataType: "json", // Indicar que o retorno é em formato JSON
+            success: function (response) {
+                // Limpa as opções atuais do select
+                $('#empreendimento_tag_novo').empty();
+
+                // Adiciona uma opção padrão
+                $('#empreendimento_tag_novo').append('<option value="">Empreendimento</option>');
+
+                // Itera sobre o array de resposta e adiciona as opções ao select
+                $.each(response.lista, function (index, item) {
+                    $('#empreendimento_tag_novo').append('<option value="' + item.empreendimento + '">' + item.empreendimento + '</option>');
+                });
+                if (id != null)
+                    document.getElementById("empreendimento_tag_novo").value = id;
+
+            },
+            error: function (xhr, status, error) {
+                console.error("Ocorreu um erro ao carregar os dados: ", error);
+            }
+        });
+
+    }
+
+    function cadastrar() {
+        //Esta função é usada para cadastrar uma nova "tag".
+
+        //Obtém o valor da tag a partir do elemento com o ID "nome_tag_novo".
+        var tag = document.getElementById("nome_tag_novo").value;
+        var empreendimento = document.getElementById("empreendimento_tag_novo").value;
+        var finalidade = document.getElementById("finalidade_tag_novo").value;
+
+        $.ajax({
+            url: '<?= base_url('public/desenho_tag_cadastro') ?>',
+            type: "POST",
+            dataType: "json",//Indicar que o retorno é em formato JSON
+            data: { tag: tag, empreendimento: empreendimento, finalidade: finalidade },
+            success: function (response) {
+                //Função a ser executada em caso de sucesso da solicitação AJAX.
+
+                if (!response.ok) {
+                    //Se a resposta não indica sucesso, isso significa que ocorreu um erro no cadastramento da tag.
+
+                    //A resposta contém mensagens de erro no formato de um objeto. O loop for percorre essas mensagens.
+                    for (const chave in response.msg) {
+                        const valor = response.msg[chave];
+                        //Para cada mensagem de erro, exibe um alerta personalizado com a chave (nome do campo) e o valor (mensagem de erro).
+                        alert_personalizado(chave, valor);
+                    }
+                } else {
+                    //Se a resposta indica sucesso, exibe um alerta informando que a "tag" foi cadastrada com sucesso.
+                    alert_certo('Cadastrado', 'Tag cadastrado com sucesso.');
+                    //Limpa o valor do campo de entrada para que o usuário possa inserir outra "tag".
+                    document.getElementById("nome_tag_novo").value = '';
+                    fecharModal('modal_cadastrar');
+                }
+                value_tags_c(true);
+                value_tags(true)
+
+            }
+        });
+    }
 
 
 

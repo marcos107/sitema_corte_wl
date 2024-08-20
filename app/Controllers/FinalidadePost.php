@@ -313,6 +313,7 @@ class FinalidadePost extends Ferramentas
 
       $finalidade_data = $finalidade->find();
       $lista = array();
+      $lista_session = array();
 
 
 
@@ -321,7 +322,7 @@ class FinalidadePost extends Ferramentas
         // Verifica se a finalidade está ativa
         if ($value['status'] == 'ativo') {
           $temp['finalidade'] = Ferramentas::decodificador($value['nome']);
-
+          $lista_session[$value['id']] = $temp['finalidade'];
           $lista[] = $temp;
         }
 
@@ -329,7 +330,7 @@ class FinalidadePost extends Ferramentas
       usort($lista, function ($a, $b) {
         return strcasecmp($a['finalidade'], $b['finalidade']);
       });
-
+      $_SESSION["lista_finalidade"] = $lista_session;
       //retorna a lista para o ajax
       $data = [
         "lista" => $lista

@@ -4,6 +4,31 @@ namespace App\Controllers;
 class Ferramentas extends BaseController
 {
 
+    /*
+
+
+
+
+
+
+     */
+    public static function norma_lizar_str($str,$trocar = [":","_",",","."],$por = [" "," "," "," "]){
+        $str = str_replace($trocar,$por,$str);
+        // Converte caracteres especiais para suas versões simples usando iconv
+        $str = iconv('UTF-8', 'ASCII//TRANSLIT', $str);
+  
+        // Remove tudo que não seja letra, número ou espaço
+        $str = preg_replace('/[^A-Za-z0-9 ]/', '', $str);
+        $str = str_replace(' ','_',$str);
+        $str = preg_replace('/_+/', '_', $str);
+        // Converte a string para maiúsculas
+        $str = strtoupper($str);
+        return $str;
+    } 
+
+
+
+
 
     /**
      * Seleciona registros de uma tabela do banco de dados com base em critérios de pesquisa.
