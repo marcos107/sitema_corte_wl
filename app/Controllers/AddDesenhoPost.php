@@ -75,6 +75,7 @@ class AddDesenhoPost extends Ferramentas
       }
 
       $desenhos = service('request')->getPost('desenhos');
+      $prcoesso = service('request')->getPost('nome_processos');
       $msg = array();
       $ok = array();
       $violacao = array();
@@ -95,8 +96,32 @@ class AddDesenhoPost extends Ferramentas
       $tag = new \App\Models\Tag();
       $tag_data = $tag->find();
 
+      
+      
+
+
+      // Inicializa a variável que armazenará o filtro associado
+      $prcoesso_nome = null;
+      $prcoesso_id = null;
+
+      // Procura pelo processo no array
+      foreach ($_SESSION['processos_lista']['lista'] as $processo_lista) {
+        if ($processo_lista['nome'] == $prcoesso) {
+          $prcoesso_nome = $processo_lista['diretorio'];
+          $prcoesso_id = $processo_lista['id'];
+          break; // Encerra o loop uma vez que o processo é encontrado
+        }
+      }
+      if($prcoesso_nome == null or $prcoesso_id == null){
+        $msg["Processo"] = 'Não existe.';
+        $violacao[] = "desenhos_add Processo não exist";
+        $ok = false;
+       
+      }else{
+
       foreach ($desenhos as $key => $value) {
-        $base_dir = 'c:/wl/wl_desenhos/';
+
+        $base_dir = 'c:/wl/'.$prcoesso_nome.'/';
         // Constrói o caminho base do diretório para armazenar o desenho.
         $base_dir .= (Ferramentas::norma_lizar_str($value["empresa"])) . '/';
         $base_dir .= (Ferramentas::norma_lizar_str($value["empreendimento"])) . '/';
@@ -270,6 +295,7 @@ class AddDesenhoPost extends Ferramentas
                 'finalidade' => $finalidade_id,
                 'empreendimento' => $empreendimento_id,
                 'empresa' => $empresa_id,
+                'processos_id' => $prcoesso_id,
                 'data_hora_add' => Ferramentas::codificador(date('d/m/Y H:i'))
 
               ];
@@ -295,6 +321,7 @@ class AddDesenhoPost extends Ferramentas
 
 
       }
+    }
       $desenhos = Ferramentas::map_pasta($_SESSION['pasta_temp']);
       if (count($desenhos) == 0) {
         //apaga a pasta temp se estiver vazia
@@ -324,7 +351,10 @@ class AddDesenhoPost extends Ferramentas
       }
       $data = [
         'ok' => $ok,
-        'msg' => $msg
+        'msg' => $msg,
+        '1' => $_SESSION['processos_lista']['lista'],
+        '2' => $prcoesso_nome .' - '. $prcoesso_id,
+        '3' => $prcoesso_nome
 
       ];
       $_SESSION['desenho_add_proc'] = false;
@@ -392,28 +422,37 @@ class AddDesenhoPost extends Ferramentas
       $targetDirectory = $_SESSION['pasta_temp'];
       $desenhos = Ferramentas::map_pasta($targetDirectory);
 
-      $filtros = array();
-      $filtro = new \App\Models\Filtros(); // Obtém os filtros da tabela do banco de dados.
-      $filtro_data = $filtro->find();
 
-      // Cria uma lista de filtros ativos a partir dos dados do banco.
-      foreach ($filtro_data as $key => $value) {
-        if ($value['status'] == 'ativo') {
-          $filtros[] = Ferramentas::decodificador($value['nome']);
+      $prcoesso_nome = service('request')->getPost('nome_processos');
+
+
+      // Inicializa a variável que armazenará o filtro associado
+      $filtroAssociado = null;
+
+      // Procura pelo processo no array
+      foreach ($_SESSION['processos_lista']['lista'] as $processo) {
+        if ($processo['nome'] == $prcoesso_nome) {
+          $filtroAssociado = $processo['filtro'];
+          break; // Encerra o loop uma vez que o processo é encontrado
         }
       }
 
+  
+
+
+ 
+
       foreach ($desenhos as $key => $value) {
         // Verifica se a extensão do arquivo não está na lista de filtros permitidos.
-        if (!in_array(Ferramentas::get_type_file($value), $filtros)) {
+        if (!in_array(Ferramentas::get_type_file($value), explode(",", str_replace(".","",$filtroAssociado))) or $filtroAssociado == null) {
           // Registra uma mensagem indicando que o tipo de arquivo não é permitido.
           $msg[Ferramentas::get_name_file($value)] = "Tipo de arquivo (." . Ferramentas::get_type_file($value) . ") não permitido.";
 
           // Remove o arquivo do diretório temporário.
           unlink($desenhos[$key]);
         }
-      }
-
+      
+    }
       // Obtém a lista de desenhos restante no diretório temporário.
       $desenhos = Ferramentas::map_pasta($targetDirectory);
 
@@ -431,7 +470,7 @@ class AddDesenhoPost extends Ferramentas
       // Armazena a lista de desenhos na sessão do usuário.
       $_SESSION['desenhos'] = $desenhos;
 
-      return $this->response->setJSON(['ok' => $ok, 'desenhos' => $desenhos, 'msg' => $msg]);
+      return $this->response->setJSON(['ok' => $ok, 'desenhos' => $desenhos, 'msg' => $msg,'1'=>explode(",", str_replace(".","",$filtroAssociado)),'2' => $_SESSION['processos_lista']['lista'],'3'=>$prcoesso_nome]);
     }
   }
 

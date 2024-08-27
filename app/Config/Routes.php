@@ -59,19 +59,19 @@ $routes->post('/desenho_novo_nome', 'DesenhoPost::desenho_novo_nome');
 $routes->post('/recolocar_desenho', 'DesenhoPost::recolocar_desenho');
 
 
-//MeusDesenhosPost
+//DesenhosMeusPost
 $routes->get('/desenho_meus', 'Pagina::desenho_meus');
-$routes->post('/desenho_meus', 'MeusDesenhosPost::desenho_meus');
-$routes->post('/desenho_meus_modal', 'MeusDesenhosPost::desenho_meus_modal');
-$routes->post('/subistituir_desenho', 'MeusDesenhosPost::subistituir_desenho');
-$routes->post('/subistituir_desenho_modal', 'MeusDesenhosPost::subistituir_desenho_modal');
+$routes->post('/desenho_meus', 'DesenhosMeusPost::desenho_meus');
+$routes->post('/desenho_meus_modal', 'DesenhosMeusPost::desenho_meus_modal');
+$routes->post('/subistituir_desenho', 'DesenhosMeusPost::subistituir_desenho');
+$routes->post('/subistituir_desenho_modal', 'DesenhosMeusPost::subistituir_desenho_modal');
 
 //ListaCortePost
 $routes->get('/lista_corte_adm', 'Pagina::lista_corte_adm');
 $routes->get('/lista_corte', 'Pagina::lista_corte');
-$routes->get('/lista_corte_cortador', 'Pagina::lista_corte_cortador');
+$routes->get('/lista_afazeres', 'Pagina::lista_afazeres');
 $routes->post('/lista_corte', 'ListaCortePost::lista_corte_desenhista');
-$routes->post('/lista_corte_cortador', 'ListaCortePost::lista_corte_cortador');
+$routes->post('/lista_afazeres', 'ListaCortePost::lista_afazeres');
 $routes->post('/lista_corte_adm', 'ListaCortePost::lista_corte_adm');
 $routes->post('/cancelar_corte', 'ListaCortePost::cancelar_corte');
 $routes->post('/confirmar_corte', 'ListaCortePost::confirmar_corte');
@@ -147,15 +147,18 @@ $routes->post('/user_modificar_modal', 'UsuarioPost::user_modificar_modal');
 $routes->post('/user_modificar', 'UsuarioPost::user_modificar');
 
 
-//ReratorioPost
+//RelatorioPost
 $routes->get('/relatorios', 'Pagina::relatorios');
-$routes->post('/relatorio', 'ReratorioPost::relatorio');
-$routes->post('/lista_usuarios_niveis', 'ReratorioPost::lista_usuarios_niveis');
+$routes->post('/relatorio', 'RelatorioPost::relatorio');
+$routes->post('/lista_usuarios_niveis', 'RelatorioPost::lista_usuarios_niveis');
 
-
-
-
-
+//processos
+$routes->get('/processos', 'Pagina::processos');
+$routes->post('/processos_cadastrar', 'ProcessosPost::processos_cadastrar');
+$routes->post('/processos', 'ProcessosPost::processos');
+$routes->post('/processos_lista', 'ProcessosPost::processos_lista');
+$routes->post('/processos_modifica_modal', 'ProcessosPost::processos_modifica_modal');
+$routes->post('/processos_modificar', 'ProcessosPost::processos_modificar');
 
 
 

@@ -12,19 +12,20 @@ class Ferramentas extends BaseController
 
 
      */
-    public static function norma_lizar_str($str,$trocar = [":","_",",","."],$por = [" "," "," "," "]){
-        $str = str_replace($trocar,$por,$str);
+    public static function norma_lizar_str($str, $trocar = [":", "_", ",", "."], $por = [" ", " ", " ", " "])
+    {
+        $str = str_replace($trocar, $por, $str);
         // Converte caracteres especiais para suas versões simples usando iconv
         $str = iconv('UTF-8', 'ASCII//TRANSLIT', $str);
-  
+
         // Remove tudo que não seja letra, número ou espaço
         $str = preg_replace('/[^A-Za-z0-9 ]/', '', $str);
-        $str = str_replace(' ','_',$str);
+        $str = str_replace(' ', '_', $str);
         $str = preg_replace('/_+/', '_', $str);
         // Converte a string para maiúsculas
         $str = strtoupper($str);
         return $str;
-    } 
+    }
 
 
 
@@ -68,14 +69,18 @@ class Ferramentas extends BaseController
      */
     public static function remove_id_file($str)
     {
-        // Usa uma expressão regular para procurar um ID no formato '_<números>_' na string.
-        preg_match('/_([0-9]+)_/', $str, $matches);
+        // Pega os 10 últimos caracteres da string.
+        $lastTenChars = substr($str, -10);
+
+        // Usa uma expressão regular para procurar um ID no formato '_<números>_' nos 10 últimos caracteres.
+        preg_match('/_([0-9]+)_/', $lastTenChars, $matches);
+
         if (isset($matches[0])) {
             $id = $matches[0];
-            // Remove o ID encontrado da string e retorna o resultado.
+            // Remove o ID encontrado da string original (não só dos últimos 10 caracteres) e retorna o resultado.
             return str_replace($id, '', $str);
         } else {
-            // Se nenhum ID for encontrado na string, retorna a string original.
+            // Se nenhum ID for encontrado nos 10 últimos caracteres, retorna a string original.
             return $str;
         }
     }
@@ -420,7 +425,7 @@ class Ferramentas extends BaseController
      * @param string $str A string codificada que contém os códigos a serem decodificados.
      * @return string A string decodificada, com os códigos substituídos pelos caracteres especiais correspondentes.
      */
-    public static function decodificador($str,$ignora = [])
+    public static function decodificador($str, $ignora = [])
     {
         // Define um array com os caracteres especiais correspondentes aos códigos.
         $caracteresEspeciais = [
@@ -523,10 +528,10 @@ class Ferramentas extends BaseController
         $codigos = array();
         for ($i = 1; $i <= count($caracteresEspeciais); $i++) {
             $numero = str_pad($i, 3, '0', STR_PAD_LEFT);
-            if(!in_array("i{$numero}n",self::array_codificar($ignora)))
-            $codigos[] = "i{$numero}n";
+            if (!in_array("i{$numero}n", self::array_codificar($ignora)))
+                $codigos[] = "i{$numero}n";
             else
-            $codigos[] = "i999n";
+                $codigos[] = "i999n";
 
         }
 

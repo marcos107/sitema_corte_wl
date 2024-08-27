@@ -7,6 +7,7 @@
       url: '<?= base_url('public/lista_corte') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
+
       success: function (response) {
         // A função success() é chamada quando a requisição AJAX é concluída com sucesso.
 

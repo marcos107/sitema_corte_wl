@@ -25,7 +25,7 @@
           </p></a></li>
           <?php } if(in_array("Desenhos_cortados",$permissao) or in_array("all",$permissao)){?>
 
-    <li class="nav-item"><a href="<?=site_url("public/desenhos_cortados")?>" id="desenhos_cortados" class="nav-link">&nbsp<i class="fa-solid fa-database"></i>&nbsp<p>Desenhos_cortados
+    <li class="nav-item"><a href="<?=site_url("public/desenhos_cortados")?>" id="desenhos_cortados" class="nav-link">&nbsp<i class="fa-solid fa-database"></i>&nbsp<p>Desenhos Cortados
           </p></a></li>
           <?php }?>
 
@@ -60,7 +60,9 @@
           <?php } if(in_array("Nível",$permissao) or in_array("all",$permissao)){?>
     <li class="nav-item"><a href="<?=site_url("public/nivel")?>" id="nivel" class="nav-link">&nbsp<i class="fa-solid fa-layer-group"></i>&nbsp<p>
           Nível</p></a></li>
-
+          <?php } if(in_array("Processos",$permissao) or in_array("all",$permissao)){?>
+    <li class="nav-item"><a href="<?=site_url("public/processos")?>" id="processos" class="nav-link">&nbsp<i class="fa-solid fa-microchip"></i>&nbsp<p>
+    Processos</p></a></li>
 
 
           <?php } if(in_array("Usuario",$permissao) or in_array("all",$permissao)){?>
@@ -77,9 +79,10 @@
 <?php } ?>
 
 <?php if(in_array("Lista_De_Corte_Cortador",$permissao) or in_array("all",$permissao)){?>
-<li class="nav-item"><a href="<?=site_url("public/lista_corte_cortador")?>" id="lista_corte_cortador" class="nav-link">&nbsp<i class="fa-solid fa-scissors"></i>&nbsp<p>Lista
-De Corte Cortador</p></a></li>
+<li class="nav-item"><a href="<?=site_url("public/lista_afazeres")?>" id="lista_afazeres" class="nav-link">&nbsp<i class="fa-solid fa-scissors"></i>&nbsp<p>Lista
+De Afazeres</p></a></li>
 <?php }?>
+
 
 <li class="nav-item"><a href="<?=site_url("public/logout")?>" class="nav-link"><i class="fa-solid fa-door-open"></i>
     <p>Sair</p>

@@ -82,6 +82,8 @@ class ListaCortePost extends Ferramentas
             $empreendimento = new \App\Models\Empreendimentos();
             $usuario = new \App\Models\Usuarios();
             $cortado = new \App\Models\Corte();
+            $processos = new \App\Models\Processos();
+
             
             // Recupera dados das tabelas do banco de dados
             $prioridade_data = $prioridade->find();
@@ -91,6 +93,8 @@ class ListaCortePost extends Ferramentas
             $desenhos_data = $desenhos->find();
             $usuario_data = $usuario->find();
             $cortado_data = $cortado->find();
+            $processos_data = $processos->find();
+
 
             $check = service('request')->getPost('check'); // Obtém a informação POST fornecida via AJAX para listar usuários ativos
 
@@ -163,9 +167,11 @@ class ListaCortePost extends Ferramentas
                     }
                     $lista .= '
       
+                 <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($processos_data, 'id', $value['processos_id']), ["nome"])) . '</td>
 
        
           <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($usuario_data, 'id', $value['desenhista']), ['nome'])) . '</td>
+
        <td>' . Ferramentas::decodificador(Ferramentas::remove_id_file(Ferramentas::decodificador($value['nome']))) . '</td>
        
        <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'id', $value['empresa']), ['nome'])) . '</td>
@@ -510,11 +516,12 @@ class ListaCortePost extends Ferramentas
      * Retorna:
      * - Um array contendo informações sobre a lista de desenhos para exibição e mensagens de atualização de prioridade.
      */
-    function lista_corte_cortador()
+    function lista_afazeres()
     {
         // Verifica se a solicitação é uma chamada AJAX
         if ($this->request->isAJAX()) {
             $status = "corte";
+            $processo = service('request')->getPost('processo');
             // Atualiza a prioridade dos desenhos com base em critérios específicos.
             $oi = self::atualiza_prio();
 
@@ -526,6 +533,7 @@ class ListaCortePost extends Ferramentas
             $empreendimento = new \App\Models\Empreendimentos();
             $corte = new \App\Models\Corte();
             $usuario = new \App\Models\Usuarios();
+            $processos = new \App\Models\Processos();
 
             // Obtém dados do banco de dados
             $prioridade_data = $prioridade->find();
@@ -535,6 +543,8 @@ class ListaCortePost extends Ferramentas
             $desenhos_data = $desenhos->find();
             $corte_data = $corte->find();
             $usuario_data = $usuario->find();
+            $processos_data = $processos->find();
+
             $lista = ""; // Inicializa a lista HTML
             $lista1 = ''; // Inicializa outra lista HTML
             $id_temp = 0; // Inicializa um identificador temporário
@@ -547,8 +557,11 @@ class ListaCortePost extends Ferramentas
 
             if (count($corte_data) != 0) {
                 foreach ($desenhos_data as $key => $value) {
+                    if (Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($processos_data, 'id', $value['processos_id']), ["nome"])) == $processo){
+
+                    
                     // Verifica se o desenho está em estado "corte" ou "cortando"
-                    if (Ferramentas::decodificador($value['status']) == "corte" || Ferramentas::decodificador($value['status']) == "cortando") {
+                    if ((Ferramentas::decodificador($value['status']) == "corte" || Ferramentas::decodificador($value['status']) == "cortando")) {
                         $prioridade_desenho = Ferramentas::array_pesquisa($prioridade_data, 'id', $value['prioridade']);
 
                         // Verifica se o desenho não está em processo de corte
@@ -559,6 +572,8 @@ class ListaCortePost extends Ferramentas
           <tr>
         
            <td onclick="prio_modal()" bgcolor="' . Ferramentas::decodificador(Ferramentas::array_index($prioridade_desenho, ['cor'])) . '"><span class="marca_texto">' . Ferramentas::array_index($prioridade_desenho, ['nome']) . '</span></td>
+                  <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($processos_data, 'id', $value['processos_id']), ["nome"])) . '</td>
+
            <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($usuario_data, 'id', $value['desenhista']), ['nome'])) . '</td>
            <td>' . Ferramentas::decodificador(Ferramentas::remove_id_file(Ferramentas::decodificador($value['nome']))) . '</td>
            <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'id', $value['empresa']), ['nome'])) . '</td>
@@ -576,6 +591,8 @@ class ListaCortePost extends Ferramentas
           <tr>
         
            <td onclick="prio_modal()" bgcolor="' . Ferramentas::decodificador(Ferramentas::array_index($prioridade_desenho, ['cor'])) . '"><span class="marca_texto">' . Ferramentas::array_index($prioridade_desenho, ['nome']) . '</span></td>
+                 <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($processos_data, 'id', $value['processos_id']), ["nome"])) . '</td>
+
            <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($usuario_data, 'id', $value['desenhista']), ['nome'])) . '</td>
            <td>' . Ferramentas::decodificador(Ferramentas::remove_id_file(Ferramentas::decodificador($value['nome']))) . '</td>
            <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'id', $value['empresa']), ['nome'])) . '</td>
@@ -607,6 +624,8 @@ class ListaCortePost extends Ferramentas
                             <tr>
                           
                              <td onclick="prio_modal()" bgcolor="' . Ferramentas::decodificador(Ferramentas::array_index($prioridade_desenho, ['cor'])) . '"><span class="marca_texto">' . Ferramentas::array_index($prioridade_desenho, ['nome']) . '</span></td>
+                                    <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($processos_data, 'id', $value['processos_id']), ["nome"])) . '</td>
+
                              <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($usuario_data, 'id', $value['desenhista']), ['nome'])) . '</td>
 
                              <td>' . Ferramentas::decodificador(Ferramentas::remove_id_file(Ferramentas::decodificador($value['nome']))) . '</td>
@@ -633,7 +652,7 @@ class ListaCortePost extends Ferramentas
                         }
                     }
 
-                }
+                }}
 
 
 
@@ -646,6 +665,8 @@ class ListaCortePost extends Ferramentas
 
             } else {
                 foreach ($desenhos_data as $key => $value) {
+                    if (Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($processos_data, 'id', $value['processos_id']), ["nome"])) == $processo){
+                    
                     // Verifica se o desenho está em estado "corte"
                     if (Ferramentas::decodificador($value['status']) == "corte") {
                         $prioridade_desenho = Ferramentas::array_pesquisa($prioridade_data, 'id', $value['prioridade']);
@@ -656,6 +677,8 @@ class ListaCortePost extends Ferramentas
     
        
        <td onclick="prio_modal()" bgcolor="' . Ferramentas::decodificador(Ferramentas::array_index($prioridade_desenho, ['cor'])) . '"><span class="marca_texto">' . Ferramentas::array_index($prioridade_desenho, ['nome']) . '</span></td>
+              <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($processos_data, 'id', $value['processos_id']), ["nome"])) . '</td>
+
        <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($usuario_data, 'id', $value['desenhista']), ['nome'])) . '</td>
 
        <td>' . Ferramentas::decodificador(Ferramentas::decodificador($value['nome'])) . '</td>
@@ -687,6 +710,8 @@ class ListaCortePost extends Ferramentas
       <tr>
     
        <td onclick="prio_modal()" bgcolor="' . Ferramentas::decodificador(Ferramentas::array_index($prioridade_desenho, ['cor'])) . '"><span class="marca_texto">' . Ferramentas::array_index($prioridade_desenho, ['nome']) . '</span></td>
+              <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($processos_data, 'id', $value['processos_id']), ["nome"])) . '</td>
+
        <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($usuario_data, 'id', $value['desenhista']), ['nome'])) . '</td>
 
        <td>' . Ferramentas::decodificador(Ferramentas::decodificador($value['nome'])) . '</td>
@@ -698,7 +723,7 @@ class ListaCortePost extends Ferramentas
          </tr>
       ';
                     }
-                }
+                }}
             }
 
             // Define variáveis de sessão para manter informações entre solicitações AJAX
@@ -719,7 +744,8 @@ class ListaCortePost extends Ferramentas
             $data = [
                 "lista" => $lista1 . $lista,
                 "status" => $status,
-                "som" => $som
+                "som" => $som,
+                '1' =>  $processo
             ];
 
             return $this->response->setJSON($data);
@@ -808,7 +834,7 @@ class ListaCortePost extends Ferramentas
 
       $usuario = new \App\Models\Usuarios();
       $cortado = new \App\Models\Corte();
-     
+      $processos = new \App\Models\Processos();
 
       $prioridade_data = $prioridade->find(); // Recupera dados de prioridades do banco de dados.
       $finalidade_data = $finalidade->find(); // Recupera dados de finalidades do banco de dados.
@@ -817,6 +843,7 @@ class ListaCortePost extends Ferramentas
       $desenhos_data = $desenhos->find(); // Recupera dados de desenhos do banco de dados.
       $usuario_data = $usuario->find();
       $cortado_data = $cortado->find();
+      $processos_data = $processos->find();
 
       $lista = "";
 
@@ -833,6 +860,7 @@ class ListaCortePost extends Ferramentas
 
        
        <td bgcolor="' . Ferramentas::decodificador(Ferramentas::array_index($prioridade_desenho, ['cor'])) . '"><span class="marca_texto">' . Ferramentas::array_index($prioridade_desenho, ['nome']) . '</span></td>
+       <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($processos_data, 'id', $value['processos_id']), ["nome"])) . '</td>
        <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($usuario_data, 'id', $value['desenhista']), ['nome'])) . '</td>
        <td>' . Ferramentas::decodificador(Ferramentas::remove_id_file(Ferramentas::decodificador($value['nome']))) . '</td>
        <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'id', $value['empresa']), ['nome'])) . '</td>

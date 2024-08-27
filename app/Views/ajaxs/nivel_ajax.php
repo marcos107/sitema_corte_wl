@@ -1,5 +1,7 @@
 <script>
 
+lista();
+
     lista_atual = "";
     function lista() {
         var ativos = document.getElementById('checkbox_ativos').checked;
@@ -70,7 +72,7 @@
         });
 
     }
-    lista();
+    
     // setInterval(lista, 5000);
 
     function desativar(id) {
@@ -111,10 +113,12 @@
                 if(id != null){
                     document.getElementById('modal').innerHTML = response.modal;
                     mostrarModal();
+                   
                     lista();
                 }else{
                     document.getElementById('inputs_body').innerHTML = response.conteudo;
                 }
+             
 
             }
         });
@@ -124,6 +128,8 @@
         var checkbox = document.getElementById('checkbox_todos');
         var relatorio = document.getElementById('checkbox_relatorio').checked;
       var select = document.getElementById('permissao_novo');
+      var select_processos = document.getElementById('processos_novo');
+      checkbox_processos = document.getElementById('checkbox_todos_processos').checked;
       var permissao = "";
       if (checkbox.checked) {
         permissao =  "all";
@@ -136,13 +142,28 @@
         }
         permissao = selectedValues.join('-');
       }
+
+
+      var processos = "";
+      if (checkbox_processos) {
+        processos =  "all";
+      } else {
+        var selectedValues = [];
+        for (var i = 0; i < select_processos.options.length; i++) {
+          if (select_processos.options[i].selected) {
+            selectedValues.push(select_processos.options[i].value);
+          }
+        }
+        processos = selectedValues.join('-');
+      }
+
         var nivel = document.getElementById("nivel_novo").value;
         console.log(nivel);
         $.ajax({
             url: '<?= base_url('public/nivel_modificar') ?>',
             type: "POST",
             dataType: "json", // Indicar que o retorno é em formato JSON
-            data: { nivel: nivel ,permissao: permissao,relatorio: relatorio},
+            data: { nivel: nivel ,permissao: permissao,relatorio: relatorio,processos: processos},
             success: function (response) {
                 console.log(response);
                 if (!response.ok) {
@@ -191,6 +212,8 @@
       var checkbox = document.getElementById('checkbox_todos');
       var select = document.getElementById('permissao_novo');
       var relatorio = document.getElementById('checkbox_relatorio').checked;
+      var select_processos = document.getElementById('processos_novo');
+      checkbox_processos = document.getElementById('checkbox_todos_processos').checked;
       var permissao = "";
       if (checkbox.checked) {
         permissao =  "all";
@@ -203,13 +226,28 @@
         }
         permissao = selectedValues.join('-');
       }
+
+      var processos = "";
+      if (checkbox_processos) {
+        processos =  "all";
+      } else {
+        var selectedValues = [];
+        for (var i = 0; i < select_processos.options.length; i++) {
+          if (select_processos.options[i].selected) {
+            selectedValues.push(select_processos.options[i].value);
+          }
+        }
+        processos = selectedValues.join('-');
+      }
+
+      
         var nivel = document.getElementById("nivel_novo").value;
         console.log(nivel);
         $.ajax({
             url: '<?= base_url('public/nivel_cadastrar') ?>',
             type: "POST",
             dataType: "json", // Indicar que o retorno é em formato JSON
-            data: { nivel: nivel ,permissao: permissao,relatorio: relatorio},
+            data: { nivel: nivel ,permissao: permissao,relatorio: relatorio,processos: processos},
             success: function (response) {
                 console.log(response);
                 if (!response.ok) {
@@ -260,4 +298,22 @@
     }
 
     modal_nivel();
+    
+
+    
+
+
+
+    processos = "";
+
+    function selecionar_processos_todos(){
+    var checkbox = document.getElementById('checkbox_todos_processos');
+      var select = document.getElementById('processos_novo');
+
+      if (checkbox.checked) {
+        select.disabled = true;
+      } else {
+        select.disabled = false;
+      }
+    }
 </script>

@@ -1,8 +1,30 @@
 <script>
 
+  // Cria o botão
+  var button = document.createElement("button");
+  button.innerHTML = "Pesquisar";
+  button.type = "button"; // define o tipo como botão
+
+  // Adiciona as classes ao botão
+  button.className = "btn btn-outline-primary";
+  button.id = "pesquisar";
+
+  // Seleciona o campo de data final
+  var dataFinal = document.getElementById("dataInicial");
+
+  // Insere o botão depois do campo de data final
+  dataFinal.insertAdjacentElement("afterend", button);
+
+  // Adiciona estilo adicional ao botão (opcional)
+  button.style.marginLeft = "10px";
+
+  // Adiciona o evento de clique para chamar a função lista()
+  button.addEventListener("click", lista);
 
   lista_temp = "";
   function lista() {
+    document.getElementById("pesquisar").disabled = true;
+
     data = document.getElementById('dataInicial').value;
     data1 = document.getElementById('dataFinal').value;
     $.ajax({
@@ -66,6 +88,8 @@
 
           lista_temp = response.lista;
         }
+        document.getElementById("pesquisar").disabled = false;
+
       }
     });
   }
@@ -79,9 +103,7 @@
 
 
 
-  // Adiciona ouvinte de evento de mudança aos campos de entrada de data
-  dataInicialInput.addEventListener('change', lista);
-  dataFinalInput.addEventListener('change', lista);
+
 
 
 

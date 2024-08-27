@@ -1,4 +1,38 @@
 <script>
+    var tela_add_desenho = document.getElementById("desenhos_add").outerHTML;
+    document.getElementById("desenhos_add").outerHTML = '<div id="processos_select" class="form-group">                  <label>Processos</label>                      <select id="processos_desenho" class="custom-select"><option value="">Processos</option></select>                    </div></br></br>';
+    // Seleciona o botão pelo atributo name
+    var botao = document.querySelector('button[name="cadastarar"]');
+    var tela_add_desenho_botao = botao.textContent;
+    // Altera o texto do botão
+    botao.textContent = "Proximo";
+    // Seleciona o primeiro elemento <h3> com a classe 'card-title'
+    var tituloCard = document.querySelector('.card-title');
+    // Altera o texto do elemento
+    tituloCard.innerHTML = "Escolha para onde o desenho ira.";
+    processo_lista();
+
+
+
+    function inicio_tela() {
+
+        var tela_add_desenho = document.getElementById("desenhos_add").outerHTML;
+        document.getElementById("desenhos_add").outerHTML = '<div id="processos_select" class="form-group">                  <label>Processos</label>                 <select id="processos_desenho" class="custom-select"><option value="">Processos</option></select>                    </div>';
+        // Seleciona o botão pelo atributo name
+        var botao = document.querySelector('button[name="cadastarar"]');
+        var tela_add_desenho_botao = botao.textContent;
+        // Altera o texto do botão
+        botao.textContent = "Proximo";
+        // Seleciona o primeiro elemento <h3> com a classe 'card-title'
+        var tituloCard = document.querySelector('.card-title');
+        // Altera o texto do elemento
+        tituloCard.innerHTML = "Escolha para onde o desenho ira.";
+
+
+        processo_lista();
+    }
+
+
 
     function alert_certo(titulo, bory) {//cria um alerte verde no canto superior direto
         $(document).Toasts('create', {
@@ -23,32 +57,102 @@
     }
 
 
-    lista_temp1 = "";
-    function value_filtro(efeturar = false) {
+    processos_select = "";
+    function processo_lista() {
         $.ajax({
-            url: '<?= base_url('public/lista_filtro') ?>',
+            url: '<?= base_url('public/processos_lista') ?>',
             type: "POST",
-            dataType: "json", // Indicar que o retorno é em formato JSON
+            dataType: "json", // Indicar que o retorno é em formato JSON]
+            async: false, // Define a requisição como síncrona
+
             success: function (response) {
-                if (response.lista != lista_temp1 || efeturar) {
-                    // Obter referência ao elemento select
-                    var desenho = document.getElementById("desenhos_add");
-                    // Armazenar o valor da opção selecionada antes de limpar o select
 
-                    desenho.accept = response.lista;
+                processos_select = response.lista;
 
-                    lista_temp1 = response.lista;
-                }
+
+                if (!document.getElementById('processos_desenho'))
+                    return;
+                // Seleciona todos os elementos <select> com o ID 'processos_desenho'
+                var selectElements = document.querySelectorAll('[id="processos_desenho"]');
+
+                // Itera sobre cada elemento <select> encontrado
+                selectElements.forEach(function (selectElement) {
+                    // Limpa as opções existentes no <select>
+                    selectElement.innerHTML = '';
+
+                    // Cria a opção padrão e adiciona ao início do <select>
+                    var defaultOption = document.createElement('option');
+                    defaultOption.value = '';
+                    defaultOption.textContent = 'Processos';
+                    selectElement.appendChild(defaultOption);
+
+                    // Itera sobre cada processo na lista
+                    processos_select.forEach(function (processo) {
+                        console.log(processo);
+
+                        // Cria um novo elemento <option>
+                        var optionElement = document.createElement('option');
+                        optionElement.value = processo.nome; // Define o nome do processo como o valor da opção
+                        optionElement.textContent = processo.nome; // Define o nome do processo como o texto da opção
+
+                        // Adiciona a nova opção ao <select>
+                        selectElement.appendChild(optionElement);
+                    });
+                });
+
             }
         });
     }
-    // Executar função ao abrir o site
-    document.addEventListener('DOMContentLoaded', value_filtro);
+    // Função para pegar o filtro baseado no nome do processo
+    function getFiltroByNome(nome) {
 
-    // Repetir função a cada segundo 
-    //setInterval(value_filtro, 15000);
+        // Procura pelo processo no array global
+        for (var i = 0; i < processos_select.length; i++) {
+            if (processos_select[i].nome === nome) {
+                var desenhos = document.querySelectorAll('[id="desenhos_add"]');
 
+                // Itera sobre todos os elementos encontrados
+                desenhos.forEach(function (desenho) {
+                    // Armazenar o valor da opção selecionada antes de limpar o select
+                    desenho.accept = processos_select[i].filtro;
+                    // Você pode remover o `return` aqui, pois estamos aplicando a mudança a todos os elementos
+                });
+                return; // Retorna o filtro associado ao nome
+            }
+        }
+
+    }
+    var processo_nome = '';
     function adicionar() {
+
+        if (!document.getElementById('desenhos_add')) {
+
+            if (document.getElementById("processos_desenho").value == '') {
+                alert_personalizado("Processos", 'Escolha um Processos.');
+                return;
+            }
+
+
+            processo_nome = document.getElementById("processos_desenho").value;
+
+
+
+            document.querySelector('.card-title').innerHTML = '<button type="submit" onclick="inicio_tela()" class="btn btn-outline-primary">  ⬅ Voltar </button>&nbsp&nbsp&nbsp  Adicionar Desenho em ' + document.getElementById("processos_desenho").value;
+
+
+            document.querySelector('button[name="cadastarar"]').textContent = tela_add_desenho_botao;
+
+
+
+            document.getElementById("processos_select").outerHTML = '<input type="file" name="file" id="desenhos_add" class="inputfile" accept="" data-multiple-caption="{count} files selected" multiple="">';
+
+
+            getFiltroByNome(processo_nome);
+
+            return;
+        }
+
+
         var fileInput = document.getElementById('desenhos_add');
         var files = fileInput.files;
 
@@ -120,8 +224,8 @@
             url: '<?= site_url('public/desenho_adicionar_modal') ?>',
             type: 'POST',
             dataType: 'json',
-            processData: false,
-            contentType: false,
+
+            data: { nome_processos: processo_nome },
             success: function (response) {
                 desenhos = response.desenhos;
                 lista_array = response;
@@ -1049,7 +1153,7 @@
             url: '<?= base_url('public/desenhos_add') ?>',
             type: "POST",
             dataType: "json", // Indicar que o retorno é em formato JSON
-            data: { desenhos: desenhos_enviar },
+            data: { desenhos: desenhos_enviar, nome_processos: processo_nome },
             success: function (response) {
 
                 ok1 = true;
@@ -1132,7 +1236,7 @@
 
                     // Substitui o elemento de entrada de arquivo original com o novo elemento
                     $('#desenhos_add').replaceWith(newFileInput);
-                    value_filtro(true);
+                    processo_lista();
 
                 }
             }
@@ -1804,7 +1908,6 @@
             }
         });
     }
-
 
 
 

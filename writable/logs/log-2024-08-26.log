@@ -1,0 +1,49 @@
+CRITICAL - 2024-08-26 20:20:16 --> Undefined array key "cor"
+in APPPATH\Controllers\PrioridadePost.php on line 224.
+ 1 APPPATH\Controllers\PrioridadePost.php(224): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cor"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\PrioridadePost.php', 224)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PrioridadePost->prioridade_modal()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PrioridadePost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-26 20:21:15 --> Undefined array key "cor"
+in APPPATH\Controllers\PrioridadePost.php on line 224.
+ 1 APPPATH\Controllers\PrioridadePost.php(224): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cor"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\PrioridadePost.php', 224)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PrioridadePost->prioridade_modal()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PrioridadePost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-26 20:22:00 --> Undefined array key "modal_1"
+in APPPATH\Controllers\ProcessosPost.php on line 274.
+ 1 APPPATH\Controllers\ProcessosPost.php(274): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "modal_1"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\ProcessosPost.php', 274)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProcessosPost->processos_modifica_modal()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProcessosPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-26 20:22:31 --> Undefined array key "filtros_id"
+in APPPATH\Controllers\ProcessosPost.php on line 289.
+ 1 APPPATH\Controllers\ProcessosPost.php(289): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "filtros_id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\ProcessosPost.php', 289)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProcessosPost->processos_modifica_modal()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProcessosPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-26 20:49:55 --> explode(): Argument #2 ($string) must be of type string, array given
+in APPPATH\Controllers\ProcessosPost.php on line 402.
+ 1 APPPATH\Controllers\ProcessosPost.php(402): explode(',', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProcessosPost->processos_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProcessosPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-26 21:13:53 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 401.
+ 1 APPPATH\Controllers\Ferramentas.php(401): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(352): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-26 21:13:53 --> Undefined array key "lista_finalidade"
+in APPPATH\Controllers\SubpastaPost.php on line 404.
+ 1 APPPATH\Controllers\SubpastaPost.php(404): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "lista_finalidade"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\SubpastaPost.php', 404)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\SubpastaPost->desenho_tag_lista()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SubpastaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

@@ -302,6 +302,7 @@ class ExtencaoPost extends Ferramentas
         }
       }
       session_start();
+      $_SESSION["lista_extencao"] = $lista;
       $data = ['lista' => $lista];
       return $this->response->setJSON($data);
     }

@@ -28,6 +28,7 @@ class DesenhosCortadosPost extends Ferramentas
       $empreendimento = new \App\Models\Empreendimentos();
       $usuario = new \App\Models\Usuarios();
       $cortado = new \App\Models\Corte();
+      $processos = new \App\Models\Processos();
       
 
       // Recupera dados das tabelas do banco de dados
@@ -38,6 +39,7 @@ class DesenhosCortadosPost extends Ferramentas
       $desenhos_data = $desenhos->find();
       $usuario_data = $usuario->find();
       $cortado_data = $cortado->find();
+      $processos_data = $processos->find();
       $lista = "";
       $id_temp = 0;
       $lista_ids = array();
@@ -113,7 +115,10 @@ class DesenhosCortadosPost extends Ferramentas
 
        
        <td  bgcolor="' . Ferramentas::decodificador($prioridade_desenho['cor']) . '"><span class="marca_texto">' . Ferramentas::decodificador($prioridade_desenho['nome']) . '</span></td>
+       <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($processos_data, 'id', $value['processos_id']), ["nome"])) . '</td>
+
        <td>' . Ferramentas::array_index(Ferramentas::array_pesquisa($usuario_data, 'id', $value['desenhista']), ['nome']) . '</td>
+
 
        <td>' . Ferramentas::remove_id_file(substr(Ferramentas::decodificador($value['nome']), 19)) . '</td>
        <td>' . Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'id', $value['empresa']), ["nome"]) . '</td>

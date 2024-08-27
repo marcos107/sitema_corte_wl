@@ -7,151 +7,183 @@ use App\Controllers\Ferramentas;
 
 class NivelPost extends Ferramentas
 {
-    //as paginas que possui no sistema e colocar no Login.php tambem
-    private static $array_niveis = array(
-        'Adicionar',
-        'Meus Desenhos',
-        'Lista De Corte',
-        'Lista De Corte ADM',
-        'Subpasta',
-        'Desenhos cortados',
-        'Tipo De Arquivo',
-        'Prioridade',
-        'Fialidade',
-        'Empresa',
-        'Empreendimento',
-        'Nível',
-        'Usuario',
-        'Relátorio',
-        'Lista De Corte Cortador'
-      );
+  //as paginas que possui no sistema e colocar no Login.php tambem
+  private static $array_niveis = array(
+    'Adicionar',
+    'Meus Desenhos',
+    'Lista De Corte',
+    'Lista De Corte ADM',
+    'Subpasta',
+    'Desenhos cortados',
+    'Tipo De Arquivo',
+    'Prioridade',
+    'Fialidade',
+    'Empresa',
+    'Empreendimento',
+    'Nível',
+    'Usuario',
+    'Relátorio',
+    'Lista De Corte Cortador',
+    'Processos'
+  );
 
-    function nivel_lista()
-    {
-      if ($this->request->isAJAX()) {
-        $ativo = service('request')->getPost('ativos');
-        $desativado = service('request')->getPost('desativados');
-  
-  
-        session_start();
-  
-        $id_temp = -1;
-  
-        $db_nivel = new \App\Models\Nivel();
-  
-        $nivel_data = $db_nivel->find();
-  
-        $lista = "";
-        $lista_array = array();
-        foreach ($nivel_data as $key => $value) {
-          if ((Ferramentas::decodificador($value['status']) == "ativo" and $ativo == "true") or (Ferramentas::decodificador($value['status']) == "desativado" and $desativado == "true")) {
-            $id_temp += 1;
-  
-            $lista .= '<tr>
+  function nivel_lista()
+  {
+    if ($this->request->isAJAX()) {
+      $ativo = service('request')->getPost('ativos');
+      $desativado = service('request')->getPost('desativados');
+
+
+      session_start();
+
+      $id_temp = -1;
+
+      $db_nivel = new \App\Models\Nivel();
+
+      $nivel_data = $db_nivel->find();
+
+      $lista = "";
+      $lista_array = array();
+      foreach ($nivel_data as $key => $value) {
+        if ((Ferramentas::decodificador($value['status']) == "ativo" and $ativo == "true") or (Ferramentas::decodificador($value['status']) == "desativado" and $desativado == "true")) {
+          $id_temp += 1;
+
+          $lista .= '<tr>
               <td ondblclick="modal_nivel(' . $id_temp . ')">' . Ferramentas::decodificador($value['nome']) . '</td>
               <td ondblclick="modal_nivel(' . $id_temp . ')">' . str_replace(['_', '-'], [' ', ' - '], Ferramentas::decodificador($value['permissao'])) . '</td>
-              <td ondblclick="modal_nivel(' . $id_temp . ')">' . str_replace(['_', '-'], [' ', ' - '], Ferramentas::decodificador($value['processos'])) . '</td>
+              <td ondblclick="modal_nivel(' . $id_temp . ')">' . str_replace( '-',  ' - ', Ferramentas::decodificador($value['processos'])) . '</td>
               <td ondblclick="modal_nivel(' . $id_temp . ')">' . Ferramentas::decodificador($value['status']) . '</td>
   
               ';
-            if (Ferramentas::decodificador($value['status']) == "ativo") {
-              $lista .= "<td><button name='cadastrarar' type='submit' onclick='desativar(" . $id_temp . ")' class='btn btn-outline-danger btn-lg btn-block'> Desativar </button></td>";
-            } else {
-              $lista .= "<td><button name='cadastrarar' type='submit' onclick='ativar(" . $id_temp . ")' class='btn btn-outline-success btn-lg btn-block'> Ativar </button></td>";
-            }
-  
-            $lista .= "</tr>";
-            $lista_array[$id_temp] = [
-              'processos' => Ferramentas::decodificador($value['processos']),
-              'permissao' => Ferramentas::decodificador($value['permissao']),
-              'nome' => Ferramentas::decodificador($value['nome']),
-              'status' => Ferramentas::decodificador($value['status']),
-              'id' => $value['id']
-            ];
+          if (Ferramentas::decodificador($value['status']) == "ativo") {
+            $lista .= "<td><button name='cadastrarar' type='submit' onclick='desativar(" . $id_temp . ")' class='btn btn-outline-danger btn-lg btn-block'> Desativar </button></td>";
+          } else {
+            $lista .= "<td><button name='cadastrarar' type='submit' onclick='ativar(" . $id_temp . ")' class='btn btn-outline-success btn-lg btn-block'> Ativar </button></td>";
           }
+
+          $lista .= "</tr>";
+          $lista_array[$id_temp] = [
+            'processos' => Ferramentas::decodificador($value['processos']),
+            'permissao' => Ferramentas::decodificador($value['permissao']),
+            'nome' => Ferramentas::decodificador($value['nome']),
+            'status' => Ferramentas::decodificador($value['status']),
+            'id' => $value['id']
+          ];
         }
-        $_SESSION["lista"] = $lista_array;
-  
-        $data = ['lista' => $lista];
-        return $this->response->setJSON($data);
       }
-    }
+      $_SESSION["lista"] = $lista_array;
 
-    function nivel_lista_desativar()
-    {
-      if ($this->request->isAJAX()) {
-        session_start();
-        $id = service('request')->getPost('id');
-        $lista = $_SESSION["lista"];
-  
-  
-        $db = new \App\Models\Nivel();
-  
-        $value['status'] = "desativado";
-  
-        $db->update($lista[$id]['id'], $value);
-  
-        $data = ['lista' => 'true'];
-        return $this->response->setJSON($data);
+      $data = ['lista' => $lista];
+      return $this->response->setJSON($data);
+    }
+  }
+
+  function nivel_lista_desativar()
+  {
+    if ($this->request->isAJAX()) {
+      session_start();
+      $id = service('request')->getPost('id');
+      $lista = $_SESSION["lista"];
+
+
+      $db = new \App\Models\Nivel();
+
+      $value['status'] = "desativado";
+
+      $db->update($lista[$id]['id'], $value);
+
+      $data = ['lista' => 'true'];
+      return $this->response->setJSON($data);
+    }
+  }
+
+  function nivel_lista_ativar()
+  {
+    if ($this->request->isAJAX()) {
+      session_start();
+      $id = service('request')->getPost('id');
+      $lista = $_SESSION["lista"];
+
+
+      $db = new \App\Models\Nivel();
+
+      $value['status'] = "ativo";
+
+      $db->update($lista[$id]['id'], $value);
+
+      $data = ['lista' => 'true'];
+      return $this->response->setJSON($data);
+    }
+  }
+
+  function nivel_modifica_modal()
+  {
+    if ($this->request->isAJAX()) {
+      $id = service('request')->getPost('id');
+      session_start();
+
+      $processos_db = new \App\Models\Processos(); // Obtém a tabela de prioridades do banco
+
+      $processos_data = $processos_db->find();
+
+      $array_prcoessos = array();
+      foreach ($processos_data as $value) {
+        if (Ferramentas::array_index($value, ["status"]) == 'ativo') {
+          $array_prcoessos[] = Ferramentas::decodificador(Ferramentas::array_index($value, ["nome"]));
+        }
       }
-    }
 
-    function nivel_lista_ativar()
-    {
-      if ($this->request->isAJAX()) {
-        session_start();
-        $id = service('request')->getPost('id');
-        $lista = $_SESSION["lista"];
-  
-  
-        $db = new \App\Models\Nivel();
-  
-        $value['status'] = "ativo";
-  
-        $db->update($lista[$id]['id'], $value);
-  
-        $data = ['lista' => 'true'];
-        return $this->response->setJSON($data);
-      }
-    }
 
-    function nivel_modifica_modal()
-    {
-      if ($this->request->isAJAX()) {
-        $id = service('request')->getPost('id');
-        session_start();
-  
-        if($id!=null){
+      if ($id != null) {
         $lista = $_SESSION["lista"][$id];
         $_SESSION["modal_id"] = $lista['id'];
-        }else{
-          $lista["permissao"] = "";
-          $lista["processos"] = "";
-          $lista['nome'] = "";
-        }
-        $option = "";
-  
-        foreach (self::$array_niveis as $item) {
-          if (in_array(str_replace(' ', '_', $item), explode('-', $lista["permissao"]))) {
-            $option .= '<option value="' . str_replace(' ', '_', $item) . '" selected>' . $item . '</option>';
-          } else {
-            $option .= '<option value="' . str_replace(' ', '_', $item) . '">' . $item . '</option>';
-          }
-        }
+      } else {
+        $lista["permissao"] = "";
+        $lista["processos"] = "";
+        $lista['nome'] = "";
+      }
+      $option = "";
 
-        $enable = "";
-        $check = "";
-        if ($lista["permissao"] == "all") {
-          $enable = "disabled";
-          $check = "checked";
+      foreach (self::$array_niveis as $item) {
+        if (in_array(str_replace(' ', '_', $item), explode('-', $lista["permissao"]))) {
+          $option .= '<option value="' . str_replace(' ', '_', $item) . '" selected>' . $item . '</option>';
+        } else {
+          $option .= '<option value="' . str_replace(' ', '_', $item) . '">' . $item . '</option>';
         }
+      }
+      $check_processos = "checked";
+      $enable_processos = "disabled";
+      $option_processos = "";
 
-        $check_relatorio = "";
-        if (in_array("relatorio",explode('-',$lista["processos"]))) {
-          $check_relatorio = "checked";
+      foreach ($array_prcoessos as $key => $item) {
+        if (in_array($item, explode('-', $lista["processos"]))) {
+          $option_processos .= '<option value="' . $item . '" selected>' . $item . '</option>';
+        } else {
+          $option_processos .= '<option value="' . $item . '">' . $item . '</option>';
+          $check_processos = "";
+          $enable_processos = "";
+
         }
-        $conteudo = [
-          0 => '<div class="form-group">
+      }
+
+      if($check_processos == "checked"){
+        $option_processos = str_replace("selected","",$option_processos);
+      }
+
+
+      $enable = "";
+      $check = "";
+      if ($lista["permissao"] == "all") {
+        $enable = "disabled";
+        $check = "checked";
+      }
+
+      $check_relatorio = "";
+      if (in_array("relatorio", explode('-', $lista["processos"]))) {
+        $check_relatorio = "checked";
+      }
+      $conteudo = [
+        0 => '<div class="form-group">
         <label>Nome</label>
         <input type="text" class="form-control" id="nivel_novo" placeholder="Novo Nível" value="' . $lista["nome"] . '">
       </div>
@@ -162,10 +194,15 @@ class NivelPost extends Ferramentas
       <div class="form-group">
         <label>Permissões</label><br/> <input type="checkbox" class="" id="checkbox_todos" onclick="selecionar_todos()" ' . $check . '><label for="scales">&nbsp; Selecionar todos.</label>
         <select multiple="multiple" class="form-control" id="permissao_novo" ' . $enable . '>' . $option . ' </select>
-            </div>'
-        ];
-        
-        $modal = '<div id="modal" class="modal-1" style="display: block;">
+            </div>
+
+            <div class="form-group">
+            <label>Processos</label><br/> <input type="checkbox" class="" id="checkbox_todos_processos" onclick="selecionar_processos_todos()" ' . $check_processos . '><label for="scales">&nbsp; Selecionar todos.</label>
+            <select multiple="multiple" class="form-control" id="processos_novo" ' . $enable_processos . '>' . $option_processos . ' </select>
+                </div>'
+      ];
+
+      $modal = '<div id="modal" class="modal-1" style="display: block;">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -186,127 +223,153 @@ class NivelPost extends Ferramentas
         </div>
       </div>';
 
-        
-        $data = ['modal' => $modal,'conteudo' => $conteudo[0]];
-        return $this->response->setJSON($data);
-      }
-    }
 
-    function nivel_modificar()
-    {
-      if ($this->request->isAJAX()) {
-        $_SESSION['desenho_add_proc'] = isset($_SESSION['desenho_add_proc']) ? $_SESSION['desenho_add_proc'] : FALSE;
-        if ($_SESSION['desenho_add_proc']) {
-          return;
-        } else {
-          $_SESSION['desenho_add_proc'] = TRUE;
+      $data = ['modal' => $modal, 'conteudo' => $conteudo[0], "1" => $array_prcoessos, "2" => $lista["processos"], '3' => explode('-', $lista["processos"]), "4" => $option_processos];
+      return $this->response->setJSON($data);
+    }
+  }
+
+  function nivel_modificar()
+  {
+    if ($this->request->isAJAX()) {
+
+
+      $msg = array();
+      $ok = false;
+      $violacao = array();
+      $nivel = service('request')->getPost('nivel');
+      $permissao = service('request')->getPost('permissao');
+      $relatorio = service('request')->getPost('relatorio');
+      $processos = service('request')->getPost('processos');
+
+      $processos_db = new \App\Models\Processos(); // Obtém a tabela de prioridades do banco
+
+      $processos_data = $processos_db->find();
+
+      if (strlen($nivel) > 30) {
+        $msg['Nível'] = "Nome do nível excedeu o tamanho máximo de 30 caracter";
+        $violacao[] = "nivel_modificar nivel excedeu o tamanho máximo";
+      }
+
+      if (strlen($nivel) < 2) {
+        $msg['Nível'] = "Nome do nível não possui o tamanho mínimo de 2 caracter";
+      } else {
+        if (Ferramentas::codificador($nivel) == '') {
+          $msg['Nível'] = "Nome do nível possui caracteres não permitidos";
+          $violacao[] = "nivelnivel_modificarcadastrar nivel possui caracteres não permitidos";
         }
-  
-        $msg = array();
-        $ok = false;
-        $violacao = array();
-        $nivel = service('request')->getPost('nivel');
-        $permissao = service('request')->getPost('permissao');
-        $relatorio = service('request')->getPost('relatorio');
-  
-        if (strlen($nivel) > 30) {
-          $msg['Nível'] = "Nome do nível excedeu o tamanho máximo de 30 caracter";
-          $violacao[] = "nivel_cadastrar nivel excedeu o tamanho máximo";
-        }
-  
-        if (strlen($nivel) < 2) {
-          $msg['Nível'] = "Nome do nível não possui o tamanho mínimo de 2 caracter";
-        } else {
-          if (Ferramentas::codificador($nivel) == '') {
-            $msg['Nível'] = "Nome do nível possui caracteres não permitidos";
-            $violacao[] = "nivel_cadastrar nivel possui caracteres não permitidos";
+      }
+
+      if (strlen($permissao) < 2) {
+        $msg['Permissao'] = "Nenhuma Permissão escolhida.";
+      } else if ($permissao != "all") {
+
+        // Verificar se todos os valores existem no array global
+        foreach (explode('-', str_replace('_', ' ', $permissao)) as $valor) {
+          if (!in_array($valor, self::$array_niveis)) {
+            $msg['Permissao'] = "Permissão não encontrada.";
+            $violacao[] = "nivel_modificar permissão não encontrada.";
           }
         }
-  
-        if (strlen($permissao) < 2) {
-          $msg['Permissao'] = "Nenhuma Permissão escolhida.";
-        } else if ($permissao != "all") {
-  
+      }
+
+      $array_prcoessos = array();
+      foreach ($processos_data as $value) {
+        if (Ferramentas::array_index($value, ["status"]) == 'ativo') {
+          $array_prcoessos[] = Ferramentas::decodificador(Ferramentas::array_index($value, ["nome"]));
+        }
+      }
+
+      if ($processos != null)
+        if ($processos != "all") {
           // Verificar se todos os valores existem no array global
-          foreach (explode('-', str_replace('_', ' ', $permissao)) as $valor) {
-            if (!in_array($valor, self::$array_niveis)) {
-              $msg['Permissao'] = "Permissão não encontrada.";
-              $violacao[] = "nivel_cadastrar permissão não encontrada.";
+          foreach (explode('-', $processos) as $valor) {
+            if (!in_array($valor, $array_prcoessos)) {
+              $msg["Processos"] = "Processo não encontrada.";
+              $violacao[] = "nivel_cadastrar processo não encontrada.";
             }
           }
+        } else {
+          $processos = implode("-", $array_prcoessos);
         }
-  
-        session_start();
-        if (count($msg) == 0 and count($violacao) == 0) {
-  
-          $db = new \App\Models\Nivel();
-          $processos = array();
-          if($relatorio  == "true"){
-            $processos[] = "relatorio";
-          }
-          
-          $nivel_data = $db->find();
-          $id = $_SESSION["modal_id"];
-          $nome = Ferramentas::array_pesquisa($nivel_data, 'id', $id);
-          if (count(Ferramentas::array_pesquisa_mult($nivel_data, ['nome', 'permissao','processos'], [Ferramentas::codificador($nivel), Ferramentas::codificador($permissao), Ferramentas::codificador(implode('-',$processos))])) == 0) { // verifica se o id do mepreendimento com o mesmo nome é igual ao id 
-  
-            $date = [
-              'nome' => Ferramentas::codificador($nivel),
-              'permissao' => Ferramentas::codificador($permissao),
-              'processos' => Ferramentas::codificador(implode('-',$processos))
-            ];
-            $db->update($id, $date);
-            $ok = true;
-          } else {
-            if ($nome['nome'] != Ferramentas::codificador($nivel)) {
-              $msg["Nível"] = 'Nome do Nível já existente';
-              $violacao[] = "nivel_cadastrar nivel já existente";
-            } else {
-              $msg["Nível"] = 'Nível não houve alteração';
-            }
-  
-          }
-  
-  
-        }
-        if (count($violacao) != 0) {
-  
-          //$violacao = Ferramentas::array_codificar($violacao);
-          $db = new \App\Models\Violacao();
-          foreach ($violacao as $key => $value) {
-  
-            $data = [
-              "individuo" => $_SESSION["usuario"],
-              "causa" => $value,
-              "data" => Ferramentas::codificador(date('d/m/Y H:i'))
-  
-            ];
-  
-            $db->insert($data);
-  
-          }
-        }
-  
-        $data = ['ok' => $ok, 'msg' => $msg];
-        return $this->response->setJSON($data);
-  
-  
-  
-      }
-    }
 
-    function nivel_cadastrar_modal()
-    {
-      if ($this->request->isAJAX()) {
-  
-  
-        $option = "";
-        foreach (self::$array_niveis as $item) {
-          $option .= '<option value="' . str_replace(' ', '_', $item) . '">' . $item . '</option>';
+      session_start();
+      if (count($msg) == 0 and count($violacao) == 0) {
+
+        $db = new \App\Models\Nivel();
+        $processos_salva = array();
+
+        if ($processos != null)
+          $processos_salva = explode('-', $processos);
+
+
+
+        if ($relatorio == "true") {
+          $processos_salva[] = "relatorio";
         }
-  
-        $conteudo = [
-          0 => '<div class="form-group">
+
+        $nivel_data = $db->find();
+        $id = $_SESSION["modal_id"];
+        $nome = Ferramentas::array_pesquisa($nivel_data, 'id', $id);
+        if (count(Ferramentas::array_pesquisa_mult($nivel_data, ['nome', 'permissao', 'processos'], [Ferramentas::codificador($nivel), Ferramentas::codificador($permissao), Ferramentas::codificador(implode('-', $processos_salva))])) == 0) { // verifica se o id do mepreendimento com o mesmo nome é igual ao id 
+
+          $date = [
+            'nome' => Ferramentas::codificador($nivel),
+            'permissao' => Ferramentas::codificador($permissao),
+            'processos' => Ferramentas::codificador(implode('-', $processos_salva))
+          ];
+          $db->update($id, $date);
+          $ok = true;
+        } else {
+          if ($nome['nome'] != Ferramentas::codificador($nivel)) {
+            $msg["Nível"] = 'Nome do Nível já existente';
+            $violacao[] = "nivel_modificar nivel já existente";
+          } else {
+            $msg["Nível"] = 'Nível não houve alteração';
+          }
+
+        }
+
+
+      }
+      if (count($violacao) != 0) {
+
+        //$violacao = Ferramentas::array_codificar($violacao);
+        $db = new \App\Models\Violacao();
+        foreach ($violacao as $key => $value) {
+
+          $data = [
+            "individuo" => $_SESSION["usuario"],
+            "causa" => $value,
+            "data" => Ferramentas::codificador(date('d/m/Y H:i'))
+
+          ];
+
+          $db->insert($data);
+
+        }
+      }
+
+      $data = ['ok' => $ok, 'msg' => $msg];
+      return $this->response->setJSON($data);
+
+
+
+    }
+  }
+
+  function nivel_cadastrar_modal()
+  {
+    if ($this->request->isAJAX()) {
+
+
+      $option = "";
+      foreach (self::$array_niveis as $item) {
+        $option .= '<option value="' . str_replace(' ', '_', $item) . '">' . $item . '</option>';
+      }
+
+      $conteudo = [
+        0 => '<div class="form-group">
         <label>Nome</label>
         <input type="text" class="form-control" id="nivel_novo" placeholder="Novo Nível">
       </div>
@@ -314,131 +377,160 @@ class NivelPost extends Ferramentas
         <label>Permissões</label><br/> <input type="checkbox" class="" id="checkbox_todos" onclick="selecionar_todos()"><label for="scales">&nbsp; Selecionar todos</label>
         <select multiple="multiple" class="form-control" id="permissao_novo">' . $option . ' </select>
             </div>'
-        ];
-  
-        $modal = Ferramentas::modal("Cadastrar Função", $conteudo[0], '', 'cadastrar()');
-        $data = ['modal' => $modal];
-        return $this->response->setJSON($data);
-      }
+      ];
+
+      $modal = Ferramentas::modal("Cadastrar Função", $conteudo[0], '', 'cadastrar()');
+      $data = ['modal' => $modal];
+      return $this->response->setJSON($data);
     }
+  }
 
-    function nivel_cadastrar()
-    {
-      if ($this->request->isAJAX()) {
-        $msg = array();
-        $ok = false;
-        $violacao = array();
-        $nivel = service('request')->getPost('nivel');
-        $permissao = service('request')->getPost('permissao');
-        $relatorio = service('request')->getPost('relatorio');
+  function nivel_cadastrar()
+  {
+    if ($this->request->isAJAX()) {
+      $msg = array();
+      $ok = false;
+      $violacao = array();
+      $nivel = service('request')->getPost('nivel');
+      $permissao = service('request')->getPost('permissao');
+      $relatorio = service('request')->getPost('relatorio');
+      $processos = service('request')->getPost('processos');
 
-  
-        if (strlen($nivel) > 30) {
-          $msg['Nível'] = "Nome do nível excedeu o tamanho máximo de 30 caracter";
-          $violacao[] = "nivel_cadastrar nivel excedeu o tamanho máximo";
-        }
-  
-        if (strlen($nivel) < 2) {
-          $msg['Nível'] = "Nome do nível não possui o tamanho mínimo de 2 caracter";
-        } else {
-          if (Ferramentas::codificador($nivel) == '') {
-            $msg['Nível'] = "Nome do nível possui caracteres não permitidos";
-            $violacao[] = "nivel_cadastrar nivel possui caracteres não permitidos";
-          }
-        }
-  
-        if (strlen($permissao) < 2) {
-          $msg['Permissao'] = "Nenhuma Permissão escolhida.";
-        } else if ($permissao != "all") {
-  
-          // Verificar se todos os valores existem no array global
-          foreach (explode('-', str_replace('_', ' ', $permissao)) as $valor) {
-            if (!in_array($valor, self::$array_niveis)) {
-              $msg['Permissao'] = "Permissão não encontrada.";
-              $violacao[] = "nivel_cadastrar permissão não encontrada.";
-            }
-          }
-        }
-  
-        session_start();
-        if (count($msg) == 0 and count($violacao) == 0) {
-  
-          $db = new \App\Models\Nivel();
-          $processos = array();
-          if($relatorio  == "true"){
-            $processos[] = "relatorio";
-          }
-          
-          $nivel_data = $db->find();
-  
-          if (count(Ferramentas::array_pesquisa($nivel_data, 'nome', Ferramentas::codificador($nivel))) == 0) { // verifica se o id do mepreendimento com o mesmo nome é igual ao id 
-  
-            $date = [
-              'nome' => Ferramentas::codificador($nivel),
-              'permissao' => Ferramentas::codificador($permissao),
-              'processos' => Ferramentas::codificador(implode('-',$processos)),
-              'status' => 'ativo'
-            ];
-            $db->insert($date);
-            $ok = true;
-          } else {
-            $msg["Nível"] = 'Nome do nível já existente';
-            $violacao[] = "nivel_cadastrar nivel já existente";
-          }
-  
-  
-        }
-        if (count($violacao) != 0) {
-  
-          //$violacao = Ferramentas::array_codificar($violacao);
-          $db = new \App\Models\Violacao();
-          foreach ($violacao as $key => $value) {
-  
-            $data = [
-              "individuo" => $_SESSION["usuario"],
-              "causa" => $value,
-              "data" => Ferramentas::codificador(date('d/m/Y H:i'))
-  
-            ];
-  
-            $db->insert($data);
-  
-          }
-        }
-  
-        $data = ['ok' => $ok, 'msg' => $msg];
-        return $this->response->setJSON($data);
-  
-  
-  
+      $processos_db = new \App\Models\Processos(); // Obtém a tabela de prioridades do banco
+
+      $processos_data = $processos_db->find();
+
+
+      if (strlen($nivel) > 30) {
+        $msg['Nível'] = "Nome do nível excedeu o tamanho máximo de 30 caracter";
+        $violacao[] = "nivel_cadastrar nivel excedeu o tamanho máximo";
       }
-    }
 
-    function nivel_option()
-    {
-      if ($this->request->isAJAX()) {
+      if (strlen($nivel) < 2) {
+        $msg['Nível'] = "Nome do nível não possui o tamanho mínimo de 2 caracter";
+      } else {
+        if (Ferramentas::codificador($nivel) == '') {
+          $msg['Nível'] = "Nome do nível possui caracteres não permitidos";
+          $violacao[] = "nivel_cadastrar nivel possui caracteres não permitidos";
+        }
+      }
+
+      if (strlen($permissao) == null) {
+        $msg['Permissao'] = "Nenhuma Permissão escolhida.";
+      } else if ($permissao != "all") {
+
+        // Verificar se todos os valores existem no array global
+        foreach (explode('-', str_replace('_', ' ', $permissao)) as $valor) {
+          if (!in_array($valor, self::$array_niveis)) {
+            $msg['Permissao'] = "Permissão não encontrada.";
+            $violacao[] = "nivel_cadastrar permissão não encontrada.";
+          }
+        }
+      }
+      $array_prcoessos = array();
+      foreach ($processos_data as $value) {
+        if (Ferramentas::array_index($value, ["status"]) == 'true') {
+          $array_prcoessos[] = Ferramentas::decodificador(Ferramentas::array_index($value, ["nome"]));
+        }
+      }
+
+      if ($processos != "all") {
+        // Verificar se todos os valores existem no array global
+        foreach (explode('-', $processos) as $valor) {
+          if (!in_array($valor, $array_prcoessos)) {
+            $msg['Permissao'] = "Processo não encontrada.";
+            $violacao[] = "nivel_cadastrar processo não encontrada.";
+          }
+        }
+      } else {
+        $processos = implode("-", $array_prcoessos);
+      }
+
+
+      session_start();
+      if (count($msg) == 0 and count($violacao) == 0) {
+
         $db = new \App\Models\Nivel();
-        $nivel_data = $db->find();
-        $array = [];
-        $option = "<option value=''>Novo Nível</option>";
-        session_start();
-        foreach ($nivel_data as $key => $value) {
-          if($value["status"] != 'ativo')
-            continue;
+        if ($processos != null)
+          $processos_salva = explode('-', $processos);
+        else
+          $processos_salva = array();
 
-          $array[Ferramentas::decodificador($value["nome"])] = $value["id"];
-  
-          $option .= "<option value='" . Ferramentas::decodificador($value["nome"]) . "'>" . Ferramentas::decodificador($value["nome"]) . "</option>";
+        if ($relatorio == "true") {
+          $processos_salva[] = "relatorio";
         }
-        $_SESSION['nivel_option'] = $array;
-        $data = ['option' => $option];
-        return $this->response->setJSON($data);
-  
+
+
+        $nivel_data = $db->find();
+
+        if (count(Ferramentas::array_pesquisa($nivel_data, 'nome', Ferramentas::codificador($nivel))) == 0) { // verifica se o id do mepreendimento com o mesmo nome é igual ao id 
+
+          $date = [
+            'nome' => Ferramentas::codificador($nivel),
+            'permissao' => Ferramentas::codificador($permissao),
+            'processos' => Ferramentas::codificador(implode('-', $processos_salva)),
+            'status' => 'ativo'
+          ];
+          $db->insert($date);
+          $ok = true;
+        } else {
+          $msg["Nível"] = 'Nome do nível já existente';
+          $violacao[] = "nivel_cadastrar nivel já existente";
+        }
+
+
       }
+      if (count($violacao) != 0) {
+
+        //$violacao = Ferramentas::array_codificar($violacao);
+        $db = new \App\Models\Violacao();
+        foreach ($violacao as $key => $value) {
+
+          $data = [
+            "individuo" => $_SESSION["usuario"],
+            "causa" => $value,
+            "data" => Ferramentas::codificador(date('d/m/Y H:i'))
+
+          ];
+
+          $db->insert($data);
+
+        }
+      }
+
+      $data = ['ok' => $ok, 'msg' => $msg];
+      return $this->response->setJSON($data);
+
+
+
     }
+  }
+
+  function nivel_option()
+  {
+    if ($this->request->isAJAX()) {
+      $db = new \App\Models\Nivel();
+      $nivel_data = $db->find();
+      $array = [];
+      $option = "<option value=''>Novo Nível</option>";
+      session_start();
+      foreach ($nivel_data as $key => $value) {
+        if ($value["status"] != 'ativo')
+          continue;
+
+        $array[Ferramentas::decodificador($value["nome"])] = $value["id"];
+
+        $option .= "<option value='" . Ferramentas::decodificador($value["nome"]) . "'>" . Ferramentas::decodificador($value["nome"]) . "</option>";
+      }
+      $_SESSION['nivel_option'] = $array;
+      $data = ['option' => $option];
+      return $this->response->setJSON($data);
+
+    }
+  }
 
 
-    /**
+  /**
    * Função lista_nivel()
    *
    * Esta função é responsável por buscar informações sobre funções no banco de dados e retorná-las em formato JSON.
@@ -454,9 +546,9 @@ class NivelPost extends Ferramentas
 
     // Cria uma lista de nomes de funções decodificadas
     foreach ($funcao_data as $key => $value) { //cria a lista 
-      if($value["status"] != 'ativo')
-      continue;
-    
+      if ($value["status"] != 'ativo')
+        continue;
+
       $lista[] = Ferramentas::decodificador($value['nome']);
     }
     $data = ['lista' => $lista]; // Prepara os dados para serem retornados em formato JSON

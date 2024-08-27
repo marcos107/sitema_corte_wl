@@ -2,9 +2,29 @@
   var roda_pe = document.getElementById('roda_pe');
   roda_pe.innerHTML = '<div style="position: relative; width: 100%; height: 50px;"><div style="position: absolute; top: 50%;"><button name="cadastarar" type="submit" class="btn btn-outline-primary" onclick="prio_modal_todos()"> Mudar prioridade de varios </button></div><div style="position: absolute; top: 50%; right: 0;"><button name="cadastarar" type="submit" class="btn btn-outline-primary" onclick="apagar_todos()"> Apagar varios</button></div></div>';
 
+  // Cria o botão
+  var button = document.createElement("button");
+  button.innerHTML = "Pesquisar";
+  button.type = "button"; // define o tipo como botão
 
+  // Adiciona as classes ao botão
+  button.className = "btn btn-outline-primary";
+  button.id = "pesquisar";
+
+  // Seleciona o campo de data final
+  var dataFinal = document.getElementById("dataInicial");
+
+  // Insere o botão depois do campo de data final
+  dataFinal.insertAdjacentElement("afterend", button);
+
+  // Adiciona estilo adicional ao botão (opcional)
+  button.style.marginLeft = "10px";
+
+  // Adiciona o evento de clique para chamar a função lista()
+  button.addEventListener("click", lista);
   lista_temp = "";
   function lista() {
+    document.getElementById("pesquisar").disabled = true;
     data = document.getElementById('dataInicial').value;
     data1 = document.getElementById('dataFinal').value;
     $.ajax({
@@ -68,6 +88,8 @@
 
           lista_temp = response.lista;
         }
+        document.getElementById("pesquisar").disabled = false;
+
       }
     });
   }
@@ -80,9 +102,7 @@
 
 
 
-  // Adiciona ouvinte de evento de mudança aos campos de entrada de data
-  dataInicialInput.addEventListener('change', lista);
-  dataFinalInput.addEventListener('change', lista);
+
 
 
 
@@ -1563,23 +1583,23 @@
 
 
   function recolocar_desenho(id) {
-    if(mostrarConfirmacao("Recolocar desenho?")){
-    $.ajax({
-      url: '<?= base_url('public/recolocar_desenho') ?>',
-      type: "POST",
-      dataType: "json", // Indicar que o retorno é em formato JSON
-      //async: true,
-      data: { id: id },
+    if (mostrarConfirmacao("Recolocar desenho?")) {
+      $.ajax({
+        url: '<?= base_url('public/recolocar_desenho') ?>',
+        type: "POST",
+        dataType: "json", // Indicar que o retorno é em formato JSON
+        //async: true,
+        data: { id: id },
 
-      success: function (response) {
-        console.log(response);
-        lista();
+        success: function (response) {
+          console.log(response);
+          lista();
 
 
-      }
-    });
-  }
-   
+        }
+      });
+    }
+
   }
 
 
@@ -1588,8 +1608,8 @@
     var resposta = window.confirm(texto);
     // Verifica a resposta e faz algo com ela
     return resposta;
- 
-}
+
+  }
 
 
 

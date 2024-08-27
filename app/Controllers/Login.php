@@ -74,7 +74,8 @@ class Login extends BaseController
                         'Nível' => 'nivel',
                         'Usuario' => 'user_cadastrar',
                         'Relátorio' => 'relatorios',
-                        'Lista_De_Corte_Cortador' => 'lista_corte_cortador'
+                        'Lista_De_Corte_Cortador' => 'lista_corte_cortador',
+                        'Processos' => 'processos'
                     );
                     
                     // Inicia a sessão.
@@ -100,6 +101,7 @@ class Login extends BaseController
                     // Obtém o nome da função do usuário e define na variável de sessão 'funcao'.
                     $_SESSION['funcao'] = Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($db_data, 'id', $user['nivel']), ['nome']));
                     $_SESSION['permissao'] = explode('-',  Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($db_data, 'id', $user['nivel']), ['permissao'])));
+                    $_SESSION['processos'] = explode('-',  Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($db_data, 'id', $user['nivel']), ['processos'])));
                     // Com base na função do usuário, redireciona para páginas apropriadas.
                     if (in_array('all', $_SESSION['permissao']))
                         echo json_encode(['location' => base_url() . 'public/desenho_adicionar']);

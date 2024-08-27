@@ -52,7 +52,7 @@ class Pagina extends BaseController
 
         // Configuração da página da lista de corte.
         $array_view['titulo'] = "Lista de Corte";
-        $array_view['array_titulo_lista'] = array("Prioridade", "Desenhista", "Nome do arquivo", "Empresa/Cliente", "Empreendimento", "Finalidade", "Subpastas", "status","Inicio Corte", "Data de Envio", "");
+        $array_view['array_titulo_lista'] = array("Prioridade","Processos", "Desenhista", "Nome do arquivo", "Empresa/Cliente", "Empreendimento", "Finalidade", "Subpastas", "status","Inicio Corte", "Data de Envio", "");
         $array_view['menu'] = $this->menu($menu_box, $menu_select);
 
         // Exibe a página da lista de corte.
@@ -155,7 +155,7 @@ class Pagina extends BaseController
 
         // Configuração da página de lista de desenhos do usuário.
         $array_view['titulo'] = "Lista dos Meus Desenhos";
-        $array_view['array_titulo_lista'] = array("Prioridade", "Nome do arquivo", "Empresa/Cliente", "Empreendimento", "Finalidade", "Subpastas", "Status", "Data de Envio", "", "");
+        $array_view['array_titulo_lista'] = array("Prioridade","Processos", "Nome do arquivo", "Empresa/Cliente", "Empreendimento", "Finalidade", "Subpastas", "Status", "Data de Envio", "", "");
         $array_view['menu'] = $this->menu($menu_box, $menu_select);
 
         // Exibe a lista de desenhos do usuário.
@@ -206,7 +206,7 @@ class Pagina extends BaseController
 
         // Configuração da página de lista de desenhos.
         $array_view['titulo'] = "Lista de Todos os desenhos";
-        $array_view['array_titulo_lista'] = array("Prioridade", "Desenhista", "Nome do arquivo", "Empresa/Cliente", "Empreendimento", "Finalidade", "Status","Data de Corte", "Data de Envio", "", "");
+        $array_view['array_titulo_lista'] = array("Prioridade","Processos", "Desenhista", "Nome do arquivo", "Empresa/Cliente", "Empreendimento", "Finalidade", "Status","Data de Corte", "Data de Envio", "", "");
         $array_view['menu'] = $this->menu($menu_box, $menu_select);
 
         // Exibe a lista de desenho.
@@ -700,7 +700,7 @@ class Pagina extends BaseController
      *
      * 
      */
-    function lista_corte_cortador()
+    function lista_afazeres()
     {
         // Verifica se o usuário está logado como 'cortador'
         Login::verifica_permissao('Lista De Corte Cortador');
@@ -727,13 +727,13 @@ class Pagina extends BaseController
             'titulo_cadastro' => '',
             'titulo_lista' => '',
             'functiontype_lista' => '',
-            'ajax' => 'ajaxs/lista_corte_corte_ajax'
+            'ajax' => 'ajaxs/lista_afazeres_ajax'
         ];
-        $menu_select = "lista_corte_cortador";
+        $menu_select = "lista_afazeres";
         $template = "lista";
 
         $array_view['titulo'] = "Lista de Corte";
-        $array_view['array_titulo_lista'] = array("Prioridade", "Desenhista", "Nome do arquivo", "Empresa/Cliente", "Empreendimento", "Finalidade", "Data de Envio", "Cortar", "Confirmar Corte");
+        $array_view['array_titulo_lista'] = array("Prioridade","Processos", "Desenhista", "Nome do arquivo", "Empresa/Cliente", "Empreendimento", "Finalidade", "Data de Envio", "Cortar", "Confirmar Corte");
         $array_view['menu'] = $this->menu('', $menu_select);
 
         // Exibe a visualização usando o modelo especificado
@@ -789,7 +789,7 @@ class Pagina extends BaseController
         $template = "lista";
 
         $array_view['titulo'] = "Lista de Corte";
-        $array_view['array_titulo_lista'] = array("Prioridade", "Desenhista", "Nome do arquivo", "Empresa/Cliente", "Empreendimento", "Finalidade", "status","Inicio Corte", "Data de Envio");
+        $array_view['array_titulo_lista'] = array("Prioridade","Processos", "Desenhista", "Nome do arquivo", "Empresa/Cliente", "Empreendimento", "Finalidade", "status","Inicio Corte", "Data de Envio");
         $array_view['menu'] = $this->menu($menu_box, $menu_select);
 
         // Renderiza a visualização "lista" com os dados do array $array_view
@@ -854,6 +854,63 @@ class Pagina extends BaseController
         echo view($template, $array_view);
     }
 
+
+    function processos()
+    {
+        // Verifica se o usuário está autenticado como administrador.
+        Login::verifica_permissao('Processos');
+        // Inicia a sessão, se ainda não estiver ativa.
+        if (session_status() !== PHP_SESSION_ACTIVE) {
+            session_start();
+        }
+
+
+        // Dados da visualização da lista de desenhos do usuário.
+        $array_view = array(
+            'button_execut_nome' => '',
+            'array_input_id' => '',
+            'array_input_placeholder' => '',
+            'array_input_typ' => '',
+            'array_input_titulo' => '',
+            'titulo' => '',
+            'functionType' => '',
+            'nomeUsuario' => Ferramentas::decodificador($_SESSION['usuario_nome']),
+            'menu' => '',
+            'lista' => '',
+            'selecao_lista' => true,
+            'array_titulo_lista' => '',
+            'functiontype_cadastro' => '',
+            'titulo_cadastro' => '',
+            'titulo_lista' => '',
+            'functiontype_lista' => '',
+            'ajax' => 'ajaxs/processos_ajax.php'
+
+        );
+
+        // Informações do menu.
+        $menu_box = "config_dos_ajustes";
+
+
+        $menu_select = "processos";
+        $template = "lista_cadastro";
+        // Configuração do formulário de criação de tags.
+        $array_view['functionType_lista'] = "Lista de Processos";
+        $array_view['functionType_cadastro'] = "Cadastrar Processos";
+        $array_view['titulo_cadastro'] = "Cadastrar Processos";
+        $array_view['array_input_titulo'] = array("Processos","Pasta","Tipo de Arquivo");
+        $array_view['array_input_typ'] = array("text","text","select");
+        $array_view['array_input_placeholder'] = array("Novo Processos","Nome da Pasta","Tipo de Arquivo");
+        $array_view['array_input_id'] = array("nome_processos_novo","diretorio_novo","extencao_novo");
+        $array_view['button_execut_nome'] = "Adicionar";
+
+        // Configuração da página de lista de desenhos do usuário.
+      
+        $array_view['array_titulo_lista'] = array("Nome", "Diretório", "Tipo de Arquivo","Status", "");
+        $array_view['menu'] = $this->menu($menu_box, $menu_select);
+
+        // Exibe a lista de desenhos do usuário.
+        echo view($template, $array_view);
+    }
 
     /**
      * Gera um menu a partir de uma visão (template).

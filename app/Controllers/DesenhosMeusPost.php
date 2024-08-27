@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\Controllers\Ferramentas;
 use Config\App;
 
-class MeusDesenhosPost extends Ferramentas
+class DesenhosMeusPost extends Ferramentas
 {
   /**
    * Função desenho_meus()
@@ -26,6 +26,7 @@ class MeusDesenhosPost extends Ferramentas
       $finalidade = new \App\Models\Finalidade();
       $empresa = new \App\Models\Empresa();
       $empreendimento = new \App\Models\Empreendimentos();
+      $processos = new \App\Models\Processos();
 
       // Recupera dados das tabelas do banco de dados
       $prioridade_data = $prioridade->find();
@@ -33,6 +34,7 @@ class MeusDesenhosPost extends Ferramentas
       $empresa_data = $empresa->find();
       $empreendimento_data = $empreendimento->find();
       $desenhos_data = $desenhos->find();
+      $processos_data = $processos->find();
 
       $lista = "";
       $id_temp = 0;
@@ -98,6 +100,8 @@ class MeusDesenhosPost extends Ferramentas
 
        
        <td  bgcolor="' . Ferramentas::decodificador($prioridade_desenho['cor']) . '"><span onclick="prio_modal(\'' . $id_temp . '\')" class="marca_texto">' . Ferramentas::decodificador($prioridade_desenho['nome']) . '</span></td>
+       <td onclick="prio_modal(\'' . $id_temp . '\')">' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($processos_data, 'id', $value['processos_id']), ["nome"])) . '</td>
+
        <td onclick="prio_modal(\'' . $id_temp . '\')">' . Ferramentas::decodificador(Ferramentas::remove_id_file(Ferramentas::decodificador($value['nome']))) . '</td>
        <td onclick="prio_modal(\'' . $id_temp . '\')">' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'id', $value['empresa']), ["nome"])) . '</td>
        <td onclick="prio_modal(\'' . $id_temp . '\')">' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($empreendimento_data, 'id', $value['empreendimento']), ["nome"])) . '</td>
@@ -149,6 +153,7 @@ class MeusDesenhosPost extends Ferramentas
 
        
        <td  bgcolor="' . Ferramentas::decodificador($prioridade_desenho['cor']) . '"><span class="marca_texto">' . Ferramentas::decodificador($prioridade_desenho['nome']) . '</span></td>
+       <td onclick="prio_modal(\'' . $id_temp . '\')">' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($processos_data, 'id', $value['processos_id']), ["nome"])) . '</td>
        <td>' . Ferramentas::remove_id_file(substr(Ferramentas::decodificador($value['nome']), 19)) . '</td>
        <td>' . Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'id', $value['empresa']), ["nome"]) . '</td>
        <td>' . Ferramentas::array_index(Ferramentas::array_pesquisa($empreendimento_data, 'id', $value['empreendimento']), ["nome"]) . '</td>
@@ -157,7 +162,7 @@ class MeusDesenhosPost extends Ferramentas
        <td>' . Ferramentas::decodificador($value['status']) . '</td>
        <td>' . Ferramentas::decodificador($value['data_hora_add']) . '</td>
        <td><button name="cadastarar" onclick="recolocar_desenho(\'' . $id_temp . '\')" type="submit" class="btn btn-outline-primary "> adicionar <br> novamente </button></td>
-       <td><button name="cadastarar" onclick="recolocar_desenho(\'' . $id_temp . '\')" type="submit" class="btn btn-outline-primary "> adicionar <br> novamente </button></td>
+       <td></td>
       </tr>
       ';
             // Prepara dados do usuário para armazenamento em arrays
@@ -180,6 +185,7 @@ class MeusDesenhosPost extends Ferramentas
 
        
        <td bgcolor="' . Ferramentas::decodificador($prioridade_desenho['cor']) . '"><span class="marca_texto">' . Ferramentas::decodificador($prioridade_desenho['nome']) . '</span></td>
+       <td onclick="prio_modal(\'' . $id_temp . '\')">' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($processos_data, 'id', $value['processos_id']), ["nome"])) . '</td>
        <td>' . Ferramentas::remove_id_file(Ferramentas::decodificador($value['nome'])) . '</td>
        <td>' . Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'id', $value['empresa']), ["nome"]) . '</td>
        <td>' . Ferramentas::array_index(Ferramentas::array_pesquisa($empreendimento_data, 'id', $value['empreendimento']), ["nome"]) . '</td>
@@ -188,7 +194,7 @@ class MeusDesenhosPost extends Ferramentas
        <td>' . Ferramentas::decodificador($value['status']) . '</td>
        <td>' . Ferramentas::decodificador($value['data_hora_add']) . '</td>
        <td><button name="cadastarar" type="submit" disabled class="btn btn-outline-dark"> Cortando... </button></td>
-       <td><button name="cadastarar" type="submit" disabled class="btn btn-outline-dark"> Cortando... </button></td>
+       <td></td>
       </tr>
       ';
           }

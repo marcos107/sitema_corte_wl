@@ -6,7 +6,7 @@ use App\Controllers\Ferramentas;
 
 use Mpdf\Mpdf;
 
-class ReratorioPost extends Ferramentas
+class RelatorioPost extends Ferramentas
 {
     function timeToSeconds($time)
     {
