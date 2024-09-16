@@ -44,6 +44,7 @@ class DesenhosMeusPost extends Ferramentas
       // Recupera dados da solicitação AJAX
       $dataInicial = service('request')->getPost('data');
       $dataFinal = service('request')->getPost('data1');
+      $processo = service('request')->getPost('processo');
 
       // Converte datas em timestamps para comparação
       $dataInicialTimestamp = strtotime($dataInicial);
@@ -87,20 +88,20 @@ class DesenhosMeusPost extends Ferramentas
             break; // Se encontrou, não precisa continuar verificando
           }
         }
-
+        if (Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($processos_data, 'id', $value['processos_id']), ["nome"])) != $processo)
+          continue;
 
         if ($value['desenhista'] == $_SESSION['usuario'] and $encontrou) { // pega apenas os desenhos do desenhista que esta vendo
           $prioridade_desenho = Ferramentas::array_pesquisa($prioridade_data, 'id', $value['prioridade']);
-          if (Ferramentas::decodificador($value['status']) == 'corte') {
+          if (Ferramentas::decodificador($value['status']) == 'pendente') {
             //<button name="cadastarar" type="submit" onclick="subistituir_desenho_modal(\''. $id_temp .'\')" class="btn btn-outline-primary"Renomear/Substituir/button>
 
-            // Cria a linha da tabela para desenhos com status 'corte'
+            // Cria a linha da tabela para desenhos com status 'pendente'
             $lista .= '
       <tr>
 
        
        <td  bgcolor="' . Ferramentas::decodificador($prioridade_desenho['cor']) . '"><span onclick="prio_modal(\'' . $id_temp . '\')" class="marca_texto">' . Ferramentas::decodificador($prioridade_desenho['nome']) . '</span></td>
-       <td onclick="prio_modal(\'' . $id_temp . '\')">' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($processos_data, 'id', $value['processos_id']), ["nome"])) . '</td>
 
        <td onclick="prio_modal(\'' . $id_temp . '\')">' . Ferramentas::decodificador(Ferramentas::remove_id_file(Ferramentas::decodificador($value['nome']))) . '</td>
        <td onclick="prio_modal(\'' . $id_temp . '\')">' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'id', $value['empresa']), ["nome"])) . '</td>
@@ -126,7 +127,7 @@ class DesenhosMeusPost extends Ferramentas
             $value['id'] = $id_temp;
             $lista_completa[$id_temp] = $value;
             $id_temp++;
-          } else if (Ferramentas::decodificador($value['status']) == 'cortado') {
+          } else if (Ferramentas::decodificador($value['status']) == 'pronto') {
             $caminho = $value['caminho'];
             $ultima_barra_invertida = strrpos($caminho, 'i061n');
       
@@ -147,13 +148,12 @@ class DesenhosMeusPost extends Ferramentas
 
             }
             //<button name="cadastarar" type="submit" class="btn btn-outline-primary "> adicionar <br> novamente </button>
-            // Cria a linha da tabela para desenhos com status 'cortado'
+            // Cria a linha da tabela para desenhos com status 'pronto'
             $lista .= '
       <tr>
 
        
        <td  bgcolor="' . Ferramentas::decodificador($prioridade_desenho['cor']) . '"><span class="marca_texto">' . Ferramentas::decodificador($prioridade_desenho['nome']) . '</span></td>
-       <td onclick="prio_modal(\'' . $id_temp . '\')">' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($processos_data, 'id', $value['processos_id']), ["nome"])) . '</td>
        <td>' . Ferramentas::remove_id_file(substr(Ferramentas::decodificador($value['nome']), 19)) . '</td>
        <td>' . Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'id', $value['empresa']), ["nome"]) . '</td>
        <td>' . Ferramentas::array_index(Ferramentas::array_pesquisa($empreendimento_data, 'id', $value['empreendimento']), ["nome"]) . '</td>
@@ -185,7 +185,6 @@ class DesenhosMeusPost extends Ferramentas
 
        
        <td bgcolor="' . Ferramentas::decodificador($prioridade_desenho['cor']) . '"><span class="marca_texto">' . Ferramentas::decodificador($prioridade_desenho['nome']) . '</span></td>
-       <td onclick="prio_modal(\'' . $id_temp . '\')">' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($processos_data, 'id', $value['processos_id']), ["nome"])) . '</td>
        <td>' . Ferramentas::remove_id_file(Ferramentas::decodificador($value['nome'])) . '</td>
        <td>' . Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'id', $value['empresa']), ["nome"]) . '</td>
        <td>' . Ferramentas::array_index(Ferramentas::array_pesquisa($empreendimento_data, 'id', $value['empreendimento']), ["nome"]) . '</td>
@@ -222,9 +221,9 @@ class DesenhosMeusPost extends Ferramentas
   /**
    * Função desenho_meus_modal()
    *
-   * Esta função é chamada por meio de uma solicitação AJAX e é responsável por retornar informações detalhadas sobre um desenho específico a ser exibido em um modal ou em outro contexto na interface do usuário.
+   * Esta função é chamada por meio de uma solicitação AJAX e é responsável por retornar informações detalhadas sobre um ou todos desenhos a ser exibido em um modal ou em outro contexto na interface do usuário.
    *
-   * Retorna um JSON contendo a lista completa de usuários e informações detalhadas sobre um desenho específico com base no ID fornecido.
+   * Retorna um JSON contendo a lista completa de usuários e informações detalhadas sobre um ou todos desenhos com base no ID fornecido.
    */
   function desenho_meus_modal()
   {
@@ -234,20 +233,15 @@ class DesenhosMeusPost extends Ferramentas
 
       // Obtém o ID do desenho a ser exibido no modal
       $id = service('request')->getPost('id');
+
+      //verfica se a solicitação esta pedindo um id expecifico ou a lista inteira 
       if ($id != "") {
-
-
-
-
         $data = [
           "lista" => [Ferramentas::array_pesquisa($_SESSION["lista_completa"], 'id', $id)]
-
         ];
       } else {
         $data = [
           "lista" => $_SESSION["lista_completa"]
-
-
         ];
       }
 
@@ -271,48 +265,46 @@ class DesenhosMeusPost extends Ferramentas
 
 
       $ok = '';
-
       $message = '';
+
+      //pega o id do desenho que sera modificado
       $id_temp = $_SESSION["id_subistituir"];
       $lista = $_SESSION["lista_completa"][$id_temp];
 
+      // Salva o caminho antigo do arquivo caso ele não tenha um nome junto com o caminho adiciona o nome. 
       if(Ferramentas::get_type_file(Ferramentas::decodificador($lista['caminho'])) == ""){
-      $caminho_antigo = Ferramentas::decodificador($lista['caminho'].$lista["nome"]);
+      $caminho_antigo = Ferramentas::decodificador($lista['caminho'].$lista["nome"]); 
       }else{
         $caminho_antigo = Ferramentas::decodificador($lista['caminho']);
       }
       
+      //tratamento para evitar barras duplas
       $caminho_antigo = str_replace('//', '/', $caminho_antigo);
       
-
+      //verifica se o arquivo existe
       if (file_exists($caminho_antigo)) { //para mudar o nome do arquivo
+        //busca o arquivo mando pela solicitação ajax
         $file = $this->request->getFile('file');
         $nome_novo = $_SESSION["novo_nome_arquivo"];
 
-
-
-        // return $this->response->setJSON(['ok' => '2', 'mensagem' => $nome_novo]);
-
-
-
-
+        //pega o id verdadeiro do desenho
         $id = $_SESSION["lista"][$id_temp];
 
-
+        //colcoa paenas o nome retirando a exteção do arquivo na varivael nome_antigo
         $nome = Ferramentas::decodificador($lista['nome']);
         $nome_antigo = Ferramentas::remove_id_file(str_replace('.' . Ferramentas::get_type_file($nome), '', $nome));
 
-        //return $this->response->setJSON(['ok' => 'teste', 'mensagem' => '1']);
-
-        // $caminho = str_replace($nome,'',$caminho);
-
+        //retira o nome do arquivo do caminho
         $caminho = str_replace($nome, '', $caminho_antigo);
+
+        // Variável que armazenará o novo nome do desenho. 
+        // Caso não haja alteração, ela será predefinida com o nome atual do desenho.
         $novo_nome = $nome;
 
 
 
 
-
+        //caso tenha trocado o nome ira criar um nome do arquivo onde exita apenas aquele na pasta
         if (Ferramentas::codificador($nome_novo) != Ferramentas::codificador($nome_antigo)) {
           do {
             $random = rand(10000, 99999);
@@ -321,22 +313,28 @@ class DesenhosMeusPost extends Ferramentas
           } while (file_exists($caminho));
         }
 
-
+        //verifica se é para trocar o arquivo ou apenas renomear
         if ($file != null) {
 
+          //verifica a integridade do arquivo
           if ($file->isValid() && !$file->hasMoved()) {
 
-            unlink($caminho_antigo);
 
+            
+            //move o novo arquivo para o diretorio do antigo retirando ele do local temporario
             if ($file->move(str_replace($nome, '', $caminho_antigo), $novo_nome)) {
+              //apaga o arqivo antigo
+              unlink($caminho_antigo);
 
 
+              //atualiza a teabela desenhos no banco 
               $db = new \App\Models\Desenhos();
               $db->update($id, [
                 'caminho' => Ferramentas::codificador($caminho),
                 'nome' => Ferramentas::codificador($novo_nome)
               ]);
 
+              //salva no historio que fez a modificação no banco
               $db = new \App\Models\Historico_desenhos();
               $db->insert([
                 'id_desenhos' => $id,
@@ -362,15 +360,20 @@ class DesenhosMeusPost extends Ferramentas
 
 
         } else {
+          //verifica se o nome foi modificado
           if (Ferramentas::codificador($nome_novo) != Ferramentas::codificador($nome_antigo)) {
-
+             //renomeia o arquivo 
             if (rename($caminho_antigo, $caminho)) {
+
+              //atualiza a teabela desenhos no banco 
               $db = new \App\Models\Desenhos();
               $db->update($id, [
                 'caminho' => Ferramentas::codificador($caminho),
                 'nome' => Ferramentas::codificador($novo_nome)
               ]);
 
+
+              //salva no historio que fez a modificação no banco
               $db = new \App\Models\Historico_desenhos();
               $db->insert([
                 'id_desenhos' => $id,
@@ -380,6 +383,7 @@ class DesenhosMeusPost extends Ferramentas
                 'status' => 'renomeado'
 
               ]);
+
               $ok = 'true';
               $message = 'Arquivo renomeado com sucesso.';
             } else {
@@ -396,61 +400,7 @@ class DesenhosMeusPost extends Ferramentas
       }
 
       return $this->response->setJSON(['ok' => $ok, 'mensagem' => $message]);
-
-
-      // if ($file->isValid() && !$file->hasMoved()) {
-      //   if ($nome_novo != $nome_antigo) {
-
-      //     do {
-      //       $random = rand(10000, 99999);
-
-      //     } while (is_dir($caminho . $nome_novo . '_' . $random . '_' . Ferramentas::get_type_file($nome)));
-
-      //     if ($file->move($caminho, $nome_novo . '_' . $random . '_' . Ferramentas::get_type_file($nome))) {
-      //       $ok = 'true';
-      //       $message = 'Arquivo enviado com sucesso.';
-      //     }
-
-
-      //   } else {
-
-
-
-
-
-      //     if ($file->move($caminho, $nome)) {
-      //       $ok = 'true';
-      //       $message = 'Arquivo enviado com sucesso.';
-      //     }
-      //   }
-
-
-
-      // } else {
-      //   $ok = 'false';
-      // }
-
-
-
-
-
-      //       if (!rename(Ferramentas::decodificador($lista['caminho']), $caminho.$nome)) {
-      //       $data = [
-      //           'id_desenho' => $id,
-      //           'individuo' => $_SESSION['usuario'],
-      //           'data_add' => Ferramentas::codificador(date('d/m/Y H:i:s')),
-      //           'caminho' => Ferramentas::codificador($caminho),
-      //           'nome_desenho' => Ferramentas::codificador($nome)
-      //       ]; 
-      //       $db = new \App\Models\Lixo_desenhos();
-      //       $db->insert($data);
-      //       $db = new \App\Models\Desenhos();
-      //       $db->update($id,['status' => 'apagado']);
-      //       return $this->response->setJSON(['ok' => 'true']);
-      //   }
-      // return $this->response->setJSON(['ok' => 'true']);
-      // return $this->response->setJSON(['ok' => $ok,'message'=>$message,'nome_novo'=>$nome_novo,'caminho'=>$caminho,'nome_antigo'=>$nome_antigo]);
-    }
+   }
 
   }
 

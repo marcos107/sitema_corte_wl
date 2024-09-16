@@ -1,16 +1,18 @@
 <?php
+
 namespace App\Controllers;
 
 class Ferramentas extends BaseController
 {
 
-    /*
-
-
-
-
-
-
+    /**
+     * Normaliza uma string substituindo caracteres especiais, removendo símbolos não alfanuméricos,
+     * convertendo para maiúsculas e substituindo espaços por underscores.
+     *
+     * @param string $str A string a ser normalizada.
+     * @param array $trocar Um array de caracteres a serem substituídos na string original.
+     * @param array $por Um array de caracteres pelos quais os valores de $trocar serão substituídos.
+     * @return string A string normalizada com caracteres especiais removidos e espaços substituídos por underscores.
      */
     public static function norma_lizar_str($str, $trocar = [":", "_", ",", "."], $por = [" ", " ", " ", " "])
     {
@@ -28,7 +30,42 @@ class Ferramentas extends BaseController
     }
 
 
-
+    /**
+     * Gera um modal HTML dinâmico com base nos parâmetros fornecidos.
+     * 
+     * @param string $titulo O título a ser exibido no cabeçalho do modal.
+     * @param string $conteudo O conteúdo HTML a ser exibido no corpo do modal.
+     * @param string $modal_tamanho (Opcional) O tamanho da janela modal, baseado em classes CSS (ex: 'modal-lg' para um modal grande).
+     * @param string $funcao_acionar (Opcional) A função JavaScript a ser chamada quando o botão de confirmação for clicado. O padrão é "confirmarModal()".
+     * @param string $botao_confirmar (Opcional) O texto a ser exibido no botão de confirmação. O padrão é "Confirmar".
+     * @param string $botao_cancelar (Opcional) O texto a ser exibido no botão de cancelamento. O padrão é "Cancelar".
+     * 
+     * @return string Retorna o HTML do modal pronto para ser renderizado.
+     */
+    function modal($titulo, $contetudo, $modal_tamanho = "", $funcao_acionar = "confirmarModal()", $botao_confirmar = "Confirmar", $botao_cancelar = "Cancelar")
+    {
+        $modal = '<div id="modal" class="modal-1" style="display: block;">
+         <div class="modal-dialog ' . $modal_tamanho . '" role="document">
+           <div class="modal-content">
+             <div class="modal-header">
+               <h5 class="modal-title" id="modal_titulo">' . $titulo . '</h5>
+               <button type="button" class="close" onclick="fecharModal()">
+                 <span aria-hidden="true">×</span>
+               </button>
+             </div>
+             <div class="modal-body" id="modal_bory"><div class="form-group">
+         ' . $contetudo . '
+     
+     
+             <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" id="botao_fechar_modal" onclick="fecharModal()">' . $botao_cancelar . '</button>
+               <button type="button" class="btn btn-primary" id="botao_confirmar_modal" onclick="' . $funcao_acionar . '">' . $botao_confirmar . '</button>
+             </div></div></div>
+           </div>
+         </div>
+       </div>';
+        return $modal;
+    }
 
 
     /**
@@ -55,9 +92,6 @@ class Ferramentas extends BaseController
             }
         }
         return [];
-
-
-
     }
     /**
      * Remove o ID do nome do arquivo, se presente.
@@ -167,23 +201,15 @@ class Ferramentas extends BaseController
 
                             break;
                         }
-
-
-
-
                     }
                     if ($i == count($pesquisa)) {
 
                         return $value;
                     }
-
                 }
             }
         }
         return [];
-
-
-
     }
     /**
      * Obtém um valor de um array multidimensional com base em um índice fornecido.
@@ -210,8 +236,6 @@ class Ferramentas extends BaseController
 
 
         return $array;
-
-
     }
 
     /**
@@ -532,7 +556,6 @@ class Ferramentas extends BaseController
                 $codigos[] = "i{$numero}n";
             else
                 $codigos[] = "i999n";
-
         }
 
         // Substitui os códigos pelos caracteres especiais na string.
@@ -639,16 +662,12 @@ class Ferramentas extends BaseController
             if ($type) {
                 return $reductionText;
             }
-
-
-
         } else {
             // Caso não haja ponto na string, pode retornar uma mensagem de erro ou o próprio str.
             if ($type) {
                 return $str;
             }
             return str_replace('.' . self::get_type_file($str), '', $str);
-
         }
         return $str;
     }
@@ -733,5 +752,94 @@ class Ferramentas extends BaseController
             }
         }
         return $array;
+    }
+
+    /**
+     * Função troca_status()
+     *
+     * Esta função é responsável por alterar o status de um objeto no banco de dados para "ativo" ou "desativado".
+     *
+     * @param string $table O nome da tabela do banco de dados onde a alteração deve ser realizada.
+     * @param string $status O novo status a ser definido ("ativo" ou "desativado").
+     *
+     * Retorna um JSON indicando se a operação foi bem-sucedida ou não.
+     */
+    function troca_status($table = null, $status = NULL)
+    {
+        if ($status == "desativado" || $status == "ativo") { // Verifica se a variável status está correta
+            if ($this->request->isAJAX()) {
+                session_start();
+                $id = service('request')->getPost('id'); // Obtém o ID falso fornecido via AJAX
+                $lista = $_SESSION["lista"]; // Obtém a lista de IDs
+
+                if (Ferramentas::array_index($lista, [$id]) != "") { // Verifica se o ID existe na lista
+                    $item = '';
+                    switch ($table) { // Determina qual tabela do banco de dados deve ser atualizada
+                        case 'user':
+                            $db = new \App\Models\Usuarios();
+                            $item = "user";
+                            break;
+                        case 'empreendimentos':
+                            $db = new \App\Models\Empreendimentos();
+                            $item = "empreendimentos";
+                            break;
+                        case 'empresa':
+                            $db = new \App\Models\Empresa();
+                            $item = "empresa";
+                            break;
+                        case 'finalidade':
+                            $db = new \App\Models\Finalidade();
+                            $item = "finalidade";
+                            break;
+                        case 'prioridade':
+                            $db = new \App\Models\Prioridade();
+                            $item = "prioridade";
+                            break;
+                        case 'filtros':
+                            $db = new \App\Models\Filtros();
+                            $item = "filtros";
+                            break;
+                        case 'tag':
+                            $db = new \App\Models\Tag();
+                            $item = "tag";
+                            break;
+                        default:
+                            $data = [
+                                //caso não exista retorna que deu errado
+                                "ok" => false,
+                            ];
+                            return $this->response->setJSON($data);
+                            break;
+                    }
+                    $alteracao = new \App\Models\Alteracoes();
+
+                    // Registra a alteração no histórico de alterações
+                    $data = [
+                        "individuo" => $_SESSION["usuario"],
+                        "id_item" => Ferramentas::array_index($lista, [$id]),
+                        "antes" => Ferramentas::array_index(Ferramentas::array_pesquisa($db->find(), 'id', Ferramentas::array_index($lista, [$id])), ['status']),
+                        "depois" => $status,
+                        "item" => $item,
+                        "info_mais" => "status",
+                        "data_add" => Ferramentas::codificador(date('d/m/Y H:i'))
+
+                    ];
+                    $alteracao->insert($data);
+
+                    // Atualiza o status no banco de dados
+                    $db->update(Ferramentas::array_index($lista, [$id]), ['status' => $status]); //faz o update no banco e troca o id falso pelo verdadeiro
+                    $data = [
+                        //retorna que deu certo para o ajax
+                        "ok" => true,
+                    ];
+                } else {
+                    $data = [
+                        //se o não ouver nada na lista retorna que deu errado
+                        "ok" => false,
+                    ];
+                }
+                return $this->response->setJSON($data);
+            }
+        }
     }
 }

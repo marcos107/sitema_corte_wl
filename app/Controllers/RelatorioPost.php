@@ -8,12 +8,25 @@ use Mpdf\Mpdf;
 
 class RelatorioPost extends Ferramentas
 {
+
+    /**
+   * Converte um tempo no formato 'HH:MM:SS' para o equivalente em segundos.
+   *
+   * @param string $time O tempo no formato 'HH:MM:SS' a ser convertido.
+   * @return int O total de segundos correspondentes ao tempo fornecido.
+   */
     function timeToSeconds($time)
     {
       list($hours, $minutes, $seconds) = explode(':', $time);
       return $hours * 3600 + $minutes * 60 + $seconds;
     }
   
+    /**
+   * Converte um valor em segundos para o formato de tempo 'HH:MM:SS'.
+   *
+   * @param int $seconds O total de segundos a ser convertido.
+   * @return string O tempo formatado como 'HH:MM:SS'.
+   */
     function secondsToTime($seconds)
     {
       $hours = floor($seconds / 3600);
@@ -22,6 +35,16 @@ class RelatorioPost extends Ferramentas
       return sprintf('%02d:%02d:%02d', $hours, $minutes, $seconds);
     }
   
+
+
+
+      /**
+     * Gera um relatório de desenhos e cortes, com base em dados enviados via AJAX, e retorna um PDF com o conteúdo do relatório.
+     * 
+     * A função realiza diversas verificações sobre as datas, participantes, e status dos desenhos e cortes.
+     * Os dados são coletados de várias tabelas do banco de dados e processados para criar o relatório, que é gerado em formato PDF.
+     * 
+     */
     function relatorio()
     {
       if ($this->request->isAJAX()) {
@@ -32,6 +55,7 @@ class RelatorioPost extends Ferramentas
         $dataInicial_str = service('request')->getPost('dataInicial');
         $relatorio = service('request')->getPost('relatorio');
         $selectedValues = service('request')->getPost('selectedValues');
+        $processo = service('request')->getPost('processo');
         $msg = array();
   
         if ($dataFinal_str == "") {
@@ -59,7 +83,7 @@ class RelatorioPost extends Ferramentas
           $msg["Data Inicial"] = "A data final não pode ser anterior à data inicial.";
         }
   
-  
+        //se possuir algum erro ele retorna e finaliça a função
         if ($msg != []) {
           $data = [
             'ok' => false,
@@ -85,6 +109,8 @@ class RelatorioPost extends Ferramentas
         $empreendimento = new \App\Models\Empreendimentos();
         $usuario = new \App\Models\Usuarios();
         $cortado = new \App\Models\Corte();
+        $processos = new \App\Models\Processos();
+        
         // Recupera dados das tabelas do banco de dados
         $prioridade_data = $prioridade->find();
         $finalidade_data = $finalidade->find();
@@ -93,16 +119,19 @@ class RelatorioPost extends Ferramentas
         $desenhos_data = $desenhos->find();
         $usuario_data = $usuario->find();
         $cortado_data = $cortado->find();
+        $processos_data = $processos->find();
   
         $corte = array();
         $desenhista = array();
-        $teste = 0;
-        $data123 = "";
+
         // Itera sobre os dados de desenhos para criar a lista
         foreach ($desenhos_data as $key => $value) {
           $ok_desenhista = false;
           $ok_cortador = false;
-
+          if (Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($processos_data, 'id', $value['processos_id']), ["nome"])) != $processo)
+            continue;
+          
+          //vrifica se algum participante do relatorio esta nesse desenho
           foreach ($selectedValues as $value1) {
             foreach ($value1 as $value2) {
               if ($_SESSION["lista_usuarios"][$value2]['id'] == $value['desenhista']) {
@@ -116,15 +145,15 @@ class RelatorioPost extends Ferramentas
           }
 
   
+          //caso nenhum participante participou desse desenho passa para o proximo
           if (!$ok_cortador and !$ok_desenhista)
             continue;
   
-          // $teste++;
+
           // Converter a data específica para timestamp
           $dataEspecifica_desenho_add = strtotime(str_replace('/', '-',explode(" ", Ferramentas::decodificador(Ferramentas::decodificador($value['data_hora_add'])))[0]));
           $dataEspecifica_corte = strtotime(str_replace('/', '-',explode(" ", Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($cortado_data, 'id_desenho', $value['id']), ['data_fim'])))[0]));
   
-          $data123 =  Ferramentas::decodificador(Ferramentas::decodificador($value['data_hora_add']));
   
           $tags = explode('/', Ferramentas::decodificador($value['caminho']));
           // Remover os índices de 0 a 5
@@ -135,9 +164,10 @@ class RelatorioPost extends Ferramentas
           $tags = implode(" - ", $tags);
           $data_hora_corte_fim = strtotime(str_replace('/', '-', Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($cortado_data, 'id_desenho', $value['id']), ['data_fim']))));
   
+          //verifica se o desenho esta no período selecionado 
           if (
             (
-              (Ferramentas::decodificador($value['status']) == "cortado" or Ferramentas::decodificador($value['status']) == "cortado_notfile") &&
+              (Ferramentas::decodificador($value['status']) == "pronto" or Ferramentas::decodificador($value['status']) == "cortado_notfile") &&
               (($dataEspecifica_corte >= $dataInicial && $dataEspecifica_corte <= $dataFinal) or
                 ($dataEspecifica_corte == null && ($dataEspecifica_desenho_add >= $dataInicial && $dataEspecifica_desenho_add <= $dataFinal)))
             )
@@ -146,9 +176,7 @@ class RelatorioPost extends Ferramentas
             $data_hora_corte_fim = Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($cortado_data, 'id_desenho', $value['id']), ['data_fim']));
             $data_hora_corte_ini = Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($cortado_data, 'id_desenho', $value['id']), ['data_add']));
   
-            // if (strlen($data_hora_corte_fim) < 5) {
-            //   continue;
-            // }
+
             // Convertendo as datas para timestamps Unix
   
   
@@ -169,6 +197,7 @@ class RelatorioPost extends Ferramentas
               $diferencaHoras = "00:00:00";
             }
   
+            // Armazena no array de corte o cortador correspondente a este desenho, incluindo suas respectivas informações.
             $corte[Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($usuario_data, 'id', $value['cortador']), ['nome']))][] =
               [
                 "desenhista" => Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($usuario_data, 'id', $value['desenhista']), ['nome'])),
@@ -187,7 +216,7 @@ class RelatorioPost extends Ferramentas
               ];
           } else {
             if ($value['status'] != 'apagado') {
-              $value['status'] = 'corte';
+              $value['status'] = 'pendente';
             }
           }
   
@@ -196,7 +225,7 @@ class RelatorioPost extends Ferramentas
   
   
   
-  
+          // Caso o participante seja o criador do desenho, armazena no array as informações do criador e o arquivo associado.
           if (($dataEspecifica_desenho_add >= $dataInicial && $dataEspecifica_desenho_add <= $dataFinal)) {
   
   
@@ -230,6 +259,7 @@ class RelatorioPost extends Ferramentas
         }, 0);
   
   
+        //faz a montagem dos usuarios que adicionaram algul arquivo
         foreach ($desenhista as $key => $value1) {
   
           $apagados = 0;
@@ -272,7 +302,7 @@ class RelatorioPost extends Ferramentas
               <th> ' . $value["empreendimento"] . ' </th>
               <th> ' . $value["finalidade"] . ' </th>
               <th> ' . $value["data_hora_add"] . ' </th>
-              <th> ' . str_replace(["cortado_notfile", "corte"], ["cortado", "pendente"], $value["status"]) . ' </th>
+              <th> ' . str_replace(["cortado_notfile", "pendente"], ["cortado", "pendente"], $value["status"]) . ' </th>
             </tr>
             ';
   
@@ -305,7 +335,7 @@ class RelatorioPost extends Ferramentas
   
   
   
-  
+        //faz a montagem dos usuarios que cortaram algul arquivo
         foreach ($corte as $key => $value1) {
   
           $N1++;
@@ -359,7 +389,7 @@ class RelatorioPost extends Ferramentas
               <th> ' . $value["data_hora_add"] . ' </th>
               <th> ' . $value["data_hora_corte"] . ' </th>
               <th> ' . $value["tempo_corte"] . ' </th>
-              <th> ' . str_replace(["cortado_notfile", "corte"], ["cortado", "pendente"], $value["status"]) . ' </th>
+              <th> ' . str_replace(["cortado_notfile", "pendente"], ["pronto", "pendente"], $value["status"]) . ' </th>
             </tr>
             
             ';
@@ -376,7 +406,7 @@ class RelatorioPost extends Ferramentas
         $qtd_corte = $N;
   
   
-  
+        //junta tudo numa estrura html
         $pdf = ' 
         <h1>WL Maquetaria</h1><br/>
                   <table style="width: 100%;  border: 0px; vertical-align: top;">
@@ -466,7 +496,7 @@ class RelatorioPost extends Ferramentas
   //       </div>
   
         //       ';
-  
+        //gera o css do pdf
         $style = '
           <style>
   html, body {
@@ -710,6 +740,7 @@ class RelatorioPost extends Ferramentas
   
               </style>';
   
+
         // Inicializa o mPDF
         $mpdf = new Mpdf();
   
@@ -722,7 +753,6 @@ class RelatorioPost extends Ferramentas
   
         // Retorna a resposta JSON com o conteúdo PDF e o nome do arquivo
         $data = [
-          'oi' => $data123,
           'ok' => true,
           'pdf' => base64_encode($pdfContent),
           'nome_pdf' => 'Relatorio Wl maquetaria ' . date("d_m_Y", strtotime($dataInicial_str)) . ' a ' . date("d_m_Y", strtotime($dataFinal_str)) . '.pdf'
@@ -737,9 +767,17 @@ class RelatorioPost extends Ferramentas
     }
 
 
-
+    /**
+     * Gera uma lista de usuários com seus respectivos níveis de acesso e status, e retorna os dados via AJAX.
+     * 
+     * Esta função é chamada via uma requisição AJAX e gera uma lista de usuários baseada em seus níveis de acesso 
+     * e status. Somente usuários que possuem acesso ao processo 'relatorio' são incluídos na lista. 
+     * Os dados gerados são armazenados em uma sessão e enviados como resposta JSON.
+     *
+     * @return \CodeIgniter\HTTP\Response O objeto de resposta contendo a lista de usuários em formato JSON.
+     */
     function lista_usuarios_niveis()
-    {// 3
+    {
       if ($this->request->isAJAX()) {
         // Inicializa a sessão para acessar os dados da lista armazenados nela
         session_start();

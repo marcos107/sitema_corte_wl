@@ -7,7 +7,7 @@ use Config\App;
 
 class DesenhosCortadosPost extends Ferramentas
 {
-    /**
+  /**
    * Função desenhos_cortados()
    *
    * Esta função é chamada por meio de uma solicitação AJAX e é responsável por listar os usuários com base em diferentes critérios, como a data de adição e o status. Além disso, a função possibilita ações como adicionar novamente desenhos e exibir informações detalhadas sobre eles.
@@ -29,7 +29,7 @@ class DesenhosCortadosPost extends Ferramentas
       $usuario = new \App\Models\Usuarios();
       $cortado = new \App\Models\Corte();
       $processos = new \App\Models\Processos();
-      
+
 
       // Recupera dados das tabelas do banco de dados
       $prioridade_data = $prioridade->find();
@@ -48,7 +48,7 @@ class DesenhosCortadosPost extends Ferramentas
       // Recupera dados da solicitação AJAX
       $dataInicial = service('request')->getPost('data');
       $dataFinal = service('request')->getPost('data1');
-
+      $processo = service('request')->getPost('processo');
       // Converte datas em timestamps para comparação
       $dataInicialTimestamp = strtotime($dataInicial);
       $dataFinalTimestamp = strtotime($dataFinal);
@@ -71,8 +71,10 @@ class DesenhosCortadosPost extends Ferramentas
 
       foreach ($desenhos_data as $key => $value) { //cria a lista
         $_SESSION["lista_primordial"][$id_temp] = $value;
-
-
+        if (Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($processos_data, 'id', $value['processos_id']), ["nome"])) != $processo) {
+          $id_temp++;
+          continue;
+        }
 
         // Verifica se a data de adição está dentro do intervalo de datas especificado
         $encontrou = false;
@@ -86,17 +88,17 @@ class DesenhosCortadosPost extends Ferramentas
 
         if ($encontrou) { // pega apenas os desenhos do desenhista que esta vendo
           $prioridade_desenho = Ferramentas::array_pesquisa($prioridade_data, 'id', $value['prioridade']);
-          if (Ferramentas::decodificador($value['status']) == 'cortado') {
+          if (Ferramentas::decodificador($value['status']) == 'pronto') {
             $caminho = $value['caminho'];
             $ultima_barra_invertida = strrpos($caminho, 'i061n');
-      
+
             // Dividir a string em duas partes
             $caminho_diretorio = substr($caminho, 0, $ultima_barra_invertida);
             $nome_arquivo = substr($caminho, $ultima_barra_invertida);
-      
+
             // Criar o array resultante
             $array_resultante = [$caminho_diretorio, $nome_arquivo];
-      
+
             $caminho = str_replace(["ci083ni061n", "wli074ndesenhos", "i061n"], ["c:/", "wl_desenhos", "/"], $array_resultante[0]) . '/' . Ferramentas::decodificador($array_resultante[1]);
             $caminho = str_replace("//", "/", $caminho);
 
@@ -115,7 +117,6 @@ class DesenhosCortadosPost extends Ferramentas
 
        
        <td  bgcolor="' . Ferramentas::decodificador($prioridade_desenho['cor']) . '"><span class="marca_texto">' . Ferramentas::decodificador($prioridade_desenho['nome']) . '</span></td>
-       <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($processos_data, 'id', $value['processos_id']), ["nome"])) . '</td>
 
        <td>' . Ferramentas::array_index(Ferramentas::array_pesquisa($usuario_data, 'id', $value['desenhista']), ['nome']) . '</td>
 
@@ -125,7 +126,7 @@ class DesenhosCortadosPost extends Ferramentas
        <td>' . Ferramentas::array_index(Ferramentas::array_pesquisa($empreendimento_data, 'id', $value['empreendimento']), ["nome"]) . '</td>
        <td>' . Ferramentas::array_index(Ferramentas::array_pesquisa($finalidade_data, 'id', $value['finalidade']), ["nome"]) . '</td>
        <td>' . Ferramentas::decodificador($value['status']) . '</td>
-       <td>' .$dataEspecifica_corte.'</td>
+       <td>' . $dataEspecifica_corte . '</td>
        <td>' . Ferramentas::decodificador($value['data_hora_add']) . '</td>
        <td><button name="cadastarar" onclick="recolocar_desenho(\'' . $id_temp . '\')" type="submit" class="btn btn-outline-primary "> adicionar <br> novamente </button></td>
        <td></td>
@@ -155,7 +156,7 @@ class DesenhosCortadosPost extends Ferramentas
       $data = [
         "lista" => $lista,
         "data" => $dias,
-        "1"=> $caminho
+        "1" => $caminho
 
       ];
 

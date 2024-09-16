@@ -30,7 +30,7 @@ class ListaCortePost extends Ferramentas
             // Obtém o ID do corte que corresponde ao desenho em 'inicio'
             $id_corte = Ferramentas::array_index(Ferramentas::array_pesquisa_mult($corte_data, ['id_desenho', 'status'], [$_SESSION["lista"][$id], 'inicio']), ['id']);
 
-            // Define os dados a serem atualizados para cancelar o corte
+            // Define os dados a serem atualizados para cancelar o pendente
             $update = [
                 'cortador_fim' => $_SESSION["usuario"],
                 'data_fim' => Ferramentas::codificador(date('d/m/Y H:i:s')),
@@ -45,7 +45,7 @@ class ListaCortePost extends Ferramentas
 
             // Define os dados a serem atualizados para definir o status como 'corte'
             $updat = [
-                'status' => 'corte'
+                'status' => 'pendente'
             ];
 
             // Atualiza o registro de desenho para o status 'corte'
@@ -108,7 +108,7 @@ class ListaCortePost extends Ferramentas
                 ->orderBy('id', 'DESC')
                 ->first();
 
-            if ($check != null) {
+            if ($check != null) {//ativar som do sistema de corte
 
 
                 if ($alteracao_data) {
@@ -156,11 +156,11 @@ class ListaCortePost extends Ferramentas
                 // Remover o último elemento
                 unset($tags[count($tags) - 1]);
                 $tags = implode(" - ", $tags);
-                if (Ferramentas::decodificador($value['status']) == "corte" || Ferramentas::decodificador($value['status']) == 'cortando') {
+                if (Ferramentas::decodificador($value['status']) == "pendente" || Ferramentas::decodificador($value['status']) == 'cortando') {
                     $prioridade_desenho = Ferramentas::array_pesquisa($prioridade_data, 'id', $value['prioridade']);
 
                     // Monta a linha da tabela com os dados do usuário
-                    if (Ferramentas::decodificador($value['status']) == 'corte') {
+                    if (Ferramentas::decodificador($value['status']) == 'pendente') {
                         $lista .= '<tr><td onclick="prio_modal(' . $id_temp . ')" bgcolor="' . Ferramentas::decodificador(Ferramentas::array_index($prioridade_desenho, ['cor'])) . '"><span class="marca_texto">' . Ferramentas::array_index($prioridade_desenho, ['nome']) . '</span></td>';
                     } else {
                         $lista .= '<tr><td bgcolor="' . Ferramentas::decodificador(Ferramentas::array_index($prioridade_desenho, ['cor'])) . '"><span class="marca_texto">' . Ferramentas::array_index($prioridade_desenho, ['nome']) . '</span></td>';
@@ -182,13 +182,14 @@ class ListaCortePost extends Ferramentas
        <td>'. $dataEspecifica_corte .'</td>
        <td>' . Ferramentas::decodificador(Ferramentas::decodificador($value['data_hora_add'])) . '</td>
       ';
-                    if (Ferramentas::decodificador($value['status']) == 'corte') {
-                        $lista .= '<td><button name="cadastarar" type="submit" class="btn btn-outline-primary" onclick="apagar(' . $id_temp . ')"> Apagar </button></td> </tr>';
+                    if (Ferramentas::decodificador($value['status']) == 'pendente') {
+                        $lista .= '<td><button name="cadastarar" type="submit" class="btn btn-outline-primary" onclick="apagar(' . $id_temp . ')"> Apagar </button></td>';
                     } else if (Ferramentas::decodificador($value['status']) == 'cortando') {
-                        $lista .= '<td><button name="cadastarar" type="submit" class="btn btn-outline-primary" onclick="cancelar_corte(' . $id_temp . ')"> Cancelar corte </button></td> </tr>';
+                        $lista .= '<td><button name="cadastarar" type="submit" class="btn btn-outline-primary" onclick="cancelar_corte(' . $id_temp . ')"> Cancelar corte </button></td> ';
                     } else {
-                        $lista .= '<td></td></tr>';
+                        $lista .= '<td></td>';
                     }
+                    $lista .= '<td><button name="cadastarar" type="submit" class="btn btn-outline-warning" onclick="prio_modal(' . $id_temp . ')"> Mudar prioridade </button></td></tr>';
                     // Prepara dados do usuário para armazenamento em arrays
                     $value['nome'] = Ferramentas::decodificador($value['nome']);
                     $value['cor'] = Ferramentas::decodificador($prioridade_desenho['cor']);
@@ -254,9 +255,9 @@ class ListaCortePost extends Ferramentas
             // Obtém o status do desenho
             $status = Ferramentas::array_index(Ferramentas::array_pesquisa($desenho_data, 'id', $id), ['status']);
 
-            if (Ferramentas::decodificador($status) == "corte" || Ferramentas::decodificador($status) == "cortando") {
+            if (Ferramentas::decodificador($status) == "pendente" || Ferramentas::decodificador($status) == "cortando") {
 
-                // Se o status for "corte" ou "cortando", continua o processamento
+                // Se o status for "pendente" ou "cortando", continua o processamento
                 $caminho = Ferramentas::array_index(Ferramentas::array_pesquisa($desenho_data, 'id', $id), ['caminho']);
                 $nome = Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($desenho_data, 'id', $id), ['nome']));
            
@@ -410,7 +411,7 @@ class ListaCortePost extends Ferramentas
         foreach ($desenhos_data as $key => $value) { // Criação de uma lista de desenhos para análise.
 
             // Verifica se o status do desenho é "corte".
-            if (Ferramentas::decodificador($value['status']) == "corte") {
+            if (Ferramentas::decodificador($value['status']) == "pendente") {
                 // Obter o timestamp da data atual.
                 $dataAtualTimestamp = time();
 
@@ -516,11 +517,11 @@ class ListaCortePost extends Ferramentas
      * Retorna:
      * - Um array contendo informações sobre a lista de desenhos para exibição e mensagens de atualização de prioridade.
      */
-    function lista_afazeres()
+    function lista_tarefas()
     {
         // Verifica se a solicitação é uma chamada AJAX
-        if ($this->request->isAJAX()) {
-            $status = "corte";
+        if (true) {
+            $status = "pendente";
             $processo = service('request')->getPost('processo');
             // Atualiza a prioridade dos desenhos com base em critérios específicos.
             $oi = self::atualiza_prio();
@@ -552,8 +553,20 @@ class ListaCortePost extends Ferramentas
             $lista_completa = array(); // Inicializa um array para informações completas de desenhos
 
 
-
+            session_start();
             $corte_data = Ferramentas::array_pesquisa_mult($corte_data, ['ip', 'status'], [Ferramentas::codificador($_SERVER['REMOTE_ADDR']), 'inicio']);
+            $status_desenho = Ferramentas::array_index(Ferramentas::array_pesquisa($desenhos_data,"id",Ferramentas::array_index($corte_data,['id_desenho'])),['status']);
+            if($status_desenho != 'cortando' and $status_desenho != ""){
+                $update = [
+                    'cortador_fim' => $_SESSION["usuario"],
+                    'data_fim' => Ferramentas::codificador(date('d/m/Y H:i:s')),
+                    'status' => 'finalizado'
+                ];
+                $corte->update($corte_data['id'], $update);
+                $corte_data = [];
+            } 
+
+
 
             if (count($corte_data) != 0) {
                 foreach ($desenhos_data as $key => $value) {
@@ -561,10 +574,10 @@ class ListaCortePost extends Ferramentas
 
                     
                     // Verifica se o desenho está em estado "corte" ou "cortando"
-                    if ((Ferramentas::decodificador($value['status']) == "corte" || Ferramentas::decodificador($value['status']) == "cortando")) {
+                    if ((Ferramentas::decodificador($value['status']) == "pendente" || Ferramentas::decodificador($value['status']) == "cortando")) {
                         $prioridade_desenho = Ferramentas::array_pesquisa($prioridade_data, 'id', $value['prioridade']);
 
-                        // Verifica se o desenho não está em processo de corte
+                        // Verifica se o desenho não está em processo de pendente
                         if ($corte_data['id_desenho'] != $value['id']) {
                             // Constrói as entradas da lista para desenhos em espera
                             if (Ferramentas::decodificador($value['status']) == "cortando") {
@@ -572,7 +585,6 @@ class ListaCortePost extends Ferramentas
           <tr>
         
            <td onclick="prio_modal()" bgcolor="' . Ferramentas::decodificador(Ferramentas::array_index($prioridade_desenho, ['cor'])) . '"><span class="marca_texto">' . Ferramentas::array_index($prioridade_desenho, ['nome']) . '</span></td>
-                  <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($processos_data, 'id', $value['processos_id']), ["nome"])) . '</td>
 
            <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($usuario_data, 'id', $value['desenhista']), ['nome'])) . '</td>
            <td>' . Ferramentas::decodificador(Ferramentas::remove_id_file(Ferramentas::decodificador($value['nome']))) . '</td>
@@ -591,7 +603,6 @@ class ListaCortePost extends Ferramentas
           <tr>
         
            <td onclick="prio_modal()" bgcolor="' . Ferramentas::decodificador(Ferramentas::array_index($prioridade_desenho, ['cor'])) . '"><span class="marca_texto">' . Ferramentas::array_index($prioridade_desenho, ['nome']) . '</span></td>
-                 <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($processos_data, 'id', $value['processos_id']), ["nome"])) . '</td>
 
            <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($usuario_data, 'id', $value['desenhista']), ['nome'])) . '</td>
            <td>' . Ferramentas::decodificador(Ferramentas::remove_id_file(Ferramentas::decodificador($value['nome']))) . '</td>
@@ -624,7 +635,6 @@ class ListaCortePost extends Ferramentas
                             <tr>
                           
                              <td onclick="prio_modal()" bgcolor="' . Ferramentas::decodificador(Ferramentas::array_index($prioridade_desenho, ['cor'])) . '"><span class="marca_texto">' . Ferramentas::array_index($prioridade_desenho, ['nome']) . '</span></td>
-                                    <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($processos_data, 'id', $value['processos_id']), ["nome"])) . '</td>
 
                              <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($usuario_data, 'id', $value['desenhista']), ['nome'])) . '</td>
 
@@ -667,8 +677,8 @@ class ListaCortePost extends Ferramentas
                 foreach ($desenhos_data as $key => $value) {
                     if (Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($processos_data, 'id', $value['processos_id']), ["nome"])) == $processo){
                     
-                    // Verifica se o desenho está em estado "corte"
-                    if (Ferramentas::decodificador($value['status']) == "corte") {
+                    // Verifica se o desenho está em estado "pendente"
+                    if (Ferramentas::decodificador($value['status']) == "pendente") {
                         $prioridade_desenho = Ferramentas::array_pesquisa($prioridade_data, 'id', $value['prioridade']);
 
                         // Constrói as entradas da lista para desenhos em espera
@@ -677,7 +687,6 @@ class ListaCortePost extends Ferramentas
     
        
        <td onclick="prio_modal()" bgcolor="' . Ferramentas::decodificador(Ferramentas::array_index($prioridade_desenho, ['cor'])) . '"><span class="marca_texto">' . Ferramentas::array_index($prioridade_desenho, ['nome']) . '</span></td>
-              <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($processos_data, 'id', $value['processos_id']), ["nome"])) . '</td>
 
        <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($usuario_data, 'id', $value['desenhista']), ['nome'])) . '</td>
 
@@ -710,7 +719,6 @@ class ListaCortePost extends Ferramentas
       <tr>
     
        <td onclick="prio_modal()" bgcolor="' . Ferramentas::decodificador(Ferramentas::array_index($prioridade_desenho, ['cor'])) . '"><span class="marca_texto">' . Ferramentas::array_index($prioridade_desenho, ['nome']) . '</span></td>
-              <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($processos_data, 'id', $value['processos_id']), ["nome"])) . '</td>
 
        <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($usuario_data, 'id', $value['desenhista']), ['nome'])) . '</td>
 
@@ -727,7 +735,7 @@ class ListaCortePost extends Ferramentas
             }
 
             // Define variáveis de sessão para manter informações entre solicitações AJAX
-            session_start();
+       
             $_SESSION["lista"] = $lista_ids;
             $_SESSION["lista_completa"] = $lista_completa;
 
@@ -848,8 +856,8 @@ class ListaCortePost extends Ferramentas
       $lista = "";
 
       foreach ($desenhos_data as $key => $value) {
-        // Verifica se o status do desenho é "corte" ou "cortando".
-        if (Ferramentas::decodificador($value['status']) == "corte" || Ferramentas::decodificador($value['status']) == 'cortando') {
+        // Verifica se o status do desenho é "pendente" ou "cortando".
+        if (Ferramentas::decodificador($value['status']) == "pendente" || Ferramentas::decodificador($value['status']) == 'cortando') {
           // Obtém a prioridade do desenho.
           $prioridade_desenho = Ferramentas::array_pesquisa($prioridade_data, 'id', $value['prioridade']);
           $dataEspecifica_corte = Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($cortado_data, 'id_desenho', $value['id']), ['data_add']));

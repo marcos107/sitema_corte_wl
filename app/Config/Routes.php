@@ -25,9 +25,9 @@ $routes->get('/logout', 'Login::logout'); // Rota para fazer logout
 $routes->post('/login','Login::login');
 
 
+//Ferramentas
+$routes->post('/troca_status/(:any)/(:any)', 'Ferramentas::troca_status/$1/$2');
 
-//temp
-$routes->post('/troca_status/(:any)/(:any)', 'AdmPost::troca_status/$1/$2');
 
 //nivel
 $routes->get('/nivel', 'Pagina::nivel');   
@@ -69,9 +69,9 @@ $routes->post('/subistituir_desenho_modal', 'DesenhosMeusPost::subistituir_desen
 //ListaCortePost
 $routes->get('/lista_corte_adm', 'Pagina::lista_corte_adm');
 $routes->get('/lista_corte', 'Pagina::lista_corte');
-$routes->get('/lista_afazeres', 'Pagina::lista_afazeres');
+$routes->get('/lista_tarefas', 'Pagina::lista_tarefas');
 $routes->post('/lista_corte', 'ListaCortePost::lista_corte_desenhista');
-$routes->post('/lista_afazeres', 'ListaCortePost::lista_afazeres');
+$routes->post('/lista_tarefas', 'ListaCortePost::lista_tarefas');
 $routes->post('/lista_corte_adm', 'ListaCortePost::lista_corte_adm');
 $routes->post('/cancelar_corte', 'ListaCortePost::cancelar_corte');
 $routes->post('/confirmar_corte', 'ListaCortePost::confirmar_corte');

@@ -45,7 +45,8 @@ class PrioridadePost extends EmpresaPost
        <td ondblclick="modal_modificar(\'modal_' . $id_temp . '\')" bgcolor="' . Ferramentas::decodificador($value['cor']) . '"><span class="marca_texto">' . Ferramentas::decodificador($value['cor']) . '</span></td>
        <td>' . ucfirst(Ferramentas::decodificador($value['status'])) . '</td>
        <td><button name="cadastarar" type="submit" onclick="desativar(\'' . $id_temp . '\')" class="btn btn-outline-danger btn-lg btn-block"> Desativar </button></td>
-      </tr>
+       <td><button name="cadastarar" type="submit" class="btn btn-outline-warning btn-lg btn-block" onclick="modal_modificar(\'modal_' . $id_temp . '\')"> Modificar </button></td>
+       </tr>
       ';
         } else if (($desativados == 'true' && Ferramentas::decodificador($value['status']) == 'desativado')) { //verifica se é para mostrar os com estus desativado
           $lista .= '
@@ -55,7 +56,8 @@ class PrioridadePost extends EmpresaPost
       <td ondblclick="modal_modificar(\'modal_' . $id_temp . '\')" bgcolor="' . Ferramentas::decodificador($value['cor']) . '"><span class="marca_texto">' . Ferramentas::decodificador($value['cor']) . '</span></td>
        <td>' . ucfirst(Ferramentas::decodificador($value['status'])) . '</td>
        <td><button name="cadastarar" type="submit" onclick="ativar(\'' . $id_temp . '\')" class="btn btn-outline-success btn-lg btn-block"> Ativar </button></td>
-      </tr>
+      <td><button name="cadastarar" type="submit" class="btn btn-outline-warning btn-lg btn-block" onclick="modal_modificar(\'modal_' . $id_temp . '\')"> Modificar </button></td>
+       </tr>
       ';
         }
 

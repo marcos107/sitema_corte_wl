@@ -7,7 +7,7 @@ use Config\App;
 
 class EmpreendimentoPost extends EmpresaPost
 {
-      /**
+   /**
    * Função empreendimento()
    *
    * Esta função é chamada por meio de uma solicitação AJAX e é responsável por listar empreendimentos ativos e seus detalhes, como o nome, empresa relacionada e status.
@@ -41,6 +41,7 @@ class EmpreendimentoPost extends EmpresaPost
        <td ondblclick="modal_modificar(\'modal_' . $id_temp . '\')">' . Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'id', $value['empresa_id']), ['nome']) . '</td>
        <td ondblclick="modal_modificar(\'modal_' . $id_temp . '\')">' . ucfirst(Ferramentas::decodificador($value['status'])) . '</td>
        <td><button name="cadastarar" type="submit" onclick="desativar(\'' . $id_temp . '\')" class="btn btn-outline-danger btn-lg btn-block"> Desativar </button></td>
+       <td><button name="cadastarar" type="submit" class="btn btn-outline-warning btn-lg btn-block" onclick="modal_modificar(\'modal_' . $id_temp . '\')"> Modificar </button></td>
       </tr>
       ';
         } else if (($desativados == 'true' && Ferramentas::decodificador($value['status']) == 'desativado')) { //verifica se é para mostrar os com estus desativado
@@ -50,6 +51,7 @@ class EmpreendimentoPost extends EmpresaPost
       <td ondblclick="modal_modificar(\'modal_' . $id_temp . '\')">' . Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'id', $value['empresa_id']), ['nome']) . '</td>
        <td ondblclick="modal_modificar(\'modal_' . $id_temp . '\')">' . ucfirst(Ferramentas::decodificador($value['status'])) . '</td>
        <td><button name="cadastarar" type="submit" onclick="ativar(\'' . $id_temp . '\')" class="btn btn-outline-success btn-lg btn-block"> Ativar </button></td>
+       <td><button name="cadastarar" type="submit" class="btn btn-outline-warning btn-lg btn-block" onclick="modal_modificar(\'modal_' . $id_temp . '\')"> Modificar </button></td>
       </tr>
       ';
         }
@@ -92,21 +94,24 @@ class EmpreendimentoPost extends EmpresaPost
       $empreendimento = service('request')->getPost('empreendimento');
       $empresa = service('request')->getPost('empresa');
 
+      //verifica o tamanho maximo do empreendimento
       if (strlen($empreendimento) > 17) {
         $msg['Empreendimento'] = "Nome do empreendimento excedeu o tamanho máximo de 17 caracter";
         $violacao[] = "empreendimento_cadastrar Nome da empreendimento excedeu o tamanho máximo";
       }
 
+      //verifica o tamanho mínimo do empreendimento
       if (strlen($empreendimento) < 3) {
         $msg['Empreendimento'] = "Nome da empreendimento não possui o tamanho mínimo de 3 caracter";
       } else {
+        //verifica se possui caracter invalido
         if (Ferramentas::codificador($empreendimento) == '') {
           $msg['Empreendimento'] = "Nome do empreendimento possui caracteres não permitidos";
           $violacao[] = "empreendimento_cadastrar Nome do empreendimento possui caracteres não permitidos";
         }
       }
 
-
+      //
       $lista_array = EmpresaPost::lista_empresa();
       $lista_array = json_decode($lista_array->getBody(), true);
 
@@ -266,8 +271,8 @@ class EmpreendimentoPost extends EmpresaPost
         $desenhos = new \App\Models\Desenhos();
         $desenhos_data = $desenhos->find();
         $lista = $_SESSION["lista_completa"][$id1];
-        if (count(Ferramentas::array_pesquisa($desenhos_data, 'empreendimento', $lista['id'])) == 0) {
-          $empresa_id = Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'nome', Ferramentas::codificador($empresa)), ['id']); // pega o id da empresa fornecida 
+        if (count(Ferramentas::array_pesquisa($desenhos_data, 'empreendimento', $lista['id'])) == 0) {//verifica se 
+          $empresa_id = Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'nome', Ferramentas::codificador($empresa)), ['id']); // verifica se o empreendimento que esta tentando modificar ja não foi usada
           if (count(Ferramentas::array_pesquisa_mult($empreendimento_data, ['nome', 'empresa_id'], [Ferramentas::codificador($empreendimento), $empresa_id])) == 0) { // verifica se o id do mepreendimento com o mesmo nome é igual ao id 
             $alteracao = new \App\Models\Alteracoes();
 

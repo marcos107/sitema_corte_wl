@@ -2,36 +2,100 @@
   var roda_pe = document.getElementById('roda_pe');
   roda_pe.innerHTML = '<div style="position: relative; width: 100%; height: 50px;"><div style="position: absolute; top: 50%;"><button name="cadastarar" type="submit" class="btn btn-outline-primary" onclick="prio_modal_todos()"> Mudar prioridade de varios </button></div><div style="position: absolute; top: 50%; right: 0;"><button name="cadastarar" type="submit" class="btn btn-outline-primary" onclick="apagar_todos()"> Apagar varios</button></div></div>';
 
-  // Cria o botão
-  var button = document.createElement("button");
-  button.innerHTML = "Pesquisar";
-  button.type = "button"; // define o tipo como botão
+// Cria o HTML do botão
+var buttonHTML = `
+<div id="container" style="display: inline-flex; align-items: center;">
+    <select id="processos_desenho" class="custom-select" style="height: 35px">
+        <option value="">Processos</option>
+    </select>
+    <button type="button" class="btn btn-outline-primary" id="pesquisar" style="margin-left: 10px;">
+        Pesquisar
+    </button>
+</div>
 
-  // Adiciona as classes ao botão
-  button.className = "btn btn-outline-primary";
-  button.id = "pesquisar";
 
-  // Seleciona o campo de data final
-  var dataFinal = document.getElementById("dataInicial");
+`;
 
-  // Insere o botão depois do campo de data final
-  dataFinal.insertAdjacentElement("afterend", button);
 
-  // Adiciona estilo adicional ao botão (opcional)
-  button.style.marginLeft = "10px";
+processos = "";
+  function processo_lista() {
+    $.ajax({
+      url: '<?= base_url('public/processos_lista') ?>',
+      type: "POST",
+      dataType: "json", // Indicar que o retorno é em formato JSON
 
-  // Adiciona o evento de clique para chamar a função lista()
-  button.addEventListener("click", lista);
+      async: false, // Define a requisição como síncrona
+
+      success: function (response) {
+
+        processos = response.lista;
+
+
+        if (!document.getElementById('processos_desenho'))
+          return;
+        // Seleciona o elemento <select> onde as opções serão adicionadas
+        var selectElement = document.getElementById('processos_desenho');
+
+        // Limpa as opções existentes no <select>
+        selectElement.innerHTML = '';
+        // Cria a opção padrão e adiciona ao início do <select>
+        var defaultOption = document.createElement('option');
+        defaultOption.value = '';
+        defaultOption.textContent = 'Processos';
+        selectElement.appendChild(defaultOption);
+        // Itera sobre cada processo na lista
+        processos.forEach(function (processo) {
+          // Cria um novo elemento <option>
+          var optionElement = document.createElement('option');
+          optionElement.value = processo.nome; // Define o nome do processo como o valor da opção
+          optionElement.textContent = processo.nome; // Define o nome do processo como o texto da opção
+
+          // Adiciona a nova opção ao <select>
+          selectElement.appendChild(optionElement);
+        });
+      }
+    });
+  }
+
+
+
+
+  
+// Seleciona o campo de data final
+var dataFinal = document.getElementById("dataInicial");
+
+// Insere o HTML do botão depois do campo de data final
+dataFinal.insertAdjacentHTML("afterend", buttonHTML);
+
+// Adiciona o evento de clique para chamar a função lista()
+document.getElementById("pesquisar").addEventListener("click", pesquisar);
+
+
+processo_lista();
+data = "";
+data1 = "";
+processo_nome = "";
+function pesquisar(){
+  data = document.getElementById('dataInicial').value;
+  data1 = document.getElementById('dataFinal').value;
+  processo_nome = document.getElementById("processos_desenho").value;
+  if(processo_nome == ''){
+    alert_personalizado("Processos", 'Escolha um Processos.');
+    return;
+  }
+  lista();
+}
+
+
   lista_temp = "";
   function lista() {
     document.getElementById("pesquisar").disabled = true;
-    data = document.getElementById('dataInicial').value;
-    data1 = document.getElementById('dataFinal').value;
+
     $.ajax({
       url: '<?= base_url('public/desenho_meus') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
-      data: { data: data, data1: data1 },
+      data: { data: data, data1: data1, processo: processo_nome},
       success: function (response) {
 
         if (response.lista != lista_temp) {

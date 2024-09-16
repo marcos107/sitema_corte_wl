@@ -20,6 +20,217 @@
   }
 </style>
 <script>
+modalr_processo();
+
+  function modalr_processo (){
+    // HTML da sobreposição como uma string
+    var overlayHTML = `
+        <div id="inicioOverlay" style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Fundo preto com 80% de opacidade */
+            z-index: 1001; /* Certifica-se de que fica acima de tudo */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        ">
+
+
+<section class="content">
+        <div class="modal fade" id="modal-default">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Default Modal</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>One fine body…</p>
+              </div>
+              <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <section>
+          <!-- Content Header (Page header) -->
+          <section class="content-header">
+            <div class="container-fluid">
+              <div class="row mb-2">
+                <div class="col-sm-6">
+                  <h1>
+                                      </h1>
+                </div>
+
+              </div>
+            </div><!-- /.container-fluid -->
+          </section>
+
+          <!-- Main content -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Por favor, selecione o processo para o qual o relatório será gerado.</h3>
+            </div>
+
+            <!-- /.card-header -->
+            <div class="card-body">
+
+              <div class="row">
+
+
+              <div id="processos_select" class="form-group">                  <label>Processos</label>                      <div id="processos_radio"></div>                    </div><br><br>
+
+
+              <br><br><br>
+              <button name="cadastarar" type="submit" onclick="aparecer_lista()" class="btn btn-block btn-outline-primary btn-lg">Proximo</button>
+              </div>
+             
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.content -->
+    </section></section>
+
+
+
+
+
+
+
+
+        </div>
+    `;
+
+    // Insere a sobreposição logo após a div com ID "cadastro1"
+    var cadastroDiv = document.getElementById('cadastro1');
+    if (cadastroDiv) {
+      cadastroDiv.insertAdjacentHTML('afterend', overlayHTML);
+    }
+    
+
+  processo_lista();
+  }
+
+  function fecharOverlay() {
+    // Oculta a sobreposição quando o botão "Começar" é clicado
+    var overlay = document.getElementById('inicioOverlay');
+    if (overlay) {
+      overlay.style.display = 'none';
+    }
+  }
+
+
+
+
+
+  function get_radio() {
+    var radios = document.getElementsByName('processo'); // Seleciona todos os botões de rádio com o nome 'processo'
+    var processo_var = '';
+
+    // Itera sobre todos os botões de rádio para encontrar o selecionado
+    for (var i = 0; i < radios.length; i++) {
+      if (radios[i].checked) {
+        return radios[i].value; // Captura o valor do botão de rádio selecionado
+        break; // Sai do loop após encontrar o botão selecionado
+      }
+    }
+    return processo_var;
+  }
+
+  
+  function aparecer_lista() {
+    processo_nome = get_radio();
+    document.querySelector('.card-title').innerHTML = "<button type='submit' onclick='modalr_processo()' class='btn btn-info'>  ⬅ Voltar </button>&nbsp&nbsp&nbsp Gerar Relatório processo:  " + processo_nome;
+
+    fecharOverlay();
+  }
+
+
+
+
+
+
+  processos = "";
+  function processo_lista() {
+    $.ajax({
+      url: '<?= base_url('public/processos_lista') ?>',
+      type: "POST",
+      dataType: "json", // Indicar que o retorno é em formato JSON
+      async: false, // Define a requisição como síncrona
+      success: function (response) {
+        processos = response.lista;
+
+        // Verifica se o elemento <div> existe
+        var radioContainer = document.getElementById('processos_radio');
+        if (!radioContainer)
+          return;
+
+        // Limpa os elementos de rádio existentes na <div>
+        radioContainer.innerHTML = '';
+
+        // Itera sobre cada processo na lista
+        processos.forEach(function (processo, index) {
+          // Cria um novo elemento <input> para o botão de rádio
+          var radioElement = document.createElement('input');
+          radioElement.type = 'radio';
+          radioElement.name = 'processo'; // Define o mesmo nome para agrupar os botões de rádio
+          radioElement.id = 'processo_' + index; // Define um ID único para cada botão de rádio
+          radioElement.value = processo.nome; // Define o nome do processo como o valor do botão
+
+          // Cria um <label> para o botão de rádio
+          var labelElement = document.createElement('label');
+          labelElement.htmlFor = 'processo_' + index; // Associa o label ao botão de rádio
+          labelElement.textContent = processo.nome; // Define o nome do processo como o texto do label
+          labelElement.style.fontWeight = 'normal'; // Remove o negrito do texto
+
+          // Cria um <span> para envolver o rádio e o label, mantendo-os juntos horizontalmente
+          var spanElement = document.createElement('span');
+          spanElement.style.marginRight = '15px'; // Adiciona espaço entre os botões de rádio
+          spanElement.appendChild(radioElement);
+          spanElement.appendChild(labelElement);
+
+          // Adiciona o <span> à <div>
+          radioContainer.appendChild(spanElement);
+        });
+        if (document.getElementById('processo_0'))
+          document.getElementById('processo_0').checked = true;
+      }
+    });
+  }
+
+
+
+  function getCheckedValues() {
+    // Seleciona todos os checkboxes
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    var selectedValues = [];
+
+    // Itera sobre todos os checkboxes
+    checkboxes.forEach(function(checkbox) {
+        // Verifica se o checkbox está marcado
+        if (checkbox.checked) {
+            selectedValues.push(checkbox.value);  // Adiciona o valor ao array
+        }
+    });
+
+    console.log(selectedValues);  // Exibe os valores selecionados no console
+  }
+
+
+
+
+
+
+
   cadastrar_glob = false;
   function cadastrar() {
     cadastrar_glob = true;
@@ -32,7 +243,7 @@
       url: '<?= base_url('public/relatorio') ?>',
       type: "POST",
       dataType: "json", // Espera uma resposta JSON
-      data: { dataInicial: dataInicial, dataFinal: dataFinal, relatorio: document.getElementById('rad_1').checked,selectedValues: getSelectedCheckboxValues() },
+      data: { dataInicial: dataInicial, dataFinal: dataFinal, relatorio: document.getElementById('rad_1').checked, selectedValues: getSelectedCheckboxValues(),processo: processo_nome },
       success: function (response) {
 
 
@@ -175,16 +386,16 @@
 
   document.getElementById('checkbox_ativo').addEventListener('click', function () {
     Object.entries(data_glob.lista).forEach(([key, value]) => {
-          addCheckboxes(value,data_glob.id_groups[key]);
-          
-        });
+      addCheckboxes(value, data_glob.id_groups[key]);
+
+    });
   });
 
   document.getElementById('checkbox_desativado').addEventListener('click', function () {
     Object.entries(data_glob.lista).forEach(([key, value]) => {
-          addCheckboxes(value,data_glob.id_groups[key]);
-          
-        });
+      addCheckboxes(value, data_glob.id_groups[key]);
+
+    });
   });
 
 
@@ -294,10 +505,10 @@
 
           createCheckboxes(value, id_goup);
         });
-       data_glob = response;
-       
+        data_glob = response;
+
         // Agora response.id_groups contém todos os id_goup adicionados
-      
+
       }
     });
   }
@@ -371,7 +582,7 @@
     const checkboxDesativado = document.getElementById('checkbox_desativado');
 
     // Seleciona todos os elementos que têm um ID que começa com 'group_' e termina com '_checkbox_label'
-    var elements = document.querySelectorAll('[id="'+groupId + '_checkbox_label"');
+    var elements = document.querySelectorAll('[id="' + groupId + '_checkbox_label"');
 
     // Itera sobre os elementos selecionados e remove cada um deles
     elements.forEach(function (element) {
@@ -435,7 +646,7 @@
 
 
 
-    addCheckboxes(data,groupId);
+    addCheckboxes(data, groupId);
 
 
     document.querySelectorAll(`.${groupId}_checkbox`).forEach(function (checkbox) {
@@ -445,6 +656,8 @@
     });
     updateColumns(groupId);
   }
+
+
 
   function updateColumns(groupId) {
     const container = document.getElementById(groupId);
@@ -492,21 +705,21 @@
 
     // Itera sobre cada chave em response.id_groups
     Object.entries(data_glob.id_groups).forEach(([key, groupId]) => {
-        // Seleciona todos os checkboxes dentro do grupo específico
-        const checkboxes = document.querySelectorAll('[id="'+groupId + '_checkbox"]');
-       // console.log('[id="'+groupId + '_checkbox"');
-        selectedValues[key] = [];
+      // Seleciona todos os checkboxes dentro do grupo específico
+      const checkboxes = document.querySelectorAll('[id="' + groupId + '_checkbox"]');
+      // console.log('[id="'+groupId + '_checkbox"');
+      selectedValues[key] = [];
 
-        // Itera sobre os checkboxes e adiciona os valores selecionados ao array correspondente
-        checkboxes.forEach(checkbox => {
-            if (checkbox.checked) {
-                selectedValues[key].push(checkbox.value);
-            }
-        });
+      // Itera sobre os checkboxes e adiciona os valores selecionados ao array correspondente
+      checkboxes.forEach(checkbox => {
+        if (checkbox.checked) {
+          selectedValues[key].push(checkbox.value);
+        }
+      });
     });
 
     return selectedValues;
-}
+  }
 
 
 </script>

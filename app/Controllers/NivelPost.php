@@ -26,7 +26,11 @@ class NivelPost extends Ferramentas
     'Lista De Corte Cortador',
     'Processos'
   );
-
+  /**
+   * Gera uma lista de níveis ativos ou desativados e retorna os dados formatados via AJAX.
+   *
+   * @return \CodeIgniter\HTTP\Response Retorna uma resposta JSON contendo a lista formatada de níveis.
+   */
   function nivel_lista()
   {
     if ($this->request->isAJAX()) {
@@ -51,7 +55,7 @@ class NivelPost extends Ferramentas
           $lista .= '<tr>
               <td ondblclick="modal_nivel(' . $id_temp . ')">' . Ferramentas::decodificador($value['nome']) . '</td>
               <td ondblclick="modal_nivel(' . $id_temp . ')">' . str_replace(['_', '-'], [' ', ' - '], Ferramentas::decodificador($value['permissao'])) . '</td>
-              <td ondblclick="modal_nivel(' . $id_temp . ')">' . str_replace( '-',  ' - ', Ferramentas::decodificador($value['processos'])) . '</td>
+              <td ondblclick="modal_nivel(' . $id_temp . ')">' . str_replace('-',  ' - ', Ferramentas::decodificador($value['processos'])) . '</td>
               <td ondblclick="modal_nivel(' . $id_temp . ')">' . Ferramentas::decodificador($value['status']) . '</td>
   
               ';
@@ -61,7 +65,7 @@ class NivelPost extends Ferramentas
             $lista .= "<td><button name='cadastrarar' type='submit' onclick='ativar(" . $id_temp . ")' class='btn btn-outline-success btn-lg btn-block'> Ativar </button></td>";
           }
 
-          $lista .= "</tr>";
+          $lista .= '<td><button name="cadastarar" type="submit" class="btn btn-outline-warning btn-lg btn-block" onclick="modal_nivel(\'' . $id_temp . '\')"> Modificar </button></td></tr>';
           $lista_array[$id_temp] = [
             'processos' => Ferramentas::decodificador($value['processos']),
             'permissao' => Ferramentas::decodificador($value['permissao']),
@@ -77,7 +81,11 @@ class NivelPost extends Ferramentas
       return $this->response->setJSON($data);
     }
   }
-
+  /**
+   * Desativa um nível específico no banco de dados.
+   *
+   * @return \CodeIgniter\HTTP\Response Retorna uma resposta JSON com o status da operação.
+   */
   function nivel_lista_desativar()
   {
     if ($this->request->isAJAX()) {
@@ -96,7 +104,11 @@ class NivelPost extends Ferramentas
       return $this->response->setJSON($data);
     }
   }
-
+  /**
+   * Ativa um nível específico no banco de dados.
+   *
+   * @return \CodeIgniter\HTTP\Response Retorna uma resposta JSON com o status da operação.
+   */
   function nivel_lista_ativar()
   {
     if ($this->request->isAJAX()) {
@@ -115,7 +127,11 @@ class NivelPost extends Ferramentas
       return $this->response->setJSON($data);
     }
   }
-
+  /**
+   * Gera o modal para modificar as informações de um nível específico, retornando as opções de permissões e processos.
+   *
+   * @return \CodeIgniter\HTTP\Response Retorna uma resposta JSON contendo o modal gerado e os dados do nível.
+   */
   function nivel_modifica_modal()
   {
     if ($this->request->isAJAX()) {
@@ -142,33 +158,8 @@ class NivelPost extends Ferramentas
         $lista["processos"] = "";
         $lista['nome'] = "";
       }
-      $option = "";
+      $checkbox = "";
 
-      foreach (self::$array_niveis as $item) {
-        if (in_array(str_replace(' ', '_', $item), explode('-', $lista["permissao"]))) {
-          $option .= '<option value="' . str_replace(' ', '_', $item) . '" selected>' . $item . '</option>';
-        } else {
-          $option .= '<option value="' . str_replace(' ', '_', $item) . '">' . $item . '</option>';
-        }
-      }
-      $check_processos = "checked";
-      $enable_processos = "disabled";
-      $option_processos = "";
-
-      foreach ($array_prcoessos as $key => $item) {
-        if (in_array($item, explode('-', $lista["processos"]))) {
-          $option_processos .= '<option value="' . $item . '" selected>' . $item . '</option>';
-        } else {
-          $option_processos .= '<option value="' . $item . '">' . $item . '</option>';
-          $check_processos = "";
-          $enable_processos = "";
-
-        }
-      }
-
-      if($check_processos == "checked"){
-        $option_processos = str_replace("selected","",$option_processos);
-      }
 
 
       $enable = "";
@@ -177,6 +168,31 @@ class NivelPost extends Ferramentas
         $enable = "disabled";
         $check = "checked";
       }
+
+      foreach (self::$array_niveis as $item) {
+        if (in_array(str_replace(' ', '_', $item), explode('-', $lista["permissao"]))) {
+          $checkbox .= ' <label style="font-weight: normal;" id="nivel_checkbox_label" style="margin: 5px;"><input type="checkbox" value="' . str_replace(' ', '_', $item) . '" id="nivel_checkbox" ' . $enable . ' checked>' . $item . '</label>&nbsp';
+        } else {
+          $checkbox .= ' <label style="font-weight: normal;" id="nivel_checkbox_label" style="margin: 5px;"><input type="checkbox" value="' . str_replace(' ', '_', $item) . '" id="nivel_checkbox" ' . $enable . '>' . $item . '</label>&nbsp';
+        }
+      }
+      $check_processos = "checked";
+      $checkbox_processos = "";
+
+      foreach ($array_prcoessos as $key => $item) {
+        if (in_array($item, explode('-', $lista["processos"]))) {
+          $checkbox_processos .= '<label style="font-weight: normal;" id="permissao_checkbox_label" style="margin: 5px;"><input type="checkbox" value="' . $item . '" id="permissao_checkbox" checked>' . $item . '</label>&nbsp';
+        } else {
+          $checkbox_processos .= '<label style="font-weight: normal;" id="permissao_checkbox_label" style="margin: 5px;"><input type="checkbox" value="' . $item . '" id="permissao_checkbox">' . $item . '</label>&nbsp';
+          $check_processos = "";
+        }
+      }
+
+      if ($check_processos == "checked") {
+        $checkbox_processos = str_replace("selected", "disabled", $checkbox_processos);
+      }
+
+
 
       $check_relatorio = "";
       if (in_array("relatorio", explode('-', $lista["processos"]))) {
@@ -192,13 +208,15 @@ class NivelPost extends Ferramentas
       </div>
 
       <div class="form-group">
-        <label>Permissões</label><br/> <input type="checkbox" class="" id="checkbox_todos" onclick="selecionar_todos()" ' . $check . '><label for="scales">&nbsp; Selecionar todos.</label>
-        <select multiple="multiple" class="form-control" id="permissao_novo" ' . $enable . '>' . $option . ' </select>
+        <label>Permissões</label><br/> <input type="checkbox" class="" id="checkbox_todos" onclick="marcar_todos_nivel(this)" ' . $check . '><label for="scales">&nbsp; Selecionar todos.</label>
+        <br/>
+        ' .  $checkbox . '
             </div>
 
             <div class="form-group">
-            <label>Processos</label><br/> <input type="checkbox" class="" id="checkbox_todos_processos" onclick="selecionar_processos_todos()" ' . $check_processos . '><label for="scales">&nbsp; Selecionar todos.</label>
-            <select multiple="multiple" class="form-control" id="processos_novo" ' . $enable_processos . '>' . $option_processos . ' </select>
+            <label>Processos</label><br/> <input type="checkbox" class="" id="checkbox_todos_processos" onclick="marcar_todos_processos(this)" ' . $check_processos . '><label for="scales">&nbsp; Selecionar todos.</label>
+           <br/>
+            ' . $checkbox_processos . '
                 </div>'
       ];
 
@@ -224,11 +242,16 @@ class NivelPost extends Ferramentas
       </div>';
 
 
-      $data = ['modal' => $modal, 'conteudo' => $conteudo[0], "1" => $array_prcoessos, "2" => $lista["processos"], '3' => explode('-', $lista["processos"]), "4" => $option_processos];
+      $data = ['modal' => $modal, 'conteudo' => $conteudo[0], "1" => $array_prcoessos, "2" => $lista["processos"], '3' => explode('-', $lista["processos"])];
       return $this->response->setJSON($data);
     }
   }
 
+  /**
+   * Modifica as informações de um nível no banco de dados com base nos dados fornecidos via AJAX.
+   *
+   * @return \CodeIgniter\HTTP\Response Retorna uma resposta JSON contendo o status da operação e eventuais mensagens de erro.
+   */
   function nivel_modificar()
   {
     if ($this->request->isAJAX()) {
@@ -327,10 +350,7 @@ class NivelPost extends Ferramentas
           } else {
             $msg["Nível"] = 'Nível não houve alteração';
           }
-
         }
-
-
       }
       if (count($violacao) != 0) {
 
@@ -346,18 +366,18 @@ class NivelPost extends Ferramentas
           ];
 
           $db->insert($data);
-
         }
       }
 
       $data = ['ok' => $ok, 'msg' => $msg];
       return $this->response->setJSON($data);
-
-
-
     }
   }
-
+  /**
+   * Gera o modal para cadastrar um novo nível, exibindo as opções de permissões.
+   *
+   * @return \CodeIgniter\HTTP\Response Retorna uma resposta JSON contendo o modal gerado.
+   */
   function nivel_cadastrar_modal()
   {
     if ($this->request->isAJAX()) {
@@ -384,7 +404,11 @@ class NivelPost extends Ferramentas
       return $this->response->setJSON($data);
     }
   }
-
+  /**
+   * Cadastra um novo nível no banco de dados com base nos dados fornecidos via AJAX.
+   *
+   * @return \CodeIgniter\HTTP\Response Retorna uma resposta JSON contendo o status da operação e eventuais mensagens de erro.
+   */
   function nivel_cadastrar()
   {
     if ($this->request->isAJAX()) {
@@ -429,7 +453,7 @@ class NivelPost extends Ferramentas
       }
       $array_prcoessos = array();
       foreach ($processos_data as $value) {
-        if (Ferramentas::array_index($value, ["status"]) == 'true') {
+        if (Ferramentas::array_index($value, ["status"]) == 'ativo') {
           $array_prcoessos[] = Ferramentas::decodificador(Ferramentas::array_index($value, ["nome"]));
         }
       }
@@ -477,8 +501,6 @@ class NivelPost extends Ferramentas
           $msg["Nível"] = 'Nome do nível já existente';
           $violacao[] = "nivel_cadastrar nivel já existente";
         }
-
-
       }
       if (count($violacao) != 0) {
 
@@ -494,18 +516,18 @@ class NivelPost extends Ferramentas
           ];
 
           $db->insert($data);
-
         }
       }
 
-      $data = ['ok' => $ok, 'msg' => $msg];
+      $data = ['ok' => $ok, 'msg' => $msg, '1' => $array_prcoessos];
       return $this->response->setJSON($data);
-
-
-
     }
   }
-
+  /**
+   * Gera as opções de níveis ativos para serem exibidas em um select HTML.
+   *
+   * @return \CodeIgniter\HTTP\Response Retorna uma resposta JSON contendo as opções de níveis.
+   */
   function nivel_option()
   {
     if ($this->request->isAJAX()) {
@@ -525,7 +547,6 @@ class NivelPost extends Ferramentas
       $_SESSION['nivel_option'] = $array;
       $data = ['option' => $option];
       return $this->response->setJSON($data);
-
     }
   }
 
@@ -555,4 +576,3 @@ class NivelPost extends Ferramentas
     return $this->response->setJSON($data);
   }
 }
-

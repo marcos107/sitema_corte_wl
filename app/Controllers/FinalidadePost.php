@@ -39,6 +39,7 @@ class FinalidadePost extends Ferramentas
        <td><p ondblclick="modal_modificar(\'modal_' . $id_temp . '\')">' . Ferramentas::decodificador($value['nome']) . '</p></td>
        <td ondblclick="modal_modificar(\'modal_' . $id_temp . '\')">' . ucfirst(Ferramentas::decodificador($value['status'])) . '</td>
        <td><button name="cadastarar" type="submit" onclick="desativar(\'' . $id_temp . '\')" class="btn btn-outline-danger btn-lg btn-block"> Desativar </button></td>
+       <td><button name="cadastarar" type="submit" class="btn btn-outline-warning btn-lg btn-block" onclick="modal_modificar(\'modal_' . $id_temp . '\')"> Modificar </button></td>
       </tr>
       ';
         } else if (($desativados == 'true' && Ferramentas::decodificador($value['status']) == 'desativado')) { //verifica se é para mostrar os com estus desativado
@@ -47,6 +48,7 @@ class FinalidadePost extends Ferramentas
        <td><p ondblclick="modal_modificar(\'modal_' . $id_temp . '\')">' . Ferramentas::decodificador($value['nome']) . '</p></td>
        <td ondblclick="modal_modificar(\'modal_' . $id_temp . '\')">' . ucfirst(Ferramentas::decodificador($value['status'])) . '</td>
        <td><button name="cadastarar" type="submit" onclick="ativar(\'' . $id_temp . '\')" class="btn btn-outline-success btn-lg btn-block"> Ativar </button></td>
+       <td><button name="cadastarar" type="submit" class="btn btn-outline-warning btn-lg btn-block" onclick="modal_modificar(\'modal_' . $id_temp . '\')"> Modificar </button></td>
       </tr>
       ';
         }
@@ -231,7 +233,7 @@ class FinalidadePost extends Ferramentas
         $desenhos = new \App\Models\Desenhos();
         $desenhos_data = $desenhos->find();
         $lista = $_SESSION["lista_completa"][$id1];
-        if (count(Ferramentas::array_pesquisa($desenhos_data, 'finalidade', $lista['id'])) == 0) {
+        if (count(Ferramentas::array_pesquisa($desenhos_data, 'finalidade', $lista['id'])) == 0) {//verifica se esta em uso essa finalidade
           if (count(Ferramentas::array_pesquisa($finalidade_data, 'nome', Ferramentas::codificador($finalidade))) == 0) { // verifica se o id do mepreendimento com o mesmo nome é igual ao id 
 
             $alteracao = new \App\Models\Alteracoes();

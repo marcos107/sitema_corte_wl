@@ -1,6 +1,6 @@
 <script>
     var tela_add_desenho = document.getElementById("desenhos_add").outerHTML;
-    document.getElementById("desenhos_add").outerHTML = '<div id="processos_select" class="form-group">                  <label>Processos</label>                      <select id="processos_desenho" class="custom-select"><option value="">Processos</option></select>                    </div></br></br>';
+    document.getElementById("desenhos_add").outerHTML = '<div id="processos_select" class="form-group">                  <label>Processos</label>                      <div id="processos_radio"> </div>                    </div></br></br>';
     // Seleciona o botão pelo atributo name
     var botao = document.querySelector('button[name="cadastarar"]');
     var tela_add_desenho_botao = botao.textContent;
@@ -12,12 +12,24 @@
     tituloCard.innerHTML = "Escolha para onde o desenho ira.";
     processo_lista();
 
+    function get_radio() {
+        var radios = document.getElementsByName('processo'); // Seleciona todos os botões de rádio com o nome 'processo'
+        var processo_var = '';
 
+        // Itera sobre todos os botões de rádio para encontrar o selecionado
+        for (var i = 0; i < radios.length; i++) {
+            if (radios[i].checked) {
+                return radios[i].value; // Captura o valor do botão de rádio selecionado
+                break; // Sai do loop após encontrar o botão selecionado
+            }
+        }
+        return processo_var;
+    }
 
     function inicio_tela() {
 
         var tela_add_desenho = document.getElementById("desenhos_add").outerHTML;
-        document.getElementById("desenhos_add").outerHTML = '<div id="processos_select" class="form-group">                  <label>Processos</label>                 <select id="processos_desenho" class="custom-select"><option value="">Processos</option></select>                    </div>';
+        document.getElementById("desenhos_add").outerHTML = '<div id="processos_select" class="form-group">                  <label>Processos</label>                 <div id="processos_radio"> </div>                    </div>';
         // Seleciona o botão pelo atributo name
         var botao = document.querySelector('button[name="cadastarar"]');
         var tela_add_desenho_botao = botao.textContent;
@@ -58,52 +70,56 @@
 
 
     processos_select = "";
+
     function processo_lista() {
         $.ajax({
             url: '<?= base_url('public/processos_lista') ?>',
             type: "POST",
-            dataType: "json", // Indicar que o retorno é em formato JSON]
+            dataType: "json", // Indicar que o retorno é em formato JSON
             async: false, // Define a requisição como síncrona
 
             success: function (response) {
-
                 processos_select = response.lista;
 
-
-                if (!document.getElementById('processos_desenho'))
+                // Verifica se o elemento <div> existe
+                var radioContainer = document.getElementById('processos_radio');
+                if (!radioContainer)
                     return;
-                // Seleciona todos os elementos <select> com o ID 'processos_desenho'
-                var selectElements = document.querySelectorAll('[id="processos_desenho"]');
 
-                // Itera sobre cada elemento <select> encontrado
-                selectElements.forEach(function (selectElement) {
-                    // Limpa as opções existentes no <select>
-                    selectElement.innerHTML = '';
+                // Limpa os elementos de rádio existentes na <div>
+                radioContainer.innerHTML = '';
 
-                    // Cria a opção padrão e adiciona ao início do <select>
-                    var defaultOption = document.createElement('option');
-                    defaultOption.value = '';
-                    defaultOption.textContent = 'Processos';
-                    selectElement.appendChild(defaultOption);
+                // Itera sobre cada processo na lista
+                processos_select.forEach(function (processo, index) {
+                    console.log(processo);
 
-                    // Itera sobre cada processo na lista
-                    processos_select.forEach(function (processo) {
-                        console.log(processo);
+                    // Cria um novo elemento <input> para o botão de rádio
+                    var radioElement = document.createElement('input');
+                    radioElement.type = 'radio';
+                    radioElement.name = 'processo'; // Define o mesmo nome para agrupar os botões de rádio
+                    radioElement.id = 'processo_' + index; // Define um ID único para cada botão de rádio
+                    radioElement.value = processo.nome; // Define o nome do processo como o valor do botão
 
-                        // Cria um novo elemento <option>
-                        var optionElement = document.createElement('option');
-                        optionElement.value = processo.nome; // Define o nome do processo como o valor da opção
-                        optionElement.textContent = processo.nome; // Define o nome do processo como o texto da opção
+                    // Cria um <label> para o botão de rádio
+                    var labelElement = document.createElement('label');
+                    labelElement.htmlFor = 'processo_' + index; // Associa o label ao botão de rádio
+                    labelElement.textContent = processo.nome; // Define o nome do processo como o texto do label
+                    labelElement.style.fontWeight = 'normal'; // Remove o negrito do texto
 
-                        // Adiciona a nova opção ao <select>
-                        selectElement.appendChild(optionElement);
-                    });
+                    // Cria um <span> para envolver o rádio e o label, mantendo-os juntos horizontalmente
+                    var spanElement = document.createElement('span');
+                    spanElement.style.marginRight = '15px'; // Adiciona espaço entre os botões de rádio
+                    spanElement.appendChild(radioElement);
+                    spanElement.appendChild(labelElement);
+
+                    // Adiciona o <span> à <div>
+                    radioContainer.appendChild(spanElement);
                 });
-
+                if (document.getElementById('processo_0'))
+                    document.getElementById('processo_0').checked = true;
             }
         });
-    }
-    // Função para pegar o filtro baseado no nome do processo
+    }   // Função para pegar o filtro baseado no nome do processo
     function getFiltroByNome(nome) {
 
         // Procura pelo processo no array global
@@ -127,27 +143,22 @@
 
         if (!document.getElementById('desenhos_add')) {
 
-            if (document.getElementById("processos_desenho").value == '') {
-                alert_personalizado("Processos", 'Escolha um Processos.');
-                return;
-            }
 
-
-            processo_nome = document.getElementById("processos_desenho").value;
+            processo_nome = get_radio();
 
 
 
-            document.querySelector('.card-title').innerHTML = '<button type="submit" onclick="inicio_tela()" class="btn btn-outline-primary">  ⬅ Voltar </button>&nbsp&nbsp&nbsp  Adicionar Desenho em ' + document.getElementById("processos_desenho").value;
+            document.querySelector('.card-title').innerHTML = '<button type="submit" onclick="inicio_tela()" class="btn btn-outline-primary">  ⬅ Voltar </button>&nbsp&nbsp&nbsp  Adicionar Desenho em ' + processo_nome;
 
 
             document.querySelector('button[name="cadastarar"]').textContent = tela_add_desenho_botao;
 
 
-
+            processo_lista();
             document.getElementById("processos_select").outerHTML = '<input type="file" name="file" id="desenhos_add" class="inputfile" accept="" data-multiple-caption="{count} files selected" multiple="">';
-
-
+            
             getFiltroByNome(processo_nome);
+            
 
             return;
         }

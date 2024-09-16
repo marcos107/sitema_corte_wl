@@ -1,0 +1,14 @@
+CRITICAL - 2024-09-10 15:15:57 --> Undefined variable $option_processos
+in APPPATH\Controllers\NivelPost.php on line 228.
+ 1 APPPATH\Controllers\NivelPost.php(228): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $option_processos', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\NivelPost.php', 228)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_modifica_modal()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-10 15:16:01 --> Undefined variable $option_processos
+in APPPATH\Controllers\NivelPost.php on line 228.
+ 1 APPPATH\Controllers\NivelPost.php(228): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $option_processos', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\NivelPost.php', 228)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_modifica_modal()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

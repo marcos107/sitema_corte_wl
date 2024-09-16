@@ -290,7 +290,7 @@ class AddDesenhoPost extends Ferramentas
                 'nome' => Ferramentas::codificador(Ferramentas::get_name_file($desenho)),
                 'caminho' => Ferramentas::codificador($desenho),
                 'desenhista' => $_SESSION['usuario'],
-                'status' => 'corte',
+                'status' => 'pendente',
                 'prioridade' => $prioridade_id,
                 'finalidade' => $finalidade_id,
                 'empreendimento' => $empreendimento_id,

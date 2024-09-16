@@ -152,7 +152,7 @@
 
   document.getElementById("nome_extensao_novo").addEventListener("input", function () {
     var input = this;
-    var maxLength = 4;
+    var maxLength = 8;
     var valor = input.value;
     input.value = valor.slice(0, maxLength); // Trunca o valor para o tamanho máximo 
 
@@ -197,7 +197,7 @@
         // Adiciona o evento de input para truncar o valor
         inputElement.addEventListener("input", function () {
           var input = this;
-          var maxLength = 4;
+          var maxLength = 8;
           var valor = input.value;
           input.value = valor.slice(0, maxLength); // Trunca o valor para o tamanho máximo 
         });

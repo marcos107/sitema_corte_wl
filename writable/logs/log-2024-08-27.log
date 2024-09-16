@@ -1,0 +1,31 @@
+CRITICAL - 2024-08-27 20:04:30 --> Undefined array key "usuario_nome"
+in APPPATH\Controllers\Pagina.php on line 533.
+ 1 APPPATH\Controllers\Pagina.php(533): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario_nome"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\Pagina.php', 533)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pagina->usuario()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pagina))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-27 20:13:11 --> [DEPRECATED] Implicit conversion from float 8.468354430379748 to int loses precision in APPPATH\Controllers\RelatorioPost.php on line 20.
+ 1 APPPATH\Controllers\RelatorioPost.php(325): App\Controllers\RelatorioPost->secondsToTime(8.468354430379748)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\RelatorioPost->relatorio()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RelatorioPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-27 20:13:11 --> [DEPRECATED] Implicit conversion from float 8.468354430379748 to int loses precision in APPPATH\Controllers\RelatorioPost.php on line 21.
+ 1 APPPATH\Controllers\RelatorioPost.php(325): App\Controllers\RelatorioPost->secondsToTime(8.468354430379748)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\RelatorioPost->relatorio()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RelatorioPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-27 20:13:11 --> [DEPRECATED] Implicit conversion from float 394.3818181818182 to int loses precision in APPPATH\Controllers\RelatorioPost.php on line 20.
+ 1 APPPATH\Controllers\RelatorioPost.php(325): App\Controllers\RelatorioPost->secondsToTime(394.3818181818182)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\RelatorioPost->relatorio()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RelatorioPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-27 20:13:11 --> [DEPRECATED] Implicit conversion from float 394.3818181818182 to int loses precision in APPPATH\Controllers\RelatorioPost.php on line 21.
+ 1 APPPATH\Controllers\RelatorioPost.php(325): App\Controllers\RelatorioPost->secondsToTime(394.3818181818182)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\RelatorioPost->relatorio()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RelatorioPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

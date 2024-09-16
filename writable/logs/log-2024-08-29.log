@@ -1,0 +1,43 @@
+CRITICAL - 2024-08-29 10:33:36 --> Undefined variable $processo
+in APPPATH\Controllers\DesenhosCortadosPost.php on line 74.
+ 1 APPPATH\Controllers\DesenhosCortadosPost.php(74): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $processo', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhosCortadosPost.php', 74)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhosCortadosPost->desenhos_cortados()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhosCortadosPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-29 11:08:13 --> [DEPRECATED] Implicit conversion from float 177.1132530120482 to int loses precision in APPPATH\Controllers\RelatorioPost.php on line 20.
+ 1 APPPATH\Controllers\RelatorioPost.php(331): App\Controllers\RelatorioPost->secondsToTime(177.1132530120482)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\RelatorioPost->relatorio()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RelatorioPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-29 11:08:13 --> [DEPRECATED] Implicit conversion from float 177.1132530120482 to int loses precision in APPPATH\Controllers\RelatorioPost.php on line 21.
+ 1 APPPATH\Controllers\RelatorioPost.php(331): App\Controllers\RelatorioPost->secondsToTime(177.1132530120482)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\RelatorioPost->relatorio()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RelatorioPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-29 11:08:13 --> [DEPRECATED] Implicit conversion from float 1839.2634146341463 to int loses precision in APPPATH\Controllers\RelatorioPost.php on line 20.
+ 1 APPPATH\Controllers\RelatorioPost.php(331): App\Controllers\RelatorioPost->secondsToTime(1839.2634146341463)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\RelatorioPost->relatorio()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RelatorioPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-29 11:08:13 --> [DEPRECATED] Implicit conversion from float 1839.2634146341463 to int loses precision in APPPATH\Controllers\RelatorioPost.php on line 21.
+ 1 APPPATH\Controllers\RelatorioPost.php(331): App\Controllers\RelatorioPost->secondsToTime(1839.2634146341463)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\RelatorioPost->relatorio()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RelatorioPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-29 11:08:13 --> [DEPRECATED] Implicit conversion from float 2.5 to int loses precision in APPPATH\Controllers\RelatorioPost.php on line 20.
+ 1 APPPATH\Controllers\RelatorioPost.php(331): App\Controllers\RelatorioPost->secondsToTime(2.5)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\RelatorioPost->relatorio()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RelatorioPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-29 11:08:13 --> [DEPRECATED] Implicit conversion from float 2.5 to int loses precision in APPPATH\Controllers\RelatorioPost.php on line 21.
+ 1 APPPATH\Controllers\RelatorioPost.php(331): App\Controllers\RelatorioPost->secondsToTime(2.5)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\RelatorioPost->relatorio()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RelatorioPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

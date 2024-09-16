@@ -125,36 +125,22 @@ lista();
     }
 
     function confirmarModal() {
-        var checkbox = document.getElementById('checkbox_todos');
-        var relatorio = document.getElementById('checkbox_relatorio').checked;
-      var select = document.getElementById('permissao_novo');
-      var select_processos = document.getElementById('processos_novo');
+      var checkbox = document.getElementById('checkbox_todos');
+      var relatorio = document.getElementById('checkbox_relatorio').checked;
       checkbox_processos = document.getElementById('checkbox_todos_processos').checked;
+
       var permissao = "";
       if (checkbox.checked) {
         permissao =  "all";
       } else {
-        var selectedValues = [];
-        for (var i = 0; i < select.options.length; i++) {
-          if (select.options[i].selected) {
-            selectedValues.push(select.options[i].value);
-          }
-        }
-        permissao = selectedValues.join('-');
+        permissao = getCheckboxesNivel().join('-');
       }
-
 
       var processos = "";
       if (checkbox_processos) {
         processos =  "all";
       } else {
-        var selectedValues = [];
-        for (var i = 0; i < select_processos.options.length; i++) {
-          if (select_processos.options[i].selected) {
-            selectedValues.push(select_processos.options[i].value);
-          }
-        }
-        processos = selectedValues.join('-');
+        processos = getCheckboxesProcessos().join('-');
       }
 
         var nivel = document.getElementById("nivel_novo").value;
@@ -196,6 +182,7 @@ lista();
             body: bory
         });
     }
+    
     function alert_personalizado(titulo, bory) {
         $(document).Toasts('create', {
             class: 'bg-danger',
@@ -210,34 +197,21 @@ lista();
 
     function cadastrar() {
       var checkbox = document.getElementById('checkbox_todos');
-      var select = document.getElementById('permissao_novo');
       var relatorio = document.getElementById('checkbox_relatorio').checked;
-      var select_processos = document.getElementById('processos_novo');
       checkbox_processos = document.getElementById('checkbox_todos_processos').checked;
+
       var permissao = "";
       if (checkbox.checked) {
         permissao =  "all";
       } else {
-        var selectedValues = [];
-        for (var i = 0; i < select.options.length; i++) {
-          if (select.options[i].selected) {
-            selectedValues.push(select.options[i].value);
-          }
-        }
-        permissao = selectedValues.join('-');
+        permissao = getCheckboxesNivel().join('-');
       }
 
       var processos = "";
       if (checkbox_processos) {
         processos =  "all";
       } else {
-        var selectedValues = [];
-        for (var i = 0; i < select_processos.options.length; i++) {
-          if (select_processos.options[i].selected) {
-            selectedValues.push(select_processos.options[i].value);
-          }
-        }
-        processos = selectedValues.join('-');
+        processos = getCheckboxesProcessos().join('-');
       }
 
       
@@ -287,19 +261,132 @@ lista();
 
 
     function selecionar_todos() {
-      var checkbox = document.getElementById('checkbox_todos');
-      var select = document.getElementById('permissao_novo');
+      
 
-      if (checkbox.checked) {
-        select.disabled = true;
-      } else {
-        select.disabled = false;
-      }
     }
 
+
+
+
     modal_nivel();
+
+
+
     
 
+
+    
+    function marcar_todos_nivel(checkbox_btn) {
+    // Verifica se o checkbox está dentro da div com id 'cadastro1'
+    console.log('1');
+    var modal_ok = true;
+    if (checkbox_btn.closest('#cadastro1')) {
+      var modal_ok = false;
+    }
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+    checkboxes.forEach(function(checkbox) {
+
+
+// Verifica se o id do checkbox é 'nivel_checkbox'
+if (checkbox.id == 'nivel_checkbox') {
+  if(checkbox.closest('#cadastro1') && !modal_ok){
+    if(checkbox_btn.checked){
+      checkbox.disabled = true;
+    }else{
+      checkbox.disabled = false;
+    }
+
+  }else if(modal_ok){
+    if(checkbox_btn.checked){
+      checkbox.disabled = true;
+    }else{
+      checkbox.disabled = false;
+    }
+    
+  }
+
+}
+});
+    
+}
+
+
+
+function marcar_todos_processos(checkbox_btn) {
+    // Verifica se o checkbox está dentro da div com id 'cadastro1'
+    console.log('1');
+    var modal_ok = true;
+    if (checkbox_btn.closest('#cadastro1')) {
+      var modal_ok = false;
+    }
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+    checkboxes.forEach(function(checkbox) {
+
+
+// Verifica se o id do checkbox é 'nivel_checkbox'
+if (checkbox.id == 'permissao_checkbox') {
+  if(checkbox.closest('#cadastro1') && !modal_ok){
+    if(checkbox_btn.checked){
+      checkbox.checked = false;
+      checkbox.disabled = true;
+    }else{
+      checkbox.disabled = false;
+    }
+
+  }else if(modal_ok){
+    if(checkbox_btn.checked){
+      checkbox.checked = false;
+      checkbox.disabled = true;
+    }else{
+      checkbox.disabled = false;
+    }
+    
+  }
+
+}
+});
+    
+}
+
+
+
+    function selecionar_todos_nivel() {
+
+
+    var checkbox_btn = document.getElementById('checkbox_todos');
+    // Seleciona todos os checkboxes na página
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    var modal = [];
+    var cadastrar = [];
+    
+    modal_ok = false;
+    checkboxes.forEach(function(checkbox) {
+
+
+        // Verifica se o id do checkbox é 'nivel_checkbox'
+        if (checkbox.id == 'nivel_checkbox') {
+          if(checkbox.closest('#cadastro1')){
+            if(checkbox.checked)
+              cadastrar.push(checkbox.value);
+          }else{
+            modal_ok = true;
+            if(checkbox.checked)
+              modal.push(checkbox.value);
+          }
+
+        }
+    });
+
+    if(modal_ok){
+      return modal;
+    }
+    return cadastrar;
+    
+    // Retorna o array de valores dos checkboxes com o maior z-index
+
+}
     
 
 
@@ -316,4 +403,73 @@ lista();
         select.disabled = false;
       }
     }
+
+    function getCheckboxesNivel() {
+    // Seleciona todos os checkboxes na página
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    var modal = [];
+    var cadastrar = [];
+    var modal_ok = false;
+
+    checkboxes.forEach(function(checkbox) {
+
+
+        // Verifica se o id do checkbox é 'nivel_checkbox'
+        if (checkbox.id == 'nivel_checkbox') {
+          if(checkbox.closest('#cadastro1')){
+            if(checkbox.checked)
+              cadastrar.push(checkbox.value);
+          }else{
+            modal_ok = true;
+            if(checkbox.checked)
+              modal.push(checkbox.value);
+          }
+
+        }
+    });
+
+    if(modal_ok){
+      return modal;
+    }
+    return cadastrar;
+    
+    // Retorna o array de valores dos checkboxes com o maior z-index
+
+}
+
+function getCheckboxesProcessos() {
+    // Seleciona todos os checkboxes na página
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    var modal = [];
+    var cadastrar = [];
+    var modal_ok = false;
+
+    checkboxes.forEach(function(checkbox) {
+
+
+        // Verifica se o id do checkbox é 'nivel_checkbox'
+        if (checkbox.id == 'permissao_checkbox') {
+          if(checkbox.closest('#cadastro1')){
+            if(checkbox.checked)
+              cadastrar.push(checkbox.value);
+          }else{
+            modal_ok = true;
+            if(checkbox.checked)
+              modal.push(checkbox.value);
+          }
+
+        }
+    });
+
+    if(modal_ok){
+      return modal;
+    }
+    return cadastrar;
+    
+    // Retorna o array de valores dos checkboxes com o maior z-index
+
+}
+
+
+
 </script>

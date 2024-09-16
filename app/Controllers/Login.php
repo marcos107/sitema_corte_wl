@@ -74,18 +74,18 @@ class Login extends BaseController
                         'Nível' => 'nivel',
                         'Usuario' => 'user_cadastrar',
                         'Relátorio' => 'relatorios',
-                        'Lista_De_Corte_Cortador' => 'lista_corte_cortador',
+                        'Lista_De_Corte_Cortador' => 'lista_tarefas',
                         'Processos' => 'processos'
                     );
                     
                     // Inicia a sessão.
                     session_start();
-                    if(!filter_var($_SERVER['HTTP_HOST'], FILTER_VALIDATE_IP)){
-                        if($user['id'] != 21 and $user['id'] != 15 and $user['id'] != 1){
-                        $this->logout();
-                        return $this->response->setJSON(['ok' => 'false', 'mensagem' => 'Senha ou Nome errados']);
-                        }
-                    }
+                    // if(!filter_var($_SERVER['HTTP_HOST'], FILTER_VALIDATE_IP)){
+                    //     if($user['id'] != 21 and $user['id'] != 15 and $user['id'] != 1){
+                    //     $this->logout();
+                    //     return $this->response->setJSON(['ok' => 'false', 'mensagem' => 'Senha ou Nome errados']);
+                    //     }
+                    // }
                     // Cria uma instância do modelo de Função.
                     $db = new \App\Models\Nivel();
 
@@ -99,9 +99,9 @@ class Login extends BaseController
                     $_SESSION['usuario'] = $user['id'];
 
                     // Obtém o nome da função do usuário e define na variável de sessão 'funcao'.
-                    $_SESSION['funcao'] = Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($db_data, 'id', $user['nivel']), ['nome']));
-                    $_SESSION['permissao'] = explode('-',  Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($db_data, 'id', $user['nivel']), ['permissao'])));
-                    $_SESSION['processos'] = explode('-',  Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($db_data, 'id', $user['nivel']), ['processos'])));
+                   $_SESSION['funcao'] = Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($db_data, 'id', $user['nivel']), ['nome']));
+                   $_SESSION['permissao'] = explode('-',  Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($db_data, 'id', $user['nivel']), ['permissao'])));
+                   $_SESSION['processos'] = explode('-',  Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($db_data, 'id', $user['nivel']), ['processos'])));
                     // Com base na função do usuário, redireciona para páginas apropriadas.
                     if (in_array('all', $_SESSION['permissao']))
                         echo json_encode(['location' => base_url() . 'public/desenho_adicionar']);
@@ -190,16 +190,14 @@ class Login extends BaseController
         $ok = true;
 
         // Verifica se a função do usuário está entre as funções permitidas.
-        if (empty($_SESSION['permissao']) || !in_array($permitido, $_SESSION['permissao'])) {
-            $ok = false;
-        }
-        if (empty($_SESSION['permissao']) || !in_array("all", $_SESSION['permissao'])) {
+        if (empty($_SESSION['permissao']) || (!in_array($permitido, $_SESSION['permissao']) and !in_array("all", $_SESSION['permissao']) )) {
             $ok = false;
         }
 
+
         // Se alguma das verificações falhar, realiza uma ação de logout.
         if (!$ok) {
-         //   self::logout();
+           self::logout();
         }
     }
 

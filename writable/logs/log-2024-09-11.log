@@ -1,0 +1,49 @@
+CRITICAL - 2024-09-11 17:01:06 --> Undefined global variable $_SESSION
+in APPPATH\Controllers\ListaCortePost.php on line 561.
+ 1 APPPATH\Controllers\ListaCortePost.php(561): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\ListaCortePost.php', 561)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ListaCortePost->lista_tarefas()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListaCortePost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-11 17:01:22 --> Undefined global variable $_SESSION
+in APPPATH\Controllers\ListaCortePost.php on line 561.
+ 1 APPPATH\Controllers\ListaCortePost.php(561): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\ListaCortePost.php', 561)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ListaCortePost->lista_tarefas()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListaCortePost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-11 17:02:13 --> Undefined array key "id_desenho"
+in APPPATH\Controllers\ListaCortePost.php on line 558.
+ 1 APPPATH\Controllers\ListaCortePost.php(558): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_desenho"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\ListaCortePost.php', 558)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ListaCortePost->lista_tarefas()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListaCortePost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-11 17:02:29 --> Undefined array key "id_desenho"
+in APPPATH\Controllers\ListaCortePost.php on line 558.
+ 1 APPPATH\Controllers\ListaCortePost.php(558): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_desenho"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\ListaCortePost.php', 558)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ListaCortePost->lista_tarefas()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListaCortePost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-11 17:03:21 --> Undefined array key "status"
+in APPPATH\Controllers\ListaCortePost.php on line 558.
+ 1 APPPATH\Controllers\ListaCortePost.php(558): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "status"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\ListaCortePost.php', 558)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ListaCortePost->lista_tarefas()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListaCortePost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-11 17:03:54 --> Undefined array key "id"
+in APPPATH\Controllers\ListaCortePost.php on line 565.
+ 1 APPPATH\Controllers\ListaCortePost.php(565): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\ListaCortePost.php', 565)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ListaCortePost->lista_tarefas()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListaCortePost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-11 17:04:15 --> Undefined array key "id"
+in APPPATH\Controllers\ListaCortePost.php on line 565.
+ 1 APPPATH\Controllers\ListaCortePost.php(565): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\ListaCortePost.php', 565)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ListaCortePost->lista_tarefas()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListaCortePost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

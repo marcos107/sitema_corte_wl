@@ -136,17 +136,24 @@ class DesenhoPost extends Ferramentas
     }
   }
 
-
+  /**
+   * Função nome_desenho()
+   *
+   * Esta função recebe, via POST, um ID temporário e utiliza esse ID para retornar o nome completo de um desenho
+   * que está em uma lista. 
+   *
+   * A função retorna um JSON contendo a lista completa de usuários que está armazenada na sessão.
+   */
   function nome_desenho()
   {
     if ($this->request->isAJAX()) {
       session_start();
 
-      $id = service('request')->getPost('id'); //pega a informação post que foi fornecida via ajax se é para pegar os usuarios ativos
+      $id = service('request')->getPost('id'); //id recebido via post
 
-      $lista = $_SESSION["lista_completa"][$id];
+      $lista = $_SESSION["lista_completa"][$id];//busca qual desenhos é da lsita usando o id e retornando as informações desse desenho
 
-      $data = ['ok' => true, 'nome' => Ferramentas::decodificador($lista['nome'])];
+      $data = ['ok' => true, 'nome' => Ferramentas::decodificador($lista['nome'])];// envia ok true indicando que deu certo e retrirar apenas o nome das informações do desenho
       return $this->response->setJSON($data);
     }
   }
@@ -292,7 +299,7 @@ class DesenhoPost extends Ferramentas
         unset($novaEntrada['id'], $novaEntrada['cortador']);
 
         $novaEntrada['data_hora_add'] = Ferramentas::codificador(date('d/m/Y H:i'));
-        $novaEntrada['status'] = 'corte';
+        $novaEntrada['status'] = 'pendente';
 
         $desenhos = new \App\Models\Desenhos();
         $nome = Ferramentas::decodificador($novaEntrada['nome']);

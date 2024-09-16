@@ -9,6 +9,17 @@ class ProcessosPost extends Ferramentas
 {
 
 
+ /**
+ * Cadastra um novo processo no banco de dados, validando os dados fornecidos via requisição AJAX.
+ * 
+ * Esta função realiza as seguintes operações:
+ * - Validação dos campos 'nome', 'diretório' e 'extensão' de acordo com os critérios de tamanho e caracteres permitidos.
+ * - Verificação da existência de tipos de arquivo na lista de extensões permitidas.
+ * - Verificação da existência prévia do processo no banco de dados para evitar duplicações.
+ * - Inserção de violações no banco de dados caso alguma validação falhe.
+ * - Caso todas as validações sejam aprovadas, o processo é cadastrado com suas informações no banco de dados.
+ * 
+ */
   function processos_cadastrar()
   { 
       if ($this->request->isAJAX()) {
@@ -87,7 +98,7 @@ class ProcessosPost extends Ferramentas
 
             $date = [
               'nome' => Ferramentas::codificador($nome),
-              'diretorio' => Ferramentas::codificador(Ferramentas::norma_lizar_str($diretorio)),
+              'diretorio' => (Ferramentas::norma_lizar_str($diretorio)),
               'filtros_id' => implode('-',$filtros_array),
               'data_hora_add' => Ferramentas::codificador(date('d/m/Y H:i')),
               'responsavel' => $_SESSION["usuario"],
@@ -128,6 +139,17 @@ class ProcessosPost extends Ferramentas
       }
   }
 
+
+  /**
+   * Gera uma lista de processos com base em seu status (ativos ou desativados) e retorna os dados formatados para exibição em uma tabela via AJAX.
+   * 
+   * Esta função realiza as seguintes operações:
+   * - Inicializa a sessão para armazenar a lista de IDs e dados completos dos processos.
+   * - Obtém dados de processos e filtros do banco de dados e organiza a lista com base nos status ativos ou desativados.
+   * - Para cada processo, verifica se ele deve ser exibido como ativo ou desativado, formatando as informações em uma tabela HTML.
+   * - Armazena os IDs e os detalhes completos dos processos em variáveis de sessão para uso posterior.
+   * 
+   */
   function processos(){
     if ($this->request->isAJAX()) {
       // Inicializa a sessão para acessar os dados da lista armazenados nela
@@ -163,6 +185,7 @@ class ProcessosPost extends Ferramentas
        <td><p ondblclick="modal_modificar(\'modal_' . $id_temp . '\')">' . Ferramentas::decodificador(implode("-",$filtros)) . '</p></td>
        <td ondblclick="modal_modificar(\'modal_' . $id_temp . '\')">' . ucfirst(Ferramentas::decodificador($value['status'])) . '</td>
        <td><button name="cadastarar" type="submit" onclick="desativar(\'' . $id_temp . '\')" class="btn btn-outline-danger btn-lg btn-block"> Desativar </button></td>
+       <td><button name="cadastarar" type="submit" class="btn btn-outline-warning btn-lg btn-block" onclick="modal_modificar(\'modal_' . $id_temp . '\')"> Modificar </button></td>
       </tr>
       ';
         } else if (($desativados == 'true' && Ferramentas::decodificador($value['status']) == 'desativado')) { //verifica se é para mostrar os com estus desativado
@@ -173,6 +196,7 @@ class ProcessosPost extends Ferramentas
        <td><p ondblclick="modal_modificar(\'modal_' . $id_temp . '\')">' . Ferramentas::decodificador(implode("-",$filtros)) . '</p></td>
        <td ondblclick="modal_modificar(\'modal_' . $id_temp . '\')">' . ucfirst(Ferramentas::decodificador($value['status'])) . '</td>
        <td><button name="cadastarar" type="submit" onclick="ativar(\'' . $id_temp . '\')" class="btn btn-outline-success btn-lg btn-block"> Ativar </button></td>
+       <td><button name="cadastarar" type="submit" class="btn btn-outline-warning btn-lg btn-block" onclick="modal_modificar(\'modal_' . $id_temp . '\')"> Modificar </button></td>
       </tr>
       ';
         }
@@ -200,6 +224,19 @@ class ProcessosPost extends Ferramentas
     }
   }
 
+
+
+
+  /**
+ * Gera uma lista de processos ativos com base nas permissões do usuário e retorna os dados formatados via AJAX.
+ * 
+ * Esta função realiza as seguintes operações:
+ * - Inicializa a sessão para acessar e armazenar os dados da lista de processos.
+ * - Obtém os processos ativos do banco de dados e filtra os que podem ser exibidos, com base nas permissões do usuário, incluindo permissões específicas ou globais ('Processos' ou 'all').
+ * - Para cada processo válido, os filtros associados são buscados e a lista é organizada em um array.
+ * - Armazena a lista completa dos processos na sessão para uso posterior.
+ * 
+ */
   function processos_lista()
   {
     if ($this->request->isAJAX()) {
@@ -243,7 +280,8 @@ class ProcessosPost extends Ferramentas
       $_SESSION['processos_lista']['lista'] = $lista_session;
       //retorna a lista para o ajax
       $data = [
-        "lista" => $lista
+        "lista" => $lista,
+        "1" => $_SESSION['permissao']
 
 
       ];
@@ -252,6 +290,19 @@ class ProcessosPost extends Ferramentas
     }
   }
 
+
+
+
+  /**
+   * Gera e retorna um modal para modificar informações de um processo específico, baseado nos dados fornecidos via AJAX.
+   * 
+   * Esta função realiza as seguintes operações:
+   * - Inicializa a sessão para acessar a lista de processos armazenados.
+   * - Obtém os filtros ativos do banco de dados e organiza as opções de filtro para serem exibidas no modal.
+   * - Se um ID de processo for fornecido, as informações do processo são carregadas e o modal é preenchido com seus dados. Caso contrário, o modal é inicializado vazio.
+   * - Constrói o HTML do modal contendo campos de nome, diretório e filtros relacionados ao processo.
+   * 
+   */
   function processos_modifica_modal()
   {
     if ($this->request->isAJAX()) {
@@ -349,8 +400,17 @@ class ProcessosPost extends Ferramentas
 
 
 
-
-
+  /**
+   * Modifica as informações de um processo existente no banco de dados com base nos dados fornecidos via AJAX.
+   * 
+   * Esta função realiza as seguintes operações:
+   * - Valida os campos 'nome', 'diretório' e 'extensão' de acordo com os critérios de tamanho e caracteres permitidos.
+   * - Verifica a existência dos tipos de arquivo selecionados nos filtros disponíveis.
+   * - Se todas as validações forem aprovadas, o processo é atualizado no banco de dados.
+   * - Caso o processo já exista com os mesmos dados ou não haja alterações, uma mensagem apropriada é retornada.
+   * - Registra violações, se houver, no banco de dados, armazenando a causa e o usuário responsável.
+   * 
+   */
   function processos_modificar()
   { 
       if ($this->request->isAJAX()) {
@@ -435,7 +495,7 @@ class ProcessosPost extends Ferramentas
 
             $date = [
               'nome' => Ferramentas::codificador($nome),
-              'diretorio' => Ferramentas::codificador(Ferramentas::norma_lizar_str($diretorio)),
+              'diretorio' => (Ferramentas::norma_lizar_str($diretorio)),
               'filtros_id' => implode('-',$filtros_array),
             ];
             $db->update($id ,$date);
