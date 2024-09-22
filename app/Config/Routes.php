@@ -162,6 +162,10 @@ $routes->post('/processos_modificar', 'ProcessosPost::processos_modificar');
 
 
 
+//api
+$routes->post('/comecar_conversa', 'Api::comecar_conversa');
+
+
 /*
  * --------------------------------------------------------------------
  * Definições de Rota

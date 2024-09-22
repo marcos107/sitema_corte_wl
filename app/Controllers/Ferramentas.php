@@ -583,7 +583,7 @@ class Ferramentas extends BaseController
                 if ($arquivo != '.' && $arquivo != '..') {
                     if (is_dir($pasta . $arquivo)) {
                         // Se o item é uma subpasta, chama a função recursivamente para mapear os itens dentro dela.
-                        $p = array_merge($p, map_pasta($pasta . $arquivo . '/', $p));
+                        $p = array_merge($p, self::map_pasta($pasta . $arquivo . '/', $p));
                     } else {
                         // Se o item é um arquivo, adiciona o caminho completo ao array.
                         array_push($p, ($pasta . $arquivo));
@@ -711,8 +711,8 @@ class Ferramentas extends BaseController
      *  - , _ , + , = , { , } , [ , ] , | , \ , : , ; , " ," ", < , > , ? , ~ , ^ , ` , ´
      * por sequências como "i001n", "i002n", "i003n" e assim por diante.
      *
-     * @param $array array para ser codificada as strings.
-     * @return string array codificada.
+     * $array array para ser codificada as strings.
+     *  string array codificada.
      */
     public static function array_codificar($array)
     {

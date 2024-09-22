@@ -138,14 +138,14 @@ class AddDesenhoPost extends Ferramentas
 
         // Valida informações associadas (empresa, prioridade, finalidade, etc.).
         if ($value["empresa"] != '') {
-          if (Ferramentas::array_pesquisa($empresa_data, 'nome', Ferramentas::codificador($value["empresa"])) == array()) {
+          if (Ferramentas::array_pesquisa($empresa_data, 'nome', ($value["empresa"])) == array()) {
 
             //violacao
             $msg["Empresa " . $value["desenho"]] = 'Não existe.';
             $violacao[] = "desenhos_add Empresa não exist";
             $erro = true;
           } else {
-            $empresa_id = Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'nome', Ferramentas::codificador($value["empresa"])), ['id']);
+            $empresa_id = Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'nome', ($value["empresa"])), ['id']);
           }
 
         } else {

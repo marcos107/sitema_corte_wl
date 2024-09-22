@@ -133,7 +133,7 @@ class EmpreendimentoPost extends EmpresaPost
         $empreendimento_data = $db->find();
         $empresa_data = $empresa_db->find();
 
-        $empresa_id = Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'nome', Ferramentas::codificador($empresa)), ['id']); // pega o id da empresa fornecida 
+        $empresa_id = Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'nome', ($empresa)), ['id']); // pega o id da empresa fornecida 
         if (count(Ferramentas::array_pesquisa_mult($empreendimento_data, ['nome', 'empresa_id'], [Ferramentas::codificador($empreendimento), $empresa_id])) == 0) { // verifica se o id do mepreendimento com o mesmo nome é igual ao id 
           $date = [
             'nome' => Ferramentas::codificador($empreendimento),
@@ -272,7 +272,7 @@ class EmpreendimentoPost extends EmpresaPost
         $desenhos_data = $desenhos->find();
         $lista = $_SESSION["lista_completa"][$id1];
         if (count(Ferramentas::array_pesquisa($desenhos_data, 'empreendimento', $lista['id'])) == 0) {//verifica se 
-          $empresa_id = Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'nome', Ferramentas::codificador($empresa)), ['id']); // verifica se o empreendimento que esta tentando modificar ja não foi usada
+          $empresa_id = Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'nome', ($empresa)), ['id']); // verifica se o empreendimento que esta tentando modificar ja não foi usada
           if (count(Ferramentas::array_pesquisa_mult($empreendimento_data, ['nome', 'empresa_id'], [Ferramentas::codificador($empreendimento), $empresa_id])) == 0) { // verifica se o id do mepreendimento com o mesmo nome é igual ao id 
             $alteracao = new \App\Models\Alteracoes();
 
