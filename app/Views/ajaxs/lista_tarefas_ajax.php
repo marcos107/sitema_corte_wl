@@ -37,6 +37,7 @@
     }
     return processo_var;
   }
+
   function aparecer_lista() {
     processo_nome = get_radio();
     tituloCard.innerHTML = "<button type='submit' onclick='inicio_tela()' class='btn btn-outline-primary'>  ⬅ Voltar </button>&nbsp&nbsp&nbsp Lista " + processo_nome;
@@ -50,30 +51,31 @@
 
 
   processos = "";
+
   function processo_lista() {
-   
-    
-    
-    
-    
+
+
+
+
+
     $.ajax({
       url: '<?= base_url('public/processos_lista') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
       async: false, // Define a requisição como síncrona
-      success: function (response) {
+      success: function(response) {
         processos = response.lista;
 
         // Verifica se o elemento <div> existe
         var radioContainer = document.getElementById('processos_radio');
         if (!radioContainer)
           return;
-          
+
         // Limpa os elementos de rádio existentes na <div>
         radioContainer.innerHTML = '';
 
         // Itera sobre cada processo na lista
-        processos.forEach(function (processo, index) {
+        processos.forEach(function(processo, index) {
           // Cria um novo elemento <input> para o botão de rádio
           var radioElement = document.createElement('input');
           radioElement.type = 'radio';
@@ -96,8 +98,8 @@
           // Adiciona o <span> à <div>
           radioContainer.appendChild(spanElement);
         });
-        if(document.getElementById('processo_0'))
-        document.getElementById('processo_0').checked = true;
+        if (document.getElementById('processo_0'))
+          document.getElementById('processo_0').checked = true;
       }
     });
   }
@@ -137,8 +139,10 @@
       url: '<?= base_url('public/lista_tarefas') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
-      data: { processo: processo_nome },
-      success: function (response) {
+      data: {
+        processo: processo_nome
+      },
+      success: function(response) {
         if (response.lista != lista_temp || ok) {
           if (response.status != "cortando" && lista_temp != "" && response.som == "true") {
             playBellSound();
@@ -151,8 +155,13 @@
           var lista = document.getElementById('lista');
           lista.innerHTML = response.lista;
 
-          $(function () {
+          $(function() {
             $("#example1").DataTable({
+              "order": [
+               
+                [0, "asc"],
+                [1, "asc"]
+              ], // Ordena pela coluna 1 e depois pela coluna 0 (ambas em ordem ascendente)
               "responsive": true,
               "lengthChange": false,
               "autoWidth": false,
@@ -182,6 +191,7 @@
               }
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
           });
+
 
           lista_temp = response.lista;
         }
@@ -232,8 +242,10 @@
       url: '<?= base_url('public/caminho_desenho') ?>',
       type: "POST",
       dataType: "json", // Indicar que o retorno é em formato JSON
-      data: { id: id },
-      success: function (response) {
+      data: {
+        id: id
+      },
+      success: function(response) {
         copy(response.caminho);
         alert(response.caminho);
         lista();
@@ -241,6 +253,7 @@
       }
     });
   }
+
   function confirmar(id, nome) {
     if (mostrarConfirmacao("Confirmar corte do desenho: " + nome)) {
 
@@ -248,8 +261,10 @@
         url: '<?= base_url('public/confirmar_corte') ?>',
         type: "POST",
         dataType: "json", // Indicar que o retorno é em formato JSON
-        data: { id: id },
-        success: function (response) {
+        data: {
+          id: id
+        },
+        success: function(response) {
 
 
           lista();
@@ -258,6 +273,7 @@
       });
     }
   }
+
   function mostrarConfirmacao(texto = '') {
     // Exibe a caixa de diálogo de confirmação e armazena a resposta em uma variável
     var resposta = window.confirm(texto);
@@ -265,10 +281,4 @@
     return resposta;
 
   }
-
-
-
-
-
-
 </script>

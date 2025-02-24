@@ -41,6 +41,12 @@
               "responsive": true,
               "lengthChange": false,
               "autoWidth": false,
+              "order": [
+               
+               [0, "asc"],
+               [1, "asc"]
+             ],
+              
               "language": {
                 "decimal": "",
                 "emptyTable": "Sem dados disponíveis",
@@ -185,291 +191,344 @@
     return invertedHex;
   }
 
+  var lista = [];
+
 
   function prio_modal_todos() {
+  $.ajax({
+    url: '<?= base_url('public/desenho_modal') ?>',
+    type: "POST",
+    dataType: "json",
+    data: { id: "" },
+    success: function (response) {
+      document.getElementById('modal_sizer').classList.add('modal-xl');
+      const modalBory = document.getElementById('modal_bory');
+      const modalTitulo = document.getElementById('modal_titulo');
+      const botaoConfirmarModal = document.getElementById('botao_confirmar_modal');
 
+      modalBory.innerHTML = ''; // Limpa o conteúdo anterior
+      modalTitulo.textContent = "Modificar prioridade desenho";
+      botaoConfirmarModal.innerHTML = "Confirmar";
 
-    $.ajax({
-      url: '<?= base_url('public/desenho_modal') ?>',
-      type: "POST",
-      dataType: "json", // Indicar que o retorno é em formato JSON
-      data: { id: "" },
-      success: function (response) {
+      // Ajusta a largura do modal
+      document.getElementById('modal_sizer').classList.add('modal-xxl'); // Ajuste para um tamanho maior
 
-        var botao_confirmar_modal = document.getElementById('botao_confirmar_modal');
+      /* -------------------------------------
+         CRIA O SELECT DE PRIORIDADE
+         ------------------------------------- */
+      const divSelect = document.createElement("div");
+      divSelect.classList.add("form-group");
 
-        document.getElementById('modal_sizer').classList.add('modal-xl');
-        botao_confirmar_modal.innerHTML = "Confirmar";
-        var modal_titulo = document.getElementById('modal_titulo');
-        var modal_bory = document.getElementById('modal_bory');
-        modal_titulo.textContent = "Modificar prioridade desenho";
-        const selectElement = document.createElement("select");
-        var inputElement = document.createElement("input");
+      const labelPrioridade = document.createElement("label");
+      labelPrioridade.textContent = "Prioridade";
+      divSelect.appendChild(labelPrioridade);
 
-        var divElemnt = document.createElement("div");
-        divElemnt.classList.add("form-group");
+      const selectPrioridade = document.createElement("select");
+      selectPrioridade.classList.add("custom-select");
+      selectPrioridade.id = "prioridade_novo";
 
-        modal_bory.innerHTML = '';
-        // Limpar o select
-        selectElement.innerHTML = '';
-        // Criar um novo elemento option
+      const novoOption = document.createElement("option");
+      novoOption.value = response.empresa_id;
+      novoOption.textContent = response.empresa_id;
+      selectPrioridade.appendChild(novoOption);
 
-        var novoOption = document.createElement("option");
+      divSelect.appendChild(selectPrioridade);
+      modalBory.appendChild(divSelect);
 
+      /* -------------------------------------
+         CRIA O SELECT DE ORDEM
+         ------------------------------------- */
+      const divOrdem = document.createElement("div");
+      divOrdem.classList.add("form-group");
 
+      const labelOrdem = document.createElement("label");
+      labelOrdem.textContent = "Ordem";
+      divOrdem.appendChild(labelOrdem);
 
-        divElemnt = document.createElement("div");
-        divElemnt.classList.add("form-group");
-        // Definir o valor e texto do novo elemento option
-        novoOption.value = response.empresa_id;
-        novoOption.textContent = response.empresa_id;
-        selectElement.id = 'prioridade_novo';
-        selectElement.classList.add("custom-select");
-        selectElement.appendChild(novoOption);
-        labelElement = document.createElement("label");
-        labelElement.textContent = "Prioridade";
-        divElemnt.appendChild(labelElement);
-        divElemnt.appendChild(selectElement);
-        modal_bory.appendChild(divElemnt);//coloca o input name no modal
+      const selectOrdem = document.createElement("select");
+      selectOrdem.classList.add("custom-select");
+      selectOrdem.id = "ordem_novo";
 
+      divOrdem.appendChild(selectOrdem);
+      modalBory.appendChild(divOrdem);
 
+      // Função para popular o select de ordem conforme a prioridade selecionada
+      function populateOrderSelect(priority) {
+        selectOrdem.innerHTML = ""; // Limpa as opções atuais
 
-        divElemnt = document.createElement("div");
-        divElemnt.classList.add("form-group");
+        // Obtém o número máximo de ordem para a prioridade selecionada
+        var maxOrder = response.agrupados[priority] || 1; // Se não existir prioridade, define 1
         lista = response.lista;
-        tabel_bory = document.createElement("table");
-        tr = document.createElement('tr');
-        th = document.createElement('th');
-        th.textContent = 'Nome';
+        for (var i = 1; i <= maxOrder; i++) {
+          var opt = document.createElement("option");
+          opt.value = i;
+          opt.textContent = "Ordem " + i;
 
-        tr.appendChild(th);
-        th = document.createElement('th');
-        th.textContent = 'Prioridade';
-
-        tr.appendChild(th);
-        th = document.createElement('th');
-        th.textContent = 'Finalidade';
-
-        tr.appendChild(th);
-        th = document.createElement('th');
-        th.textContent = 'Empresa/Cliente';
-
-        tr.appendChild(th);
-        th = document.createElement('th');
-        th.textContent = 'Empreendimento';
-
-        tr.appendChild(th);
-        th = document.createElement('th');
-        th.textContent = 'Data de Envio';
-
-        tr.appendChild(th);
-        tabel_bory.appendChild(tr);
-        th = document.createElement('th');
-        th.textContent = '';
-
-        tr.appendChild(th);
-        tabel_bory.appendChild(tr);
-
-
-        for (let index = 0; index < response.lista.length; index++) {
-          if (lista[index]['status'] == 'corte') {
-            tr = document.createElement('tr');
-            if (index % 2 == 0) {
-              tr.classList.add('odd');
-            } else {
-              tr.classList.add('even');
-            }
-
-            inputElement = document.createElement("input");
-            inputElement.type = 'checkbox';
-            inputElement.id = 'prio_' + lista[index]['id'];
-            inputElement.classList.add("form-control");
-            inputElement.value = '';
-            labelElement = document.createElement("label");
-            labelElement.textContent = lista[index]['nome'];
-            th = document.createElement('th');
-            th.appendChild(labelElement);
-            tr.appendChild(th);
-
-            labelElement = document.createElement("label");
-
-
-            th = document.createElement('th');
-            th.appendChild(labelElement);
-            p = document.createElement("p");
-            p.textContent = lista[index]['prioridade'];
-            p.classList.add('marca_texto');
-            th.style.backgroundColor = lista[index]['cor'];
-
-            th.appendChild(p);
-            tr.appendChild(th);
-
-            labelElement = document.createElement("label");
-            labelElement.textContent = lista[index]['finalidade'];
-            th = document.createElement('th');
-            th.appendChild(labelElement);
-            tr.appendChild(th);
-
-            labelElement = document.createElement("label");
-            labelElement.textContent = lista[index]['empresa'];
-            th = document.createElement('th');
-            th.appendChild(labelElement);
-            tr.appendChild(th);
-
-            labelElement = document.createElement("label");
-            labelElement.textContent = lista[index]['empreendimento'];
-            th = document.createElement('th');
-            th.appendChild(labelElement);
-            tr.appendChild(th);
-
-            labelElement = document.createElement("label");
-            labelElement.textContent = lista[index]['data_hora_add'];
-            th = document.createElement('th');
-            th.appendChild(labelElement);
-            tr.appendChild(th);
-
-
-
-
-            th = document.createElement('th');
-            th.appendChild(inputElement);
-            tr.appendChild(th);
-            tabel_bory.appendChild(tr);
-
-
+          // Se for a ordem atual do primeiro desenho, seleciona essa opção
+          if (response.lista.length > 0 && i == response.lista[0].ordem) {
+            opt.selected = true;
           }
+          selectOrdem.appendChild(opt);
         }
-        modal_bory.appendChild(divElemnt);//coloca o input name no modal
-
-
-        tabel_bory.classList.add('table', 'table-bordered', 'table-striped');
-        modal_bory.appendChild(tabel_bory);
-        value_prioridade();
-        mostrarModal();
-
       }
 
-    });
+      // Inicializa o select de ordem com a prioridade atual
+      populateOrderSelect(response.lista[0]?.prioridade || response.empresa_id);
+
+      // Atualiza o select de ordem quando a prioridade for alterada
+      selectPrioridade.addEventListener("change", function () {
+        populateOrderSelect(this.value);
+      });
+
+      /* -------------------------------------
+         CRIA A TABELA
+         ------------------------------------- */
+      const tabela = document.createElement("table");
+      tabela.classList.add("table", "table-bordered", "table-striped");
+      tabela.id = "tabelaPrioridade";
+
+      const thead = document.createElement("thead");
+      thead.innerHTML = `
+  <tr>
+    <th class="quebrar" style="max-width: 6%;">Prioridade</th>
+    <th class="quebrar" style="max-width: 12%;">Processos</th>
+    <th class="quebrar" style="max-width: 6%;">Desenhista</th>
+    <!-- Reduzi a largura da coluna "Nome do arquivo" para 8% -->
+    <th class="quebrar" style="max-width: 8%;">Nome do arquivo</th>
+    <th class="quebrar" style="max-width: 6%;">Empresa/Cliente</th>
+    <th class="quebrar" style="max-width: 12%;">Empreendimento</th>
+    <th class="quebrar" style="max-width: 12%;">Finalidade</th>
+    <th class="quebrar" style="max-width: 8%;">Subpastas</th>
+    <th class="quebrar" style="max-width: 12%;">Data de Envio</th>
+    <th class="quebrar" style="max-width: 8%;">Selecionar</th>
+  </tr>
+`;
+        tabela.appendChild(thead);
+
+        const tbody = document.createElement("tbody");
+        response.lista.forEach((item) => {
+          if (item.status === 'pendente') {
+            const tr = document.createElement("tr");
+
+            tr.innerHTML = `
+      <td class="quebrar" style="background-color: ${item.cor}; max-width: 6%;">${item.prioridade}</td>
+      <td class="quebrar" style="max-width: 12%;">${item.processo}</td>
+      <td class="quebrar" style="max-width: 6%;">${item.desenhista_nome}</td>
+      <td class="quebrar" style="max-width: 8%;">${item.nome}</td>
+      <td class="quebrar" style="max-width: 6%;">${item.empresa}</td>
+      <td class="quebrar" style="max-width: 12%;">${item.empreendimento}</td>
+      <td class="quebrar" style="max-width: 12%;">${item.finalidade}</td>
+      <td class="quebrar" style="max-width: 8%;">${item.tags}</td>
+      <td class="quebrar" style="max-width: 12%;">${item.data_hora_add}</td>
+      <td style="max-width: 8%;">
+        <input type="checkbox" id="prio_${item.id}" class="form-control">
+      </td>
+    `;
+          tbody.appendChild(tr);
+        }
+      });
+
+      tabela.appendChild(tbody);
+      modalBory.appendChild(tabela);
+
+      /* -------------------------------------
+         INICIALIZA O DATATABLE
+         ------------------------------------- */
+         $("#tabelaPrioridade").DataTable({
+  responsive: true,
+  lengthChange: false,
+  autoWidth: false,
+  pageLength: 10,
+  language: {
+    decimal: "",
+    emptyTable: "Sem dados disponíveis",
+    infoEmpty: "Mostrando de 0 até 0 de 0 registros",
+    infoFiltered: "(filtrado de _MAX_ registros no total)",
+    infoPostFix: "",
+    thousands: ",",
+    lengthMenu: "Mostrar _MENU_ registros",
+    loadingRecords: "A carregar dados...",
+    processing: "A processar...",
+    search: "Buscar:",
+    zeroRecords: "Não foram encontrados resultados",
+    paginate: {
+      first: "Primeiro",
+      last: "Último",
+      next: "Seguinte",
+      previous: "Anterior"
+    },
+    aria: {
+      sortAscending: ": clique para ordenar ascendente (ASC)",
+      sortDescending: ": clique para ordenar descendente (DESC)"
+    }
   }
+});
+
+
+      value_prioridade();
+      mostrarModal(); // Exibe o modal
+    },
+    error: function (xhr, status, error) {
+      console.error("Erro na requisição AJAX:", error);
+    },
+  });
+}
+
+
+
+
 
   function prio_modal(id) {
 
     $.ajax({
-      url: '<?= base_url('public/desenho_modal') ?>',
-      type: "POST",
-      dataType: "json", // Indicar que o retorno é em formato JSON
-      data: { id: id },
-      success: function (response) {
+  url: '<?= base_url('public/desenho_modal') ?>',
+  type: "POST",
+  dataType: "json", // Indicar que o retorno é em formato JSON
+  data: { id: id },
+  success: function (response) {
 
+    // Dados do desenho (array de objetos) e os agrupados (ex: { "1": 5, "2": 3, ... })
+     lista = response.lista;
+    var agrupados = response.agrupados;
 
+    var botao_confirmar_modal = document.getElementById('botao_confirmar_modal');
+    document.getElementById('modal_sizer').classList.add('modal-xl');
+    botao_confirmar_modal.innerHTML = "Confirmar";
 
-        lista = response.lista;
-        var botao_confirmar_modal = document.getElementById('botao_confirmar_modal');
+    var modal_titulo = document.getElementById('modal_titulo');
+    var modal_bory   = document.getElementById('modal_bory');
+    modal_titulo.textContent = "Modificar prioridade desenho: " + removeIdFromFile(lista[0].nome);
 
-        document.getElementById('modal_sizer').classList.add('modal-xl');
-        botao_confirmar_modal.innerHTML = "Confirmar";
+    // Limpa o conteúdo do modal
+    modal_bory.innerHTML = '';
 
-        var modal_titulo = document.getElementById('modal_titulo');
-        var modal_bory = document.getElementById('modal_bory');
-        modal_titulo.textContent = "Modificar prioridade desenho: " + removeIdFromFile(response.lista[0].nome);
-        const selectElement = document.createElement("select");
-        var inputElement = document.createElement("input");
+    /* -------------------------------------
+       CRIA O SELECT DE PRIORIDADE
+       ------------------------------------- */
+    var selectPrioridade = document.createElement("select");
+    selectPrioridade.id = 'prioridade_novo';
+    selectPrioridade.classList.add("custom-select");
+    selectPrioridade.innerHTML = '';
 
-        var divElemnt = document.createElement("div");
-        divElemnt.classList.add("form-group");
+    // Preenche o select com as prioridades (as chaves do agrupados)
+    for (var prioridade in agrupados) {
+      if (agrupados.hasOwnProperty(prioridade)) {
+        var option = document.createElement("option");
+        option.value = prioridade;
+        option.textContent = prioridade;
+        // Se for a prioridade atual do desenho, marca como selecionado
+        if (prioridade == lista[0].prioridade) {
+          option.selected = true;
+        }
+        selectPrioridade.appendChild(option);
+      }
+    }
 
-        modal_bory.innerHTML = '';
-        // Limpar o select
-        selectElement.innerHTML = '';
-        // Criar um novo elemento option
+    var divPrioridade = document.createElement("div");
+    divPrioridade.classList.add("form-group");
+    var labelPrioridade = document.createElement("label");
+    labelPrioridade.textContent = "Prioridade";
+    divPrioridade.appendChild(labelPrioridade);
+    divPrioridade.appendChild(selectPrioridade);
+    modal_bory.appendChild(divPrioridade);
 
-        var novoOption = document.createElement("option");
+    /* -------------------------------------
+       CRIA O SELECT DE ORDEM
+       ------------------------------------- */
+    var selectOrdem = document.createElement("select");
+    selectOrdem.id = 'ordem_novo';
+    selectOrdem.classList.add("custom-select");
 
+    // Função para popular o select de ordem de acordo com a prioridade selecionada
+    function populateOrderSelect(priority) {
+      selectOrdem.innerHTML = ''; // Limpa as opções atuais
 
-
-        divElemnt = document.createElement("div");
-        divElemnt.classList.add("form-group");
-        // Definir o valor e texto do novo elemento option
-        novoOption.value = response.empresa_id;
-        novoOption.textContent = response.empresa_id;
-        selectElement.id = 'prioridade_novo';
-        selectElement.classList.add("custom-select");
-        selectElement.appendChild(novoOption);
-        labelElement = document.createElement("label");
-        labelElement.textContent = "Prioridade";
-        divElemnt.appendChild(labelElement);
-        divElemnt.appendChild(selectElement);
-        modal_bory.appendChild(divElemnt);//coloca o input name no modal
-
-
-
-        divElemnt = document.createElement("div");
-        divElemnt.classList.add("form-group");
-        lista = response.lista;
-        tabel_bory = document.createElement("table");
-
-
-
-
-        modal_bory.appendChild(divElemnt);//coloca o input name no modal
-
-
-        tabel_bory.classList.add('table', 'table-bordered', 'table-striped');
-        modal_bory.appendChild(tabel_bory);
-        value_prioridade();
-        mostrarModal();
-
+      // Pega o número máximo de ordem para a prioridade selecionada
+      var maxOrder = agrupados[priority];
+      // Caso a prioridade não exista em 'agrupados', define maxOrder como 1
+      if (!maxOrder) {
+        maxOrder = 1;
       }
 
+      // As opções vão de 1 até maxOrder
+      var startOrder = 1;
+      for (var i = startOrder; i <= maxOrder; i++) {
+        var opt = document.createElement("option");
+        opt.value = i;
+        opt.textContent = "Ordem " + i;
+        // Se for a ordem atual do desenho, seleciona esta opção
+        if (i == lista[0].ordem) {
+          opt.selected = true;
+        }
+        selectOrdem.appendChild(opt);
+      }
+    }
+
+    // Popula inicialmente o select de ordem com base na prioridade atual
+    populateOrderSelect(lista[0].prioridade);
+
+    var divOrdem = document.createElement("div");
+    divOrdem.classList.add("form-group");
+    var labelOrdem = document.createElement("label");
+    labelOrdem.textContent = "Ordem";
+    divOrdem.appendChild(labelOrdem);
+    divOrdem.appendChild(selectOrdem);
+    modal_bory.appendChild(divOrdem);
+
+    // Atualiza o select de ordem sempre que a prioridade for alterada
+    selectPrioridade.addEventListener("change", function() {
+      populateOrderSelect(this.value);
     });
+
+    value_prioridade();
+    mostrarModal();
+  }
+});
+
+
 
   }
 
 
   function confirmarModal() {
-    array = [];
-    ok = false;
-    for (let index = 0; index < lista.length; index++) {
-      if (document.getElementById("prio_" + lista[index]['id']) != null) {
-        if (document.getElementById("prio_" + lista[index]['id']).checked) {
-          array.push(lista[index]['id']);
-          ok = true;
-        }
-      } else {
-        if (lista.length == 1) {
-          array.push(lista[index]['id']);
-          ok = true;
-        }
-
+  var array = [];
+  var ok = false;
+  
+  for (let index = 0; index < lista.length; index++) {
+    if (document.getElementById("prio_" + index) != null) {
+      if (document.getElementById("prio_" + index).checked) {
+        array.push(lista[index]['id']);
+        ok = true;
       }
-
-    }
-    if (ok) {
-      prioridade = document.getElementById("prioridade_novo").value;
-      $.ajax({
-        url: '<?= base_url('public/desenho_update') ?>',
-        type: "POST",
-        dataType: "json", // Indicar que o retorno é em formato JSON
-        data: { array: array, prioridade: prioridade },
-        success: function (response) {
-
-
-
-          if (response.ok) {
-            fecharModal();
-          
-
-          } else {
-            console.log('erro');
-          }
-          lista_corte();
-
-
-        }
-
-      });
+    } else {
+      if (lista.length == 1) {
+        array.push(lista[index]['id']);
+        ok = true;
+      }
     }
   }
+
+  if (ok) {
+    var prioridade = document.getElementById("prioridade_novo").value;
+    var ordem = document.getElementById("ordem_novo").value; // Captura o valor da ordem
+
+    $.ajax({
+      url: '<?= base_url('public/desenho_update') ?>',
+      type: "POST",
+      dataType: "json", // Indicar que o retorno é em formato JSON
+      data: { array: array, prioridade: prioridade, ordem: ordem }, // Envia também a ordem
+      success: function (response) {
+        if (response.ok) {
+          fecharModal();
+        } else {
+          console.log('erro');
+        }
+        lista_corte();
+      }
+    });
+  }
+}
+
 
 
   function confirmar_botao_apagar() {
@@ -483,163 +542,115 @@
   }
 
   function apagar_todos() {
+  const modalRodape = document.getElementById('modal_rodape');
+  modalRodape.innerHTML = `
+    <input id="modal_apagar" style="height: 25px; width: 25px;" class="form-control" onClick="confirmar_botao_apagar()" type="checkbox">
+    <label id="modal_apagar">Apagar</label>
+    ${modalRodape.innerHTML}
+  `;
 
-    var modal_rodape = document.getElementById('modal_rodape');
-    modal_rodape.innerHTML = "  <input id=\"modal_apagar\" style=\"height: 25px; width: 25px;\" class=\"form-control\" onClick=\"confirmar_botao_apagar()\" type=\"checkbox\"><label id=\"modal_apagar\">Apagar</label>" + modal_rodape.innerHTML;
+  const botaoConfirmarModal = document.getElementById('botao_confirmar_modal');
+  const modalBory = document.getElementById('modal_bory');
+  const modalTitulo = document.getElementById('modal_titulo');
 
+  // Configurações do modal
+  document.getElementById('modal_sizer').classList.add('modal-xl');
+  modalTitulo.textContent = "Apagar desenhos";
+  botaoConfirmarModal.innerHTML = "Apagar";
+  botaoConfirmarModal.id = 'botao_confirmar_modal_apagar';
+  botaoConfirmarModal.disabled = true;
 
-    var botao_confirmar_modal = document.getElementById('botao_confirmar_modal');
-    document.getElementById('modal_sizer').classList.add('modal-xl');
-    botao_confirmar_modal.innerHTML = "Apagar";
-    botao_confirmar_modal.onclick = '';
-    botao_confirmar_modal.id = 'botao_confirmar_modal_apagar';
-    botao_confirmar_modal.disabled = true;
-    var modal_titulo = document.getElementById('modal_titulo');
-    var modal_bory = document.getElementById('modal_bory');
-    modal_titulo.textContent = "Apagar desenhos";
-    const selectElement = document.createElement("select");
-    var inputElement = document.createElement("input");
+  modalBory.innerHTML = ''; // Limpa o conteúdo anterior
 
-    var divElemnt = document.createElement("div");
-    divElemnt.classList.add("form-group");
+  // Criação da tabela
+  const tabela = document.createElement("table");
+  tabela.classList.add("table", "table-bordered", "table-striped");
+  tabela.id = "tabelaApagar";
 
-    modal_bory.innerHTML = '';
+  const thead = document.createElement("thead");
+  thead.innerHTML = `
+ <tr>
+    <th class="quebrar" style="max-width: 6%;">Prioridade</th>
+    <th class="quebrar" style="max-width: 12%;">Processos</th>
+    <th class="quebrar" style="max-width: 6%;">Desenhista</th>
+    <th class="quebrar" style="max-width: 8%;">Nome do arquivo</th>
+    <th class="quebrar" style="max-width: 6%;">Empresa/Cliente</th>
+    <th class="quebrar" style="max-width: 12%;">Empreendimento</th>
+    <th class="quebrar" style="max-width: 12%;">Finalidade</th>
+    <th class="quebrar" style="max-width: 8%;">Subpastas</th>
+    <th class="quebrar" style="max-width: 12%;">Data de Envio</th>
+    <th class="quebrar" style="max-width: 8%;">Selecionar</th>
+  </tr>
+`;
+tabela.appendChild(thead);
 
+const tbody = document.createElement("tbody");
 
+$.ajax({
+  url: '<?= base_url('public/desenho_modal') ?>',
+  type: "POST",
+  dataType: "json",
+  data: { id: "" },
+  success: function (response) {
+    const lista = response.lista;
 
+    lista.forEach((item) => {
+      if (item.status === 'pendente') {
+        const tr = document.createElement("tr");
 
-    divElemnt = document.createElement("div");
-    divElemnt.classList.add("form-group");
+        tr.innerHTML = `
+          <td class="quebrar" style="background-color: ${item.cor}; max-width: 6%;">${item.prioridade}</td>
+          <td class="quebrar" style="max-width: 12%;">${item.processo}</td>
+          <td class="quebrar" style="max-width: 6%;">${item.desenhista_nome}</td>
+          <td class="quebrar" style="max-width: 8%;">${item.nome}</td>
+          <td class="quebrar" style="max-width: 6%;">${item.empresa}</td>
+          <td class="quebrar" style="max-width: 12%;">${item.empreendimento}</td>
+          <td class="quebrar" style="max-width: 12%;">${item.finalidade}</td>
+          <td class="quebrar" style="max-width: 8%;">${item.tags}</td>
+          <td class="quebrar" style="max-width: 12%;">${item.data_hora_add}</td>
+          <td style="max-width: 8%;">
+            <input type="checkbox" id="apagar_${item.id}" class="form-control">
+          </td>
+        `;
+          tbody.appendChild(tr);
+        }
+      });
 
-    tabel_bory = document.createElement("table");
-    tr = document.createElement('tr');
-    th = document.createElement('th');
-    th.textContent = 'Nome';
+      tabela.appendChild(tbody);
+      modalBory.appendChild(tabela);
 
-    tr.appendChild(th);
-    th = document.createElement('th');
-    th.textContent = 'Prioridade';
-
-    tr.appendChild(th);
-    th = document.createElement('th');
-    th.textContent = 'Finalidade';
-
-    tr.appendChild(th);
-    th = document.createElement('th');
-    th.textContent = 'Empresa/Cliente';
-
-    tr.appendChild(th);
-    th = document.createElement('th');
-    th.textContent = 'Empreendimento';
-
-    tr.appendChild(th);
-    th = document.createElement('th');
-    th.textContent = 'Data de Envio';
-
-    tr.appendChild(th);
-    tabel_bory.appendChild(tr);
-    th = document.createElement('th');
-    th.textContent = '';
-
-    tr.appendChild(th);
-    tabel_bory.appendChild(tr);
-
-    $.ajax({
-      url: '<?= base_url('public/desenho_modal') ?>',
-      type: "POST",
-      dataType: "json", // Indicar que o retorno é em formato JSON
-      data: { id: "" },
-      success: function (response) {
-        var lista = response.lista;
-
-
-
-
-
-
-
-
-        var element;
-        console.log(response);
-        for (let index = 0; index < lista.length; index++) {
-
-          if (lista[index]['status'] == 'corte') {
-
-            tr = document.createElement('tr');
-            if (index % 2 == 0) {
-              tr.classList.add('odd');
-            } else {
-              tr.classList.add('even');
-            }
-            nome_de = lista[index]['nome'];
-            var ponto_nome = 0;
-            for (let i = 0; i < nome_de.length; i++) {
-              if (nome_de[i] + nome_de[i + 1] == "_.") {
-                ponto_nome = i + 1;
-              }
-            }
-
-
-            inputElement = document.createElement("input");
-            inputElement.type = 'checkbox';
-            inputElement.id = 'apagar_' + lista[index]['id'];
-            inputElement.classList.add("form-control");
-            inputElement.value = '';
-            inputElement.style.height = '25px';
-            inputElement.style.width = '25px';
-            labelElement = document.createElement("label");
-            labelElement.textContent = nome_de.slice(0, ponto_nome - 5) + nome_de.slice(ponto_nome, nome_de.length);
-            th = document.createElement('th');
-            th.appendChild(labelElement);
-            tr.appendChild(th);
-
-            labelElement = document.createElement("label");
-
-
-            th = document.createElement('th');
-            th.appendChild(labelElement);
-            p = document.createElement("p");
-            p.textContent = lista[index]['prioridade'];
-            p.classList.add('marca_texto');
-            th.style.backgroundColor = lista[index]['cor'];
-
-            th.appendChild(p);
-            tr.appendChild(th);
-
-            labelElement = document.createElement("label");
-            labelElement.textContent = lista[index]['finalidade'];
-            th = document.createElement('th');
-            th.appendChild(labelElement);
-            tr.appendChild(th);
-
-            labelElement = document.createElement("label");
-            labelElement.textContent = lista[index]['empresa'];
-            th = document.createElement('th');
-            th.appendChild(labelElement);
-            tr.appendChild(th);
-
-            labelElement = document.createElement("label");
-            labelElement.textContent = lista[index]['empreendimento'];
-            th = document.createElement('th');
-            th.appendChild(labelElement);
-            tr.appendChild(th);
-
-            labelElement = document.createElement("label");
-            labelElement.textContent = lista[index]['data_hora_add'];
-            th = document.createElement('th');
-            th.appendChild(labelElement);
-            tr.appendChild(th);
-
-
-
-
-            th = document.createElement('th');
-            th.appendChild(inputElement);
-            tr.appendChild(th);
-            tabel_bory.appendChild(tr);
+      // Inicializa o DataTable
+      $('#tabelaApagar').DataTable({
+        responsive: true,
+        lengthChange: false,
+        autoWidth: false,
+        pageLength: 10,
+        language: {
+          decimal: "",
+          emptyTable: "Sem dados disponíveis",
+          infoEmpty: "Mostrando de 0 até 0 de 0 registros",
+          infoFiltered: "(filtrado de MAX registros no total)",
+          infoPostFix: "",
+          thousands: ",",
+          lengthMenu: "Mostrar MENU registros",
+          loadingRecords: "A carregar dados...",
+          processing: "A processar...",
+          search: "Buscar:",
+          zeroRecords: "Não foram encontrados resultados",
+          paginate: {
+            first: "Primeiro",
+            last: "Último",
+            next: "Seguinte",
+            previous: "Anterior"
+          },
+          aria: {
+            sortAscending: ": clique para ordenar ascendente (ASC)",
+            sortDescending: ": clique para ordenar descendente (DESC)"
           }
         }
-        var botao = document.getElementById('botao_confirmar_modal_apagar');
+      });
+
+      var botao = document.getElementById('botao_confirmar_modal_apagar');
 
         botao.onclick = function () {
 
@@ -659,21 +670,14 @@
 
         };
 
-        modal_bory.appendChild(divElemnt);//coloca o input name no modal
 
-
-        tabel_bory.classList.add('table', 'table-bordered', 'table-striped');
-        modal_bory.appendChild(tabel_bory);
-        mostrarModal();
-      }
-    });
-
-
-
-
-
-
-  }
+      mostrarModal(); // Exibe o modal
+    },
+    error: function (xhr, status, error) {
+      console.error("Erro na requisição AJAX:", error);
+    },
+  });
+}
 
   function apagar(id = "") {
     if (event.shiftKey) {
@@ -845,3 +849,9 @@
 
 
 </script>
+<style>
+  .quebrar {
+    word-break: break-all;
+    white-space: normal;
+  }
+</style>

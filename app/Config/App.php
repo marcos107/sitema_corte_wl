@@ -41,7 +41,7 @@ class App extends BaseConfig
         }
     
         // Configura o baseURL dinamicamente com base no host atual.
-        $this->baseURL = 'http://localhost/codi/';
+        $this->baseURL = $scheme . $host . '/codi/';
     
         // As demais configurações permanecem inalteradas.
     }

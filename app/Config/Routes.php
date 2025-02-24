@@ -23,6 +23,7 @@ $routes->setAutoRoute(false);
 $routes->get('/', 'Login::index'); // Rota padrão para a página inicial
 $routes->get('/logout', 'Login::logout'); // Rota para fazer logout
 $routes->post('/login','Login::login');
+$routes->post('/login_verificar_permissao','Login::login_verificar_permissao');
 
 
 //Ferramentas
@@ -56,7 +57,7 @@ $routes->post('/desenho_modal', 'DesenhoPost::desenho_modal');
 $routes->post('/nome_desenho', 'DesenhoPost::nome_desenho');
 $routes->post('/apagar_desenho', 'DesenhoPost::apagar_desenho');
 $routes->post('/desenho_novo_nome', 'DesenhoPost::desenho_novo_nome');
-$routes->post('/recolocar_desenho', 'DesenhoPost::recolocar_desenho');
+//$routes->post('/recolocar_desenho', 'DesenhoPost::recolocar_desenho');
 
 
 //DesenhosMeusPost
@@ -90,6 +91,10 @@ $routes->post('/desenho_tag_lista', 'SubpastaPost::desenho_tag_lista');
 //DesenhosCortadosPost
 $routes->get('/desenhos_cortados', 'Pagina::desenhos_cortados');
 $routes->post('/desenhos_cortados', 'DesenhosCortadosPost::desenhos_cortados');
+$routes->post('/lista_recolcoar', 'DesenhosCortadosPost::lista_recolcoar');
+$routes->post('/solicitar_recolocar_desenho', 'DesenhosCortadosPost::solicitar_recolocar_desenho');
+$routes->post('/recolocar_desenho', 'DesenhosCortadosPost::recolocar_desenho');
+
 
 //ExtencaoPost
 $routes->get('/tipo_de_arquivo', 'Pagina::extencao');
@@ -159,6 +164,21 @@ $routes->post('/processos', 'ProcessosPost::processos');
 $routes->post('/processos_lista', 'ProcessosPost::processos_lista');
 $routes->post('/processos_modifica_modal', 'ProcessosPost::processos_modifica_modal');
 $routes->post('/processos_modificar', 'ProcessosPost::processos_modificar');
+
+
+
+//api
+$routes->post('/comecar_conversa', 'Api::comecar_conversa');
+$routes->post('/login_api', 'Api::login_api');
+$routes->post('/lista_tarefas_api', 'Api::lista_tarefas_api');
+$routes->post('/download_lista_tarefas_api', 'Api::download_lista_tarefas_api');
+$routes->post('/confirmar_tarefa_api', 'Api::confirmar_tarefa_api');
+$routes->post('/iniciar_tarefa_api', 'Api::iniciar_tarefa_api');
+$routes->post('/login_cancelar_api', 'Api::login_cancelar_api');
+$routes->post('/login_config_api', 'Api::login_config_api');
+
+$routes->get('/login_api', 'Api::login_api');
+$routes->get('/download_lista_tarefas_api', 'Api::download_lista_tarefas_api');
 
 
 

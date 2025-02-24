@@ -1,0 +1,217 @@
+CRITICAL - 2024-08-25 17:41:19 --> Undefined array key "processos"
+in APPPATH\Controllers\ProcessosPost.php on line 219.
+ 1 APPPATH\Controllers\ProcessosPost.php(219): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "processos"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\ProcessosPost.php', 219)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProcessosPost->processos_lista()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProcessosPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 17:41:26 --> Undefined array key "processos"
+in APPPATH\Controllers\ProcessosPost.php on line 219.
+ 1 APPPATH\Controllers\ProcessosPost.php(219): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "processos"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\ProcessosPost.php', 219)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProcessosPost->processos_lista()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProcessosPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 17:41:32 --> Undefined array key "processos"
+in APPPATH\Controllers\ProcessosPost.php on line 219.
+ 1 APPPATH\Controllers\ProcessosPost.php(219): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "processos"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\ProcessosPost.php', 219)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProcessosPost->processos_lista()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProcessosPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 17:41:44 --> Undefined array key "processos"
+in APPPATH\Controllers\ProcessosPost.php on line 219.
+ 1 APPPATH\Controllers\ProcessosPost.php(219): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "processos"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\ProcessosPost.php', 219)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProcessosPost->processos_lista()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProcessosPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 17:41:48 --> Undefined array key "processos"
+in APPPATH\Controllers\ProcessosPost.php on line 219.
+ 1 APPPATH\Controllers\ProcessosPost.php(219): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "processos"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\ProcessosPost.php', 219)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProcessosPost->processos_lista()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProcessosPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 17:47:23 --> Undefined array key "processos"
+in APPPATH\Controllers\ProcessosPost.php on line 219.
+ 1 APPPATH\Controllers\ProcessosPost.php(219): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "processos"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\ProcessosPost.php', 219)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProcessosPost->processos_lista()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProcessosPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 17:47:25 --> Undefined array key "processos"
+in APPPATH\Controllers\ProcessosPost.php on line 219.
+ 1 APPPATH\Controllers\ProcessosPost.php(219): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "processos"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\ProcessosPost.php', 219)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProcessosPost->processos_lista()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProcessosPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 17:47:29 --> Undefined array key "processos"
+in APPPATH\Controllers\ProcessosPost.php on line 219.
+ 1 APPPATH\Controllers\ProcessosPost.php(219): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "processos"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\ProcessosPost.php', 219)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProcessosPost->processos_lista()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProcessosPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 17:48:04 --> Undefined array key "processos"
+in APPPATH\Controllers\ProcessosPost.php on line 219.
+ 1 APPPATH\Controllers\ProcessosPost.php(219): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "processos"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\ProcessosPost.php', 219)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProcessosPost->processos_lista()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProcessosPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 17:48:08 --> Undefined array key "processos"
+in APPPATH\Controllers\ProcessosPost.php on line 219.
+ 1 APPPATH\Controllers\ProcessosPost.php(219): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "processos"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\ProcessosPost.php', 219)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProcessosPost->processos_lista()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProcessosPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 17:48:10 --> Undefined array key "processos"
+in APPPATH\Controllers\ProcessosPost.php on line 219.
+ 1 APPPATH\Controllers\ProcessosPost.php(219): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "processos"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\ProcessosPost.php', 219)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProcessosPost->processos_lista()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProcessosPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 17:48:33 --> Undefined array key "processos"
+in APPPATH\Controllers\ProcessosPost.php on line 219.
+ 1 APPPATH\Controllers\ProcessosPost.php(219): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "processos"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\ProcessosPost.php', 219)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProcessosPost->processos_lista()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProcessosPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 17:49:16 --> Undefined variable $lista_session
+in APPPATH\Controllers\ProcessosPost.php on line 242.
+ 1 APPPATH\Controllers\ProcessosPost.php(242): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $lista_session', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\ProcessosPost.php', 242)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProcessosPost->processos_lista()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProcessosPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 17:49:34 --> Undefined variable $lista_session
+in APPPATH\Controllers\ProcessosPost.php on line 242.
+ 1 APPPATH\Controllers\ProcessosPost.php(242): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $lista_session', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\ProcessosPost.php', 242)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProcessosPost->processos_lista()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProcessosPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 17:49:36 --> Undefined variable $lista_session
+in APPPATH\Controllers\ProcessosPost.php on line 242.
+ 1 APPPATH\Controllers\ProcessosPost.php(242): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $lista_session', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\ProcessosPost.php', 242)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProcessosPost->processos_lista()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProcessosPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 17:49:43 --> Undefined variable $lista_session
+in APPPATH\Controllers\ProcessosPost.php on line 242.
+ 1 APPPATH\Controllers\ProcessosPost.php(242): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $lista_session', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\ProcessosPost.php', 242)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProcessosPost->processos_lista()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProcessosPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 18:35:07 --> Undefined variable $processos_salva
+in APPPATH\Controllers\NivelPost.php on line 346.
+ 1 APPPATH\Controllers\NivelPost.php(346): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $processos_salva', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\NivelPost.php', 346)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 18:37:04 --> Undefined variable $processos_salva
+in APPPATH\Controllers\NivelPost.php on line 349.
+ 1 APPPATH\Controllers\NivelPost.php(349): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $processos_salva', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\NivelPost.php', 349)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 18:37:05 --> Undefined variable $processos_salva
+in APPPATH\Controllers\NivelPost.php on line 349.
+ 1 APPPATH\Controllers\NivelPost.php(349): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $processos_salva', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\NivelPost.php', 349)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 18:37:06 --> Undefined variable $processos_salva
+in APPPATH\Controllers\NivelPost.php on line 349.
+ 1 APPPATH\Controllers\NivelPost.php(349): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $processos_salva', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\NivelPost.php', 349)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 18:37:06 --> Undefined variable $processos_salva
+in APPPATH\Controllers\NivelPost.php on line 349.
+ 1 APPPATH\Controllers\NivelPost.php(349): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $processos_salva', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\NivelPost.php', 349)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 18:37:06 --> Undefined variable $processos_salva
+in APPPATH\Controllers\NivelPost.php on line 349.
+ 1 APPPATH\Controllers\NivelPost.php(349): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $processos_salva', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\NivelPost.php', 349)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 18:37:11 --> Undefined variable $processos_salva
+in APPPATH\Controllers\NivelPost.php on line 349.
+ 1 APPPATH\Controllers\NivelPost.php(349): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $processos_salva', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\NivelPost.php', 349)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 19:14:53 --> Undefined array key "cor"
+in APPPATH\Controllers\PrioridadePost.php on line 224.
+ 1 APPPATH\Controllers\PrioridadePost.php(224): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cor"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\PrioridadePost.php', 224)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PrioridadePost->prioridade_modal()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PrioridadePost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 19:14:55 --> Undefined array key "cor"
+in APPPATH\Controllers\PrioridadePost.php on line 224.
+ 1 APPPATH\Controllers\PrioridadePost.php(224): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cor"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\PrioridadePost.php', 224)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PrioridadePost->prioridade_modal()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PrioridadePost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 19:14:55 --> Undefined array key "cor"
+in APPPATH\Controllers\PrioridadePost.php on line 224.
+ 1 APPPATH\Controllers\PrioridadePost.php(224): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cor"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\PrioridadePost.php', 224)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PrioridadePost->prioridade_modal()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PrioridadePost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 20:04:37 --> Undefined array key "usuario_nome"
+in APPPATH\Controllers\Pagina.php on line 87.
+ 1 APPPATH\Controllers\Pagina.php(87): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario_nome"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\Pagina.php', 87)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pagina->desenho_adicionar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pagina))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-25 21:12:31 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 401.
+ 1 APPPATH\Controllers\Ferramentas.php(401): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(352): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 21:12:32 --> Undefined array key "lista_finalidade"
+in APPPATH\Controllers\SubpastaPost.php on line 404.
+ 1 APPPATH\Controllers\SubpastaPost.php(404): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "lista_finalidade"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\SubpastaPost.php', 404)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\SubpastaPost->desenho_tag_lista()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SubpastaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-25 21:12:32 --> Undefined array key "lista_finalidade"
+in APPPATH\Controllers\SubpastaPost.php on line 404.
+ 1 APPPATH\Controllers\SubpastaPost.php(404): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "lista_finalidade"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\SubpastaPost.php', 404)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\SubpastaPost->desenho_tag_lista()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SubpastaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-25 21:12:41 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 401.
+ 1 APPPATH\Controllers\Ferramentas.php(401): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(352): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

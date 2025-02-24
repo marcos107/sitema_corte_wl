@@ -1,0 +1,21 @@
+CRITICAL - 2024-11-01 09:09:27 --> Undefined array key "lista_empreendimento"
+in APPPATH\Controllers\SubpastaPost.php on line 406.
+ 1 APPPATH\Controllers\SubpastaPost.php(406): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "lista_empreendimento"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\SubpastaPost.php', 406)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\SubpastaPost->desenho_tag_lista()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SubpastaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-11-01 09:09:27 --> Undefined array key "lista_empreendimento"
+in APPPATH\Controllers\SubpastaPost.php on line 406.
+ 1 APPPATH\Controllers\SubpastaPost.php(406): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "lista_empreendimento"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\SubpastaPost.php', 406)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\SubpastaPost->desenho_tag_lista()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SubpastaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-11-01 09:09:27 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 430.
+ 1 APPPATH\Controllers\Ferramentas.php(430): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

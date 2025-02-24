@@ -1,0 +1,156 @@
+CRITICAL - 2025-02-07 17:40:54 --> Undefined array key "lista_primordial"
+in APPPATH\Controllers\DesenhoPost.php on line 313.
+ 1 APPPATH\Controllers\DesenhoPost.php(313): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "lista_primordial"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhoPost.php', 313)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhoPost->recolocar_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhoPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-07 17:41:12 --> Undefined array key "lista_primordial"
+in APPPATH\Controllers\DesenhoPost.php on line 313.
+ 1 APPPATH\Controllers\DesenhoPost.php(313): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "lista_primordial"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhoPost.php', 313)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhoPost->recolocar_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhoPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-07 17:41:24 --> Undefined array key "lista_primordial"
+in APPPATH\Controllers\DesenhoPost.php on line 313.
+ 1 APPPATH\Controllers\DesenhoPost.php(313): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "lista_primordial"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhoPost.php', 313)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhoPost->recolocar_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhoPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-07 20:05:53 --> Undefined global variable $_SESSION
+in APPPATH\Controllers\DesenhosCortadosPost.php on line 27.
+ 1 APPPATH\Controllers\DesenhosCortadosPost.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhosCortadosPost.php', 27)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhosCortadosPost->solicitar_recolocar_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhosCortadosPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2025-02-07 20:06:38 --> mysqli_sql_exception: Column 'desenho' cannot be null in C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `re...', 0)
+#1 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `re...')
+#2 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `re...')
+#3 C:\xampp\htdocs\codi\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `re...', Array, false)
+#4 C:\xampp\htdocs\codi\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\codi\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\codi\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\codi\app\Controllers\DesenhosCortadosPost.php(34): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\codi\system\CodeIgniter.php(934): App\Controllers\DesenhosCortadosPost->solicitar_recolocar_desenho()
+#9 C:\xampp\htdocs\codi\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhosCortadosPost))
+#10 C:\xampp\htdocs\codi\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\codi\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2025-02-07 20:06:38 --> Column 'desenho' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `recolocar_desenho` (`desenho`, `individuo`, `data_add`, `status`) VALUES (NULL, \'1\', \'07i061n02i061n2025 20i083n06i083n38\', \'pendente\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `recolocar_desenho` (`desenho`, `individuo`, `data_add`, `status`) VALUES (NULL, \'1\', \'07i061n02i061n2025 20i083n06i083n38\', \'pendente\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `recolocar_desenho` (`desenho`, `individuo`, `data_add`, `status`) VALUES (NULL, \'1\', \'07i061n02i061n2025 20i083n06i083n38\', \'pendente\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `recolocar_desenho` (`desenho`, `individuo`, `data_add`, `status`) VALUES (:desenho:, :individuo:, :data_add:, :status:)', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\DesenhosCortadosPost.php(34): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhosCortadosPost->solicitar_recolocar_desenho()
+10 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhosCortadosPost))
+11 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2025-02-07 20:10:24 --> mysqli_sql_exception: Column 'desenho' cannot be null in C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `re...', 0)
+#1 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `re...')
+#2 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `re...')
+#3 C:\xampp\htdocs\codi\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `re...', Array, false)
+#4 C:\xampp\htdocs\codi\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\codi\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\codi\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\codi\app\Controllers\DesenhosCortadosPost.php(34): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\codi\system\CodeIgniter.php(934): App\Controllers\DesenhosCortadosPost->solicitar_recolocar_desenho()
+#9 C:\xampp\htdocs\codi\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhosCortadosPost))
+#10 C:\xampp\htdocs\codi\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\codi\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2025-02-07 20:10:24 --> Column 'desenho' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `recolocar_desenho` (`desenho`, `individuo`, `data_add`, `status`) VALUES (NULL, \'1\', \'07i061n02i061n2025 20i083n10i083n24\', \'pendente\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `recolocar_desenho` (`desenho`, `individuo`, `data_add`, `status`) VALUES (NULL, \'1\', \'07i061n02i061n2025 20i083n10i083n24\', \'pendente\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `recolocar_desenho` (`desenho`, `individuo`, `data_add`, `status`) VALUES (NULL, \'1\', \'07i061n02i061n2025 20i083n10i083n24\', \'pendente\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `recolocar_desenho` (`desenho`, `individuo`, `data_add`, `status`) VALUES (:desenho:, :individuo:, :data_add:, :status:)', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\DesenhosCortadosPost.php(34): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhosCortadosPost->solicitar_recolocar_desenho()
+10 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhosCortadosPost))
+11 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-07 20:21:13 --> Undefined variable $data
+in APPPATH\Controllers\DesenhosCortadosPost.php on line 46.
+ 1 APPPATH\Controllers\DesenhosCortadosPost.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhosCortadosPost.php', 46)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhosCortadosPost->solicitar_recolocar_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhosCortadosPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-07 20:28:04 --> Undefined array key 9379
+in APPPATH\Controllers\DesenhosCortadosPost.php on line 133.
+ 1 APPPATH\Controllers\DesenhosCortadosPost.php(133): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 9379', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhosCortadosPost.php', 133)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhosCortadosPost->desenhos_cortados()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhosCortadosPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-07 21:10:24 --> Undefined array key 1
+in APPPATH\Controllers\DesenhoPost.php on line 321.
+ 1 APPPATH\Controllers\DesenhoPost.php(321): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 1', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhoPost.php', 321)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhoPost->recolocar_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhoPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-07 21:10:36 --> Undefined array key 0
+in APPPATH\Controllers\DesenhoPost.php on line 321.
+ 1 APPPATH\Controllers\DesenhoPost.php(321): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhoPost.php', 321)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhoPost->recolocar_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhoPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-07 21:12:38 --> Undefined array key 1
+in APPPATH\Controllers\DesenhoPost.php on line 321.
+ 1 APPPATH\Controllers\DesenhoPost.php(321): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 1', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhoPost.php', 321)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhoPost->recolocar_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhoPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-07 21:13:30 --> Undefined global variable $_SESSION
+in APPPATH\Controllers\DesenhosCortadosPost.php on line 19.
+ 1 APPPATH\Controllers\DesenhosCortadosPost.php(19): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhosCortadosPost.php', 19)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhosCortadosPost->recolocar_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhosCortadosPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-07 21:13:32 --> Undefined global variable $_SESSION
+in APPPATH\Controllers\DesenhosCortadosPost.php on line 19.
+ 1 APPPATH\Controllers\DesenhosCortadosPost.php(19): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhosCortadosPost.php', 19)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhosCortadosPost->recolocar_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhosCortadosPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-07 21:14:09 --> Undefined array key 1
+in APPPATH\Controllers\DesenhosCortadosPost.php on line 20.
+ 1 APPPATH\Controllers\DesenhosCortadosPost.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 1', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhosCortadosPost.php', 20)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhosCortadosPost->recolocar_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhosCortadosPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-07 21:15:54 --> Undefined array key 0
+in APPPATH\Controllers\DesenhosCortadosPost.php on line 20.
+ 1 APPPATH\Controllers\DesenhosCortadosPost.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhosCortadosPost.php', 20)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhosCortadosPost->recolocar_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhosCortadosPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-07 21:15:57 --> Undefined array key 2
+in APPPATH\Controllers\DesenhosCortadosPost.php on line 20.
+ 1 APPPATH\Controllers\DesenhosCortadosPost.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 2', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhosCortadosPost.php', 20)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhosCortadosPost->recolocar_desenho()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhosCortadosPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

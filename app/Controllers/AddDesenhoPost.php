@@ -67,12 +67,12 @@ class AddDesenhoPost extends Ferramentas
   {
     if ($this->request->isAJAX()) {
       session_start();
-      $_SESSION['desenho_add_proc'] = isset($_SESSION['desenho_add_proc']) ? $_SESSION['desenho_add_proc'] : FALSE;
-      if ($_SESSION['desenho_add_proc']) {
-        return;
-      } else {
-        $_SESSION['desenho_add_proc'] = TRUE;
-      }
+      // $_SESSION['desenho_add_proc'] = isset($_SESSION['desenho_add_proc']) ? $_SESSION['desenho_add_proc'] : FALSE;
+      // if ($_SESSION['desenho_add_proc']) {
+      //   return;
+      // } else {
+      //   $_SESSION['desenho_add_proc'] = TRUE;
+      // }
 
       $desenhos = service('request')->getPost('desenhos');
       $prcoesso = service('request')->getPost('nome_processos');
@@ -96,8 +96,8 @@ class AddDesenhoPost extends Ferramentas
       $tag = new \App\Models\Tag();
       $tag_data = $tag->find();
 
-      
-      
+
+
 
 
       // Inicializa a variável que armazenará o filtro associado
@@ -112,216 +112,215 @@ class AddDesenhoPost extends Ferramentas
           break; // Encerra o loop uma vez que o processo é encontrado
         }
       }
-      if($prcoesso_nome == null or $prcoesso_id == null){
+      if ($prcoesso_nome == null or $prcoesso_id == null) {
         $msg["Processo"] = 'Não existe.';
         $violacao[] = "desenhos_add Processo não exist";
         $ok = false;
-       
-      }else{
+      } else {
 
-      foreach ($desenhos as $key => $value) {
+        foreach ($desenhos as $key => $value) {
 
-        $base_dir = 'c:/wl/'.$prcoesso_nome.'/';
-        // Constrói o caminho base do diretório para armazenar o desenho.
-        $base_dir .= (Ferramentas::norma_lizar_str($value["empresa"])) . '/';
-        $base_dir .= (Ferramentas::norma_lizar_str($value["empreendimento"])) . '/';
-        $base_dir .= (Ferramentas::norma_lizar_str($value["finalidade"])) . '/';
-        $base_dir .= (Ferramentas::norma_lizar_str($value["tag1"])) . '/';
-        $empresa_id = '';
-        $prioridade_id = '';
-        $finalidade_id = '';
-        $empreendimento_id = '';
-        $tag1_id = '';
-        $tag2_id = '';
-        $tag3_id = '';
-        $erro = false;
+          $base_dir = 'c:/wl/' . $prcoesso_nome . '/';
+          // Constrói o caminho base do diretório para armazenar o desenho.
+          $base_dir .= (Ferramentas::norma_lizar_str($value["empresa"])) . '/';
+          $base_dir .= (Ferramentas::norma_lizar_str($value["empreendimento"])) . '/';
+          $base_dir .= (Ferramentas::norma_lizar_str($value["finalidade"])) . '/';
+          $base_dir .= (Ferramentas::norma_lizar_str($value["tag1"])) . '/';
+          $empresa_id = '';
+          $prioridade_id = '';
+          $finalidade_id = '';
+          $empreendimento_id = '';
+          $tag1_id = '';
+          $tag2_id = '';
+          $tag3_id = '';
+          $erro = false;
 
-        // Valida informações associadas (empresa, prioridade, finalidade, etc.).
-        if ($value["empresa"] != '') {
-          if (Ferramentas::array_pesquisa($empresa_data, 'nome', Ferramentas::codificador($value["empresa"])) == array()) {
+          // Valida informações associadas (empresa, prioridade, finalidade, etc.).
+          if ($value["empresa"] != '') {
+            if (Ferramentas::array_pesquisa($empresa_data, 'nome', (Ferramentas::codificador($value["empresa"]))) == array() and Ferramentas::array_pesquisa($empresa_data, 'nome', (($value["empresa"]))) == array()) {
 
-            //violacao
-            $msg["Empresa " . $value["desenho"]] = 'Não existe.';
-            $violacao[] = "desenhos_add Empresa não exist";
-            $erro = true;
-          } else {
-            $empresa_id = Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'nome', Ferramentas::codificador($value["empresa"])), ['id']);
-          }
-
-        } else {
-          $msg["Empresa " . $value["desenho"]] = 'Não selecionada.';
-          $erro = true;
-
-        }
-
-        // Valida a prioridade associada.
-        if ($value["prioridade"] != '') {
-          if (Ferramentas::array_pesquisa($prioridade_data, 'nome', Ferramentas::codificador($value["prioridade"])) == array()) {
-
-            //violacao
-            $msg["Prioridade " . $value["desenho"]] = 'Não existe.';
-            $violacao[] = "desenhos_add Prioridade não exist";
-            $erro = true;
-
-          } else {
-            $prioridade_id = Ferramentas::array_index(Ferramentas::array_pesquisa($prioridade_data, 'nome', Ferramentas::codificador($value["prioridade"])), ['id']);
-          }
-
-        } else {
-          $msg["Prioridade " . $value["desenho"]] = 'Não selecionado.';
-          $erro = true;
-        }
-
-        // Valida a finalidade associada.
-        if ($value["finalidade"] != '') {
-          if (Ferramentas::array_pesquisa($finalidade_data, 'nome', Ferramentas::codificador($value["finalidade"])) == array()) {
-
-            //violacao
-            $msg["Finalidade " . $value["desenho"]] = 'Não existe.';
-            $violacao[] = "desenhos_add Finalidade não exist";
-            $erro = true;
-
-          } else {
-            $finalidade_id = Ferramentas::array_index(Ferramentas::array_pesquisa($finalidade_data, 'nome', Ferramentas::codificador($value["finalidade"])), ['id']);
-          }
-
-        } else {
-          $msg["Finalidade " . $value["desenho"]] = 'Não selecionado.';
-          $erro = true;
-        }
-
-        // Valida o empreendimento associado.
-        if ($value["empreendimento"] != '') {
-          if (Ferramentas::array_pesquisa($empreendimento_data, 'nome', Ferramentas::codificador($value["empreendimento"])) == array()) {
-
-            //violacao
-            $msg["Empreendimento " . $value["desenho"]] = 'Não existe.';
-            $violacao[] = "desenhos_add Empreendimento não exist";
-            $erro = true;
-          } else {
-            $empreendimento_id = Ferramentas::array_index(Ferramentas::array_pesquisa($empreendimento_data, 'nome', Ferramentas::codificador($value["empreendimento"])), ['id']);
-          }
-
-        } else {
-          $msg["Empreendimento " . $value["desenho"]] = 'Não selecionado.';
-          $erro = true;
-        }
-
-        // Valida a tag1 associada.
-        if ($value["tag1"] != '') { // -----------------
-          if (Ferramentas::array_pesquisa($tag_data, 'nome', Ferramentas::codificador($value["tag1"])) == array()) {
-            //violacao
-            $msg["Tag1 " . $value["desenho"]] = 'Não existe.';
-            $violacao[] = "desenhos_add Tag1 não exist";
-            $erro = true;
-          } else {
-            $tag1_id = Ferramentas::array_index(Ferramentas::array_pesquisa($tag_data, 'nome', Ferramentas::codificador($value["tag1"])), ['id']);
-          }
-          //$base_dir .= Ferramentas::codificador($value["tag1"]) . '/';
-
-          // Valida a tag2 associada.
-          if ($value["tag2"] != '') { // -----------------
-            if (Ferramentas::array_pesquisa($tag_data, 'nome', Ferramentas::codificador($value["tag2"])) == array()) {
               //violacao
-              $msg["Tag2 " . $value["desenho"]] = 'Não existe.';
-              $violacao[] = "desenhos_add Tag2 não exist";
+              $msg["Empresa " . $value["desenho"]] = 'Empresa não existe.';
+              $violacao[] = "desenhos_add Empresa não exist";
+              $erro = true;
+            } else if (Ferramentas::array_pesquisa($empresa_data, 'nome', (Ferramentas::codificador($value["empresa"]))) == array()) {
+              $empresa_id = Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'nome', ($value["empresa"])), ['id']);
+            } else {
+              $empresa_id = Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'nome', (Ferramentas::codificador($value["empresa"]))), ['id']);
+            }
+          } else {
+            $msg["Empresa " . $value["desenho"]] = 'Não selecionada.';
+            $erro = true;
+          }
+
+          // Valida a prioridade associada.
+          if ($value["prioridade"] != '') {
+            if (Ferramentas::array_pesquisa($prioridade_data, 'nome', Ferramentas::codificador($value["prioridade"])) == array()) {
+
+              //violacao
+              $msg["Prioridade " . $value["desenho"]] = 'Não existe.';
+              $violacao[] = "desenhos_add Prioridade não exist";
               $erro = true;
             } else {
-              $tag2_id = Ferramentas::array_index(Ferramentas::array_pesquisa($tag_data, 'nome', Ferramentas::codificador($value["tag2"])), ['id']);
+              $prioridade_id = Ferramentas::array_index(Ferramentas::array_pesquisa($prioridade_data, 'nome', Ferramentas::codificador($value["prioridade"])), ['id']);
             }
-            $base_dir .= Ferramentas::norma_lizar_str(Ferramentas::codificador($value["tag2"])) . '/';
+          } else {
+            $msg["Prioridade " . $value["desenho"]] = 'Não selecionado.';
+            $erro = true;
+          }
 
-            // Valida a tag3 associada.
-            if ($value["tag3"] != '') { // -----------------
-              if (Ferramentas::array_pesquisa($tag_data, 'nome', Ferramentas::norma_lizar_str(Ferramentas::codificador($value["tag3"]))) == array()) {
+          // Valida a finalidade associada.
+          if ($value["finalidade"] != '') {
+            if (Ferramentas::array_pesquisa($finalidade_data, 'nome', Ferramentas::codificador($value["finalidade"])) == array()) {
+
+              //violacao
+              $msg["Finalidade " . $value["desenho"]] = 'Não existe.';
+              $violacao[] = "desenhos_add Finalidade não exist";
+              $erro = true;
+            } else {
+              $finalidade_id = Ferramentas::array_index(Ferramentas::array_pesquisa($finalidade_data, 'nome', Ferramentas::codificador($value["finalidade"])), ['id']);
+            }
+          } else {
+            $msg["Finalidade " . $value["desenho"]] = 'Não selecionado.';
+            $erro = true;
+          }
+
+          // Valida o empreendimento associado.
+          if ($value["empreendimento"] != '') {
+            if (Ferramentas::array_pesquisa($empreendimento_data, 'nome', Ferramentas::codificador($value["empreendimento"])) == array()) {
+
+              //violacao
+              $msg["Empreendimento " . $value["desenho"]] = 'Não existe.';
+              $violacao[] = "desenhos_add Empreendimento não exist";
+              $erro = true;
+            } else {
+              $empreendimento_id = Ferramentas::array_index(Ferramentas::array_pesquisa($empreendimento_data, 'nome', Ferramentas::codificador($value["empreendimento"])), ['id']);
+            }
+          } else {
+            $msg["Empreendimento " . $value["desenho"]] = 'Não selecionado.';
+            $erro = true;
+          }
+
+          // Valida a tag1 associada.
+          if ($value["tag1"] != '') { // -----------------
+            if (Ferramentas::array_pesquisa($tag_data, 'nome', Ferramentas::codificador($value["tag1"])) == array()) {
+              //violacao
+              $msg["Tag1 " . $value["desenho"]] = 'Não existe.';
+              $violacao[] = "desenhos_add Tag1 não exist";
+              $erro = true;
+            } else {
+              $tag1_id = Ferramentas::array_index(Ferramentas::array_pesquisa($tag_data, 'nome', Ferramentas::codificador($value["tag1"])), ['id']);
+            }
+            //$base_dir .= Ferramentas::codificador($value["tag1"]) . '/';
+
+            // Valida a tag2 associada.
+            if ($value["tag2"] != '') { // -----------------
+              if (Ferramentas::array_pesquisa($tag_data, 'nome', Ferramentas::codificador($value["tag2"])) == array()) {
                 //violacao
-                $msg["Tag3 " . $value["desenho"]] = 'Não existe.';
-                $violacao[] = "desenhos_add Tag3 não exist";
+                $msg["Tag2 " . $value["desenho"]] = 'Não existe.';
+                $violacao[] = "desenhos_add Tag2 não exist";
                 $erro = true;
               } else {
-                $tag3_id = Ferramentas::array_index(Ferramentas::array_pesquisa($tag_data, 'nome', Ferramentas::codificador($value["tag3"])), ['id']);
+                $tag2_id = Ferramentas::array_index(Ferramentas::array_pesquisa($tag_data, 'nome', Ferramentas::codificador($value["tag2"])), ['id']);
               }
-              $base_dir .= Ferramentas::norma_lizar_str(Ferramentas::codificador($value["tag3"])) . '/';
+              $base_dir .= Ferramentas::norma_lizar_str(Ferramentas::codificador($value["tag2"])) . '/';
 
+              // Valida a tag3 associada.
+              if ($value["tag3"] != '') { // -----------------
+                if (Ferramentas::array_pesquisa($tag_data, 'nome', Ferramentas::codificador($value["tag3"])) == array()) {
+                  //violacao
+                  $msg["Tag3 " . $value["desenho"]] = 'Não existe.';
+                  $violacao[] = "desenhos_add Tag3 não exist";
+                  $erro = true;
+                } else {
+                  $tag3_id = Ferramentas::array_index(Ferramentas::array_pesquisa($tag_data, 'nome', Ferramentas::codificador($value["tag3"])), ['id']);
+                }
+                $base_dir .= Ferramentas::norma_lizar_str(Ferramentas::codificador($value["tag3"])) . '/';
+              }
             }
-          }
-
-        } else {
-          $msg["Subpasta-01 " . $value["desenho"]] = 'Não selecionado a Subpasta-01';
-          $erro = true;
-        }
-
-
-        if (!$erro) {
-          // Remove espaços em branco do caminho base.
-          $base_dir = str_replace(' ', '', $base_dir);
-
-          // Cria o diretório base se ele não existir.
-          $problema = Ferramentas::criet_diretorio($base_dir);
-          if (count($problema) == 0) {
-
-            $desenho = $base_dir . Ferramentas::norma_lizar_str(str_replace('.' . Ferramentas::get_type_file($value["desenho"]), '', $value["desenho"])) . '.' . Ferramentas::get_type_file($value["desenho"]);
-            $desenho_temp = $_SESSION['pasta_temp'] . $value["desenho"];
-            $desenho_desmenber = str_replace('.' . Ferramentas::get_type_file($desenho), '', $desenho);
-            $desenho_typer = '.' . Ferramentas::get_type_file($desenho);
-
-
-
-            // Gera um nome de arquivo único para evitar conflitos.
-            do {
-              $desenho = $desenho_desmenber . '_' . rand(0, 1000) . '_' . $desenho_typer;
-            } while (file_exists($desenho));
-
-            if (!rename($desenho_temp, $desenho)) {
-              $ok[] = false;
-              $msg[$value["desenho"]] = 'Erro ao trasferir o desenho.';
-            } else if (!file_exists($desenho)) {
-              $ok[] = false;
-              $msg[$value["desenho"]] = 'Erro ao trasferir o desenho.';
-            } else {
-
-              $msg[$value["desenho"]] = $desenho;
-              $ok[] = true;
-
-
-              // Insere informações sobre o desenho no banco de dados.
-              $db = new \App\Models\Desenhos();
-              $data = [
-                'nome' => Ferramentas::codificador(Ferramentas::get_name_file($desenho)),
-                'caminho' => Ferramentas::codificador($desenho),
-                'desenhista' => $_SESSION['usuario'],
-                'status' => 'pendente',
-                'prioridade' => $prioridade_id,
-                'finalidade' => $finalidade_id,
-                'empreendimento' => $empreendimento_id,
-                'empresa' => $empresa_id,
-                'processos_id' => $prcoesso_id,
-                'data_hora_add' => Ferramentas::codificador(date('d/m/Y H:i'))
-
-              ];
-              $db->insert($data);
-
-
-            }
-
           } else {
-            $msg[$value["desenho"]] = 'Erro ao criar caminho.';
+            $msg["Subpasta-01 " . $value["desenho"]] = 'Não selecionado a Subpasta-01';
+            $erro = true;
           }
 
 
+          if (!$erro) {
+            // Remove espaços em branco do caminho base.
+            $base_dir = str_replace(' ', '', $base_dir);
 
-        } else {
-          $ok[] = false;
+            // Cria o diretório base se ele não existir.
+            $problema = Ferramentas::criet_diretorio($base_dir);
+            if (count($problema) == 0) {
+
+              $desenho = $base_dir . Ferramentas::norma_lizar_str(str_replace('.' . Ferramentas::get_type_file($value["desenho"]), '', $value["desenho"])) . '.' . Ferramentas::get_type_file($value["desenho"]);
+              $desenho_temp = $_SESSION['pasta_temp'] . $value["desenho"];
+              $desenho_desmenber = str_replace('.' . Ferramentas::get_type_file($desenho), '', $desenho);
+              $desenho_typer = '.' . Ferramentas::get_type_file($desenho);
 
 
+
+              // Gera um nome de arquivo único para evitar conflitos.
+              do {
+                $desenho = $desenho_desmenber . '_' . rand(0, 1000) . '_' . $desenho_typer;
+              } while (file_exists($desenho));
+
+              if (!rename($desenho_temp, $desenho)) {
+                $ok[] = false;
+                $msg[$value["desenho"]] = 'Erro ao trasferir o desenho.';
+              } else if (!file_exists($desenho)) {
+                $ok[] = false;
+                $msg[$value["desenho"]] = 'Erro ao trasferir o desenho.';
+              } else {
+
+                $msg[$value["desenho"]] = $desenho;
+                $ok[] = true;
+
+
+
+                // Insere informações sobre o desenho no banco de dados.
+                $db = new \App\Models\Desenhos();
+
+                $desenhos_data = $db
+                  ->whereIn('status', [
+                    Ferramentas::codificador('pendente'),
+                    Ferramentas::codificador('cortando')
+                  ])
+                  ->whereIn('prioridade', is_array($prioridade_id) ? $prioridade_id : [$prioridade_id])
+                  ->orderBy('CAST(ordem AS UNSIGNED)', 'DESC')
+                  ->get()
+                  ->getResultArray();
+                
+                $ordem = 1;
+                if (count($desenhos_data) != 0) {
+                  $ordem = intval(Ferramentas::array_index($desenhos_data, [0, "ordem"])) + 1;
+                }
+
+
+
+                $data = [
+                  'nome' => Ferramentas::codificador(Ferramentas::get_name_file($desenho)),
+                  'caminho' => Ferramentas::codificador($desenho),
+                  'desenhista' => $_SESSION['usuario'],
+                  'status' => 'pendente',
+                  'prioridade' => $prioridade_id,
+                  'finalidade' => $finalidade_id,
+                  'empreendimento' => $empreendimento_id,
+                  'empresa' => $empresa_id,
+                  'processos_id' => $prcoesso_id,
+                  //'ordem' => $ordem,
+                  'data_hora_add' => Ferramentas::codificador(date('d/m/Y H:i'))
+
+                ];
+                $db->insert($data);
+              }
+            } else {
+              $msg[$value["desenho"]] = 'Erro ao criar caminho.';
+            }
+          } else {
+            $ok[] = false;
+          }
         }
-
-
-
-
-
       }
-    }
       $desenhos = Ferramentas::map_pasta($_SESSION['pasta_temp']);
       if (count($desenhos) == 0) {
         //apaga a pasta temp se estiver vazia
@@ -330,7 +329,6 @@ class AddDesenhoPost extends Ferramentas
         $id_desenhos = Ferramentas::array_index(Ferramentas::array_pesquisa_mult($db_data, ['diretorio', 'status'], [Ferramentas::codificador($_SESSION['pasta_temp']), 'processando']), ['id']);
         if ($id_desenhos != '') {
           $db->update($id_desenhos, ['status' => 'finalizado', 'data_finalizado' => Ferramentas::codificador(date('d/m/Y H:i:s'))]);
-
         }
       }
       if (count($violacao) != 0) {
@@ -346,21 +344,20 @@ class AddDesenhoPost extends Ferramentas
           ];
 
           $db->insert($data);
-
         }
       }
       $data = [
         'ok' => $ok,
         'msg' => $msg,
         '1' => $_SESSION['processos_lista']['lista'],
-        '2' => $prcoesso_nome .' - '. $prcoesso_id,
+        '2' => $prcoesso_nome . ' - ' . $prcoesso_id,
         '3' => $prcoesso_nome
 
       ];
       $_SESSION['desenho_add_proc'] = false;
       return $this->response->setJSON($data);
-
     }
+    return $this->response->setJSON(['ok' => false]);
   }
 
   /**
@@ -437,22 +434,21 @@ class AddDesenhoPost extends Ferramentas
         }
       }
 
-  
 
 
- 
+
+
 
       foreach ($desenhos as $key => $value) {
         // Verifica se a extensão do arquivo não está na lista de filtros permitidos.
-        if (!in_array(Ferramentas::get_type_file($value), explode(",", str_replace(".","",$filtroAssociado))) or $filtroAssociado == null) {
+        if (!in_array(Ferramentas::get_type_file($value), explode(",", str_replace(".", "", $filtroAssociado))) or $filtroAssociado == null) {
           // Registra uma mensagem indicando que o tipo de arquivo não é permitido.
           $msg[Ferramentas::get_name_file($value)] = "Tipo de arquivo (." . Ferramentas::get_type_file($value) . ") não permitido.";
 
           // Remove o arquivo do diretório temporário.
           unlink($desenhos[$key]);
         }
-      
-    }
+      }
       // Obtém a lista de desenhos restante no diretório temporário.
       $desenhos = Ferramentas::map_pasta($targetDirectory);
 
@@ -470,9 +466,7 @@ class AddDesenhoPost extends Ferramentas
       // Armazena a lista de desenhos na sessão do usuário.
       $_SESSION['desenhos'] = $desenhos;
 
-      return $this->response->setJSON(['ok' => $ok, 'desenhos' => $desenhos, 'msg' => $msg,'1'=>explode(",", str_replace(".","",$filtroAssociado)),'2' => $_SESSION['processos_lista']['lista'],'3'=>$prcoesso_nome]);
+      return $this->response->setJSON(['ok' => $ok, 'desenhos' => $desenhos, 'msg' => $msg, '1' => explode(",", str_replace(".", "", $filtroAssociado)), '2' => $_SESSION['processos_lista']['lista'], '3' => $prcoesso_nome]);
     }
   }
-
-
 }

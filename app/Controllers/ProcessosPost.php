@@ -254,7 +254,7 @@ class ProcessosPost extends Ferramentas
         // Cria a lista com base nas prioridades ativas
         
 
-        if ($value['status'] == 'ativo' &&( in_array($value['nome'],$_SESSION['processos']) or in_array('Processos',$_SESSION['permissao']) or in_array('all',$_SESSION['permissao']) )) {
+        if ($value['status'] == 'ativo' &&( in_array(Ferramentas::decodificador($value['nome']),$_SESSION['processos']) or in_array('Processos',$_SESSION['permissao']) or in_array('all',$_SESSION['permissao']) )) {
           $filtro = new \App\Models\Filtros;
           $filtro_data = $filtro->find();
           $filtros = array();
@@ -281,7 +281,7 @@ class ProcessosPost extends Ferramentas
       //retorna a lista para o ajax
       $data = [
         "lista" => $lista,
-        "1" => $_SESSION['permissao']
+        "1" => $processos_data
 
 
       ];

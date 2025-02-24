@@ -1,0 +1,21 @@
+CRITICAL - 2025-01-27 11:22:55 --> Undefined array key "id_desenho"
+in APPPATH\Controllers\ListaCortePost.php on line 596.
+ 1 APPPATH\Controllers\ListaCortePost.php(596): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_desenho"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\ListaCortePost.php', 596)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ListaCortePost->lista_tarefas()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListaCortePost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-27 11:23:05 --> Undefined array key "id_desenho"
+in APPPATH\Controllers\ListaCortePost.php on line 596.
+ 1 APPPATH\Controllers\ListaCortePost.php(596): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_desenho"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\ListaCortePost.php', 596)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ListaCortePost->lista_tarefas()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListaCortePost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-27 11:23:54 --> Call to a member function builder() on array
+in APPPATH\Controllers\Ferramentas.php on line 183.
+ 1 APPPATH\Controllers\ListaCortePost.php(562): App\Controllers\Ferramentas::buscarRegistrosPorCriterios([...], [...], [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ListaCortePost->lista_tarefas()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListaCortePost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

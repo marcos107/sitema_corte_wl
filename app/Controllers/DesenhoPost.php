@@ -24,7 +24,7 @@ class DesenhoPost extends Ferramentas
       // Obtém o array de IDs e a nova prioridade da solicitação
       $array = service('request')->getPost('array');
       $prioridade_nova = service('request')->getPost('prioridade');
-
+      $ordem = service('request')->getPost('ordem');
 
       $ok = false; // Variável para indicar se a operação foi bem-sucedida
       $violacao = array(); // Array para armazenar informações de violações
@@ -61,13 +61,13 @@ class DesenhoPost extends Ferramentas
 
           ];
           $desenhos->update($ids, $data);
+          Ferramentas::re_ordenar_oredem_desenho($ids, $id_prio, $ordem);
           $data = [
             'id_desenhos' => $ids,
             'data_hora_mod' => Ferramentas::codificador(date('d/m/Y H:i:s')),
             'status' => Ferramentas::codificador('mudança de prioridade')
           ];
           $lista_temp->insert($data);
-
         }
       } else {
         $violacao[] = "desenho_update prioridade não existe";
@@ -90,7 +90,6 @@ class DesenhoPost extends Ferramentas
 
           // Para cada violação no array de violações, registra a violação em um banco de dados de violações
           $db->insert($data);
-
         }
       }
 
@@ -117,16 +116,45 @@ class DesenhoPost extends Ferramentas
       // Inicializa a sessão para acessar os dados da lista armazenados nela
       session_start();
       $id = service('request')->getPost('id');
+
+      $db = new \App\Models\Desenhos();
+      $desenhos_data = $db
+        ->whereIn('status', [
+          Ferramentas::codificador('pendente'),
+          Ferramentas::codificador('cortando')
+        ])
+        ->find();
+      $agrupados = [];
+
+
+      foreach ($desenhos_data as $desenho) {
+        $prioridade = $desenho['prioridade'];
+        $agrupados[$prioridade][] = $desenho;
+      }
+      foreach ($agrupados as $prioridade => &$grupo) {
+        usort($grupo, function ($a, $b) {
+          // Converte 'ordem' para inteiro para garantir a comparação numérica
+          return intval($a['ordem']) <=> intval($b['ordem']);
+        });
+        // Após a ordenação, o último elemento possui o maior valor de 'ordem'
+        $ultimoItem = end($grupo);
+        // Substitui o grupo pelo número da maior ordem
+        $grupo = intval($ultimoItem['ordem']);
+      }
+      unset($grupo); // Desfaz a referência
+
+
+
       if ($id == "") {
         $data = [
-          "lista" => $_SESSION["lista_completa"]
-
+          "lista" => $_SESSION["lista_completa"],
+          "agrupados" => $agrupados
 
         ];
       } else {
         $data = [
-          "lista" => [Ferramentas::array_pesquisa($_SESSION["lista_completa"], 'id', $id)]
-
+          "lista" => [Ferramentas::array_pesquisa($_SESSION["lista_completa"], 'id', $id)],
+          "agrupados" => $agrupados
 
         ];
       }
@@ -151,9 +179,9 @@ class DesenhoPost extends Ferramentas
 
       $id = service('request')->getPost('id'); //id recebido via post
 
-      $lista = $_SESSION["lista_completa"][$id];//busca qual desenhos é da lsita usando o id e retornando as informações desse desenho
+      $lista = $_SESSION["lista_completa"][$id]; //busca qual desenhos é da lsita usando o id e retornando as informações desse desenho
 
-      $data = ['ok' => true, 'nome' => Ferramentas::decodificador($lista['nome'])];// envia ok true indicando que deu certo e retrirar apenas o nome das informações do desenho
+      $data = ['ok' => true, 'nome' => Ferramentas::decodificador($lista['nome'])]; // envia ok true indicando que deu certo e retrirar apenas o nome das informações do desenho
       return $this->response->setJSON($data);
     }
   }
@@ -185,7 +213,7 @@ class DesenhoPost extends Ferramentas
       // Criar o array resultante
       $array_resultante = [$caminho_diretorio, $nome_arquivo];
 
-      $caminho = str_replace(["ci083ni061n", "wli074ndesenhos", "i061n"], ["c:/", "wl_desenhos", "/"], $array_resultante[0]) . '/' . Ferramentas::decodificador($array_resultante[1]);
+      $caminho = str_replace(["ci083ni061n", "wli074ndesenhos", "i061n", "i074n"], ["c:/", "wl_desenhos", "/", "_"], $array_resultante[0]) . '/' . Ferramentas::decodificador($array_resultante[1]);
       $caminho = str_replace("//", "/", $caminho);
       $nome = Ferramentas::decodificador($lista['nome']);
       $caminho_antigo = $caminho;
@@ -203,7 +231,17 @@ class DesenhoPost extends Ferramentas
       $caminho = str_replace($nome, '', $caminho);
       $caminho = 'C:/wl/lixo/wl/wl_desenhos/' . $caminho . '/';
       $caminho = str_replace('//', '/', $caminho);
+      // Normaliza o caminho removendo espaços extras e corrigindo barras
+      $caminho = str_replace('\\', '/', trim($caminho));
 
+      // Verifica se há múltiplas ocorrências de "C:/"
+      if (preg_match_all('/[a-zA-Z]:\//', $caminho, $matches, PREG_OFFSET_CAPTURE)) {
+        if (count($matches[0]) > 1) {
+          // Pega a segunda ocorrência da raiz e corta o restante anterior
+          $inicioSegundaRaiz = $matches[0][1][1]; // Índice da segunda raiz
+          $caminho = substr($caminho, $inicioSegundaRaiz);
+        }
+      }
       // Cria o diretório de lixo, se não existir.
       $problema = Ferramentas::criet_diretorio($caminho);
 
@@ -212,7 +250,6 @@ class DesenhoPost extends Ferramentas
         do {
 
           $nome = Ferramentas::get_name_file($nome, false) . '_' . date('d_m_Y_H_i_s_') . rand(0, 100) . '.' . Ferramentas::get_type_file($nome);
-
         } while (file_exists($caminho . $nome));
 
         // Move o desenho para o diretório de lixo.
@@ -231,17 +268,13 @@ class DesenhoPost extends Ferramentas
           // Atualiza o status do desenho para 'apagado' no banco de dados.
           $db = new \App\Models\Desenhos();
           $db->update($id, ['status' => 'apagado']);
-          return $this->response->setJSON(['ok' => 'true', 'mensagem' => 'Desenho apagado com sucesso ']);
+          return $this->response->setJSON(['ok' => 'true', 'mensagem' => 'Desenho apagado com sucesso ', 'dir_antigo' => $caminho_antigo, 'dir_novo' => $caminho . $nome]);
         } else {
           return $this->response->setJSON(['ok' => 'false', 'mensagem' => 'Desenho apagado com sucesso ', 'mensagem_false' => 'Trasferencia para lixeira']);
         }
       }
-      return $this->response->setJSON(['ok' => 'false', 'caminho' => $caminho]);
+      return $this->response->setJSON(['ok' => 'false', 'caminho' => $problema]);
     }
-
-
-
-
   }
 
 
@@ -267,9 +300,14 @@ class DesenhoPost extends Ferramentas
       // Armazena o novo nome na sessão para uso posterior.
       $_SESSION["novo_nome_arquivo"] = $nome_novo;
       return $this->response->setJSON(['mensagem' => $nome_novo]);
-
     }
   }
+
+
+
+
+
+
 
 
   /**
@@ -282,86 +320,14 @@ class DesenhoPost extends Ferramentas
   function recolocar_desenho()
   {
     if ($this->request->isAJAX()) {
-      session_start();
 
-      $id = service('request')->getPost('id'); // Obtém o ID do desenho a ser duplicado via requisição AJAX.
-      $caminho = '';
+      $id = service('request')->getPost('id');
 
-
-      $linhaParaDuplicar = $_SESSION["lista_primordial"][$id]; // Obtém as informações da linha a ser duplicada.
-
-      $id_lista = $_SESSION["lista"][$id]; // Obtém o ID da linha original.
-
-      if ($linhaParaDuplicar) {
-        $novaEntrada = $linhaParaDuplicar;
-
-        // Remove o ID e o cortador da nova entrada, para evitar conflitos.
-        unset($novaEntrada['id'], $novaEntrada['cortador']);
-
-        $novaEntrada['data_hora_add'] = Ferramentas::codificador(date('d/m/Y H:i'));
-        $novaEntrada['status'] = 'pendente';
-
-        $desenhos = new \App\Models\Desenhos();
-        $nome = Ferramentas::decodificador($novaEntrada['nome']);
-        $extencao = '.' . Ferramentas::get_type_file($nome);
-
-        $caminho = $novaEntrada['caminho'];
-        $ultima_barra_invertida = strrpos($caminho, 'i061n');
-
-        // Dividir a string em duas partes
-        $caminho_diretorio = substr($caminho, 0, $ultima_barra_invertida);
-        $nome_arquivo = substr($caminho, $ultima_barra_invertida);
-
-        // Criar o array resultante
-        $array_resultante = [$caminho_diretorio, $nome_arquivo];
-
-        $caminho = str_replace(["ci083ni061n", "wli074ndesenhos", "i061n"], ["c:/", "wl_desenhos", "/"], $array_resultante[0]) . '/' . Ferramentas::decodificador($array_resultante[1]);
-        $caminho = str_replace("//", "/", $caminho);
-
-
-
-        // Extrai o caminho do nome do arquivo.
-        $caminho = str_replace($nome, '', $caminho);
-
-
-
-
-        $nome = str_replace('.' . Ferramentas::get_type_file($nome), '', $nome);
-
-
-
-        do {
-          $radom = rand(1000, 9999);
-          $novo_nome = Ferramentas::remove_id_file(substr($nome, 19)) . '_' . $radom . "_" . $extencao;
-        } while (file_exists($caminho . $novo_nome));
-
-        // Faz uma cópia do arquivo original com o novo nome.
-        copy($caminho . $nome . $extencao, $caminho . $novo_nome);
-
-        $novaEntrada['caminho'] = Ferramentas::codificador($caminho . $novo_nome);
-        $novaEntrada['nome'] = Ferramentas::codificador($novo_nome);
-        //return $this->response->setJSON(['1' => $caminho. $novo_nome, '2'=>$nome]);
-
-        // Insere a nova entrada no banco de dados.
-        $desenhos->insert($novaEntrada);
-
-        // Atualiza o status da entrada original para 'duplicado' com o novo ID.
-        $desenhos->update($id_lista, ['status' => 'duplicado_' . $desenhos->insertID()]);
-
-
-      }
-
-
-
+      $caminho = Ferramentas::re_colcoar_desenho($id);
 
 
       $data = ['ok' => true, 'nome' => $caminho];
       return $this->response->setJSON($data);
     }
   }
-
-
-
-
-
 }

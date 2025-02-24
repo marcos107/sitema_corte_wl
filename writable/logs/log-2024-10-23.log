@@ -1,0 +1,21 @@
+CRITICAL - 2024-10-23 11:36:42 --> Undefined variable $prioridade_desenho
+in APPPATH\Controllers\Api.php on line 434.
+ 1 APPPATH\Controllers\Api.php(434): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $prioridade_desenho', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\Api.php', 434)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->lista_tarefas_api()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-23 11:37:29 --> Undefined variable $prioridade_desenho
+in APPPATH\Controllers\Api.php on line 434.
+ 1 APPPATH\Controllers\Api.php(434): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $prioridade_desenho', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\Api.php', 434)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->lista_tarefas_api()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-23 11:37:31 --> Undefined variable $prioridade_desenho
+in APPPATH\Controllers\Api.php on line 434.
+ 1 APPPATH\Controllers\Api.php(434): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $prioridade_desenho', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\Api.php', 434)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->lista_tarefas_api()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

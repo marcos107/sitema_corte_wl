@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+use Exception;
 
 class Ferramentas extends BaseController
 {
@@ -166,6 +167,38 @@ class Ferramentas extends BaseController
         // Retorna o array de resultados (pode estar vazio se não houver correspondências)
         return $resultados;
     }
+
+    /**
+     * Busca múltiplos registros de um banco de dados com base em critérios de pesquisa.
+     *
+     * @param object $model Instância do modelo do banco de dados (exemplo: \App\Models\Tag).
+     * @param array $campos Um array com os nomes dos campos a serem pesquisados.
+     * @param array $valores Um array com os valores correspondentes a serem buscados nos campos.
+     * @return array Um array com os registros encontrados que atendem aos critérios de pesquisa ou um array vazio se nenhum registro for encontrado.
+     */
+    public static function buscarRegistrosPorCriterios($model, array $campos, array $valores): array
+    {
+        // Verifica se o modelo, os campos e os valores foram fornecidos corretamente
+        if ($model && !empty($campos) && !empty($valores) && count($campos) === count($valores)) {
+            // Inicia o construtor de consultas
+            $builder = $model->builder();
+
+            // Adiciona as condições de pesquisa
+            foreach ($campos as $index => $campo) {
+                if (isset($valores[$index])) {
+                    $builder->where($campo, $valores[$index]);
+                }
+            }
+
+            // Executa a consulta e retorna os resultados como array
+            $query = $builder->get();
+            return $query->getResultArray();
+        }
+
+        // Retorna um array vazio caso os parâmetros sejam inválidos
+        return [];
+    }
+
 
 
     /**
@@ -557,9 +590,20 @@ class Ferramentas extends BaseController
             else
                 $codigos[] = "i999n";
         }
-
         // Substitui os códigos pelos caracteres especiais na string.
         $str = str_replace($codigos, $caracteresEspeciais, $str);
+        // Gera um array com os códigos a serem substituídos.
+        $codigos = array();
+        for ($i = 1; $i <= count($caracteresEspeciais); $i++) {
+            $numero = str_pad($i, 3, '0', STR_PAD_LEFT);
+            if (!in_array("i{$numero}n", self::array_codificar($ignora)))
+                $codigos[] = "I{$numero}N";
+            else
+                $codigos[] = "i999n";
+        }
+        // Substitui os códigos pelos caracteres especiais na string.
+        $str = str_replace($codigos, $caracteresEspeciais, $str);
+
 
         return $str;
     }
@@ -583,7 +627,7 @@ class Ferramentas extends BaseController
                 if ($arquivo != '.' && $arquivo != '..') {
                     if (is_dir($pasta . $arquivo)) {
                         // Se o item é uma subpasta, chama a função recursivamente para mapear os itens dentro dela.
-                        $p = array_merge($p, map_pasta($pasta . $arquivo . '/', $p));
+                        $p = array_merge($p, self::map_pasta($pasta . $arquivo . '/', $p));
                     } else {
                         // Se o item é um arquivo, adiciona o caminho completo ao array.
                         array_push($p, ($pasta . $arquivo));
@@ -680,25 +724,31 @@ class Ferramentas extends BaseController
      */
     public static function criet_diretorio($caminho)
     {
-        // Divide o caminho em diretórios individuais
-        $diretorios = explode('/', $caminho);
-        $path = '';
-        $erro = array();
+        try {
+            // Divide o caminho em diretórios individuais
+            $diretorios = explode('/', $caminho);
+            $path = '';
+            $erros = [];
 
-        foreach ($diretorios as $diretorio) {
-            $path .= $diretorio . '/';
+            foreach ($diretorios as $diretorio) {
+                $path .= $diretorio . '/';
 
-            // Verifica se o diretório não existe
-            if (!is_dir($path)) {
-                // Tenta criar o diretório com permissões 0777
-                if (!mkdir($path, 0777)) {
-                    // Se a criação falhar, adiciona uma mensagem de erro ao array de erros
-                    $erro[] = ('Falha ao criar o diretório: ' . $path);
+                // Verifica se o diretório já existe
+                if (!is_dir($path)) {
+                    // Tenta criar o diretório com permissões 0777
+                    if (!mkdir($path, 0777, true)) {
+                        throw new Exception('Falha ao criar o diretório: ' . $path);
+                    }
                 }
             }
+
+            return [];
+
+        } catch (Exception $e) {
+            return ['status' => 'error', 'message' => $e->getMessage()];
         }
-        return $erro;
     }
+
 
 
 
@@ -711,8 +761,8 @@ class Ferramentas extends BaseController
      *  - , _ , + , = , { , } , [ , ] , | , \ , : , ; , " ," ", < , > , ? , ~ , ^ , ` , ´
      * por sequências como "i001n", "i002n", "i003n" e assim por diante.
      *
-     * @param $array array para ser codificada as strings.
-     * @return string array codificada.
+     * $array array para ser codificada as strings.
+     *  string array codificada.
      */
     public static function array_codificar($array)
     {
@@ -839,6 +889,198 @@ class Ferramentas extends BaseController
                     ];
                 }
                 return $this->response->setJSON($data);
+            }
+        }
+    }
+
+    function re_colcoar_desenho($id)
+    {
+        // Inicia a sessão, se ainda não estiver ativa.
+        if (session_status() !== PHP_SESSION_ACTIVE) {
+            session_start();
+        }
+
+
+        $caminho = '';
+        $desenhos = new \App\Models\Desenhos();
+        $desenhos_renovar = $desenhos->where("id", $id)->find();
+
+        $id_lista = $id; // Obtém o ID da linha original.
+
+        if ($desenhos_renovar) {
+            $novaEntrada = $desenhos_renovar[0];
+
+            // Remove o ID e o cortador da nova entrada, para evitar conflitos.
+            unset($novaEntrada['id'], $novaEntrada['cortador'], $novaEntrada['ordem']);
+
+            $novaEntrada['data_hora_add'] = Ferramentas::codificador(date('d/m/Y H:i'));
+            $novaEntrada['status'] = 'pendente';
+
+
+            $nome = Ferramentas::decodificador($novaEntrada['nome']);
+            $extencao = '.' . Ferramentas::get_type_file($nome);
+
+            $caminho = $novaEntrada['caminho'];
+            $ultima_barra_invertida = strrpos($caminho, 'i061n');
+
+            // Dividir a string em duas partes
+            $caminho_diretorio = substr($caminho, 0, $ultima_barra_invertida);
+            $nome_arquivo = substr($caminho, $ultima_barra_invertida);
+
+            // Criar o array resultante
+            $array_resultante = [$caminho_diretorio, $nome_arquivo];
+
+            $caminho = str_replace(["ci083ni061n", "wli074ndesenhos", "i061n"], ["c:/", "wl_desenhos", "/"], $array_resultante[0]) . '/' . Ferramentas::decodificador($array_resultante[1]);
+            $caminho = str_replace("//", "/", $caminho);
+
+
+
+            // Extrai o caminho do nome do arquivo.
+            $caminho = str_replace($nome, '', $caminho);
+
+            // Verifica se o arquivo existe
+            if (!file_exists($caminho)) {
+                // Substitui 'i074n' por '_'
+                $caminho = str_replace('i074n', '_', $caminho);
+            }
+
+
+            $nome = str_replace('.' . Ferramentas::get_type_file($nome), '', $nome);
+
+
+
+            do {
+                $radom = rand(1000, 9999);
+                $novo_nome = Ferramentas::remove_id_file(substr($nome, 19)) . '_' . $radom . "_" . $extencao;
+            } while (file_exists($caminho . $novo_nome));
+
+            // Faz uma cópia do arquivo original com o novo nome.
+            copy($caminho . $nome . $extencao, $caminho . $novo_nome);
+
+            $novaEntrada['caminho'] = Ferramentas::codificador($caminho . $novo_nome);
+            $novaEntrada['nome'] = Ferramentas::codificador($novo_nome);
+            //return $this->response->setJSON(['1' => $caminho. $novo_nome, '2'=>$nome]);
+
+            // Insere a nova entrada no banco de dados.
+            $desenhos->insert($novaEntrada);
+
+            // Atualiza o status da entrada original para 'duplicado' com o novo ID.
+            $desenhos->update($id_lista, ['status' => 'duplicado_' . $desenhos->insertID()]);
+            return $caminho;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+    function re_ordenar_oredem_desenho($id = null, $prioridade_id = null, $ordem = null)
+    {
+        // Instância do Model de Desenhos (ajuste o namespace conforme sua aplicação)
+        $db = new \App\Models\Desenhos();
+
+        // Busca os desenhos conforme o status e, se informado, a prioridade
+        if ($prioridade_id != null) {
+
+            $desenhos_data = $db
+                ->whereIn('status', [
+                    Ferramentas::codificador('pendente'),
+                    Ferramentas::codificador('cortando')
+                ])
+                ->where("prioridade", $prioridade_id)
+                ->find();
+        } else {
+            $desenhos_data = $db
+                ->whereIn('status', [
+                    Ferramentas::codificador('pendente'),
+                    Ferramentas::codificador('cortando')
+                ])
+                ->find();
+        }
+
+        // Agrupa os desenhos pela coluna 'prioridade'
+        $agrupados = [];
+        foreach ($desenhos_data as $desenho) {
+            $prioridade = $desenho['prioridade'];
+            $agrupados[$prioridade][] = $desenho;
+        }
+
+        // Ordena cada grupo de desenhos pela coluna 'ordem'
+        // Caso o campo 'ordem' esteja vazio, atribui um valor alto para que o item fique por último
+        foreach ($agrupados as $prioridade => &$grupo) {
+            usort($grupo, function ($a, $b) {
+                $ordA = (isset($a['ordem']) && $a['ordem'] !== '') ? intval($a['ordem']) : PHP_INT_MAX;
+                $ordB = (isset($b['ordem']) && $b['ordem'] !== '') ? intval($b['ordem']) : PHP_INT_MAX;
+                return $ordA <=> $ordB;
+            });
+        }
+        unset($grupo); // Quebra a referência
+
+        // Array para armazenar as atualizações realizadas: cada item [id, nova ordem]
+        $updates = [];
+
+        if ($ordem != null) {
+            // *** FUNÇÃO DO ID E ORDEM ***
+            // Se a nova ordem foi informada, procura o grupo que contém o desenho com $id
+            foreach ($agrupados as $prioridade => &$grupo) {
+                $foundIndex = null;
+                foreach ($grupo as $index => $desenho) {
+                    if ($desenho['id'] == $id) {
+                        $foundIndex = $index;
+                        break;
+                    }
+                }
+                if ($foundIndex !== null) {
+                    // Removendo o desenho da posição atual
+                    $movedDesenho = $grupo[$foundIndex];
+                    array_splice($grupo, $foundIndex, 1);
+
+                    // Calcula o índice de inserção (convertendo a ordem 1-indexada para 0-indexada)
+                    $insertIndex = $ordem - 1;
+                    if ($insertIndex < 0) {
+                        $insertIndex = 0;
+                    }
+                    if ($insertIndex > count($grupo)) {
+                        $insertIndex = count($grupo);
+                    }
+
+                    // Insere o desenho na nova posição
+                    array_splice($grupo, $insertIndex, 0, [$movedDesenho]);
+
+                    // Reatribui as ordens do grupo e registra as atualizações
+                    foreach ($grupo as $key => &$item) {
+                        $expectedOrder = $key + 1; // Ordem sequencial começando em 1
+                        if (intval($item['ordem']) !== $expectedOrder) {
+                            $item['ordem'] = $expectedOrder;
+                            $updates[] = [$item['id'], $expectedOrder];
+                        }
+                    }
+                    unset($item);
+                    // Já que encontramos o grupo correto, não é necessário continuar
+                    break;
+                }
+            }
+        } else {
+            // Se $ordem não for informado, apenas verifica e registra mudanças onde a ordem atual diverge da posição (índice+1)
+            foreach ($agrupados as $desenhos) {
+                foreach ($desenhos as $key => $value) {
+                    if (($key + 1) != intval(Ferramentas::array_index($value, ['ordem']))) {
+                        $updates[] = [$value['id'], ($key + 1)];
+                    }
+                }
+            }
+        }
+
+        // Se houver atualizações, persiste as mudanças no banco de dados
+        if (count($updates) != 0) {
+            foreach ($updates as $update) {
+                $db->update($update[0], ['ordem' => $update[1]]);
             }
         }
     }

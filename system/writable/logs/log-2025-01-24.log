@@ -1,0 +1,15 @@
+CRITICAL - 2025-01-24 15:18:39 --> Undefined array key "caminho"
+in APPPATH\Controllers\Api.php on line 610.
+ 1 APPPATH\Controllers\Api.php(610): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "caminho"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\Api.php', 610)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->download_lista_tarefas_api()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-24 15:52:51 --> array_key_exists(): Argument #2 ($array) must be of type array, string given
+in APPPATH\Controllers\Ferramentas.php on line 85.
+ 1 APPPATH\Controllers\Ferramentas.php(85): array_key_exists('id_desenho', '1684')
+ 2 APPPATH\Controllers\ListaCortePost.php(579): App\Controllers\Ferramentas::array_pesquisa([...], 'id_desenho', '3172')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ListaCortePost->lista_tarefas()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListaCortePost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

@@ -1,0 +1,43 @@
+ERROR - 2025-02-03 15:46:07 --> mysqli_sql_exception: Unknown column 'processos_id' in 'where clause' in C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\codi\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\codi\system\Model.php(203): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\codi\system\BaseModel.php(557): CodeIgniter\Model->doFind(false, NULL)
+#6 C:\xampp\htdocs\codi\app\Controllers\DesenhosCortadosPost.php(74): CodeIgniter\BaseModel->find()
+#7 C:\xampp\htdocs\codi\system\CodeIgniter.php(934): App\Controllers\DesenhosCortadosPost->desenhos_cortados()
+#8 C:\xampp\htdocs\codi\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhosCortadosPost))
+#9 C:\xampp\htdocs\codi\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\codi\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2025-02-03 15:46:07 --> Unknown column 'processos_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `corte`
+WHERE `processos_id` = \'\'
+AND STR_TO_DATE(REPLACE(SUBSTRING_INDEX(data_fim, \' \', 1), \'i061n\', \'/\'), \'%d/%m/%Y\') >= \'2025-02-03\'
+AND STR_TO_DATE(REPLACE(SUBSTRING_INDEX(data_fim, \' \', 1), \'i061n\', \'/\'), \'%d/%m/%Y\') <= \'2024-11-01\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `corte`
+WHERE `processos_id` = \'\'
+AND STR_TO_DATE(REPLACE(SUBSTRING_INDEX(data_fim, \' \', 1), \'i061n\', \'/\'), \'%d/%m/%Y\') >= \'2025-02-03\'
+AND STR_TO_DATE(REPLACE(SUBSTRING_INDEX(data_fim, \' \', 1), \'i061n\', \'/\'), \'%d/%m/%Y\') <= \'2024-11-01\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `corte`
+WHERE `processos_id` = \'\'
+AND STR_TO_DATE(REPLACE(SUBSTRING_INDEX(data_fim, \' \', 1), \'i061n\', \'/\'), \'%d/%m/%Y\') >= \'2025-02-03\'
+AND STR_TO_DATE(REPLACE(SUBSTRING_INDEX(data_fim, \' \', 1), \'i061n\', \'/\'), \'%d/%m/%Y\') <= \'2024-11-01\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `corte`
+WHERE `processos_id` = :processos_id:
+AND STR_TO_DATE(REPLACE(SUBSTRING_INDEX(data_fim, \' \', 1), \'i061n\', \'/\'), \'%d/%m/%Y\') >= :STR_TO_DATE(REPLACE(SUBSTRING_INDEX(data_fim, \' \', 1), \'i061n\', \'/\'), \'%d/%m/%Y\'):
+AND STR_TO_DATE(REPLACE(SUBSTRING_INDEX(data_fim, \' \', 1), \'i061n\', \'/\'), \'%d/%m/%Y\') <= :STR_TO_DATE(REPLACE(SUBSTRING_INDEX(data_fim, \' \', 1), \'i061n\', \'/\'), \'%d/%m/%Y\').1:', [...], false)
+ 5 SYSTEMPATH\Model.php(203): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(557): CodeIgniter\Model->doFind(false, null)
+ 7 APPPATH\Controllers\DesenhosCortadosPost.php(74): CodeIgniter\BaseModel->find()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhosCortadosPost->desenhos_cortados()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhosCortadosPost))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

@@ -15,7 +15,7 @@
 
     <li class="nav-item"><a href="<?=site_url("public/lista_corte")?>" id="lista_corte" class="nav-link">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<i class="fa-solid fa-scissors"></i>&nbsp<p>Lista
           De Corte</p></a></li>
-          <?php } if(in_array("Lista_De_Corte ADM",$permissao) or in_array("all",$permissao)){?>
+          <?php } if(in_array("Lista_De_Corte_ADM",$permissao) or in_array("all",$permissao)){?>
 
     <li class="nav-item"><a href="<?=site_url("public/lista_corte_adm")?>" id="lista_corte_adm" class="nav-link">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<i class="fa-solid fa-scissors"></i>&nbsp<p>Lista
           De Corte ADM</p></a></li>

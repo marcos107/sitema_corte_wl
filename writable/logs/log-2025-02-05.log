@@ -1,0 +1,620 @@
+WARNING - 2025-02-05 15:36:00 --> [DEPRECATED] json_decode(): Passing null to parameter #1 ($json) of type string is deprecated in APPPATH\Controllers\Api.php on line 160.
+ 1 APPPATH\Controllers\Api.php(160): json_decode(null, true)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->login_api()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-05 15:36:00 --> [DEPRECATED] explode(): Passing null to parameter #2 ($string) of type string is deprecated in APPPATH\Controllers\Api.php on line 176.
+ 1 APPPATH\Controllers\Api.php(176): explode(':', null)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->login_api()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-05 15:36:00 --> [DEPRECATED] explode(): Passing null to parameter #2 ($string) of type string is deprecated in APPPATH\Controllers\Api.php on line 177.
+ 1 APPPATH\Controllers\Api.php(177): explode(':', null)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->login_api()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-05 15:36:00 --> Undefined array key 1
+in APPPATH\Controllers\Api.php on line 177.
+ 1 APPPATH\Controllers\Api.php(177): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 1', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\Api.php', 177)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->login_api()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-05 18:50:16 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 462.
+ 1 APPPATH\Controllers\Ferramentas.php(462): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-05 18:50:26 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 462.
+ 1 APPPATH\Controllers\Ferramentas.php(462): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-05 18:50:31 --> whereIn() expects $values to be of type array or closure
+in SYSTEMPATH\Database\BaseBuilder.php on line 940.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(827): CodeIgniter\Database\BaseBuilder->_whereIn('proridade', '2', false, 'AND ', null)
+ 2 SYSTEMPATH\Model.php(840): CodeIgniter\Database\BaseBuilder->whereIn('proridade', '2')
+ 3 APPPATH\Controllers\AddDesenhoPost.php(297): CodeIgniter\Model->__call('whereIn', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AddDesenhoPost->desenhos_add()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AddDesenhoPost))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-05 18:51:02 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 462.
+ 1 APPPATH\Controllers\Ferramentas.php(462): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-05 18:51:13 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 462.
+ 1 APPPATH\Controllers\Ferramentas.php(462): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-05 18:52:36 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 462.
+ 1 APPPATH\Controllers\Ferramentas.php(462): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-05 18:52:43 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 462.
+ 1 APPPATH\Controllers\Ferramentas.php(462): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-05 18:55:18 --> whereIn() expects $values to be of type array or closure
+in SYSTEMPATH\Database\BaseBuilder.php on line 940.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(827): CodeIgniter\Database\BaseBuilder->_whereIn('proridade', '2', false, 'AND ', null)
+ 2 SYSTEMPATH\Model.php(840): CodeIgniter\Database\BaseBuilder->whereIn('proridade', '2')
+ 3 APPPATH\Controllers\AddDesenhoPost.php(287): CodeIgniter\Model->__call('whereIn', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AddDesenhoPost->desenhos_add()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AddDesenhoPost))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-05 18:58:02 --> rename(C:/wl/temp/55214/possui.dxf,c:/wl/TESTE/12311/TESTE/123123/OI123/POSSUI_624_.dxf): O sistema não pode encontrar o arquivo especificado (code: 2)
+in APPPATH\Controllers\AddDesenhoPost.php on line 267.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'rename(C:/wl/temp/55214/possui.dxf,c:/wl/TESTE/12311/TESTE/123123/OI123/POSSUI_624_.dxf): O sistema não pode encontrar o arquivo especificado (code: 2)', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AddDesenhoPost.php', 267)
+ 2 APPPATH\Controllers\AddDesenhoPost.php(267): rename('C:/wl/temp/55214/possui.dxf', 'c:/wl/TESTE/12311/TESTE/123123/OI123/POSSUI_624_.dxf')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AddDesenhoPost->desenhos_add()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AddDesenhoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-05 18:58:14 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 462.
+ 1 APPPATH\Controllers\Ferramentas.php(462): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2025-02-05 18:58:26 --> mysqli_sql_exception: Unknown column 'proridade' in 'where clause' in C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\codi\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\codi\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\codi\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\codi\app\Controllers\AddDesenhoPost.php(290): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\codi\system\CodeIgniter.php(934): App\Controllers\AddDesenhoPost->desenhos_add()
+#8 C:\xampp\htdocs\codi\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AddDesenhoPost))
+#9 C:\xampp\htdocs\codi\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\codi\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2025-02-05 18:58:26 --> Unknown column 'proridade' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `desenhos`
+WHERE `status` IN (\'pendente\',\'cortando\')
+AND `proridade` IN (\'2\')
+ORDER BY `ordem` DESC
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `desenhos`
+WHERE `status` IN (\'pendente\',\'cortando\')
+AND `proridade` IN (\'2\')
+ORDER BY `ordem` DESC
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `desenhos`
+WHERE `status` IN (\'pendente\',\'cortando\')
+AND `proridade` IN (\'2\')
+ORDER BY `ordem` DESC
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `desenhos`
+WHERE `status` IN :status:
+AND `proridade` IN :proridade:
+ORDER BY `ordem` DESC
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Controllers\AddDesenhoPost.php(290): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AddDesenhoPost->desenhos_add()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AddDesenhoPost))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-05 18:58:43 --> rename(C:/wl/temp/15896/possui.dxf,c:/wl/TESTE/12311/TESTE/123123/OI123/POSSUI_570_.dxf): O sistema não pode encontrar o arquivo especificado (code: 2)
+in APPPATH\Controllers\AddDesenhoPost.php on line 267.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'rename(C:/wl/temp/15896/possui.dxf,c:/wl/TESTE/12311/TESTE/123123/OI123/POSSUI_570_.dxf): O sistema não pode encontrar o arquivo especificado (code: 2)', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\AddDesenhoPost.php', 267)
+ 2 APPPATH\Controllers\AddDesenhoPost.php(267): rename('C:/wl/temp/15896/possui.dxf', 'c:/wl/TESTE/12311/TESTE/123123/OI123/POSSUI_570_.dxf')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AddDesenhoPost->desenhos_add()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AddDesenhoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-05 18:58:56 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 462.
+ 1 APPPATH\Controllers\Ferramentas.php(462): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-05 18:59:03 --> count(): Argument #1 ($value) must be of type Countable|array, null given
+in APPPATH\Controllers\AddDesenhoPost.php on line 293.
+ 1 APPPATH\Controllers\AddDesenhoPost.php(293): count(null)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AddDesenhoPost->desenhos_add()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AddDesenhoPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-05 19:00:19 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 462.
+ 1 APPPATH\Controllers\Ferramentas.php(462): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-05 19:00:29 --> Call to a member function getResultArray() on null
+in APPPATH\Controllers\AddDesenhoPost.php on line 291.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AddDesenhoPost->desenhos_add()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AddDesenhoPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-05 19:01:15 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 462.
+ 1 APPPATH\Controllers\Ferramentas.php(462): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-05 19:02:06 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 462.
+ 1 APPPATH\Controllers\Ferramentas.php(462): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-05 19:03:33 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 462.
+ 1 APPPATH\Controllers\Ferramentas.php(462): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-05 19:05:56 --> Undefined array key "id_desenho"
+in APPPATH\Controllers\ListaCortePost.php on line 623.
+ 1 APPPATH\Controllers\ListaCortePost.php(623): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_desenho"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\ListaCortePost.php', 623)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ListaCortePost->lista_tarefas()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListaCortePost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-05 19:06:12 --> Undefined array key "id_desenho"
+in APPPATH\Controllers\ListaCortePost.php on line 623.
+ 1 APPPATH\Controllers\ListaCortePost.php(623): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_desenho"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\ListaCortePost.php', 623)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ListaCortePost->lista_tarefas()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListaCortePost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-05 19:11:36 --> whereIn() expects $values to be of type array or closure
+in SYSTEMPATH\Database\BaseBuilder.php on line 940.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(827): CodeIgniter\Database\BaseBuilder->_whereIn('processos_id', '', false, 'AND ', null)
+ 2 SYSTEMPATH\Model.php(840): CodeIgniter\Database\BaseBuilder->whereIn('processos_id', '')
+ 3 APPPATH\Controllers\ListaCortePost.php(588): CodeIgniter\Model->__call('whereIn', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ListaCortePost->lista_tarefas()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListaCortePost))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-05 19:11:48 --> whereIn() expects $values to be of type array or closure
+in SYSTEMPATH\Database\BaseBuilder.php on line 940.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(827): CodeIgniter\Database\BaseBuilder->_whereIn('processos_id', '', false, 'AND ', null)
+ 2 SYSTEMPATH\Model.php(840): CodeIgniter\Database\BaseBuilder->whereIn('processos_id', '')
+ 3 APPPATH\Controllers\ListaCortePost.php(588): CodeIgniter\Model->__call('whereIn', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ListaCortePost->lista_tarefas()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListaCortePost))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-05 19:12:25 --> whereIn() expects $values to be of type array or closure
+in SYSTEMPATH\Database\BaseBuilder.php on line 940.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(827): CodeIgniter\Database\BaseBuilder->_whereIn('processos_id', '', false, 'AND ', null)
+ 2 SYSTEMPATH\Model.php(840): CodeIgniter\Database\BaseBuilder->whereIn('processos_id', '')
+ 3 APPPATH\Controllers\ListaCortePost.php(588): CodeIgniter\Model->__call('whereIn', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ListaCortePost->lista_tarefas()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListaCortePost))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-05 19:13:10 --> whereIn() expects $values to be of type array or closure
+in SYSTEMPATH\Database\BaseBuilder.php on line 940.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(827): CodeIgniter\Database\BaseBuilder->_whereIn('processos_id', '', false, 'AND ', null)
+ 2 SYSTEMPATH\Model.php(840): CodeIgniter\Database\BaseBuilder->whereIn('processos_id', '')
+ 3 APPPATH\Controllers\ListaCortePost.php(588): CodeIgniter\Model->__call('whereIn', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ListaCortePost->lista_tarefas()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListaCortePost))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2025-02-05 19:14:17 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 4 in C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\codi\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\codi\system\Model.php(203): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\codi\system\BaseModel.php(557): CodeIgniter\Model->doFind(false, NULL)
+#6 C:\xampp\htdocs\codi\app\Controllers\ListaCortePost.php(598): CodeIgniter\BaseModel->find()
+#7 C:\xampp\htdocs\codi\system\CodeIgniter.php(934): App\Controllers\ListaCortePost->lista_tarefas()
+#8 C:\xampp\htdocs\codi\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListaCortePost))
+#9 C:\xampp\htdocs\codi\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\codi\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2025-02-05 19:14:17 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 4
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `desenhos`
+WHERE `status` IN (\'pendente\',\'cortando\')
+AND `processos_id` IN ()', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `desenhos`
+WHERE `status` IN (\'pendente\',\'cortando\')
+AND `processos_id` IN ()')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `desenhos`
+WHERE `status` IN (\'pendente\',\'cortando\')
+AND `processos_id` IN ()')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `desenhos`
+WHERE `status` IN :status:
+AND `processos_id` IN :processos_id:', [...], false)
+ 5 SYSTEMPATH\Model.php(203): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(557): CodeIgniter\Model->doFind(false, null)
+ 7 APPPATH\Controllers\ListaCortePost.php(598): CodeIgniter\BaseModel->find()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ListaCortePost->lista_tarefas()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListaCortePost))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2025-02-05 19:15:16 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 4 in C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\codi\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\codi\system\Model.php(203): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\codi\system\BaseModel.php(557): CodeIgniter\Model->doFind(false, NULL)
+#6 C:\xampp\htdocs\codi\app\Controllers\ListaCortePost.php(600): CodeIgniter\BaseModel->find()
+#7 C:\xampp\htdocs\codi\system\CodeIgniter.php(934): App\Controllers\ListaCortePost->lista_tarefas()
+#8 C:\xampp\htdocs\codi\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListaCortePost))
+#9 C:\xampp\htdocs\codi\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\codi\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2025-02-05 19:15:16 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 4
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `desenhos`
+WHERE `status` IN (\'pendente\',\'cortando\')
+AND `processos_id` IN ()', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `desenhos`
+WHERE `status` IN (\'pendente\',\'cortando\')
+AND `processos_id` IN ()')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `desenhos`
+WHERE `status` IN (\'pendente\',\'cortando\')
+AND `processos_id` IN ()')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `desenhos`
+WHERE `status` IN :status:
+AND `processos_id` IN :processos_id:', [...], false)
+ 5 SYSTEMPATH\Model.php(203): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(557): CodeIgniter\Model->doFind(false, null)
+ 7 APPPATH\Controllers\ListaCortePost.php(600): CodeIgniter\BaseModel->find()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ListaCortePost->lista_tarefas()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListaCortePost))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-05 19:56:18 --> Call to a member function update() on array
+in APPPATH\Controllers\Ferramentas.php on line 922.
+ 1 APPPATH\Controllers\ListaCortePost.php(366): App\Controllers\Ferramentas->re_ordenar_oredem_desenho()
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ListaCortePost->confirmar_corte()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListaCortePost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-05 19:58:48 --> Call to a member function update() on array
+in APPPATH\Controllers\Ferramentas.php on line 922.
+ 1 APPPATH\Controllers\ListaCortePost.php(532): App\Controllers\Ferramentas->re_ordenar_oredem_desenho()
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ListaCortePost->lista_tarefas()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListaCortePost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-05 20:01:04 --> Call to a member function update() on array
+in APPPATH\Controllers\Ferramentas.php on line 923.
+ 1 APPPATH\Controllers\ListaCortePost.php(532): App\Controllers\Ferramentas->re_ordenar_oredem_desenho()
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ListaCortePost->lista_tarefas()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListaCortePost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-05 20:01:43 --> Call to a member function update() on array
+in APPPATH\Controllers\Ferramentas.php on line 924.
+ 1 APPPATH\Controllers\ListaCortePost.php(532): App\Controllers\Ferramentas->re_ordenar_oredem_desenho()
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ListaCortePost->lista_tarefas()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListaCortePost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-05 20:04:51 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 462.
+ 1 APPPATH\Controllers\Ferramentas.php(462): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-05 21:53:36 --> whereIn() expects $values to be of type array or closure
+in SYSTEMPATH\Database\BaseBuilder.php on line 940.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(827): CodeIgniter\Database\BaseBuilder->_whereIn('prioridade_id', '1', false, 'AND ', null)
+ 2 SYSTEMPATH\Model.php(840): CodeIgniter\Database\BaseBuilder->whereIn('prioridade_id', '1')
+ 3 APPPATH\Controllers\Ferramentas.php(889): CodeIgniter\Model->__call('whereIn', [...])
+ 4 APPPATH\Controllers\DesenhoPost.php(64): App\Controllers\Ferramentas->re_ordenar_oredem_desenho('9381', '1', '2')
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhoPost->desenho_update()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhoPost))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-05 21:56:55 --> whereIn() expects $values to be of type array or closure
+in SYSTEMPATH\Database\BaseBuilder.php on line 940.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(827): CodeIgniter\Database\BaseBuilder->_whereIn('prioridade_id', '1', false, 'AND ', null)
+ 2 SYSTEMPATH\Model.php(840): CodeIgniter\Database\BaseBuilder->whereIn('prioridade_id', '1')
+ 3 APPPATH\Controllers\Ferramentas.php(889): CodeIgniter\Model->__call('whereIn', [...])
+ 4 APPPATH\Controllers\DesenhoPost.php(64): App\Controllers\Ferramentas->re_ordenar_oredem_desenho('9381', '1', '2')
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhoPost->desenho_update()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhoPost))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-05 21:57:08 --> whereIn() expects $values to be of type array or closure
+in SYSTEMPATH\Database\BaseBuilder.php on line 940.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(827): CodeIgniter\Database\BaseBuilder->_whereIn('prioridade_id', '1', false, 'AND ', null)
+ 2 SYSTEMPATH\Model.php(840): CodeIgniter\Database\BaseBuilder->whereIn('prioridade_id', '1')
+ 3 APPPATH\Controllers\Ferramentas.php(889): CodeIgniter\Model->__call('whereIn', [...])
+ 4 APPPATH\Controllers\DesenhoPost.php(64): App\Controllers\Ferramentas->re_ordenar_oredem_desenho('9381', '1', '2')
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhoPost->desenho_update()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhoPost))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-05 21:57:28 --> CodeIgniter\BaseModel::transformDataToArray(): Return value must be of type array, int returned
+in SYSTEMPATH\BaseModel.php on line 1706.
+ 1 SYSTEMPATH\BaseModel.php(910): CodeIgniter\BaseModel->transformDataToArray(1, 'update')
+ 2 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], 1)
+ 3 APPPATH\Controllers\Ferramentas.php(974): CodeIgniter\Model->update('9382', 1)
+ 4 APPPATH\Controllers\DesenhoPost.php(64): App\Controllers\Ferramentas->re_ordenar_oredem_desenho('9381', '1', '2')
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhoPost->desenho_update()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhoPost))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-05 22:00:03 --> whereIn() expects $values to be of type array or closure
+in SYSTEMPATH\Database\BaseBuilder.php on line 940.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(827): CodeIgniter\Database\BaseBuilder->_whereIn('prioridade_id', '1', false, 'AND ', null)
+ 2 SYSTEMPATH\Model.php(840): CodeIgniter\Database\BaseBuilder->whereIn('prioridade_id', '1')
+ 3 APPPATH\Controllers\Ferramentas.php(889): CodeIgniter\Model->__call('whereIn', [...])
+ 4 APPPATH\Controllers\DesenhoPost.php(64): App\Controllers\Ferramentas->re_ordenar_oredem_desenho('9381', '1', '2')
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhoPost->desenho_update()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhoPost))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2025-02-05 22:00:17 --> mysqli_sql_exception: Unknown column 'prioridade_id' in 'where clause' in C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\codi\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\codi\system\Model.php(203): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\codi\system\BaseModel.php(557): CodeIgniter\Model->doFind(false, NULL)
+#6 C:\xampp\htdocs\codi\app\Controllers\Ferramentas.php(890): CodeIgniter\BaseModel->find()
+#7 C:\xampp\htdocs\codi\app\Controllers\DesenhoPost.php(64): App\Controllers\Ferramentas->re_ordenar_oredem_desenho('9381', '1', '2')
+#8 C:\xampp\htdocs\codi\system\CodeIgniter.php(934): App\Controllers\DesenhoPost->desenho_update()
+#9 C:\xampp\htdocs\codi\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhoPost))
+#10 C:\xampp\htdocs\codi\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\codi\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2025-02-05 22:00:17 --> Unknown column 'prioridade_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `desenhos`
+WHERE `status` IN (\'pendente\',\'cortando\')
+AND `prioridade_id` IN (\'1\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `desenhos`
+WHERE `status` IN (\'pendente\',\'cortando\')
+AND `prioridade_id` IN (\'1\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `desenhos`
+WHERE `status` IN (\'pendente\',\'cortando\')
+AND `prioridade_id` IN (\'1\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `desenhos`
+WHERE `status` IN :status:
+AND `prioridade_id` IN :prioridade_id:', [...], false)
+ 5 SYSTEMPATH\Model.php(203): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(557): CodeIgniter\Model->doFind(false, null)
+ 7 APPPATH\Controllers\Ferramentas.php(890): CodeIgniter\BaseModel->find()
+ 8 APPPATH\Controllers\DesenhoPost.php(64): App\Controllers\Ferramentas->re_ordenar_oredem_desenho('9381', '1', '2')
+ 9 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhoPost->desenho_update()
+10 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhoPost))
+11 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2025-02-05 22:00:33 --> mysqli_sql_exception: Unknown column 'prioridade_id' in 'where clause' in C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\codi\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\codi\system\Model.php(203): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\codi\system\BaseModel.php(557): CodeIgniter\Model->doFind(false, NULL)
+#6 C:\xampp\htdocs\codi\app\Controllers\Ferramentas.php(890): CodeIgniter\BaseModel->find()
+#7 C:\xampp\htdocs\codi\app\Controllers\DesenhoPost.php(64): App\Controllers\Ferramentas->re_ordenar_oredem_desenho('9381', '1', '2')
+#8 C:\xampp\htdocs\codi\system\CodeIgniter.php(934): App\Controllers\DesenhoPost->desenho_update()
+#9 C:\xampp\htdocs\codi\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhoPost))
+#10 C:\xampp\htdocs\codi\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\codi\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2025-02-05 22:00:33 --> Unknown column 'prioridade_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `desenhos`
+WHERE `status` IN (\'pendente\',\'cortando\')
+AND `prioridade_id` IN (\'1\',\'1\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `desenhos`
+WHERE `status` IN (\'pendente\',\'cortando\')
+AND `prioridade_id` IN (\'1\',\'1\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `desenhos`
+WHERE `status` IN (\'pendente\',\'cortando\')
+AND `prioridade_id` IN (\'1\',\'1\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `desenhos`
+WHERE `status` IN :status:
+AND `prioridade_id` IN :prioridade_id:', [...], false)
+ 5 SYSTEMPATH\Model.php(203): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(557): CodeIgniter\Model->doFind(false, null)
+ 7 APPPATH\Controllers\Ferramentas.php(890): CodeIgniter\BaseModel->find()
+ 8 APPPATH\Controllers\DesenhoPost.php(64): App\Controllers\Ferramentas->re_ordenar_oredem_desenho('9381', '1', '2')
+ 9 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhoPost->desenho_update()
+10 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhoPost))
+11 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-05 22:00:48 --> whereIn() expects $values to be of type array or closure
+in SYSTEMPATH\Database\BaseBuilder.php on line 940.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(827): CodeIgniter\Database\BaseBuilder->_whereIn('prioridade_id', '1', false, 'AND ', null)
+ 2 SYSTEMPATH\Model.php(840): CodeIgniter\Database\BaseBuilder->whereIn('prioridade_id', '1')
+ 3 APPPATH\Controllers\Ferramentas.php(889): CodeIgniter\Model->__call('whereIn', [...])
+ 4 APPPATH\Controllers\DesenhoPost.php(64): App\Controllers\Ferramentas->re_ordenar_oredem_desenho('9381', '1', '2')
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhoPost->desenho_update()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhoPost))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2025-02-05 22:02:46 --> mysqli_sql_exception: Unknown column 'prioridade_id' in 'where clause' in C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\codi\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\codi\system\Model.php(203): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\codi\system\BaseModel.php(557): CodeIgniter\Model->doFind(false, NULL)
+#6 C:\xampp\htdocs\codi\app\Controllers\Ferramentas.php(891): CodeIgniter\BaseModel->find()
+#7 C:\xampp\htdocs\codi\app\Controllers\DesenhoPost.php(64): App\Controllers\Ferramentas->re_ordenar_oredem_desenho('9381', '1', '1')
+#8 C:\xampp\htdocs\codi\system\CodeIgniter.php(934): App\Controllers\DesenhoPost->desenho_update()
+#9 C:\xampp\htdocs\codi\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhoPost))
+#10 C:\xampp\htdocs\codi\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\codi\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2025-02-05 22:02:46 --> Unknown column 'prioridade_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `desenhos`
+WHERE `status` IN (\'pendente\',\'cortando\')
+AND `prioridade_id` = \'1\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `desenhos`
+WHERE `status` IN (\'pendente\',\'cortando\')
+AND `prioridade_id` = \'1\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `desenhos`
+WHERE `status` IN (\'pendente\',\'cortando\')
+AND `prioridade_id` = \'1\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `desenhos`
+WHERE `status` IN :status:
+AND `prioridade_id` = :prioridade_id:', [...], false)
+ 5 SYSTEMPATH\Model.php(203): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(557): CodeIgniter\Model->doFind(false, null)
+ 7 APPPATH\Controllers\Ferramentas.php(891): CodeIgniter\BaseModel->find()
+ 8 APPPATH\Controllers\DesenhoPost.php(64): App\Controllers\Ferramentas->re_ordenar_oredem_desenho('9381', '1', '1')
+ 9 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhoPost->desenho_update()
+10 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhoPost))
+11 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2025-02-05 22:05:02 --> mysqli_sql_exception: Unknown column 'prioridade_id' in 'where clause' in C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\codi\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\codi\system\Model.php(203): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\codi\system\BaseModel.php(557): CodeIgniter\Model->doFind(false, NULL)
+#6 C:\xampp\htdocs\codi\app\Controllers\Ferramentas.php(891): CodeIgniter\BaseModel->find()
+#7 C:\xampp\htdocs\codi\app\Controllers\DesenhoPost.php(64): App\Controllers\Ferramentas->re_ordenar_oredem_desenho('9381', '1', '1')
+#8 C:\xampp\htdocs\codi\system\CodeIgniter.php(934): App\Controllers\DesenhoPost->desenho_update()
+#9 C:\xampp\htdocs\codi\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhoPost))
+#10 C:\xampp\htdocs\codi\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\codi\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2025-02-05 22:05:02 --> Unknown column 'prioridade_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `desenhos`
+WHERE `status` IN (\'pendente\',\'cortando\')
+AND `prioridade_id` = \'1\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `desenhos`
+WHERE `status` IN (\'pendente\',\'cortando\')
+AND `prioridade_id` = \'1\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `desenhos`
+WHERE `status` IN (\'pendente\',\'cortando\')
+AND `prioridade_id` = \'1\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `desenhos`
+WHERE `status` IN :status:
+AND `prioridade_id` = :prioridade_id:', [...], false)
+ 5 SYSTEMPATH\Model.php(203): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(557): CodeIgniter\Model->doFind(false, null)
+ 7 APPPATH\Controllers\Ferramentas.php(891): CodeIgniter\BaseModel->find()
+ 8 APPPATH\Controllers\DesenhoPost.php(64): App\Controllers\Ferramentas->re_ordenar_oredem_desenho('9381', '1', '1')
+ 9 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhoPost->desenho_update()
+10 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhoPost))
+11 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-05 22:05:52 --> CodeIgniter\BaseModel::transformDataToArray(): Return value must be of type array, int returned
+in SYSTEMPATH\BaseModel.php on line 1706.
+ 1 SYSTEMPATH\BaseModel.php(910): CodeIgniter\BaseModel->transformDataToArray(1, 'update')
+ 2 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], 1)
+ 3 APPPATH\Controllers\Ferramentas.php(975): CodeIgniter\Model->update('9382', 1)
+ 4 APPPATH\Controllers\DesenhoPost.php(64): App\Controllers\Ferramentas->re_ordenar_oredem_desenho('9381', '1', '2')
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhoPost->desenho_update()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhoPost))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-05 22:06:08 --> CodeIgniter\BaseModel::transformDataToArray(): Return value must be of type array, int returned
+in SYSTEMPATH\BaseModel.php on line 1706.
+ 1 SYSTEMPATH\BaseModel.php(910): CodeIgniter\BaseModel->transformDataToArray(1, 'update')
+ 2 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], 1)
+ 3 APPPATH\Controllers\Ferramentas.php(975): CodeIgniter\Model->update('9382', 1)
+ 4 APPPATH\Controllers\DesenhoPost.php(64): App\Controllers\Ferramentas->re_ordenar_oredem_desenho('9381', '1', '2')
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhoPost->desenho_update()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhoPost))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-05 22:07:27 --> CodeIgniter\BaseModel::transformDataToArray(): Return value must be of type array, int returned
+in SYSTEMPATH\BaseModel.php on line 1706.
+ 1 SYSTEMPATH\BaseModel.php(910): CodeIgniter\BaseModel->transformDataToArray(1, 'update')
+ 2 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], 1)
+ 3 APPPATH\Controllers\Ferramentas.php(975): CodeIgniter\Model->update(9382, 1)
+ 4 APPPATH\Controllers\DesenhoPost.php(64): App\Controllers\Ferramentas->re_ordenar_oredem_desenho('9381', '1', '2')
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhoPost->desenho_update()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhoPost))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

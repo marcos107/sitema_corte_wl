@@ -1,0 +1,367 @@
+CRITICAL - 2025-02-12 10:59:07 --> Undefined array key "lista_empreendimento"
+in APPPATH\Controllers\SubpastaPost.php on line 406.
+ 1 APPPATH\Controllers\SubpastaPost.php(406): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "lista_empreendimento"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\SubpastaPost.php', 406)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\SubpastaPost->desenho_tag_lista()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SubpastaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-12 10:59:07 --> Undefined array key "lista_empreendimento"
+in APPPATH\Controllers\SubpastaPost.php on line 406.
+ 1 APPPATH\Controllers\SubpastaPost.php(406): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "lista_empreendimento"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\SubpastaPost.php', 406)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\SubpastaPost->desenho_tag_lista()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SubpastaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-12 10:59:07 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 462.
+ 1 APPPATH\Controllers\Ferramentas.php(462): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-12 10:59:19 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 462.
+ 1 APPPATH\Controllers\Ferramentas.php(462): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-12 12:49:03 --> Cannot access offset of type string on string
+in APPPATH\Controllers\ListaCortePost.php on line 583.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ListaCortePost->lista_tarefas()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListaCortePost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-12 12:49:09 --> Cannot access offset of type string on string
+in APPPATH\Controllers\ListaCortePost.php on line 583.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ListaCortePost->lista_tarefas()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListaCortePost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-12 12:50:25 --> Cannot access offset of type string on string
+in APPPATH\Controllers\ListaCortePost.php on line 583.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ListaCortePost->lista_tarefas()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListaCortePost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-12 13:30:38 --> Undefined array key "id_desenho"
+in APPPATH\Controllers\ListaCortePost.php on line 665.
+ 1 APPPATH\Controllers\ListaCortePost.php(665): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_desenho"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\ListaCortePost.php', 665)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ListaCortePost->lista_tarefas()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListaCortePost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-12 13:30:54 --> Undefined array key "id_desenho"
+in APPPATH\Controllers\ListaCortePost.php on line 665.
+ 1 APPPATH\Controllers\ListaCortePost.php(665): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_desenho"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\ListaCortePost.php', 665)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ListaCortePost->lista_tarefas()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListaCortePost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-12 13:39:33 --> Undefined variable $status_desenho
+in APPPATH\Controllers\ListaCortePost.php on line 596.
+ 1 APPPATH\Controllers\ListaCortePost.php(596): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $status_desenho', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\ListaCortePost.php', 596)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ListaCortePost->lista_tarefas()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListaCortePost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-12 13:39:45 --> Undefined variable $status_desenho
+in APPPATH\Controllers\ListaCortePost.php on line 596.
+ 1 APPPATH\Controllers\ListaCortePost.php(596): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $status_desenho', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\ListaCortePost.php', 596)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ListaCortePost->lista_tarefas()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListaCortePost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-12 13:42:07 --> session_start(): Ignoring session_start() because a session is already active
+in APPPATH\Controllers\Ferramentas.php on line 879.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8, 'session_start(): Ignoring session_start() because a session is already active', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\Ferramentas.php', 879)
+ 2 APPPATH\Controllers\Ferramentas.php(879): session_start()
+ 3 APPPATH\Controllers\DesenhosCortadosPost.php(35): App\Controllers\Ferramentas->re_colcoar_desenho('9418')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhosCortadosPost->recolocar_desenho()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhosCortadosPost))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-12 13:43:20 --> Undefined array key 9418
+in APPPATH\Controllers\Ferramentas.php on line 888.
+ 1 APPPATH\Controllers\Ferramentas.php(888): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 9418', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\Ferramentas.php', 888)
+ 2 APPPATH\Controllers\DesenhosCortadosPost.php(35): App\Controllers\Ferramentas->re_colcoar_desenho('9418')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhosCortadosPost->recolocar_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhosCortadosPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-12 13:45:49 --> Undefined array key "nome"
+in APPPATH\Controllers\Ferramentas.php on line 901.
+ 1 APPPATH\Controllers\Ferramentas.php(901): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nome"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\Ferramentas.php', 901)
+ 2 APPPATH\Controllers\DesenhosCortadosPost.php(35): App\Controllers\Ferramentas->re_colcoar_desenho('9418')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhosCortadosPost->recolocar_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhosCortadosPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-12 14:30:07 --> mkdir(): No such file or directory
+in APPPATH\Controllers\Ferramentas.php on line 726.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mkdir(): No such file or directory', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\Ferramentas.php', 726)
+ 2 APPPATH\Controllers\Ferramentas.php(726): mkdir('C:/wl/lixo/wl/wl_desenhos/c:/', 511)
+ 3 APPPATH\Controllers\DesenhoPost.php(236): App\Controllers\Ferramentas::criet_diretorio('C:/wl/lixo/wl/wl_desenhos/c:/wl/TESTE/ABC/LAGOA/ACABAMENTO/TESTE12/TESTE13/')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhoPost->apagar_desenho()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhoPost))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-12 14:30:31 --> mkdir(): No such file or directory
+in APPPATH\Controllers\Ferramentas.php on line 726.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mkdir(): No such file or directory', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\Ferramentas.php', 726)
+ 2 APPPATH\Controllers\Ferramentas.php(726): mkdir('C:/wl/lixo/wl/wl_desenhos/c:/', 511)
+ 3 APPPATH\Controllers\DesenhoPost.php(236): App\Controllers\Ferramentas::criet_diretorio('C:/wl/lixo/wl/wl_desenhos/c:/wl/TESTE/ABC/LAGOA/ACABAMENTO/TESTE12/TESTE13/')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhoPost->apagar_desenho()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhoPost))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-12 15:50:06 --> Undefined variable $filtros
+in APPPATH\Controllers\ProcessosPost.php on line 283.
+ 1 APPPATH\Controllers\ProcessosPost.php(283): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $filtros', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\ProcessosPost.php', 283)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProcessosPost->processos_lista()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProcessosPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-12 15:50:13 --> Undefined variable $filtros
+in APPPATH\Controllers\ProcessosPost.php on line 283.
+ 1 APPPATH\Controllers\ProcessosPost.php(283): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $filtros', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\ProcessosPost.php', 283)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProcessosPost->processos_lista()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProcessosPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-12 15:50:19 --> Undefined variable $filtros
+in APPPATH\Controllers\ProcessosPost.php on line 283.
+ 1 APPPATH\Controllers\ProcessosPost.php(283): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $filtros', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\ProcessosPost.php', 283)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProcessosPost->processos_lista()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProcessosPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-12 15:50:26 --> Undefined variable $filtros
+in APPPATH\Controllers\ProcessosPost.php on line 283.
+ 1 APPPATH\Controllers\ProcessosPost.php(283): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $filtros', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\ProcessosPost.php', 283)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProcessosPost->processos_lista()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProcessosPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-12 15:51:00 --> Undefined variable $filtros
+in APPPATH\Controllers\ProcessosPost.php on line 283.
+ 1 APPPATH\Controllers\ProcessosPost.php(283): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $filtros', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\ProcessosPost.php', 283)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProcessosPost->processos_lista()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProcessosPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-12 15:52:11 --> Call to undefined method App\Controllers\Ferramentas::Decodificar()
+in APPPATH\Controllers\ProcessosPost.php on line 257.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProcessosPost->processos_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProcessosPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-12 15:53:24 --> Call to undefined method App\Controllers\Ferramentas::Decodificar()
+in APPPATH\Controllers\ProcessosPost.php on line 257.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ProcessosPost->processos_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProcessosPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-12 16:06:50 --> Undefined array key "lista_empreendimento"
+in APPPATH\Controllers\SubpastaPost.php on line 406.
+ 1 APPPATH\Controllers\SubpastaPost.php(406): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "lista_empreendimento"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\SubpastaPost.php', 406)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\SubpastaPost->desenho_tag_lista()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SubpastaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-12 16:06:50 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 463.
+ 1 APPPATH\Controllers\Ferramentas.php(463): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-12 16:07:37 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 463.
+ 1 APPPATH\Controllers\Ferramentas.php(463): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-12 16:07:56 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 463.
+ 1 APPPATH\Controllers\Ferramentas.php(463): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-12 16:10:13 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 463.
+ 1 APPPATH\Controllers\Ferramentas.php(463): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-12 16:25:28 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 463.
+ 1 APPPATH\Controllers\Ferramentas.php(463): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-12 16:25:41 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 463.
+ 1 APPPATH\Controllers\Ferramentas.php(463): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-12 16:34:50 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 463.
+ 1 APPPATH\Controllers\Ferramentas.php(463): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-12 16:35:47 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 463.
+ 1 APPPATH\Controllers\Ferramentas.php(463): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-12 16:43:33 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 463.
+ 1 APPPATH\Controllers\Ferramentas.php(463): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-12 16:44:54 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 463.
+ 1 APPPATH\Controllers\Ferramentas.php(463): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-12 16:48:53 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 463.
+ 1 APPPATH\Controllers\Ferramentas.php(463): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-12 16:48:53 --> Undefined array key "lista_finalidade"
+in APPPATH\Controllers\SubpastaPost.php on line 406.
+ 1 APPPATH\Controllers\SubpastaPost.php(406): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "lista_finalidade"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\SubpastaPost.php', 406)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\SubpastaPost->desenho_tag_lista()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SubpastaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-12 16:52:17 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 463.
+ 1 APPPATH\Controllers\Ferramentas.php(463): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-12 16:53:54 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 463.
+ 1 APPPATH\Controllers\Ferramentas.php(463): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-12 16:58:29 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 463.
+ 1 APPPATH\Controllers\Ferramentas.php(463): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-12 16:58:30 --> Undefined array key "lista_finalidade"
+in APPPATH\Controllers\SubpastaPost.php on line 406.
+ 1 APPPATH\Controllers\SubpastaPost.php(406): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "lista_finalidade"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\SubpastaPost.php', 406)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\SubpastaPost->desenho_tag_lista()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SubpastaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-12 17:01:51 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 463.
+ 1 APPPATH\Controllers\Ferramentas.php(463): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-12 17:02:41 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 463.
+ 1 APPPATH\Controllers\Ferramentas.php(463): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-12 17:25:45 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 463.
+ 1 APPPATH\Controllers\Ferramentas.php(463): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-12 17:25:57 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 463.
+ 1 APPPATH\Controllers\Ferramentas.php(463): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-12 17:26:03 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 463.
+ 1 APPPATH\Controllers\Ferramentas.php(463): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-12 17:36:10 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 463.
+ 1 APPPATH\Controllers\Ferramentas.php(463): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-12 17:36:28 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 463.
+ 1 APPPATH\Controllers\Ferramentas.php(463): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-12 17:38:01 --> Undefined array key "lista_empreendimento"
+in APPPATH\Controllers\SubpastaPost.php on line 406.
+ 1 APPPATH\Controllers\SubpastaPost.php(406): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "lista_empreendimento"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\SubpastaPost.php', 406)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\SubpastaPost->desenho_tag_lista()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SubpastaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-12 17:38:01 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 463.
+ 1 APPPATH\Controllers\Ferramentas.php(463): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-12 17:39:15 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 463.
+ 1 APPPATH\Controllers\Ferramentas.php(463): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-02-12 17:39:29 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 463.
+ 1 APPPATH\Controllers\Ferramentas.php(463): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-12 17:41:34 --> Undefined array key "lista"
+in APPPATH\Controllers\ListaCortePost.php on line 258.
+ 1 APPPATH\Controllers\ListaCortePost.php(258): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "lista"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\ListaCortePost.php', 258)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ListaCortePost->confirmar_corte()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListaCortePost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

@@ -1,0 +1,361 @@
+CRITICAL - 2024-10-04 18:15:58 --> Undefined variable $Login
+in APPPATH\Controllers\Api.php on line 196.
+ 1 APPPATH\Controllers\Api.php(196): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $Login', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\Api.php', 196)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->login()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-04 18:17:18 --> openssl_decrypt(): IV passed is only 12 bytes long, cipher expects an IV of precisely 16 bytes, padding with \0
+in APPPATH\Controllers\Api.php on line 237.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'openssl_decrypt(): IV passed is only 12 bytes long, cipher expects an IV of precisely 16 bytes, padding with \\0', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\Api.php', 237)
+ 2 APPPATH\Controllers\Api.php(237): openssl_decrypt('–¦"àeÆ\\kğº­ı"\'', 'aes-256-cbc', Object(SensitiveParameterValue), 1, '½÷T6ià9FÉÊ†')
+ 3 APPPATH\Controllers\Api.php(188): App\Controllers\Api->descriptografar('lgOmByLgZcZca/C6rf0iJxQ/Pz94Py8/Pz95Zz8mKD9hd3M/P1s/Pz8/PyA/ET9kPx4/Px02Yg0vP0USHi8/PztLPztCPz8hRWlLEA==', 'FKOMy3jsL+7Sm3lnzCYo0mF3cz+QW6C1', '3OjnIO4R7mTe', 'HpS5HTZiDS+rRRK8aj/NLG7MI0UMuQxE', 'vfdUNmngOUbJyoaB')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->login()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-04 18:17:18 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse JSON string. Error: Malformed UTF-8 characters, possibly incorrectly encoded in C:\xampp\htdocs\codi\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\codi\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8...')
+#1 C:\xampp\htdocs\codi\system\API\ResponseTrait.php(349): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\codi\system\API\ResponseTrait.php(102): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\codi\system\Debug\Exceptions.php(150): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+ã€Previous Exceptionã€‘
+ErrorException
+openssl_decrypt(): IV passed is only 12 bytes long, cipher expects an IV of precisely 16 bytes, padding with \0
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'openssl_decrypt...', 'C:\\xampp\\htdocs...', 237)
+#1 C:\xampp\htdocs\codi\app\Controllers\Api.php(237): openssl_decrypt('\x96\x03\xA6\x07"\xE0e\xC6\\k\xF0\xBA\xAD\xFD"...', 'aes-256-cbc', Object(SensitiveParameterValue), 1, '\xBD\xF7T6i\xE09F\xC9\xCA\x86\x81')
+#2 C:\xampp\htdocs\codi\app\Controllers\Api.php(188): App\Controllers\Api->descriptografar('lgOmByLgZcZca/C...', 'FKOMy3jsL+7Sm3l...', '3OjnIO4R7mTe', 'HpS5HTZiDS+rRRK...', 'vfdUNmngOUbJyoa...')
+#3 C:\xampp\htdocs\codi\system\CodeIgniter.php(934): App\Controllers\Api->login()
+#4 C:\xampp\htdocs\codi\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+#5 C:\xampp\htdocs\codi\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\codi\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#7 {main}
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-10-04 18:18:34 --> openssl_decrypt(): IV passed is only 12 bytes long, cipher expects an IV of precisely 16 bytes, padding with \0
+in APPPATH\Controllers\Api.php on line 237.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'openssl_decrypt(): IV passed is only 12 bytes long, cipher expects an IV of precisely 16 bytes, padding with \\0', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\Api.php', 237)
+ 2 APPPATH\Controllers\Api.php(237): openssl_decrypt('ÕÆ	É¬‰J§[F\'´“Ÿ', 'aes-256-cbc', Object(SensitiveParameterValue), 1, '½÷T6ià9FÉÊ†')
+ 3 APPPATH\Controllers\Api.php(188): App\Controllers\Api->descriptografar('1cYJyayJSqdbCEYnDLSTnws/Pz8/Pz8rPz9TPz8/Pxs/Pz8/JD8/OR0/PzM/Pz8tFUkXbD9NPz8ZPV4/QT8/Pz9qP3A/OT8LGj8/Pw==', 'FKOMy3jsL+7Sm3lnzCYo0mF3cz+QW6C1', '3OjnIO4R7mTe', 'HpS5HTZiDS+rRRK8aj/NLG7MI0UMuQxE', 'vfdUNmngOUbJyoaB')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->login()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-04 18:18:34 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse JSON string. Error: Malformed UTF-8 characters, possibly incorrectly encoded in C:\xampp\htdocs\codi\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\codi\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8...')
+#1 C:\xampp\htdocs\codi\system\API\ResponseTrait.php(349): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\codi\system\API\ResponseTrait.php(102): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\codi\system\Debug\Exceptions.php(150): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+ã€Previous Exceptionã€‘
+ErrorException
+openssl_decrypt(): IV passed is only 12 bytes long, cipher expects an IV of precisely 16 bytes, padding with \0
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'openssl_decrypt...', 'C:\\xampp\\htdocs...', 237)
+#1 C:\xampp\htdocs\codi\app\Controllers\Api.php(237): openssl_decrypt('\xD5\xC6\t\xC9\xAC\x89J\xA7[\x08F'\f\xB4\x93...', 'aes-256-cbc', Object(SensitiveParameterValue), 1, '\xBD\xF7T6i\xE09F\xC9\xCA\x86\x81')
+#2 C:\xampp\htdocs\codi\app\Controllers\Api.php(188): App\Controllers\Api->descriptografar('1cYJyayJSqdbCEY...', 'FKOMy3jsL+7Sm3l...', '3OjnIO4R7mTe', 'HpS5HTZiDS+rRRK...', 'vfdUNmngOUbJyoa...')
+#3 C:\xampp\htdocs\codi\system\CodeIgniter.php(934): App\Controllers\Api->login()
+#4 C:\xampp\htdocs\codi\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+#5 C:\xampp\htdocs\codi\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\codi\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#7 {main}
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-10-04 18:20:08 --> openssl_decrypt(): IV passed is only 12 bytes long, cipher expects an IV of precisely 16 bytes, padding with \0
+in APPPATH\Controllers\Api.php on line 237.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'openssl_decrypt(): IV passed is only 12 bytes long, cipher expects an IV of precisely 16 bytes, padding with \\0', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\Api.php', 237)
+ 2 APPPATH\Controllers\Api.php(237): openssl_decrypt('+ésf‚ƒù¨€şÚ¼/R', 'aes-256-cbc', Object(SensitiveParameterValue), 1, '½÷T6ià9FÉÊ†')
+ 3 APPPATH\Controllers\Api.php(188): App\Controllers\Api->descriptografar('K+mBc2aCg/mogP7avBUvUjc/Pz8cIBhCPx5pMmc/Pz0lRkkMGBY/Pz8/P10/XD9BYENtP0htPxo/Cj8EPz8/Pyl8UjEMPxgXP1YrOw==', 'FKOMy3jsL+7Sm3lnzCYo0mF3cz+QW6C1', '3OjnIO4R7mTe', 'HpS5HTZiDS+rRRK8aj/NLG7MI0UMuQxE', 'vfdUNmngOUbJyoaB')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->login()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-04 18:20:09 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse JSON string. Error: Malformed UTF-8 characters, possibly incorrectly encoded in C:\xampp\htdocs\codi\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\codi\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8...')
+#1 C:\xampp\htdocs\codi\system\API\ResponseTrait.php(349): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\codi\system\API\ResponseTrait.php(102): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\codi\system\Debug\Exceptions.php(150): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+ã€Previous Exceptionã€‘
+ErrorException
+openssl_decrypt(): IV passed is only 12 bytes long, cipher expects an IV of precisely 16 bytes, padding with \0
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'openssl_decrypt...', 'C:\\xampp\\htdocs...', 237)
+#1 C:\xampp\htdocs\codi\app\Controllers\Api.php(237): openssl_decrypt('+\xE9\x81sf\x82\x83\xF9\xA8\x80\xFE\xDA\xBC\x15/...', 'aes-256-cbc', Object(SensitiveParameterValue), 1, '\xBD\xF7T6i\xE09F\xC9\xCA\x86\x81')
+#2 C:\xampp\htdocs\codi\app\Controllers\Api.php(188): App\Controllers\Api->descriptografar('K+mBc2aCg/mogP7...', 'FKOMy3jsL+7Sm3l...', '3OjnIO4R7mTe', 'HpS5HTZiDS+rRRK...', 'vfdUNmngOUbJyoa...')
+#3 C:\xampp\htdocs\codi\system\CodeIgniter.php(934): App\Controllers\Api->login()
+#4 C:\xampp\htdocs\codi\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+#5 C:\xampp\htdocs\codi\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\codi\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#7 {main}
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-10-04 18:24:23 --> openssl_decrypt(): IV passed is only 12 bytes long, cipher expects an IV of precisely 16 bytes, padding with \0
+in APPPATH\Controllers\Api.php on line 237.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'openssl_decrypt(): IV passed is only 12 bytes long, cipher expects an IV of precisely 16 bytes, padding with \\0', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\Api.php', 237)
+ 2 APPPATH\Controllers\Api.php(237): openssl_decrypt('Ù™Ä{jÄ/~	ÖÍCM°n', 'aes-256-cbc', Object(SensitiveParameterValue), 1, '#YC~SñÆ ˆàŞÔ')
+ 3 APPPATH\Controllers\Api.php(188): App\Controllers\Api->descriptografar('2ZnEe2rEL34JHNbNQ02wbi0fP3g/Pz8nLSM/Ng0/P30/Pz8/AD8/HRBQaCsWOWduFj8/ST8/Pz8/VTwfcj8/Pz8/P24vP1Q/PxElPw==', 'N8jvnBwgGEK7HmkyZ77cPSVGSQwYFp26', 'nOz0Xcxcx0Fg', 'Q23sSG2VGuYKsARiBadtRmd3UrLUTWxj', 'I1lDflPxxiCI4N7U')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->login()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-04 18:24:23 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse JSON string. Error: Malformed UTF-8 characters, possibly incorrectly encoded in C:\xampp\htdocs\codi\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\codi\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8...')
+#1 C:\xampp\htdocs\codi\system\API\ResponseTrait.php(349): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\codi\system\API\ResponseTrait.php(102): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\codi\system\Debug\Exceptions.php(150): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+ã€Previous Exceptionã€‘
+ErrorException
+openssl_decrypt(): IV passed is only 12 bytes long, cipher expects an IV of precisely 16 bytes, padding with \0
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'openssl_decrypt...', 'C:\\xampp\\htdocs...', 237)
+#1 C:\xampp\htdocs\codi\app\Controllers\Api.php(237): openssl_decrypt('\xD9\x99\xC4{j\xC4/~\t\x1C\xD6\xCDCM\xB0...', 'aes-256-cbc', Object(SensitiveParameterValue), 1, '#YC~S\xF1\xC6 \x88\xE0\xDE\xD4')
+#2 C:\xampp\htdocs\codi\app\Controllers\Api.php(188): App\Controllers\Api->descriptografar('2ZnEe2rEL34JHNb...', 'N8jvnBwgGEK7Hmk...', 'nOz0Xcxcx0Fg', 'Q23sSG2VGuYKsAR...', 'I1lDflPxxiCI4N7...')
+#3 C:\xampp\htdocs\codi\system\CodeIgniter.php(934): App\Controllers\Api->login()
+#4 C:\xampp\htdocs\codi\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+#5 C:\xampp\htdocs\codi\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\codi\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#7 {main}
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+WARNING - 2024-10-04 18:24:41 --> [DEPRECATED] base64_decode(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH\Controllers\Api.php on line 220.
+ 1 APPPATH\Controllers\Api.php(220): base64_decode(null)
+ 2 APPPATH\Controllers\Api.php(188): App\Controllers\Api->descriptografar(null, 'N8jvnBwgGEK7HmkyZ77cPSVGSQwYFp26', 'nOz0Xcxcx0Fg', 'Q23sSG2VGuYKsARiBadtRmd3UrLUTWxj', 'I1lDflPxxiCI4N7U')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->login()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-04 18:24:41 --> openssl_decrypt(): IV passed is only 12 bytes long, cipher expects an IV of precisely 16 bytes, padding with \0
+in APPPATH\Controllers\Api.php on line 237.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'openssl_decrypt(): IV passed is only 12 bytes long, cipher expects an IV of precisely 16 bytes, padding with \\0', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\Api.php', 237)
+ 2 APPPATH\Controllers\Api.php(237): openssl_decrypt('', 'aes-256-cbc', Object(SensitiveParameterValue), 1, '#YC~SñÆ ˆàŞÔ')
+ 3 APPPATH\Controllers\Api.php(188): App\Controllers\Api->descriptografar(null, 'N8jvnBwgGEK7HmkyZ77cPSVGSQwYFp26', 'nOz0Xcxcx0Fg', 'Q23sSG2VGuYKsARiBadtRmd3UrLUTWxj', 'I1lDflPxxiCI4N7U')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->login()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-04 18:24:41 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse JSON string. Error: Malformed UTF-8 characters, possibly incorrectly encoded in C:\xampp\htdocs\codi\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\codi\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8...')
+#1 C:\xampp\htdocs\codi\system\API\ResponseTrait.php(349): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\codi\system\API\ResponseTrait.php(102): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\codi\system\Debug\Exceptions.php(150): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+ã€Previous Exceptionã€‘
+ErrorException
+openssl_decrypt(): IV passed is only 12 bytes long, cipher expects an IV of precisely 16 bytes, padding with \0
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'openssl_decrypt...', 'C:\\xampp\\htdocs...', 237)
+#1 C:\xampp\htdocs\codi\app\Controllers\Api.php(237): openssl_decrypt('', 'aes-256-cbc', Object(SensitiveParameterValue), 1, '#YC~S\xF1\xC6 \x88\xE0\xDE\xD4')
+#2 C:\xampp\htdocs\codi\app\Controllers\Api.php(188): App\Controllers\Api->descriptografar(NULL, 'N8jvnBwgGEK7Hmk...', 'nOz0Xcxcx0Fg', 'Q23sSG2VGuYKsAR...', 'I1lDflPxxiCI4N7...')
+#3 C:\xampp\htdocs\codi\system\CodeIgniter.php(934): App\Controllers\Api->login()
+#4 C:\xampp\htdocs\codi\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+#5 C:\xampp\htdocs\codi\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\codi\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#7 {main}
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+WARNING - 2024-10-04 18:26:27 --> [DEPRECATED] base64_decode(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH\Controllers\Api.php on line 220.
+ 1 APPPATH\Controllers\Api.php(220): base64_decode(null)
+ 2 APPPATH\Controllers\Api.php(188): App\Controllers\Api->descriptografar(null, 'N8jvnBwgGEK7HmkyZ77cPSVGSQwYFp26', 'nOz0Xcxcx0Fg', 'Q23sSG2VGuYKsARiBadtRmd3UrLUTWxj', 'I1lDflPxxiCI4N7U')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->login_api()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-04 18:26:27 --> openssl_decrypt(): IV passed is only 12 bytes long, cipher expects an IV of precisely 16 bytes, padding with \0
+in APPPATH\Controllers\Api.php on line 237.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'openssl_decrypt(): IV passed is only 12 bytes long, cipher expects an IV of precisely 16 bytes, padding with \\0', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\Api.php', 237)
+ 2 APPPATH\Controllers\Api.php(237): openssl_decrypt('', 'aes-256-cbc', Object(SensitiveParameterValue), 1, '#YC~SñÆ ˆàŞÔ')
+ 3 APPPATH\Controllers\Api.php(188): App\Controllers\Api->descriptografar(null, 'N8jvnBwgGEK7HmkyZ77cPSVGSQwYFp26', 'nOz0Xcxcx0Fg', 'Q23sSG2VGuYKsARiBadtRmd3UrLUTWxj', 'I1lDflPxxiCI4N7U')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->login_api()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-04 18:26:27 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse JSON string. Error: Malformed UTF-8 characters, possibly incorrectly encoded in C:\xampp\htdocs\codi\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\codi\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8...')
+#1 C:\xampp\htdocs\codi\system\API\ResponseTrait.php(349): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\codi\system\API\ResponseTrait.php(102): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\codi\system\Debug\Exceptions.php(150): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+ã€Previous Exceptionã€‘
+ErrorException
+openssl_decrypt(): IV passed is only 12 bytes long, cipher expects an IV of precisely 16 bytes, padding with \0
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'openssl_decrypt...', 'C:\\xampp\\htdocs...', 237)
+#1 C:\xampp\htdocs\codi\app\Controllers\Api.php(237): openssl_decrypt('', 'aes-256-cbc', Object(SensitiveParameterValue), 1, '#YC~S\xF1\xC6 \x88\xE0\xDE\xD4')
+#2 C:\xampp\htdocs\codi\app\Controllers\Api.php(188): App\Controllers\Api->descriptografar(NULL, 'N8jvnBwgGEK7Hmk...', 'nOz0Xcxcx0Fg', 'Q23sSG2VGuYKsAR...', 'I1lDflPxxiCI4N7...')
+#3 C:\xampp\htdocs\codi\system\CodeIgniter.php(934): App\Controllers\Api->login_api()
+#4 C:\xampp\htdocs\codi\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+#5 C:\xampp\htdocs\codi\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\codi\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#7 {main}
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+WARNING - 2024-10-04 18:31:55 --> [DEPRECATED] base64_decode(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH\Controllers\Api.php on line 220.
+ 1 APPPATH\Controllers\Api.php(220): base64_decode(null)
+ 2 APPPATH\Controllers\Api.php(188): App\Controllers\Api->descriptografar(null, 'xfMC1Lz/HEd9wy/Q3mzsovZOs1O2sBLd', 'Ig2UKBzENfiE', 'yH8uR7snGbJwrwnEKeFoJtFcDFZfI3n0', '4BBKsRrYd0JHx0JY')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->login_api()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-04 18:31:55 --> openssl_decrypt(): IV passed is only 12 bytes long, cipher expects an IV of precisely 16 bytes, padding with \0
+in APPPATH\Controllers\Api.php on line 237.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'openssl_decrypt(): IV passed is only 12 bytes long, cipher expects an IV of precisely 16 bytes, padding with \\0', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\Api.php', 237)
+ 2 APPPATH\Controllers\Api.php(237): openssl_decrypt('', 'aes-256-cbc', Object(SensitiveParameterValue), 1, 'àJ±ØwBGÇBX')
+ 3 APPPATH\Controllers\Api.php(188): App\Controllers\Api->descriptografar(null, 'xfMC1Lz/HEd9wy/Q3mzsovZOs1O2sBLd', 'Ig2UKBzENfiE', 'yH8uR7snGbJwrwnEKeFoJtFcDFZfI3n0', '4BBKsRrYd0JHx0JY')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->login_api()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-04 18:31:55 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse JSON string. Error: Malformed UTF-8 characters, possibly incorrectly encoded in C:\xampp\htdocs\codi\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\codi\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8...')
+#1 C:\xampp\htdocs\codi\system\API\ResponseTrait.php(349): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\codi\system\API\ResponseTrait.php(102): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\codi\system\Debug\Exceptions.php(150): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+ã€Previous Exceptionã€‘
+ErrorException
+openssl_decrypt(): IV passed is only 12 bytes long, cipher expects an IV of precisely 16 bytes, padding with \0
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'openssl_decrypt...', 'C:\\xampp\\htdocs...', 237)
+#1 C:\xampp\htdocs\codi\app\Controllers\Api.php(237): openssl_decrypt('', 'aes-256-cbc', Object(SensitiveParameterValue), 1, '\xE0\x10J\xB1\x1A\xD8wBG\xC7BX')
+#2 C:\xampp\htdocs\codi\app\Controllers\Api.php(188): App\Controllers\Api->descriptografar(NULL, 'xfMC1Lz/HEd9wy/...', 'Ig2UKBzENfiE', 'yH8uR7snGbJwrwn...', '4BBKsRrYd0JHx0J...')
+#3 C:\xampp\htdocs\codi\system\CodeIgniter.php(934): App\Controllers\Api->login_api()
+#4 C:\xampp\htdocs\codi\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+#5 C:\xampp\htdocs\codi\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\codi\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#7 {main}
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-10-04 18:35:01 --> openssl_decrypt(): IV passed is only 12 bytes long, cipher expects an IV of precisely 16 bytes, padding with \0
+in APPPATH\Controllers\Api.php on line 237.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'openssl_decrypt(): IV passed is only 12 bytes long, cipher expects an IV of precisely 16 bytes, padding with \\0', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\Api.php', 237)
+ 2 APPPATH\Controllers\Api.php(237): openssl_decrypt('VaV¿¨÷rpåúşQÚÿ', 'aes-256-cbc', Object(SensitiveParameterValue), 1, 'NªşÜä¸GN*')
+ 3 APPPATH\Controllers\Api.php(188): App\Controllers\Api->descriptografar('VmFWv6j3cnDlDfr+UQja/z8nP2w/P1s/DD8/Pz8/PxJtP3A/T28/Pz8YcD8RbD8LPy0/az8HFj8/KUg/O0MZaS4/Pz8/Pz93WT8/Pw==', 'yd4sWEbxJQ/tEIGtAVVgbtXxC3A5cybP', 'opxumaAFFxLQ', '265lSWrX0LhbQQzmyxy05c70qEVhxjPF', 'Tqr+EQbc5LhHEE4q')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->login_api()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-04 18:35:01 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse JSON string. Error: Malformed UTF-8 characters, possibly incorrectly encoded in C:\xampp\htdocs\codi\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\codi\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8...')
+#1 C:\xampp\htdocs\codi\system\API\ResponseTrait.php(349): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\codi\system\API\ResponseTrait.php(102): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\codi\system\Debug\Exceptions.php(150): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+ã€Previous Exceptionã€‘
+ErrorException
+openssl_decrypt(): IV passed is only 12 bytes long, cipher expects an IV of precisely 16 bytes, padding with \0
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'openssl_decrypt...', 'C:\\xampp\\htdocs...', 237)
+#1 C:\xampp\htdocs\codi\app\Controllers\Api.php(237): openssl_decrypt('VaV\xBF\xA8\xF7rp\xE5\r\xFA\xFEQ\x08\xDA...', 'aes-256-cbc', Object(SensitiveParameterValue), 1, 'N\xAA\xFE\x11\x06\xDC\xE4\xB8G\x10N*')
+#2 C:\xampp\htdocs\codi\app\Controllers\Api.php(188): App\Controllers\Api->descriptografar('VmFWv6j3cnDlDfr...', 'yd4sWEbxJQ/tEIG...', 'opxumaAFFxLQ', '265lSWrX0LhbQQz...', 'Tqr+EQbc5LhHEE4...')
+#3 C:\xampp\htdocs\codi\system\CodeIgniter.php(934): App\Controllers\Api->login_api()
+#4 C:\xampp\htdocs\codi\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+#5 C:\xampp\htdocs\codi\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\codi\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#7 {main}
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+WARNING - 2024-10-04 18:43:46 --> [DEPRECATED] base64_decode(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH\Controllers\Api.php on line 196.
+ 1 APPPATH\Controllers\Api.php(196): base64_decode(null)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->login_api()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-04 18:43:50 --> sodium_crypto_aead_chacha20poly1305_ietf_decrypt(): Argument #3 ($nonce) must be SODIUM_CRYPTO_AEAD_CHACHA20POLY1305_IETF_NPUBBYTES bytes long
+in APPPATH\Controllers\Api.php on line 223.
+ 1 APPPATH\Controllers\Api.php(223): sodium_crypto_aead_chacha20poly1305_ietf_decrypt()
+ 2 APPPATH\Controllers\Api.php(188): App\Controllers\Api->descriptografar()
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->login_api()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-10-04 18:43:54 --> [DEPRECATED] base64_decode(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH\Controllers\Api.php on line 196.
+ 1 APPPATH\Controllers\Api.php(196): base64_decode(null)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->login_api()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-10-04 18:51:09 --> [DEPRECATED] base64_decode(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH\Controllers\Api.php on line 196.
+ 1 APPPATH\Controllers\Api.php(196): base64_decode(null)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->login_api()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-04 18:51:41 --> sodium_crypto_aead_chacha20poly1305_ietf_decrypt(): Argument #3 ($nonce) must be SODIUM_CRYPTO_AEAD_CHACHA20POLY1305_IETF_NPUBBYTES bytes long
+in APPPATH\Controllers\Api.php on line 223.
+ 1 APPPATH\Controllers\Api.php(223): sodium_crypto_aead_chacha20poly1305_ietf_decrypt()
+ 2 APPPATH\Controllers\Api.php(188): App\Controllers\Api->descriptografar()
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->login_api()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-10-04 18:52:25 --> [DEPRECATED] base64_decode(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH\Controllers\Api.php on line 215.
+ 1 APPPATH\Controllers\Api.php(215): base64_decode(null)
+ 2 APPPATH\Controllers\Api.php(188): App\Controllers\Api->descriptografar(null, '0Isx7CWj6aG0YEOFXrv1xPRk+1uxw048', 'Cysm2yW/v5vE', '6HaOCHGtto0zdv7vsHyyeyPdQBUkE3Py', '4o031Piul49kB3eD')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->login_api()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-04 18:52:25 --> sodium_crypto_aead_chacha20poly1305_ietf_decrypt(): Argument #3 ($nonce) must be SODIUM_CRYPTO_AEAD_CHACHA20POLY1305_IETF_NPUBBYTES bytes long
+in APPPATH\Controllers\Api.php on line 223.
+ 1 APPPATH\Controllers\Api.php(223): sodium_crypto_aead_chacha20poly1305_ietf_decrypt()
+ 2 APPPATH\Controllers\Api.php(188): App\Controllers\Api->descriptografar()
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->login_api()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-10-04 18:52:53 --> [DEPRECATED] base64_decode(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH\Controllers\Api.php on line 215.
+ 1 APPPATH\Controllers\Api.php(215): base64_decode(null)
+ 2 APPPATH\Controllers\Api.php(188): App\Controllers\Api->descriptografar(null, '0Isx7CWj6aG0YEOFXrv1xPRk+1uxw048', 'Cysm2yW/v5vE', '6HaOCHGtto0zdv7vsHyyeyPdQBUkE3Py', '4o031Piul49kB3eD')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->login_api()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-04 18:52:53 --> sodium_crypto_aead_chacha20poly1305_ietf_decrypt(): Argument #3 ($nonce) must be SODIUM_CRYPTO_AEAD_CHACHA20POLY1305_IETF_NPUBBYTES bytes long
+in APPPATH\Controllers\Api.php on line 223.
+ 1 APPPATH\Controllers\Api.php(223): sodium_crypto_aead_chacha20poly1305_ietf_decrypt()
+ 2 APPPATH\Controllers\Api.php(188): App\Controllers\Api->descriptografar()
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->login_api()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-10-04 18:55:58 --> [DEPRECATED] sodium_crypto_aead_chacha20poly1305_ietf_decrypt(): Passing null to parameter #1 ($ciphertext) of type string is deprecated in APPPATH\Controllers\Api.php on line 223.
+ 1 APPPATH\Controllers\Api.php(223): sodium_crypto_aead_chacha20poly1305_ietf_decrypt(null, '', 'Äèvq­¶3vş', Object(SensitiveParameterValue))
+ 2 APPPATH\Controllers\Api.php(188): App\Controllers\Api->descriptografar(null, 'Ğ‹1ì%£é¡´`C…^»õÄôdû[±ÃN<+&Û%¿¿›', 'Äèvq­¶3vş', 'ï°|²{#İ@$sòâ7Ôø®—dwƒ&K+', '¢SEtÑ©¹$8ºùgecÛ')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->login_api()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-10-04 18:55:58 --> [DEPRECATED] base64_decode(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH\Controllers\Api.php on line 196.
+ 1 APPPATH\Controllers\Api.php(196): base64_decode(null)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->login_api()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-04 19:15:25 --> sodium_crypto_aead_chacha20poly1305_ietf_decrypt(): Argument #3 ($nonce) must be SODIUM_CRYPTO_AEAD_CHACHA20POLY1305_IETF_NPUBBYTES bytes long
+in APPPATH\Controllers\Api.php on line 224.
+ 1 APPPATH\Controllers\Api.php(224): sodium_crypto_aead_chacha20poly1305_ietf_decrypt()
+ 2 APPPATH\Controllers\Api.php(189): App\Controllers\Api->descriptografar()
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->login_api()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

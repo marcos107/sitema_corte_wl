@@ -39,6 +39,11 @@
 
               "responsive": true, "lengthChange": false, "autoWidth": false,
               "buttons": ["colvis"],
+              "order": [
+               
+               [0, "asc"],
+               [1, "asc"]
+             ],
               "language": {
                 "decimal": "",
                 "emptyTable": "Sem dados disponíveis",

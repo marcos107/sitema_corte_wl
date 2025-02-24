@@ -1,0 +1,1163 @@
+CRITICAL - 2024-07-30 14:50:33 --> Undefined global variable $_SESSION
+in APPPATH\Controllers\Pagina.php on line 650.
+ 1 APPPATH\Controllers\Pagina.php(650): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\Pagina.php', 650)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pagina->relatorios()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pagina))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 14:50:48 --> Undefined global variable $_SESSION
+in APPPATH\Controllers\Pagina.php on line 650.
+ 1 APPPATH\Controllers\Pagina.php(650): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\Pagina.php', 650)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pagina->relatorios()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pagina))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-07-30 14:56:49 --> [DEPRECATED] Implicit conversion from float 8.468354430379748 to int loses precision in APPPATH\Controllers\ReratorioPost.php on line 20.
+ 1 APPPATH\Controllers\ReratorioPost.php(322): App\Controllers\ReratorioPost->secondsToTime(8.468354430379748)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ReratorioPost->relatorio_analitico()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReratorioPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-07-30 14:56:49 --> [DEPRECATED] Implicit conversion from float 8.468354430379748 to int loses precision in APPPATH\Controllers\ReratorioPost.php on line 21.
+ 1 APPPATH\Controllers\ReratorioPost.php(322): App\Controllers\ReratorioPost->secondsToTime(8.468354430379748)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ReratorioPost->relatorio_analitico()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReratorioPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-07-30 14:56:49 --> [DEPRECATED] Implicit conversion from float 394.3818181818182 to int loses precision in APPPATH\Controllers\ReratorioPost.php on line 20.
+ 1 APPPATH\Controllers\ReratorioPost.php(322): App\Controllers\ReratorioPost->secondsToTime(394.3818181818182)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ReratorioPost->relatorio_analitico()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReratorioPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-07-30 14:56:49 --> [DEPRECATED] Implicit conversion from float 394.3818181818182 to int loses precision in APPPATH\Controllers\ReratorioPost.php on line 21.
+ 1 APPPATH\Controllers\ReratorioPost.php(322): App\Controllers\ReratorioPost->secondsToTime(394.3818181818182)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ReratorioPost->relatorio_analitico()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReratorioPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 15:44:13 --> Call to undefined method App\Controllers\UsuarioPost::lita_funcao()
+in APPPATH\Controllers\UsuarioPost.php on line 128.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\UsuarioPost->user_cadastrar()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 15:46:16 --> Call to undefined method App\Controllers\UsuarioPost::lista_funcao()
+in APPPATH\Controllers\UsuarioPost.php on line 128.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\UsuarioPost->user_cadastrar()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 15:47:41 --> Class "App\Controllers\FuncaoPost" not found
+in APPPATH\Controllers\UsuarioPost.php on line 128.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\UsuarioPost->user_cadastrar()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 15:54:28 --> Invalid file: "ajaxs/subpasta_ajax.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('ajaxs/subpasta_ajax.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ajaxs/subpasta_ajax', [], true)
+ 3 APPPATH\Views\lista_cadastro.php(590): view('ajaxs/subpasta_ajax')
+ 4 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\codi\\app\\Views\\lista_cadastro.php')
+ 5 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('lista_cadastro', [], true)
+ 7 APPPATH\Controllers\Pagina.php(668): view('lista_cadastro', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pagina->subpasta()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pagina))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 16:05:12 --> Call to undefined method App\Controllers\PrioridadePost::lita_empresa()
+in APPPATH\Controllers\PrioridadePost.php on line 144.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PrioridadePost->prioridade_cadastrar()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PrioridadePost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 16:21:56 --> copy(c:/wl/wl_desenhos/PETRASALIS/LOT.URB.TIJUCAS/ACABAMENTO/GRAMAS/LOT.URBANI TIJUCAS_1-1200_GRAMA EXTRA_espuma verde de 3mm (embalar junto) corte lento pois as peças são pequenascortado_01_05_2024_LOT.URBANI TIJUCAS_1-1200_GRAMA EXTRA_espuma verde de 3mm (embalar junto) corte lento pois as peças são pequenas_9628_.dxf): Failed to open stream: No such file or directory
+in APPPATH\Controllers\DesenhoPost.php on line 522.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'copy(c:/wl/wl_desenhos/PETRASALIS/LOT.URB.TIJUCAS/ACABAMENTO/GRAMAS/LOT.URBANI TIJUCAS_1-1200_GRAMA EXTRA_espuma verde de 3mm (embalar junto) corte lento pois as peças são pequenascortado_01_05_2024_LOT.URBANI TIJUCAS_1-1200_GRAMA EXTRA_espuma verde de 3mm (embalar junto) corte lento pois as peças são pequenas_9628_.dxf): Failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\DesenhoPost.php', 522)
+ 2 APPPATH\Controllers\DesenhoPost.php(522): copy('c:/wl/wl_desenhos/PETRASALIS/LOT.URB.TIJUCAS/ACABAMENTO/GRAMAS/LOT.URBANI TIJUCAS_1-1200_GRAMA EXTRA_espuma verde de 3mm (embalar junto) corte lento pois as peças são pequenascortado_01_05_2024_LOT.URBANI TIJUCAS_1-1200_GRAMA EXTRA_espuma verde de 3mm (embalar junto) corte lento pois as peças são pequenas_9628_.dxf', 'c:/wl/wl_desenhos/PETRASALIS/LOT.URB.TIJUCAS/ACABAMENTO/GRAMAS/LOT.URBANI TIJUCAS_1-1200_GRAMA EXTRA_espuma verde de 3mm (embalar junto) corte lento pois as peças são pequenasLOT.URBANI TIJUCAS_1-1200_GRAMA EXTRA_espuma verde de 3mm (embalar junto) corte lento pois as peças são pequenas_2855_.dxf')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\DesenhoPost->recolocar_desenho()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DesenhoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 17:59:23 --> Undefined global variable $_SESSION
+in APPPATH\Controllers\Pagina.php on line 836.
+ 1 APPPATH\Controllers\Pagina.php(836): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\Pagina.php', 836)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pagina->nivel()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pagina))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 17:59:43 --> Undefined variable $functionType
+in APPPATH\Views\lista.php on line 189.
+ 1 APPPATH\Views\lista.php(189): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $functionType', 'C:\\xampp\\htdocs\\codi\\app\\Views\\lista.php', 189)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\codi\\app\\Views\\lista.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('lista', [], true)
+ 5 APPPATH\Controllers\Pagina.php(863): view('lista', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pagina->nivel()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pagina))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:04:32 --> Undefined variable $functionType
+in APPPATH\Views\lista.php on line 189.
+ 1 APPPATH\Views\lista.php(189): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $functionType', 'C:\\xampp\\htdocs\\codi\\app\\Views\\lista.php', 189)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\codi\\app\\Views\\lista.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('lista', [], true)
+ 5 APPPATH\Controllers\Pagina.php(884): view('lista', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pagina->nivel()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pagina))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:04:46 --> Undefined variable $selecao_lista
+in APPPATH\Views\lista.php on line 207.
+ 1 APPPATH\Views\lista.php(207): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $selecao_lista', 'C:\\xampp\\htdocs\\codi\\app\\Views\\lista.php', 207)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\codi\\app\\Views\\lista.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('lista', [], true)
+ 5 APPPATH\Controllers\Pagina.php(884): view('lista', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pagina->nivel()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pagina))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:06:15 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:06:20 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:06:25 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:06:30 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:06:35 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:06:40 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:06:45 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:06:50 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:06:55 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:07:00 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:07:05 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:07:10 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:07:15 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:07:20 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:07:25 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:07:30 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:07:35 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:07:40 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:07:45 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:07:50 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:07:55 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:08:00 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:08:05 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:08:10 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:08:15 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:08:20 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:08:25 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:08:30 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:08:35 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:08:40 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:08:45 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:08:50 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:08:55 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:09:00 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:09:05 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:09:10 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:09:15 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:09:20 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:09:25 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:09:30 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:09:35 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:09:40 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:09:45 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:09:50 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:09:55 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:10:00 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:10:05 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:10:10 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:10:15 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:10:20 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:10:25 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:10:30 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:10:35 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:10:40 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:10:45 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:10:50 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:10:55 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:11:00 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:11:05 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:11:10 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:11:15 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:11:20 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:11:52 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:12:52 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:13:52 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:14:52 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:15:52 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:16:52 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:17:52 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:18:52 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:19:52 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:20:52 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:21:52 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:22:52 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:23:52 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:24:52 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:25:52 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:26:52 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:27:52 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:28:52 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:29:48 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:29:50 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:29:55 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:30:00 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:30:05 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:30:10 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:30:15 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:30:20 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:30:25 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:30:30 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:30:35 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:30:40 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:30:45 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:30:50 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:30:55 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:31:00 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:31:05 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:31:10 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:31:15 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:31:20 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:31:45 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:31:50 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:31:55 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:32:00 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:32:06 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:32:10 --> Class "App\Models\Nivel" not found
+in APPPATH\Controllers\NivelPost.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:32:15 --> syntax error, unexpected token "extends", expecting identifier
+in APPPATH\Models\nivel.php on line 7.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Models\\Nivel.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Nivel')
+ 3 APPPATH\Controllers\NivelPost.php(37): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Nivel')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:32:20 --> Cannot use empty array elements in arrays
+in APPPATH\Models\nivel.php on line 10.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+ERROR - 2024-07-30 18:32:25 --> mysqli_sql_exception: Table 'wl.funcao' doesn't exist in C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\codi\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\codi\system\Model.php(203): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\codi\system\BaseModel.php(557): CodeIgniter\Model->doFind(false, NULL)
+#6 C:\xampp\htdocs\codi\app\Controllers\NivelPost.php(39): CodeIgniter\BaseModel->find()
+#7 C:\xampp\htdocs\codi\system\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+#8 C:\xampp\htdocs\codi\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+#9 C:\xampp\htdocs\codi\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\codi\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-07-30 18:32:25 --> Table 'wl.funcao' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `funcao`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `funcao`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `funcao`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `funcao`', [], false)
+ 5 SYSTEMPATH\Model.php(203): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(557): CodeIgniter\Model->doFind(false, null)
+ 7 APPPATH\Controllers\NivelPost.php(39): CodeIgniter\BaseModel->find()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-07-30 18:32:30 --> mysqli_sql_exception: Table 'wl.funcao' doesn't exist in C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\codi\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\codi\system\Model.php(203): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\codi\system\BaseModel.php(557): CodeIgniter\Model->doFind(false, NULL)
+#6 C:\xampp\htdocs\codi\app\Controllers\NivelPost.php(39): CodeIgniter\BaseModel->find()
+#7 C:\xampp\htdocs\codi\system\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+#8 C:\xampp\htdocs\codi\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+#9 C:\xampp\htdocs\codi\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\codi\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-07-30 18:32:30 --> Table 'wl.funcao' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `funcao`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `funcao`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `funcao`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `funcao`', [], false)
+ 5 SYSTEMPATH\Model.php(203): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(557): CodeIgniter\Model->doFind(false, null)
+ 7 APPPATH\Controllers\NivelPost.php(39): CodeIgniter\BaseModel->find()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-07-30 18:32:35 --> mysqli_sql_exception: Table 'wl.funcao' doesn't exist in C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\codi\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\codi\system\Model.php(203): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\codi\system\BaseModel.php(557): CodeIgniter\Model->doFind(false, NULL)
+#6 C:\xampp\htdocs\codi\app\Controllers\NivelPost.php(39): CodeIgniter\BaseModel->find()
+#7 C:\xampp\htdocs\codi\system\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+#8 C:\xampp\htdocs\codi\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+#9 C:\xampp\htdocs\codi\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\codi\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-07-30 18:32:35 --> Table 'wl.funcao' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `funcao`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `funcao`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `funcao`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `funcao`', [], false)
+ 5 SYSTEMPATH\Model.php(203): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(557): CodeIgniter\Model->doFind(false, null)
+ 7 APPPATH\Controllers\NivelPost.php(39): CodeIgniter\BaseModel->find()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-07-30 18:32:40 --> mysqli_sql_exception: Table 'wl.funcao' doesn't exist in C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\codi\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\codi\system\Model.php(203): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\codi\system\BaseModel.php(557): CodeIgniter\Model->doFind(false, NULL)
+#6 C:\xampp\htdocs\codi\app\Controllers\NivelPost.php(39): CodeIgniter\BaseModel->find()
+#7 C:\xampp\htdocs\codi\system\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+#8 C:\xampp\htdocs\codi\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+#9 C:\xampp\htdocs\codi\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\codi\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-07-30 18:32:40 --> Table 'wl.funcao' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `funcao`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `funcao`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `funcao`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `funcao`', [], false)
+ 5 SYSTEMPATH\Model.php(203): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(557): CodeIgniter\Model->doFind(false, null)
+ 7 APPPATH\Controllers\NivelPost.php(39): CodeIgniter\BaseModel->find()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-07-30 18:32:45 --> mysqli_sql_exception: Table 'wl.funcao' doesn't exist in C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\codi\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\codi\system\Model.php(203): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\codi\system\BaseModel.php(557): CodeIgniter\Model->doFind(false, NULL)
+#6 C:\xampp\htdocs\codi\app\Controllers\NivelPost.php(39): CodeIgniter\BaseModel->find()
+#7 C:\xampp\htdocs\codi\system\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+#8 C:\xampp\htdocs\codi\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+#9 C:\xampp\htdocs\codi\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\codi\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-07-30 18:32:45 --> Table 'wl.funcao' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `funcao`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `funcao`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `funcao`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `funcao`', [], false)
+ 5 SYSTEMPATH\Model.php(203): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(557): CodeIgniter\Model->doFind(false, null)
+ 7 APPPATH\Controllers\NivelPost.php(39): CodeIgniter\BaseModel->find()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-07-30 18:32:50 --> mysqli_sql_exception: Table 'wl.funcao' doesn't exist in C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\codi\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\codi\system\Model.php(203): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\codi\system\BaseModel.php(557): CodeIgniter\Model->doFind(false, NULL)
+#6 C:\xampp\htdocs\codi\app\Controllers\NivelPost.php(39): CodeIgniter\BaseModel->find()
+#7 C:\xampp\htdocs\codi\system\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+#8 C:\xampp\htdocs\codi\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+#9 C:\xampp\htdocs\codi\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\codi\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-07-30 18:32:50 --> Table 'wl.funcao' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `funcao`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `funcao`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `funcao`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `funcao`', [], false)
+ 5 SYSTEMPATH\Model.php(203): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(557): CodeIgniter\Model->doFind(false, null)
+ 7 APPPATH\Controllers\NivelPost.php(39): CodeIgniter\BaseModel->find()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 21:33:51 --> syntax error, unexpected variable "$routes"
+in APPPATH\Config\Routes.php on line 46.
+ 1 SYSTEMPATH\CodeIgniter.php(802): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 2 SYSTEMPATH\CodeIgniter.php(449): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-07-30 18:34:52 --> mysqli_sql_exception: Table 'wl.funcao' doesn't exist in C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\codi\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\codi\system\Model.php(203): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\codi\system\BaseModel.php(557): CodeIgniter\Model->doFind(false, NULL)
+#6 C:\xampp\htdocs\codi\app\Controllers\NivelPost.php(39): CodeIgniter\BaseModel->find()
+#7 C:\xampp\htdocs\codi\system\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+#8 C:\xampp\htdocs\codi\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+#9 C:\xampp\htdocs\codi\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\codi\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-07-30 18:34:52 --> Table 'wl.funcao' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `funcao`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `funcao`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `funcao`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `funcao`', [], false)
+ 5 SYSTEMPATH\Model.php(203): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(557): CodeIgniter\Model->doFind(false, null)
+ 7 APPPATH\Controllers\NivelPost.php(39): CodeIgniter\BaseModel->find()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-07-30 18:35:07 --> mysqli_sql_exception: Table 'wl.funcao' doesn't exist in C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\codi\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\codi\system\Model.php(203): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\codi\system\BaseModel.php(557): CodeIgniter\Model->doFind(false, NULL)
+#6 C:\xampp\htdocs\codi\app\Controllers\NivelPost.php(39): CodeIgniter\BaseModel->find()
+#7 C:\xampp\htdocs\codi\system\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+#8 C:\xampp\htdocs\codi\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+#9 C:\xampp\htdocs\codi\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\codi\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-07-30 18:35:07 --> Table 'wl.funcao' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `funcao`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `funcao`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `funcao`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `funcao`', [], false)
+ 5 SYSTEMPATH\Model.php(203): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(557): CodeIgniter\Model->doFind(false, null)
+ 7 APPPATH\Controllers\NivelPost.php(39): CodeIgniter\BaseModel->find()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-07-30 18:35:09 --> mysqli_sql_exception: Table 'wl.funcao' doesn't exist in C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\codi\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\codi\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\codi\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\codi\system\Model.php(203): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\codi\system\BaseModel.php(557): CodeIgniter\Model->doFind(false, NULL)
+#6 C:\xampp\htdocs\codi\app\Controllers\NivelPost.php(39): CodeIgniter\BaseModel->find()
+#7 C:\xampp\htdocs\codi\system\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+#8 C:\xampp\htdocs\codi\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+#9 C:\xampp\htdocs\codi\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\codi\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-07-30 18:35:09 --> Table 'wl.funcao' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `funcao`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `funcao`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `funcao`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `funcao`', [], false)
+ 5 SYSTEMPATH\Model.php(203): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(557): CodeIgniter\Model->doFind(false, null)
+ 7 APPPATH\Controllers\NivelPost.php(39): CodeIgniter\BaseModel->find()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_lista()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 18:36:14 --> Call to undefined method App\Controllers\Ferramentas::modal()
+in APPPATH\Controllers\NivelPost.php on line 149.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NivelPost->nivel_modifica_modal()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NivelPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 19:14:15 --> Undefined array key "permissao"
+in APPPATH\Controllers\Login.php on line 194.
+ 1 APPPATH\Controllers\Login.php(194): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "permissao"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\Login.php', 194)
+ 2 APPPATH\Controllers\Pagina.php(848): App\Controllers\Login::verifica_permissao('Nível')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pagina->nivel()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pagina))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 19:22:02 --> Undefined array key "nivel"
+in APPPATH\Controllers\Login.php on line 95.
+ 1 APPPATH\Controllers\Login.php(95): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nivel"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\Login.php', 95)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Login->login()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 19:22:07 --> Undefined array key "nivel"
+in APPPATH\Controllers\Login.php on line 95.
+ 1 APPPATH\Controllers\Login.php(95): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nivel"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\Login.php', 95)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Login->login()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 19:23:22 --> Call to undefined method App\Controllers\Login::verifica_permissao()
+in APPPATH\Controllers\Pagina.php on line 71.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pagina->desenho_adicionar()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pagina))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 22:33:12 --> Unclosed '{' on line 61 does not match ']'
+in APPPATH\Controllers\Login.php on line 101.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\Login.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Login')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Login')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\Login', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 22:44:00 --> Unclosed '{' on line 61 does not match ']'
+in APPPATH\Controllers\Login.php on line 102.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\codi\\app\\Controllers\\Login.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Login')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Login')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\Login', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 20:19:50 --> Undefined variable $permissao
+in APPPATH\Views\menu\menu.php on line 1.
+ 1 APPPATH\Views\menu\menu.php(1): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $permissao', 'C:\\xampp\\htdocs\\codi\\app\\Views\\menu\\menu.php', 1)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\codi\\app\\Views\\menu\\menu.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('menu/menu', [], true)
+ 5 APPPATH\Controllers\Pagina.php(907): view('menu/menu')
+ 6 APPPATH\Controllers\Pagina.php(107): App\Controllers\Pagina->menu('desenhos', 'adicionar')
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pagina->desenho_adicionar()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pagina))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 20:43:27 --> Class "App\Models\Funcao" not found
+in APPPATH\Controllers\UsuarioPost.php on line 460.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\UsuarioPost->user_modificar()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 20:45:00 --> Class "App\Models\Funcao" not found
+in APPPATH\Controllers\UsuarioPost.php on line 460.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\UsuarioPost->user_modificar()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 20:46:00 --> Class "App\Models\Funcao" not found
+in APPPATH\Controllers\UsuarioPost.php on line 460.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\UsuarioPost->user_modificar()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 20:46:20 --> Undefined array key "tipo"
+in APPPATH\Controllers\UsuarioPost.php on line 478.
+ 1 APPPATH\Controllers\UsuarioPost.php(478): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "tipo"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\UsuarioPost.php', 478)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\UsuarioPost->user_modificar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 20:52:04 --> Call to undefined method App\Controllers\AdmPost::lista_funcao()
+in APPPATH\Controllers\UsuarioPost.php on line 304.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\UsuarioPost->user_modificar_update()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 20:52:57 --> Call to undefined method App\Controllers\UsuarioPost::lista_funcao()
+in APPPATH\Controllers\UsuarioPost.php on line 304.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\UsuarioPost->user_modificar_update()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-30 20:53:41 --> Call to undefined method App\Controllers\NivelPost::lista_funcao()
+in APPPATH\Controllers\UsuarioPost.php on line 304.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\UsuarioPost->user_modificar_update()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioPost))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

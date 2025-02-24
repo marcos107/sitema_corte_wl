@@ -2,19 +2,17 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>
-    <?= $titulo ?>
-  </title>
-  <link rel="shortcut icon" href="<?php echo base_url(); ?>public/wl.ico">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<title><?= $titulo ?></title>
+	<link rel="shortcut icon" href="<?php echo base_url(); ?>public/wl.ico" >
   <!--
   <script src="corte.js"></script>
- -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+-->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">   <!-- icons -->
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  href="<?php echo base_url(); ?>public/assets/font.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>public/assets/style/plugins/fontawesome-free/css/all.min.css">
   <!-- DataTables -->
@@ -24,16 +22,17 @@
     href="<?php echo base_url(); ?>public/assets/style/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet"
     href="<?php echo base_url(); ?>public/assets/style/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  <script src="<?php echo base_url(); ?>public/assets/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+
+  <script src="<?php echo base_url(); ?>public/assets/popper.min.js"
     integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
     crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+  <script src="<?php echo base_url(); ?>public/assets/bootstrap.min.js"
     integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+  <link rel="stylesheet" href="<?php echo base_url(); ?>public/assets/bootstrap.min.css"
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>public/assets/style/dist/css/adminlte.min.css">
@@ -177,7 +176,7 @@
     </aside>
 
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
+    <div id="list1" class="content-wrapper">
       <section class="content">
         <section>
           <!-- Content Header (Page header) -->
@@ -459,5 +458,5 @@
 
 </html>
 <div id="meusScripts">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+<script src="<?php echo base_url(); ?>public/assets/all.min.js"></script>
 </div>

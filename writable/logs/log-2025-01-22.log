@@ -1,0 +1,136 @@
+CRITICAL - 2025-01-22 15:42:35 --> Undefined array key ""
+in APPPATH\Controllers\Api.php on line 492.
+ 1 APPPATH\Controllers\Api.php(492): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key ""', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\Api.php', 492)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->lista_tarefas_api()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-22 15:43:58 --> Undefined array key ""
+in APPPATH\Controllers\Api.php on line 492.
+ 1 APPPATH\Controllers\Api.php(492): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key ""', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\Api.php', 492)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->lista_tarefas_api()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-22 15:44:34 --> Undefined array key ""
+in APPPATH\Controllers\Api.php on line 492.
+ 1 APPPATH\Controllers\Api.php(492): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key ""', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\Api.php', 492)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->lista_tarefas_api()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-22 15:52:31 --> Call to a member function update() on array
+in APPPATH\Controllers\Api.php on line 440.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->lista_tarefas_api()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-22 15:52:46 --> Call to a member function update() on array
+in APPPATH\Controllers\Api.php on line 440.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->lista_tarefas_api()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-22 15:53:25 --> Call to a member function update() on array
+in APPPATH\Controllers\Api.php on line 440.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->lista_tarefas_api()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-22 15:55:52 --> Call to a member function update() on array
+in APPPATH\Controllers\Api.php on line 437.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->lista_tarefas_api()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-22 15:59:11 --> Maximum execution time of 120 seconds exceeded
+in APPPATH\Controllers\Ferramentas.php on line 85.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-01-22 16:00:01 --> Maximum execution time of 120 seconds exceeded
+in APPPATH\Controllers\Ferramentas.php on line 190.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-01-22 16:03:32 --> Maximum execution time of 120 seconds exceeded
+in APPPATH\Controllers\Ferramentas.php on line 84.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-01-22 16:17:06 --> Undefined array key "lista_empreendimento"
+in APPPATH\Controllers\SubpastaPost.php on line 406.
+ 1 APPPATH\Controllers\SubpastaPost.php(406): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "lista_empreendimento"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\SubpastaPost.php', 406)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\SubpastaPost->desenho_tag_lista()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SubpastaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-22 16:17:07 --> Undefined array key "lista_empreendimento"
+in APPPATH\Controllers\SubpastaPost.php on line 406.
+ 1 APPPATH\Controllers\SubpastaPost.php(406): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "lista_empreendimento"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\SubpastaPost.php', 406)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\SubpastaPost->desenho_tag_lista()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SubpastaPost))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-22 16:17:07 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 430.
+ 1 APPPATH\Controllers\Ferramentas.php(430): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-22 16:17:18 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 430.
+ 1 APPPATH\Controllers\Ferramentas.php(430): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-01-22 16:17:26 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Controllers\Ferramentas.php on line 430.
+ 1 APPPATH\Controllers\Ferramentas.php(430): str_replace([...], [...], null)
+ 2 APPPATH\Controllers\EmpreendimentoPost.php(357): App\Controllers\Ferramentas::codificador(null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\EmpreendimentoPost->empreendimento_lista()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpreendimentoPost))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-22 16:20:35 --> Maximum execution time of 120 seconds exceeded
+in APPPATH\Controllers\Ferramentas.php on line 85.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-01-22 16:21:38 --> Maximum execution time of 120 seconds exceeded
+in APPPATH\Controllers\Ferramentas.php on line 84.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-01-22 16:21:59 --> Maximum execution time of 120 seconds exceeded
+in APPPATH\Controllers\Ferramentas.php on line 85.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-01-22 16:23:09 --> Maximum execution time of 120 seconds exceeded
+in APPPATH\Controllers\Ferramentas.php on line 189.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-01-22 16:23:21 --> count(): Argument #1 ($value) must be of type Countable|array, null given
+in APPPATH\Controllers\Api.php on line 454.
+ 1 APPPATH\Controllers\Api.php(454): count(null)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->lista_tarefas_api()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-22 16:24:37 --> Undefined array key "id_desenho"
+in APPPATH\Controllers\Api.php on line 509.
+ 1 APPPATH\Controllers\Api.php(509): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_desenho"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\Api.php', 509)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->lista_tarefas_api()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-22 16:25:41 --> Undefined array key "id_desenho"
+in APPPATH\Controllers\Api.php on line 509.
+ 1 APPPATH\Controllers\Api.php(509): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_desenho"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\Api.php', 509)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->lista_tarefas_api()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-22 16:25:50 --> Undefined array key "id_desenho"
+in APPPATH\Controllers\Api.php on line 509.
+ 1 APPPATH\Controllers\Api.php(509): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_desenho"', 'C:\\xampp\\htdocs\\codi\\app\\Controllers\\Api.php', 509)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->lista_tarefas_api()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-01-22 16:26:09 --> count(): Argument #1 ($value) must be of type Countable|array, null given
+in APPPATH\Controllers\Api.php on line 454.
+ 1 APPPATH\Controllers\Api.php(454): count(null)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Api->lista_tarefas_api()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

@@ -58,7 +58,6 @@ class ListaCortePost extends Ferramentas
 
             // Retorna a resposta no formato JSON
             return $this->response->setJSON($data);
-
         }
     }
 
@@ -73,6 +72,7 @@ class ListaCortePost extends Ferramentas
     function lista_corte_adm() //rece um post via ajax pedindo para listar os usuarios
     {
         if ($this->request->isAJAX()) {
+            Ferramentas::re_ordenar_oredem_desenho();
             session_start();
             // Inicialização de objetos para acessar tabelas do banco de dados
             $desenhos = new \App\Models\Desenhos();
@@ -84,7 +84,7 @@ class ListaCortePost extends Ferramentas
             $cortado = new \App\Models\Corte();
             $processos = new \App\Models\Processos();
 
-            
+
             // Recupera dados das tabelas do banco de dados
             $prioridade_data = $prioridade->find();
             $finalidade_data = $finalidade->find();
@@ -108,7 +108,7 @@ class ListaCortePost extends Ferramentas
                 ->orderBy('id', 'DESC')
                 ->first();
 
-            if ($check != null) {//ativar som do sistema de corte
+            if ($check != null) { //ativar som do sistema de corte
 
 
                 if ($alteracao_data) {
@@ -126,7 +126,6 @@ class ListaCortePost extends Ferramentas
                         ];
                         $alteracao->insert($data);
                     }
-
                 } else {
                     $data = [
                         "individuo" => $_SESSION["usuario"],
@@ -144,6 +143,14 @@ class ListaCortePost extends Ferramentas
                 $check = $alteracao_data["depois"];
             }
 
+            $desenhos_data = $desenhos
+                ->whereIn('status', [
+                    Ferramentas::codificador('pendente'),
+                    Ferramentas::codificador('cortando')
+                ])
+                ->find();
+
+
 
             // Itera sobre os dados de desenhos para criar a lista
             foreach ($desenhos_data as $key => $value) {
@@ -156,17 +163,17 @@ class ListaCortePost extends Ferramentas
                 // Remover o último elemento
                 unset($tags[count($tags) - 1]);
                 $tags = implode(" - ", $tags);
-                if (Ferramentas::decodificador($value['status']) == "pendente" || Ferramentas::decodificador($value['status']) == 'cortando') {
-                    $prioridade_desenho = Ferramentas::array_pesquisa($prioridade_data, 'id', $value['prioridade']);
 
-                    // Monta a linha da tabela com os dados do usuário
-                    if (Ferramentas::decodificador($value['status']) == 'pendente') {
-                        $lista .= '<tr><td onclick="prio_modal(' . $id_temp . ')" bgcolor="' . Ferramentas::decodificador(Ferramentas::array_index($prioridade_desenho, ['cor'])) . '"><span class="marca_texto">' . Ferramentas::array_index($prioridade_desenho, ['nome']) . '</span></td>';
-                    } else {
-                        $lista .= '<tr><td bgcolor="' . Ferramentas::decodificador(Ferramentas::array_index($prioridade_desenho, ['cor'])) . '"><span class="marca_texto">' . Ferramentas::array_index($prioridade_desenho, ['nome']) . '</span></td>';
-                    }
-                    $lista .= '
-      
+                $prioridade_desenho = Ferramentas::array_pesquisa($prioridade_data, 'id', $value['prioridade']);
+
+                // Monta a linha da tabela com os dados do usuário
+                if (Ferramentas::decodificador($value['status']) == 'pendente') {
+                    $lista .= '<tr><td onclick="prio_modal(' . $id_temp . ')" bgcolor="' . Ferramentas::decodificador(Ferramentas::array_index($prioridade_desenho, ['cor'])) . '"><span class="marca_texto">' . Ferramentas::array_index($prioridade_desenho, ['nome']) . '</span></td>';
+                } else {
+                    $lista .= '<tr><td bgcolor="' . Ferramentas::decodificador(Ferramentas::array_index($prioridade_desenho, ['cor'])) . '"><span class="marca_texto">' . Ferramentas::array_index($prioridade_desenho, ['nome']) . '</span></td>';
+                }
+                $lista .= '
+                 <td>' . Ferramentas::array_index($value, ['ordem']) . ' </td>
                  <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($processos_data, 'id', $value['processos_id']), ["nome"])) . '</td>
 
        
@@ -179,31 +186,34 @@ class ListaCortePost extends Ferramentas
        <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($finalidade_data, 'id', $value['finalidade']), ['nome'])) . '</td>
        <td>' . $tags . '</td>
        <td>' . Ferramentas::decodificador(Ferramentas::decodificador($value['status'])) . '</td>
-       <td>'. $dataEspecifica_corte .'</td>
+       <td>' . $dataEspecifica_corte . '</td>
        <td>' . Ferramentas::decodificador(Ferramentas::decodificador($value['data_hora_add'])) . '</td>
       ';
-                    if (Ferramentas::decodificador($value['status']) == 'pendente') {
-                        $lista .= '<td><button name="cadastarar" type="submit" class="btn btn-outline-primary" onclick="apagar(' . $id_temp . ')"> Apagar </button></td>';
-                    } else if (Ferramentas::decodificador($value['status']) == 'cortando') {
-                        $lista .= '<td><button name="cadastarar" type="submit" class="btn btn-outline-primary" onclick="cancelar_corte(' . $id_temp . ')"> Cancelar corte </button></td> ';
-                    } else {
-                        $lista .= '<td></td>';
-                    }
-                    $lista .= '<td><button name="cadastarar" type="submit" class="btn btn-outline-warning" onclick="prio_modal(' . $id_temp . ')"> Mudar prioridade </button></td></tr>';
-                    // Prepara dados do usuário para armazenamento em arrays
-                    $value['nome'] = Ferramentas::decodificador($value['nome']);
-                    $value['cor'] = Ferramentas::decodificador($prioridade_desenho['cor']);
-                    $value['finalidade'] = Ferramentas::array_index(Ferramentas::array_pesquisa($finalidade_data, 'id', $value['finalidade']), ["nome"]);
-                    $value['empresa'] = Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'id', $value['empresa']), ["nome"]);
-                    $value['empreendimento'] = Ferramentas::array_index(Ferramentas::array_pesquisa($empreendimento_data, 'id', $value['empreendimento']), ["nome"]);
-                    $value['data_hora_add'] = Ferramentas::decodificador($value['data_hora_add']);
-                    $value['prioridade'] = Ferramentas::decodificador($prioridade_desenho['nome']);
-
-                    $lista_ids[$id_temp] = $value['id'];
-                    $value['id'] = $id_temp;
-                    $lista_completa[$id_temp] = $value;
-                    $id_temp++;
+                if (Ferramentas::decodificador($value['status']) == 'pendente') {
+                    $lista .= '<td><button name="cadastarar" type="submit" class="btn btn-outline-primary" onclick="apagar(' . $id_temp . ')"> Apagar </button></td>';
+                } else if (Ferramentas::decodificador($value['status']) == 'cortando') {
+                    $lista .= '<td><button name="cadastarar" type="submit" class="btn btn-outline-primary" onclick="cancelar_corte(' . $id_temp . ')"> Cancelar corte </button></td> ';
+                } else {
+                    $lista .= '<td></td>';
                 }
+                $lista .= '<td><button name="cadastarar" type="submit" class="btn btn-outline-warning" onclick="prio_modal(' . $id_temp . ')"> Mudar prioridade </button></td></tr>';
+                // Prepara dados do usuário para armazenamento em arrays
+                $value['nome'] = Ferramentas::decodificador($value['nome']);
+                $value['cor'] = Ferramentas::decodificador($prioridade_desenho['cor']);
+                $value['finalidade'] = Ferramentas::array_index(Ferramentas::array_pesquisa($finalidade_data, 'id', $value['finalidade']), ["nome"]);
+                $value['empresa'] = Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'id', $value['empresa']), ["nome"]);
+                $value['empreendimento'] = Ferramentas::array_index(Ferramentas::array_pesquisa($empreendimento_data, 'id', $value['empreendimento']), ["nome"]);
+                $value['data_hora_add'] = Ferramentas::decodificador($value['data_hora_add']);
+                $value['prioridade'] = Ferramentas::decodificador($prioridade_desenho['nome']);
+
+                $value['desenhista_nome'] = Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($usuario_data, 'id', $value['desenhista']), ['nome']));
+                $value['tags'] = $tags;
+                $value['processo'] = Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($processos_data, 'id', $value['processos_id']), ["nome"]));
+
+                $lista_ids[$id_temp] = $value['id'];
+                $value['id'] = $id_temp;
+                $lista_completa[$id_temp] = $value;
+                $id_temp++;
             }
 
             // Inicializa a sessão e armazena as listas
@@ -222,17 +232,17 @@ class ListaCortePost extends Ferramentas
         }
     }
 
-        /**
-    * Confirma o corte de um desenho e renomeia o arquivo cortado.
-    *
-    * Esta função é responsável por confirmar o corte de um desenho, renomear o arquivo cortado, atualizar o status do desenho e do processo de corte no banco de dados.
+    /**
+     * Confirma o corte de um desenho e renomeia o arquivo cortado.
+     *
+     * Esta função é responsável por confirmar o corte de um desenho, renomear o arquivo cortado, atualizar o status do desenho e do processo de corte no banco de dados.
 
-    * return Um array com informações sobre o resultado do processo:
-    * - 'ok' (bool): Indica se o corte foi bem-sucedido (true) ou não (false).
-    * - 'mensagem' (string): Uma mensagem descritiva do resultado.
-    * - 'caminho_novo' (string): O caminho para o arquivo cortado renomeado.
-    * - 'caminho_antigo' (string): O caminho para o arquivo original.
-    */
+     * return Um array com informações sobre o resultado do processo:
+     * - 'ok' (bool): Indica se o corte foi bem-sucedido (true) ou não (false).
+     * - 'mensagem' (string): Uma mensagem descritiva do resultado.
+     * - 'caminho_novo' (string): O caminho para o arquivo cortado renomeado.
+     * - 'caminho_antigo' (string): O caminho para o arquivo original.
+     */
     function confirmar_corte()
     {
         if ($this->request->isAJAX()) {
@@ -260,18 +270,18 @@ class ListaCortePost extends Ferramentas
                 // Se o status for "pendente" ou "cortando", continua o processamento
                 $caminho = Ferramentas::array_index(Ferramentas::array_pesquisa($desenho_data, 'id', $id), ['caminho']);
                 $nome = Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($desenho_data, 'id', $id), ['nome']));
-           
+
                 $ultima_barra_invertida = strrpos($caminho, 'i061n');
-          
+
                 // Dividir a string em duas partes
                 $caminho_diretorio = substr($caminho, 0, $ultima_barra_invertida);
                 $nome_arquivo = substr($caminho, $ultima_barra_invertida);
-          
+
                 // Criar o array resultante
                 $array_resultante = [$caminho_diretorio, $nome_arquivo];
-          
-                $caminho = str_replace(["ci083ni061n", "wli074ndesenhos", "i061n"], ["c:/", "wl_desenhos", "/"], $array_resultante[0]) . '/' . Ferramentas::decodificador($array_resultante[1]);
-                $caminho = str_replace("//", "/", $caminho);
+
+                $caminho = str_replace(["ci083ni061n", "wli074ndesenhos", "i061n", "i074n"], ["c:/", "wl_desenhos", "/", "_"], $array_resultante[0]) . '/' . Ferramentas::decodificador($array_resultante[1]);
+                $caminho = preg_replace('/\/+/', '/', $caminho);
 
                 // Obtém a extensão do arquivo a partir do nome
                 $extencao = '.' . Ferramentas::get_type_file($nome);
@@ -353,6 +363,12 @@ class ListaCortePost extends Ferramentas
                 ];
                 $desenho->update($id, $updat);
 
+
+
+
+
+                Ferramentas::re_ordenar_oredem_desenho();
+
                 if (!isset($data["mensagem"])) {
                     // Se não houver mensagens de erro, retorna uma resposta bem-sucedida
                     $data = [
@@ -377,8 +393,6 @@ class ListaCortePost extends Ferramentas
                 return $this->response->setJSON($data);
                 //desenho ja cortado 
             }
-
-
         }
     }
 
@@ -485,7 +499,6 @@ class ListaCortePost extends Ferramentas
                                 'status' => Ferramentas::codificador('mudança de prioridade')
                             ];
                             $lista_temp->insert($data);
-
                         }
                     }
                 } else {
@@ -498,7 +511,6 @@ class ListaCortePost extends Ferramentas
                     $lista_temp->insert($data);
                 }
             }
-
         }
         return $diasPassados;
     }
@@ -521,221 +533,336 @@ class ListaCortePost extends Ferramentas
     {
         // Verifica se a solicitação é uma chamada AJAX
         if (true) {
+            Ferramentas::re_ordenar_oredem_desenho();
             $status = "pendente";
             $processo = service('request')->getPost('processo');
+
             // Atualiza a prioridade dos desenhos com base em critérios específicos.
             $oi = self::atualiza_prio();
 
             // Inicializa modelos de banco de dados
-            $desenhos = new \App\Models\Desenhos();
-            $prioridade = new \App\Models\Prioridade();
-            $finalidade = new \App\Models\Finalidade();
-            $empresa = new \App\Models\Empresa();
+            $desenhos      = new \App\Models\Desenhos();
+            $prioridade    = new \App\Models\Prioridade();
+            $finalidade    = new \App\Models\Finalidade();
+            $empresa       = new \App\Models\Empresa();
             $empreendimento = new \App\Models\Empreendimentos();
-            $corte = new \App\Models\Corte();
-            $usuario = new \App\Models\Usuarios();
-            $processos = new \App\Models\Processos();
+            $corte         = new \App\Models\Corte();
+            $usuario       = new \App\Models\Usuarios();
+            $processos     = new \App\Models\Processos();
 
-            // Obtém dados do banco de dados
-            $prioridade_data = $prioridade->find();
-            $finalidade_data = $finalidade->find();
-            $empresa_data = $empresa->find();
+            // Obtém dados de outros modelos (essas buscas podem permanecer como estão)
+            $prioridade_data   = $prioridade->find();
+            $finalidade_data   = $finalidade->find();
+            $empresa_data      = $empresa->find();
             $empreendimento_data = $empreendimento->find();
-            $desenhos_data = $desenhos->find();
-            $corte_data = $corte->find();
-            $usuario_data = $usuario->find();
-            $processos_data = $processos->find();
+            $corte_data        = $corte->find();
+            $usuario_data      = $usuario->find();
+            $processos_data    = $processos->find();
 
-            $lista = ""; // Inicializa a lista HTML
-            $lista1 = ''; // Inicializa outra lista HTML
-            $id_temp = 0; // Inicializa um identificador temporário
-            $lista_ids = array(); // Inicializa um array para IDs de desenhos
-            $lista_completa = array(); // Inicializa um array para informações completas de desenhos
-
+            // Inicia variáveis para a geração da lista HTML
+            $lista = "";    // Lista para desenhos em espera ou não em andamento
+            $lista1 = '';   // Lista para desenhos em andamento (status "cortando")
+            $id_temp = 0;   // Identificador temporário para mapeamento
+            $lista_ids = array();
+            $lista_completa = array();
 
             session_start();
-            $corte_data = Ferramentas::array_pesquisa_mult($corte_data, ['ip', 'status'], [Ferramentas::codificador($_SERVER['REMOTE_ADDR']), 'inicio']);
-            $status_desenho = Ferramentas::array_index(Ferramentas::array_pesquisa($desenhos_data,"id",Ferramentas::array_index($corte_data,['id_desenho'])),['status']);
-            if($status_desenho != 'cortando' and $status_desenho != ""){
+
+            // Busca registros de corte a partir de critérios específicos
+            $corte_data = Ferramentas::buscarRegistrosPorCriterios(
+                $corte,
+                ['ip', 'status'],
+                [Ferramentas::codificador($_SERVER['REMOTE_ADDR']), 'inicio']
+            );
+            $status_desenho = "";
+            // Busca registros de corte a partir de critérios específicos
+            foreach ($corte_data as $key => $value) {
+                $status_desenho = Ferramentas::array_index(
+                    Ferramentas::array_pesquisa($desenhos->find(), "id", Ferramentas::array_index($value, ['id_desenho'])),['status']);
+    
+                if ($status_desenho != 'cortando' and $status_desenho != "") {
+                    $update = [
+                        'cortador_fim' => $_SESSION["usuario"],
+                        'data_fim'     => Ferramentas::codificador(date('d/m/Y H:i:s')),
+                        'status'       => 'finalizado'
+                    ];
+                    $corte->update($value['id'], $update);
+                    $corte_data = [];
+
+
+                }
+            }
+
+            if ($status_desenho != 'cortando' and $status_desenho != "") {
                 $update = [
                     'cortador_fim' => $_SESSION["usuario"],
-                    'data_fim' => Ferramentas::codificador(date('d/m/Y H:i:s')),
-                    'status' => 'finalizado'
+                    'data_fim'     => Ferramentas::codificador(date('d/m/Y H:i:s')),
+                    'status'       => 'finalizado'
                 ];
                 $corte->update($corte_data['id'], $update);
                 $corte_data = [];
-            } 
+            }
 
+
+            $desenhos_data = $desenhos
+                ->whereIn('status', [
+                    Ferramentas::codificador('pendente'),
+                    Ferramentas::codificador('cortando')
+                ])
+                ->find();
+
+            $agrupados = [];
+
+            foreach ($desenhos_data as $desenho) {
+                $prioridade = $desenho['prioridade'];
+                $agrupados[$prioridade][] = $desenho;
+            }
+
+            foreach ($agrupados as $prioridade => &$grupo) {
+                usort($grupo, function ($a, $b) {
+                    // Converte 'ordem' para inteiro para garantir a comparação numérica
+                    return intval($a['ordem']) <=> intval($b['ordem']);
+                });
+            }
+            unset($grupo); // boa prática para quebrar a referência
+
+
+
+            
 
 
             if (count($corte_data) != 0) {
-                foreach ($desenhos_data as $key => $value) {
-                    if (Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($processos_data, 'id', $value['processos_id']), ["nome"])) == $processo){
+                foreach ($agrupados as $desenhos)
+                    foreach ($desenhos as $key => $value) {
+                        $tags = explode('/', Ferramentas::decodificador($value['caminho']));
+                        $dataEspecifica_corte = Ferramentas::decodificador(
+                            Ferramentas::array_index(
+                                Ferramentas::array_pesquisa($corte_data, 'id_desenho', $value['id']),
+                                ['data_add']
+                            )
+                        );
 
-                    
-                    // Verifica se o desenho está em estado "corte" ou "cortando"
-                    if ((Ferramentas::decodificador($value['status']) == "pendente" || Ferramentas::decodificador($value['status']) == "cortando")) {
-                        $prioridade_desenho = Ferramentas::array_pesquisa($prioridade_data, 'id', $value['prioridade']);
+                        // Remover os índices de 0 a 5 e o último elemento
+                        $tags = array_slice($tags, 6);
+                        unset($tags[count($tags) - 1]);
+                        $tags = Ferramentas::decodificador(implode(" - ", $tags));
 
-                        // Verifica se o desenho não está em processo de pendente
-                        if ($corte_data['id_desenho'] != $value['id']) {
-                            // Constrói as entradas da lista para desenhos em espera
-                            if (Ferramentas::decodificador($value['status']) == "cortando") {
-                                $lista .= '
-          <tr>
-        
-           <td onclick="prio_modal()" bgcolor="' . Ferramentas::decodificador(Ferramentas::array_index($prioridade_desenho, ['cor'])) . '"><span class="marca_texto">' . Ferramentas::array_index($prioridade_desenho, ['nome']) . '</span></td>
+                        // Filtra pelo processo, comparando o nome do processo
+                        if (Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($processos_data, 'id', $value['processos_id']), ["nome"])) == $processo) {
+                            // Como a consulta já trouxe somente "pendente" e "cortando",
+                            // o teste abaixo sempre será verdadeiro.
+                            if (Ferramentas::decodificador($value['status']) == "pendente" || Ferramentas::decodificador($value['status']) == "cortando") {
 
-           <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($usuario_data, 'id', $value['desenhista']), ['nome'])) . '</td>
-           <td>' . Ferramentas::decodificador(Ferramentas::remove_id_file(Ferramentas::decodificador($value['nome']))) . '</td>
-           <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'id', $value['empresa']), ['nome'])) . '</td>
-           <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($empreendimento_data, 'id', $value['empreendimento']), ['nome'])) . '</td>
-           <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($finalidade_data, 'id', $value['finalidade']), ['nome'])) . '</td>
-           <td>' . Ferramentas::decodificador($value['data_hora_add']) . '</td>
-           <td><button name="cadastarar" type="submit" disabled class="btn btn-outline-dark  btn-lg btn-block"> Cortando... </button></td>
-           <td><button name="cadastarar" type="submit" disabled class="btn btn-outline-dark  btn-lg btn-block"> Confirmar Corte </button></td>
-          </tr>
-          ';
+                                $prioridade_desenho = Ferramentas::array_pesquisa($prioridade_data, 'id', $value['prioridade']);
 
-                            } else {
-                                // Constrói as entradas da lista para desenhos em espera
-                                $lista .= '
-          <tr>
-        
-           <td onclick="prio_modal()" bgcolor="' . Ferramentas::decodificador(Ferramentas::array_index($prioridade_desenho, ['cor'])) . '"><span class="marca_texto">' . Ferramentas::array_index($prioridade_desenho, ['nome']) . '</span></td>
+                                // Se o desenho não está sendo cortado atualmente
+                                if (Ferramentas::array_index($corte_data, [0,'id_desenho']) != $value['id']) {
+                                    if (Ferramentas::decodificador($value['status']) == "cortando") {
+                                        $lista1 .= '
+                                    <tr>
+                                        <td onclick="prio_modal()" bgcolor="' . Ferramentas::decodificador(Ferramentas::array_index($prioridade_desenho, ['cor'])) . '">
+                                            <span class="marca_texto">' . Ferramentas::array_index($prioridade_desenho, ['nome']) . '</span>
+                                        </td>
+                                        <td>' . Ferramentas::array_index($value, ['ordem']) . ' </td>
+                                        <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($usuario_data, 'id', $value['desenhista']), ['nome'])) . '</td>
+                                        <td>' . Ferramentas::decodificador(Ferramentas::remove_id_file(Ferramentas::decodificador($value['nome']))) . '</td>
+                                        <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'id', $value['empresa']), ['nome'])) . '</td>
+                                        <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($empreendimento_data, 'id', $value['empreendimento']), ['nome'])) . '</td>
+                                        <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($finalidade_data, 'id', $value['finalidade']), ['nome'])) . '</td>
+                                        <td>' . $tags . '</td>
+                                        <td>' . Ferramentas::decodificador($value['data_hora_add']) . '</td>
+                                        <td>
+                                            <button name="cadastarar" type="submit" disabled class="btn btn-outline-dark btn-lg btn-block">
+                                                Cortando...
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button name="cadastarar" type="submit" disabled class="btn btn-outline-dark btn-lg btn-block">
+                                                Confirmar Corte
+                                            </button>
+                                        </td>
+                                    </tr>';
+                                    } else {
+                                        $lista .= '
+                                    <tr>
+                                        <td onclick="prio_modal()" bgcolor="' . Ferramentas::decodificador(Ferramentas::array_index($prioridade_desenho, ['cor'])) . '">
+                                            <span class="marca_texto">' . Ferramentas::array_index($prioridade_desenho, ['nome']) . '</span>
+                                        </td>
+                                        <td>' . Ferramentas::array_index($value, ['ordem']) . ' </td>
+                                        <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($usuario_data, 'id', $value['desenhista']),['nome'])) . '</td>
+                                        <td>' . Ferramentas::decodificador(Ferramentas::remove_id_file(Ferramentas::decodificador($value['nome']))) . '</td>
+                                        <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'id', $value['empresa']),['nome'])) . '</td>
+                                        <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($empreendimento_data, 'id', $value['empreendimento']),['nome'])) . '</td>
+                                        <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($finalidade_data, 'id', $value['finalidade']),['nome'])) . '</td>
+                                        <td>' . $tags . '</td>
+                                        <td>' . Ferramentas::decodificador($value['data_hora_add']) . '</td>
+                                        <td>
+                                            <button name="cadastarar" type="submit" disabled class="btn btn-outline-dark btn-lg btn-block">
+                                                Cortar
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button name="cadastarar" type="submit" disabled class="btn btn-outline-dark btn-lg btn-block">
+                                                Confirmar Corte
+                                            </button>
+                                        </td>
+                                    </tr>';
+                                    }
+                                } else {
+                                    // Monta lista para desenhos que estão em andamento (sendo cortados)
+                                    $ultima_barra_invertida = strrpos($value['caminho'], 'i061n');
+                                    $caminho_diretorio = substr($value['caminho'], 0, $ultima_barra_invertida);
+                                    $nome_arquivo = substr($value['caminho'], $ultima_barra_invertida);
+                                    $array_resultante = [$caminho_diretorio, $nome_arquivo];
 
-           <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($usuario_data, 'id', $value['desenhista']), ['nome'])) . '</td>
-           <td>' . Ferramentas::decodificador(Ferramentas::remove_id_file(Ferramentas::decodificador($value['nome']))) . '</td>
-           <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'id', $value['empresa']), ['nome'])) . '</td>
-           <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($empreendimento_data, 'id', $value['empreendimento']), ['nome'])) . '</td>
-           <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($finalidade_data, 'id', $value['finalidade']), ['nome'])) . '</td>
-           <td>' . Ferramentas::decodificador($value['data_hora_add']) . '</td>
-           <td><button name="cadastarar" type="submit" disabled class="btn btn-outline-dark  btn-lg btn-block"> Cortar </button></td>
-           <td><button name="cadastarar" type="submit" disabled class="btn btn-outline-dark  btn-lg btn-block"> Confirmar Corte </button></td>
-          </tr>
-          ';
+                                    $caminho = str_replace(
+                                        ["ci083ni061n", "wli074ndesenhos", "i061n", "i074n"],
+                                        ["c:/", "wl_desenhos", "/", "_"],
+                                        $array_resultante[0]
+                                    ) . '/' . Ferramentas::decodificador($array_resultante[1]);
+                                    $caminho = preg_replace('/\/+/', '/', $caminho);
+                                    $status = "cortando";
+                                    $lista1 .= '
+                                <tr>
+                                    <td onclick="prio_modal()" bgcolor="' . Ferramentas::decodificador(Ferramentas::array_index($prioridade_desenho, ['cor'])) . '">
+                                        <span class="marca_texto">' . Ferramentas::array_index($prioridade_desenho, ['nome']) . '</span>
+                                    </td>
+                                    <td>' . Ferramentas::array_index($value, ['ordem']) . ' </td>
+                                    <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($usuario_data, 'id', $value['desenhista']),['nome'])) . '</td>
+                                    <td>' . Ferramentas::decodificador(Ferramentas::remove_id_file(Ferramentas::decodificador($value['nome']))) . '</td>
+                                    <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'id', $value['empresa']),['nome'])) . '</td>
+                                    <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($empreendimento_data, 'id', $value['empreendimento']),['nome'])) . '</td>
+                                    <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($finalidade_data, 'id', $value['finalidade']),['nome'])) . '</td>
+                                    <td>' . $tags . '</td>
+                                    <td>' . Ferramentas::decodificador($value['data_hora_add']) . '</td>
+                                    <td>
+                                        <button name="cadastarar" type="submit" onclick="cortando(\'' . str_replace(
+                                        ["c:/wl/wl_desenhos/", "/"],
+                                        ["i:/", "\\\\"],
+                                        $caminho
+                                    ) . '\')" class="btn btn-outline-info btn-lg btn-block">
+                                            Cortando...
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <button name="cadastarar" type="submit" onclick="confirmar(\'' . $id_temp . '\',\'' . str_replace("'", "\'", Ferramentas::decodificador($value['nome'])) . '\')" class="btn btn-outline-success btn-lg btn-block">
+                                            Confirmar Corte
+                                        </button>
+                                    </td>
+                                </tr>';
+
+                                    // Armazena informações completas do desenho em andamento
+                                    $value['nome']         = Ferramentas::decodificador($value['nome']);
+                                    $value['cor']          = Ferramentas::decodificador($prioridade_desenho['cor']);
+                                    $value['finalidade']   = Ferramentas::array_index(Ferramentas::array_pesquisa($finalidade_data, 'id', $value['finalidade']), ["nome"]);
+                                    $value['empresa']      = Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'id', $value['empresa']), ["nome"]);
+                                    $value['empreendimento'] = Ferramentas::array_index(Ferramentas::array_pesquisa($empreendimento_data, 'id', $value['empreendimento']), ["nome"]);
+                                    $value['data_hora_add'] = Ferramentas::decodificador($value['data_hora_add']);
+                                    $value['prioridade']    = Ferramentas::decodificador($prioridade_desenho['nome']);
+                                    $lista_ids[$id_temp]   = $value['id'];
+                                    $value['id']           = $id_temp;
+                                    $lista_completa[$id_temp] = $value;
+                                    $id_temp++;
+                                }
                             }
-                        } else {
-                            // Constrói as entradas da lista para desenhos em andamento
-
-
-                            $ultima_barra_invertida = strrpos($value['caminho'], 'i061n');
-
-                            // Dividir a string em duas partes
-                            $caminho_diretorio = substr($value['caminho'], 0, $ultima_barra_invertida);
-                            $nome_arquivo = substr($value['caminho'], $ultima_barra_invertida);
-
-                            // Criar o array resultante
-                            $array_resultante = [$caminho_diretorio, $nome_arquivo];
-
-                            $caminho = str_replace(["ci083ni061n", "wli074ndesenhos", "i061n"], ["c:/", "wl_desenhos", "/"], $array_resultante[0]) . '/' . Ferramentas::decodificador($array_resultante[1]);
-                            str_replace("//", "/", $caminho);
-                            $status = "cortando";
-                            $lista1 .= '
-                            <tr>
-                          
-                             <td onclick="prio_modal()" bgcolor="' . Ferramentas::decodificador(Ferramentas::array_index($prioridade_desenho, ['cor'])) . '"><span class="marca_texto">' . Ferramentas::array_index($prioridade_desenho, ['nome']) . '</span></td>
-
-                             <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($usuario_data, 'id', $value['desenhista']), ['nome'])) . '</td>
-
-                             <td>' . Ferramentas::decodificador(Ferramentas::remove_id_file(Ferramentas::decodificador($value['nome']))) . '</td>
-                             <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'id', $value['empresa']), ['nome'])) . '</td>
-                            <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($empreendimento_data, 'id', $value['empreendimento']), ['nome'])) . '</td>
-                                <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($finalidade_data, 'id', $value['finalidade']), ['nome'])) . '</td><td>' . Ferramentas::decodificador($value['data_hora_add']) . '</td>
-                             <td><button name="cadastarar" type="submit" onclick="cortando(\'' . str_replace(["c:/wl/wl_desenhos/", "/"], ["i:/", "\\\\"], $caminho) . '\')" class="btn btn-outline-info btn-lg btn-block"> Cortando... </button></td>
-                             <td><button name="cadastarar" type="submit" onclick="confirmar(\'' . $id_temp . '\',\'' . str_replace("'", "\'", Ferramentas::decodificador($value['nome'])) . '\')" class="btn btn-outline-success btn-lg btn-block"> Confirmar Corte </button></td>
-                            </tr>
-                            ';
-
-                            // Prepara informações detalhadas sobre o desenho em andamento
-                            $value['nome'] = Ferramentas::decodificador($value['nome']);
-                            $value['cor'] = Ferramentas::decodificador($prioridade_desenho['cor']);
-                            $value['finalidade'] = Ferramentas::array_index(Ferramentas::array_pesquisa($finalidade_data, 'id', $value['finalidade']), ["nome"]);
-                            $value['empresa'] = Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'id', $value['empresa']), ["nome"]);
-                            $value['empreendimento'] = Ferramentas::array_index(Ferramentas::array_pesquisa($empreendimento_data, 'id', $value['empreendimento']), ["nome"]);
-                            $value['data_hora_add'] = Ferramentas::decodificador($value['data_hora_add']);
-                            $value['prioridade'] = Ferramentas::decodificador($prioridade_desenho['nome']);
-                            $lista_ids[$id_temp] = $value['id'];
-                            $value['id'] = $id_temp;
-                            $lista_completa[$id_temp] = $value;
-                            $id_temp++;
                         }
                     }
-
-                }}
-
-
-
-
-
-
-
-
-
-
             } else {
+                // Caso não haja registros em $corte_data, percorre todos os desenhos filtrados
                 foreach ($desenhos_data as $key => $value) {
-                    if (Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($processos_data, 'id', $value['processos_id']), ["nome"])) == $processo){
-                    
-                    // Verifica se o desenho está em estado "pendente"
-                    if (Ferramentas::decodificador($value['status']) == "pendente") {
-                        $prioridade_desenho = Ferramentas::array_pesquisa($prioridade_data, 'id', $value['prioridade']);
+                    $tags = explode('/', Ferramentas::decodificador($value['caminho']));
+                    $dataEspecifica_corte = Ferramentas::decodificador(
+                        Ferramentas::array_index(
+                            Ferramentas::array_pesquisa($corte_data, 'id_desenho', $value['id']),
+                            ['data_add']
+                        )
+                    );
 
-                        // Constrói as entradas da lista para desenhos em espera
-                        $lista .= '
-      <tr>
-    
-       
-       <td onclick="prio_modal()" bgcolor="' . Ferramentas::decodificador(Ferramentas::array_index($prioridade_desenho, ['cor'])) . '"><span class="marca_texto">' . Ferramentas::array_index($prioridade_desenho, ['nome']) . '</span></td>
+                    // Remover os índices de 0 a 5 e o último elemento
+                    $tags = array_slice($tags, 6);
+                    unset($tags[count($tags) - 1]);
+                    $tags = implode(" - ", $tags);
 
-       <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($usuario_data, 'id', $value['desenhista']), ['nome'])) . '</td>
+                    if (Ferramentas::decodificador(Ferramentas::array_index(
+                            Ferramentas::array_pesquisa($processos_data, 'id', $value['processos_id']),
+                            ["nome"]
+                        )
+                    ) == $processo) {
+                        if (Ferramentas::decodificador($value['status']) == "pendente") {
+                            $prioridade_desenho = Ferramentas::array_pesquisa($prioridade_data, 'id', $value['prioridade']);
 
-       <td>' . Ferramentas::decodificador(Ferramentas::decodificador($value['nome'])) . '</td>
-       <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'id', $value['empresa']), ['nome'])) . '</td>
-           <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($empreendimento_data, 'id', $value['empreendimento']), ['nome'])) . '</td>
-           <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($finalidade_data, 'id', $value['finalidade']), ['nome'])) . '</td><td>' . Ferramentas::decodificador($value['data_hora_add']) . '</td>
-       <td><button name="cadastarar" type="submit" onclick="cortar(\'' . $id_temp . '\')" class="btn btn-outline-info btn-lg btn-block"> Cortar </button></td>
-       <td><button name="cadastarar" type="submit" onclick="confirmar(\'' . $id_temp . '\',\'' . Ferramentas::decodificador($value['nome']) . '\')" class="btn btn-outline-success btn-lg btn-block"> Confirmar Corte </button></td>
-      </tr>
-      ';
+                            $lista .= '
+                            <tr>
+                                <td onclick="prio_modal()" bgcolor="' . Ferramentas::decodificador(Ferramentas::array_index($prioridade_desenho, ['cor'])) . '">
+                                    <span class="marca_texto">' . Ferramentas::array_index($prioridade_desenho, ['nome']) . '</span>
+                                </td>
+                                <td>' . Ferramentas::array_index($value, ['ordem']) . ' </td>
+                                <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($usuario_data, 'id', $value['desenhista']),['nome'])) . '</td>
+                                <td>' . Ferramentas::decodificador(Ferramentas::decodificador($value['nome'])) . '</td>
+                                <td>' . Ferramentas::decodificador(
+                                Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'id', $value['empresa']),['nome'])) . '</td>
+                                <td>' . Ferramentas::decodificador(
+                                Ferramentas::array_index(Ferramentas::array_pesquisa($empreendimento_data, 'id', $value['empreendimento']),['nome'])) . '</td>
+                                <td>' . Ferramentas::decodificador(
+                                Ferramentas::array_index(Ferramentas::array_pesquisa($finalidade_data, 'id', $value['finalidade']),['nome'])) . '</td>
+                                <td>' . $tags . '</td>
+                                <td>' . Ferramentas::decodificador($value['data_hora_add']) . '</td>
+                                <td>
+                                    <button name="cadastarar" type="submit" onclick="cortar(\'' . $id_temp . '\')" class="btn btn-outline-info btn-lg btn-block">
+                                        Cortar
+                                    </button>
+                                </td>
+                                <td>
+                                    <button name="cadastarar" type="submit" onclick="confirmar(\'' . $id_temp . '\',\'' . Ferramentas::decodificador($value['nome']) . '\')" class="btn btn-outline-success btn-lg btn-block">
+                                        Confirmar Corte
+                                    </button>
+                                </td>
+                            </tr>';
 
-                        // Prepara informações detalhadas sobre o desenho em espera
-                        $value['nome'] = Ferramentas::decodificador($value['nome']);
-                        $value['cor'] = Ferramentas::decodificador($prioridade_desenho['cor']);
-                        $value['finalidade'] = Ferramentas::array_index(Ferramentas::array_pesquisa($finalidade_data, 'id', $value['finalidade']), ["nome"]);
-                        $value['empresa'] = Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'id', $value['empresa']), ["nome"]);
-                        $value['empreendimento'] = Ferramentas::array_index(Ferramentas::array_pesquisa($empreendimento_data, 'id', $value['empreendimento']), ["nome"]);
-                        $value['data_hora_add'] = Ferramentas::decodificador($value['data_hora_add']);
-                        $value['prioridade'] = Ferramentas::decodificador($prioridade_desenho['nome']);
-                        $lista_ids[$id_temp] = $value['id'];
-                        $value['id'] = $id_temp;
-                        $lista_completa[$id_temp] = $value;
-                        $id_temp++;
-                    } else if (Ferramentas::decodificador($value['status']) == "cortando") {
-                        // Constrói as entradas da lista para desenhos em andamento
-
-                        $prioridade_desenho = Ferramentas::array_pesquisa($prioridade_data, 'id', $value['prioridade']);
-                        $lista .= '
-      <tr>
-    
-       <td onclick="prio_modal()" bgcolor="' . Ferramentas::decodificador(Ferramentas::array_index($prioridade_desenho, ['cor'])) . '"><span class="marca_texto">' . Ferramentas::array_index($prioridade_desenho, ['nome']) . '</span></td>
-
-       <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($usuario_data, 'id', $value['desenhista']), ['nome'])) . '</td>
-
-       <td>' . Ferramentas::decodificador(Ferramentas::decodificador($value['nome'])) . '</td>
-       <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'id', $value['empresa']), ['nome'])) . '</td>
-           <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($empreendimento_data, 'id', $value['empreendimento']), ['nome'])) . '</td>
-           <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($finalidade_data, 'id', $value['finalidade']), ['nome'])) . '</td><td>' . Ferramentas::decodificador($value['data_hora_add']) . '</td>
-       <td><button name="cadastarar" type="submit" disabled class="btn btn-outline-dark  btn-lg btn-block"> Cortando... </button></td>
-       <td><button name="cadastarar" type="submit" disabled class="btn btn-outline-dark  btn-lg btn-block"> Confirmar Corte </button></td>
-         </tr>
-      ';
+                            $value['nome']         = Ferramentas::decodificador($value['nome']);
+                            $value['cor']          = Ferramentas::decodificador($prioridade_desenho['cor']);
+                            $value['finalidade']   = Ferramentas::array_index(Ferramentas::array_pesquisa($finalidade_data, 'id', $value['finalidade']), ["nome"]);
+                            $value['empresa']      = Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'id', $value['empresa']), ["nome"]);
+                            $value['empreendimento'] = Ferramentas::array_index(Ferramentas::array_pesquisa($empreendimento_data, 'id', $value['empreendimento']), ["nome"]);
+                            $value['data_hora_add'] = Ferramentas::decodificador($value['data_hora_add']);
+                            $value['prioridade']    = Ferramentas::decodificador($prioridade_desenho['nome']);
+                            $lista_ids[$id_temp]   = $value['id'];
+                            $value['id']           = $id_temp;
+                            $lista_completa[$id_temp] = $value;
+                            $id_temp++;
+                        } else if (Ferramentas::decodificador($value['status']) == "cortando") {
+                            $prioridade_desenho = Ferramentas::array_pesquisa($prioridade_data, 'id', $value['prioridade']);
+                            $lista .= '
+                            <tr>
+                                <td onclick="prio_modal()" bgcolor="' . Ferramentas::decodificador(Ferramentas::array_index($prioridade_desenho, ['cor'])) . '">
+                                    <span class="marca_texto">' . Ferramentas::array_index($prioridade_desenho, ['nome']) . '</span>
+                                </td>
+                                <td>' . Ferramentas::array_index($value, ['ordem']) . ' </td>
+                                <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($usuario_data, 'id', $value['desenhista']),['nome'])) . '</td>
+                                <td>' . Ferramentas::decodificador(Ferramentas::decodificador($value['nome'])) . '</td>
+                                <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'id', $value['empresa']),['nome'])) . '</td>
+                                <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($empreendimento_data, 'id', $value['empreendimento']),['nome'])) . '</td>
+                                <td>' . Ferramentas::decodificador(
+                                Ferramentas::array_index(Ferramentas::array_pesquisa($finalidade_data, 'id', $value['finalidade']),['nome'])) . '</td>
+                                <td>' . Ferramentas::decodificador($value['data_hora_add']) . '</td>
+                                <td>' . $tags . '</td>
+                                <td>
+                                    <button name="cadastarar" type="submit" disabled class="btn btn-outline-dark btn-lg btn-block">
+                                        Cortando...
+                                    </button>
+                                </td>
+                                <td>
+                                    <button name="cadastarar" type="submit" disabled class="btn btn-outline-dark btn-lg btn-block">
+                                        Confirmar Corte
+                                    </button>
+                                </td>
+                            </tr>';
+                        }
                     }
-                }}
+                }
             }
 
             // Define variáveis de sessão para manter informações entre solicitações AJAX
-       
             $_SESSION["lista"] = $lista_ids;
             $_SESSION["lista_completa"] = $lista_completa;
 
@@ -748,17 +875,18 @@ class ListaCortePost extends Ferramentas
                 $som = $alteracao_data["depois"];
             }
 
-            // Resposta AJAX que inclui a lista gerada e mensagens de atualização de prioridade
+            // Resposta AJAX com a lista gerada e demais informações
             $data = [
-                "lista" => $lista1 . $lista,
+                "lista"  => $lista1 . $lista,
                 "status" => $status,
-                "som" => $som,
-                '1' =>  $processo
+                "som"    => $som,
+                '1'      => $corte_data
             ];
 
             return $this->response->setJSON($data);
         }
     }
+
 
     /**
      * Inicia o processo de corte de um desenho e fornece o caminho do arquivo.
@@ -809,85 +937,99 @@ class ListaCortePost extends Ferramentas
             // Criar o array resultante
             $array_resultante = [$caminho_diretorio, $nome_arquivo];
 
-            $caminho = str_replace(["ci083ni061n", "wli074ndesenhos", "i061n"], ["c:/", "wl_desenhos", "/"], $array_resultante[0]) . '/' . Ferramentas::decodificador($array_resultante[1]);
-            str_replace("//", "/", $caminho);
+            $caminho = str_replace(["ci083ni061n", "wli074ndesenhos", "i061n", "i074n"], ["c:/", "wl_desenhos", "/", "_"], $array_resultante[0]) . '/' . Ferramentas::decodificador($array_resultante[1]);
+            $caminho = preg_replace('/\/+/', '/', $caminho);
             // Retorna o caminho do arquivo que está sendo cortado
             $data = [
                 "caminho" => preg_replace('/\\\\+/', '\\\\', str_replace(["c:/wl/wl_desenhos/", "/"], ["i:/", "\\\\"], $caminho))
             ];
             return $this->response->setJSON($data);
-
         }
     }
 
-      /**
-   * Lista desenhos com status de "corte" ou "cortando".
-   *
-   * Esta função retorna uma lista de desenhos que possuem status "corte" ou "cortando".
-   *
-   * @return 
-   */
-  function lista_corte_desenhista() //rece um post via ajax pedindo para listar os usuarios
-  {
-    if ($this->request->isAJAX()) {
-      $desenhos = new \App\Models\Desenhos(); // Instancia o modelo de dados para desenhos.
+    /**
+     * Lista desenhos com status de "corte" ou "cortando".
+     *
+     * Esta função retorna uma lista de desenhos que possuem status "corte" ou "cortando".
+     *
+     * @return 
+     */
+    function lista_corte_desenhista() //rece um post via ajax pedindo para listar os usuarios
+    {
+        if ($this->request->isAJAX()) {
+            Ferramentas::re_ordenar_oredem_desenho();
+            $desenhos = new \App\Models\Desenhos(); // Instancia o modelo de dados para desenhos.
 
-      $prioridade = new \App\Models\Prioridade(); // Instancia o modelo de dados para prioridades.
+            $prioridade = new \App\Models\Prioridade(); // Instancia o modelo de dados para prioridades.
 
 
-      $empresa = new \App\Models\Empresa(); // Instancia o modelo de dados para empresas.
+            $empresa = new \App\Models\Empresa(); // Instancia o modelo de dados para empresas.
 
-      $empreendimento = new \App\Models\Empreendimentos(); // Instancia o modelo de dados para empreendimentos.
-      $finalidade = new \App\Models\Finalidade(); // Instancia o modelo de dados para finalidades.
+            $empreendimento = new \App\Models\Empreendimentos(); // Instancia o modelo de dados para empreendimentos.
+            $finalidade = new \App\Models\Finalidade(); // Instancia o modelo de dados para finalidades.
 
-      $usuario = new \App\Models\Usuarios();
-      $cortado = new \App\Models\Corte();
-      $processos = new \App\Models\Processos();
+            $usuario = new \App\Models\Usuarios();
+            $cortado = new \App\Models\Corte();
 
-      $prioridade_data = $prioridade->find(); // Recupera dados de prioridades do banco de dados.
-      $finalidade_data = $finalidade->find(); // Recupera dados de finalidades do banco de dados.
-      $empreendimento_data = $empreendimento->find(); // Recupera dados de empreendimentos do banco de dados.
-      $empresa_data = $empresa->find(); // Recupera dados de empresas do banco de dados.
-      $desenhos_data = $desenhos->find(); // Recupera dados de desenhos do banco de dados.
-      $usuario_data = $usuario->find();
-      $cortado_data = $cortado->find();
-      $processos_data = $processos->find();
+            $processos = new \App\Models\Processos();
 
-      $lista = "";
+            $prioridade_data = $prioridade->find(); // Recupera dados de prioridades do banco de dados.
+            $finalidade_data = $finalidade->find(); // Recupera dados de finalidades do banco de dados.
+            $empreendimento_data = $empreendimento->find(); // Recupera dados de empreendimentos do banco de dados.
+            $empresa_data = $empresa->find(); // Recupera dados de empresas do banco de dados.
 
-      foreach ($desenhos_data as $key => $value) {
-        // Verifica se o status do desenho é "pendente" ou "cortando".
-        if (Ferramentas::decodificador($value['status']) == "pendente" || Ferramentas::decodificador($value['status']) == 'cortando') {
-          // Obtém a prioridade do desenho.
-          $prioridade_desenho = Ferramentas::array_pesquisa($prioridade_data, 'id', $value['prioridade']);
-          $dataEspecifica_corte = Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($cortado_data, 'id_desenho', $value['id']), ['data_add']));
+            $usuario_data = $usuario->find();
+            $cortado_data = $cortado->find();
+            $processos_data = $processos->find();
 
-          // Constrói a linha da tabela com informações do desenho.
-          $lista .= '
+            $lista = "";
+            $desenhos_data = $desenhos
+                ->whereIn('status', [
+                    Ferramentas::codificador('pendente'),
+                    Ferramentas::codificador('cortando')
+                ])
+                ->find();
+
+            foreach ($desenhos_data as $key => $value) {
+
+                // Obtém a prioridade do desenho.
+                $prioridade_desenho = Ferramentas::array_pesquisa($prioridade_data, 'id', $value['prioridade']);
+                $dataEspecifica_corte = Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($cortado_data, 'id_desenho', $value['id']), ['data_add']));
+                $tags = explode('/', Ferramentas::decodificador($value['caminho']));
+                $dataEspecifica_corte = Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($cortado_data, 'id_desenho', $value['id']), ['data_add']));
+
+                // Remover os índices de 0 a 5
+                $tags = array_slice($tags, 6);
+
+                // Remover o último elemento
+                unset($tags[count($tags) - 1]);
+                $tags = implode(" - ", $tags);
+                // Constrói a linha da tabela com informações do desenho.
+                $lista .= '
       <tr>
 
        
        <td bgcolor="' . Ferramentas::decodificador(Ferramentas::array_index($prioridade_desenho, ['cor'])) . '"><span class="marca_texto">' . Ferramentas::array_index($prioridade_desenho, ['nome']) . '</span></td>
+       <td>' . Ferramentas::array_index($value, ['ordem']) . ' </td>
        <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($processos_data, 'id', $value['processos_id']), ["nome"])) . '</td>
        <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($usuario_data, 'id', $value['desenhista']), ['nome'])) . '</td>
        <td>' . Ferramentas::decodificador(Ferramentas::remove_id_file(Ferramentas::decodificador($value['nome']))) . '</td>
        <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'id', $value['empresa']), ['nome'])) . '</td>
        <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($empreendimento_data, 'id', $value['empreendimento']), ['nome'])) . '</td>
        <td>' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($finalidade_data, 'id', $value['finalidade']), ['nome'])) . '</td>
+       <td>' . $tags . '</td>
        <td>' . Ferramentas::decodificador($value['status']) . '</td>
-       <td>'. $dataEspecifica_corte .'</td>
+       <td>' . $dataEspecifica_corte . '</td>
        <td>' . Ferramentas::decodificador($value['data_hora_add']) . '</td>
       </tr>
       ';
+            }
 
+            $data = [
+                "lista" => $lista
+            ];
+
+            return $this->response->setJSON($data);
         }
-      }
-
-      $data = [
-        "lista" => $lista
-      ];
-
-      return $this->response->setJSON($data);
     }
-  }
 }

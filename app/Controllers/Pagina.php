@@ -52,7 +52,7 @@ class Pagina extends BaseController
 
         // Configuração da página da lista de corte.
         $array_view['titulo'] = "Lista de Corte";
-        $array_view['array_titulo_lista'] = array("Prioridade","Processos", "Desenhista", "Nome do arquivo", "Empresa/Cliente", "Empreendimento", "Finalidade", "Subpastas", "status","Inicio Corte", "Data de Envio", "","");
+        $array_view['array_titulo_lista'] = array("Prioridade","Ordem","Processos", "Desenhista", "Nome do arquivo", "Empresa/Cliente", "Empreendimento", "Finalidade", "Subpastas", "status","Inicio Corte", "Data de Envio", "","");
         $array_view['menu'] = $this->menu($menu_box, $menu_select);
 
         // Exibe a página da lista de corte.
@@ -206,7 +206,7 @@ class Pagina extends BaseController
 
         // Configuração da página de lista de desenhos.
         $array_view['titulo'] = "Lista de Todos os desenhos";
-        $array_view['array_titulo_lista'] = array("Prioridade", "Desenhista", "Nome do arquivo", "Empresa/Cliente", "Empreendimento", "Finalidade", "Status","Data de Corte", "Data de Envio", "", "");
+        $array_view['array_titulo_lista'] = array("Prioridade", "Desenhista", "Nome do arquivo", "Empresa/Cliente", "Empreendimento", "Finalidade","Subpastas", "Status","Data de Corte", "Data de Envio", "", "");
         $array_view['menu'] = $this->menu($menu_box, $menu_select);
 
         // Exibe a lista de desenho.
@@ -733,7 +733,7 @@ class Pagina extends BaseController
         $template = "lista";
 
         $array_view['titulo'] = "Lista de Corte";
-        $array_view['array_titulo_lista'] = array("Prioridade", "Desenhista", "Nome do arquivo", "Empresa/Cliente", "Empreendimento", "Finalidade", "Data de Envio", "Cortar", "Confirmar Corte");
+        $array_view['array_titulo_lista'] = array("Prioridade","Ordem", "Desenhista", "Nome do arquivo", "Empresa/Cliente", "Empreendimento", "Finalidade","Subpastas", "Data de Envio", "Cortar", "Confirmar Corte");
         $array_view['menu'] = $this->menu('', $menu_select);
 
         // Exibe a visualização usando o modelo especificado
@@ -789,7 +789,7 @@ class Pagina extends BaseController
         $template = "lista";
 
         $array_view['titulo'] = "Lista de Corte";
-        $array_view['array_titulo_lista'] = array("Prioridade","Processos", "Desenhista", "Nome do arquivo", "Empresa/Cliente", "Empreendimento", "Finalidade", "status","Inicio Corte", "Data de Envio");
+        $array_view['array_titulo_lista'] = array("Prioridade","Ordem","Processos", "Desenhista", "Nome do arquivo", "Empresa/Cliente", "Empreendimento", "Finalidade","Subpastas", "Status","Inicio Corte", "Data de Envio");
         $array_view['menu'] = $this->menu($menu_box, $menu_select);
 
         // Renderiza a visualização "lista" com os dados do array $array_view

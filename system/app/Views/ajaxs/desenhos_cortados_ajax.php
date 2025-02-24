@@ -1,0 +1,402 @@
+<script>
+
+// Cria o HTML do botão
+var buttonHTML = `
+<div id="container" style="display: inline-flex; align-items: center;">
+    <select id="processos_desenho" class="custom-select" style="height: 35px">
+        <option value="">Processos</option>
+    </select>
+    <button type="button" class="btn btn-outline-primary" id="pesquisar" style="margin-left: 10px;">
+        Pesquisar
+    </button>
+</div>
+
+
+`;
+
+
+processos = "";
+  function processo_lista() {
+    $.ajax({
+      url: '<?= base_url('public/processos_lista') ?>',
+      type: "POST",
+      dataType: "json", // Indicar que o retorno é em formato JSON
+
+      async: false, // Define a requisição como síncrona
+
+      success: function (response) {
+
+        processos = response.lista;
+
+
+        if (!document.getElementById('processos_desenho'))
+          return;
+        // Seleciona o elemento <select> onde as opções serão adicionadas
+        var selectElement = document.getElementById('processos_desenho');
+
+        // Limpa as opções existentes no <select>
+        selectElement.innerHTML = '';
+        // Cria a opção padrão e adiciona ao início do <select>
+        var defaultOption = document.createElement('option');
+        defaultOption.value = '';
+        defaultOption.textContent = 'Processos';
+        selectElement.appendChild(defaultOption);
+        // Itera sobre cada processo na lista
+        processos.forEach(function (processo) {
+          // Cria um novo elemento <option>
+          var optionElement = document.createElement('option');
+          optionElement.value = processo.nome; // Define o nome do processo como o valor da opção
+          optionElement.textContent = processo.nome; // Define o nome do processo como o texto da opção
+
+          // Adiciona a nova opção ao <select>
+          selectElement.appendChild(optionElement);
+        });
+      }
+    });
+  }
+
+
+
+
+  
+// Seleciona o campo de data final
+var dataFinal = document.getElementById("dataInicial");
+
+// Insere o HTML do botão depois do campo de data final
+dataFinal.insertAdjacentHTML("afterend", buttonHTML);
+
+// Adiciona o evento de clique para chamar a função lista()
+document.getElementById("pesquisar").addEventListener("click", pesquisar);
+processo_lista();
+
+data = "";
+data1 = "";
+processo_nome = "";
+function pesquisar(){
+  data = document.getElementById('dataInicial').value;
+  data1 = document.getElementById('dataFinal').value;
+  processo_nome = document.getElementById("processos_desenho").value;
+  if(processo_nome == ''){
+    alert_personalizado("Processos", 'Escolha um Processos.');
+    return;
+  }
+  lista();
+}
+
+
+  lista_temp = "";
+  function lista() {
+    document.getElementById("pesquisar").disabled = true;
+    $.ajax({
+      url: '<?= base_url('public/desenhos_cortados') ?>',
+      type: "POST",
+      dataType: "json", // Indicar que o retorno é em formato JSON
+      data: { data: data, data1: data1, processo: processo_nome },
+      success: function (response) {
+
+        if (response.lista != lista_temp) {
+          $('#example1').DataTable().destroy();
+
+
+
+
+
+          // Recriar e configurar a tabela DataTable
+
+          var div = $('#minhaDiv');
+
+          div.load(location.href + ' #minhaDiv');
+          // Selecione o elemento <tbody> pelo seu ID
+          var lista = document.getElementById('lista');
+          // Substitua o conteúdo do elemento <tbody> com o novo HTML
+          lista.innerHTML = response.lista;
+          $(function () {
+            $("#example1").DataTable({
+
+              "responsive": true, "lengthChange": false, "autoWidth": false,
+              "buttons": ["colvis"],
+              "language": {
+                "decimal": "",
+                "emptyTable": "Sem dados disponíveis",
+                "infoEmpty": "Mostrando de 0 até 0 de 0 registos",
+                "infoFiltered": "(filtrado de MAX registos no total)",
+                "infoPostFix": "",
+                "thousands": ",",
+                "lengthMenu": " MENU",
+                "loadingRecords": "A carregar dados...",
+                "processing": "A processar...",
+                "search": "Buscar:",
+                "zeroRecords": "Não foram encontrados resultados",
+                "paginate": {
+                  "first": "Primeiro",
+                  "last": "Último",
+                  "next": "Seguinte",
+                  "previous": "Anterior"
+
+                },
+                "aria": {
+                  "sortAscending": ": clique para ordenar ascendente (ASC)",
+                  "sortDescending": ": clique para ordenar descendente (DESC)"
+                }
+              }
+
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
+          });
+
+
+
+          lista_temp = response.lista;
+        }
+        document.getElementById("pesquisar").disabled = false;
+
+      }
+    });
+  }
+  // Executar função ao abrir o site
+  document.addEventListener('DOMContentLoaded', lista);
+
+
+
+  const dataInicialInput = document.getElementById('dataInicial');
+  const dataFinalInput = document.getElementById('dataFinal');
+
+
+
+
+
+
+
+
+
+
+  function subistituir_desenho_modal(id) {
+
+    $.ajax({
+      url: '<?= base_url('public/subistituir_desenho_modal') ?>',
+      type: "POST",
+      dataType: "json", // Indicar que o retorno é em formato JSON
+      data: { id: id },
+      success: function (response) {
+
+
+
+
+
+        console.log(response);
+        var botao_confirmar_modal = document.getElementById('botao_confirmar_modal');
+
+
+        botao_confirmar_modal.innerHTML = "Confirmar";
+        var modal_titulo = document.getElementById('modal_titulo');
+        var modal_bory = document.getElementById('modal_bory');
+        modal_titulo.textContent = "Subistiruit desenho";
+
+
+
+
+
+        modal_bory.innerHTML = '';
+
+
+
+
+
+
+        divElemnt = document.createElement("div");
+        divElemnt.classList.add("form-group");
+        inputElement = document.createElement("input");
+        inputElement.type = 'text';
+        inputElement.id = 'novo_nome_arquivo';
+        inputElement.classList.add("form-control");
+        inputElement.value = response.nome;
+        divElemnt.innerHTML = '';
+        labelElement = document.createElement("label");
+        labelElement.textContent = "Novo nome do arquivo";
+        divElemnt.appendChild(labelElement);
+        divElemnt.appendChild(inputElement);
+        modal_bory.appendChild(divElemnt);//coloca o input name no modal
+
+
+        divElemnt = document.createElement("div");
+        divElemnt.classList.add("form-group");
+        inputElement = document.createElement("input");
+        inputElement.type = 'file';
+        inputElement.id = 'novo_arquvivo';
+        inputElement.classList.add("form-control");
+        divElemnt.innerHTML = '';
+        labelElement = document.createElement("label");
+        labelElement.textContent = "Novo arquivo";
+        divElemnt.appendChild(labelElement);
+        divElemnt.appendChild(inputElement);
+        modal_bory.appendChild(divElemnt);//coloca o input name no modal
+
+        botao_confirmar_modal.onclick =
+          function () {
+            var nome = document.getElementById("novo_nome_arquivo").value;
+            var fileInput = document.getElementById('novo_arquvivo');
+            var file = fileInput.files[0];
+
+            $.ajax({
+              url: '<?= base_url('public/desenho_novo_nome') ?>',
+              type: "POST",
+              dataType: "json",
+              data: { nome: nome },
+              success: function (response) {
+                console.log(response);
+              }
+            });
+
+            var formData = new FormData();
+            formData.append('file', file);
+
+            $.ajax({
+              url: '<?= base_url('public/subistituir_desenho') ?>',
+              type: "POST",
+              dataType: "json",
+              processData: false,
+              contentType: false,
+              data: formData,
+              success: function (response) {
+                console.log(response);
+                fecharModal();
+                if (response.ok == 'true') {
+                  fecharModal();
+                  alert_certo('Desenho', response.mensagem);
+                } else {
+                  fecharModal();
+                  alert_personalizado('Desenho', response.mensagem);
+                }
+              },
+              error: function (xhr, status, error) {
+
+                confirmarModal();
+              }
+            });
+          };
+
+
+        mostrarModal();
+
+      }
+
+    });
+
+
+  }
+
+  function confirmarModal() {
+    var nome = document.getElementById("novo_nome_arquivo").value;
+    var fileInput = document.getElementById('novo_arquvivo');
+    var file = fileInput.files[0];
+    console.log(fileInput.files);
+    $.ajax({
+      url: '<?= base_url('public/desenho_novo_nome') ?>',
+      type: "POST",
+      dataType: "json", // Indicar que o retorno é em formato JSON
+
+      data: { nome: nome },
+
+      success: function (response) {
+        console.log(response);
+      }
+    });
+
+
+    var formData = new FormData();
+    formData.append('file', file);
+    $.ajax({
+      url: '<?= base_url('public/subistituir_desenho') ?>',
+      type: "POST",
+      dataType: "json", // Indicar que o retorno é em formato JSON
+      processData: false,
+      contentType: false,
+      data: formData,
+
+      success: function (response) {
+        console.log(response);
+        fecharModal();
+        if (response.ok == 'true') {
+
+          fecharModal();
+
+          alert_certo('Desenho', response.mensagem);
+        } else {
+
+
+          fecharModal();
+          alert_personalizado('Desenho', response.mensagem);
+        }
+
+
+      }
+    });
+
+  }
+
+
+
+
+  function recolocar_desenho(id) {
+    if(mostrarConfirmacao("Recolocar desenho?")){
+    $.ajax({
+      url: '<?= base_url('public/recolocar_desenho') ?>',
+      type: "POST",
+      dataType: "json", // Indicar que o retorno é em formato JSON
+     // async: true,
+
+      data: { id: id },
+
+      success: function (response) {
+        console.log(response);
+        lista();
+
+
+
+      }
+    });
+   
+  }
+  }
+
+  function mostrarConfirmacao(texto = '') {
+    // Exibe a caixa de diálogo de confirmação e armazena a resposta em uma variável
+    var resposta = window.confirm(texto);
+    // Verifica a resposta e faz algo com ela
+    return resposta;
+ 
+}
+
+
+
+
+
+
+
+
+
+
+  function alert_certo(titulo, bory) {
+    $(document).Toasts('create', {
+      class: 'bg-success',
+      title: titulo,
+      subtitle: 'Subtitle',
+      autohide: true,
+      delay: 5000,
+      body: bory
+    });
+  }
+  function alert_personalizado(titulo, bory) {
+    $(document).Toasts('create', {
+      class: 'bg-danger',
+      title: titulo,
+      subtitle: 'Subtitle',
+      autohide: true,
+      delay: 13000,
+      body: bory
+    });
+  }
+
+    // // Repetir função a cada segundo
+    // setInterval(lista, 5000);
+</script>

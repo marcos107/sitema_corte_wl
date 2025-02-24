@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 	<link rel="shortcut icon" href="<?php echo base_url(); ?>public/wl.ico" >
+	<link rel="stylesheet"
+	href="<?php echo base_url(); ?>public/assets/font.css">
 </head>
+
+<script src="<?php echo base_url(); ?>public/assets/jquery-3.1.1.min.js">
+    </script>
 <style>
-@import url("https://fonts.googleapis.com/css?family=Fira+Sans");
 
 html,body {
 	position: relative;
@@ -284,8 +288,7 @@ html,body {
 	font-size: 14px;
 }
 </style>
-<script src="https://code.jquery.com/jquery-3.1.1.min.js">
-    </script>
+
 <body>
 <div class="form-structor">
 	<div class="signup">
