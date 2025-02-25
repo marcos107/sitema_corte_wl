@@ -79,7 +79,6 @@ class Api extends Ferramentas
                 $key_ping,              // Nonce (12 bytes)
                 $key_validacao          // Chave secreta (32 bytes)
             );
-
             // 32 bits aleatórios (4 bytes)
             $random_bits_32 = random_bytes(4); // Adiciona 32 bits aleatórios para confundir
 
