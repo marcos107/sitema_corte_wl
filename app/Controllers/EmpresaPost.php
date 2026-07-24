@@ -112,10 +112,9 @@ class EmpresaPost extends Ferramentas
 
         $empresa_data = $db->find();
 
-        if (count(Ferramentas::array_pesquisa($empresa_data, 'nome', Ferramentas::codificador($empresa))) == 0) { // verifica se o id do mepreendimento com o mesmo nome é igual ao id 
+        if (count(Ferramentas::array_pesquisa($empresa_data, 'nome',  Ferramentas::norma_lizar_str($empresa))) == 0) { // verifica se o id do mepreendimento com o mesmo nome é igual ao id 
           $date = [
-            'nome' => Ferramentas::codificador($empresa),
-            'data_hora_add' => Ferramentas::codificador(date('d/m/Y H:i')),
+            'nome' => Ferramentas::norma_lizar_str($empresa),
             'status' => 'ativo',
             'individuo' => $_SESSION['usuario']
 
@@ -135,9 +134,8 @@ class EmpresaPost extends Ferramentas
         foreach ($violacao as $key => $value) {
 
           $data = [
-            "individuo" => $_SESSION["usuario"],
-            "causa" => $value,
-            "data" => Ferramentas::codificador(date('d/m/Y H:i'))
+            "usuario_id" => $_SESSION["usuario"],
+            "causa" => $value
 
           ];
 
@@ -182,9 +180,9 @@ class EmpresaPost extends Ferramentas
       }
 
       $data = [
-        "nome" => Ferramentas::decodificador($lista['nome']),
+        "nome" => ($lista['nome']),
         "desenho" => $ok,
-        "status" => Ferramentas::decodificador($lista['status'])
+        "status" => ($lista['status'])
 
 
       ];
@@ -239,36 +237,45 @@ class EmpresaPost extends Ferramentas
         if (count(Ferramentas::array_pesquisa($desenhos_data, 'empresa', $lista['id'])) == 0) {
 
 
-          if (count(Ferramentas::array_pesquisa($empresa_data, 'nome', Ferramentas::codificador($empresa))) == 0) { // verifica se o id do mepreendimento com o mesmo nome é igual ao id 
+          if (count(Ferramentas::array_pesquisa($empresa_data, 'nome',  Ferramentas::norma_lizar_str($empresa))) == 0) { // verifica se o id do mepreendimento com o mesmo nome é igual ao id 
             // Verifica se o nome da empresa não está em uso
-            $alteracao = new \App\Models\Alteracoes();
+          $alteracao = new \App\Models\Alteracoes();
 
-            $data = [
-              "individuo" => $_SESSION["usuario"],
+          $alteracao->insertWithDetails(
+            [
+              "usuario_id" => $_SESSION["usuario"],
               "id_item" => $id,
-              "antes" => Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'id', $id), ['nome']),
-              "depois" => Ferramentas::codificador($empresa),
               "item" => "empresa",
-              "info_mais" => "nome",
-              "data_add" => Ferramentas::codificador(date('d/m/Y H:i'))
 
-            ];
-            $alteracao->insert($data);
+            ],
+            [
+              [
+                "valor_antes" => Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'id', $id), ['nome']),
+                "valor_depois" => $empresa,
+                "campo" => "nome"
+              ]
+            ]
+          );
+
+
+
+
+            
+
 
 
 
 
             $date = [
-              'nome' => Ferramentas::codificador($empresa),
-
+              'nome' => Ferramentas::norma_lizar_str($empresa),
 
             ];
 
 
             $db->update($id, $date);
             $ok = true;
-          } else if (count(Ferramentas::array_pesquisa_mult($empresa_data, ['id', 'nome'], [$id, Ferramentas::codificador($empresa)])) != 0) {
-            $msg["Modificar"] = 'Não foi feita nenhuma alteração.';
+          } else if (count(Ferramentas::array_pesquisa_mult($empresa_data, ['id', 'nome'], [$id, ($empresa)])) != 0) {
+            $msg["Modificar"] = 'Nenhum item foi modificado.';
           } else {
             $msg["Empresa"] = 'Nome da empresa já existente';
             $violacao[] = "empresa_update empresa já existente";
@@ -286,9 +293,8 @@ class EmpresaPost extends Ferramentas
         foreach ($violacao as $key => $value) {
 
           $data = [
-            "individuo" => $_SESSION["usuario"],
-            "causa" => $value,
-            "data" => Ferramentas::codificador(date('d/m/Y H:i'))
+            "usuario_id" => $_SESSION["usuario"],
+            "causa" => $value
 
           ];
 
@@ -328,7 +334,10 @@ class EmpresaPost extends Ferramentas
 
         // Verifica se a empresa está ativa
         if ($value['status'] == 'ativo') {
-          $temp['empresa'] = Ferramentas::decodificador($value['nome']);
+          $temp['empresa'] = Ferramentas::decodificador((string) ($value['nome'] ?? ''));
+          if ($temp['empresa'] === '') {
+            $temp['empresa'] = (string) ($value['nome'] ?? '');
+          }
 
           $lista[] = $temp;
         }
@@ -349,6 +358,53 @@ class EmpresaPost extends Ferramentas
     }
   }
 
+  /**
+   * Lista empresas ativas no formato simples para filtros de tela.
+   * Retorno: [{id, nome}], onde id e um token temporario da sessao.
+   */
+  public function empresas_lista()
+  {
+    if (!$this->request->isAJAX()) {
+      return $this->response->setJSON(['lista' => []]);
+    }
+
+    if (session_status() === PHP_SESSION_NONE) {
+      session_start();
+    }
+
+    $empresa = new \App\Models\Empresa();
+    $empresa_data = $empresa
+      ->select('id, nome, status')
+      ->where('status', 'ativo')
+      ->orderBy('nome', 'ASC')
+      ->findAll();
+
+    $tokens = $_SESSION['desenho_empresa_tokens'] ?? [];
+    $lista = [];
+    foreach ($empresa_data as $value) {
+      $empresaId = (int) ($value['id'] ?? 0);
+      $token = array_search($empresaId, $tokens, true);
+      if ($token === false) {
+        $token = bin2hex(random_bytes(16));
+        $tokens[$token] = $empresaId;
+      }
+
+      $nome = trim((string) Ferramentas::decodificador((string) ($value['nome'] ?? '')));
+      if ($nome === '') {
+        $nome = (string) ($value['nome'] ?? '');
+      }
+
+      $lista[] = [
+        'id' => $token,
+        'nome' => $nome
+      ];
+    }
+
+    $_SESSION['desenho_empresa_tokens'] = $tokens;
+
+    return $this->response->setJSON(['lista' => $lista]);
+  }
+
     /**
    * Função lista_empresa()
    *
@@ -366,7 +422,7 @@ class EmpresaPost extends Ferramentas
     // Cria uma lista de nomes de empresas decodificados
     foreach ($funcao_data as $key => $value) { //cria a lista 
       if ($value['status'] == 'ativo') {
-        $lista[] = Ferramentas::decodificador($value['nome']);
+        $lista[] = ($value['nome']);
       }
     }
     usort($lista, function ($a, $b) {
