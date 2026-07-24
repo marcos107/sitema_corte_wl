@@ -225,7 +225,8 @@ class ListaCortePost extends Ferramentas
                     $botaoAcao = '<div class="wl-row-actions"><button type="button" disabled class="btn btn-sm btn-outline-dark wl-row-action-main">Processando...</button></div>';
                     $botaoConfirmar = '<div class="wl-row-actions wl-row-actions--confirm"><button type="button" disabled class="btn btn-sm btn-outline-dark">Finalizar</button></div>';
                 } else {
-                    $botaoAcao = '<div class="wl-row-actions"><button type="button" onclick="baixar(' . $indice . ')" class="btn btn-sm btn-primary wl-row-action-main">Ver</button></div>';
+                    $rotuloBaixarProjeto = htmlspecialchars($this->rotuloBotaoBaixarProjeto($row['arquivos_count'] ?? 0, $row['arquivos_baixados_count'] ?? 0), ENT_QUOTES, 'UTF-8');
+                    $botaoAcao = '<div class="wl-row-actions"><button type="button" onclick="baixar(' . $indice . ')" class="btn btn-sm btn-primary wl-row-action-main">' . $rotuloBaixarProjeto . '</button></div>';
                     $botaoConfirmar = '<div class="wl-row-actions wl-row-actions--confirm"><button name="cadastarar" type="button" onclick="confirmar_ind(\'' . $indice . '\',\'\')" class="btn btn-sm btn-success">Finalizar</button></div>';
                 }
             } elseif ($statusNormalizado === 'processando') {
@@ -485,6 +486,41 @@ class ListaCortePost extends Ferramentas
     private function processoExibeDimensaoDxf($nomeProcesso): bool
     {
         return $this->normalizarNomeProcessoToken($nomeProcesso) === 'CORTE_LASER';
+    }
+
+    private function rotuloBotaoBaixarProjeto($totalArquivos, $arquivosBaixados): string
+    {
+        $total = max(0, (int) $totalArquivos);
+        $baixados = max(0, (int) $arquivosBaixados);
+
+        if ($total > 0 && $baixados >= $total) {
+            return 'Baixado';
+        }
+
+        if ($baixados > 0) {
+            return 'Baixando';
+        }
+
+        return 'Ver';
+    }
+
+    private function contarArquivosBaixadosProjeto(array $arquivosProjeto): array
+    {
+        $total = count($arquivosProjeto);
+        $baixados = 0;
+
+        foreach ($arquivosProjeto as $arquivoProjeto) {
+            if (!is_array($arquivoProjeto)) {
+                continue;
+            }
+
+            $marcador = trim((string) ($arquivoProjeto['marcador'] ?? '0'));
+            if ($marcador !== '' && $marcador !== '0') {
+                $baixados++;
+            }
+        }
+
+        return [$total, $baixados];
     }
 
     private function montarMenuAcoesLista(array $itens): string
@@ -1447,6 +1483,68 @@ class ListaCortePost extends Ferramentas
             : null;
     }
 
+    private function campoProcessosExiste(string $campo): bool
+    {
+        static $cache = [];
+
+        if (!array_key_exists($campo, $cache)) {
+            $cache[$campo] = \Config\Database::connect()->fieldExists($campo, 'processos');
+        }
+
+        return (bool) $cache[$campo];
+    }
+
+    private function normalizarIdsFinalidadesDependencia($valor): array
+    {
+        if (is_array($valor)) {
+            $partes = $valor;
+        } else {
+            $partes = preg_split('/[,\-\s]+/', (string) ($valor ?? '')) ?: [];
+        }
+
+        $ids = [];
+        foreach ($partes as $parte) {
+            $id = (int) trim((string) $parte);
+            if ($id > 0) {
+                $ids[$id] = $id;
+            }
+        }
+
+        return array_values($ids);
+    }
+
+    private function dependenciaObrigatoriaProcesso(array $processo): bool
+    {
+        if (!$this->campoProcessosExiste('dependencia_obrigatoria')) {
+            return true;
+        }
+
+        $valor = strtolower(trim((string) ($processo['dependencia_obrigatoria'] ?? '1')));
+        return !in_array($valor, ['0', 'false', 'nao', 'opcional'], true);
+    }
+
+    private function dependenciaOpcionalPorFinalidade(array $processo, array $itensProjeto): bool
+    {
+        if (!$this->campoProcessosExiste('dependencia_finalidades_opcionais')) {
+            return false;
+        }
+
+        $finalidadesOpcionais = $this->normalizarIdsFinalidadesDependencia($processo['dependencia_finalidades_opcionais'] ?? '');
+        if ($finalidadesOpcionais === []) {
+            return false;
+        }
+
+        $finalidadesMap = array_fill_keys($finalidadesOpcionais, true);
+        foreach ($itensProjeto as $itemProjeto) {
+            $finalidadeId = (int) ($itemProjeto['finalidade_id'] ?? 0);
+            if ($finalidadeId > 0 && isset($finalidadesMap[$finalidadeId])) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     private function registrarAlteracaoCancelamentoCorte(int $desenhoId, int $corteId, array $desenhoAntes, array $corteAntes, string $justificativa): bool
     {
         $usuarioId = (int) ($_SESSION['usuario'] ?? 0);
@@ -1545,23 +1643,6 @@ class ListaCortePost extends Ferramentas
         }
 
         $statusProjetoAntes = strtolower(trim((string) ($projetoPai['status'] ?? '')));
-        if ($statusProjetoAntes !== 'finalizado') {
-            $projetoModel->update($projetoPaiId, ['status' => 'finalizado']);
-            $this->registrarAlteracaoStatusDependenciaPai(
-                'projeto',
-                $projetoPaiId,
-                [[
-                    'campo' => 'projeto.status',
-                    'valor_antes' => $statusProjetoAntes,
-                    'valor_depois' => 'finalizado',
-                ]],
-                [
-                    'origem_contexto' => $origemContexto,
-                    'projeto_id' => $projetoPaiId,
-                    'projeto_descricao' => trim((string) ($projetoPai['descricao'] ?? '')),
-                ]
-            );
-        }
 
         $projetoDesenhoRows = (new \App\Models\Projeto_desenho())
             ->select('desenho_id')
@@ -1577,7 +1658,6 @@ class ListaCortePost extends Ferramentas
         }
 
         if ($desenhoIds === []) {
-            Ferramentas::sincronizarNovasOrdens();
             return;
         }
 
@@ -1586,31 +1666,108 @@ class ListaCortePost extends Ferramentas
             ->whereIn('id', array_values($desenhoIds))
             ->findAll();
 
+        if (count($desenhosPai) !== count($desenhoIds)) {
+            return;
+        }
+
+        $this->iniciarSessaoSeNecessario();
+        $usuarioId = (int) ($_SESSION['usuario'] ?? 0);
+        $ip = $this->ipAtualRequisicao();
+        $db = \Config\Database::connect();
+        $db->transStart();
+        $alteracoesDesenhos = [];
+
         foreach ($desenhosPai as $desenhoPai) {
             $desenhoId = (int) ($desenhoPai['id'] ?? 0);
             if ($desenhoId <= 0) {
-                continue;
+                $db->transRollback();
+                return;
             }
 
-            $statusDesenhoAntes = strtolower(trim((string) ($desenhoPai['status'] ?? '')));
-            if ($this->statusContaComoConcluidoDependencia($statusDesenhoAntes)) {
-                continue;
+            $resultadoCorte = $this->garantirCorteFinalizadoParaDesenhoDependente($desenhoPai, $usuarioId, $ip);
+            if ($resultadoCorte === null) {
+                $db->transRollback();
+                return;
             }
 
-            $desenhoModel->update($desenhoId, ['status' => 'pronto']);
-            $this->registrarAlteracaoStatusDependenciaPai(
-                'desenho',
-                $desenhoId,
-                [[
+            if ($resultadoCorte['alterado']) {
+                $alteracoesDesenhos[] = [
+                    'desenho' => $desenhoPai,
+                    'resultado' => $resultadoCorte,
+                ];
+            }
+        }
+
+        $projetoAlterado = false;
+        if ($statusProjetoAntes !== 'finalizado') {
+            $projetoAlterado = $projetoModel->update($projetoPaiId, ['status' => 'finalizado']);
+            if (!$projetoAlterado) {
+                $db->transRollback();
+                return;
+            }
+        }
+
+        $db->transComplete();
+        if (!$db->transStatus()) {
+            return;
+        }
+
+        foreach ($alteracoesDesenhos as $alteracaoDesenho) {
+            $desenhoPai = $alteracaoDesenho['desenho'];
+            $resultadoCorte = $alteracaoDesenho['resultado'];
+            $desenhoId = (int) ($desenhoPai['id'] ?? 0);
+            $detalhes = [];
+            if ($resultadoCorte['status_alterado']) {
+                $detalhes[] = [
                     'campo' => 'desenho.status',
-                    'valor_antes' => $statusDesenhoAntes,
+                    'valor_antes' => $resultadoCorte['status_antes'],
                     'valor_depois' => 'pronto',
+                ];
+            }
+            if ($resultadoCorte['corte_alterado']) {
+                $detalhes[] = [
+                    'campo' => 'desenho.corte_id',
+                    'valor_antes' => (string) ($desenhoPai['corte_id'] ?? ''),
+                    'valor_depois' => (string) $resultadoCorte['corte_id'],
+                ];
+            }
+            if ($resultadoCorte['data_conclusao_alterada']) {
+                $detalhes[] = [
+                    'campo' => 'corte.data_end',
+                    'valor_antes' => $resultadoCorte['data_conclusao_antes'],
+                    'valor_depois' => $resultadoCorte['data_conclusao_depois'],
+                ];
+            }
+
+            if ($detalhes !== []) {
+                $this->registrarAlteracaoStatusDependenciaPai(
+                    'desenho',
+                    $desenhoId,
+                    $detalhes,
+                    [
+                        'origem_contexto' => $origemContexto,
+                        'projeto_id' => $projetoPaiId,
+                        'desenho_id' => $desenhoId,
+                        'desenho_nome' => Ferramentas::remove_id_file($this->decodificarValorAuditoria($desenhoPai['nome'] ?? '')),
+                        'corte_id' => $resultadoCorte['corte_id'],
+                    ]
+                );
+            }
+        }
+
+        if ($projetoAlterado) {
+            $this->registrarAlteracaoStatusDependenciaPai(
+                'projeto',
+                $projetoPaiId,
+                [[
+                    'campo' => 'projeto.status',
+                    'valor_antes' => $statusProjetoAntes,
+                    'valor_depois' => 'finalizado',
                 ]],
                 [
                     'origem_contexto' => $origemContexto,
                     'projeto_id' => $projetoPaiId,
-                    'desenho_id' => $desenhoId,
-                    'desenho_nome' => Ferramentas::remove_id_file($this->decodificarValorAuditoria($desenhoPai['nome'] ?? '')),
+                    'projeto_descricao' => trim((string) ($projetoPai['descricao'] ?? '')),
                 ]
             );
         }
@@ -1630,24 +1787,56 @@ class ListaCortePost extends Ferramentas
             return;
         }
 
-        $statusAntes = strtolower(trim((string) ($desenhoPai['status'] ?? '')));
-        if ($this->statusContaComoConcluidoDependencia($statusAntes)) {
+        $this->iniciarSessaoSeNecessario();
+        $db = \Config\Database::connect();
+        $db->transStart();
+        $resultadoCorte = $this->garantirCorteFinalizadoParaDesenhoDependente(
+            $desenhoPai,
+            (int) ($_SESSION['usuario'] ?? 0),
+            $this->ipAtualRequisicao()
+        );
+        if ($resultadoCorte === null) {
+            $db->transRollback();
             return;
         }
 
-        $desenhoModel->update($desenhoPaiId, ['status' => 'pronto']);
+        $db->transComplete();
+        if (!$db->transStatus() || !$resultadoCorte['alterado']) {
+            return;
+        }
+
+        $detalhes = [];
+        if ($resultadoCorte['status_alterado']) {
+            $detalhes[] = [
+                'campo' => 'desenho.status',
+                'valor_antes' => $resultadoCorte['status_antes'],
+                'valor_depois' => 'pronto',
+            ];
+        }
+        if ($resultadoCorte['corte_alterado']) {
+            $detalhes[] = [
+                'campo' => 'desenho.corte_id',
+                'valor_antes' => (string) ($desenhoPai['corte_id'] ?? ''),
+                'valor_depois' => (string) $resultadoCorte['corte_id'],
+            ];
+        }
+        if ($resultadoCorte['data_conclusao_alterada']) {
+            $detalhes[] = [
+                'campo' => 'corte.data_end',
+                'valor_antes' => $resultadoCorte['data_conclusao_antes'],
+                'valor_depois' => $resultadoCorte['data_conclusao_depois'],
+            ];
+        }
+
         $this->registrarAlteracaoStatusDependenciaPai(
             'desenho',
             $desenhoPaiId,
-            [[
-                'campo' => 'desenho.status',
-                'valor_antes' => $statusAntes,
-                'valor_depois' => 'pronto',
-            ]],
+            $detalhes,
             [
                 'origem_contexto' => $origemContexto,
                 'desenho_id' => $desenhoPaiId,
                 'desenho_nome' => Ferramentas::remove_id_file($this->decodificarValorAuditoria($desenhoPai['nome'] ?? '')),
+                'corte_id' => $resultadoCorte['corte_id'],
             ]
         );
 
@@ -1745,6 +1934,66 @@ class ListaCortePost extends Ferramentas
     private function ipAtualRequisicao(): string
     {
         return (string) ($_SERVER['REMOTE_ADDR'] ?? '');
+    }
+
+    private function cortePossuiDataConclusao(?array $corte): bool
+    {
+        $dataConclusao = trim((string) ($corte['data_end'] ?? ''));
+        return $dataConclusao !== '' && $dataConclusao !== '0000-00-00 00:00:00';
+    }
+
+    /**
+     * A conclusao por dependencia nao passa pela tela de corte. Garanta o corte
+     * antes de marcar o desenho pai como pronto para preservar a data final.
+     */
+    private function garantirCorteFinalizadoParaDesenhoDependente(array $desenho, int $usuarioId, string $ip): ?array
+    {
+        $desenhoId = (int) ($desenho['id'] ?? 0);
+        if ($desenhoId <= 0) {
+            return null;
+        }
+
+        $statusAntes = strtolower(trim($this->normalizarStatusTexto($desenho['status'] ?? '')));
+        $corteIdAntes = (int) ($desenho['corte_id'] ?? 0);
+        $corteModel = new \App\Models\Corte();
+        $corteAntes = $corteIdAntes > 0 ? $corteModel->find($corteIdAntes) : null;
+        $corteSemConclusao = !$this->cortePossuiDataConclusao(is_array($corteAntes) ? $corteAntes : null);
+        $corteId = $corteIdAntes;
+
+        if ($corteSemConclusao) {
+            $corteId = $this->registrarCorteFinalizado($desenho, $usuarioId, $ip);
+            if ($corteId === null) {
+                return null;
+            }
+        }
+
+        $dadosAtualizacao = [];
+        $statusAlterado = !$this->statusContaComoConcluidoDependencia($statusAntes);
+        if ($statusAlterado) {
+            $dadosAtualizacao['status'] = 'pronto';
+        }
+        if ($corteId !== $corteIdAntes) {
+            $dadosAtualizacao['corte_id'] = $corteId;
+        }
+
+        if ($dadosAtualizacao !== []) {
+            $ok = (new \App\Models\Desenhos())->update($desenhoId, $dadosAtualizacao);
+            if (!$ok) {
+                return null;
+            }
+        }
+
+        $corteDepois = $corteId > 0 ? $corteModel->find($corteId) : null;
+        return [
+            'alterado' => $corteSemConclusao || $dadosAtualizacao !== [],
+            'status_alterado' => $statusAlterado,
+            'status_antes' => $statusAntes,
+            'corte_alterado' => $corteId !== $corteIdAntes,
+            'corte_id' => $corteId,
+            'data_conclusao_alterada' => $corteSemConclusao,
+            'data_conclusao_antes' => (string) ($corteAntes['data_end'] ?? ''),
+            'data_conclusao_depois' => (string) ($corteDepois['data_end'] ?? ''),
+        ];
     }
 
     private function registrarCorteFinalizado(array $desenho, int $usuarioId, string $ip): ?int
@@ -1903,6 +2152,9 @@ class ListaCortePost extends Ferramentas
         $this->iniciarSessaoSeNecessario();
 
         $indice = $this->request->getPost('id');
+        $modoFinalizacao = strtolower(trim((string) $this->request->getPost('modo_finalizacao')));
+        $finalizarDireto = in_array($modoFinalizacao, ['finalizar_direto', 'direto', 'sem_continuacao'], true);
+        $criarContinuacao = in_array($modoFinalizacao, ['criar_continuacao', 'continuacao', 'dependencia'], true);
         $itensProjeto = $this->obterProjetoDaSessaoPorIndice($indice);
         if ($itensProjeto === []) {
             return $this->response->setStatusCode(422)->setJSON([
@@ -1931,13 +2183,33 @@ class ListaCortePost extends Ferramentas
             : null;
 
         if (is_array($processoDependencia) && !empty($processoDependencia['id'])) {
-            $_SESSION['processo_dependencia'] = $itensProjeto;
+            $dependenciaNome = $this->decodificarValorAuditoria($processoDependencia['nome'] ?? '');
+            $dependenciaOpcional = is_array($processoOrigem)
+                && (!$this->dependenciaObrigatoriaProcesso($processoOrigem) || $this->dependenciaOpcionalPorFinalidade($processoOrigem, $itensProjeto));
 
-            return $this->response->setJSON([
-                'ok' => true,
-                'dependencia' => $this->decodificarValorAuditoria($processoDependencia['nome'] ?? ''),
-                'tipo' => (string) ($processoDependencia['input'] ?? ''),
-            ]);
+            if ($finalizarDireto && !$dependenciaOpcional) {
+                $finalizarDireto = false;
+            }
+
+            if (!$finalizarDireto) {
+                if ($dependenciaOpcional && !$criarContinuacao) {
+                    return $this->response->setJSON([
+                        'ok' => true,
+                        'requer_escolha_finalizacao' => true,
+                        'dependencia' => $dependenciaNome,
+                        'tipo' => (string) ($processoDependencia['input'] ?? ''),
+                        'mensagem' => 'Escolha se a Arte Final sera finalizada direto ou se deve criar uma tarefa de continuacao.',
+                    ]);
+                }
+
+                $_SESSION['processo_dependencia'] = $itensProjeto;
+
+                return $this->response->setJSON([
+                    'ok' => true,
+                    'dependencia' => $dependenciaNome,
+                    'tipo' => (string) ($processoDependencia['input'] ?? ''),
+                ]);
+            }
         }
 
         unset($_SESSION['processo_dependencia']);
@@ -2573,6 +2845,7 @@ class ListaCortePost extends Ferramentas
                 $projetoAtual = is_array($linhaProjeto['projeto'] ?? null) ? $linhaProjeto['projeto'] : [];
                 $desenhoLinha = is_array($linhaProjeto['desenho'] ?? null) ? $linhaProjeto['desenho'] : [];
                 $todosDesenhosProjeto = is_array($linhaProjeto['todos_desenhos'] ?? null) ? $linhaProjeto['todos_desenhos'] : [];
+                [$totalArquivosProjeto, $arquivosBaixadosProjeto] = $this->contarArquivosBaixadosProjeto($todosDesenhosProjeto);
                 $finalidadeNome = trim((string) ($desenhoLinha['finalidade_nome'] ?? ''));
 
                 if ($finalidadePesquisa !== '' && $finalidadeNome !== $finalidadePesquisa) {
@@ -2586,7 +2859,8 @@ class ListaCortePost extends Ferramentas
                     $botaoAcao = '<div class="wl-row-actions"><button type="button" disabled class="btn btn-sm btn-outline-dark wl-row-action-main">Processando...</button></div>';
                     $botaoConfirmar = '<div class="wl-row-actions wl-row-actions--confirm"><button type="button" disabled class="btn btn-sm btn-outline-dark">Finalizar</button></div>';
                 } else {
-                    $botaoAcao = '<div class="wl-row-actions"><button type="button" onclick="baixar(' . $indiceLista . ')" class="btn btn-sm btn-primary wl-row-action-main">Ver</button></div>';
+                    $rotuloBaixarProjeto = htmlspecialchars($this->rotuloBotaoBaixarProjeto($totalArquivosProjeto, $arquivosBaixadosProjeto), ENT_QUOTES, 'UTF-8');
+                    $botaoAcao = '<div class="wl-row-actions"><button type="button" onclick="baixar(' . $indiceLista . ')" class="btn btn-sm btn-primary wl-row-action-main">' . $rotuloBaixarProjeto . '</button></div>';
                     $botaoConfirmar = '<div class="wl-row-actions wl-row-actions--confirm"><button name="cadastarar" type="button" onclick="confirmar_ind(\'' . $indiceLista . '\',\'\')" class="btn btn-sm btn-success">Finalizar</button></div>';
                 }
 
@@ -2748,7 +3022,7 @@ class ListaCortePost extends Ferramentas
 
                     // Remover o ÃƒÆ’Ã‚Âºltimo elemento
                     unset($tags[count($tags) - 1]);
-                    $tags = implode(" - ", $tags);
+                    $tags = implode(" . ", $tags);
 
 
 
@@ -2843,6 +3117,7 @@ class ListaCortePost extends Ferramentas
                         ->where('projeto_id', $value['id'])
                         ->orderBy('data_add', 'ASC')   // opcional: garantir o ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œprimeiroÃƒÂ¢Ã¢â€šÂ¬Ã‚Â por data
                         ->findAll();
+                    [$totalArquivosProjeto, $arquivosBaixadosProjeto] = $this->contarArquivosBaixadosProjeto($projeto_desenhos_todos);
 
                     $d = (new \App\Models\Desenhos())
                         ->select("
@@ -2884,7 +3159,8 @@ class ListaCortePost extends Ferramentas
                     $cBtn = '<div class="wl-row-actions"><button type="button" disabled class="btn btn-sm btn-outline-dark wl-row-action-main">Processando...</button></div>';
                     $confBtn = '<div class="wl-row-actions wl-row-actions--confirm"><button type="button" disabled class="btn btn-sm btn-outline-dark">Finalizar</button></div>';
                 } else {
-                    $cBtn = '<div class="wl-row-actions"><button type="button" onclick="baixar(' . $i . ')" class="btn btn-sm btn-primary wl-row-action-main">Ver</button></div>';
+                    $rotuloBaixarProjeto = htmlspecialchars($this->rotuloBotaoBaixarProjeto($totalArquivosProjeto, $arquivosBaixadosProjeto), ENT_QUOTES, 'UTF-8');
+                    $cBtn = '<div class="wl-row-actions"><button type="button" onclick="baixar(' . $i . ')" class="btn btn-sm btn-primary wl-row-action-main">' . $rotuloBaixarProjeto . '</button></div>';
                     $confBtn = '<div class="wl-row-actions wl-row-actions--confirm"><button name="cadastarar" type="button" onclick="confirmar_ind(\'' . $i . '\',\'\')" class="btn btn-sm btn-success">Finalizar</button></div>';
                 }
 
@@ -3104,7 +3380,10 @@ public function ver_desenho()
             // if ($_SESSION['confirmar_corte_proc']) {
             //     return;
             // } 
-            $array = $this->obterProjetoDaSessaoPorIndice($id);
+            $projetoIdPost = (int) service('request')->getPost('projeto_id');
+            $array = $projetoIdPost > 0
+                ? $this->buscarItensProjetoPorId($projetoIdPost)
+                : $this->obterProjetoDaSessaoPorIndice($id);
             if (!is_array($array) || $array === []) {
                 return $this->response->setJSON([
                     'ok' => false,
@@ -3112,7 +3391,7 @@ public function ver_desenho()
                 ]);
             }
 
-            $projetoId = (int) ($array[0]['projeto_id'] ?? 0);
+            $projetoId = $projetoIdPost > 0 ? $projetoIdPost : (int) ($array[0]['projeto_id'] ?? 0);
             $contextoProjeto = $this->obterContextoProjetoPorId($projetoId);
             $_SESSION["baixar_arquivo_tudo"] = [];
             $_SESSION["baixar_arquivo"] = [];
@@ -3289,8 +3568,11 @@ public function ver_desenho()
         }
 
         $id = service('request')->getPost('id');
+        $projetoIdPost = (int) service('request')->getPost('projeto_id');
         $this->iniciarSessaoSeNecessario();
-        $contexto = $this->obterContextoProjetoPorIndice($id);
+        $contexto = $projetoIdPost > 0
+            ? $this->obterContextoProjetoPorId($projetoIdPost)
+            : $this->obterContextoProjetoPorIndice($id);
 
         if (!is_array($contexto)) {
             return $this->response->setStatusCode(404)->setJSON([
