@@ -58,6 +58,10 @@ if ! docker compose version >/dev/null 2>&1; then
     apt-get install -y docker-compose-v2 || apt-get install -y docker-compose-plugin
 fi
 
+if [[ "$owner" != "root" ]] && getent group docker >/dev/null 2>&1; then
+    usermod -aG docker "$owner"
+fi
+
 if [[ ! -d "${project_dir}/site/.git" ]]; then
     if [[ -e "${project_dir}/site" ]]; then
         echo "A pasta site existe, mas nao e um clone Git. Corrija-a antes de continuar."
