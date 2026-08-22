@@ -8,13 +8,14 @@ fi
 
 project_dir="$(cd "$(dirname "$0")" && pwd -P)"
 storage_path="${project_dir}/arquivos"
+docker_data_path="${project_dir}/docker-data"
 server_url=""
 site_branch="linux-site-2026-08-22"
 repo_url="https://github.com/marcos107/sitema_corte_wl.git"
 owner="${SUDO_USER:-root}"
 
 usage() {
-    echo "Uso: sudo ./instalar-linux.sh [--storage /caminho] [--url http://ip:8081/]"
+    echo "Uso: sudo ./instalar-linux.sh [--storage /caminho] [--docker-data /caminho] [--url http://ip:8081/]"
 }
 
 while [[ $# -gt 0 ]]; do
@@ -25,6 +26,10 @@ while [[ $# -gt 0 ]]; do
             ;;
         --url)
             server_url="${2:-}"
+            shift 2
+            ;;
+        --docker-data)
+            docker_data_path="${2:-}"
             shift 2
             ;;
         --help|-h)
@@ -38,14 +43,27 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-if [[ -z "$storage_path" ]]; then
-    echo "Informe um caminho valido para --storage."
+if [[ -z "$storage_path" || -z "$docker_data_path" ]]; then
+    echo "Informe caminhos validos para --storage e --docker-data."
     exit 1
 fi
 
 if ! command -v git >/dev/null 2>&1; then
     apt-get update
     apt-get install -y git
+fi
+
+mkdir -p "$docker_data_path"
+
+if [[ -f /etc/docker/daemon.json ]] && ! grep -Fq "\"data-root\": \"${docker_data_path}\"" /etc/docker/daemon.json; then
+    echo "Ja existe uma configuracao Docker em /etc/docker/daemon.json."
+    echo "Ajuste o data-root manualmente antes de executar este instalador."
+    exit 1
+fi
+
+if [[ ! -f /etc/docker/daemon.json ]]; then
+    mkdir -p /etc/docker
+    printf '{\n  "data-root": "%s"\n}\n' "$docker_data_path" > /etc/docker/daemon.json
 fi
 
 if ! command -v docker >/dev/null 2>&1; then
@@ -57,6 +75,9 @@ if ! docker compose version >/dev/null 2>&1; then
     apt-get update
     apt-get install -y docker-compose-v2 || apt-get install -y docker-compose-plugin
 fi
+
+systemctl enable --now docker
+systemctl restart docker
 
 if [[ "$owner" != "root" ]] && getent group docker >/dev/null 2>&1; then
     usermod -aG docker "$owner"
