@@ -23,7 +23,6 @@ services:
       - ./database/wl.sql:/docker-entrypoint-initdb.d/01-wl.sql:ro
       - ./docker/server/02-linux-paths.sql:/docker-entrypoint-initdb.d/02-linux-paths.sql:ro
       - ./docker/server/03-schema-compat.sql:/docker-entrypoint-initdb.d/03-schema-compat.sql:ro
-      - ./docker/server/04-initial-admin.sql:/docker-entrypoint-initdb.d/04-initial-admin.sql:ro
     networks:
       - wl-rede
     healthcheck:
