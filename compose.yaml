@@ -1,0 +1,78 @@
+name: wl-linux
+
+services:
+  servidor:
+    image: mariadb:10.4
+    container_name: wl-servidor
+    restart: unless-stopped
+    environment:
+      MARIADB_ROOT_PASSWORD: ${WL_DB_ROOT_PASSWORD:-wl_root_teste_2026}
+      MARIADB_DATABASE: ${WL_DB_NAME:-wl}
+      MARIADB_USER: ${WL_DB_USER:-wl}
+      MARIADB_PASSWORD: ${WL_DB_PASSWORD:-wl_teste_2026}
+      TZ: ${WL_TIMEZONE:-America/Sao_Paulo}
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_general_ci
+      - --max-allowed-packet=256M
+      - --skip-name-resolve
+    ports:
+      - "${WL_DB_PORT:-3307}:3306"
+    volumes:
+      - wl-banco:/var/lib/mysql
+      - ./database/wl.sql:/docker-entrypoint-initdb.d/01-wl.sql:ro
+      - ./docker/server/02-linux-paths.sql:/docker-entrypoint-initdb.d/02-linux-paths.sql:ro
+      - ./docker/server/03-schema-compat.sql:/docker-entrypoint-initdb.d/03-schema-compat.sql:ro
+      - ./docker/server/04-initial-admin.sql:/docker-entrypoint-initdb.d/04-initial-admin.sql:ro
+    networks:
+      - wl-rede
+    healthcheck:
+      test: ["CMD-SHELL", "mariadb-admin ping -h 127.0.0.1 -uroot -p\"$${MARIADB_ROOT_PASSWORD}\" --silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 60s
+
+  site:
+    build:
+      context: .
+      dockerfile: docker/site/Dockerfile
+    container_name: wl-site
+    restart: unless-stopped
+    environment:
+      CI_ENVIRONMENT: production
+      WL_BASE_URL: ${WL_BASE_URL:-http://localhost:8081/}
+      WL_DB_HOST: servidor
+      WL_DB_PORT: 3306
+      WL_DB_NAME: ${WL_DB_NAME:-wl}
+      WL_DB_USER: ${WL_DB_USER:-wl}
+      WL_DB_PASSWORD: ${WL_DB_PASSWORD:-wl_teste_2026}
+      WL_STORAGE_ROOT: /srv/wl
+      WL_NAS_SHARE: ${WL_NAS_SHARE:-/srv/wl}
+      TZ: ${WL_TIMEZONE:-America/Sao_Paulo}
+    ports:
+      - "${WL_SITE_PORT:-8081}:80"
+    volumes:
+      - ${WL_STORAGE_HOST_PATH:-/opt/wl/arquivos}:/srv/wl
+      - wl-writable:/var/www/html/writable
+    depends_on:
+      servidor:
+        condition: service_healthy
+    networks:
+      - wl-rede
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://127.0.0.1/ >/dev/null"]
+      interval: 15s
+      timeout: 5s
+      retries: 20
+      start_period: 45s
+
+networks:
+  wl-rede:
+    name: wl-rede
+
+volumes:
+  wl-banco:
+    name: wl-banco
+  wl-writable:
+    name: wl-writable

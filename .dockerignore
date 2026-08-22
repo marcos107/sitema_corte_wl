@@ -1,0 +1,10 @@
+.git
+.gitignore
+database
+nas
+site/writable/cache
+site/writable/logs
+site/writable/session
+site/writable/uploads
+site/tests
+*.md
