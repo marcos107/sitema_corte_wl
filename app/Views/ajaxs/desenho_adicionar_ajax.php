@@ -1164,16 +1164,18 @@
     }
 
     function selects() {
-        empreendimento_select();
         value_prioridade(true);
-        value_tags(true);
-        value_finalidade(true);
-        value_empresa(true);
-
-        value_tags_c(true);
-        value_empresa_c(true);
-        value_finalidade_c(true);
         value_prioridade_c(true);
+
+        $.when(
+            value_finalidade(true),
+            value_empresa(true),
+            value_finalidade_c(true),
+            value_empresa_c(true)
+        ).always(function() {
+            value_tags(true);
+            value_tags_c(true);
+        });
 
     }
 
@@ -1351,7 +1353,7 @@
     lista_temp3 = "";
 
     function value_tags(efeturar = false) {
-        $.ajax({
+        return $.ajax({
             url: '<?= base_url('public/desenho_tag_lista') ?>',
             type: "POST",
             dataType: "json", // Indicar que o retorno é em formato JSON
@@ -1439,7 +1441,7 @@
     var lista_temp4 = '';
 
     function value_finalidade(efeturar = false) {
-        $.ajax({
+        return $.ajax({
             url: '<?= base_url('public/finalidade_lista') ?>',
             type: "POST",
             dataType: "json", // Indicar que o retorno é em formato JSON
@@ -1542,7 +1544,7 @@
     }
 
     function value_empresa(efeturar = false) {
-        $.ajax({
+        return $.ajax({
             url: '<?= base_url('public/empresas_lista') ?>',
             type: "GET",
             dataType: "json", // Indicar que o retorno é em formato JSON
@@ -1991,7 +1993,7 @@
     lista_temp_c5 = "";
 
     function value_empresa_c(efeturar = false) {
-        $.ajax({
+        return $.ajax({
             url: '<?= base_url('public/empresas_lista') ?>',
             type: "GET",
             dataType: "json", // Indicar que o retorno é em formato JSON
@@ -2199,7 +2201,7 @@
     var lista_temp_c4 = '';
 
     function value_finalidade_c(efeturar = false) {
-        $.ajax({
+        return $.ajax({
             url: '<?= base_url('public/finalidade_lista') ?>',
             type: "POST",
             dataType: "json", // Indicar que o retorno é em formato JSON
@@ -2369,7 +2371,7 @@
     lista_temp_c3 = "";
 
     function value_tags_c(efeturar = false) {
-        $.ajax({
+        return $.ajax({
             url: '<?= base_url('public/desenho_tag_lista') ?>',
             type: "POST",
             dataType: "json", // Indicar que o retorno é em formato JSON
@@ -2471,8 +2473,21 @@
     //setInterval(value_tags_c, 15000);
 
     modal_bory_geral = '';
+    var wlSubpastaSelectDestino = '';
 
     function adicinar_subpasta(empreendimento, finalidade) {
+        var empreendimentoOrigem = getSelectWithGlobal(empreendimento, 'empreendimento_novo_todos');
+        var finalidadeOrigem = getSelectWithGlobal(finalidade, 'finalidade_novo_todos');
+        var botaoAdicionar = document.activeElement;
+
+        if (!empreendimentoOrigem || !empreendimentoOrigem.value || !finalidadeOrigem || !finalidadeOrigem.value) {
+            alert_personalizado('Subpasta', 'Selecione o empreendimento e a finalidade antes de adicionar a subpasta.');
+            return;
+        }
+
+        wlSubpastaSelectDestino = botaoAdicionar && botaoAdicionar.id
+            ? botaoAdicionar.id.replace('_botao_', '_novo_')
+            : '';
         //Remove o prefixo 'modal_' do ID para obter o ID real
 
 
@@ -2511,6 +2526,12 @@
         inputElement.classList.add("form-control");
         inputElement.disabled = true;
 
+        var empreendimentoOption = document.createElement('option');
+        empreendimentoOption.value = empreendimentoOrigem.value;
+        empreendimentoOption.textContent = getSelectedOptionText(empreendimentoOrigem.id);
+        empreendimentoOption.selected = true;
+        inputElement.appendChild(empreendimentoOption);
+
         divElemnt.appendChild(labelElement);
         divElemnt.appendChild(inputElement);
         modal_bory.appendChild(divElemnt);
@@ -2526,6 +2547,12 @@
         inputElement.id = 'finalidade_tag_novo';
         inputElement.classList.add("form-control");
         inputElement.disabled = true;
+
+        var finalidadeOption = document.createElement('option');
+        finalidadeOption.value = finalidadeOrigem.value;
+        finalidadeOption.textContent = getSelectedOptionText(finalidadeOrigem.id);
+        finalidadeOption.selected = true;
+        inputElement.appendChild(finalidadeOption);
 
         divElemnt.appendChild(labelElement);
         divElemnt.appendChild(inputElement);
@@ -2555,11 +2582,6 @@
         divElemnt.appendChild(labelElement);
         divElemnt.appendChild(inputElement);
         modal_bory.appendChild(divElemnt);
-
-        empreendimento_select(getSelectedOptionText(empreendimento));
-        finalidade_select(document.getElementById(finalidade).value);
-
-
 
         //Exibe o modal
         mostrarModal("modal_cadastrar");
@@ -2624,6 +2646,23 @@
 
     }
 
+    function selecionarSubpastaCriada(nome) {
+        var select = document.getElementById(wlSubpastaSelectDestino);
+        if (!select || !nome) {
+            return;
+        }
+
+        var opcaoExiste = Array.from(select.options).some(function(option) {
+            return option.value === nome;
+        });
+        if (!opcaoExiste) {
+            return;
+        }
+
+        select.value = nome;
+        select.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+
     function cadastrarSubpastaDesenho() {
         //Esta função é usada para cadastrar uma nova "tag".
 
@@ -2664,12 +2703,18 @@
                     }
                 } else {
                     //Se a resposta indica sucesso, exibe um alerta informando que a "tag" foi cadastrada com sucesso.
-                    alert_certo('Cadastrado', 'Tag cadastrado com sucesso.');
+                    var mensagemSucesso = response.reativada
+                        ? 'Subpasta reativada e selecionada.'
+                        : (response.ja_existia
+                            ? 'Subpasta existente selecionada.'
+                            : 'Subpasta cadastrada e selecionada.');
+                    alert_certo('Cadastrado', mensagemSucesso);
                     //Limpa o valor do campo de entrada para que o usuário possa inserir outra "tag".
                     document.getElementById("nome_tag_novo").value = '';
-                    value_tags_c(true);
-                    value_tags(true);
-                    fecharModal('modal_cadastrar');
+                    $.when(value_tags_c(true), value_tags(true)).done(function() {
+                        selecionarSubpastaCriada(response.subpasta);
+                        fecharModal('modal_cadastrar');
+                    });
                 }
             },
             error: function(xhr) {

@@ -98,109 +98,12 @@ class SubpastaPost extends EmpresaPost
   {
     if ($this->request->isAJAX()) {
       return $this->cadastrarSubpastaAtual();
-
-      $msg = array(); // Inicializa um array para mensagens de erro.
-      $ok = false; // Inicializa uma variável de status para falso.
-      $violacao = array(); // Inicializa um array para violações.
-      session_start();
-      $tag = service('request')->getPost('tag'); // Obtém o nome da tag enviado via POST.
-
-      $empreendimento = service('request')->getPost('empreendimento');
-      $finalidade = service('request')->getPost('finalidade');
-
-      $tag = Ferramentas::norma_lizar_str($tag);
-
-      if (strlen($tag) > 30) {
-        // Verifica se o nome da tag excedeu o tamanho máximo de 17 caracteres.
-        $msg['Subpasta'] = "Nome da Subpasta excedeu o tamanho máximo de 30 caracter";
-        $violacao[] = "desenho_tag_cadastro Nome da Subpasta excedeu o tamanho máximo de 30 caracter";
-      }
-
-
-
-
-
-      if (!in_array($empreendimento, $_SESSION["lista_empreendimento"])) {
-        $msg['Empreendimento'] = "Nome da empreendimento não cadastrado";
-        $violacao[] = "desenho_tag_cadastro Nome da empreendimento não cadastrado";
-      } else {
-        if (Ferramentas::codificador($empreendimento) == '') {
-          $msg['Empreendimento'] = "Empreendimento possui caracteres não permitidos";
-          $violacao[] = "desenho_tag_cadastro empreendimento possui caracteres não permitidos";
-        }
-      }
-
-
-
-
-
-      if (!in_array($finalidade, $_SESSION["lista_finalidade"])) {
-        $msg['Finalidade'] = "Nome da finalidade não cadastrado";
-        $violacao[] = "desenho_tag_cadastro Nome da finalidade não cadastrado";
-      } else {
-        if (Ferramentas::codificador($empreendimento) == '') {
-          $msg['Finalidade'] = "Finalidade possui caracteres não permitidos";
-          $violacao[] = "desenho_tag_cadastro finalidade possui caracteres não permitidos";
-        }
-      }
-
-      if (strlen($tag) < 1) {
-        // Verifica se o nome da tag possui o tamanho mínimo de 1 caractere.
-        $msg['Subpasta'] = "Nome da Subpasta não possui o tamanho mínimo de 1 caracter";
-      } else {
-        if (Ferramentas::codificador($tag) == '') {
-          // Verifica se o nome da tag possui caracteres não permitidos.
-          $msg['Subpasta'] = "Nome da Subpasta possui caracteres não permitidos";
-          $violacao[] = "desenho_tag_cadastro Subpasta possui caracteres não permitidos";
-        }
-      }
-
-
-      if (count($msg) == 0) {
-        $db = new \App\Models\Subpasta();
-
-
-
-
-        $existe = $db
-          ->where('nome',             $tag)
-          ->where('finalidade_id',    array_search($finalidade, $_SESSION["lista_finalidade"]))
-          ->where('empreendimentos_id', array_search($empreendimento, $_SESSION["lista_empreendimento"]))
-          ->first();
-        if (!$existe) { // verifica se o id do mepreendimento com o mesmo nome é igual ao id 
-          // Verifica se a tag com o mesmo nome já existe no banco de dados.
-          // Se não existir, insere uma nova tag.
-          $date = [
-            'nome' => $tag,
-            "finalidade_id" => array_search($finalidade, $_SESSION["lista_finalidade"]),
-            "empreendimentos_id" => array_search($empreendimento, $_SESSION["lista_empreendimento"]),
-            'status' => 'ativo',
-            'usuario_id' => $_SESSION['usuario']
-          ];
-
-          $db->insert($date);
-          $ok = true;
-        } else {
-          $msg["Subpasta"] = 'Nome da Subpasta já existente';
-          $violacao[] = "desenho_tag_cadastro Subpasta já existente";
-        }
-      }
-      if (count($violacao) != 0) {
-        $db = new \App\Models\Violacao();
-        foreach ($violacao as $key => $value) {
-          // Registra violações no banco de dados, se houver.
-          $data = [
-            "usuario_id" => $_SESSION["usuario"],
-            "causa" => $value,
-
-          ];
-
-          $db->insert($data);
-        }
-      }
-      $data = ['ok' => $ok, 'msg' => $msg];
-      return $this->response->setJSON($data);
     }
+
+    return $this->response->setStatusCode(400)->setJSON([
+      'ok' => false,
+      'msg' => ['Subpasta' => 'Requisição inválida.'],
+    ]);
   }
 
   /**
@@ -276,7 +179,7 @@ class SubpastaPost extends EmpresaPost
 
 
 
-      if (!array_search($empreendimento, $_SESSION["lista_empreendimento"])) {
+      if (array_search($empreendimento, $_SESSION["lista_empreendimento"], true) === false) {
         $msg['Empreendimento'] = "Nome da empreendimento não cadastrado";
         $violacao[] = "desenho_tag_cadastro Nome da empreendimento não cadastrado";
       } else {
@@ -290,7 +193,7 @@ class SubpastaPost extends EmpresaPost
 
 
 
-      if (!array_search($finalidade, $_SESSION["lista_finalidade"])) {
+      if (array_search($finalidade, $_SESSION["lista_finalidade"], true) === false) {
         $msg['Finalidade'] = "Nome da finalidade não cadastrado";
         $violacao[] = "desenho_tag_cadastro Nome da finalidade não cadastrado";
       } else {
@@ -324,7 +227,7 @@ class SubpastaPost extends EmpresaPost
         $tag_data = $db->find();
 
         // Verifica se o nome da tag não é duplicado e se houve alterações.
-        if ((count(Ferramentas::array_pesquisa_mult($tag_data, ['nome', 'finalidade_id', 'empreendimento_id'], [Ferramentas::codificador($tag), array_search($finalidade, $_SESSION["lista_finalidade"]), array_search($empreendimento, $_SESSION["lista_empreendimento"])])) == 0)) { // verifica se o id do mepreendimento com o mesmo nome é igual ao id 
+        if ((count(Ferramentas::array_pesquisa_mult($tag_data, ['nome', 'finalidade_id', 'empreendimentos_id'], [Ferramentas::codificador($tag), array_search($finalidade, $_SESSION["lista_finalidade"], true), array_search($empreendimento, $_SESSION["lista_empreendimento"], true)])) == 0)) { // verifica se o id do mepreendimento com o mesmo nome é igual ao id
 
 
           $alteracao = new \App\Models\Alteracoes();
@@ -346,14 +249,14 @@ class SubpastaPost extends EmpresaPost
 
               [
                 "valor_antes" => Ferramentas::array_index(Ferramentas::array_pesquisa($tag_data, 'id', $id), ['finalidade_id']),
-                "valor_depois" => array_search($finalidade, $_SESSION["lista_finalidade"]),
+                "valor_depois" => array_search($finalidade, $_SESSION["lista_finalidade"], true),
                 "campo" => "finalidade_id"
               ],
 
               [
-                "valor_antes" => Ferramentas::array_index(Ferramentas::array_pesquisa($tag_data, 'id', $id), ['empreendimento_id']),
-                "valor_depois" =>  array_search($empreendimento, $_SESSION["lista_empreendimento"]),
-                "campo" => "finalidade_id"
+                "valor_antes" => Ferramentas::array_index(Ferramentas::array_pesquisa($tag_data, 'id', $id), ['empreendimentos_id']),
+                "valor_depois" =>  array_search($empreendimento, $_SESSION["lista_empreendimento"], true),
+                "campo" => "empreendimentos_id"
               ]
             ]
           );
@@ -363,14 +266,14 @@ class SubpastaPost extends EmpresaPost
 
           $date = [
             'nome' => Ferramentas::norma_lizar_str($tag),
-            "finalidade_id" => array_search($finalidade, $_SESSION["lista_finalidade"]),
-            "empreendimentos_id" => array_search($empreendimento, $_SESSION["lista_empreendimento"]),
+            "finalidade_id" => array_search($finalidade, $_SESSION["lista_finalidade"], true),
+            "empreendimentos_id" => array_search($empreendimento, $_SESSION["lista_empreendimento"], true),
           ];
 
           $db->update($id, $date);
 
           $ok = true;
-        } else if (count(Ferramentas::array_pesquisa_mult($tag_data, ['id', 'nome', 'finalidade_id', 'empreendimento_id'], [$id, Ferramentas::codificador($tag), array_search($finalidade, $_SESSION["lista_finalidade"]), array_search($empreendimento, $_SESSION["lista_empreendimento"])])) != 0) {
+        } else if (count(Ferramentas::array_pesquisa_mult($tag_data, ['id', 'nome', 'finalidade_id', 'empreendimentos_id'], [$id, Ferramentas::codificador($tag), array_search($finalidade, $_SESSION["lista_finalidade"], true), array_search($empreendimento, $_SESSION["lista_empreendimento"], true)])) != 0) {
           $msg["Modificar"] = 'Nenhum item foi modificado.';
         } else {
           $msg["Subpasta"] = 'O nome da subpasta já existe neste empreendimento para essa finalidade.';
@@ -427,8 +330,19 @@ class SubpastaPost extends EmpresaPost
       ->where('finalidade_id', $finalidadeId)
       ->first();
     $jaExistia = is_array($subpasta);
+    $reativada = false;
 
-    if (!$jaExistia) {
+    if ($jaExistia && ($subpasta['status'] ?? '') !== 'ativo') {
+      if (!$subpastas->update((int) $subpasta['id'], ['status' => 'ativo'])) {
+        log_message('error', 'cadastrarSubpastaAtual: falha ao reativar a subpasta ' . (int) $subpasta['id']);
+        return $this->response->setJSON([
+          'ok' => false,
+          'msg' => ['Subpasta' => 'Não foi possível reativar a subpasta. Tente novamente.'],
+        ]);
+      }
+      $reativada = true;
+      $subpasta = $subpastas->find((int) $subpasta['id']);
+    } elseif (!$jaExistia) {
       $inserido = $subpastas->insert([
         'nome' => $tag,
         'empreendimentos_id' => $empreendimentoId,
@@ -451,6 +365,7 @@ class SubpastaPost extends EmpresaPost
       'ok' => true,
       'msg' => [],
       'ja_existia' => $jaExistia,
+      'reativada' => $reativada,
       'subpasta' => Ferramentas::decodificador((string) ($subpasta['nome'] ?? $tag)),
       'empreendimento_id' => $empreendimentoId,
       'finalidade_id' => $finalidadeId,

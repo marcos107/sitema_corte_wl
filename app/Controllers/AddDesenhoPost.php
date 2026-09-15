@@ -1460,7 +1460,7 @@ class AddDesenhoPost extends Ferramentas
       return;
     }
 
-    $vinculos = new \App\Models\Desenhos_subpast();
+    $vinculos = new \App\Models\Desenhos_subpasta();
     foreach (array_unique(array_filter(array_map('intval', $subpastaIds))) as $subpastaId) {
       if (!$vinculos->where('desenho_id', $desenhoId)->where('tag_id', $subpastaId)->first()) {
         $vinculos->insert(['desenho_id' => $desenhoId, 'tag_id' => $subpastaId]);

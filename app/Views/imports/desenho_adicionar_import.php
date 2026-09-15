@@ -1185,7 +1185,7 @@ function desenho_modal_ind() {
                 div = document.createElement('div');
                 div.classList.add("container-mesma-linha");
                 div.appendChild(selectElement);
-                div.innerHTML += '<button id="tag1_botao_todos" name="cadastarar" type="submit" class="btn btn-outline-primary" onclick="adicinar_subpasta(\'empreendimento_novo_todos\',\'finalidade_novo_todos\')">+</button>';
+                div.innerHTML += '<button id="tag1_botao_todos" name="cadastarar" type="button" class="btn btn-outline-primary" onclick="adicinar_subpasta(\'empreendimento_novo_todos\',\'finalidade_novo_todos\')">+</button>';
 
                 th.appendChild(div);
 
@@ -1202,7 +1202,7 @@ function desenho_modal_ind() {
                 div = document.createElement('div');
                 div.classList.add("container-mesma-linha");
                 div.appendChild(selectElement);
-                div.innerHTML += '<button id="tag2_botao_todos" name="cadastarar" type="submit" class="btn btn-outline-primary" onclick="adicinar_subpasta(\'empreendimento_novo_todos\',\'finalidade_novo_todos\')">+</button>';
+                div.innerHTML += '<button id="tag2_botao_todos" name="cadastarar" type="button" class="btn btn-outline-primary" onclick="adicinar_subpasta(\'empreendimento_novo_todos\',\'finalidade_novo_todos\')">+</button>';
 
                 th.appendChild(div);
 
@@ -1221,7 +1221,7 @@ function desenho_modal_ind() {
                 div = document.createElement('div');
                 div.classList.add("container-mesma-linha");
                 div.appendChild(selectElement);
-                div.innerHTML += '<button id="tag3_botao_todos" name="cadastarar" type="submit" class="btn btn-outline-primary" onclick="adicinar_subpasta(\'empreendimento_novo_todos\',\'finalidade_novo_todos\')">+</button>';
+                div.innerHTML += '<button id="tag3_botao_todos" name="cadastarar" type="button" class="btn btn-outline-primary" onclick="adicinar_subpasta(\'empreendimento_novo_todos\',\'finalidade_novo_todos\')">+</button>';
 
                 th.appendChild(div);
 
@@ -1450,7 +1450,7 @@ function desenho_modal_ind() {
                 div = document.createElement('div');
                 div.classList.add("container-mesma-linha");
                 div.appendChild(selectElement);
-                div.innerHTML += '<button id="tag1_botao_todos" name="cadastarar" type="submit" class="btn btn-outline-primary" onclick="adicinar_subpasta(\'empreendimento_novo_todos\',\'finalidade_novo_todos\')">+</button>';
+                div.innerHTML += '<button id="tag1_botao_todos" name="cadastarar" type="button" class="btn btn-outline-primary" onclick="adicinar_subpasta(\'empreendimento_novo_todos\',\'finalidade_novo_todos\')">+</button>';
 
                 th.appendChild(div);
 
@@ -1467,7 +1467,7 @@ function desenho_modal_ind() {
                 div = document.createElement('div');
                 div.classList.add("container-mesma-linha");
                 div.appendChild(selectElement);
-                div.innerHTML += '<button id="tag2_botao_todos" name="cadastarar" type="submit" class="btn btn-outline-primary" onclick="adicinar_subpasta(\'empreendimento_novo_todos\',\'finalidade_novo_todos\')">+</button>';
+                div.innerHTML += '<button id="tag2_botao_todos" name="cadastarar" type="button" class="btn btn-outline-primary" onclick="adicinar_subpasta(\'empreendimento_novo_todos\',\'finalidade_novo_todos\')">+</button>';
 
                 th.appendChild(div);
 
@@ -1486,7 +1486,7 @@ function desenho_modal_ind() {
                 div = document.createElement('div');
                 div.classList.add("container-mesma-linha");
                 div.appendChild(selectElement);
-                div.innerHTML += '<button id="tag3_botao_todos" name="cadastarar" type="submit" class="btn btn-outline-primary" onclick="adicinar_subpasta(\'empreendimento_novo_todos\',\'finalidade_novo_todos\')">+</button>';
+                div.innerHTML += '<button id="tag3_botao_todos" name="cadastarar" type="button" class="btn btn-outline-primary" onclick="adicinar_subpasta(\'empreendimento_novo_todos\',\'finalidade_novo_todos\')">+</button>';
 
                 th.appendChild(div);
 
@@ -1602,7 +1602,7 @@ function desenho_modal_ind() {
                     div = document.createElement('div');
                     div.classList.add("container-mesma-linha");
                     div.appendChild(selectElement);
-                    div.innerHTML += '<button id="tag1_botao_' + +i + '" name="cadastarar" type="submit" class="btn btn-outline-primary" onclick="adicinar_subpasta(\'empreendimento_novo_' + i + '\',\'finalidade_novo_' + i + '\')">+</button>';
+                    div.innerHTML += '<button id="tag1_botao_' + +i + '" name="cadastarar" type="button" class="btn btn-outline-primary" onclick="adicinar_subpasta(\'empreendimento_novo_' + i + '\',\'finalidade_novo_' + i + '\')">+</button>';
 
                     th.appendChild(div);
 
@@ -1619,7 +1619,7 @@ function desenho_modal_ind() {
                     div = document.createElement('div');
                     div.classList.add("container-mesma-linha");
                     div.appendChild(selectElement);
-                    div.innerHTML += '<button id="tag2_botao_' + +i + '" name="cadastarar" type="submit" class="btn btn-outline-primary" onclick="adicinar_subpasta(\'empreendimento_novo_' + i + '\',\'finalidade_novo_' + i + '\')">+</button>';
+                    div.innerHTML += '<button id="tag2_botao_' + +i + '" name="cadastarar" type="button" class="btn btn-outline-primary" onclick="adicinar_subpasta(\'empreendimento_novo_' + i + '\',\'finalidade_novo_' + i + '\')">+</button>';
 
                     th.appendChild(div);
 
@@ -1636,7 +1636,7 @@ function desenho_modal_ind() {
                     div = document.createElement('div');
                     div.classList.add("container-mesma-linha");
                     div.appendChild(selectElement);
-                    div.innerHTML += '<button id="tag3_botao_' + +i + '" name="cadastarar" type="submit" class="btn btn-outline-primary" onclick="adicinar_subpasta(\'empreendimento_novo_' + i + '\',\'finalidade_novo_' + i + '\')">+</button>';
+                    div.innerHTML += '<button id="tag3_botao_' + +i + '" name="cadastarar" type="button" class="btn btn-outline-primary" onclick="adicinar_subpasta(\'empreendimento_novo_' + i + '\',\'finalidade_novo_' + i + '\')">+</button>';
 
                     th.appendChild(div);
 
@@ -1820,14 +1820,17 @@ function desenho_modal_ind() {
 
     function selects() {
         value_prioridade(true);
-        value_tags(true);
-        value_finalidade(true);
-        value_empresa(true);
-
-        value_tags_c(true);
-        value_empresa_c(true);
-        value_finalidade_c(true);
         value_prioridade_c(true);
+
+        $.when(
+            value_finalidade(true),
+            value_empresa(true),
+            value_finalidade_c(true),
+            value_empresa_c(true)
+        ).always(function() {
+            value_tags(true);
+            value_tags_c(true);
+        });
 
     }
 
@@ -2035,7 +2038,7 @@ function desenho_modal_ind() {
     }
 
     function value_tags(efeturar = false) {
-        wlGetTagsData().done(function(response) {
+        return wlGetTagsData().done(function(response) {
 
                 if (document.getElementById("tag1_novo_0") != null && (response.toString() != lista_temp3 || efeturar)) {
                     for (let j = 0; j < desenhos.length; j++) {
@@ -2118,7 +2121,7 @@ function desenho_modal_ind() {
     var lista_temp4 = '';
 
     function value_finalidade(efeturar = false) {
-        wlGetFinalidadeData().done(function(response) {
+        return wlGetFinalidadeData().done(function(response) {
                 if (document.getElementById("finalidade_novo_0") != null || efeturar) {
                     if (response.toString() != lista_temp4 || efeturar) {
 
@@ -2182,7 +2185,7 @@ function desenho_modal_ind() {
     lista_temp5 = "";
 
     function value_empresa(efeturar = false) {
-        wlGetEmpresaData().done(function(response) {
+        return wlGetEmpresaData().done(function(response) {
                 if (document.getElementById("empresa_cliente_novo_0") != null && (response.toString() != lista_temp5 || efeturar)) {
 
                     for (let j = 0; j < desenhos.length; j++) {
@@ -2628,7 +2631,7 @@ function desenho_modal_ind() {
     lista_temp_c5 = "";
 
     function value_empresa_c(efeturar = false) {
-        wlGetEmpresaData().done(function(response) {
+        return wlGetEmpresaData().done(function(response) {
                 if (document.getElementById("empresa_cliente_novo_todos") != null && (response.toString() != lista_temp_c5 || efeturar)) {
 
 
@@ -2818,7 +2821,7 @@ function desenho_modal_ind() {
     var lista_temp_c4 = '';
 
     function value_finalidade_c(efeturar = false) {
-        wlGetFinalidadeData().done(function(response) {
+        return wlGetFinalidadeData().done(function(response) {
                 if (document.getElementById("finalidade_novo_todos") != null || efeturar) {
                     if (response.toString() != lista_temp_c4 || efeturar) {
 
@@ -2979,7 +2982,7 @@ function desenho_modal_ind() {
     lista_temp_c3 = "";
 
     function value_tags_c(efeturar = false) {
-        wlGetTagsData().done(function(response) {
+        return wlGetTagsData().done(function(response) {
 
                 if (document.getElementById("tag1_novo_0") != null && (response.toString() != lista_temp_c3 || efeturar)|| efeturar) {
 
@@ -3077,8 +3080,21 @@ function desenho_modal_ind() {
     //setInterval(value_tags_c, 15000);
 
     modal_bory_geral = '';
+    var wlSubpastaSelectDestino = '';
 
     function adicinar_subpasta(empreendimento, finalidade) {
+        var empreendimentoOrigem = getSelectWithGlobal(empreendimento, 'empreendimento_novo_todos');
+        var finalidadeOrigem = getSelectWithGlobal(finalidade, 'finalidade_novo_todos');
+        var botaoAdicionar = document.activeElement;
+
+        if (!empreendimentoOrigem || !empreendimentoOrigem.value || !finalidadeOrigem || !finalidadeOrigem.value) {
+            alert_personalizado('Subpasta', 'Selecione o empreendimento e a finalidade antes de adicionar a subpasta.');
+            return;
+        }
+
+        wlSubpastaSelectDestino = botaoAdicionar && botaoAdicionar.id
+            ? botaoAdicionar.id.replace('_botao_', '_novo_')
+            : '';
         //Remove o prefixo 'modal_' do ID para obter o ID real
 
 
@@ -3117,6 +3133,12 @@ function desenho_modal_ind() {
         inputElement.classList.add("form-control");
         inputElement.disabled = true;
 
+        var empreendimentoOption = document.createElement('option');
+        empreendimentoOption.value = empreendimentoOrigem.value;
+        empreendimentoOption.textContent = getSelectedOptionText(empreendimentoOrigem.id);
+        empreendimentoOption.selected = true;
+        inputElement.appendChild(empreendimentoOption);
+
         divElemnt.appendChild(labelElement);
         divElemnt.appendChild(inputElement);
         modal_bory.appendChild(divElemnt);
@@ -3132,6 +3154,12 @@ function desenho_modal_ind() {
         inputElement.id = 'finalidade_tag_novo';
         inputElement.classList.add("form-control");
         inputElement.disabled = true;
+
+        var finalidadeOption = document.createElement('option');
+        finalidadeOption.value = finalidadeOrigem.value;
+        finalidadeOption.textContent = getSelectedOptionText(finalidadeOrigem.id);
+        finalidadeOption.selected = true;
+        inputElement.appendChild(finalidadeOption);
 
         divElemnt.appendChild(labelElement);
         divElemnt.appendChild(inputElement);
@@ -3161,11 +3189,6 @@ function desenho_modal_ind() {
         divElemnt.appendChild(labelElement);
         divElemnt.appendChild(inputElement);
         modal_bory.appendChild(divElemnt);
-
-        empreendimento_select(getSelectedOptionText(empreendimento));
-        finalidade_select(document.getElementById(finalidade).value);
-
-
 
         //Exibe o modal
         mostrarModal1("modal_cadastrar");
@@ -3223,6 +3246,23 @@ function desenho_modal_ind() {
 
     }
 
+    function selecionarSubpastaCriada(nome) {
+        var select = document.getElementById(wlSubpastaSelectDestino);
+        if (!select || !nome) {
+            return;
+        }
+
+        var opcaoExiste = Array.from(select.options).some(function(option) {
+            return option.value === nome;
+        });
+        if (!opcaoExiste) {
+            return;
+        }
+
+        select.value = nome;
+        select.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+
     function cadastrarSubpastaImportada() {
         //Esta função é usada para cadastrar uma nova "tag".
 
@@ -3263,13 +3303,19 @@ function desenho_modal_ind() {
                     }
                 } else {
                     //Se a resposta indica sucesso, exibe um alerta informando que a "tag" foi cadastrada com sucesso.
-                    alert_certo('Cadastrado', 'Tag cadastrado com sucesso.');
+                    var mensagemSucesso = response.reativada
+                        ? 'Subpasta reativada e selecionada.'
+                        : (response.ja_existia
+                            ? 'Subpasta existente selecionada.'
+                            : 'Subpasta cadastrada e selecionada.');
+                    alert_certo('Cadastrado', mensagemSucesso);
                     //Limpa o valor do campo de entrada para que o usuário possa inserir outra "tag".
                     document.getElementById("nome_tag_novo").value = '';
                     wlImportInvalidateLookupCache('tags');
-                    value_tags_c(true);
-                    value_tags(true);
-                    fecharModal1('modal_cadastrar');
+                    $.when(value_tags_c(true), value_tags(true)).done(function() {
+                        selecionarSubpastaCriada(response.subpasta);
+                        fecharModal1('modal_cadastrar');
+                    });
                 }
             },
             error: function(xhr) {
