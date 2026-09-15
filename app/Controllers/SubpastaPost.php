@@ -20,12 +20,11 @@ class SubpastaPost extends EmpresaPost
   {
     if ($this->request->isAJAX()) {
       session_start();
-      $tag = new \App\Models\Tag(); // Instancia o modelo de dados para tags.
+      $tag = new \App\Models\Subpasta(); // Instancia o modelo de dados para tags.
 
       $empreendimento = new \App\Models\Empreendimentos(); // Instancia o modelo de dados para empreendimentos.
       $finalidade = new \App\Models\Finalidade(); // Instancia o modelo de dados para finalidades.
-      $finalidade_data = $finalidade->find(); // Recupera dados de finalidades do banco de dados.
-      $empreendimento_data = $empreendimento->find(); // Recupera dados de empreendimentos do banco de dados.
+
 
       $tag_data = $tag->find(); // Recupera dados de tags do banco de dados.
       $ativos = service('request')->getPost('ativos'); // Verifica se é para listar tags ativas.
@@ -34,33 +33,40 @@ class SubpastaPost extends EmpresaPost
       $lista_ids = array();
       $id_temp = 0;
       $lista_completa = array();
+
+
+
+
+
+
       foreach ($tag_data as $key => $value) { //cria a lista
+        $empreendimento_nome = Ferramentas::array_index($empreendimento->where('id', $value['empreendimentos_id'])->first(), ['nome']);
+        $finalidade_nome = Ferramentas::array_index($finalidade->where('id', $value['finalidade_id'])->first(), ['nome']);
+        $meio = '        
+        <td><p ondblclick="modal_modificar(\'modal_' . $id_temp . '\')">' . $value['nome'] . '</p></td>
+        <td><p ondblclick="modal_modificar(\'modal_' . $id_temp . '\')">' . $empreendimento_nome . '</p></td>
+        <td><p ondblclick="modal_modificar(\'modal_' . $id_temp . '\')">' . $finalidade_nome . '</p></td>
+        <td ondblclick="modal_modificar(\'modal_' . $id_temp . '\')">' . ucfirst($value['status']) . '</td>';
+
         if (($ativos == 'true' && Ferramentas::decodificador($value['status']) == 'ativo')) { //verifica se é para mostrar os com estus ativo
           // Se a tag é ativa e deve ser listada, gera uma linha da tabela com opção "Desativar".
           $lista .= '
         <tr>
-         <td><p ondblclick="modal_modificar(\'modal_' . $id_temp . '\')">' . Ferramentas::decodificador($value['nome']) . '</p></td>
-         <td><p ondblclick="modal_modificar(\'modal_' . $id_temp . '\')">' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($empreendimento_data, 'id', $value['empreendimento_id']), ['nome'])) . '</p></td>
-         <td><p ondblclick="modal_modificar(\'modal_' . $id_temp . '\')">' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($finalidade_data, 'id', $value['finalidade_id']), ['nome'])) . '</p></td>     <td ondblclick="modal_modificar(\'modal_' . $id_temp . '\')">' . ucfirst(Ferramentas::decodificador($value['status'])) . '</td>
+         ' . $meio . '
          <td><button name="cadastarar" type="submit" onclick="desativar(\'' . $id_temp . '\')" class="btn btn-outline-danger btn-lg btn-block"> Desativar </button></td>
          <td><button name="cadastarar" type="submit" class="btn btn-outline-warning btn-lg btn-block" onclick="modal_modificar(\'modal_' . $id_temp . '\')"> Modificar </button></td>
         </tr>
         ';
         } else if (($desativados == 'true' && Ferramentas::decodificador($value['status']) == 'desativado')) { //verifica se é para mostrar os com estus desativado
           // Se a tag é desativada e deve ser listada, gera uma linha da tabela com opção "Ativar".
-          $lista .= '
-        <tr>
-         <td><p ondblclick="modal_modificar(\'modal_' . $id_temp . '\')">' . Ferramentas::decodificador($value['nome']) . '</p></td>
-         <td><p ondblclick="modal_modificar(\'modal_' . $id_temp . '\')">' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($empreendimento_data, 'id', $value['empreendimento_id']), ['nome'])) . '</p></td>
-         <td><p ondblclick="modal_modificar(\'modal_' . $id_temp . '\')">' . Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($finalidade_data, 'id', $value['finalidade_id']), ['nome'])) . '</p></td>
-         <td ondblclick="modal_modificar(\'modal_' . $id_temp . '\')">' . ucfirst(Ferramentas::decodificador($value['status'])) . '</td>
+          $lista .= '<tr>' . $meio . '
          <td><button name="cadastarar" type="submit" onclick="ativar(\'' . $id_temp . '\')" class="btn btn-outline-success btn-lg btn-block"> Ativar </button></td>
          <td><button name="cadastarar" type="submit" class="btn btn-outline-warning" onclick="modal_modificar(\'modal_' . $id_temp . '\')"> Modificar </button></td>
          </tr>
         ';
         }
-        $value["empreendimento"] = Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($empreendimento_data, 'id', $value['empreendimento_id']), ['nome']));
-        $value["finalidade"] = Ferramentas::decodificador(Ferramentas::array_index(Ferramentas::array_pesquisa($finalidade_data, 'id', $value['finalidade_id']), ['nome']));
+        $value["empreendimento"] = $empreendimento_nome;
+        $value["finalidade"] = $finalidade_nome;
         $lista_ids[$id_temp] = $value['id'];
         $lista_completa[$id_temp] = $value;
         $id_temp++;
@@ -91,6 +97,8 @@ class SubpastaPost extends EmpresaPost
   function desenho_tag_cadastro()
   {
     if ($this->request->isAJAX()) {
+      return $this->cadastrarSubpastaAtual();
+
       $msg = array(); // Inicializa um array para mensagens de erro.
       $ok = false; // Inicializa uma variável de status para falso.
       $violacao = array(); // Inicializa um array para violações.
@@ -143,58 +151,55 @@ class SubpastaPost extends EmpresaPost
         if (Ferramentas::codificador($tag) == '') {
           // Verifica se o nome da tag possui caracteres não permitidos.
           $msg['Subpasta'] = "Nome da Subpasta possui caracteres não permitidos";
-          $violacao[] = "desenho_tag_cadastro Tag possui caracteres não permitidos";
+          $violacao[] = "desenho_tag_cadastro Subpasta possui caracteres não permitidos";
         }
       }
 
 
       if (count($msg) == 0) {
-        $db = new \App\Models\Tag();
+        $db = new \App\Models\Subpasta();
 
 
-        $tag_data = $db->find();
 
-        if (count(Ferramentas::array_pesquisa_mult($tag_data, ['nome', 'finalidade_id', 'empreendimento_id'], [Ferramentas::codificador($tag), array_search($finalidade, $_SESSION["lista_finalidade"]), array_search($empreendimento, $_SESSION["lista_empreendimento"])])) == 0) { // verifica se o id do mepreendimento com o mesmo nome é igual ao id 
+
+        $existe = $db
+          ->where('nome',             $tag)
+          ->where('finalidade_id',    array_search($finalidade, $_SESSION["lista_finalidade"]))
+          ->where('empreendimentos_id', array_search($empreendimento, $_SESSION["lista_empreendimento"]))
+          ->first();
+        if (!$existe) { // verifica se o id do mepreendimento com o mesmo nome é igual ao id 
           // Verifica se a tag com o mesmo nome já existe no banco de dados.
           // Se não existir, insere uma nova tag.
           $date = [
-            'nome' => Ferramentas::codificador($tag),
-            'data_add' => date('d/m/Y H:i'),
+            'nome' => $tag,
             "finalidade_id" => array_search($finalidade, $_SESSION["lista_finalidade"]),
-            "empreendimento_id" => array_search($empreendimento, $_SESSION["lista_empreendimento"]),
+            "empreendimentos_id" => array_search($empreendimento, $_SESSION["lista_empreendimento"]),
             'status' => 'ativo',
-            'responsavel' => $_SESSION['usuario']
+            'usuario_id' => $_SESSION['usuario']
           ];
 
           $db->insert($date);
           $ok = true;
         } else {
           $msg["Subpasta"] = 'Nome da Subpasta já existente';
-          $violacao[] = "desenho_tag_cadastro Tag já existente";
+          $violacao[] = "desenho_tag_cadastro Subpasta já existente";
         }
-
-
       }
       if (count($violacao) != 0) {
         $db = new \App\Models\Violacao();
         foreach ($violacao as $key => $value) {
           // Registra violações no banco de dados, se houver.
           $data = [
-            "individuo" => $_SESSION["usuario"],
+            "usuario_id" => $_SESSION["usuario"],
             "causa" => $value,
-            "data" => Ferramentas::codificador(date('d/m/Y H:i'))
 
           ];
 
           $db->insert($data);
-
         }
       }
       $data = ['ok' => $ok, 'msg' => $msg];
       return $this->response->setJSON($data);
-
-
-
     }
   }
 
@@ -304,7 +309,7 @@ class SubpastaPost extends EmpresaPost
         if (Ferramentas::codificador($tag) == '') {
           // Verifica se o nome da tag possui caracteres não permitidos.
           $msg['Subpasta'] = "Nome da Subpasta possui caracteres não permitidos";
-          $violacao[] = "desenho_tag_cadastro Tag possui caracteres não permitidos";
+          $violacao[] = "desenho_tag_cadastro Subpasta possui caracteres não permitidos";
         }
       }
 
@@ -312,7 +317,7 @@ class SubpastaPost extends EmpresaPost
 
 
       if (count($msg) == 0) {
-        $db = new \App\Models\tag();
+        $db = new \App\Models\Subpasta();
 
         $id1 = service('request')->getPost('id'); // Obtém o ID da tag enviado via POST.
         $id = $_SESSION['lista'][$id1]; // Obtém o ID da tag a partir de uma lista.
@@ -321,63 +326,167 @@ class SubpastaPost extends EmpresaPost
         // Verifica se o nome da tag não é duplicado e se houve alterações.
         if ((count(Ferramentas::array_pesquisa_mult($tag_data, ['nome', 'finalidade_id', 'empreendimento_id'], [Ferramentas::codificador($tag), array_search($finalidade, $_SESSION["lista_finalidade"]), array_search($empreendimento, $_SESSION["lista_empreendimento"])])) == 0)) { // verifica se o id do mepreendimento com o mesmo nome é igual ao id 
 
+
           $alteracao = new \App\Models\Alteracoes();
 
-          $data = [
-            "individuo" => $_SESSION["usuario"],
-            "id_item" => $id,
-            "finalidade_id" => array_search($finalidade, $_SESSION["lista_finalidade"]),
-            "empreendimento_id" => array_search($empreendimento, $_SESSION["lista_empreendimento"]),
-            "antes" => Ferramentas::array_index(Ferramentas::array_pesquisa($tag_data, 'id', $id), ['nome']) . '-' . Ferramentas::array_index(Ferramentas::array_pesquisa($tag_data, 'id', $id), ['finalidade_id']) . '-' . Ferramentas::array_index(Ferramentas::array_pesquisa($tag_data, 'id', $id), ['empreendimento_id']),
-            "depois" => Ferramentas::codificador($tag),
-            "item" => "tag-finalidade_id-empreendimento_id",
-            "info_mais" => "nome",
-            "data_add" => Ferramentas::codificador(date('d/m/Y H:i'))
+          $alteracao->insertWithDetails(
+            [
+              "usuario_id" => $_SESSION["usuario"],
+              "id_item" => $id,
+              "item" => "subpasta",
 
-          ];
-          $alteracao->insert($data);
+            ],
+            [
+              [
+                "valor_antes" => Ferramentas::array_index(Ferramentas::array_pesquisa($tag_data, 'id', $id), ['nome']),
+                "valor_depois" => Ferramentas::norma_lizar_str($tag),
+                "campo" => "nome"
+              ],
+
+
+              [
+                "valor_antes" => Ferramentas::array_index(Ferramentas::array_pesquisa($tag_data, 'id', $id), ['finalidade_id']),
+                "valor_depois" => array_search($finalidade, $_SESSION["lista_finalidade"]),
+                "campo" => "finalidade_id"
+              ],
+
+              [
+                "valor_antes" => Ferramentas::array_index(Ferramentas::array_pesquisa($tag_data, 'id', $id), ['empreendimento_id']),
+                "valor_depois" =>  array_search($empreendimento, $_SESSION["lista_empreendimento"]),
+                "campo" => "finalidade_id"
+              ]
+            ]
+          );
+
+
 
 
           $date = [
-            'nome' => Ferramentas::codificador($tag),
+            'nome' => Ferramentas::norma_lizar_str($tag),
             "finalidade_id" => array_search($finalidade, $_SESSION["lista_finalidade"]),
-            "empreendimento_id" => array_search($empreendimento, $_SESSION["lista_empreendimento"]),
+            "empreendimentos_id" => array_search($empreendimento, $_SESSION["lista_empreendimento"]),
           ];
 
           $db->update($id, $date);
 
           $ok = true;
         } else if (count(Ferramentas::array_pesquisa_mult($tag_data, ['id', 'nome', 'finalidade_id', 'empreendimento_id'], [$id, Ferramentas::codificador($tag), array_search($finalidade, $_SESSION["lista_finalidade"]), array_search($empreendimento, $_SESSION["lista_empreendimento"])])) != 0) {
-          $msg["Modificar"] = 'Não foi feita nenhuma alteração.';
+          $msg["Modificar"] = 'Nenhum item foi modificado.';
         } else {
           $msg["Subpasta"] = 'O nome da subpasta já existe neste empreendimento para essa finalidade.';
-          $violacao[] = "desenho_tag_cadastro Tag já existente";
+          $violacao[] = "desenho_tag_cadastro Subpasta já existente";
         }
       }
-
-
     }
     if (count($violacao) != 0) {
       $db = new \App\Models\Violacao();
       foreach ($violacao as $key => $value) {
         // Registra violações no banco de dados, se houver.
         $data = [
-          "individuo" => $_SESSION["usuario"],
+          "usuario_id" => $_SESSION["usuario"],
           "causa" => $value,
-          "data" => Ferramentas::codificador(date('d/m/Y H:i'))
 
         ];
 
         $db->insert($data);
-
       }
     }
     $data = ['ok' => $ok, 'msg' => $msg];
     return $this->response->setJSON($data);
+  }
 
+  /** Cria ou reutiliza uma subpasta no contexto selecionado. */
+  private function cadastrarSubpastaAtual()
+  {
+    if (session_status() !== PHP_SESSION_ACTIVE) {
+      session_start();
+    }
 
+    $tag = Ferramentas::norma_lizar_str((string) service('request')->getPost('tag'));
+    $empreendimentoId = $this->resolverEmpreendimentoSubpasta((string) service('request')->getPost('empreendimento'));
+    $finalidadeId = $this->resolverFinalidadeSubpasta((string) service('request')->getPost('finalidade'));
+    $mensagens = [];
 
+    if ($tag === '' || strlen($tag) > 30 || Ferramentas::codificador($tag) === '') {
+      $mensagens['Subpasta'] = 'Informe uma subpasta válida com até 30 caracteres.';
+    }
+    if ($empreendimentoId <= 0) {
+      $mensagens['Empreendimento'] = 'Selecione um empreendimento válido.';
+    }
+    if ($finalidadeId <= 0) {
+      $mensagens['Finalidade'] = 'Selecione uma finalidade válida.';
+    }
+    if ($mensagens !== []) {
+      return $this->response->setJSON(['ok' => false, 'msg' => $mensagens]);
+    }
 
+    $subpastas = new \App\Models\Subpasta();
+    $subpasta = $subpastas
+      ->where('nome', $tag)
+      ->where('empreendimentos_id', $empreendimentoId)
+      ->where('finalidade_id', $finalidadeId)
+      ->first();
+    $jaExistia = is_array($subpasta);
+
+    if (!$jaExistia) {
+      $subpastas->insert([
+        'nome' => $tag,
+        'empreendimentos_id' => $empreendimentoId,
+        'finalidade_id' => $finalidadeId,
+        'status' => 'ativo',
+        'usuario_id' => (int) ($_SESSION['usuario'] ?? 0),
+      ]);
+      $subpasta = $subpastas->find($subpastas->getInsertID());
+    }
+
+    // Uma duplicidade neste mesmo contexto significa que o seletor pode reutilizá-la.
+    return $this->response->setJSON([
+      'ok' => true,
+      'msg' => [],
+      'ja_existia' => $jaExistia,
+      'subpasta' => Ferramentas::decodificador((string) ($subpasta['nome'] ?? $tag)),
+      'empreendimento_id' => $empreendimentoId,
+      'finalidade_id' => $finalidadeId,
+    ]);
+  }
+
+  /** Resolve o valor exibido ou token temporário para o ID real, somente no servidor. */
+  private function resolverEmpreendimentoSubpasta(string $valor): int
+  {
+    $valor = trim($valor);
+    $token = $_SESSION['desenho_empreendimento_tokens'][$valor] ?? null;
+    if (is_array($token) && (int) ($token['id'] ?? 0) > 0) {
+      return (int) $token['id'];
+    }
+
+    $idSessao = array_search($valor, $_SESSION['lista_empreendimento'] ?? [], true);
+    if ($idSessao !== false) {
+      return (int) $idSessao;
+    }
+
+    return $this->resolverIdPorNome(new \App\Models\Empreendimentos(), $valor);
+  }
+
+  private function resolverFinalidadeSubpasta(string $valor): int
+  {
+    $idSessao = array_search(trim($valor), $_SESSION['lista_finalidade'] ?? [], true);
+    if ($idSessao !== false) {
+      return (int) $idSessao;
+    }
+
+    return $this->resolverIdPorNome(new \App\Models\Finalidade(), $valor);
+  }
+
+  private function resolverIdPorNome($model, string $valor): int
+  {
+    $chave = Ferramentas::norma_lizar_str($valor);
+    foreach ($model->where('status', 'ativo')->findAll() as $registro) {
+      if (Ferramentas::norma_lizar_str(Ferramentas::decodificador((string) ($registro['nome'] ?? ''))) === $chave) {
+        return (int) ($registro['id'] ?? 0);
+      }
+    }
+
+    return 0;
   }
 
   /**
@@ -393,22 +502,63 @@ class SubpastaPost extends EmpresaPost
       session_start();
       $tags = array(); // Inicializa um array para armazenar as tags.
       $tags_empreendimento_finalidade = array();
-      $tag = new \App\Models\Tag(); // Instancia o modelo de dados de tags.
+      $empreendimentoTokens = $_SESSION['desenho_empreendimento_tokens'] ?? [];
+      $Subpasta = new \App\Models\Subpasta(); // Instancia o modelo de dados de tags.
 
-      $tag_data = $tag->find(); // Obtém todas as tags do banco de dados.
+      $Subpasta_data = $Subpasta
+        ->select('subpasta.nome,
+                  subpasta.empreendimentos_id,
+                  empreendimentos.nome AS empreendimento_nome,
+                  finalidade.nome AS finalidade_nome')
+        ->join('empreendimentos', 'empreendimentos.id = subpasta.empreendimentos_id', 'left')
+        ->join('finalidade', 'finalidade.id = subpasta.finalidade_id', 'left')
+        ->where('subpasta.status', 'ativo')
+        ->findAll(); // Obtém todas as tags do banco de dados.
 
 
 
 
-      foreach ($tag_data as $key => $value) { // Itera sobre as tags no banco de dados. 
-        if ($value['status'] == 'ativo') { // Verifica se a tag está ativa.
-          $tags[] = Ferramentas::decodificador($value['nome']); // Adiciona o nome da tag decodificado ao array de tags.
-          $tags_empreendimento_finalidade[Ferramentas::array_index($_SESSION["lista_empreendimento"], [$value['empreendimento_id']])][Ferramentas::array_index($_SESSION["lista_finalidade"], [$value['finalidade_id']])][] = Ferramentas::decodificador($value['nome']);
+      foreach ($Subpasta_data as $key => $value) { // Itera sobre as tags no banco de dados.
+        $nomeSubpasta = Ferramentas::decodificador($value['nome'] ?? '');
+        $nomeEmpreendimento = Ferramentas::decodificador($value['empreendimento_nome'] ?? '');
+        $nomeFinalidade = Ferramentas::decodificador($value['finalidade_nome'] ?? '');
+
+        if ($nomeSubpasta === '') {
+          continue;
+        }
+
+        $tags[] = $nomeSubpasta; // Adiciona o nome da tag decodificado ao array de tags.
+
+        if ($nomeEmpreendimento !== '' && $nomeFinalidade !== '') {
+          $chavesEmpreendimento = [$nomeEmpreendimento];
+          $empreendimentoId = (int) ($value['empreendimentos_id'] ?? 0);
+
+          foreach ($empreendimentoTokens as $token => $dadosToken) {
+            if ((int) ($dadosToken['id'] ?? 0) === $empreendimentoId) {
+              $chavesEmpreendimento[] = (string) $token;
+            }
+          }
+
+          foreach (array_unique($chavesEmpreendimento) as $chaveEmpreendimento) {
+            $tags_empreendimento_finalidade[$chaveEmpreendimento][$nomeFinalidade][] = $nomeSubpasta;
+          }
         }
       }
+      $tags = array_values(array_unique($tags));
       usort($tags, function ($a, $b) {
         return strnatcasecmp($a, $b);
       });
+
+      foreach ($tags_empreendimento_finalidade as &$finalidades) {
+        foreach ($finalidades as &$subpastas) {
+          $subpastas = array_values(array_unique($subpastas));
+          usort($subpastas, function ($a, $b) {
+            return strnatcasecmp($a, $b);
+          });
+        }
+        unset($subpastas);
+      }
+      unset($finalidades);
       // Prepara os dados de resposta em formato JSON, incluindo a lista de tags ativas.
       $data = [
         'lista' => $tags,
@@ -417,6 +567,4 @@ class SubpastaPost extends EmpresaPost
       return $this->response->setJSON($data);
     }
   }
-
-
 }

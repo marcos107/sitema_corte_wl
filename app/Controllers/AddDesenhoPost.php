@@ -18,38 +18,56 @@ class AddDesenhoPost extends Ferramentas
    */
   function criar_pasta_temp()
   {
-    // Verifica se a requisição é AJAX.
-    if ($this->request->isAJAX()) {
-      // Inicia a sessão.
+    if (!$this->request->isAJAX()) {
+      return $this->response->setStatusCode(400)->setJSON(['ok' => 'false', 'msg' => 'Requisição inválida.']);
+    }
+
+    if (session_status() !== PHP_SESSION_ACTIVE) {
       session_start();
+    }
 
-      do {
-        // Gera um nome de diretório aleatório único na pasta 'C:/wl/temp/'.
-        $targetDirectory = 'C:/wl/temp/' . rand(10000, 99999) . '/';
-      } while (is_dir($targetDirectory));
+    $usuarioId = $_SESSION['usuario'] ?? null;
+    if (!$usuarioId) {
+      return $this->response->setStatusCode(401)->setJSON(['ok' => 'false', 'msg' => 'Sessão do usuário não encontrada. Entre novamente no sistema.']);
+    }
 
-      // Verifica se o diretório temporário foi criado com sucesso.
-      if (!mkdir($targetDirectory, 0777, true)) {
-        return $this->response->setJSON(['ok' => 'false']);
+    $tempRoot = rtrim(Ferramentas::wlStoragePath('temp'), '/\\');
+
+    try {
+      // No Docker, /srv/wl é um volume externo e a pasta temp pode ainda não existir.
+      if (!is_dir($tempRoot) && !@mkdir($tempRoot, 0775, true) && !is_dir($tempRoot)) {
+        throw new \RuntimeException('Não foi possível criar a pasta temporária em ' . $tempRoot);
       }
 
-      // Associa o diretório temporário à sessão do usuário.
-      $_SESSION['pasta_temp'] = $targetDirectory;
+      do {
+        $targetDirectory = $tempRoot . DIRECTORY_SEPARATOR . random_int(10000, 99999);
+      } while (is_dir($targetDirectory));
 
-      // Prepara os dados a serem inseridos no banco de dados.
-      $data = [
-        'diretorio' => $targetDirectory,
-        'usuario_id' => $_SESSION['usuario'],
-        'status' => 'processando'
-      ];
+      if (!@mkdir($targetDirectory, 0775, true) && !is_dir($targetDirectory)) {
+        throw new \RuntimeException('Não foi possível criar a pasta temporária da solicitação.');
+      }
 
-      // Cria uma instância do modelo de Desenhos_temp.
+      $targetDirectory = rtrim($targetDirectory, '/\\') . '/';
       $db = new \App\Models\Desenhos_temp();
+      $inserido = $db->insert([
+        'diretorio' => $targetDirectory,
+        'usuario_id' => $usuarioId,
+        'status' => 'processando'
+      ]);
 
-      // Insere os dados do diretório temporário no banco de dados.
-      $db->insert($data);
+      if (!$inserido) {
+        @rmdir($targetDirectory);
+        throw new \RuntimeException('Não foi possível registrar a pasta temporária no banco de dados.');
+      }
 
+      $_SESSION['pasta_temp'] = $targetDirectory;
       return $this->response->setJSON(['ok' => 'true']);
+    } catch (\Throwable $e) {
+      log_message('error', 'criar_pasta_temp: ' . $e->getMessage());
+      return $this->response->setStatusCode(500)->setJSON([
+        'ok' => 'false',
+        'msg' => 'Não foi possível preparar a pasta temporária. Verifique o armazenamento e o banco de dados do servidor.'
+      ]);
     }
   }
 
@@ -111,7 +129,7 @@ class AddDesenhoPost extends Ferramentas
 
         foreach ($desenhos as $key => $value) {
           //   $value['desenho'] = str_replace($value['desenho'],['/','\\'],'');
-          $base_dir = 'c:/wl/' . $prcoesso_nome . '/';
+          $base_dir = Ferramentas::wlStoragePath($prcoesso_nome) . '/';
           // Constrói o caminho base do diretório para armazenar o desenho.
           $empresa_id = null;
           $prioridade_id = null;
@@ -222,17 +240,18 @@ class AddDesenhoPost extends Ferramentas
 
           // Valida a Subpasta-01 associada.
           if ($value["tag1"] != '') { // -----------------
-            $subpasta_data = $subpasta
-              ->where('status', 'ativo')
-              ->where('nome',   $value['tag1'])
-              ->findAll();
+            $subpasta_data = $this->localizarSubpastaSelecionada(
+              (string) $value['tag1'],
+              (int) $empreendimento_id,
+              (int) $finalidade_id
+            );
             if (!$subpasta_data) {
               //violacao
               $msg["Subpasta-01 " . $value["desenho"]] = 'Não existe.';
               $violacao[] = "desenhos_add Subpasta-01 não exist";
               $erro = true;
             } else {
-              $Subpasta01_id = $subpasta_data[0]['id'];
+              $Subpasta01_id = $subpasta_data['id'];
               $base_dir .= (Ferramentas::norma_lizar_str($value["empresa"])) . '/';
               $base_dir .= (Ferramentas::norma_lizar_str($value["empreendimento"])) . '/';
               $base_dir .= (Ferramentas::norma_lizar_str($value["finalidade"])) . '/';
@@ -241,33 +260,35 @@ class AddDesenhoPost extends Ferramentas
 
             // Valida a tag2 associada.
             if ($value["tag2"] != '') { // -----------------
-              $subpasta_data = $subpasta
-                ->where('status', 'ativo')
-                ->where('nome',   $value['tag2'])
-                ->findAll();
+              $subpasta_data = $this->localizarSubpastaSelecionada(
+                (string) $value['tag2'],
+                (int) $empreendimento_id,
+                (int) $finalidade_id
+              );
               if (!$subpasta_data) {
                 //violacao
                 $msg["Subpasta-02 " . $value["desenho"]] = 'Não existe.';
                 $violacao[] = "desenhos_add Subpasta-02 não exist";
                 $erro = true;
               } else {
-                $Subpasta02_id = $subpasta_data[0]['id'];
+                $Subpasta02_id = $subpasta_data['id'];
               }
               $base_dir .= Ferramentas::norma_lizar_str(Ferramentas::codificador($value["tag2"])) . '/';
 
               // Valida a tag3 associada.
               if ($value["tag3"] != '') { // -----------------
-                $subpasta_data = $subpasta
-                  ->where('status', 'ativo')
-                  ->where('nome',   $value['tag3'])
-                  ->findAll();
+                $subpasta_data = $this->localizarSubpastaSelecionada(
+                  (string) $value['tag3'],
+                  (int) $empreendimento_id,
+                  (int) $finalidade_id
+                );
                 if (!$subpasta_data) {
                   //violacao
                   $msg["Subpasta-03 " . $value["desenho"]] = 'Não existe.';
                   $violacao[] = "desenhos_add Subpasta-03 não exist";
                   $erro = true;
                 } else {
-                  $Subpasta03_id = $subpasta_data[0]['id'];
+                  $Subpasta03_id = $subpasta_data['id'];
                 }
                 $base_dir .= Ferramentas::norma_lizar_str(Ferramentas::codificador($value["tag3"])) . '/';
               }
@@ -287,7 +308,7 @@ class AddDesenhoPost extends Ferramentas
             $problema = Ferramentas::criet_diretorio($base_dir);
             if (count($problema) == 0) {
               // remove barras iniciais de qualquer tipo
-              $filename = basename($value['desenho']);
+              $filename = Ferramentas::wlFileName((string) $value['desenho']);
               $fileName = ltrim($value['desenho'], '/\\');
 
 
@@ -297,7 +318,7 @@ class AddDesenhoPost extends Ferramentas
                 . $fileName;
 
               // 1) Extrai só o nome do arquivo, sem nenhuma barra
-              $filename = basename($value['desenho']); // '\arquivo.dxf' → 'arquivo.dxf'
+              $filename = Ferramentas::wlFileName((string) $value['desenho']);
 
               // 2) Normaliza o diretório temporário
               $tempDir = str_replace(['/', '\\'], DIRECTORY_SEPARATOR, $_SESSION['pasta_temp']);
@@ -325,14 +346,11 @@ class AddDesenhoPost extends Ferramentas
 
 
 
-              // 5) Move e valida
-              if (
-                ! is_file($desenho_temp)
-                || ! rename($desenho_temp, $desenho)
-                || ! file_exists($desenho)
-              ) {
+              // Em volumes Docker distintos, rename() pode falhar; o helper usa cópia como alternativa.
+              $erroTransferencia = $this->transferirArquivoTemporario($desenho_temp, $desenho);
+              if ($erroTransferencia !== null) {
                 $ok[]  = false;
-                $msg[$value['desenho']] = 'Erro ao transferir o desenho.';
+                $msg[$value['desenho']] = $erroTransferencia;
               } else {
                 $ok[]  = true;
                 $msg[$value['desenho']] = $desenho;
@@ -358,6 +376,7 @@ class AddDesenhoPost extends Ferramentas
                 $db->insert($data);
                 $idDesenho = (int) $db->getInsertID();
                 if ($idDesenho > 0) {
+                  $this->vincularSubpastasAoDesenho($idDesenho, [$Subpasta01_id, $Subpasta02_id, $Subpasta03_id]);
                   $desenhosInseridos[] = $idDesenho;
                   Ferramentas::garantirOrdemAtivaDesenho($idDesenho, (int) $prcoesso_id, (int) $prioridade_id);
                   $this->salvarAreaMaterialSeDxf($idDesenho, $desenho, (int) $prcoesso_id);
@@ -376,14 +395,17 @@ class AddDesenhoPost extends Ferramentas
         $this->vincularDesenhosDependentesAoProjetoPai($desenhosInseridos);
         $this->marcarOrigemDependenciaComoProcessando();
       }
-      $desenhos = Ferramentas::map_pasta($_SESSION['pasta_temp']);
+      $pastaTemp = (string) ($_SESSION['pasta_temp'] ?? '');
+      $desenhos = $pastaTemp !== '' && is_dir($pastaTemp)
+        ? Ferramentas::map_pasta($pastaTemp)
+        : [];
 
       if (empty($desenhos)) {
         // Se não houver desenhos, marca como finalizado no banco
         $desenhosTempModel = new \App\Models\Desenhos_temp();
 
         $registro = $desenhosTempModel
-          ->where('diretorio', $_SESSION['pasta_temp'])
+          ->where('diretorio', $pastaTemp)
           ->where('status',    'processando')
           ->first(); // traz apenas um registro
 
@@ -476,7 +498,7 @@ class AddDesenhoPost extends Ferramentas
       } else {
 
         $desenhos = $desenhos;
-        $base_dir = 'c:/wl/' . $prcoesso_nome . '/';
+        $base_dir = Ferramentas::wlStoragePath($prcoesso_nome) . '/';
         // Constrói o caminho base do diretório para armazenar o desenho.
 
         $empresa_id = null;
@@ -600,17 +622,18 @@ class AddDesenhoPost extends Ferramentas
 
         // Valida a Subpasta-01 associada.
         if ($desenhos["tag1"] != '') { // -----------------
-          $subpasta_data = $subpasta
-            ->where('status', 'ativo')
-            ->where('nome',   $desenhos['tag1'])
-            ->findAll();
+          $subpasta_data = $this->localizarSubpastaSelecionada(
+            (string) $desenhos['tag1'],
+            (int) $empreendimento_id,
+            (int) $finalidade_id
+          );
           if (!$subpasta_data) {
             //violacao
             $msg["Subpasta-01 "] = 'Não existe.';
             $violacao[] = "desenhos_add_uni Subpasta-01 não exist";
             $erro = true;
           } else {
-            $Subpasta01_id = $subpasta_data[0]['id'];
+            $Subpasta01_id = $subpasta_data['id'];
             $base_dir .= (Ferramentas::norma_lizar_str($desenhos["empresa"])) . '/';
             $base_dir .= (Ferramentas::norma_lizar_str($desenhos["empreendimento"])) . '/';
             $base_dir .= (Ferramentas::norma_lizar_str($desenhos["finalidade"])) . '/';
@@ -619,33 +642,35 @@ class AddDesenhoPost extends Ferramentas
 
           // Valida a tag2 associada.
           if ($desenhos["tag2"] != '') { // -----------------
-            $subpasta_data = $subpasta
-              ->where('status', 'ativo')
-              ->where('nome',   $desenhos['tag2'])
-              ->findAll();
+            $subpasta_data = $this->localizarSubpastaSelecionada(
+              (string) $desenhos['tag2'],
+              (int) $empreendimento_id,
+              (int) $finalidade_id
+            );
             if (!$subpasta_data) {
               //violacao
               $msg["Subpasta-02 "] = 'Não existe.';
               $violacao[] = "desenhos_add_uni Subpasta-02 não exist";
               $erro = true;
             } else {
-              $Subpasta02_id = $subpasta_data[0]['id'];
+              $Subpasta02_id = $subpasta_data['id'];
             }
             $base_dir .= Ferramentas::norma_lizar_str(Ferramentas::codificador($desenhos["tag2"])) . '/';
 
             // Valida a tag3 associada.
             if ($desenhos["tag3"] != '') { // -----------------
-              $subpasta_data = $subpasta
-                ->where('status', 'ativo')
-                ->where('nome',   $desenhos['tag3'])
-                ->findAll();
+              $subpasta_data = $this->localizarSubpastaSelecionada(
+                (string) $desenhos['tag3'],
+                (int) $empreendimento_id,
+                (int) $finalidade_id
+              );
               if (!$subpasta_data) {
                 //violacao
                 $msg["Subpasta-03 "] = 'Não existe.';
                 $violacao[] = "desenhos_add_uni Subpasta-03 não exist";
                 $erro = true;
               } else {
-                $Subpasta03_id = $subpasta_data[0]['id'];
+                $Subpasta03_id = $subpasta_data['id'];
               }
               $base_dir .= Ferramentas::norma_lizar_str(Ferramentas::codificador($desenhos["tag3"])) . '/';
             }
@@ -680,7 +705,7 @@ class AddDesenhoPost extends Ferramentas
 
             foreach ($desenhos['desenho'] as $key => $value) {
               // remove barras iniciais de qualquer tipo
-              $filename = basename($value);
+              $filename = Ferramentas::wlFileName((string) $value);
               $fileName = ltrim($value, '/\\');
 
 
@@ -690,7 +715,7 @@ class AddDesenhoPost extends Ferramentas
                 . $fileName;
 
               // 1) Extrai só o nome do arquivo, sem nenhuma barra
-              $filename = basename($value); // '\arquivo.dxf' → 'arquivo.dxf'
+              $filename = Ferramentas::wlFileName((string) $value);
 
               // 2) Normaliza o diretório temporário
               $tempDir = str_replace(['/', '\\'], DIRECTORY_SEPARATOR, $_SESSION['pasta_temp']);
@@ -718,14 +743,11 @@ class AddDesenhoPost extends Ferramentas
 
 
 
-              // 5) Move e valida
-              if (
-                ! is_file($desenho_temp)
-                || ! rename($desenho_temp, $desenho)
-                || ! file_exists($desenho)
-              ) {
+              // Em volumes Docker distintos, rename() pode falhar; o helper usa cópia como alternativa.
+              $erroTransferencia = $this->transferirArquivoTemporario($desenho_temp, $desenho);
+              if ($erroTransferencia !== null) {
                 $ok[]  = false;
-                $msg[$value] = 'Erro ao transferir o desenho.';
+                $msg[$value] = $erroTransferencia;
               } else {
                 $ok[]  = true;
                 $msg[$value] = $desenho;
@@ -748,6 +770,7 @@ class AddDesenhoPost extends Ferramentas
                 $db->insert($data);
                 $id_arquivo = $db->getInsertID();
                 if ((int) $id_arquivo > 0) {
+                  $this->vincularSubpastasAoDesenho((int) $id_arquivo, [$Subpasta01_id, $Subpasta02_id, $Subpasta03_id]);
                   Ferramentas::garantirOrdemAtivaDesenho((int) $id_arquivo, (int) $prcoesso_id, (int) $prioridade_id);
                   $this->salvarAreaMaterialSeDxf((int) $id_arquivo, $desenho, (int) $prcoesso_id);
                 }
@@ -1328,6 +1351,17 @@ class AddDesenhoPost extends Ferramentas
       }
     }
 
+    foreach ($this->variacoesNomeBusca((string) ($dados['empresa'] ?? '')) as $nomeEmpresa) {
+      $registro = (new \App\Models\Empresa())
+        ->where('status', 'ativo')
+        ->where('nome', $nomeEmpresa)
+        ->first();
+
+      if (is_array($registro)) {
+        return $registro;
+      }
+    }
+
     return null;
   }
 
@@ -1336,10 +1370,10 @@ class AddDesenhoPost extends Ferramentas
     $token = (string) ($dados['empreendimento_id'] ?? '');
     $tokenData = ($_SESSION['desenho_empreendimento_tokens'] ?? [])[$token] ?? [];
     $empreendimentoId = (int) ($tokenData['id'] ?? 0);
-    if ((int) ($tokenData['empresa_id'] ?? 0) !== $empresaId) {
-      return null;
-    }
-    if ($empreendimentoId > 0) {
+    if (
+      $empreendimentoId > 0 &&
+      (int) ($tokenData['empresa_id'] ?? 0) === $empresaId
+    ) {
       $builder = (new \App\Models\Empreendimentos())
         ->where('status', 'ativo')
         ->where('id', $empreendimentoId);
@@ -1354,7 +1388,84 @@ class AddDesenhoPost extends Ferramentas
       }
     }
 
+    foreach ($this->variacoesNomeBusca((string) ($dados['empreendimento'] ?? '')) as $nomeEmpreendimento) {
+      $registro = (new \App\Models\Empreendimentos())
+        ->where('status', 'ativo')
+        ->where('empresa_id', $empresaId)
+        ->where('nome', $nomeEmpreendimento)
+        ->first();
+
+      if (is_array($registro)) {
+        return $registro;
+      }
+    }
+
     return null;
+  }
+
+  private function localizarSubpastaSelecionada(
+    string $nome,
+    int $empreendimentoId,
+    int $finalidadeId
+  ): ?array {
+    if ($empreendimentoId <= 0 || $finalidadeId <= 0) {
+      return null;
+    }
+
+    foreach ($this->variacoesNomeBusca($nome) as $nomeSubpasta) {
+      $registro = (new \App\Models\Subpasta())
+        ->where('status', 'ativo')
+        ->where('empreendimentos_id', $empreendimentoId)
+        ->where('finalidade_id', $finalidadeId)
+        ->where('nome', $nomeSubpasta)
+        ->first();
+
+      if (is_array($registro)) {
+        return $registro;
+      }
+    }
+
+    return null;
+  }
+
+  /** Move arquivo temporário, com alternativa para volumes distintos no Docker. */
+  private function transferirArquivoTemporario(string $origem, string $destino): ?string
+  {
+    if (!is_file($origem)) {
+      log_message('error', 'transferirArquivoTemporario: arquivo temporário ausente: ' . $origem);
+      return 'Arquivo temporário não encontrado.';
+    }
+
+    if (@rename($origem, $destino) && is_file($destino)) {
+      return null;
+    }
+
+    clearstatcache(true, $destino);
+    if (@copy($origem, $destino) && is_file($destino)) {
+      @unlink($origem);
+      return null;
+    }
+
+    $ultimoErro = error_get_last();
+    log_message('error', 'transferirArquivoTemporario: falha de ' . $origem . ' para ' . $destino
+      . ($ultimoErro ? ' - ' . $ultimoErro['message'] : ''));
+
+    return 'Não foi possível gravar o desenho no armazenamento do servidor.';
+  }
+
+  /** Registra no banco as subpastas selecionadas para o desenho recém-criado. */
+  private function vincularSubpastasAoDesenho(int $desenhoId, array $subpastaIds): void
+  {
+    if ($desenhoId <= 0) {
+      return;
+    }
+
+    $vinculos = new \App\Models\Desenhos_subpast();
+    foreach (array_unique(array_filter(array_map('intval', $subpastaIds))) as $subpastaId) {
+      if (!$vinculos->where('desenho_id', $desenhoId)->where('tag_id', $subpastaId)->first()) {
+        $vinculos->insert(['desenho_id' => $desenhoId, 'tag_id' => $subpastaId]);
+      }
+    }
   }
 
   /**

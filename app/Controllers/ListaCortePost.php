@@ -54,8 +54,9 @@ class ListaCortePost extends Ferramentas
             return '';
         }
 
-        $tags = explode('/', $diretorio);
-        $tags = array_slice($tags, 6);
+        // A raiz muda entre Windows e Docker; o caminho relativo sempre inicia pelo processo.
+        $tags = explode('/', Ferramentas::wlStorageRelativePath($diretorio));
+        $tags = array_slice($tags, 4);
 
         if (!empty($tags)) {
             unset($tags[count($tags) - 1]);
@@ -298,6 +299,11 @@ class ListaCortePost extends Ferramentas
             $prioridadeNome = htmlspecialchars((string) ($row['prioridade_nome'] ?? '-'), ENT_QUOTES, 'UTF-8');
             $desenhista = htmlspecialchars((string) ($row['desenhista_nome'] ?? ''), ENT_QUOTES, 'UTF-8');
             $nomeArquivo = htmlspecialchars((string) ($row['nome_arquivo'] ?? ''), ENT_QUOTES, 'UTF-8');
+            $responsavel = htmlspecialchars((string) ($row['responsavel_nome'] ?? ''), ENT_QUOTES, 'UTF-8');
+            $nomeArquivoHtml = '<span class="wl-cell-truncate" title="' . $nomeArquivo . '">' . $nomeArquivo . '</span>';
+            if ($tipoProcesso === 'ind' && $responsavel !== '') {
+                $nomeArquivoHtml .= '<div class="text-muted small">Responsavel: ' . $responsavel . '</div>';
+            }
             $empresa = htmlspecialchars((string) ($row['empresa_nome'] ?? ''), ENT_QUOTES, 'UTF-8');
             $empreendimento = htmlspecialchars((string) ($row['empreendimento_nome'] ?? ''), ENT_QUOTES, 'UTF-8');
             $empreendimentoEscala = htmlspecialchars((string) ($row['empreendimento_escala'] ?? ''), ENT_QUOTES, 'UTF-8');
@@ -316,7 +322,7 @@ class ListaCortePost extends Ferramentas
                 . '<td bgcolor="' . $prioridadeCor . '" style="background-color: ' . $prioridadeCor . ' !important; color: ' . $prioridadeTexto . ' !important;" class="text-center"><span class="marca_texto" style="color: ' . $prioridadeTexto . ' !important;">' . $prioridadeNome . '</span></td>'
                 . '<td class="text-center">' . $ordem . '</td>'
                 . '<td><span class="wl-cell-truncate" title="' . $desenhista . '">' . $desenhista . '</span></td>'
-                . '<td><span class="wl-cell-truncate" title="' . $nomeArquivo . '">' . $nomeArquivo . '</span></td>'
+                . '<td>' . $nomeArquivoHtml . '</td>'
                 . '<td><span class="wl-cell-truncate" title="' . $empresa . '">' . $empresa . '</span></td>'
                 . '<td><span class="wl-cell-truncate" title="' . $empreendimentoTitulo . '">' . $empreendimento . '</span>' . ($empreendimentoEscala !== '' ? '<div class="text-muted small">Escala ' . $empreendimentoEscala . '</div>' : '') . '</td>'
                 . '<td><span class="wl-cell-truncate" title="' . $finalidade . '">' . $finalidade . '</span></td>'
@@ -652,7 +658,7 @@ class ListaCortePost extends Ferramentas
             return '';
         }
 
-        return preg_replace('/\\\\+/', '\\\\', str_replace(["c:/wl/", "/"], ["i:/", "\\\\"], $diretorio));
+        return Ferramentas::wlNasPath($diretorio);
     }
 
     private function comprimentoTexto($texto): int
@@ -1057,6 +1063,8 @@ class ListaCortePost extends Ferramentas
                 projeto_desenho.data_add AS projeto_desenho_data_add,
                 projeto_desenho.marcador,
                 p.usuario_id AS projeto_usuario_id,
+                p.responsavel_usuario_id AS projeto_responsavel_usuario_id,
+                responsavel.nome AS projeto_responsavel_nome,
                 p.descricao AS projeto_descricao,
                 p.diretorio AS projeto_diretorio,
                 p.status AS projeto_status,
@@ -1094,6 +1102,7 @@ class ListaCortePost extends Ferramentas
             ->join('empreendimentos', 'empreendimentos.id = desenhos.empreendimentos_id', 'left')
             ->join('finalidade', 'finalidade.id = desenhos.finalidade_id', 'left')
             ->join('usuarios', 'usuarios.id = desenhos.usuario_id_desenhista', 'left')
+            ->join('usuarios responsavel', 'responsavel.id = p.responsavel_usuario_id', 'left')
             ->join('corte', 'corte.id = desenhos.corte_id', 'left')
             ->join('ordem od', "od.desenho_id = desenhos.id AND od.projeto_id IS NULL AND od.status = 'ativo'", 'left')
             ->join('ordem op', "op.projeto_id = p.id AND op.desenho_id IS NULL AND op.processos_id = {$processoId} AND op.status = 'ativo'", 'left')
@@ -1122,6 +1131,8 @@ class ListaCortePost extends Ferramentas
                     'projeto' => [
                         'id' => $projetoId,
                         'usuario_id' => $row['projeto_usuario_id'] ?? null,
+                        'responsavel_usuario_id' => $row['projeto_responsavel_usuario_id'] ?? null,
+                        'responsavel_nome' => $row['projeto_responsavel_nome'] ?? '',
                         'descricao' => $row['projeto_descricao'] ?? '',
                         'diretorio' => $row['projeto_diretorio'] ?? '',
                         'status' => $row['projeto_status'] ?? '',
@@ -1349,7 +1360,11 @@ class ListaCortePost extends Ferramentas
             return null;
         }
 
-        $projeto = (new \App\Models\Projeto())->find($projetoId);
+        $projeto = (new \App\Models\Projeto())
+            ->select('projeto.*, responsavel.nome AS responsavel_nome')
+            ->join('usuarios responsavel', 'responsavel.id = projeto.responsavel_usuario_id', 'left')
+            ->where('projeto.id', $projetoId)
+            ->first();
         if (!is_array($projeto) || empty($projeto['id'])) {
             return null;
         }
@@ -1396,8 +1411,8 @@ class ListaCortePost extends Ferramentas
 
     private function montarDestinoArquivoProjeto(string $diretorioProjeto, string $nomeArquivoOriginal): array
     {
-        $diretorioProjeto = rtrim(str_replace(['/', '\\'], DIRECTORY_SEPARATOR, $diretorioProjeto), DIRECTORY_SEPARATOR);
-        $nomeArquivoOriginal = basename($nomeArquivoOriginal);
+        $diretorioProjeto = rtrim(Ferramentas::wlStoragePath($diretorioProjeto), DIRECTORY_SEPARATOR);
+        $nomeArquivoOriginal = Ferramentas::wlFileName($nomeArquivoOriginal);
         $baseNome = trim((string) pathinfo($nomeArquivoOriginal, PATHINFO_FILENAME));
         $extensao = strtolower((string) pathinfo($nomeArquivoOriginal, PATHINFO_EXTENSION));
 
@@ -3268,53 +3283,26 @@ public function ver_desenho()
 
     $caminhoExibicao = $this->montarCaminhoExibicaoLista($novaEntrada);
     $nome = Ferramentas::decodificador($novaEntrada['nome']);
-    $caminho     = dirname($novaEntrada['diretorio']) . DIRECTORY_SEPARATOR;
-    $nomeArquivo = basename($novaEntrada['diretorio']);
-    $nome_ajuste1 = "";
-    $nome_ajuste2 = "";
-
-    // Verifica possÃƒÆ’Ã‚Â­veis nomes no disco (igual ao seu)
-    if (!file_exists($caminho . $novaEntrada['nome'])) {
-        if (!file_exists($caminho . $nomeArquivo)) {
-
-            // Inserir ponto apÃƒÆ’Ã‚Â³s ÃƒÆ’Ã‚Âºltimo "_" se nÃƒÆ’Ã‚Â£o tiver extensÃƒÆ’Ã‚Â£o
-            if (strpos($nomeArquivo, '.') === false) {
-                $pos = strrpos($nomeArquivo, '_');
-                if ($pos !== false) {
-                    $nome_ajuste1 = substr_replace($nomeArquivo, '.', $pos + 1, 0);
-                }
-            }
-            if (!file_exists($caminho . $nome_ajuste1)) {
-                if (strpos($novaEntrada['nome'], '.') === false) {
-                    $pos = strrpos($novaEntrada['nome'], '_');
-                    if ($pos !== false) {
-                        $nome_ajuste2 = substr_replace($novaEntrada['nome'], '.', $pos + 1, 0);
-                    }
-                }
-
-                if (!file_exists($caminho . $nome_ajuste2)) {
-                    return $this->response->setJSON([
-                        'status' => false,
-                        'msg'    => 'Arquivo não encontrado em nenhuma das variações de nome',
-                        'caminho' => $caminhoExibicao,
-                        'tentativas' => [
-                            $caminho . $novaEntrada['nome'],
-                            $caminho . $nomeArquivo,
-                            $caminho . $nome_ajuste1,
-                            $caminho . $nome_ajuste2,
-                        ],
-                        'original' => $novaEntrada['diretorio'],
-                    ]);
-                } else {
-                    $nomeArquivo = $nome_ajuste2;
-                }
-            } else {
-                $nomeArquivo = $nome_ajuste1;
-            }
-        }
-    } else {
-        $nomeArquivo = $novaEntrada['nome'];
+    $tentativas = [];
+    $caminhoCompleto = Ferramentas::wlResolveExistingFile(
+        (string) ($novaEntrada['diretorio'] ?? ''),
+        (string) ($novaEntrada['nome'] ?? ''),
+        $tentativas
+    );
+    if ($caminhoCompleto === null) {
+        $caminhoFisico = $tentativas[0] ?? Ferramentas::wlStoragePath((string) ($novaEntrada['diretorio'] ?? ''));
+        return $this->response->setJSON([
+            'status' => false,
+            'msg' => 'Arquivo não encontrado em nenhuma das variações de nome',
+            'caminho' => $caminhoFisico,
+            'caminho_usuario' => $caminhoExibicao,
+            'raiz_acessivel' => is_dir(Ferramentas::wlStorageRoot()),
+            'pasta_acessivel' => is_dir(dirname($caminhoFisico)),
+            'tentativas' => $tentativas,
+            'original' => $novaEntrada['diretorio'],
+        ]);
     }
+    $nomeArquivo = Ferramentas::wlFileName($caminhoCompleto);
 
     // Remove prefixo cortado_DD_MM_AAAA__HH_MM_
     $s = preg_replace('/^cortado_\d{2}_\d{2}_\d{4}__\d{2}_\d{2}_/', '', $nomeArquivo);
@@ -3327,18 +3315,6 @@ public function ver_desenho()
         $nomeFinal = trim($s);
         $ext       = pathinfo($s, PATHINFO_EXTENSION);
         $extensao  = $ext ? '.' . strtolower($ext) : '';
-    }
-
-    $caminhoCompleto = $caminho . $nomeArquivo;
-    $caminhoCompleto = str_replace(['\\','//'],'/', $caminhoCompleto);
-
-    if (!file_exists($caminhoCompleto)) {
-        return $this->response->setJSON([
-            'status' => false,
-            'msg'    => 'Arquivo não encontrado no caminho final',
-            'caminho' => $caminhoExibicao,
-            'arquivo'=> $caminhoCompleto
-        ]);
     }
 
     // LÃƒÆ’Ã‚Âª e codifica
@@ -3475,10 +3451,10 @@ public function ver_desenho()
                       <input type="checkbox" value="" onclick="marcarArquivos(' . $i . ')" id="' . $checkboxId . '" ' . $marcador . '>
                       <label for="' . $checkboxId . '"></label>
                     </div>
-                    <span class="text"><button class="btn btn-outline-info" onclick="buscarArquivos(' . $i . ')">' . basename($d['diretorio']) . '</button></span> ';
+                    <span class="text"><button class="btn btn-outline-info" onclick="buscarArquivos(' . $i . ')">' . Ferramentas::wlFileName((string) ($d['diretorio'] ?? '')) . '</button></span> ';
                 $itens[] = [
                     'id' => $i,
-                    'nome' => basename($d['diretorio']),
+                    'nome' => Ferramentas::wlFileName((string) ($d['diretorio'] ?? '')),
                     'marcado' => $marcado,
                     'status' => $this->normalizarStatusTexto($d['status'] ?? ''),
                     'removivel' => strtolower(trim($this->normalizarStatusTexto($d['status'] ?? ''))) === 'pendente',
@@ -3498,6 +3474,9 @@ public function ver_desenho()
                 "total" => count($itens),
                 "projeto_id" => $projetoId,
                 "descricao" => (string) (($contextoProjeto['projeto']['descricao'] ?? '') ?: ''),
+                "responsavel_id" => (int) (($contextoProjeto['projeto']['responsavel_usuario_id'] ?? 0) ?: 0),
+                "responsavel_nome" => (string) (($contextoProjeto['projeto']['responsavel_nome'] ?? '') ?: ''),
+                "usuario_logado_id" => (int) ($_SESSION['usuario'] ?? 0),
                 "accept" => (string) (($contextoProjeto['accept'] ?? '') ?: ''),
                 "1" => $array,
                 "2" => $_SESSION["lista_projetos"]
@@ -3506,13 +3485,124 @@ public function ver_desenho()
         }
     }
 
+    public function assumir_responsabilidade_projeto()
+    {
+        if (!$this->request->isAJAX()) {
+            return $this->response->setStatusCode(400)->setJSON([
+                'ok' => false,
+                'mensagem' => 'Requisicao invalida.',
+            ]);
+        }
+
+        $this->iniciarSessaoSeNecessario();
+        $projetoId = (int) $this->request->getPost('projeto_id');
+        $usuarioId = (int) ($_SESSION['usuario'] ?? 0);
+        $assumir = (string) $this->request->getPost('assumir') !== '0';
+
+        if ($projetoId <= 0 || $usuarioId <= 0) {
+            return $this->response->setStatusCode(422)->setJSON([
+                'ok' => false,
+                'mensagem' => 'Projeto ou usuario nao identificado.',
+            ]);
+        }
+
+        $db = \Config\Database::connect();
+        $projeto = $db->table('projeto')
+            ->select('id, responsavel_usuario_id')
+            ->where('id', $projetoId)
+            ->get()
+            ->getRowArray();
+
+        if (!is_array($projeto)) {
+            return $this->response->setStatusCode(404)->setJSON([
+                'ok' => false,
+                'mensagem' => 'Projeto nao encontrado.',
+            ]);
+        }
+
+        $responsavelId = (int) ($projeto['responsavel_usuario_id'] ?? 0);
+        if (!$assumir) {
+            if ($responsavelId > 0 && $responsavelId !== $usuarioId) {
+                return $this->response->setStatusCode(403)->setJSON([
+                    'ok' => false,
+                    'mensagem' => 'Somente o responsavel atual pode remover esta responsabilidade.',
+                    'responsavel_id' => $responsavelId,
+                ]);
+            }
+
+            if ($responsavelId === $usuarioId) {
+                $db->table('projeto')
+                    ->where('id', $projetoId)
+                    ->where('responsavel_usuario_id', $usuarioId)
+                    ->update([
+                        'responsavel_usuario_id' => null,
+                        'data_responsabilidade' => null,
+                    ]);
+            }
+
+            return $this->response->setJSON([
+                'ok' => true,
+                'responsavel_id' => 0,
+                'responsavel_nome' => '',
+                'mensagem' => 'Responsabilidade removida.',
+            ]);
+        }
+
+        if ($responsavelId > 0 && $responsavelId !== $usuarioId) {
+            $responsavel = (new \App\Models\Usuarios())->find($responsavelId);
+            return $this->response->setStatusCode(409)->setJSON([
+                'ok' => false,
+                'mensagem' => 'Este projeto ja esta sob responsabilidade de ' . trim((string) ($responsavel['nome'] ?? 'outro usuario')) . '.',
+                'responsavel_id' => $responsavelId,
+                'responsavel_nome' => (string) ($responsavel['nome'] ?? ''),
+            ]);
+        }
+
+        if ($responsavelId === 0) {
+            $atualizado = $db->table('projeto')
+                ->where('id', $projetoId)
+                ->where('responsavel_usuario_id IS NULL', null, false)
+                ->update([
+                    'responsavel_usuario_id' => $usuarioId,
+                    'data_responsabilidade' => date('Y-m-d H:i:s'),
+                ]);
+
+            if (!$atualizado || $db->affectedRows() === 0) {
+                $projetoAtual = $db->table('projeto')
+                    ->select('responsavel_usuario_id')
+                    ->where('id', $projetoId)
+                    ->get()
+                    ->getRowArray();
+                $responsavelAtualId = (int) ($projetoAtual['responsavel_usuario_id'] ?? 0);
+                $responsavelAtual = $responsavelAtualId > 0
+                    ? (new \App\Models\Usuarios())->find($responsavelAtualId)
+                    : null;
+
+                return $this->response->setStatusCode(409)->setJSON([
+                    'ok' => false,
+                    'mensagem' => 'Este projeto acabou de ser assumido por ' . trim((string) ($responsavelAtual['nome'] ?? 'outro usuario')) . '.',
+                    'responsavel_id' => $responsavelAtualId,
+                    'responsavel_nome' => (string) ($responsavelAtual['nome'] ?? ''),
+                ]);
+            }
+        }
+
+        $usuario = (new \App\Models\Usuarios())->find($usuarioId);
+        return $this->response->setJSON([
+            'ok' => true,
+            'responsavel_id' => $usuarioId,
+            'responsavel_nome' => (string) ($usuario['nome'] ?? ''),
+            'mensagem' => 'Responsabilidade registrada.',
+        ]);
+    }
+
     function baixar_arquivo()
     {
         // if ($this->request->isAJAX()) {
         // ObtÃƒÆ’Ã‚Â©m o ID do desenho a ser cortado
         session_start();
         $id = service('request')->getPost('id');
-        $diretorio = $_SESSION["baixar_arquivo"][$id];
+        $diretorio = Ferramentas::wlStoragePath((string) ($_SESSION["baixar_arquivo"][$id] ?? ''));
         if (!file_exists($diretorio)) {
             $data = [
                 "erro" => 'arquivo não encontrado',
@@ -3648,7 +3738,7 @@ public function ver_desenho()
             ]);
         }
 
-        $diretorioProjeto = trim((string) ($contexto['projeto']['diretorio'] ?? ''));
+        $diretorioProjeto = Ferramentas::wlStoragePath((string) ($contexto['projeto']['diretorio'] ?? ''));
         if ($diretorioProjeto === '') {
             return $this->response->setStatusCode(422)->setJSON([
                 'ok' => 'false',
@@ -3810,7 +3900,7 @@ public function ver_desenho()
             ]);
         }
 
-        $diretorioArquivo = (string) ($desenho['diretorio'] ?? '');
+        $diretorioArquivo = Ferramentas::wlStoragePath((string) ($desenho['diretorio'] ?? ''));
         $projeto = (new \App\Models\Projeto())->find($projetoId);
         $db = \Config\Database::connect();
         $dependenciaModel = new \App\Models\Dependencia();
@@ -3866,7 +3956,7 @@ public function ver_desenho()
         }
 
         if (is_array($projeto) && !empty($projeto['diretorio'])) {
-            $diretorioProjeto = rtrim(str_replace(['/', '\\'], DIRECTORY_SEPARATOR, (string) $projeto['diretorio']), DIRECTORY_SEPARATOR);
+            $diretorioProjeto = rtrim(Ferramentas::wlStoragePath((string) $projeto['diretorio']), DIRECTORY_SEPARATOR);
             if (is_dir($diretorioProjeto)) {
                 $itensDiretorio = @scandir($diretorioProjeto);
                 if (is_array($itensDiretorio) && count(array_diff($itensDiretorio, ['.', '..'])) === 0) {
@@ -4105,7 +4195,7 @@ public function ver_desenho()
             // Retorna o caminho do arquivo que estÃƒÆ’Ã‚Â¡ sendo cortado
             //Ferramentas::enviar_desenho($_SERVER['REMOTE_ADDR'],$array['diretorio']);
             $data = [
-                "caminho" => preg_replace('/\\\\+/', '\\\\', str_replace(["c:/wl/", "/"], ["i:/", "\\\\"], $array['diretorio']))
+                "caminho" => Ferramentas::wlNasPath((string) ($array['diretorio'] ?? ''))
             ];
             return $this->response->setJSON($data);
         }
@@ -4368,62 +4458,24 @@ public function enviar_para_lista_corte()
         ]);
     }
 
-    // ====== Resolve caminho do arquivo (mesma lÃƒÆ’Ã‚Â³gica do seu ver_desenho) ======
     $caminhoExibicao = $this->montarCaminhoExibicaoLista($novaEntrada);
-    $caminho      = dirname($novaEntrada['diretorio']) . DIRECTORY_SEPARATOR;
-    $nomeArquivo  = basename($novaEntrada['diretorio']);
-    $nome_ajuste1 = "";
-    $nome_ajuste2 = "";
-
-    if (!file_exists($caminho . $novaEntrada['nome'])) {
-        if (!file_exists($caminho . $nomeArquivo)) {
-
-            if (strpos($nomeArquivo, '.') === false) {
-                $pos = strrpos($nomeArquivo, '_');
-                if ($pos !== false) {
-                    $nome_ajuste1 = substr_replace($nomeArquivo, '.', $pos + 1, 0);
-                }
-            }
-
-            if (!file_exists($caminho . $nome_ajuste1)) {
-                if (strpos($novaEntrada['nome'], '.') === false) {
-                    $pos = strrpos($novaEntrada['nome'], '_');
-                    if ($pos !== false) {
-                        $nome_ajuste2 = substr_replace($novaEntrada['nome'], '.', $pos + 1, 0);
-                    }
-                }
-
-                if (!file_exists($caminho . $nome_ajuste2)) {
-                    return $this->response->setJSON([
-                        'status' => false,
-                        'msg'    => 'Arquivo não encontrado em nenhuma das variações de nome',
-                        'tentativas' => [
-                            $caminho . $novaEntrada['nome'],
-                            $caminho . $nomeArquivo,
-                            $caminho . $nome_ajuste1,
-                            $caminho . $nome_ajuste2,
-                        ],
-                        'original' => $novaEntrada['diretorio'],
-                    ]);
-                } else {
-                    $nomeArquivo = $nome_ajuste2;
-                }
-            } else {
-                $nomeArquivo = $nome_ajuste1;
-            }
-        }
-    } else {
-        $nomeArquivo = $novaEntrada['nome'];
-    }
-
-    $caminhoCompleto = $caminho . $nomeArquivo;
-    $caminhoCompleto = str_replace(['\\', '//'], '/', $caminhoCompleto);
-
-    if (!file_exists($caminhoCompleto)) {
+    $tentativas = [];
+    $caminhoCompleto = Ferramentas::wlResolveExistingFile(
+        (string) ($novaEntrada['diretorio'] ?? ''),
+        (string) ($novaEntrada['nome'] ?? ''),
+        $tentativas
+    );
+    if ($caminhoCompleto === null) {
+        $caminhoFisico = $tentativas[0] ?? Ferramentas::wlStoragePath((string) ($novaEntrada['diretorio'] ?? ''));
         return $this->response->setJSON([
             'status' => false,
-            'msg'    => 'Arquivo não encontrado no caminho final',
-            'arquivo'=> $caminhoCompleto
+            'msg' => 'Arquivo não encontrado em nenhuma das variações de nome',
+            'caminho' => $caminhoFisico,
+            'caminho_usuario' => $caminhoExibicao,
+            'raiz_acessivel' => is_dir(Ferramentas::wlStorageRoot()),
+            'pasta_acessivel' => is_dir(dirname($caminhoFisico)),
+            'tentativas' => $tentativas,
+            'original' => $novaEntrada['diretorio'],
         ]);
     }
 
