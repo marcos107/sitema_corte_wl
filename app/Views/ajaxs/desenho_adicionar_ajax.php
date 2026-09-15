@@ -2484,6 +2484,8 @@
         //Altera o texto do botão de confirmação no modal
         var botao_confirmar_modal = document.getElementById('botao_confirmar_modal_cadastrar');
         botao_confirmar_modal.innerHTML = "Confirmar";
+        botao_confirmar_modal.disabled = false;
+        botao_confirmar_modal.onclick = cadastrarSubpastaDesenho;
 
         //Obtém referências aos elementos do modal
         var modal_titulo = document.getElementById('modal_cadastrar_titulo');
@@ -2545,7 +2547,7 @@
         // Adiciona um evento de input ao elemento para limitar o comprimento do valor
         inputElement.addEventListener("input", function() {
             var input = this;
-            var maxLength = 17;
+            var maxLength = 30;
             input.value = input.value.slice(0, maxLength); // Trunca o valor para o tamanho máximo
         });
 
@@ -2622,13 +2624,22 @@
 
     }
 
-    function cadastrar() {
+    function cadastrarSubpastaDesenho() {
         //Esta função é usada para cadastrar uma nova "tag".
 
         //Obtém o valor da tag a partir do elemento com o ID "nome_tag_novo".
         var tag = document.getElementById("nome_tag_novo").value;
         var empreendimento = document.getElementById("empreendimento_tag_novo").value;
         var finalidade = document.getElementById("finalidade_tag_novo").value;
+        var botao = document.getElementById('botao_confirmar_modal_cadastrar');
+
+        if (!tag.trim() || !empreendimento || !finalidade) {
+            alert_personalizado('Subpasta', 'Aguarde o carregamento e informe a subpasta.');
+            return;
+        }
+
+        botao.disabled = true;
+        botao.innerHTML = 'Salvando...';
 
         $.ajax({
             url: '<?= base_url('public/desenho_tag_cadastro') ?>',
@@ -2660,7 +2671,18 @@
                     value_tags(true);
                     fecharModal('modal_cadastrar');
                 }
-
+            },
+            error: function(xhr) {
+                var resposta = xhr.responseJSON || {};
+                var mensagem = resposta.msg;
+                if (mensagem && typeof mensagem === 'object') {
+                    mensagem = Object.values(mensagem).join(' ');
+                }
+                alert_personalizado('Subpasta', mensagem || 'Não foi possível salvar a subpasta. Tente novamente.');
+            },
+            complete: function() {
+                botao.disabled = false;
+                botao.innerHTML = 'Confirmar';
             }
         });
     }

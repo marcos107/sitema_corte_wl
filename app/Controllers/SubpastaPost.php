@@ -429,13 +429,20 @@ class SubpastaPost extends EmpresaPost
     $jaExistia = is_array($subpasta);
 
     if (!$jaExistia) {
-      $subpastas->insert([
+      $inserido = $subpastas->insert([
         'nome' => $tag,
         'empreendimentos_id' => $empreendimentoId,
         'finalidade_id' => $finalidadeId,
         'status' => 'ativo',
         'usuario_id' => (int) ($_SESSION['usuario'] ?? 0),
       ]);
+      if (!$inserido) {
+        log_message('error', 'cadastrarSubpastaAtual: ' . json_encode($subpastas->errors()));
+        return $this->response->setJSON([
+          'ok' => false,
+          'msg' => ['Subpasta' => 'Não foi possível salvar a subpasta. Tente novamente.'],
+        ]);
+      }
       $subpasta = $subpastas->find($subpastas->getInsertID());
     }
 
