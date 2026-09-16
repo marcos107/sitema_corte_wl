@@ -6,6 +6,107 @@ use Exception;
 class Ferramentas extends BaseController
 {
 
+    /** Normaliza barras e remove separadores duplicados de um caminho. */
+    public static function normalizePath(string $rawPath): string
+    {
+        $path = trim($rawPath);
+        $unc = preg_match('#^[\\\\/]{2}#', $path) === 1;
+        $path = str_replace(['/', '\\'], DIRECTORY_SEPARATOR, $path);
+        $separator = preg_quote(DIRECTORY_SEPARATOR, '#');
+        $path = preg_replace("#{$separator}+#", DIRECTORY_SEPARATOR, $path) ?? $path;
+
+        if ($unc) {
+            $path = DIRECTORY_SEPARATOR . DIRECTORY_SEPARATOR . ltrim($path, DIRECTORY_SEPARATOR);
+        }
+
+        $path = preg_replace_callback('/^([a-z]):/i', static function (array $matches): string {
+            return strtoupper($matches[1]) . ':';
+        }, $path) ?? $path;
+
+        if (!preg_match('/^[A-Z]:' . preg_quote(DIRECTORY_SEPARATOR, '/') . '$/i', $path)) {
+            $path = rtrim($path, DIRECTORY_SEPARATOR);
+        }
+
+        return str_replace('\\', '/', $path);
+    }
+
+    public static function wlEnvironmentTarget(): string
+    {
+        $target = strtolower(trim((string) (getenv('WL_ENVIRONMENT_TARGET') ?: 'local')));
+
+        return in_array($target, ['docker', 'remote'], true) ? 'docker' : 'local';
+    }
+
+    /** Retorna a raiz física do armazenamento configurada para o ambiente atual. */
+    public static function wlStorageRoot(): string
+    {
+        $variable = self::wlEnvironmentTarget() === 'docker'
+            ? 'WL_STORAGE_DOCKER_ROOT'
+            : 'WL_STORAGE_LOCAL_ROOT';
+        $configured = trim((string) (getenv('WL_STORAGE_ROOT') ?: getenv($variable) ?: ''));
+
+        if ($configured === '') {
+            $configured = PHP_OS_FAMILY === 'Windows' ? 'C:/wl' : '/srv/wl';
+        }
+
+        return rtrim(self::normalizePath($configured), "\\/");
+    }
+
+    /** Converte caminhos históricos do banco em caminho relativo ao armazenamento WL. */
+    public static function wlStorageRelativePath(string $path): string
+    {
+        $normalized = str_replace('\\', '/', trim($path));
+        if ($normalized === '') {
+            return '';
+        }
+
+        $unc = str_starts_with($normalized, '//');
+        $normalized = preg_replace('#/+#', '/', $normalized) ?? $normalized;
+        if ($unc) {
+            $normalized = '/' . $normalized;
+        }
+
+        $prefixes = [
+            rtrim(str_replace('\\', '/', self::wlStorageRoot()), '/') . '/',
+            'C:/wl/',
+            'c:/wl/',
+            'Z:/wl/',
+            'z:/wl/',
+            '/srv/wl/',
+        ];
+
+        foreach ([
+            'WL_STORAGE_LOCAL_ROOT',
+            'WL_STORAGE_DOCKER_ROOT',
+            'WL_NAS_LOCAL_SHARE',
+            'WL_NAS_DOCKER_SHARE',
+            'WL_STORAGE_ROOT',
+            'WL_NAS_SHARE',
+        ] as $variable) {
+            $configured = trim((string) (getenv($variable) ?: ''));
+            if ($configured !== '') {
+                array_unshift($prefixes, rtrim(str_replace('\\', '/', $configured), '/') . '/');
+            }
+        }
+
+        foreach ($prefixes as $prefix) {
+            if (stripos($normalized, $prefix) === 0) {
+                return ltrim(substr($normalized, strlen($prefix)), '/');
+            }
+        }
+
+        return ltrim($normalized, '/');
+    }
+
+    /** Resolve um caminho salvo no banco para a montagem disponível neste ambiente. */
+    public static function wlStoragePath(string $path = ''): string
+    {
+        $root = self::wlStorageRoot();
+        $relative = self::wlStorageRelativePath($path);
+
+        return self::normalizePath($relative === '' ? $root : $root . '/' . $relative);
+    }
+
     /** Extrai somente o nome de um arquivo de caminhos com barras mistas. */
     public static function wlFileName(string $path): string
     {
