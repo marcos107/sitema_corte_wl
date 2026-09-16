@@ -6,6 +6,12 @@ use Exception;
 class Ferramentas extends BaseController
 {
 
+    /** Extrai somente o nome de um arquivo de caminhos com barras mistas. */
+    public static function wlFileName(string $path): string
+    {
+        return basename(str_replace(['\\', '/'], DIRECTORY_SEPARATOR, trim($path)));
+    }
+
     /**
      * Normaliza uma string substituindo caracteres especiais, removendo símbolos não alfanuméricos,
      * convertendo para maiúsculas e substituindo espaços por underscores.
