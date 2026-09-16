@@ -3235,7 +3235,7 @@ function desenho_modal_ind() {
 
                 // Itera sobre o array de resposta e adiciona as opções ao select
                 $.each(response.lista, function(index, item) {
-                    $('#empreendimento_tag_novo').append('<option value="' + item.empreendimento + '">' + item.empreendimento + '</option>');
+                    $('#empreendimento_tag_novo').append('<option value="' + item.id + '">' + item.empreendimento + '</option>');
                 });
                 if (id != null)
                     document.getElementById("empreendimento_tag_novo").value = id;

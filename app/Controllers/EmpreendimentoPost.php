@@ -381,15 +381,42 @@ class EmpreendimentoPost extends EmpresaPost
       $empresa = new \App\Models\Empresa();
       $empresa_data = $empresa->find();
       $empresa_usando = service('request')->getPost('empresa');
-      $id = Ferramentas::array_index(Ferramentas::array_pesquisa($empresa_data, 'nome', Ferramentas::codificador($empresa_usando)), ['id']);
+      $empresaTokens = $_SESSION['desenho_empresa_tokens'] ?? [];
+      $id = (int) ($empresaTokens[(string) $empresa_usando] ?? 0);
+      if ($id <= 0) {
+        $id = (int) Ferramentas::array_index(
+          Ferramentas::array_pesquisa($empresa_data, 'nome', Ferramentas::codificador($empresa_usando)),
+          ['id']
+        );
+      }
       $empreendimento_data = $empreendimento->find();
       $lista = array();
       $lista_session = array();
+      $tokens = $_SESSION['desenho_empreendimento_tokens'] ?? [];
 
       foreach ($empreendimento_data as $value) {
         if ($value['status'] == 'ativo' && ($value['empresa_id'] == $id or $id == "")) {
           $temp['empreendimento'] = $this->valorBancoDecodificado($value['nome'] ?? '');
           $lista_session[$value['id']] = $temp['empreendimento'];
+          $empreendimentoId = (int) ($value['id'] ?? 0);
+          $token = null;
+          foreach ($tokens as $tokenExistente => $dadosToken) {
+            if (
+              (int) ($dadosToken['id'] ?? 0) === $empreendimentoId &&
+              (int) ($dadosToken['empresa_id'] ?? 0) === (int) ($value['empresa_id'] ?? 0)
+            ) {
+              $token = $tokenExistente;
+              break;
+            }
+          }
+          if ($token === null) {
+            $token = bin2hex(random_bytes(16));
+            $tokens[$token] = [
+              'id' => $empreendimentoId,
+              'empresa_id' => (int) ($value['empresa_id'] ?? 0),
+            ];
+          }
+          $temp['id'] = $token;
           $lista[] = $temp;
         }
       }
@@ -399,6 +426,7 @@ class EmpreendimentoPost extends EmpresaPost
       });
 
       $_SESSION["lista_empreendimento"] = $lista_session;
+      $_SESSION['desenho_empreendimento_tokens'] = $tokens;
 
       return $this->response->setJSON([
         "lista" => $lista,

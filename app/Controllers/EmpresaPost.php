@@ -327,6 +327,7 @@ class EmpresaPost extends Ferramentas
 
       $finalidade_data = $finalidade->find();
       $lista = array();
+      $tokens = $_SESSION['desenho_empresa_tokens'] ?? [];
 
 
 
@@ -339,6 +340,14 @@ class EmpresaPost extends Ferramentas
             $temp['empresa'] = (string) ($value['nome'] ?? '');
           }
 
+          $empresaId = (int) ($value['id'] ?? 0);
+          $token = array_search($empresaId, $tokens, true);
+          if ($token === false) {
+            $token = bin2hex(random_bytes(16));
+            $tokens[$token] = $empresaId;
+          }
+          $temp['id'] = $token;
+
           $lista[] = $temp;
         }
 
@@ -346,6 +355,7 @@ class EmpresaPost extends Ferramentas
       usort($lista, function ($a, $b) {
         return strcasecmp($a['empresa'], $b['empresa']);
       });
+      $_SESSION['desenho_empresa_tokens'] = $tokens;
 
       //retorna a lista para o ajax
       $data = [

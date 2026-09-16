@@ -158,6 +158,8 @@ class SubpastaPost extends EmpresaPost
       $tag = service('request')->getPost('tag'); // Obtém o nome da tag enviado via POST.
       $empreendimento = service('request')->getPost('empreendimento');
       $finalidade = service('request')->getPost('finalidade');
+      $empreendimentoId = $this->resolverEmpreendimentoSubpasta((string) $empreendimento);
+      $finalidadeId = $this->resolverFinalidadeSubpasta((string) $finalidade);
 
       // Converte caracteres especiais para suas versões simples usando iconv
       $tag = iconv('UTF-8', 'ASCII//TRANSLIT', $tag);
@@ -179,28 +181,18 @@ class SubpastaPost extends EmpresaPost
 
 
 
-      if (array_search($empreendimento, $_SESSION["lista_empreendimento"], true) === false) {
+      if ($empreendimentoId <= 0) {
         $msg['Empreendimento'] = "Nome da empreendimento não cadastrado";
         $violacao[] = "desenho_tag_cadastro Nome da empreendimento não cadastrado";
-      } else {
-        if (Ferramentas::codificador($empreendimento) == '') {
-          $msg['Empreendimento'] = "Empreendimento possui caracteres não permitidos";
-          $violacao[] = "desenho_tag_cadastro empreendimento possui caracteres não permitidos";
-        }
       }
 
 
 
 
 
-      if (array_search($finalidade, $_SESSION["lista_finalidade"], true) === false) {
+      if ($finalidadeId <= 0) {
         $msg['Finalidade'] = "Nome da finalidade não cadastrado";
         $violacao[] = "desenho_tag_cadastro Nome da finalidade não cadastrado";
-      } else {
-        if (Ferramentas::codificador($empreendimento) == '') {
-          $msg['Finalidade'] = "Finalidade possui caracteres não permitidos";
-          $violacao[] = "desenho_tag_cadastro finalidade possui caracteres não permitidos";
-        }
       }
 
 
@@ -227,7 +219,7 @@ class SubpastaPost extends EmpresaPost
         $tag_data = $db->find();
 
         // Verifica se o nome da tag não é duplicado e se houve alterações.
-        if ((count(Ferramentas::array_pesquisa_mult($tag_data, ['nome', 'finalidade_id', 'empreendimentos_id'], [Ferramentas::codificador($tag), array_search($finalidade, $_SESSION["lista_finalidade"], true), array_search($empreendimento, $_SESSION["lista_empreendimento"], true)])) == 0)) { // verifica se o id do mepreendimento com o mesmo nome é igual ao id
+        if ((count(Ferramentas::array_pesquisa_mult($tag_data, ['nome', 'finalidade_id', 'empreendimentos_id'], [Ferramentas::codificador($tag), $finalidadeId, $empreendimentoId])) == 0)) { // verifica se o id do mepreendimento com o mesmo nome é igual ao id
 
 
           $alteracao = new \App\Models\Alteracoes();
@@ -249,13 +241,13 @@ class SubpastaPost extends EmpresaPost
 
               [
                 "valor_antes" => Ferramentas::array_index(Ferramentas::array_pesquisa($tag_data, 'id', $id), ['finalidade_id']),
-                "valor_depois" => array_search($finalidade, $_SESSION["lista_finalidade"], true),
+                "valor_depois" => $finalidadeId,
                 "campo" => "finalidade_id"
               ],
 
               [
                 "valor_antes" => Ferramentas::array_index(Ferramentas::array_pesquisa($tag_data, 'id', $id), ['empreendimentos_id']),
-                "valor_depois" =>  array_search($empreendimento, $_SESSION["lista_empreendimento"], true),
+                "valor_depois" => $empreendimentoId,
                 "campo" => "empreendimentos_id"
               ]
             ]
@@ -266,14 +258,14 @@ class SubpastaPost extends EmpresaPost
 
           $date = [
             'nome' => Ferramentas::norma_lizar_str($tag),
-            "finalidade_id" => array_search($finalidade, $_SESSION["lista_finalidade"], true),
-            "empreendimentos_id" => array_search($empreendimento, $_SESSION["lista_empreendimento"], true),
+            "finalidade_id" => $finalidadeId,
+            "empreendimentos_id" => $empreendimentoId,
           ];
 
           $db->update($id, $date);
 
           $ok = true;
-        } else if (count(Ferramentas::array_pesquisa_mult($tag_data, ['id', 'nome', 'finalidade_id', 'empreendimentos_id'], [$id, Ferramentas::codificador($tag), array_search($finalidade, $_SESSION["lista_finalidade"], true), array_search($empreendimento, $_SESSION["lista_empreendimento"], true)])) != 0) {
+        } else if (count(Ferramentas::array_pesquisa_mult($tag_data, ['id', 'nome', 'finalidade_id', 'empreendimentos_id'], [$id, Ferramentas::codificador($tag), $finalidadeId, $empreendimentoId])) != 0) {
           $msg["Modificar"] = 'Nenhum item foi modificado.';
         } else {
           $msg["Subpasta"] = 'O nome da subpasta já existe neste empreendimento para essa finalidade.';
@@ -384,6 +376,11 @@ class SubpastaPost extends EmpresaPost
     $idSessao = array_search($valor, $_SESSION['lista_empreendimento'] ?? [], true);
     if ($idSessao !== false) {
       return (int) $idSessao;
+    }
+
+    // Compatibilidade apenas para seletores já abertos antes da migração aos tokens.
+    if (ctype_digit($valor) && isset(($_SESSION['lista_empreendimento'] ?? [])[(int) $valor])) {
+      return (int) $valor;
     }
 
     return $this->resolverIdPorNome(new \App\Models\Empreendimentos(), $valor);
