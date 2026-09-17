@@ -584,7 +584,7 @@
 
                     for (let j = 0; j < desenhos.length; j++) {
                         if (document.getElementById("empresa_cliente_novo_" + j)) {
-                            document.getElementById("empresa_cliente_novo_" + j).selectedIndex = selectedIndex1;
+                            document.getElementById("empresa_cliente_novo_" + j).value = selectedValue;
                         }
                     }
 
@@ -771,8 +771,8 @@
 
                 tabel_bory.classList.add('table', 'table-bordered', 'table-striped');
                 anexarTabelaNoModal(modal_bory, tabel_bory);
-                selects();
                 mostrarModal();
+                selects();
 
             },
             error: function() {
@@ -872,7 +872,7 @@
 
                     for (let j = 0; j < desenhos.length; j++) {
                         if (document.getElementById("empresa_cliente_novo_" + j)) {
-                            document.getElementById("empresa_cliente_novo_" + j).selectedIndex = selectedIndex1;
+                            document.getElementById("empresa_cliente_novo_" + j).value = selectedValue;
                         }
                     }
 
@@ -1151,8 +1151,8 @@
 
                 tabel_bory.classList.add('table', 'table-bordered', 'table-striped');
                 anexarTabelaNoModal(modal_bory, tabel_bory);
-                selects();
                 mostrarModal();
+                selects();
 
             },
             error: function() {
